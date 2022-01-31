@@ -53,17 +53,14 @@ const PolyclinicId = () => {
                       </ul>
                     </div>
                     <div className="doctor-action">
-                      <a
-                        href="javascript:void(0)"
-                        className="btn btn-white fav-btn"
-                      >
+                      <a href="#" className="btn btn-white fav-btn">
                         <i className="far fa-bookmark"></i>
                       </a>
                       <a href="chat.html" className="btn btn-white msg-btn">
                         <i className="far fa-comment-alt"></i>
                       </a>
                       <a
-                        href="javascript:void(0)"
+                        href="#"
                         className="btn btn-white call-btn"
                         data-bs-toggle="modal"
                         data-bs-target="#voice_call"
@@ -71,7 +68,7 @@ const PolyclinicId = () => {
                         <i className="fas fa-phone"></i>
                       </a>
                       <a
-                        href="javascript:void(0)"
+                        href="#"
                         className="btn btn-white call-btn"
                         data-bs-toggle="modal"
                         data-bs-target="#video_call"
@@ -171,7 +168,7 @@ const PolyclinicId = () => {
                           width="400"
                           height="300"
                           style={{ border: "0" }}
-                          allowfullscreen=""
+                          allowFullScreen=""
                           loading="lazy"
                         ></iframe>
                       </div>

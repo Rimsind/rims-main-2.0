@@ -43,13 +43,13 @@ const VerticalPolyclinicCard = () => {
                   <a
                     href="doctor-profile.html"
                     className="btn view-btn"
-                    tabindex="0"
+                    tabIndex="0"
                   >
                     View Profile
                   </a>
                 </div>
                 <div className="col-6">
-                  <a href="booking.html" className="btn book-btn" tabindex="0">
+                  <a href="booking.html" className="btn book-btn" tabIndex="0">
                     Book Now
                   </a>
                 </div>
