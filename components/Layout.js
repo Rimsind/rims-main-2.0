@@ -1,6 +1,7 @@
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import Head from "next/head";
+import Script from "next/script";
 const Layout = ({ children }) => {
   return (
     <>
@@ -17,8 +18,8 @@ const Layout = ({ children }) => {
           rel="stylesheet"
           href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         />
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
       </Head>
+      <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></Script>
       <NavBar />
       <main>{children}</main>
       <Footer />

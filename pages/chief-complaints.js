@@ -101,7 +101,7 @@ const ChiefComplaints = () => {
                         <table className="table table-striped">
                           <thead>
                             <tr>
-                              <th className="text-center" colspan="2">
+                              <th className="text-center" colSpan="2">
                                 Complain Description
                               </th>
                               <th>Duration</th>
