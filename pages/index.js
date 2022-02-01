@@ -6,6 +6,7 @@ import {
   FacilityCard,
   VerticalPolyclinicCard,
 } from "components/common/";
+import Image from "next/image";
 const Index = () => {
   return (
     <>
@@ -148,7 +149,9 @@ const Index = () => {
           <div className="container-fluid">
             <div className="row">
               <div className="col-md-5 features-img">
-                <img
+                <Image
+                  height="380"
+                  width="390"
                   src="/assets/images/features/feature.png"
                   className="img-fluid"
                   alt="Feature"
