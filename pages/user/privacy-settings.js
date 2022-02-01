@@ -3,39 +3,39 @@ import UserNav from "components/UserComponents/UserNav";
 const PrivacySettings = () => {
   return (
     <>
-      <div class="main-wrapper">
+      <div className="main-wrapper">
         <BreadCrums
           title="Home / Dashboard / Privacy-Settings"
           title1="Medical-Information"
         />
 
-        <div class="content">
-          <div class="container-fluid">
-            <div class="row">
+        <div className="content">
+          <div className="container-fluid">
+            <div className="row">
               <UserNav status6="active" />
 
-              <div class="col-md-7 col-lg-8 col-xl-9">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-md-12 col-lg-6">
+              <div className="col-md-7 col-lg-8 col-xl-9">
+                <div className="card">
+                  <div className="card-body">
+                    <div className="row">
+                      <div className="col-md-12 col-lg-6">
                         <form>
-                          <div class="form-group">
+                          <div className="form-group">
                             <label>Old Password</label>
-                            <input type="password" class="form-control" />
+                            <input type="password" className="form-control" />
                           </div>
-                          <div class="form-group">
+                          <div className="form-group">
                             <label>New Password</label>
-                            <input type="password" class="form-control" />
+                            <input type="password" className="form-control" />
                           </div>
-                          <div class="form-group">
+                          <div className="form-group">
                             <label>Confirm Password</label>
-                            <input type="password" class="form-control" />
+                            <input type="password" className="form-control" />
                           </div>
-                          <div class="submit-section">
+                          <div className="submit-section">
                             <button
                               type="submit"
-                              class="btn btn-primary submit-btn"
+                              className="btn btn-primary submit-btn"
                             >
                               Save Changes
                             </button>

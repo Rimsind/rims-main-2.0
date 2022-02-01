@@ -70,7 +70,7 @@ const Checkout = () => {
                         <div className="row">
                           <div className="col-md-12">
                             <div className="form-group card-label">
-                              <label for="card_name">Name on Card</label>
+                              <label htmlFor="card_name">Name on Card</label>
                               <input
                                 className="form-control"
                                 id="card_name"
@@ -80,7 +80,7 @@ const Checkout = () => {
                           </div>
                           <div className="col-md-12">
                             <div className="form-group card-label">
-                              <label for="card_number">Card Number</label>
+                              <label htmlFor="card_number">Card Number</label>
                               <input
                                 className="form-control"
                                 id="card_number"
@@ -91,7 +91,7 @@ const Checkout = () => {
                           </div>
                           <div className="col-md-4">
                             <div className="form-group card-label">
-                              <label for="expiry_month">Exp Month</label>
+                              <label htmlFor="expiry_month">Exp Month</label>
                               <input
                                 className="form-control"
                                 id="expiry_month"
@@ -102,7 +102,7 @@ const Checkout = () => {
                           </div>
                           <div className="col-md-4">
                             <div className="form-group card-label">
-                              <label for="expiry_year">Exp Year</label>
+                              <label htmlFor="expiry_year">Exp Year</label>
                               <input
                                 className="form-control"
                                 id="expiry_year"
@@ -113,7 +113,7 @@ const Checkout = () => {
                           </div>
                           <div className="col-md-4">
                             <div className="form-group card-label">
-                              <label for="cvv">CVV</label>
+                              <label htmlFor="cvv">CVV</label>
                               <input
                                 className="form-control"
                                 id="cvv"
@@ -135,7 +135,7 @@ const Checkout = () => {
                       <div className="terms-accept">
                         <div className="custom-checkbox">
                           <input type="checkbox" id="terms_accept" />
-                          <label for="terms_accept">
+                          <label htmlFor="terms_accept">
                             I have read and accept
                             <a href="#">Terms &amp; Conditions</a>
                           </label>

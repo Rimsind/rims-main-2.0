@@ -183,7 +183,7 @@ const ChiefComplaints = () => {
                                   />
                                   <label
                                     className="form-check-label"
-                                    for="flexCheckDefault"
+                                    htmlFor="flexCheckDefault"
                                   >
                                     Fiver
                                   </label>
@@ -197,7 +197,7 @@ const ChiefComplaints = () => {
                                   />
                                   <label
                                     className="form-check-label"
-                                    for="flexCheckDefault"
+                                    htmlFor="flexCheckDefault"
                                   >
                                     Chills
                                   </label>
@@ -245,7 +245,7 @@ const ChiefComplaints = () => {
                                   />
                                   <label
                                     className="form-check-label"
-                                    for="flexCheckDefault"
+                                    htmlFor="flexCheckDefault"
                                   >
                                     Joint Swelling
                                   </label>
@@ -259,7 +259,7 @@ const ChiefComplaints = () => {
                                   />
                                   <label
                                     className="form-check-label"
-                                    for="flexCheckDefault"
+                                    htmlFor="flexCheckDefault"
                                   >
                                     Muscle Pain
                                   </label>
@@ -307,7 +307,7 @@ const ChiefComplaints = () => {
                                   />
                                   <label
                                     className="form-check-label"
-                                    for="flexCheckDefault"
+                                    htmlFor="flexCheckDefault"
                                   >
                                     Headaches
                                   </label>
@@ -321,7 +321,7 @@ const ChiefComplaints = () => {
                                   />
                                   <label
                                     className="form-check-label"
-                                    for="flexCheckDefault"
+                                    htmlFor="flexCheckDefault"
                                   >
                                     Pain spreading from one place to another
                                   </label>
@@ -369,7 +369,7 @@ const ChiefComplaints = () => {
                                   />
                                   <label
                                     className="form-check-label"
-                                    for="flexCheckDefault"
+                                    htmlFor="flexCheckDefault"
                                   >
                                     Chest Pain
                                   </label>
@@ -383,7 +383,7 @@ const ChiefComplaints = () => {
                                   />
                                   <label
                                     className="form-check-label"
-                                    for="flexCheckDefault"
+                                    htmlFor="flexCheckDefault"
                                   >
                                     Fast Heart Beat
                                   </label>
@@ -437,7 +437,7 @@ const ChiefComplaints = () => {
                                   />
                                   <label
                                     className="form-check-label"
-                                    for="flexCheckDefault"
+                                    htmlFor="flexCheckDefault"
                                   >
                                     Skin Color Change
                                   </label>
@@ -451,7 +451,7 @@ const ChiefComplaints = () => {
                                   />
                                   <label
                                     className="form-check-label"
-                                    for="flexCheckDefault"
+                                    htmlFor="flexCheckDefault"
                                   >
                                     Nail Bed Change
                                   </label>
@@ -499,7 +499,7 @@ const ChiefComplaints = () => {
                                   />
                                   <label
                                     className="form-check-label"
-                                    for="flexCheckDefault"
+                                    htmlFor="flexCheckDefault"
                                   >
                                     Abdominal Pain
                                   </label>
@@ -513,7 +513,7 @@ const ChiefComplaints = () => {
                                   />
                                   <label
                                     className="form-check-label"
-                                    for="flexCheckDefault"
+                                    htmlFor="flexCheckDefault"
                                   >
                                     Vomiting
                                   </label>
@@ -561,7 +561,7 @@ const ChiefComplaints = () => {
                                   />
                                   <label
                                     className="form-check-label"
-                                    for="flexCheckDefault"
+                                    htmlFor="flexCheckDefault"
                                   >
                                     High Strees Level
                                   </label>
@@ -575,7 +575,7 @@ const ChiefComplaints = () => {
                                   />
                                   <label
                                     className="form-check-label"
-                                    for="flexCheckDefault"
+                                    htmlFor="flexCheckDefault"
                                   >
                                     Sleeping Problems
                                   </label>
@@ -623,7 +623,7 @@ const ChiefComplaints = () => {
                                   />
                                   <label
                                     className="form-check-label"
-                                    for="flexCheckDefault"
+                                    htmlFor="flexCheckDefault"
                                   >
                                     Changein urine color
                                   </label>
@@ -637,7 +637,7 @@ const ChiefComplaints = () => {
                                   />
                                   <label
                                     className="form-check-label"
-                                    for="flexCheckDefault"
+                                    htmlFor="flexCheckDefault"
                                   >
                                     Testicular pain or swelling
                                   </label>

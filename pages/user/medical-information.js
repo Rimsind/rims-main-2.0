@@ -12,15 +12,15 @@ import {
 const MedicalInformation = () => {
   return (
     <>
-      <div class="main-wrapper">
+      <div className="main-wrapper">
         <BreadCrums
           title="Home / Dashboard / Medical-Information"
           title1="Medical-Information"
         />
 
-        <div class="content">
-          <div class="container-fluid">
-            <div class="row">
+        <div className="content">
+          <div className="container-fluid">
+            <div className="row">
               <UserNav status5="active" />
 
               <div className="col-md-7 col-lg-8 col-xl-9">

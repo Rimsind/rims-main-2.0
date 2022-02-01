@@ -4,100 +4,101 @@ import UserNav from "components/UserComponents/UserNav";
 const ProfileSettings = () => {
   return (
     <>
-      <div class="main-wrapper">
+      <div className="main-wrapper">
         <BreadCrums
           title="Home / Dashboard / Profile-Settings"
           title1="Profile-Settings"
         />
-        <div class="content">
-          <div class="container-fluid">
-            <div class="row">
+        <div className="content">
+          <div className="container-fluid">
+            <div className="row">
               <UserNav status4="active" />
 
-              <div class="col-md-7 col-lg-8 col-xl-9">
-                <div class="card">
-                  <div class="card-body">
+              <div className="col-md-7 col-lg-8 col-xl-9">
+                <div className="card">
+                  <div className="card-body">
                     <form>
-                      <div class="row form-row">
-                        <div class="col-12 col-md-12">
-                          <div class="form-group">
-                            <div class="change-avatar">
-                              <div class="profile-img">
+                      <div className="row form-row">
+                        <div className="col-12 col-md-12">
+                          <div className="form-group">
+                            <div className="change-avatar">
+                              <div className="profile-img">
                                 <img
                                   src="/user_assets/img/patients/patient.jpg"
                                   alt="User Image"
                                 />
                               </div>
-                              <div class="upload-img">
-                                <div class="change-photo-btn">
+                              <div className="upload-img">
+                                <div className="change-photo-btn">
                                   <span>
-                                    <i class="fa fa-upload"></i> Upload Photo
+                                    <i className="fa fa-upload"></i> Upload
+                                    Photo
                                   </span>
-                                  <input type="file" class="upload" />
+                                  <input type="file" className="upload" />
                                 </div>
-                                <small class="form-text text-muted">
+                                <small className="form-text text-muted">
                                   Allowed JPG, GIF or PNG. Max size of 2MB
                                 </small>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div class="col-12 col-md-6">
-                          <div class="form-group">
+                        <div className="col-12 col-md-6">
+                          <div className="form-group">
                             <label>First Name</label>
                             <input
                               type="text"
-                              class="form-control"
+                              className="form-control"
                               placeholder="Bappa"
                             />
                           </div>
                         </div>
-                        <div class="col-12 col-md-6">
-                          <div class="form-group">
+                        <div className="col-12 col-md-6">
+                          <div className="form-group">
                             <label>Last Name</label>
                             <input
                               type="text"
-                              class="form-control"
+                              className="form-control"
                               placeholder="Kamila"
                             />
                           </div>
                         </div>
-                        <div class="col-12 col-md-4">
-                          <div class="form-group">
+                        <div className="col-12 col-md-4">
+                          <div className="form-group">
                             <label>Date of Birth</label>
-                            <div class="cal-icon">
+                            <div className="cal-icon">
                               <input
                                 type="date"
-                                class="form-control"
+                                className="form-control"
                                 placeholder="24-07-1983"
                               />
                             </div>
                           </div>
                         </div>
-                        <div class="col-12 col-md-4">
-                          <div class="form-group">
+                        <div className="col-12 col-md-4">
+                          <div className="form-group">
                             <label>Gender</label>
-                            <select class="form-select form-control">
+                            <select className="form-select form-control">
                               <option>Male</option>
                               <option>Female</option>
                               <option>Other</option>
                             </select>
                           </div>
                         </div>
-                        <div class="col-12 col-md-4">
-                          <div class="form-group">
+                        <div className="col-12 col-md-4">
+                          <div className="form-group">
                             <label>Martial Status</label>
-                            <select class="form-select form-control">
+                            <select className="form-select form-control">
                               <option>Male</option>
                               <option>Female</option>
                               <option>Other</option>
                             </select>
                           </div>
                         </div>
-                        <div class="col-12 col-md-4">
-                          <div class="form-group">
+                        <div className="col-12 col-md-4">
+                          <div className="form-group">
                             <label>Blood Group</label>
-                            <select class="form-select form-control">
+                            <select className="form-select form-control">
                               <option>A-</option>
                               <option>A+</option>
                               <option>B-</option>
@@ -109,81 +110,81 @@ const ProfileSettings = () => {
                             </select>
                           </div>
                         </div>
-                        <div class="col-12 col-md-4">
-                          <div class="form-group">
+                        <div className="col-12 col-md-4">
+                          <div className="form-group">
                             <label>Email ID</label>
                             <input
                               type="email"
-                              class="form-control"
+                              className="form-control"
                               placeholder="richard@example.com"
                             />
                           </div>
                         </div>
-                        <div class="col-12 col-md-4">
-                          <div class="form-group">
+                        <div className="col-12 col-md-4">
+                          <div className="form-group">
                             <label>Mobile</label>
                             <input
                               type="text"
                               placeholder="+1 202-555-0125"
-                              class="form-control"
+                              className="form-control"
                             />
                           </div>
                         </div>
-                        <div class="col-12">
-                          <div class="form-group">
+                        <div className="col-12">
+                          <div className="form-group">
                             <label>Address</label>
                             <input
                               type="text"
-                              class="form-control"
+                              className="form-control"
                               placeholder="806 Twin Willow Lane"
                             />
                           </div>
                         </div>
-                        <div class="col-12 col-md-6">
-                          <div class="form-group">
+                        <div className="col-12 col-md-6">
+                          <div className="form-group">
                             <label>City</label>
                             <input
                               type="text"
-                              class="form-control"
+                              className="form-control"
                               placeholder="Old Forge"
                             />
                           </div>
                         </div>
-                        <div class="col-12 col-md-6">
-                          <div class="form-group">
+                        <div className="col-12 col-md-6">
+                          <div className="form-group">
                             <label>State</label>
                             <input
                               type="text"
-                              class="form-control"
+                              className="form-control"
                               placeholder="Newyork"
                             />
                           </div>
                         </div>
-                        <div class="col-12 col-md-6">
-                          <div class="form-group">
+                        <div className="col-12 col-md-6">
+                          <div className="form-group">
                             <label>Zip Code</label>
                             <input
                               type="text"
-                              class="form-control"
+                              className="form-control"
                               placeholder="13420"
                             />
                           </div>
                         </div>
-                        <div class="col-12 col-md-6">
-                          <div class="form-group">
+                        <div className="col-12 col-md-6">
+                          <div className="form-group">
                             <label>Country</label>
                             <input
                               type="text"
-                              class="form-control"
+                              className="form-control"
                               placeholder="United States"
                             />
                           </div>
                         </div>
                       </div>
-                      <div class="submit-section">
+                      <div className="submit-section">
                         <button
                           type="submit"
-                          class="btn btn-primary submit-btn"
+                          className="btn btn-primary submit-btn"
                         >
                           Save Changes
                         </button>

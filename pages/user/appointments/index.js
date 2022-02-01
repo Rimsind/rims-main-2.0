@@ -4,22 +4,22 @@ import UserNav from "components/UserComponents/UserNav";
 const Index = () => {
   return (
     <>
-      <div class="main-wrapper">
+      <div className="main-wrapper">
         <BreadCrums
           title="Home / Dashboard / My Appointments"
           title1="My Appointments"
         />
 
-        <div class="content mb-3">
-          <div class="container-fluid">
-            <div class="row">
+        <div className="content mb-3">
+          <div className="container-fluid">
+            <div className="row">
               <UserNav status2="active" />
 
-              <div class="col-md-7 col-lg-8 col-xl-9">
-                <div class="card card-table mb-0">
-                  <div class="card-body">
-                    <div class="table-responsive">
-                      <table class="table table-hover table-center mb-0">
+              <div className="col-md-7 col-lg-8 col-xl-9">
+                <div className="card card-table mb-0">
+                  <div className="card-body">
+                    <div className="table-responsive">
+                      <table className="table table-hover table-center mb-0">
                         <thead>
                           <tr>
                             <th>Doctor</th>
@@ -34,13 +34,13 @@ const Index = () => {
                         <tbody>
                           <tr>
                             <td>
-                              <h2 class="table-avatar">
+                              <h2 className="table-avatar">
                                 <a
                                   href="doctor-profile.html"
-                                  class="avatar avatar-sm me-2"
+                                  className="avatar avatar-sm me-2"
                                 >
                                   <img
-                                    class="avatar-img rounded-circle"
+                                    className="avatar-img rounded-circle"
                                     src="/user_assets/img/doctors/doctor-thumb-01.jpg"
                                     alt="User Image"
                                   />
@@ -52,42 +52,44 @@ const Index = () => {
                             </td>
                             <td>
                               14 Nov 2019
-                              <span class="d-block text-info">10.00 AM</span>
+                              <span className="d-block text-info">
+                                10.00 AM
+                              </span>
                             </td>
                             <td>12 Nov 2019</td>
                             <td>$160</td>
                             <td>16 Nov 2019</td>
                             <td>
-                              <span class="badge rounded-pill bg-success-light">
+                              <span className="badge rounded-pill bg-success-light">
                                 Confirm
                               </span>
                             </td>
-                            <td class="text-end">
-                              <div class="table-action">
+                            <td className="text-end">
+                              <div className="table-action">
                                 <a
                                   href="javascript:void(0);"
-                                  class="btn btn-sm bg-primary-light"
+                                  className="btn btn-sm bg-primary-light"
                                 >
-                                  <i class="fas fa-print"></i> Print
+                                  <i className="fas fa-print"></i> Print
                                 </a>
                                 <a
                                   href="javascript:void(0);"
-                                  class="btn btn-sm bg-info-light"
+                                  className="btn btn-sm bg-info-light"
                                 >
-                                  <i class="far fa-eye"></i> View
+                                  <i className="far fa-eye"></i> View
                                 </a>
                               </div>
                             </td>
                           </tr>
                           <tr>
                             <td>
-                              <h2 class="table-avatar">
+                              <h2 className="table-avatar">
                                 <a
                                   href="doctor-profile.html"
-                                  class="avatar avatar-sm me-2"
+                                  className="avatar avatar-sm me-2"
                                 >
                                   <img
-                                    class="avatar-img rounded-circle"
+                                    className="avatar-img rounded-circle"
                                     src="/user_assets/img/doctors/doctor-thumb-02.jpg"
                                     alt="User Image"
                                   />
@@ -99,42 +101,42 @@ const Index = () => {
                             </td>
                             <td>
                               12 Nov 2019
-                              <span class="d-block text-info">8.00 PM</span>
+                              <span className="d-block text-info">8.00 PM</span>
                             </td>
                             <td>12 Nov 2019</td>
                             <td>$250</td>
                             <td>14 Nov 2019</td>
                             <td>
-                              <span class="badge rounded-pill bg-success-light">
+                              <span className="badge rounded-pill bg-success-light">
                                 Confirm
                               </span>
                             </td>
-                            <td class="text-end">
-                              <div class="table-action">
+                            <td className="text-end">
+                              <div className="table-action">
                                 <a
                                   href="javascript:void(0);"
-                                  class="btn btn-sm bg-primary-light"
+                                  className="btn btn-sm bg-primary-light"
                                 >
-                                  <i class="fas fa-print"></i> Print
+                                  <i className="fas fa-print"></i> Print
                                 </a>
                                 <a
                                   href="javascript:void(0);"
-                                  class="btn btn-sm bg-info-light"
+                                  className="btn btn-sm bg-info-light"
                                 >
-                                  <i class="far fa-eye"></i> View
+                                  <i className="far fa-eye"></i> View
                                 </a>
                               </div>
                             </td>
                           </tr>
                           <tr>
                             <td>
-                              <h2 class="table-avatar">
+                              <h2 className="table-avatar">
                                 <a
                                   href="doctor-profile.html"
-                                  class="avatar avatar-sm me-2"
+                                  className="avatar avatar-sm me-2"
                                 >
                                   <img
-                                    class="avatar-img rounded-circle"
+                                    className="avatar-img rounded-circle"
                                     src="/user_assets/img/doctors/doctor-thumb-03.jpg"
                                     alt="User Image"
                                   />
@@ -146,42 +148,44 @@ const Index = () => {
                             </td>
                             <td>
                               11 Nov 2019
-                              <span class="d-block text-info">11.00 AM</span>
+                              <span className="d-block text-info">
+                                11.00 AM
+                              </span>
                             </td>
                             <td>10 Nov 2019</td>
                             <td>$400</td>
                             <td>13 Nov 2019</td>
                             <td>
-                              <span class="badge rounded-pill bg-danger-light">
+                              <span className="badge rounded-pill bg-danger-light">
                                 Cancelled
                               </span>
                             </td>
-                            <td class="text-end">
-                              <div class="table-action">
+                            <td className="text-end">
+                              <div className="table-action">
                                 <a
                                   href="javascript:void(0);"
-                                  class="btn btn-sm bg-primary-light"
+                                  className="btn btn-sm bg-primary-light"
                                 >
-                                  <i class="fas fa-print"></i> Print
+                                  <i className="fas fa-print"></i> Print
                                 </a>
                                 <a
                                   href="javascript:void(0);"
-                                  class="btn btn-sm bg-info-light"
+                                  className="btn btn-sm bg-info-light"
                                 >
-                                  <i class="far fa-eye"></i> View
+                                  <i className="far fa-eye"></i> View
                                 </a>
                               </div>
                             </td>
                           </tr>
                           <tr>
                             <td>
-                              <h2 class="table-avatar">
+                              <h2 className="table-avatar">
                                 <a
                                   href="doctor-profile.html"
-                                  class="avatar avatar-sm me-2"
+                                  className="avatar avatar-sm me-2"
                                 >
                                   <img
-                                    class="avatar-img rounded-circle"
+                                    className="avatar-img rounded-circle"
                                     src="/user_assets/img/doctors/doctor-thumb-04.jpg"
                                     alt="User Image"
                                   />
@@ -193,42 +197,42 @@ const Index = () => {
                             </td>
                             <td>
                               10 Nov 2019
-                              <span class="d-block text-info">3.00 PM</span>
+                              <span className="d-block text-info">3.00 PM</span>
                             </td>
                             <td>10 Nov 2019</td>
                             <td>$350</td>
                             <td>12 Nov 2019</td>
                             <td>
-                              <span class="badge rounded-pill bg-warning-light">
+                              <span className="badge rounded-pill bg-warning-light">
                                 Pending
                               </span>
                             </td>
-                            <td class="text-end">
-                              <div class="table-action">
+                            <td className="text-end">
+                              <div className="table-action">
                                 <a
                                   href="javascript:void(0);"
-                                  class="btn btn-sm bg-primary-light"
+                                  className="btn btn-sm bg-primary-light"
                                 >
-                                  <i class="fas fa-print"></i> Print
+                                  <i className="fas fa-print"></i> Print
                                 </a>
                                 <a
                                   href="javascript:void(0);"
-                                  class="btn btn-sm bg-info-light"
+                                  className="btn btn-sm bg-info-light"
                                 >
-                                  <i class="far fa-eye"></i> View
+                                  <i className="far fa-eye"></i> View
                                 </a>
                               </div>
                             </td>
                           </tr>
                           <tr>
                             <td>
-                              <h2 class="table-avatar">
+                              <h2 className="table-avatar">
                                 <a
                                   href="doctor-profile.html"
-                                  class="avatar avatar-sm me-2"
+                                  className="avatar avatar-sm me-2"
                                 >
                                   <img
-                                    class="avatar-img rounded-circle"
+                                    className="avatar-img rounded-circle"
                                     src="/user_assets/img/doctors/doctor-thumb-05.jpg"
                                     alt="User Image"
                                   />
@@ -241,42 +245,42 @@ const Index = () => {
                             </td>
                             <td>
                               9 Nov 2019
-                              <span class="d-block text-info">7.00 PM</span>
+                              <span className="d-block text-info">7.00 PM</span>
                             </td>
                             <td>8 Nov 2019</td>
                             <td>$75</td>
                             <td>11 Nov 2019</td>
                             <td>
-                              <span class="badge rounded-pill bg-success-light">
+                              <span className="badge rounded-pill bg-success-light">
                                 Confirm
                               </span>
                             </td>
-                            <td class="text-end">
-                              <div class="table-action">
+                            <td className="text-end">
+                              <div className="table-action">
                                 <a
                                   href="javascript:void(0);"
-                                  class="btn btn-sm bg-primary-light"
+                                  className="btn btn-sm bg-primary-light"
                                 >
-                                  <i class="fas fa-print"></i> Print
+                                  <i className="fas fa-print"></i> Print
                                 </a>
                                 <a
                                   href="javascript:void(0);"
-                                  class="btn btn-sm bg-info-light"
+                                  className="btn btn-sm bg-info-light"
                                 >
-                                  <i class="far fa-eye"></i> View
+                                  <i className="far fa-eye"></i> View
                                 </a>
                               </div>
                             </td>
                           </tr>
                           <tr>
                             <td>
-                              <h2 class="table-avatar">
+                              <h2 className="table-avatar">
                                 <a
                                   href="doctor-profile.html"
-                                  class="avatar avatar-sm me-2"
+                                  className="avatar avatar-sm me-2"
                                 >
                                   <img
-                                    class="avatar-img rounded-circle"
+                                    className="avatar-img rounded-circle"
                                     src="/user_assets/img/doctors/doctor-thumb-06.jpg"
                                     alt="User Image"
                                   />
@@ -289,42 +293,42 @@ const Index = () => {
                             </td>
                             <td>
                               8 Nov 2019
-                              <span class="d-block text-info">9.00 AM</span>
+                              <span className="d-block text-info">9.00 AM</span>
                             </td>
                             <td>6 Nov 2019</td>
                             <td>$175</td>
                             <td>10 Nov 2019</td>
                             <td>
-                              <span class="badge rounded-pill bg-danger-light">
+                              <span className="badge rounded-pill bg-danger-light">
                                 Cancelled
                               </span>
                             </td>
-                            <td class="text-end">
-                              <div class="table-action">
+                            <td className="text-end">
+                              <div className="table-action">
                                 <a
                                   href="javascript:void(0);"
-                                  class="btn btn-sm bg-primary-light"
+                                  className="btn btn-sm bg-primary-light"
                                 >
-                                  <i class="fas fa-print"></i> Print
+                                  <i className="fas fa-print"></i> Print
                                 </a>
                                 <a
                                   href="javascript:void(0);"
-                                  class="btn btn-sm bg-info-light"
+                                  className="btn btn-sm bg-info-light"
                                 >
-                                  <i class="far fa-eye"></i> View
+                                  <i className="far fa-eye"></i> View
                                 </a>
                               </div>
                             </td>
                           </tr>
                           <tr>
                             <td>
-                              <h2 class="table-avatar">
+                              <h2 className="table-avatar">
                                 <a
                                   href="doctor-profile.html"
-                                  class="avatar avatar-sm me-2"
+                                  className="avatar avatar-sm me-2"
                                 >
                                   <img
-                                    class="avatar-img rounded-circle"
+                                    className="avatar-img rounded-circle"
                                     src="/user_assets/img/doctors/doctor-thumb-07.jpg"
                                     alt="User Image"
                                   />
@@ -336,42 +340,42 @@ const Index = () => {
                             </td>
                             <td>
                               8 Nov 2019
-                              <span class="d-block text-info">6.00 PM</span>
+                              <span className="d-block text-info">6.00 PM</span>
                             </td>
                             <td>6 Nov 2019</td>
                             <td>$450</td>
                             <td>10 Nov 2019</td>
                             <td>
-                              <span class="badge rounded-pill bg-success-light">
+                              <span className="badge rounded-pill bg-success-light">
                                 Confirm
                               </span>
                             </td>
-                            <td class="text-end">
-                              <div class="table-action">
+                            <td className="text-end">
+                              <div className="table-action">
                                 <a
                                   href="javascript:void(0);"
-                                  class="btn btn-sm bg-primary-light"
+                                  className="btn btn-sm bg-primary-light"
                                 >
-                                  <i class="fas fa-print"></i> Print
+                                  <i className="fas fa-print"></i> Print
                                 </a>
                                 <a
                                   href="javascript:void(0);"
-                                  class="btn btn-sm bg-info-light"
+                                  className="btn btn-sm bg-info-light"
                                 >
-                                  <i class="far fa-eye"></i> View
+                                  <i className="far fa-eye"></i> View
                                 </a>
                               </div>
                             </td>
                           </tr>
                           <tr>
                             <td>
-                              <h2 class="table-avatar">
+                              <h2 className="table-avatar">
                                 <a
                                   href="doctor-profile.html"
-                                  class="avatar avatar-sm me-2"
+                                  className="avatar avatar-sm me-2"
                                 >
                                   <img
-                                    class="avatar-img rounded-circle"
+                                    className="avatar-img rounded-circle"
                                     src="/user_assets/img/doctors/doctor-thumb-08.jpg"
                                     alt="User Image"
                                   />
@@ -383,42 +387,42 @@ const Index = () => {
                             </td>
                             <td>
                               7 Nov 2019
-                              <span class="d-block text-info">9.00 PM</span>
+                              <span className="d-block text-info">9.00 PM</span>
                             </td>
                             <td>7 Nov 2019</td>
                             <td>$275</td>
                             <td>9 Nov 2019</td>
                             <td>
-                              <span class="badge rounded-pill bg-success-light">
+                              <span className="badge rounded-pill bg-success-light">
                                 Confirm
                               </span>
                             </td>
-                            <td class="text-end">
-                              <div class="table-action">
+                            <td className="text-end">
+                              <div className="table-action">
                                 <a
                                   href="javascript:void(0);"
-                                  class="btn btn-sm bg-primary-light"
+                                  className="btn btn-sm bg-primary-light"
                                 >
-                                  <i class="fas fa-print"></i> Print
+                                  <i className="fas fa-print"></i> Print
                                 </a>
                                 <a
                                   href="javascript:void(0);"
-                                  class="btn btn-sm bg-info-light"
+                                  className="btn btn-sm bg-info-light"
                                 >
-                                  <i class="far fa-eye"></i> View
+                                  <i className="far fa-eye"></i> View
                                 </a>
                               </div>
                             </td>
                           </tr>
                           <tr>
                             <td>
-                              <h2 class="table-avatar">
+                              <h2 className="table-avatar">
                                 <a
                                   href="doctor-profile.html"
-                                  class="avatar avatar-sm me-2"
+                                  className="avatar avatar-sm me-2"
                                 >
                                   <img
-                                    class="avatar-img rounded-circle"
+                                    className="avatar-img rounded-circle"
                                     src="/user_assets/img/doctors/doctor-thumb-09.jpg"
                                     alt="User Image"
                                   />
@@ -430,42 +434,42 @@ const Index = () => {
                             </td>
                             <td>
                               6 Nov 2019
-                              <span class="d-block text-info">8.00 PM</span>
+                              <span className="d-block text-info">8.00 PM</span>
                             </td>
                             <td>4 Nov 2019</td>
                             <td>$600</td>
                             <td>8 Nov 2019</td>
                             <td>
-                              <span class="badge rounded-pill bg-success-light">
+                              <span className="badge rounded-pill bg-success-light">
                                 Confirm
                               </span>
                             </td>
-                            <td class="text-end">
-                              <div class="table-action">
+                            <td className="text-end">
+                              <div className="table-action">
                                 <a
                                   href="javascript:void(0);"
-                                  class="btn btn-sm bg-primary-light"
+                                  className="btn btn-sm bg-primary-light"
                                 >
-                                  <i class="fas fa-print"></i> Print
+                                  <i className="fas fa-print"></i> Print
                                 </a>
                                 <a
                                   href="javascript:void(0);"
-                                  class="btn btn-sm bg-info-light"
+                                  className="btn btn-sm bg-info-light"
                                 >
-                                  <i class="far fa-eye"></i> View
+                                  <i className="far fa-eye"></i> View
                                 </a>
                               </div>
                             </td>
                           </tr>
                           <tr>
                             <td>
-                              <h2 class="table-avatar">
+                              <h2 className="table-avatar">
                                 <a
                                   href="doctor-profile.html"
-                                  class="avatar avatar-sm me-2"
+                                  className="avatar avatar-sm me-2"
                                 >
                                   <img
-                                    class="avatar-img rounded-circle"
+                                    className="avatar-img rounded-circle"
                                     src="/user_assets/img/doctors/doctor-thumb-10.jpg"
                                     alt="User Image"
                                   />
@@ -477,29 +481,29 @@ const Index = () => {
                             </td>
                             <td>
                               5 Nov 2019
-                              <span class="d-block text-info">5.00 PM</span>
+                              <span className="d-block text-info">5.00 PM</span>
                             </td>
                             <td>1 Nov 2019</td>
                             <td>$100</td>
                             <td>7 Nov 2019</td>
                             <td>
-                              <span class="badge rounded-pill bg-success-light">
+                              <span className="badge rounded-pill bg-success-light">
                                 Confirm
                               </span>
                             </td>
-                            <td class="text-end">
-                              <div class="table-action">
+                            <td className="text-end">
+                              <div className="table-action">
                                 <a
                                   href="javascript:void(0);"
-                                  class="btn btn-sm bg-primary-light"
+                                  className="btn btn-sm bg-primary-light"
                                 >
-                                  <i class="fas fa-print"></i> Print
+                                  <i className="fas fa-print"></i> Print
                                 </a>
                                 <a
                                   href="javascript:void(0);"
-                                  class="btn btn-sm bg-info-light"
+                                  className="btn btn-sm bg-info-light"
                                 >
-                                  <i class="far fa-eye"></i> View
+                                  <i className="far fa-eye"></i> View
                                 </a>
                               </div>
                             </td>
