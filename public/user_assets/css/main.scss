@@ -191,8 +191,6 @@ ul {
   .patient_sec,
   .doctor_sec,
   .contact_info {
-    margin-top: 8rem;
-
     p {
       color: $white;
       font-family: $primary_font_family;
@@ -210,8 +208,7 @@ ul {
   }
 
   .contact_info {
-    margin-top: 8rem;
-
+    margin-top: -25px;
     ul {
       color: $white;
       list-style-type: none;
