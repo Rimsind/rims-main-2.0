@@ -1,3 +1,4 @@
+import Image from "next/image";
 const VerticalDoctorCard = () => {
   return (
     <>
@@ -5,7 +6,9 @@ const VerticalDoctorCard = () => {
         <div className="profile-widget">
           <div className="doc-img">
             <a href="doctor-profile.html">
-              <img
+              <Image
+                height={220}
+                width={320}
                 className="img-fluid"
                 alt="User Image"
                 src="/assets/images/doctors/doctor-01.jpg"

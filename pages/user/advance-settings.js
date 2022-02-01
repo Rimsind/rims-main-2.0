@@ -12,7 +12,7 @@ const AdvanceSettings = () => {
         <div className="content">
           <div className="container-fluid">
             <div className="row">
-              <UserNav />
+              <UserNav status7="active" />
 
               <div className="col-md-7 col-lg-8 col-xl-9">
                 <div className="card">

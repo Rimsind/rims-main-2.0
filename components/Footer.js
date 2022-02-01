@@ -1,3 +1,4 @@
+import Image from "next/image";
 const Footer = () => {
   return (
     <>
@@ -7,7 +8,11 @@ const Footer = () => {
           <div className="row">
             <div className="col-md-3">
               <div className="footer_logo">
-                <img src="/assets/images/logo-dark.png" />
+                <Image
+                  height="100"
+                  width="150"
+                  src="/assets/images/logo-white.png"
+                />
               </div>
               <div className="footer_para">
                 <p className="ft_para">

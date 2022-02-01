@@ -1,5 +1,5 @@
 import Link from "next/link";
-const UserNav = () => {
+const UserNav = (props) => {
   return (
     <>
       <div class="col-md-5 col-lg-4 col-xl-3 sticky-top">
@@ -28,7 +28,7 @@ const UserNav = () => {
           <div class="dashboard-widget">
             <nav class="dashboard-menu">
               <ul>
-                <li class="active">
+                <li class={props.status1}>
                   <Link href="/user/">
                     <a>
                       <i class="fas fa-columns"></i>
@@ -36,7 +36,7 @@ const UserNav = () => {
                     </a>
                   </Link>
                 </li>
-                <li>
+                <li class={props.status2}>
                   <Link href="/user/appointments">
                     <a>
                       <i class="fas fa-bookmark"></i>
@@ -44,7 +44,7 @@ const UserNav = () => {
                     </a>
                   </Link>
                 </li>
-                <li>
+                <li class={props.status3}>
                   <Link href="/user/orders">
                     <a>
                       <i class="fas fa-list-alt"></i>
@@ -53,7 +53,7 @@ const UserNav = () => {
                     </a>
                   </Link>
                 </li>
-                <li>
+                <li class={props.status4}>
                   <Link href="/user/profile-settings">
                     <a>
                       <i class="fas fa-user-cog"></i>
@@ -61,7 +61,7 @@ const UserNav = () => {
                     </a>
                   </Link>
                 </li>
-                <li>
+                <li class={props.status5}>
                   <Link href="/user/medical-information">
                     <a href="medical-info.html">
                       <i class="fas fa-user-cog"></i>
@@ -70,7 +70,7 @@ const UserNav = () => {
                   </Link>
                 </li>
 
-                <li>
+                <li class={props.status6}>
                   <Link href="/user/privacy-settings">
                     <a>
                       <i class="fas fa-lock"></i>
@@ -78,7 +78,7 @@ const UserNav = () => {
                     </a>
                   </Link>
                 </li>
-                <li>
+                <li class={props.status7}>
                   <Link href="/user/advance-settings">
                     <a>
                       <i class="fas fa-user-cog"></i>

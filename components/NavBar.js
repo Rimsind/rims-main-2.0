@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 const NavBar = () => {
   return (
     <>
@@ -54,7 +55,12 @@ const NavBar = () => {
         <nav className="navbar navbar-expand-lg navbar-light">
           <div className="container-fluid">
             <a className="navbar-brand me-auto" href="#">
-              <img className="logo" src="/assets/images/logo-dark.png" />
+              <Image
+                height="80"
+                width="120"
+                className="logo"
+                src="/assets/images/logo-dark.png"
+              />
             </a>
             <button
               className="navbar-toggler"
@@ -83,12 +89,12 @@ const NavBar = () => {
                 </li>
                 <li className="nav-item">
                   <Link href="/polyclinics">
-                    <a className="nav-link">POLYCLINIC</a>
+                    <a className="nav-link">POLYCLINICS</a>
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link href="/nursing-homes">
-                    <a className="nav-link">NURSHING HOME</a>
+                    <a className="nav-link">NURSHING HOMES</a>
                   </Link>
                 </li>
 
@@ -122,10 +128,11 @@ const NavBar = () => {
                     data-bs-toggle="dropdown"
                   >
                     <span className="user-img">
-                      <img
-                        className="rounded-circle"
+                      <Image
+                        className="rounded-circle "
                         src="/assets/images/profile.png"
-                        width="31"
+                        width="35"
+                        height="35"
                         alt="Darren Elder"
                       />
                     </span>
@@ -133,7 +140,9 @@ const NavBar = () => {
                   <div className="dropdown-menu dropdown-menu-end">
                     <div className="user-header">
                       <div className="avatar avatar-sm">
-                        <img
+                        <Image
+                          height="100"
+                          width="100"
                           src="/assets/images/profile.png"
                           alt="User Image"
                           className="avatar-img rounded-circle"

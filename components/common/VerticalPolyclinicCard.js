@@ -1,13 +1,15 @@
+import Image from "next/image";
 const VerticalPolyclinicCard = () => {
   return (
     <>
-      {" "}
       <div className="col-md-3 col-sm">
         <div className="item">
           <div className="our-doctors-card">
             <div className="doctors-header">
               <a href="#">
-                <img
+                <Image
+                  height={200}
+                  width={300}
                   src="/assets/images/doctors/doctor-01.jpg"
                   alt=""
                   className="img-fluid"

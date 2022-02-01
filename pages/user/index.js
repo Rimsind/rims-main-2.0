@@ -10,7 +10,7 @@ const Index = () => {
         <div class="content">
           <div class="container-fluid">
             <div class="row">
-              <UserNav />
+              <UserNav status1="active" />
 
               <div class="col-md-7 col-lg-8 col-xl-9">
                 <div class="row">
