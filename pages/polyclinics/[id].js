@@ -1,4 +1,5 @@
 import { BreadCrums, PolyclinicTimetableCard } from "components/common";
+import Image from "next/image";
 const PolyclinicId = () => {
   return (
     <>
@@ -15,7 +16,9 @@ const PolyclinicId = () => {
                   <div className="doc-info-left">
                     <div className="doctor-img poly-img">
                       <a href="doctor-profile.html">
-                        <img
+                        <Image
+                          height="130"
+                          width="145"
                           src="/assets/images/polyclinic.jpg"
                           className="img-fluid"
                           alt="User Image"

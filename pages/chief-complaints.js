@@ -1,4 +1,5 @@
-import { BreadCrums } from "components/common";
+import { BreadCrums, VerifyCard } from "components/common";
+import Image from "next/image";
 const ChiefComplaints = () => {
   return (
     <>
@@ -9,60 +10,7 @@ const ChiefComplaints = () => {
           <div className="container">
             <div className="row">
               <div className="col-md-12">
-                <div className="card">
-                  <div className="card-body">
-                    <div className="row">
-                      <div className="col-md-6">
-                        <p className="fs-6 fw-bold">Doctor Details</p>
-                        <div className="booking-doc-info d-flex mb-3">
-                          <a
-                            href="doctor-profile.html"
-                            className="booking-doc-img"
-                          >
-                            <img
-                              src="assets/images/doctors/doctor-thumb-01.jpg"
-                              alt="User Image"
-                            />
-                          </a>
-                          <div className="booking-info">
-                            <h6 className="fs-6 fw-bold">
-                              <a href="doctor-profile.html">Dr. Bappa Kamila</a>
-                            </h6>
-                            <h6 className="text-muted fs-6">MBBS</h6>
-                            <h5 className="doc-department fs-6">
-                              <i className="fas fa-user-tag"></i>
-                              Heart
-                            </h5>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <p className="fs-6 fw-bold">Clinic Details</p>
-                        <div className="booking-doc-info d-flex">
-                          <a
-                            href="doctor-profile.html"
-                            className="booking-doc-img"
-                          >
-                            <img
-                              src="assets/images/card_image.jpg"
-                              alt="User Image"
-                            />
-                          </a>
-                          <div className="booking-info">
-                            <h6 className="fs-6 fw-bold">
-                              <a href="doctor-profile.html">
-                                Mediland Nursing Home
-                              </a>
-                            </h6>
-                            <p className="text-muted fs-6">
-                              HPL Link Road, Haldia, West Bengal
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <VerifyCard />
                 <div className="card shadow-sm">
                   <div className="prbl-header">
                     <p className="fs-6 fw-bold">Explain Your Problem</p>
@@ -156,7 +104,11 @@ const ChiefComplaints = () => {
                                 <div className="row align-items-center">
                                   <div className="col-md-3">
                                     <div className="accrd-img">
-                                      <img src="./assets/images/accordian/general-problem.png" />
+                                      <Image
+                                        height="100"
+                                        width="100"
+                                        src="/assets/images/accordian/general-problem.png"
+                                      />
                                     </div>
                                   </div>
                                   <div className="col-md-9">
@@ -218,7 +170,11 @@ const ChiefComplaints = () => {
                                 <div className="row align-items-center">
                                   <div className="col-md-3">
                                     <div className="accrd-img">
-                                      <img src="./assets/images/accordian/rheumatology.png" />
+                                      <Image
+                                        height="150"
+                                        width="150"
+                                        src="/assets/images/accordian/rheumatology.png"
+                                      />
                                     </div>
                                   </div>
                                   <div className="col-md-9">
@@ -280,7 +236,11 @@ const ChiefComplaints = () => {
                                 <div className="row align-items-center">
                                   <div className="col-md-3">
                                     <div className="accrd-img">
-                                      <img src="./assets/images/accordian/neurological.png" />
+                                      <Image
+                                        height="100"
+                                        width="100"
+                                        src="/assets/images/accordian/neurological.png"
+                                      />
                                     </div>
                                   </div>
                                   <div className="col-md-9">
@@ -342,7 +302,11 @@ const ChiefComplaints = () => {
                                 <div className="row align-items-center">
                                   <div className="col-md-3">
                                     <div className="accrd-img">
-                                      <img src="./assets/images/accordian/heart-problem.png" />
+                                      <Image
+                                        height="100"
+                                        width="100"
+                                        src="/assets/images/accordian/heart-problem.png"
+                                      />
                                     </div>
                                   </div>
                                   <div className="col-md-9">
@@ -410,7 +374,11 @@ const ChiefComplaints = () => {
                                 <div className="row align-items-center">
                                   <div className="col-md-3">
                                     <div className="accrd-img">
-                                      <img src="./assets/images/accordian/blood.png" />
+                                      <Image
+                                        height="50"
+                                        width="50"
+                                        src="/assets/images/accordian/blood.png"
+                                      />
                                     </div>
                                   </div>
                                   <div className="col-md-9">
@@ -472,7 +440,11 @@ const ChiefComplaints = () => {
                                 <div className="row align-items-center">
                                   <div className="col-md-3">
                                     <div className="accrd-img">
-                                      <img src="./assets/images/accordian/stomach.png" />
+                                      <Image
+                                        height="50"
+                                        width="50"
+                                        src="/assets/images/accordian/stomach.png"
+                                      />
                                     </div>
                                   </div>
                                   <div className="col-md-9">
@@ -534,7 +506,11 @@ const ChiefComplaints = () => {
                                 <div className="row align-items-center">
                                   <div className="col-md-3">
                                     <div className="accrd-img">
-                                      <img src="./assets/images/accordian/mental-problem.png" />
+                                      <Image
+                                        height="150"
+                                        width="150"
+                                        src="/assets/images/accordian/mental-problem.png"
+                                      />
                                     </div>
                                   </div>
                                   <div className="col-md-9">
@@ -596,7 +572,11 @@ const ChiefComplaints = () => {
                                 <div className="row align-items-center">
                                   <div className="col-md-3">
                                     <div className="accrd-img">
-                                      <img src="./assets/images/accordian/genetial.png" />
+                                      <Image
+                                        height="100"
+                                        width="100"
+                                        src="/assets/images/accordian/genetial.png"
+                                      />
                                     </div>
                                   </div>
                                   <div className="col-md-9">

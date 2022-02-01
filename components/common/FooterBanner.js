@@ -1,3 +1,4 @@
+import Image from "next/image";
 const FooterBanner = () => {
   return (
     <>
@@ -35,7 +36,12 @@ const FooterBanner = () => {
               </div>
               <div className="col-md-4">
                 <div className="cta-img">
-                  <img src="/assets/images/doc-slide-1.png" />
+                  <Image
+                    height="430"
+                    width="550"
+                    src="/assets/images/doc-slide-1.png"
+                    alt=""
+                  />
                 </div>
               </div>
             </div>

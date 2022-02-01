@@ -1,5 +1,6 @@
 import { BreadCrums } from "components/common";
 import UserNav from "components/UserComponents/UserNav";
+import Image from "next/image";
 
 const Index = () => {
   return (
@@ -39,7 +40,9 @@ const Index = () => {
                                   href="doctor-profile.html"
                                   className="avatar avatar-sm me-2"
                                 >
-                                  <img
+                                  <Image
+                                    height="145"
+                                    width="145"
                                     className="avatar-img rounded-circle"
                                     src="/user_assets/img/doctors/doctor-thumb-01.jpg"
                                     alt="User Image"
@@ -88,7 +91,9 @@ const Index = () => {
                                   href="doctor-profile.html"
                                   className="avatar avatar-sm me-2"
                                 >
-                                  <img
+                                  <Image
+                                    height="145"
+                                    width="145"
                                     className="avatar-img rounded-circle"
                                     src="/user_assets/img/doctors/doctor-thumb-02.jpg"
                                     alt="User Image"
@@ -135,7 +140,9 @@ const Index = () => {
                                   href="doctor-profile.html"
                                   className="avatar avatar-sm me-2"
                                 >
-                                  <img
+                                  <Image
+                                    height="145"
+                                    width="145"
                                     className="avatar-img rounded-circle"
                                     src="/user_assets/img/doctors/doctor-thumb-03.jpg"
                                     alt="User Image"
@@ -184,7 +191,9 @@ const Index = () => {
                                   href="doctor-profile.html"
                                   className="avatar avatar-sm me-2"
                                 >
-                                  <img
+                                  <Image
+                                    height="145"
+                                    width="145"
                                     className="avatar-img rounded-circle"
                                     src="/user_assets/img/doctors/doctor-thumb-04.jpg"
                                     alt="User Image"
@@ -231,7 +240,9 @@ const Index = () => {
                                   href="doctor-profile.html"
                                   className="avatar avatar-sm me-2"
                                 >
-                                  <img
+                                  <Image
+                                    height="145"
+                                    width="145"
                                     className="avatar-img rounded-circle"
                                     src="/user_assets/img/doctors/doctor-thumb-05.jpg"
                                     alt="User Image"
@@ -279,7 +290,9 @@ const Index = () => {
                                   href="doctor-profile.html"
                                   className="avatar avatar-sm me-2"
                                 >
-                                  <img
+                                  <Image
+                                    height="145"
+                                    width="145"
                                     className="avatar-img rounded-circle"
                                     src="/user_assets/img/doctors/doctor-thumb-06.jpg"
                                     alt="User Image"
@@ -327,7 +340,9 @@ const Index = () => {
                                   href="doctor-profile.html"
                                   className="avatar avatar-sm me-2"
                                 >
-                                  <img
+                                  <Image
+                                    height="145"
+                                    width="145"
                                     className="avatar-img rounded-circle"
                                     src="/user_assets/img/doctors/doctor-thumb-07.jpg"
                                     alt="User Image"
@@ -374,7 +389,9 @@ const Index = () => {
                                   href="doctor-profile.html"
                                   className="avatar avatar-sm me-2"
                                 >
-                                  <img
+                                  <Image
+                                    height="145"
+                                    width="145"
                                     className="avatar-img rounded-circle"
                                     src="/user_assets/img/doctors/doctor-thumb-08.jpg"
                                     alt="User Image"
@@ -421,7 +438,9 @@ const Index = () => {
                                   href="doctor-profile.html"
                                   className="avatar avatar-sm me-2"
                                 >
-                                  <img
+                                  <Image
+                                    height="145"
+                                    width="145"
                                     className="avatar-img rounded-circle"
                                     src="/user_assets/img/doctors/doctor-thumb-09.jpg"
                                     alt="User Image"
@@ -468,7 +487,9 @@ const Index = () => {
                                   href="doctor-profile.html"
                                   className="avatar avatar-sm me-2"
                                 >
-                                  <img
+                                  <Image
+                                    height="145"
+                                    width="145"
                                     className="avatar-img rounded-circle"
                                     src="/user_assets/img/doctors/doctor-thumb-10.jpg"
                                     alt="User Image"

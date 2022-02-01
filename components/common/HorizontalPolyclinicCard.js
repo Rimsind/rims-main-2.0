@@ -1,3 +1,4 @@
+import Image from "next/image";
 const HorizontalPolyclinicCard = () => {
   return (
     <>
@@ -8,8 +9,10 @@ const HorizontalPolyclinicCard = () => {
             <div className="doc-info-left">
               <div className="doctor-img poly-img">
                 <a href="doctor-profile.html">
-                  <img
-                    src="./assets/images/polyclinic.jpg"
+                  <Image
+                    height="130"
+                    width="145"
+                    src="/assets/images/polyclinic.jpg"
                     className="img-fluid"
                     alt="User Image"
                   />

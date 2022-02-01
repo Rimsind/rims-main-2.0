@@ -1,5 +1,6 @@
 import { BreadCrums } from "components/common";
 import UserNav from "components/UserComponents/UserNav";
+import Image from "next/image";
 
 const ProfileSettings = () => {
   return (
@@ -23,7 +24,9 @@ const ProfileSettings = () => {
                           <div className="form-group">
                             <div className="change-avatar">
                               <div className="profile-img">
-                                <img
+                                <Image
+                                  height="100"
+                                  width="100"
                                   src="/user_assets/img/patients/patient.jpg"
                                   alt="User Image"
                                 />

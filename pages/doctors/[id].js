@@ -1,4 +1,5 @@
 import { BreadCrums, DoctorTimetableCard } from "components/common/index";
+import Image from "next/image";
 const DoctorId = () => {
   return (
     <>
@@ -11,7 +12,9 @@ const DoctorId = () => {
                 <div className="doctor-widget">
                   <div className="doc-info-left">
                     <div className="doctor-img">
-                      <img
+                      <Image
+                        height="140"
+                        width="140"
                         src="/assets/images/smair-barman.jpg"
                         className="img-fluid"
                         alt="User Image"

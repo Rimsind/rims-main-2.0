@@ -1,10 +1,13 @@
+import Image from "next/image";
 const SpecialityBlock = () => {
   return (
     <>
       <div className="col-md">
         <div className="speicality-item text-center">
           <div className="speicality-img">
-            <img
+            <Image
+              height="100"
+              width="100"
               src="/assets/images/specialities/specialities-01.png"
               className="img-fluid"
               alt="Speciality"

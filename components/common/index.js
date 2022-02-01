@@ -12,6 +12,7 @@ import DoctorTimetableCard from "./DoctorTimetableCard";
 import PolyclinicTimetableCard from "./PolyclinicTimetableCard";
 import LocationCard from "./Locationcard";
 import SearchFilter from "./SearchFilter";
+import VerifyCard from "./VerifyCard";
 
 export {
   BreadCrums,
@@ -28,4 +29,5 @@ export {
   LocationCard,
   LocationFilter,
   SearchFilter,
+  VerifyCard,
 };

@@ -1,5 +1,5 @@
 import { BreadCrums, PolyclinicTimetableCard } from "components/common/index";
-
+import Image from "next/image";
 const NursingHomeId = () => {
   return (
     <>
@@ -16,7 +16,9 @@ const NursingHomeId = () => {
                   <div className="doc-info-left">
                     <div className="doctor-img poly-img">
                       <a href="doctor-profile.html">
-                        <img
+                        <Image
+                          height="130"
+                          width="145"
                           src="/assets/images/polyclinic.jpg"
                           className="img-fluid"
                           alt="User Image"
@@ -146,7 +148,9 @@ const NursingHomeId = () => {
                         <div className="col-lg-3 col-md-4">
                           <div className="special-box text-center">
                             <div className="special-body">
-                              <img
+                              <Image
+                                height="45"
+                                width="45"
                                 src="/assets/images/shapes/spec.png"
                                 alt=""
                               />
@@ -172,7 +176,9 @@ const NursingHomeId = () => {
                         <div className="col-lg-3 col-md-4">
                           <div className="special-box text-center">
                             <div className="special-body">
-                              <img
+                              <Image
+                                height="45"
+                                width="45"
                                 src="/assets/images/shapes/spec-01.png"
                                 alt=""
                               />
@@ -198,7 +204,9 @@ const NursingHomeId = () => {
                         <div className="col-lg-3 col-md-4">
                           <div className="special-box text-center">
                             <div className="special-body">
-                              <img
+                              <Image
+                                height="45"
+                                width="45"
                                 src="/assets/images/shapes/spec-02.png"
                                 alt=""
                               />
@@ -224,7 +232,9 @@ const NursingHomeId = () => {
                         <div className="col-lg-3 col-md-4">
                           <div className="special-box text-center">
                             <div className="special-body">
-                              <img
+                              <Image
+                                height="45"
+                                width="45"
                                 src="/assets/images/shapes/spec-04.png"
                                 alt=""
                               />

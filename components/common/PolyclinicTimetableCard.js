@@ -1,3 +1,4 @@
+import Image from "next/image";
 const PolyclinicTimetableCard = () => {
   return (
     <>
@@ -5,7 +6,9 @@ const PolyclinicTimetableCard = () => {
         <div className="doc-info-left">
           <div className="doctor-img">
             <a href="doctor-profile.html">
-              <img
+              <Image
+                height="150"
+                width="150"
                 src="/assets/images/smair-barman.jpg"
                 className="img-fluid"
                 alt="User Image"

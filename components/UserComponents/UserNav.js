@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 const UserNav = (props) => {
   return (
     <>
@@ -7,7 +8,9 @@ const UserNav = (props) => {
           <div className="widget-profile pro-widget-content">
             <div className="profile-info-widget">
               <a href="#" className="booking-doc-img">
-                <img
+                <Image
+                  height="145"
+                  width="145"
                   src="/user_assets/img/doctors/doctor-thumb-01.jpg"
                   alt="User Image"
                 />

@@ -1,3 +1,4 @@
+import Image from "next/image";
 const Login = () => {
   return (
     <>
@@ -9,7 +10,9 @@ const Login = () => {
                 <div className="account-content">
                   <div className="row align-items-center justify-content-center">
                     <div className="col-md-7 col-lg-6 login-left">
-                      <img
+                      <Image
+                        height="400"
+                        width="400"
                         src="/assets/images/login.png"
                         className="img-fluid"
                         alt="Doccure Login"

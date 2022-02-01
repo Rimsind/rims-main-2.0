@@ -1,5 +1,6 @@
 import { BreadCrums } from "components/common/index";
 import UserNav from "components/UserComponents/UserNav";
+import Image from "next/image";
 
 const Index = () => {
   return (
@@ -18,10 +19,11 @@ const Index = () => {
                     <div className="card">
                       <div className="card-body text-center">
                         <div className="mb-3">
-                          <img
+                          <Image
+                            height="55"
+                            width="55"
                             src="/user_assets/img/specialities/pt-dashboard-01.png"
                             alt=""
-                            width="55"
                           />
                         </div>
                         <h5>Heart Rate</h5>
@@ -35,10 +37,11 @@ const Index = () => {
                     <div className="card">
                       <div className="card-body text-center">
                         <div className="mb-3">
-                          <img
+                          <Image
+                            height="55"
+                            width="55"
                             src="/user_assets/img/specialities/pt-dashboard-02.png"
                             alt=""
-                            width="55"
                           />
                         </div>
                         <h5>Body Temperature</h5>
@@ -52,10 +55,11 @@ const Index = () => {
                     <div className="card">
                       <div className="card-body text-center">
                         <div className="mb-3">
-                          <img
+                          <Image
+                            height="55"
+                            width="55"
                             src="/user_assets/img/specialities/pt-dashboard-03.png"
                             alt=""
-                            width="55"
                           />
                         </div>
                         <h5>Glucose Level</h5>
@@ -67,10 +71,11 @@ const Index = () => {
                     <div className="card">
                       <div className="card-body text-center">
                         <div className="mb-3">
-                          <img
+                          <Image
+                            height="55"
+                            width="55"
                             src="/user_assets/img/specialities/pt-dashboard-04.png"
                             alt=""
-                            width="55"
                           />
                         </div>
                         <h5>Blood Pressure</h5>
@@ -100,7 +105,9 @@ const Index = () => {
                                 <h4>BMI Status</h4>
                               </div>
                               <div className="graph-img">
-                                <img
+                                <Image
+                                  height="50"
+                                  width="50"
                                   src="/user_assets/img/shapes/graph-01.png"
                                   alt=""
                                 />
@@ -123,7 +130,9 @@ const Index = () => {
                                 <h4>Heart Rate Status</h4>
                               </div>
                               <div className="graph-img">
-                                <img
+                                <Image
+                                  height="50"
+                                  width="50"
                                   src="/user_assets/img/shapes/graph-02.png"
                                   alt=""
                                 />
@@ -146,7 +155,9 @@ const Index = () => {
                                 <h4>FBC Status</h4>
                               </div>
                               <div className="graph-img">
-                                <img
+                                <Image
+                                  height="50"
+                                  width="50"
                                   src="/user_assets/img/shapes/graph-03.png"
                                   alt=""
                                 />
@@ -169,7 +180,9 @@ const Index = () => {
                                 <h4>Weight Status</h4>
                               </div>
                               <div className="graph-img">
-                                <img
+                                <Image
+                                  height="50"
+                                  width="50"
                                   src="/user_assets/img/shapes/graph-04.png"
                                   alt=""
                                 />
@@ -257,7 +270,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-01.jpg"
                                             alt="User Image"
@@ -306,7 +321,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-02.jpg"
                                             alt="User Image"
@@ -355,7 +372,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-03.jpg"
                                             alt="User Image"
@@ -405,7 +424,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-04.jpg"
                                             alt="User Image"
@@ -455,7 +476,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-05.jpg"
                                             alt="User Image"
@@ -505,7 +528,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-06.jpg"
                                             alt="User Image"
@@ -555,7 +580,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-07.jpg"
                                             alt="User Image"
@@ -605,7 +632,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-08.jpg"
                                             alt="User Image"
@@ -655,7 +684,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-09.jpg"
                                             alt="User Image"
@@ -704,7 +735,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-10.jpg"
                                             alt="User Image"
@@ -776,7 +809,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-01.jpg"
                                             alt="User Image"
@@ -813,7 +848,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-02.jpg"
                                             alt="User Image"
@@ -850,7 +887,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-03.jpg"
                                             alt="User Image"
@@ -888,7 +927,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-04.jpg"
                                             alt="User Image"
@@ -926,7 +967,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-05.jpg"
                                             alt="User Image"
@@ -964,7 +1007,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-06.jpg"
                                             alt="User Image"
@@ -1002,7 +1047,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-07.jpg"
                                             alt="User Image"
@@ -1040,7 +1087,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-08.jpg"
                                             alt="User Image"
@@ -1078,7 +1127,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-09.jpg"
                                             alt="User Image"
@@ -1115,7 +1166,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-10.jpg"
                                             alt="User Image"
@@ -1181,7 +1234,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-01.jpg"
                                             alt="User Image"
@@ -1224,7 +1279,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-02.jpg"
                                             alt="User Image"
@@ -1267,7 +1324,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-03.jpg"
                                             alt="User Image"
@@ -1311,7 +1370,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-04.jpg"
                                             alt="User Image"
@@ -1355,7 +1416,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-05.jpg"
                                             alt="User Image"
@@ -1399,7 +1462,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-06.jpg"
                                             alt="User Image"
@@ -1443,7 +1508,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-07.jpg"
                                             alt="User Image"
@@ -1487,7 +1554,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-08.jpg"
                                             alt="User Image"
@@ -1531,7 +1600,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-09.jpg"
                                             alt="User Image"
@@ -1574,7 +1645,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-10.jpg"
                                             alt="User Image"
@@ -1634,7 +1707,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-01.jpg"
                                             alt="User Image"
@@ -1674,7 +1749,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-02.jpg"
                                             alt="User Image"
@@ -1714,7 +1791,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-03.jpg"
                                             alt="User Image"
@@ -1755,7 +1834,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-04.jpg"
                                             alt="User Image"
@@ -1796,7 +1877,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-05.jpg"
                                             alt="User Image"
@@ -1837,7 +1920,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-06.jpg"
                                             alt="User Image"
@@ -1878,7 +1963,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-07.jpg"
                                             alt="User Image"
@@ -1919,7 +2006,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-08.jpg"
                                             alt="User Image"
@@ -1960,7 +2049,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-09.jpg"
                                             alt="User Image"
@@ -2000,7 +2091,9 @@ const Index = () => {
                                           href="doctor-profile.html"
                                           className="avatar avatar-sm me-2"
                                         >
-                                          <img
+                                          <Image
+                                            height="50"
+                                            width="50"
                                             className="avatar-img rounded-circle"
                                             src="/user_assets/img/doctors/doctor-thumb-10.jpg"
                                             alt="User Image"
