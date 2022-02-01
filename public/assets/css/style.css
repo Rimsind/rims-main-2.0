@@ -164,6 +164,7 @@ ul {
 }
 
 .header li.logged-item a.nav-link span.user-img {
+  margin-top: 22px;
   display: inline-block;
   position: relative;
 }
