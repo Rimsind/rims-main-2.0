@@ -19,7 +19,7 @@ const AdvanceSettings = () => {
                   <div className="card-body">
                     <p>
                       Do you want to delete the account? Please press below
-                      "Delete" button
+                      &quot;Delete&quot; button
                     </p>
                     <button type="button" className="btn btn-danger shadow">
                       Delete Account

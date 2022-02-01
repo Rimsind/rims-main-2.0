@@ -125,9 +125,9 @@ const Index = () => {
                   </p>
                   <p className="fs-6">
                     web page editors now use Lorem Ipsum as their default model
-                    text, and a search for 'lorem ipsum' will uncover many web
-                    sites still in their infancy. Various versions have evolved
-                    over the years, sometimes
+                    text, and a search for &apos;lorem ipsum&apos; will uncover
+                    many web sites still in their infancy. Various versions have
+                    evolved over the years, sometimes
                   </p>
                   <a href="#">Read More..</a>
                 </div>
