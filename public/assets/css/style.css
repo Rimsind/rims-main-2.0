@@ -1601,7 +1601,7 @@ ul {
   -ms-flex-align: center;
   align-items: center;
   /* background: url(../images/main.jpg); */
-  height: 60vh;
+  height: 65vh;
   background-size: cover;
 }
 
@@ -1629,7 +1629,7 @@ ul {
 
 .section-banner .search-doctor .search-area {
   background: #ffffff6b;
-  padding: 60px 30px;
+  padding: 40px 30px;
   position: relative;
   z-index: 1;
   border-radius: 10px;

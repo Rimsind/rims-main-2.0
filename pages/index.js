@@ -17,7 +17,7 @@ const Index = () => {
         >
           <div className="container">
             <div className="row">
-              <div className="col-md-6 search-doctor">
+              <div className="col-md-5 search-doctor">
                 <div className="search-area">
                   <h2 className="text-center fs-5 mb-3">
                     Search Doctor, Make an Appointment
@@ -73,7 +73,7 @@ const Index = () => {
                   </form>
                 </div>
               </div>
-              <div className="col-md-6"></div>
+              <div className="col-md-7"></div>
             </div>
           </div>
         </section>
