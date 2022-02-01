@@ -234,12 +234,6 @@ ul {
   padding: 0 5px;
 }
 
-.footer .patient_sec,
-.footer .doctor_sec,
-.footer .contact_info {
-  margin-top: 8rem;
-}
-
 .footer .patient_sec p,
 .footer .doctor_sec p,
 .footer .contact_info p {
@@ -262,7 +256,7 @@ ul {
 }
 
 .footer .contact_info {
-  margin-top: 8rem;
+  margin-top: -25px;
 }
 
 .footer .contact_info ul {

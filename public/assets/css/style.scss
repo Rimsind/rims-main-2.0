@@ -320,8 +320,6 @@ ul {
   .patient_sec,
   .doctor_sec,
   .contact_info {
-    margin-top: 8rem;
-
     p {
       color: $white;
       font-family: $primary_font_family;
@@ -339,8 +337,7 @@ ul {
   }
 
   .contact_info {
-    margin-top: 8rem;
-
+    margin-top: -25px;
     ul {
       color: $white;
       list-style-type: none;
@@ -1217,7 +1214,7 @@ ul {
   justify-content: center;
   align-items: center;
   background: url(../images/main.jpg);
-  height: 50vh;
+  height: 60vh;
   background-size: cover;
   // Media Query
   @media screen and (max-width: $small) {

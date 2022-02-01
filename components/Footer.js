@@ -2,11 +2,10 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <>
-      {" "}
       <footer className="footer">
         <div className="container">
-          <div className="row">
-            <div className="col-md-3">
+          <div className="row align-items-center">
+            <div className="col-md-4">
               <div className="footer_logo">
                 <Image
                   height="100"
@@ -39,7 +38,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-md-3">
+            <div className="col-md">
               <div className="patient_sec">
                 <p>For Patients</p>
                 <ul>
@@ -61,7 +60,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-md-3">
+            <div className="col-md">
               <div className="doctor_sec">
                 <p>For Doctors</p>
                 <ul>
@@ -83,29 +82,34 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-md-3">
+            <div className="col-md">
               <div className="contact_info">
                 <p>Contact Us</p>
                 <ul>
                   <li>
-                    <i className="fas fa-map-marker-alt topbar_lft_icn"></i>
+                    <i className="fas fa-map-marker-alt topbar_lft_icn pe-2"></i>
                     <a href="#" className="topbar_links">
                       Citycenter, Haldia
                     </a>
                   </li>
                   <li>
-                    <i className="fas fa-mobile topbar_lft_icn"></i>
+                    <i className="fas fa-mobile topbar_lft_icn pe-2"></i>
                     <a href="#" className="topbar_links">
                       987456321
                     </a>
                   </li>
                   <li>
-                    <i className="far fa-envelope topbar_lft_icn"></i>
+                    <i className="far fa-envelope topbar_lft_icn pe-2"></i>
                     <a href="#" className="topbar_links">
                       mail@riimsindia.com
                     </a>
                   </li>
                 </ul>
+              </div>
+            </div>
+            <div className="col-md">
+              <div className="admn_btn">
+                <button className="btn btn-primary">Administrative</button>
               </div>
             </div>
           </div>
