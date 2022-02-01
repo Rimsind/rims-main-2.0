@@ -11,7 +11,10 @@ const Index = () => {
   return (
     <>
       <main className="main">
-        <section className="section section-banner">
+        <section
+          className="section section-banner"
+          style={{ backgroundImage: "url(/assets/images/main.jpg)" }}
+        >
           <div className="container">
             <div className="row">
               <div className="col-md-6 search-doctor">
