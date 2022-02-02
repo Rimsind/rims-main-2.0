@@ -25,7 +25,7 @@ ul {
 }
 
 .admin_page {
-  background-image: url(../images//png-plus.png), url(../images//png-plus2.png);
+  background-image: url(../images/png-plus.png), url(../images/png-plus2.png);
   background-position: left bottom, right top;
   background-repeat: no-repeat, no-repeat;
   height: 94vh;
@@ -66,7 +66,7 @@ ul {
 }
 
 .admin_page .card_list {
-  height: 60vh;
+  height: 85vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 const Footer = () => {
   return (
     <>
@@ -109,7 +110,9 @@ const Footer = () => {
             </div>
             <div className="col-md">
               <div className="admn_btn">
-                <button className="btn btn-primary">Administrative</button>
+                <Link href="/administration">
+                  <a className="btn btn-primary">Administrative</a>
+                </Link>
               </div>
             </div>
           </div>
