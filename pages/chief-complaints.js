@@ -108,6 +108,7 @@ const ChiefComplaints = () => {
                                         height="100"
                                         width="100"
                                         src="/assets/images/accordian/general-problem.png"
+                                        alt=""
                                       />
                                     </div>
                                   </div>
@@ -174,6 +175,7 @@ const ChiefComplaints = () => {
                                         height="150"
                                         width="150"
                                         src="/assets/images/accordian/rheumatology.png"
+                                        alt=""
                                       />
                                     </div>
                                   </div>
@@ -240,6 +242,7 @@ const ChiefComplaints = () => {
                                         height="100"
                                         width="100"
                                         src="/assets/images/accordian/neurological.png"
+                                        alt=""
                                       />
                                     </div>
                                   </div>
@@ -306,6 +309,7 @@ const ChiefComplaints = () => {
                                         height="100"
                                         width="100"
                                         src="/assets/images/accordian/heart-problem.png"
+                                        alt=""
                                       />
                                     </div>
                                   </div>
@@ -378,6 +382,7 @@ const ChiefComplaints = () => {
                                         height="50"
                                         width="50"
                                         src="/assets/images/accordian/blood.png"
+                                        alt=""
                                       />
                                     </div>
                                   </div>
@@ -444,6 +449,7 @@ const ChiefComplaints = () => {
                                         height="50"
                                         width="50"
                                         src="/assets/images/accordian/stomach.png"
+                                        alt=""
                                       />
                                     </div>
                                   </div>
@@ -510,6 +516,7 @@ const ChiefComplaints = () => {
                                         height="150"
                                         width="150"
                                         src="/assets/images/accordian/mental-problem.png"
+                                        alt=""
                                       />
                                     </div>
                                   </div>
@@ -576,6 +583,7 @@ const ChiefComplaints = () => {
                                         height="100"
                                         width="100"
                                         src="/assets/images/accordian/genetial.png"
+                                        alt=""
                                       />
                                     </div>
                                   </div>
