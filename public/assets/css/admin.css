@@ -25,8 +25,7 @@ ul {
 }
 
 .admin_page {
-  background-image: url(/assets/img/png-plus.png),
-    url(/assets/img/png-plus2.png);
+  background-image: url(../images//png-plus.png), url(../images//png-plus2.png);
   background-position: left bottom, right top;
   background-repeat: no-repeat, no-repeat;
   height: 94vh;
