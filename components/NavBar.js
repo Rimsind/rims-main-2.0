@@ -60,6 +60,7 @@ const NavBar = () => {
                 width="120"
                 className="logo"
                 src="/assets/images/logo-dark.png"
+                alt=""
               />
             </a>
             <button

@@ -12,6 +12,7 @@ const Footer = () => {
                   height="100"
                   width="150"
                   src="/assets/images/logo-white.png"
+                  alt=""
                 />
               </div>
               <div className="footer_para">
