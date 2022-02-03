@@ -5,7 +5,12 @@ import {
   HorizontalDoctorCard,
 } from "components/common/index";
 
+import useSWR from "swr";
+import { apiUrl, fetcher } from "config/api";
+
 const Index = () => {
+  const { data: doctors } = useSWR(`${apiUrl}/doctors`, fetcher);
+
   return (
     <>
       <main className="main">
@@ -18,10 +23,9 @@ const Index = () => {
                 <SearchFilter />
               </div>
               <div className="col-md-12 col-lg-8 col-xl-9">
-                <HorizontalDoctorCard />
-                <HorizontalDoctorCard />
-                <HorizontalDoctorCard />
-                <HorizontalDoctorCard />
+                {doctors?.map((item, index) => (
+                  <HorizontalDoctorCard doctorData={item} key={index} />
+                ))}
 
                 <div className="load-more text-center mb-4">
                   <a className="btn btn-load btn-sm" href="javascript:void(0);">

@@ -1,8 +1,8 @@
 import Image from "next/image";
-const HorizontalDoctorCard = () => {
+import Link from "next/link";
+const HorizontalDoctorCard = ({ doctorData }) => {
   return (
     <>
-      {" "}
       <div className="card">
         <div className="card-body">
           <div className="doctor-widget">
@@ -12,26 +12,30 @@ const HorizontalDoctorCard = () => {
                   <Image
                     height="150"
                     width="150"
-                    src="/assets/images/smair-barman.jpg"
+                    src={doctorData?.image?.url || "/assets/images/profile.png"}
                     className="img-fluid"
                     alt="User Image"
                   />
                 </a>
               </div>
               <div className="doc-info-cont">
-                <h4 className="doc-name">Dr. Samir Barman</h4>
+                <h4 className="doc-name">
+                  Dr. {doctorData?.firstName} {doctorData?.lastName}
+                </h4>
                 <p className="doc-speciality">
-                  25 years experience, Consultant Rehabilitation
+                  {doctorData?.experienceInYrs} years experience, Consultant{" "}
+                  {doctorData?.specialty?.name}
                 </p>
                 <h5 className="doc-department">
                   <i className="fas fa-user-tag"></i>
-                  Medicine
+                  {doctorData?.specialty?.name}
                 </h5>
                 <i className="far fa-envelope mb-3"></i>
-                samirbarman112@gmail.com
+                {doctorData?.email}
                 <div className="clinic-services">
                   <span>
-                    <i className="fab fa-skype"></i> Skype Id: aryajana@0124
+                    <i className="fab fa-skype"></i> Skype Id:{" "}
+                    {doctorData?.skype_id}
                   </span>
                 </div>
               </div>
@@ -40,7 +44,8 @@ const HorizontalDoctorCard = () => {
               <div className="clini-infos">
                 <ul>
                   <li>
-                    <i className="fas fa-certificate"></i> MBBS
+                    <i className="fas fa-certificate"></i>
+                    {doctorData?.qualification}
                   </li>
 
                   <li>
@@ -58,9 +63,9 @@ const HorizontalDoctorCard = () => {
                 </ul>
               </div>
               <div className="clinic-booking">
-                <a className="view-pro-btn" href="doctor_details.html">
-                  View Profile
-                </a>
+                <Link href={`/doctors/${doctorData?.id}`}>
+                  <a className="view-pro-btn">View Profile</a>
+                </Link>
               </div>
             </div>
           </div>
