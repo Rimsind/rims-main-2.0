@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 const SignUp = () => {
   return (
     <>
@@ -31,14 +32,14 @@ const SignUp = () => {
                             type="text"
                             className="form-control floating"
                           />
-                          <label className="focus-label">Name</label>
+                          <label className="focus-label">First Name</label>
                         </div>
                         <div className="form-group form-focus">
                           <input
-                            type="number"
+                            type="test"
                             className="form-control floating"
                           />
-                          <label className="focus-label">Mobile</label>
+                          <label className="focus-label">Last Name</label>
                         </div>
                         <div className="form-group form-focus">
                           <input
@@ -64,12 +65,11 @@ const SignUp = () => {
                           </label>
                         </div>
                         <div className="text-end">
-                          <a
-                            className="forgot-link"
-                            href="forgot-password.html"
-                          >
-                            Already have an account ?
-                          </a>
+                          <Link href="/user/login">
+                            <a className="forgot-link">
+                              Already have an account ?
+                            </a>
+                          </Link>
                         </div>
                         <button
                           className="btn btn-primary w-100 btn-lg login-btn"

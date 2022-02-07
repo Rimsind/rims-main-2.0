@@ -1,5 +1,73 @@
 import Image from "next/image";
+import Link from "next/link";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import { setCookie } from "nookies";
+import Router from "next/router";
+import { useAuth } from "context";
 const Login = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+
+    formState: { errors },
+  } = useForm();
+
+  const { dispatchAuth } = useAuth();
+
+  const onSubmit = async (data, e) => {
+    e.preventDefault();
+    if (!data.email || !data.password) {
+      alert("please fill all data");
+      return;
+    }
+    dispatchAuth({ type: "AUTH_LOADING" });
+
+    try {
+      const payload = {
+        identifier: data.email,
+        password: data.password,
+      };
+      const res = await axios.post(
+        "https://manage.riimstechnology.com/auth/local",
+        payload
+      );
+      const result = res.data;
+
+      if (result.jwt && result.user.role.id === 1) {
+        setCookie(null, "token", result.jwt, {
+          maxAge: 30 * 24 * 60 * 60,
+          path: "/",
+        });
+        setCookie(null, "user", JSON.stringify(result.user), {
+          maxAge: 30 * 24 * 60 * 60,
+          path: "/",
+        });
+        dispatchAuth({
+          type: "LOGIN_SUCCESS",
+          payload: { token: result.jwt, user: result.user },
+        });
+
+        reset();
+        alert("login success");
+        Router.push("/");
+        // if (redirect) {
+        //   Router.push(`/${redirect}`);
+        // } else {
+        //   Router.push("/");
+        // }
+      }
+    } catch (error) {
+      dispatchAuth({
+        type: "LOGIN_FAILED",
+        payload: error.message
+          ? error.message
+          : "Something went wrong, try agin",
+      });
+      alert("login failed");
+    }
+  };
   return (
     <>
       <main className="main">
@@ -20,15 +88,14 @@ const Login = () => {
                     </div>
                     <div className="col-md-12 col-lg-6 login-right">
                       <div className="login-header">
-                        <h3>
-                          Login <span>Rims India</span>
-                        </h3>
+                        <h3>Patient Login</h3>
                       </div>
-                      <form>
+                      <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-group form-focus">
                           <input
                             type="email"
                             className="form-control floating"
+                            {...register("email")}
                           />
                           <label className="focus-label">Email</label>
                         </div>
@@ -36,6 +103,7 @@ const Login = () => {
                           <input
                             type="password"
                             className="form-control floating"
+                            {...register("password")}
                           />
                           <label className="focus-label">Password</label>
                         </div>
@@ -70,8 +138,10 @@ const Login = () => {
                           </div>
                         </div>
                         <div className="text-center mt-3">
-                          Don’t have an account?
-                          <a href="register.html">Register</a>
+                          Don&apos;t have an account?
+                          <Link href="/user/signup">
+                            <a>Register</a>
+                          </Link>
                         </div>
                       </form>
                     </div>

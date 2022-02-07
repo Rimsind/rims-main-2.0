@@ -118,9 +118,9 @@ const NavBar = () => {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link login_font" href="#">
-                    LOGIN / SIGNUP
-                  </a>
+                  <Link href="/user/login">
+                    <a className="nav-link login_font">LOGIN / SIGNUP</a>
+                  </Link>
                 </li>
                 <li className="nav-item dropdown has-arrow logged-item">
                   <a
