@@ -183,11 +183,11 @@ const ProfileSettings = () => {
                           <div className="col-12 col-md-6">
                             <div className="form-group">
                               <label>State</label>
-                              <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Newyork"
-                              />
+                              <select className="form-select form-control">
+                                <option>Mumbai</option>
+                                <option>Delhi</option>
+                                <option>West Bengal</option>
+                              </select>
                             </div>
                           </div>
                           <div className="col-12 col-md-6">
@@ -203,11 +203,11 @@ const ProfileSettings = () => {
                           <div className="col-12 col-md-6">
                             <div className="form-group">
                               <label>Country</label>
-                              <input
-                                type="text"
-                                className="form-control"
-                                placeholder="United States"
-                              />
+                              <select className="form-select form-control">
+                                <option>India</option>
+                                <option>China</option>
+                                <option>Pakistan</option>
+                              </select>
                             </div>
                           </div>
                           <div className="submit-section text-end">
