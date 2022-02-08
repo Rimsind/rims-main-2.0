@@ -30,7 +30,7 @@ const ProfilePicture = ({ patient }) => {
     );
     const result = await response.data;
     alert("Image uploaded succesfully");
-    setLoading(false);
+    return result, setLoading(false);
   };
   return (
     <>
@@ -69,7 +69,7 @@ const ProfilePicture = ({ patient }) => {
                   <input
                     type="btn"
                     className="btn btn-primary"
-                    value={loading ? "loading..." : "upload"}
+                    value={loading ? "Uploading..." : "upload"}
                     disabled={loading}
                     onClick={uploadProfileImage}
                   />

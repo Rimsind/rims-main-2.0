@@ -5,6 +5,9 @@ import MedicalHistory from "./MedicalHistory";
 import UploadMedicalRecord from "./UploadMedicalRecord";
 import EmploymentStatus from "./EmploymentStatus";
 import FamilyMadicalHistory from "./FamilyMadicalHistory";
+import AddressInfo from "./AddressInfo";
+import ProfileInfo from "./ProfileInfo";
+import ProfilePicture from "./ProfilePicture";
 
 export {
   GeneralInformation,
@@ -14,4 +17,7 @@ export {
   EmploymentStatus,
   MedicalHistory,
   SocialHistory,
+  AddressInfo,
+  ProfileInfo,
+  ProfilePicture,
 };

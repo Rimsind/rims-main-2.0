@@ -2,12 +2,15 @@ import { useForm } from "react-hook-form";
 import { apiUrl } from "config/api";
 import axios from "axios";
 import { useAuth } from "context";
+import { useState } from "react";
+
 const SocialHistory = ({ patient }) => {
   const { socialHistory } = patient;
   const { auth } = useAuth();
-
+  const [loading, setLoading] = useState(false);
   const { register, handleSubmit } = useForm();
   const updateSocialHistory = async (data, event) => {
+    setLoading(true);
     event.preventDefault();
     try {
       const payload = {
@@ -38,7 +41,7 @@ const SocialHistory = ({ patient }) => {
       );
       const result = res.data;
       alert("Social History Updated Succesfully");
-      return result;
+      return result, setLoading(false);
     } catch (err) {
       console.log(err.message);
     }
@@ -694,9 +697,12 @@ const SocialHistory = ({ patient }) => {
             <div className="col-md-4"></div>
             <div className="col-md-4">
               <div className="right-button" style={{ textAlign: "right" }}>
-                <button type="submit" className="btn btn-success">
-                  Save Changes
-                </button>
+                <input
+                  type="submit"
+                  className="btn btn-primary"
+                  value={loading ? "Saving..." : "Save Changes"}
+                  disabled={loading}
+                />
               </div>
             </div>
           </div>

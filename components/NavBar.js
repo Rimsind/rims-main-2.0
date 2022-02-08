@@ -41,7 +41,7 @@ const NavBar = () => {
                   </li>
                   <li>
                     <i className="far fa-envelope topbar_lft_icn"></i>
-                    <a href="#" className="topbar_links">
+                    <a href="#" className="topbar_links ">
                       mail@riimsindia.com
                     </a>
                   </li>
@@ -129,12 +129,12 @@ const NavBar = () => {
                 </li>
               </ul>
               <ul className="navbar-nav ms-auto d-flex align-items-center">
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <a className="nav-link" href="#">
                     <i className="fas fa-phone-alt"></i> Contact: +1 315 369
                     5943
                   </a>
-                </li>
+                </li> */}
                 {auth?.token && auth?.user ? (
                   <>
                     <li className="nav-item dropdown has-arrow logged-item">

@@ -12,6 +12,7 @@ const MedicalHistory = ({ patient }) => {
   const [surgeryDate, setSurgeryDate] = useState();
   const [allSurgery, setAllSurgery] = useState([]);
 
+  const [loading, setLoading] = useState(false);
   const addSurgicalHistory = () => {
     setAllSurgery([
       ...allSurgery,
@@ -78,6 +79,7 @@ const MedicalHistory = ({ patient }) => {
 
   const { register, handleSubmit } = useForm();
   const updateMedicalHistory = async (data, event) => {
+    setLoading(true);
     event.preventDefault();
     try {
       const payload = {
@@ -117,7 +119,7 @@ const MedicalHistory = ({ patient }) => {
       );
       const result = res.data;
       alert("Medical History Updated Succesfully");
-      return result;
+      return result, setLoading(false);
     } catch (err) {
       console.log(err.message);
     }
@@ -1066,9 +1068,12 @@ const MedicalHistory = ({ patient }) => {
             <div className="col-md-4"></div>
             <div className="col-md-4">
               <div className="right-button" style={{ textAlign: "right" }}>
-                <button type="submit" className="btn btn-success">
-                  Save Changes
-                </button>
+                <input
+                  type="submit"
+                  className="btn btn-primary"
+                  value={loading ? "Saving..." : "Save Changes"}
+                  disabled={loading}
+                />
               </div>
             </div>
           </div>

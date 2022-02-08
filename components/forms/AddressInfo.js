@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { apiUrl } from "config/api";
 import axios from "axios";
 import { useAuth } from "context";
+import { useState } from "react";
 
 const StatesList = [
   "Andaman and Nicobar Islands",
@@ -45,9 +46,10 @@ const StatesList = [
 
 const AddressInfo = ({ patient }) => {
   const { auth } = useAuth();
-
+  const [loading, setLoading] = useState(false);
   const { register, handleSubmit } = useForm();
   const updateAddress = async (data, event) => {
+    setLoading(true);
     event.preventDefault();
     try {
       const payload = {
@@ -71,7 +73,7 @@ const AddressInfo = ({ patient }) => {
       );
       const result = res.data;
       alert("Details Updated Succesfully");
-      return result;
+      return result, setLoading(false);
     } catch (err) {
       console.log(err.message);
     }
@@ -178,9 +180,12 @@ const AddressInfo = ({ patient }) => {
                 </div>
               </div>
               <div className="submit-section text-end">
-                <button type="submit" className="btn btn-primary submit-btn">
-                  Save Changes
-                </button>
+                <input
+                  type="submit"
+                  className="btn btn-primary submit-btn"
+                  value={loading ? "Saving..." : "Save Changes"}
+                  disabled={loading}
+                />
               </div>
             </div>
           </form>

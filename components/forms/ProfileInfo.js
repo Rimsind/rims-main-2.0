@@ -5,8 +5,8 @@ import { useAuth } from "context";
 import { useState } from "react";
 
 const ProfileInfo = ({ patient }) => {
+  // console.log(patient);
   const { auth } = useAuth();
-  console.log(patient);
   const [loading, setLoading] = useState(false);
   const { register, handleSubmit } = useForm();
   const updateProfile = async (data, event) => {
@@ -35,9 +35,8 @@ const ProfileInfo = ({ patient }) => {
         }
       );
       const result = res.data;
-      setLoading(false);
       alert("Profile Updated Succesfully");
-      return result;
+      return result, setLoading(false);
     } catch (error) {
       console.log(error.message);
     }
@@ -144,7 +143,7 @@ const ProfileInfo = ({ patient }) => {
                   >
                     <option
                       name="blood_group"
-                      defaultValue={
+                      value={
                         !!patient?.blood_group?.id && patient.blood_group?.id
                       }
                     >
@@ -202,14 +201,12 @@ const ProfileInfo = ({ patient }) => {
                 </div>
               </div>
               <div className="submit-section text-end">
-                <button
+                <input
                   type="submit"
                   className="btn btn-primary submit-btn"
-                  value={loading ? "loading..." : "Save Changes"}
+                  value={loading ? "Saving..." : "Save Changes"}
                   disabled={loading}
-                >
-                  Save Changes
-                </button>
+                />
               </div>
             </div>
           </div>

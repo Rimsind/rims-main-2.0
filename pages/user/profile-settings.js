@@ -1,14 +1,12 @@
 import { BreadCrums } from "components/common";
 import UserNav from "components/UserComponents/UserNav";
-import Image from "next/image";
+
 import { apiUrl } from "config/api";
 import axios from "axios";
 import useSWR from "swr";
-import AddressInfo from "components/forms/AddressInfo";
-import ProfileInfo from "components/forms/ProfileInfo";
+import { ProfileInfo, ProfilePicture, AddressInfo } from "components/forms";
 
 import { useAuth } from "context";
-import ProfilePicture from "components/forms/ProfilePicture";
 
 const ProfileSettings = () => {
   const { auth } = useAuth();
