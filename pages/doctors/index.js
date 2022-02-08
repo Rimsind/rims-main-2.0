@@ -18,9 +18,11 @@ const Index = () => {
         <div className="content">
           <div className="container-fluid">
             <div className="row">
-              <div className="col-md-12 col-lg-4 col-xl-3 theiaStickySidebar">
-                <LocationFilter />
-                <SearchFilter />
+              <div className="col-md-12 col-lg-4 col-xl-3">
+                <div className="sticky-top">
+                  <LocationFilter />
+                  <SearchFilter />
+                </div>
               </div>
               <div className="col-md-12 col-lg-8 col-xl-9">
                 {doctors?.map((item, index) => (

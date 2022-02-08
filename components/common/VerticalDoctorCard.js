@@ -17,26 +17,19 @@ const VerticalDoctorCard = () => {
           </div>
           <div className="pro-content">
             <h3 className="title">
-              <a href="doctor-profile.html">Ruby Perrin</a>
+              <a href="doctor-profile.html">Dr. Samir Barman</a>
               <i className="fas fa-check-circle verified"></i>
             </h3>
             <p className="speciality">
-              MDS - Periodontology and Oral Implantology, BDS
+              25 years experience, Consultant Rehabilitation
             </p>
-            <div className="rating">
-              <i className="fas fa-star filled"></i>
-              <i className="fas fa-star filled"></i>
-              <i className="fas fa-star filled"></i>
-              <i className="fas fa-star filled"></i>
-              <i className="fas fa-star filled"></i>
-              <span className="d-inline-block average-rating">(17)</span>
-            </div>
+
             <ul className="available-info">
               <li>
-                <i className="fas fa-map-marker-alt"></i> Florida, USA
+                <i className="fas fa-certificate"></i> MBBS
               </li>
               <li>
-                <i className="far fa-clock"></i> Available on Fri, 22 Mar
+                <i className="fas fa-user-tag"></i> Rehabilitation
               </li>
               <li>
                 <i className="far fa-money-bill-alt"></i> $300 - $1000
@@ -48,14 +41,9 @@ const VerticalDoctorCard = () => {
               </li>
             </ul>
             <div className="row row-sm">
-              <div className="col-6">
-                <a href="doctor-profile.html" className="btn view-btn">
+              <div className="col-12">
+                <a href="doctor-profile.html" className="btn book-btn">
                   View Profile
-                </a>
-              </div>
-              <div className="col-6">
-                <a href="booking.html" className="btn book-btn">
-                  Book Now
                 </a>
               </div>
             </div>

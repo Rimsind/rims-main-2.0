@@ -6,8 +6,8 @@ const SpecialityBlock = () => {
         <div className="speicality-item text-center">
           <div className="speicality-img">
             <Image
-              height="100"
-              width="100"
+              height={100}
+              width={100}
               src="/assets/images/specialities/specialities-01.png"
               className="img-fluid"
               alt="Speciality"
