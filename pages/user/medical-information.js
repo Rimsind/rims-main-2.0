@@ -50,115 +50,139 @@ const MedicalInformation = () => {
               <div className="col-md-7 col-lg-8 col-xl-9">
                 <div className="card shadow-sm">
                   <div className="card-body">
-                    <div class="flex-fill">
-                      <div class="card-header">
+                    <div className="flex-fill">
+                      <div className="card-header">
                         <ul
                           role="tablist"
-                          class="nav nav-tabs card-header-tabs"
+                          className="nav nav-tabs card-header-tabs"
                         >
-                          <li class="nav-item">
+                          <li className="nav-item">
                             <a
                               href="#tab-1"
                               data-bs-toggle="tab"
-                              class="nav-link active"
+                              className="nav-link active"
                             >
                               Genral Information
                             </a>
                           </li>
-                          <li class="nav-item">
+                          <li className="nav-item">
                             <a
                               href="#tab-2"
                               data-bs-toggle="tab"
-                              class="nav-link"
+                              className="nav-link"
                             >
                               Social Histroy & Living Environment
                             </a>
                           </li>
-                          <li class="nav-item">
+                          <li className="nav-item">
                             <a
                               href="#tab-3"
                               data-bs-toggle="tab"
-                              class="nav-link"
+                              className="nav-link"
                             >
                               Employment Status
                             </a>
                           </li>
-                          <li class="nav-item">
+                          <li className="nav-item">
                             <a
                               href="#tab-4"
                               data-bs-toggle="tab"
-                              class="nav-link"
+                              className="nav-link"
                             >
                               Medical History
                             </a>
                           </li>
-                          <li class="nav-item">
+                          <li className="nav-item">
                             <a
                               href="#tab-5"
                               data-bs-toggle="tab"
-                              class="nav-link"
+                              className="nav-link"
                             >
                               Functional Status
                             </a>
                           </li>
-                          <li class="nav-item">
+                          <li className="nav-item">
                             <a
                               href="#tab-6"
                               data-bs-toggle="tab"
-                              class="nav-link"
+                              className="nav-link"
                             >
                               Family Medical History
                             </a>
                           </li>
-                          <li class="nav-item">
+                          <li className="nav-item">
                             <a
                               href="#tab-7"
                               data-bs-toggle="tab"
-                              class="nav-link"
+                              className="nav-link"
                             >
                               Medical Records
                             </a>
                           </li>
                         </ul>
                       </div>
-                      <div class="card-body">
-                        <div class="tab-content pt-0">
+                      <div className="card-body">
+                        <div className="tab-content pt-0">
                           <div
                             role="tabpanel"
                             id="tab-1"
-                            class="tab-pane fade show active"
+                            className="tab-pane fade show active"
                           >
-                            <div class="row">
+                            <div className="row">
                               <GeneralInformation patient={data} />
                             </div>
                           </div>
-                          <div role="tabpanel" id="tab-2" class="tab-pane fade">
-                            <div class="row">
+                          <div
+                            role="tabpanel"
+                            id="tab-2"
+                            className="tab-pane fade"
+                          >
+                            <div className="row">
                               <SocialHistory patient={data} />
                             </div>
                           </div>
-                          <div role="tabpanel" id="tab-3" class="tab-pane fade">
-                            <div class="row">
+                          <div
+                            role="tabpanel"
+                            id="tab-3"
+                            className="tab-pane fade"
+                          >
+                            <div className="row">
                               <EmploymentStatus patient={data} />
                             </div>
                           </div>
-                          <div role="tabpanel" id="tab-4" class="tab-pane fade">
-                            <div class="row">
+                          <div
+                            role="tabpanel"
+                            id="tab-4"
+                            className="tab-pane fade"
+                          >
+                            <div className="row">
                               <MedicalHistory patient={data} />
                             </div>
                           </div>
-                          <div role="tabpanel" id="tab-5" class="tab-pane fade">
-                            <div class="row">
+                          <div
+                            role="tabpanel"
+                            id="tab-5"
+                            className="tab-pane fade"
+                          >
+                            <div className="row">
                               <FunctionalStatus patient={data} />
                             </div>
                           </div>
-                          <div role="tabpanel" id="tab-6" class="tab-pane fade">
-                            <div class="row">
+                          <div
+                            role="tabpanel"
+                            id="tab-6"
+                            className="tab-pane fade"
+                          >
+                            <div className="row">
                               <FamilyMadicalHistory patient={data} />
                             </div>
                           </div>
-                          <div role="tabpanel" id="tab-7" class="tab-pane fade">
-                            <div class="row">
+                          <div
+                            role="tabpanel"
+                            id="tab-7"
+                            className="tab-pane fade"
+                          >
+                            <div className="row">
                               <UploadMedicalRecord patient={data} />
                             </div>
                           </div>
