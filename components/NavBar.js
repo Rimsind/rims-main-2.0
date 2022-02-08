@@ -18,7 +18,7 @@ const NavBar = () => {
       return result;
     }
   );
-  console.log(data);
+
   return (
     <>
       <div className="topbar">
@@ -169,8 +169,9 @@ const NavBar = () => {
                             />
                           </div>
                           <div className="user-text">
-                            <h6>Darren Elder</h6>
-                            <p className="text-muted mb-0">Doctor</p>
+                            <h6>
+                              {data?.first_name} {data?.last_name}
+                            </h6>
                           </div>
                         </div>
                         <Link href="/user/">
