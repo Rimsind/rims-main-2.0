@@ -1,4 +1,50 @@
-const EmploymentStatus = () => {
+import { useForm } from "react-hook-form";
+import { apiUrl } from "config/api";
+import axios from "axios";
+import { useAuth } from "context";
+const EmploymentStatus = ({ patient }) => {
+  const { employmentStatus } = patient;
+
+  const { auth } = useAuth();
+
+  const { register, handleSubmit } = useForm();
+  const updateEmploymentStatus = async (data, event) => {
+    event.preventDefault();
+    try {
+      const payload = {
+        employmentStatus: {
+          occupation: data.occupation,
+          work_status: data.workStatus,
+          work_involves: data.workInvolves?.toString(),
+        },
+      };
+
+      const res = await axios.put(
+        `${apiUrl}/patients/${auth.user?.profileId}`,
+        payload,
+        {
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+          },
+        }
+      );
+      const result = res.data;
+      alert("Employment Status Updated Succesfully");
+      return result;
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
+
+  const makeArrfromString = (str) => {
+    if (str) {
+      const arr = str.split(",");
+      const result = arr.map((item) => item.trim());
+      return result;
+    } else {
+      str = "";
+    }
+  };
   const work_involves = [
     "Prolonged Standing",
     "Working with bent neck",
@@ -24,7 +70,7 @@ const EmploymentStatus = () => {
 
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit(updateEmploymentStatus)}>
         <div
           className="gen-form mb-3"
           style={{ borderBottom: "1px solid #bbbaba" }}
@@ -35,7 +81,7 @@ const EmploymentStatus = () => {
             </div>
             <div className="col-md-9">
               <div className="row">
-                <div className="col-md-4">
+                <div className="col-md-4" {...register("workStatus")}>
                   <div className="row">
                     <div className="col-md-2">
                       <input
@@ -43,6 +89,10 @@ const EmploymentStatus = () => {
                         type="radio"
                         name="workStatus"
                         value="Work Full Time"
+                        defaultChecked={
+                          !!employmentStatus &&
+                          employmentStatus.work_status === "Work Full Time"
+                        }
                       />
                     </div>
                     <div className="col-md-9">
@@ -50,7 +100,7 @@ const EmploymentStatus = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4" {...register("workStatus")}>
                   <div className="row">
                     <div className="col-md-2">
                       <input
@@ -58,6 +108,10 @@ const EmploymentStatus = () => {
                         type="radio"
                         name="workStatus"
                         value="Work Part Time"
+                        defaultChecked={
+                          !!employmentStatus &&
+                          employmentStatus.work_status === "Work Part Time"
+                        }
                       />
                     </div>
                     <div className="col-md-10">
@@ -65,7 +119,7 @@ const EmploymentStatus = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4" {...register("workStatus")}>
                   <div className="row">
                     <div className="col-md-2">
                       <input
@@ -73,6 +127,10 @@ const EmploymentStatus = () => {
                         type="radio"
                         name="workStatus"
                         value="Work Light Duty"
+                        defaultChecked={
+                          !!employmentStatus &&
+                          employmentStatus.work_status === "Work Light Duty"
+                        }
                       />
                     </div>
                     <div className="col-md-9">
@@ -80,7 +138,7 @@ const EmploymentStatus = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4" {...register("workStatus")}>
                   <div className="row">
                     <div className="col-md-2">
                       <input
@@ -88,6 +146,10 @@ const EmploymentStatus = () => {
                         type="radio"
                         name="workStatus"
                         value="Homemaker"
+                        defaultChecked={
+                          !!employmentStatus &&
+                          employmentStatus.work_status === "Homemaker"
+                        }
                       />
                     </div>
                     <div className="col-md-10">
@@ -95,7 +157,7 @@ const EmploymentStatus = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4" {...register("workStatus")}>
                   <div className="row">
                     <div className="col-md-2">
                       <input
@@ -103,6 +165,10 @@ const EmploymentStatus = () => {
                         type="radio"
                         name="workStatus"
                         value="Retired"
+                        defaultChecked={
+                          !!employmentStatus &&
+                          employmentStatus.work_status === "Retired"
+                        }
                       />
                     </div>
                     <div className="col-md-10">
@@ -110,7 +176,7 @@ const EmploymentStatus = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4" {...register("workStatus")}>
                   <div className="row">
                     <div className="col-md-2">
                       <input
@@ -118,6 +184,10 @@ const EmploymentStatus = () => {
                         type="radio"
                         name="workStatus"
                         value="Disabled"
+                        defaultChecked={
+                          !!employmentStatus &&
+                          employmentStatus.work_status === "Disabled"
+                        }
                       />
                     </div>
                     <div className="col-md-10">
@@ -125,7 +195,7 @@ const EmploymentStatus = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4" {...register("workStatus")}>
                   <div className="row">
                     <div className="col-md-2">
                       <input
@@ -133,6 +203,10 @@ const EmploymentStatus = () => {
                         type="radio"
                         name="workStatus"
                         value="Unemployed"
+                        defaultChecked={
+                          !!employmentStatus &&
+                          employmentStatus.work_status === "Unemployed"
+                        }
                       />
                     </div>
                     <div className="col-md-8">
@@ -141,7 +215,7 @@ const EmploymentStatus = () => {
                   </div>
                 </div>
 
-                <div className="col-md-4">
+                <div className="col-md-4" {...register("workStatus")}>
                   <div className="row">
                     <div className="col-md-2">
                       <input
@@ -149,6 +223,10 @@ const EmploymentStatus = () => {
                         type="radio"
                         name="workStatus"
                         value="Student"
+                        defaultChecked={
+                          !!employmentStatus &&
+                          employmentStatus.work_status === "Student"
+                        }
                       />
                     </div>
                     <div className="col-md-8">
@@ -164,7 +242,10 @@ const EmploymentStatus = () => {
           className="gen-form mb-3"
           style={{ borderBottom: "1px solid #bbbaba" }}
         >
-          <div className="row justify-content-between align-items-center mb-3">
+          <div
+            className="row justify-content-between align-items-center mb-3"
+            {...register("occupation")}
+          >
             <div className="col-md-3">
               <h3 className="fs-6 fs-bold text-dark">Occupation?</h3>
             </div>
@@ -174,6 +255,11 @@ const EmploymentStatus = () => {
                 className="form-control"
                 name="occupation"
                 placeholder=""
+                defaultValue={
+                  !!employmentStatus && !!employmentStatus.occupation
+                    ? employmentStatus.occupation
+                    : ""
+                }
               />
             </div>
           </div>
@@ -196,6 +282,13 @@ const EmploymentStatus = () => {
                           type="checkbox"
                           name="workInvolves"
                           value={item}
+                          {...register("workInvolves")}
+                          defaultChecked={
+                            !!employmentStatus &&
+                            makeArrfromString(
+                              employmentStatus.work_involves
+                            ).includes(item)
+                          }
                         />
                       </div>
                       <div className="col-md-10">

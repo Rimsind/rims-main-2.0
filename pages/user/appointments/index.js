@@ -1,8 +1,40 @@
 import { BreadCrums } from "components/common";
 import UserNav from "components/UserComponents/UserNav";
 import Image from "next/image";
+import useSWR from "swr";
+import { apiUrl } from "config/api";
+import axios from "axios";
+import { useAuth } from "context";
 
 const Index = () => {
+  // const { auth } = useAuth();
+
+  // const { data } = useSWR(
+  //   `${apiUrl}/appointments?patient=${auth.user?.profileId}`,
+  //   async (url) => {
+  //     const res = await axios.get(url, {
+  //       headers: {
+  //         Authorization: `Bearer ${auth.token}`,
+  //       },
+  //     });
+  //     const result = res.data;
+  //     return result;
+  //   }
+  // );
+  // console.log(data);
+  // const { data: patient } = useSWR(
+  //   `${apiUrl}/patients/${auth.user?.profileId}`,
+  //   async (url) => {
+  //     const res = await axios.get(url, {
+  //       headers: {
+  //         Authorization: `Bearer ${auth.token}`,
+  //       },
+  //     });
+  //     const result = res.data;
+  //     return result;
+  //   }
+  // );
+
   return (
     <>
       <div className="main-wrapper">

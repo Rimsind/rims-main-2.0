@@ -1,7 +1,45 @@
-const GeneralInformation = () => {
+import { useForm } from "react-hook-form";
+import { apiUrl } from "config/api";
+import axios from "axios";
+import { useAuth } from "context";
+
+const GeneralInformation = ({ patient }) => {
+  const { generalInformation } = patient;
+
+  const { auth } = useAuth();
+
+  const { register, handleSubmit } = useForm();
+  const updateGeneralInformation = async (data, event) => {
+    event.preventDefault();
+    try {
+      const payload = {
+        generalInformation: {
+          race: data.race,
+          language: data.language,
+          education: data.education,
+          physical_dominance: data.handFootDominance,
+        },
+      };
+
+      const res = await axios.put(
+        `${apiUrl}/patients/${auth.user?.profileId}`,
+        payload,
+        {
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+          },
+        }
+      );
+      const result = res.data;
+      alert("General Information Updated Succesfully");
+      return result;
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit(updateGeneralInformation)}>
         <div
           className="gen-form mb-3"
           style={{ borderBottom: "1px solid #bbbaba" }}
@@ -12,7 +50,7 @@ const GeneralInformation = () => {
             </div>
             <div className="col-md-9">
               <div className="row">
-                <div className="col-md-4">
+                <div className="col-md-4" {...register("race")}>
                   <div className="row">
                     <div className="col-md-2">
                       <input
@@ -20,6 +58,10 @@ const GeneralInformation = () => {
                         type="radio"
                         name="race"
                         value="Asian"
+                        defaultChecked={
+                          !!generalInformation &&
+                          generalInformation.race === "Asian"
+                        }
                       />
                     </div>
                     <div className="col-md-8">
@@ -27,7 +69,7 @@ const GeneralInformation = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4" {...register("race")}>
                   <div className="row">
                     <div className="col-md-2">
                       <input
@@ -35,6 +77,10 @@ const GeneralInformation = () => {
                         type="radio"
                         name="race"
                         value="African"
+                        defaultChecked={
+                          !!generalInformation &&
+                          generalInformation.race === "African"
+                        }
                       />
                     </div>
                     <div className="col-md-8">
@@ -42,7 +88,7 @@ const GeneralInformation = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4" {...register("race")}>
                   <div className="row">
                     <div className="col-md-2">
                       <input
@@ -50,6 +96,10 @@ const GeneralInformation = () => {
                         type="radio"
                         name="race"
                         value="European"
+                        defaultChecked={
+                          !!generalInformation &&
+                          generalInformation.race === "European"
+                        }
                       />
                     </div>
                     <div className="col-md-8">
@@ -57,7 +107,7 @@ const GeneralInformation = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-5">
+                <div className="col-md-5" {...register("race")}>
                   <div className="row">
                     <div className="col-md-2">
                       <input
@@ -65,6 +115,10 @@ const GeneralInformation = () => {
                         type="radio"
                         name="race"
                         value="North American"
+                        defaultChecked={
+                          !!generalInformation &&
+                          generalInformation.race === "North American"
+                        }
                       />
                     </div>
                     <div className="col-md-8">
@@ -72,7 +126,7 @@ const GeneralInformation = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-5">
+                <div className="col-md-5" {...register("race")}>
                   <div className="row">
                     <div className="col-md-2">
                       <input
@@ -80,6 +134,10 @@ const GeneralInformation = () => {
                         type="radio"
                         name="race"
                         value="South American"
+                        defaultChecked={
+                          !!generalInformation &&
+                          generalInformation.race === "South American"
+                        }
                       />
                     </div>
                     <div className="col-md-8">
@@ -87,7 +145,7 @@ const GeneralInformation = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-5">
+                <div className="col-md-5" {...register("race")}>
                   <div className="row">
                     <div className="col-md-2">
                       <input
@@ -95,6 +153,10 @@ const GeneralInformation = () => {
                         type="radio"
                         name="race"
                         value="Australian"
+                        defaultChecked={
+                          !!generalInformation &&
+                          generalInformation.race === "Australian"
+                        }
                       />
                     </div>
                     <div className="col-md-8">
@@ -102,7 +164,7 @@ const GeneralInformation = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-3" {...register("race")}>
                   <div className="row">
                     <div className="col-md-2">
                       <input
@@ -110,6 +172,10 @@ const GeneralInformation = () => {
                         type="radio"
                         name="race"
                         value="Others"
+                        defaultChecked={
+                          !!generalInformation &&
+                          generalInformation.race === "Others"
+                        }
                       />
                     </div>
                     <div className="col-md-8">
@@ -135,9 +201,17 @@ const GeneralInformation = () => {
                   <select
                     className="form-select form-select-sm"
                     aria-label=".form-select-sm example"
+                    {...register("language")}
                   >
-                    <option name="language" selected>
-                      Select
+                    <option
+                      name="language"
+                      defaultValue={
+                        !!generalInformation && generalInformation.language
+                      }
+                    >
+                      {!!generalInformation && generalInformation.language
+                        ? generalInformation.language
+                        : ""}
                     </option>
                     <option value="English" name="language">
                       English
@@ -183,8 +257,19 @@ const GeneralInformation = () => {
                   <select
                     className="form-select form-select-sm"
                     aria-label=".form-select-sm example"
+                    {...register("education")}
                   >
-                    <option selected>select</option>
+                    <option
+                      defaultChecked={
+                        !!generalInformation && generalInformation.education
+                          ? generalInformation.education
+                          : ""
+                      }
+                    >
+                      {!!generalInformation && generalInformation.education
+                        ? generalInformation.education
+                        : ""}
+                    </option>
                     <option value="Grade School" name="education">
                       Grade School
                     </option>
@@ -223,7 +308,7 @@ const GeneralInformation = () => {
             </div>
             <div className="col-md-8">
               <div className="row">
-                <div className="col-md-4">
+                <div className="col-md-4" {...register("handFootDominance")}>
                   <div className="row">
                     <div className="col-md-2">
                       <input
@@ -231,6 +316,10 @@ const GeneralInformation = () => {
                         type="radio"
                         name="handFootDominance"
                         value="N/A"
+                        defaultChecked={
+                          !!generalInformation &&
+                          generalInformation.physical_dominance === "N/A"
+                        }
                       />
                     </div>
                     <div className="col-md-8">
@@ -239,7 +328,7 @@ const GeneralInformation = () => {
                   </div>
                 </div>
 
-                <div className="col-md-4">
+                <div className="col-md-4" {...register("handFootDominance")}>
                   <div className="row">
                     <div className="col-md-2">
                       <input
@@ -247,6 +336,10 @@ const GeneralInformation = () => {
                         type="radio"
                         name="handFootDominance"
                         value="Left"
+                        defaultChecked={
+                          !!generalInformation &&
+                          generalInformation.physical_dominance === "Left"
+                        }
                       />
                     </div>
                     <div className="col-md-8">
@@ -254,7 +347,7 @@ const GeneralInformation = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4" {...register("handFootDominance")}>
                   <div className="row">
                     <div className="col-md-2">
                       <input
@@ -262,6 +355,10 @@ const GeneralInformation = () => {
                         type="radio"
                         name="handFootDominance"
                         value="Right"
+                        defaultChecked={
+                          !!generalInformation &&
+                          generalInformation.physical_dominance === "Right"
+                        }
                       />
                     </div>
                     <div className="col-md-8">

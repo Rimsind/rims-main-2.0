@@ -1,6 +1,44 @@
+import { useState } from "react";
+import { apiUrl } from "config/api";
+import axios from "axios";
 import Link from "next/link";
+import { useAuth } from "context";
+import { uploadImage } from "utils/uploadImage";
 
-const UploadMedicalRecord = () => {
+const UploadMedicalRecord = ({ patient }) => {
+  const { upload_medical_record } = patient;
+  const { auth } = useAuth();
+
+  const [loading, setLoading] = useState(false);
+  const [title, setTitle] = useState();
+  const [profileImage, setProfileImage] = useState();
+
+  const uploadProfileImage = async () => {
+    setLoading(true);
+    const image = await uploadImage(profileImage, auth.token);
+    const payload = {
+      upload_medical_record: [
+        ...upload_medical_record,
+        {
+          title: title,
+          file: image,
+        },
+      ],
+    };
+    const response = await axios.put(
+      `${apiUrl}/patients/${auth.user.profileId}`,
+      payload,
+      {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      }
+    );
+    const result = await response.data;
+    alert("Image uploaded succesfully");
+    setLoading(false);
+    return result;
+  };
   return (
     <>
       <form>
@@ -19,6 +57,8 @@ const UploadMedicalRecord = () => {
                     className="form-control"
                     name="title"
                     placeholder="File Name"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
                   />
                 </div>
               </div>
@@ -30,6 +70,7 @@ const UploadMedicalRecord = () => {
                 placeholder="Upload your Image"
                 name="uploadFile"
                 required=""
+                onChange={(e) => setProfileImage(e.target.files[0])}
               />
             </div>
           </div>
@@ -43,6 +84,9 @@ const UploadMedicalRecord = () => {
               id="submit"
               name="send"
               className="btn btn-primary"
+              value={loading ? "loading..." : "upload"}
+              disabled={loading}
+              onClick={uploadProfileImage}
             />
           </div>
         </div>
@@ -63,14 +107,16 @@ const UploadMedicalRecord = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>test</td>
-              <td>
-                <Link href="/">
-                  <a target="_blank">Download</a>
-                </Link>
-              </td>
-            </tr>
+            {upload_medical_record.map((item, index) => (
+              <tr key={index}>
+                <td>{item.title}</td>
+                <td>
+                  <Link href={item.file?.url}>
+                    <a target="_blank">Download</a>
+                  </Link>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </form>

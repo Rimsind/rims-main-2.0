@@ -1,5 +1,6 @@
 import Image from "next/image";
-const PolyclinicTimetableCard = () => {
+const PolyclinicTimetableCard = ({ schedule }) => {
+  console.log(schedule);
   return (
     <>
       <div className="doctor-widget p-4 shadow-sm">
@@ -9,26 +10,28 @@ const PolyclinicTimetableCard = () => {
               <Image
                 height="150"
                 width="150"
-                src="/assets/images/smair-barman.jpg"
+                src={schedule?.image?.url || "/assets/images/polyclinic.jpg"}
                 className="img-fluid"
                 alt="User Image"
               />
             </a>
           </div>
           <div className="doc-info-cont">
-            <h4 className="doc-name">Dr. Samir Barman</h4>
+            <h4 className="doc-name">
+              Dr. {schedule?.firstName} {schedule?.lastName}
+            </h4>
             <p className="doc-speciality">
-              25 years experience, Consultant Rehabilitation
+              {schedule?.experienceInYrs} years experience, Consultant{" "}
+              {schedule?.specialty}
             </p>
             <h5 className="doc-department">
               <i className="fas fa-user-tag"></i>
-              Medicine
+              {schedule?.specialty}
             </h5>
-            <i className="far fa-envelope mb-3"></i>
-            samirbarman112@gmail.com
+            <i className="far fa-envelope mb-3"></i> {schedule?.email}
             <div className="clinic-services">
               <span>
-                <i className="fab fa-skype"></i> Skype Id: aryajana@0124
+                <i className="fab fa-skype"></i> Skype Id: {schedule?.skype_id}
               </span>
             </div>
           </div>
@@ -70,7 +73,7 @@ const PolyclinicTimetableCard = () => {
           <div className="clini-infos">
             <ul>
               <li>
-                <i className="fas fa-certificate"></i> MBBS
+                <i className="fas fa-certificate"></i> {schedule?.qualification}
               </li>
 
               <li>
@@ -88,8 +91,8 @@ const PolyclinicTimetableCard = () => {
             </ul>
           </div>
           <div className="clinic-booking">
-            <a className="view-pro-btn" href="doctor_details.html">
-              View Profile
+            <a className="apt-btn" href="booking.html">
+              Book Appointment
             </a>
           </div>
         </div>

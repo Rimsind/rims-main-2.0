@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 const UserNav = (props) => {
+  const { patient } = props;
+
   return (
     <>
       <div className="col-md-5 col-lg-4 col-xl-3 sticky-top">
@@ -11,15 +13,17 @@ const UserNav = (props) => {
                 <Image
                   height="145"
                   width="145"
-                  src="/user_assets/img/doctors/doctor-thumb-01.jpg"
+                  src={patient?.image?.url || "/assets/images/profile.png"}
                   alt="User Image"
                 />
               </a>
               <div className="profile-det-info">
-                <h3>Richard Wilson</h3>
+                <h3>
+                  {patient?.first_name} {patient?.last_name}
+                </h3>
                 <div className="patient-details">
                   <h5>
-                    <i className="fas fa-birthday-cake"></i> 24 Jul 1983, 38
+                    <i className="fas fa-birthday-cake"></i> {patient?.dob}, 38
                     years
                   </h5>
                   <h5 className="mb-0">

@@ -1,4 +1,46 @@
-const FamilyMadicalHistory = () => {
+import { useForm } from "react-hook-form";
+import { apiUrl } from "config/api";
+import axios from "axios";
+import { useAuth } from "context";
+const FamilyMadicalHistory = ({ patient }) => {
+  const { familyHistory } = patient;
+  const { auth } = useAuth();
+
+  const { register, handleSubmit, reset } = useForm();
+  const updateFamilyHistory = async (data, event) => {
+    event.preventDefault();
+    try {
+      const payload = {
+        familyHistory: [
+          ...familyHistory,
+          {
+            relation: data.relation,
+            age_if_living: data.age_if_living,
+            age_if_death: data.age_if_death,
+            cause_of_death: data.cause_of_death,
+            diseases: data.disease.toString(),
+          },
+        ],
+      };
+      // console.log(payload, "payload");
+      const res = await axios.put(
+        `${apiUrl}/patients/${auth.user?.profileId}`,
+        payload,
+        {
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+          },
+        }
+      );
+      const result = res.data;
+      reset();
+      alert("FamilyMedical History Updated Succesfully");
+      return result;
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
+
   const disease = [
     "Anemia",
     "Cancer",
@@ -18,7 +60,7 @@ const FamilyMadicalHistory = () => {
 
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit(updateFamilyHistory)}>
         <div className="gen-form mb-3">
           <div
             className="row justify-centent-between align-items-center"
@@ -32,7 +74,12 @@ const FamilyMadicalHistory = () => {
                   </label>
                 </div>
                 <div className="col-md-8">
-                  <input type="text" className="form-control" name="relation" />
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="relation"
+                    {...register("relation")}
+                  />
                 </div>
               </div>
             </div>
@@ -49,6 +96,7 @@ const FamilyMadicalHistory = () => {
                     className="form-control"
                     name="age_if_living"
                     defaultValue="0"
+                    {...register("age_if_living")}
                   />
                 </div>
               </div>
@@ -68,6 +116,7 @@ const FamilyMadicalHistory = () => {
                     className="form-control"
                     name="age_if_death"
                     defaultValue="0"
+                    {...register("age_if_death")}
                   />
                 </div>
               </div>
@@ -85,6 +134,7 @@ const FamilyMadicalHistory = () => {
                     className="form-control"
                     name="cause_of_death"
                     defaultValue="NA"
+                    {...register("cause_of_death")}
                   />
                 </div>
               </div>
@@ -103,6 +153,7 @@ const FamilyMadicalHistory = () => {
                       type="checkbox"
                       name="disease"
                       value={item}
+                      {...register("disease")}
                     />
                   </div>
                   <div className="col-md-10">
@@ -148,13 +199,15 @@ const FamilyMadicalHistory = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>test</td>
-              <td>45</td>
-              <td>0</td>
-              <td>test</td>
-              <td>test, test21</td>
-            </tr>
+            {familyHistory.map((item, index) => (
+              <tr key={index}>
+                <td>{item.relation}</td>
+                <td>{item.age_if_living}</td>
+                <td>{item.age_if_death}</td>
+                <td>{item.cause_of_death}</td>
+                <td>{item.diseases}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

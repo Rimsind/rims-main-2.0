@@ -6,11 +6,9 @@ import {
   FacilityCard,
   VerticalPolyclinicCard,
 } from "components/common/";
-import { useAuth } from "context";
+
 import Image from "next/image";
 const Index = () => {
-  const { auth } = useAuth();
-  console.log(auth);
   return (
     <>
       <main className="main">

@@ -1,6 +1,23 @@
 import { BreadCrums, PolyclinicTimetableCard } from "components/common/index";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import useSWR from "swr";
+import { apiUrl, fetcher } from "config/api";
 const NursingHomeId = () => {
+  const { id } = useRouter().query;
+  const { data, error, loading } = useSWR(
+    `${apiUrl}/nursing-homes/${id}`,
+    fetcher
+  );
+
+  console.log(data);
+
+  // if (loading) {
+  //   return <Loading />;
+  // }
+  // if (error) {
+  //   return <LoadingError />;
+  // }
   return (
     <>
       <main className="main">
@@ -19,7 +36,10 @@ const NursingHomeId = () => {
                         <Image
                           height="130"
                           width="145"
-                          src="/assets/images/polyclinic.jpg"
+                          src={
+                            data?.profile_image?.url ||
+                            "/assets/images/polyclinic.jpg"
+                          }
                           className="img-fluid"
                           alt="User Image"
                         />
@@ -27,11 +47,12 @@ const NursingHomeId = () => {
                     </div>
                     <div className="doc-info-cont">
                       <h4 className="doc-name">
-                        <a href="doctor-profile.html">Haldia Nurshing Home</a>
+                        <a href="doctor-profile.html">{data?.name}</a>
                       </h4>
-                      <p className="doc-speciality">Haldia, West Bengal</p>
-                      <i className="far fa-envelope"></i>
-                      haldianurshinghome@gmail.com
+                      <p className="doc-speciality">
+                        {data?.city},{data?.state}
+                      </p>
+                      <i className="far fa-envelope"></i> {data?.email}
                       <div className="clinic-details"></div>
                       <div className="clinic-services">
                         <span>Dental Fillings</span>
@@ -44,14 +65,15 @@ const NursingHomeId = () => {
                     <div className="clini-infos">
                       <ul>
                         <li>
-                          <i className="fas fa-mobile"></i> 987456321
+                          <i className="fas fa-mobile"></i> {data?.phone}
                         </li>
                         <li>
                           <i className="far fa-clock"></i>
                           10:00 A.M to 8:00 P.M
                         </li>
                         <li>
-                          <i className="fas fa-map-marker-alt"></i> Haldia, WB
+                          <i className="fas fa-map-marker-alt"></i>{" "}
+                          {data?.street_address}, {data?.city},{data?.state}
                         </li>
                       </ul>
                     </div>
@@ -129,17 +151,7 @@ const NursingHomeId = () => {
                       <div className="col-md-12 col-lg-9">
                         <div className="widget about-widget">
                           <h4 className="widget-title">About Me</h4>
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate velit esse cillum dolore
-                            eu fugiat nulla pariatur. Excepteur sint occaecat
-                            cupidatat non proident, sunt in culpa qui officia
-                            deserunt mollit anim id est laborum.
-                          </p>
+                          <p>{data?.overview}</p>
                         </div>
                       </div>
                     </div>
@@ -162,12 +174,13 @@ const NursingHomeId = () => {
                             <div className="row row-sm special-footer">
                               <div className="col-6 text-start">
                                 <a href="#" className="doc-count">
-                                  124 <span>Doctors</span>
+                                  {data?.no_of_regular_beds}
+                                  <span>Total</span>
                                 </a>
                               </div>
                               <div className="col-6 text-end">
                                 <a href="#" className="clin-count">
-                                  24 <span>Clinics</span>
+                                  0 <span>Available</span>
                                 </a>
                               </div>
                             </div>
@@ -190,12 +203,12 @@ const NursingHomeId = () => {
                             <div className="row row-sm special-footer">
                               <div className="col-6 text-start">
                                 <a href="#" className="doc-count">
-                                  124 <span>Doctors</span>
+                                  {data?.no_of_icu_beds} <span>Total</span>
                                 </a>
                               </div>
                               <div className="col-6 text-end">
                                 <a href="#" className="clin-count">
-                                  24 <span>Clinics</span>
+                                  0 <span>Available</span>
                                 </a>
                               </div>
                             </div>
@@ -218,12 +231,12 @@ const NursingHomeId = () => {
                             <div className="row row-sm special-footer">
                               <div className="col-6 text-start">
                                 <a href="#" className="doc-count">
-                                  124 <span>Doctors</span>
+                                  {data?.no_of_ambulance} <span>Total</span>
                                 </a>
                               </div>
                               <div className="col-6 text-end">
                                 <a href="#" className="clin-count">
-                                  24 <span>Clinics</span>
+                                  0 <span>Available</span>
                                 </a>
                               </div>
                             </div>
@@ -246,12 +259,12 @@ const NursingHomeId = () => {
                             <div className="row row-sm special-footer">
                               <div className="col-6 text-start">
                                 <a href="#" className="doc-count">
-                                  124 <span>Doctors</span>
+                                  {data?.no_of_icu_ambulance} <span>Total</span>
                                 </a>
                               </div>
                               <div className="col-6 text-end">
                                 <a href="#" className="clin-count">
-                                  24 <span>Clinics</span>
+                                  0 <span>Available</span>
                                 </a>
                               </div>
                             </div>
@@ -285,7 +298,7 @@ const NursingHomeId = () => {
                             </div>
                             <div className="infor-details">
                               <label>Phone Number</label>
-                              <p>+152 534-468-854</p>
+                              <p>+91 {data?.phone}</p>
                             </div>
                           </div>
                           <div className="contact-box">
@@ -296,7 +309,7 @@ const NursingHomeId = () => {
                             </div>
                             <div className="infor-details">
                               <label>Email</label>
-                              <p>demo.rimsind@gmail.com</p>
+                              <p>{data?.email}</p>
                             </div>
                           </div>
                           <div className="contact-box">
@@ -308,8 +321,9 @@ const NursingHomeId = () => {
                             <div className="infor-details">
                               <label>Location</label>
                               <p>
-                                C/54 Northwest Freeway,Suite 558, Houston, USA
-                                485
+                                {data?.street_address}, {data?.city},
+                                {data?.state}, {data?.country}, PIN -{" "}
+                                {data?.pincode}
                               </p>
                             </div>
                           </div>
@@ -317,7 +331,7 @@ const NursingHomeId = () => {
                       </div>
                       <div className="poly-map">
                         <iframe
-                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59162.79901960036!2d88.05869855798426!3d22.062026721715704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02f0cb35788045%3A0x58f6d5c69f0de04d!2sHaldia%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1642855030171!5m2!1sen!2sin"
+                          src={data?.google_map}
                           width="400"
                           height="300"
                           style={{ border: "0" }}

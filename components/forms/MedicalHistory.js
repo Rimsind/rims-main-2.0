@@ -1,4 +1,138 @@
-const MedicalHistory = () => {
+import { useForm } from "react-hook-form";
+import { apiUrl } from "config/api";
+import axios from "axios";
+import { useAuth } from "context";
+import { useState } from "react";
+
+const MedicalHistory = ({ patient }) => {
+  const { medicalHistory } = patient;
+  const { auth } = useAuth();
+
+  const [surgery, setSurgery] = useState();
+  const [surgeryDate, setSurgeryDate] = useState();
+  const [allSurgery, setAllSurgery] = useState([]);
+
+  const addSurgicalHistory = () => {
+    setAllSurgery([
+      ...allSurgery,
+      {
+        name: surgery,
+        date: surgeryDate,
+      },
+    ]);
+    setSurgery("");
+    setSurgeryDate("");
+  };
+
+  const submitSurgicalHistory = async () => {
+    const payload = {
+      medicalHistory: {
+        surgicalHistory: allSurgery,
+      },
+    };
+    const res = await axios.put(
+      `${apiUrl}/patients/${auth.user?.profileId}`,
+      payload,
+      {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      }
+    );
+    const result = res.data;
+    alert("Medical History Updated Succesfully");
+    return result;
+  };
+
+  const [medicineName, setMedicineName] = useState();
+  const [dose, setDose] = useState();
+  const [date, setDate] = useState();
+  const [status, setStatus] = useState();
+  const [type, setType] = useState();
+  const [route, setRoute] = useState();
+  const [frequency, setFrequency] = useState();
+  const [sideEffect, setSideEffect] = useState();
+  const [ifYes, setIfYes] = useState();
+  const [medicineList, setMedicineList] = useState([]);
+
+  const addMedicine = () => {
+    setMedicineList([
+      ...medicineList,
+      {
+        medicineName: medicineName,
+        dose: dose,
+        data: date,
+        status: status,
+        type: type,
+        route: route,
+        frequency: frequency,
+        sideEffect: sideEffect,
+        ifYes: ifYes,
+      },
+    ]);
+    setMedicineName("");
+    setDose("");
+    setDate("");
+    setIfYes("");
+  };
+
+  const { register, handleSubmit } = useForm();
+  const updateMedicalHistory = async (data, event) => {
+    event.preventDefault();
+    try {
+      const payload = {
+        medicalHistory: {
+          past_medical_history: data.past_medical_history?.toString(),
+          diagnostic_tests: data.diagnostic_tests?.toString(),
+          // allergies: data.allergies,
+          // prescription_medications: data.prescription_medications,
+          // non_prescription_medications: data.non_prescription_medications?.toString(),
+          pastMedicalHistoryForWomen: {
+            pelvicDisease: data.pelvicDisease,
+            endometriosis: data.endometriosis,
+            periodTrouble: data.periodTrouble,
+            isPregnant: data.isPregnant,
+            complicatedPregnancy: data.complicatedPregnancy,
+            other: data.other,
+          },
+          // surgicalHistory: [
+          //   ...medicalHistory.surgicalHistory,
+          //   {
+          //     name: data.surgicalHistoryTitle,
+          //     date: data.surgicalHistoryDate,
+          //   },
+          // ],
+        },
+      };
+      // console.log(payload, "surgical history");
+
+      const res = await axios.put(
+        `${apiUrl}/patients/${auth.user?.profileId}`,
+        payload,
+        {
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+          },
+        }
+      );
+      const result = res.data;
+      alert("Medical History Updated Succesfully");
+      return result;
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
+
+  const makeArrfromString = (str) => {
+    if (str) {
+      const arr = str.split(",");
+      const result = arr.map((item) => item.trim());
+      return result;
+    } else {
+      str = "";
+    }
+  };
+
   const pastMedicalHistory = [
     "No past medical history",
     "Diabetes",
@@ -105,7 +239,7 @@ const MedicalHistory = () => {
 
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit(updateMedicalHistory)}>
         <div
           className="gen-form mb-3"
           style={{ borderBottom: "1px solid #bbbaba" }}
@@ -124,6 +258,14 @@ const MedicalHistory = () => {
                       type="checkbox"
                       name="past_medical_history"
                       value={item}
+                      {...register("past_medical_history")}
+                      defaultChecked={
+                        !!medicalHistory &&
+                        !!medicalHistory.past_medical_history &&
+                        makeArrfromString(
+                          medicalHistory.past_medical_history
+                        ).includes(item)
+                      }
                     />
                   </div>
                   <div className="col-md-10">
@@ -157,6 +299,13 @@ const MedicalHistory = () => {
                         type="radio"
                         name="pelvicDisease"
                         value="Yes"
+                        {...register("pelvicDisease")}
+                        defaultChecked={
+                          !!medicalHistory &&
+                          !!medicalHistory.pastMedicalHistoryForWomen &&
+                          medicalHistory.pastMedicalHistoryForWomen
+                            .pelvicDisease === "Yes"
+                        }
                       />
                     </div>
                     <div className="col-md-8">
@@ -172,6 +321,13 @@ const MedicalHistory = () => {
                         type="radio"
                         name="pelvicDisease"
                         value="No"
+                        {...register("pelvicDisease")}
+                        defaultChecked={
+                          !!medicalHistory &&
+                          !!medicalHistory.pastMedicalHistoryForWomen &&
+                          medicalHistory.pastMedicalHistoryForWomen
+                            .pelvicDisease === "No"
+                        }
                       />
                     </div>
                     <div className="col-md-8">
@@ -194,6 +350,13 @@ const MedicalHistory = () => {
                         type="radio"
                         name="periodTrouble"
                         value="Yes"
+                        {...register("periodTrouble")}
+                        defaultChecked={
+                          !!medicalHistory &&
+                          medicalHistory.pastMedicalHistoryForWomen &&
+                          medicalHistory.pastMedicalHistoryForWomen
+                            .periodTrouble === "Yes"
+                        }
                       />
                     </div>
                     <div className="col-md-8">
@@ -209,6 +372,13 @@ const MedicalHistory = () => {
                         type="radio"
                         name="periodTrouble"
                         value="No"
+                        {...register("periodTrouble")}
+                        defaultChecked={
+                          !!medicalHistory &&
+                          medicalHistory.pastMedicalHistoryForWomen &&
+                          medicalHistory.pastMedicalHistoryForWomen
+                            .periodTrouble === "No"
+                        }
                       />
                     </div>
                     <div className="col-md-8">
@@ -231,6 +401,13 @@ const MedicalHistory = () => {
                         type="radio"
                         name="complicatedPregnancy"
                         value="Yes"
+                        {...register("complicatedPregnancy")}
+                        defaultChecked={
+                          !!medicalHistory &&
+                          medicalHistory.pastMedicalHistoryForWomen &&
+                          medicalHistory.pastMedicalHistoryForWomen
+                            .complicatedPregnancy === "Yes"
+                        }
                       />
                     </div>
                     <div className="col-md-8">
@@ -246,6 +423,13 @@ const MedicalHistory = () => {
                         type="radio"
                         name="complicatedPregnancy"
                         value="No"
+                        {...register("complicatedPregnancy")}
+                        defaultChecked={
+                          !!medicalHistory &&
+                          medicalHistory.pastMedicalHistoryForWomen &&
+                          medicalHistory.pastMedicalHistoryForWomen
+                            .complicatedPregnancie === "No"
+                        }
                       />
                     </div>
                     <div className="col-md-8">
@@ -268,6 +452,13 @@ const MedicalHistory = () => {
                         type="radio"
                         name="isPregnant"
                         value="Yes"
+                        {...register("isPregnant")}
+                        defaultChecked={
+                          !!medicalHistory &&
+                          medicalHistory.pastMedicalHistoryForWomen &&
+                          medicalHistory.pastMedicalHistoryForWomen
+                            .isPregnant === "Yes"
+                        }
                       />
                     </div>
                     <div className="col-md-8">
@@ -283,6 +474,13 @@ const MedicalHistory = () => {
                         type="radio"
                         name="isPregnant"
                         value="No"
+                        {...register("isPregnant")}
+                        defaultChecked={
+                          !!medicalHistory &&
+                          medicalHistory.pastMedicalHistoryForWomen &&
+                          medicalHistory.pastMedicalHistoryForWomen
+                            .isPregnant === "No"
+                        }
                       />
                     </div>
                     <div className="col-md-8">
@@ -305,6 +503,13 @@ const MedicalHistory = () => {
                         type="radio"
                         name="endometriosis"
                         value="Yes"
+                        {...register("endometriosis")}
+                        defaultChecked={
+                          !!medicalHistory &&
+                          medicalHistory.pastMedicalHistoryForWomen &&
+                          medicalHistory.pastMedicalHistoryForWomen
+                            .endometriosis === "Yes"
+                        }
                       />
                     </div>
                     <div className="col-md-8">
@@ -320,6 +525,13 @@ const MedicalHistory = () => {
                         type="radio"
                         name="endometriosis"
                         value="No"
+                        {...register("endometriosis")}
+                        defaultChecked={
+                          !!medicalHistory &&
+                          medicalHistory.pastMedicalHistoryForWomen &&
+                          medicalHistory.pastMedicalHistoryForWomen
+                            .endometriosis === "No"
+                        }
                       />
                     </div>
                     <div className="col-md-8">
@@ -329,7 +541,7 @@ const MedicalHistory = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6" {...register("other")}>
               <div className="row">
                 <div className="col-md-6">
                   <p className="space-x-4">☆ Any Other</p>
@@ -340,6 +552,12 @@ const MedicalHistory = () => {
                     className="form-control"
                     name="other"
                     placeholder=""
+                    defaultValue={
+                      !!medicalHistory &&
+                      !!medicalHistory.pastMedicalHistoryForWomen
+                        ? medicalHistory.pastMedicalHistoryForWomen.other
+                        : ""
+                    }
                   />
                 </div>
               </div>
@@ -402,6 +620,10 @@ const MedicalHistory = () => {
                                       type="text"
                                       className="form-control"
                                       name="surgery"
+                                      value={surgery}
+                                      onChange={(e) =>
+                                        setSurgery(e.target.value)
+                                      }
                                     />
                                   </div>
                                   <div className="col-md-5">
@@ -412,6 +634,10 @@ const MedicalHistory = () => {
                                           type="date"
                                           className="form-control"
                                           name="surgeryDate"
+                                          value={surgeryDate}
+                                          onChange={(e) =>
+                                            setSurgeryDate(e.target.value)
+                                          }
                                         />
                                       </div>
                                     </div>
@@ -421,7 +647,12 @@ const MedicalHistory = () => {
                             </div>
                           </div>
                           <div className="add_btn text-end mb-3">
-                            <span className="btn btn-primary">Add</span>
+                            <span
+                              className="btn btn-primary"
+                              onClick={addSurgicalHistory}
+                            >
+                              Add
+                            </span>
                           </div>
                           <div
                             className="table-responsive"
@@ -435,10 +666,12 @@ const MedicalHistory = () => {
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr>
-                                  <td>test</td>
-                                  <td>test</td>
-                                </tr>
+                                {allSurgery.map((item, index) => (
+                                  <tr key={index}>
+                                    <td>{item.name}</td>
+                                    <td>{item.date}</td>
+                                  </tr>
+                                ))}
                               </tbody>
                             </table>
                           </div>
@@ -451,7 +684,12 @@ const MedicalHistory = () => {
                           >
                             Close
                           </button>
-                          <span className="btn btn-primary">Save changes</span>
+                          <span
+                            className="btn btn-primary"
+                            onClick={submitSurgicalHistory}
+                          >
+                            Save changes
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -469,10 +707,12 @@ const MedicalHistory = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>test</td>
-                  <td>test</td>
-                </tr>
+                {medicalHistory?.surgicalHistory?.map((item, index) => (
+                  <tr key={index}>
+                    <td>{item.name}</td>
+                    <td>{item.date}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
@@ -498,6 +738,14 @@ const MedicalHistory = () => {
                           type="checkbox"
                           name="diagnostic_tests"
                           value={item}
+                          {...register("diagnostic_tests")}
+                          defaultChecked={
+                            !!medicalHistory &&
+                            medicalHistory.diagnostic_tests &&
+                            makeArrfromString(
+                              medicalHistory.diagnostic_tests
+                            ).includes(item)
+                          }
                         />
                       </div>
                       <div className="col-md-10">
@@ -561,6 +809,7 @@ const MedicalHistory = () => {
                               <select
                                 className="form-select form-select-sm"
                                 aria-label=".form-select-sm example"
+                                onChange={(e) => setType(e.target.value)}
                               >
                                 <option selected>Select Items</option>
                                 <option value="Prescribed">Prescribed</option>
@@ -581,6 +830,10 @@ const MedicalHistory = () => {
                                 type="text"
                                 className="form-control"
                                 name="MedicineName"
+                                value={medicineName}
+                                onChange={(e) =>
+                                  setMedicineName(e.target.value)
+                                }
                               />
                             </div>
                           </div>
@@ -593,6 +846,8 @@ const MedicalHistory = () => {
                                 type="text"
                                 className="form-control"
                                 name="MedicineName"
+                                value={dose}
+                                onChange={(e) => setDose(e.target.value)}
                               />
                             </div>
                             <div className="col-md-6">
@@ -603,6 +858,8 @@ const MedicalHistory = () => {
                                     type="date"
                                     className="form-control"
                                     name="MedicineName"
+                                    value={date}
+                                    onChange={(e) => setDate(e.target.value)}
                                   />
                                 </div>
                               </div>
@@ -618,6 +875,7 @@ const MedicalHistory = () => {
                               <select
                                 className="form-select form-select-sm"
                                 aria-label=".form-select-sm example"
+                                onChange={(e) => setStatus(e.target.value)}
                               >
                                 <option selected>Select Status</option>
                                 <option value="Continue">Continue</option>
@@ -633,6 +891,7 @@ const MedicalHistory = () => {
                               <select
                                 className="form-select form-select-sm"
                                 aria-label=".form-select-sm example"
+                                onChange={(e) => setFrequency(e.target.value)}
                               >
                                 {frequencyList.map((item, index) => (
                                   <option value={item} key={index}>
@@ -652,6 +911,7 @@ const MedicalHistory = () => {
                               <select
                                 className="form-select form-select-sm"
                                 aria-label=".form-select-sm example"
+                                onChange={(e) => setRoute(e.target.value)}
                               >
                                 <option selected>Select Items</option>
                                 <option value="Capsule">Capsule</option>
@@ -668,6 +928,7 @@ const MedicalHistory = () => {
                               <select
                                 className="form-select form-select-sm"
                                 aria-label=".form-select-sm example"
+                                onChange={(e) => setSideEffect(e.target.value)}
                               >
                                 <option selected>Select Items</option>
                                 <option value="Yes">Yes</option>
@@ -687,7 +948,8 @@ const MedicalHistory = () => {
                                 type="text"
                                 className="form-control"
                                 name="MedicineName"
-                                value=""
+                                value={ifYes}
+                                onChange={(e) => setIfYes(e.target.value)}
                               />
                             </div>
                           </div>
@@ -695,7 +957,9 @@ const MedicalHistory = () => {
                       </div>
                     </div>
                     <div className="add_btn text-end mb-3">
-                      <span className="btn btn-primary">Add</span>
+                      <span className="btn btn-primary" onClick={addMedicine}>
+                        Add
+                      </span>
                     </div>
                     <div
                       className="table-responsive"
@@ -716,17 +980,19 @@ const MedicalHistory = () => {
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>test</td>
-                            <td>100</td>
-                            <td>20/20/20</td>
-                            <td>test</td>
-                            <td>test</td>
-                            <td>test</td>
-                            <td>test</td>
-                            <td>test</td>
-                            <td>test</td>
-                          </tr>
+                          {medicineList.map((item, index) => (
+                            <tr key={index}>
+                              <td>{item.medicineName}</td>
+                              <td>{item.dose}</td>
+                              <td>{item.date}</td>
+                              <td>{item.status}</td>
+                              <td>{item.type}</td>
+                              <td>{item.route}</td>
+                              <td>{item.frequency}</td>
+                              <td>{item.sideEffect}</td>
+                              <td>{item.ifYes}</td>
+                            </tr>
+                          ))}
                         </tbody>
                       </table>
                     </div>

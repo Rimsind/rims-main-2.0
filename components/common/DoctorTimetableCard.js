@@ -1,5 +1,6 @@
 import Image from "next/image";
-const DoctorTimetableCard = () => {
+const DoctorTimetableCard = ({ schedule }) => {
+  console.log(schedule);
   return (
     <>
       <div className="card location_card shadow-sm">
@@ -11,7 +12,10 @@ const DoctorTimetableCard = () => {
                   <Image
                     height="130"
                     width="145"
-                    src="/assets/images/polyclinic.jpg"
+                    src={
+                      schedule.polyclinic?.coverImage?.url ||
+                      "/assets/images/polyclinic.jpg"
+                    }
                     className="img-fluid"
                     alt="User Image"
                   />
@@ -19,11 +23,13 @@ const DoctorTimetableCard = () => {
               </div>
               <div className="doc-info-cont">
                 <h4 className="doc-name">
-                  <a href="doctor-profile.html">Haldia Polyclinic</a>
+                  <a href="doctor-profile.html">{schedule?.polyclinic?.name}</a>
                 </h4>
-                <p className="doc-speciality">Haldia, West Bengal</p>
-                <i className="far fa-envelope"></i>
-                haldiapolyclinic@gmail.com
+                <p className="doc-speciality">
+                  {schedule?.polyclinic?.city},{schedule?.polyclinic?.state}
+                </p>
+                <i className="far fa-envelope"></i>{" "}
+                {schedule?.polyclinic?.email}
                 <div className="clinic-details"></div>
                 <div className="clinic-services">
                   <span>Dental Fillings</span>
@@ -37,30 +43,16 @@ const DoctorTimetableCard = () => {
                 <div className="widget-content">
                   <div className="listing-hours">
                     <div className="listing-day"></div>
-                    <div className="listing-day">
-                      <div className="day">Monday</div>
-                      <div className="time-items">
-                        <span className="time">07:00 AM - 09:00 PM</span>
+                    {schedule?.schedule.map((item, index) => (
+                      <div className="listing-day" key={index}>
+                        <div className="day">{item?.day}</div>
+                        <div className="time-items">
+                          <span className="time">
+                            {item?.start_time} - {item?.end_time}
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                    <div className="listing-day">
-                      <div className="day">Tuesday</div>
-                      <div className="time-items">
-                        <span className="time">07:00 AM - 09:00 PM</span>
-                      </div>
-                    </div>
-                    <div className="listing-day">
-                      <div className="day">Wednesday</div>
-                      <div className="time-items">
-                        <span className="time">07:00 AM - 09:00 PM</span>
-                      </div>
-                    </div>
-                    <div className="listing-day">
-                      <div className="day">Thursday</div>
-                      <div className="time-items">
-                        <span className="time">07:00 AM - 09:00 PM</span>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -69,14 +61,17 @@ const DoctorTimetableCard = () => {
               <div className="clini-infos">
                 <ul>
                   <li>
-                    <i className="fas fa-mobile"></i> 987456321
+                    <i className="fas fa-mobile"></i>{" "}
+                    {schedule?.polyclinic?.phone}
                   </li>
 
                   <li>
                     <i className="fas fa-map-marker-alt"></i>
-                    City center, Haldia
+                    {schedule.polyclinic?.street_address},
+                    {schedule.polyclinic?.city}
                     <br />
-                    West Bengal, Pin -721657
+                    {schedule.polyclinic?.state}, Pin -
+                    {schedule.polyclinic?.pincode}
                   </li>
                 </ul>
               </div>

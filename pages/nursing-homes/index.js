@@ -3,7 +3,17 @@ import {
   LocationFilter,
   HorizontalPolyclinicCard,
 } from "components/common/index";
+import { apiUrl, fetcher } from "config/api";
+import useSWR from "swr";
 const Index = () => {
+  const { data, loading, error } = useSWR(`${apiUrl}/nursing-homes`, fetcher);
+
+  // if (loading) {
+  //   return <loading />;
+  // }
+  // if (error) {
+  //   return <LoadingError />;
+  // }
   return (
     <>
       <main className="main">
@@ -18,10 +28,13 @@ const Index = () => {
                 <LocationFilter />
               </div>
               <div className="col-md-12 col-lg-8 col-xl-9">
-                <HorizontalPolyclinicCard />
-                <HorizontalPolyclinicCard />
-                <HorizontalPolyclinicCard />
-                <HorizontalPolyclinicCard />
+                {data?.map((items, index) => (
+                  <HorizontalPolyclinicCard
+                    data={items}
+                    link="nursing-homes"
+                    key={index}
+                  />
+                ))}
 
                 <div className="load-more text-center mb-4">
                   <a className="btn btn-load btn-sm" href="javascript:void(0);">

@@ -1,6 +1,24 @@
 import Link from "next/link";
 import Image from "next/image";
+import { useAuth } from "context";
+import { apiUrl } from "config/api";
+import useSWR from "swr";
+import axios from "axios";
 const NavBar = () => {
+  const { auth } = useAuth();
+  const { data } = useSWR(
+    `${apiUrl}/patients/${auth.user?.profileId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
+  console.log(data);
   return (
     <>
       <div className="topbar">
@@ -117,54 +135,65 @@ const NavBar = () => {
                     5943
                   </a>
                 </li>
-                <li className="nav-item">
-                  <Link href="/user/login">
-                    <a className="nav-link login_font">LOGIN / SIGNUP</a>
-                  </Link>
-                </li>
-                <li className="nav-item dropdown has-arrow logged-item">
-                  <a
-                    href="#"
-                    className="dropdown-toggle nav-link"
-                    data-bs-toggle="dropdown"
-                  >
-                    <span className="user-img">
-                      <Image
-                        className="rounded-circle "
-                        src="/assets/images/profile.png"
-                        width="35"
-                        height="35"
-                        alt="Darren Elder"
-                      />
-                    </span>
-                  </a>
-                  <div className="dropdown-menu dropdown-menu-end">
-                    <div className="user-header">
-                      <div className="avatar avatar-sm">
-                        <Image
-                          height="100"
-                          width="100"
-                          src="/assets/images/profile.png"
-                          alt="User Image"
-                          className="avatar-img rounded-circle"
-                        />
+                {auth?.token && auth?.user ? (
+                  <>
+                    <li className="nav-item dropdown has-arrow logged-item">
+                      <a
+                        href="#"
+                        className="dropdown-toggle nav-link"
+                        data-bs-toggle="dropdown"
+                      >
+                        <span className="user-img">
+                          <Image
+                            className="rounded-circle "
+                            src={
+                              data?.image?.url || "/assets/images/profile.png"
+                            }
+                            width="35"
+                            height="35"
+                            alt="Darren Elder"
+                          />
+                        </span>
+                      </a>
+                      <div className="dropdown-menu dropdown-menu-end">
+                        <div className="user-header">
+                          <div className="avatar avatar-sm">
+                            <Image
+                              height="100"
+                              width="100"
+                              src={
+                                data?.image?.url || "/assets/images/profile.png"
+                              }
+                              alt="User Image"
+                              className="avatar-img rounded-circle"
+                            />
+                          </div>
+                          <div className="user-text">
+                            <h6>Darren Elder</h6>
+                            <p className="text-muted mb-0">Doctor</p>
+                          </div>
+                        </div>
+                        <Link href="/user/">
+                          <a className="dropdown-item">Dashboard</a>
+                        </Link>
+                        <Link href="/user/profile-settings">
+                          <a className="dropdown-item">Profile Settings</a>
+                        </Link>
+                        <a className="dropdown-item" href="login.html">
+                          Logout
+                        </a>
                       </div>
-                      <div className="user-text">
-                        <h6>Darren Elder</h6>
-                        <p className="text-muted mb-0">Doctor</p>
-                      </div>
-                    </div>
-                    <Link href="/user/">
-                      <a className="dropdown-item">Dashboard</a>
-                    </Link>
-                    <Link href="/user/profile-settings">
-                      <a className="dropdown-item">Profile Settings</a>
-                    </Link>
-                    <a className="dropdown-item" href="login.html">
-                      Logout
-                    </a>
-                  </div>
-                </li>
+                    </li>
+                  </>
+                ) : (
+                  <>
+                    <li className="nav-item">
+                      <Link href="/user/login">
+                        <a className="nav-link login_font">LOGIN / SIGNUP</a>
+                      </Link>
+                    </li>
+                  </>
+                )}
               </ul>
             </div>
           </div>

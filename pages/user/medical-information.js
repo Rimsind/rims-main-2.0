@@ -9,7 +9,31 @@ import {
   MedicalHistory,
   SocialHistory,
 } from "components/forms";
+
+import useSWR from "swr";
+import { useAuth } from "context";
+import { apiUrl } from "config/api";
+import axios from "axios";
+
 const MedicalInformation = () => {
+  const { auth } = useAuth();
+
+  const { data } = useSWR(
+    `${apiUrl}/patients/${auth.user?.profileId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
+
+  if (!data) {
+    return <h1>Loading...</h1>;
+  }
   return (
     <>
       <div className="main-wrapper">
@@ -21,7 +45,7 @@ const MedicalInformation = () => {
         <div className="content">
           <div className="container-fluid">
             <div className="row">
-              <UserNav status5="active" />
+              <UserNav status5="active" patient={data} />
 
               <div className="col-md-7 col-lg-8 col-xl-9">
                 <div className="card shadow-sm">
@@ -105,37 +129,37 @@ const MedicalInformation = () => {
                             class="tab-pane fade show active"
                           >
                             <div class="row">
-                              <GeneralInformation />
+                              <GeneralInformation patient={data} />
                             </div>
                           </div>
                           <div role="tabpanel" id="tab-2" class="tab-pane fade">
                             <div class="row">
-                              <SocialHistory />
+                              <SocialHistory patient={data} />
                             </div>
                           </div>
                           <div role="tabpanel" id="tab-3" class="tab-pane fade">
                             <div class="row">
-                              <EmploymentStatus />
+                              <EmploymentStatus patient={data} />
                             </div>
                           </div>
                           <div role="tabpanel" id="tab-4" class="tab-pane fade">
                             <div class="row">
-                              <MedicalHistory />
+                              <MedicalHistory patient={data} />
                             </div>
                           </div>
                           <div role="tabpanel" id="tab-5" class="tab-pane fade">
                             <div class="row">
-                              <FunctionalStatus />
+                              <FunctionalStatus patient={data} />
                             </div>
                           </div>
                           <div role="tabpanel" id="tab-6" class="tab-pane fade">
                             <div class="row">
-                              <FamilyMadicalHistory />
+                              <FamilyMadicalHistory patient={data} />
                             </div>
                           </div>
                           <div role="tabpanel" id="tab-7" class="tab-pane fade">
                             <div class="row">
-                              <UploadMedicalRecord />
+                              <UploadMedicalRecord patient={data} />
                             </div>
                           </div>
                         </div>

@@ -1,6 +1,21 @@
 import { BreadCrums, PolyclinicTimetableCard } from "components/common";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import useSWR from "swr";
+import { apiUrl, fetcher } from "config/api";
 const PolyclinicId = () => {
+  const { id } = useRouter().query;
+  const { data, error, loading } = useSWR(
+    `${apiUrl}/polyclinics/${id}`,
+    fetcher
+  );
+
+  //  if (loading) {
+  //    return <Loading />;
+  //  }
+  //  if (error) {
+  //    return <LoadingError />;
+  //  }
   return (
     <>
       <main className="main">
@@ -19,7 +34,10 @@ const PolyclinicId = () => {
                         <Image
                           height="130"
                           width="145"
-                          src="/assets/images/polyclinic.jpg"
+                          src={
+                            data?.coverImage?.url ||
+                            "/assets/images/polyclinic.jpg"
+                          }
                           className="img-fluid"
                           alt="User Image"
                         />
@@ -27,11 +45,12 @@ const PolyclinicId = () => {
                     </div>
                     <div className="doc-info-cont">
                       <h4 className="doc-name">
-                        <a href="doctor-profile.html">Haldia Polyclinic</a>
+                        <a href="doctor-profile.html">{data?.name}</a>
                       </h4>
-                      <p className="doc-speciality">Haldia, West Bengal</p>
-                      <i className="far fa-envelope"></i>
-                      haldiapolyclinic@gmail.com
+                      <p className="doc-speciality">
+                        {data?.city}, {data?.state}
+                      </p>
+                      <i className="far fa-envelope"></i> {data?.email}
                       <div className="clinic-details"></div>
                       <div className="clinic-services">
                         <span>Dental Fillings</span>
@@ -44,14 +63,16 @@ const PolyclinicId = () => {
                     <div className="clini-infos">
                       <ul>
                         <li>
-                          <i className="fas fa-mobile"></i> 987456321
+                          <i className="fas fa-mobile"></i> {data?.phone}
                         </li>
                         <li>
                           <i className="far fa-clock"></i>
                           10:00 A.M to 8:00 P.M
                         </li>
                         <li>
-                          <i className="fas fa-map-marker-alt"></i> Haldia, WB
+                          <i className="fas fa-map-marker-alt"></i>{" "}
+                          {data?.street_address},{data?.city},{data?.state}, Pin
+                          -{data?.pincode}
                         </li>
                       </ul>
                     </div>
@@ -116,7 +137,9 @@ const PolyclinicId = () => {
                     id="doc_overview"
                     className="tab-pane fade show active"
                   >
-                    <PolyclinicTimetableCard />
+                    {data?.doctors.map((items, index) => (
+                      <PolyclinicTimetableCard schedule={items} key={index} />
+                    ))}
                   </div>
 
                   <div
@@ -135,7 +158,7 @@ const PolyclinicId = () => {
                             </div>
                             <div className="infor-details">
                               <label>Phone Number</label>
-                              <p>+152 534-468-854</p>
+                              <p>+91 {data?.phone}</p>
                             </div>
                           </div>
                           <div className="contact-box">
@@ -146,7 +169,7 @@ const PolyclinicId = () => {
                             </div>
                             <div className="infor-details">
                               <label>Email</label>
-                              <p>demo.rimsind@gmail.com</p>
+                              <p>{data?.email}</p>
                             </div>
                           </div>
                           <div className="contact-box">
@@ -158,8 +181,9 @@ const PolyclinicId = () => {
                             <div className="infor-details">
                               <label>Location</label>
                               <p>
-                                C/54 Northwest Freeway,Suite 558, Houston, USA
-                                485
+                                {data?.street_address},{data?.city},
+                                {data?.state},{data?.country}, Pin -
+                                {data?.pincode}
                               </p>
                             </div>
                           </div>

@@ -1,6 +1,20 @@
 import { BreadCrums, DoctorTimetableCard } from "components/common/index";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import useSWR from "swr";
+import { apiUrl, fetcher } from "config/api";
 const DoctorId = () => {
+  const { id } = useRouter().query;
+
+  const { data, error, loading } = useSWR(`${apiUrl}/doctors/${id}`, fetcher);
+  // if (loading) {
+  //   return <Loading />;
+  // }
+
+  // if (error) {
+  //   return <LoadingError />;
+  // }
+
   return (
     <>
       <main className="main">
@@ -15,26 +29,28 @@ const DoctorId = () => {
                       <Image
                         height="140"
                         width="140"
-                        src="/assets/images/smair-barman.jpg"
+                        src={data?.image?.url || "/images/profile.png"}
                         className="img-fluid"
                         alt="User Image"
                       />
                     </div>
                     <div className="doc-info-cont">
-                      <h4 className="doc-name">Dr. Samir Barman</h4>
+                      <h4 className="doc-name">
+                        Dr. {data?.firstName} {data?.lastName}
+                      </h4>
                       <p className="doc-speciality">
-                        25 years experience, Consultant Rehabilitation
+                        {data?.experienceInYrs} years experience, Consultant
+                        {data?.specialty?.name}
                       </p>
                       <h5 className="doc-department">
                         <i className="fas fa-user-tag"></i>
-                        Medicine
+                        {data?.specialty?.name}
                       </h5>
-                      <i className="far fa-envelope mb-3"></i>
-                      samirbarman112@gmail.com
+                      <i className="far fa-envelope mb-3"></i> {data?.email}
                       <div className="clinic-services">
                         <span>
-                          <i className="fab fa-skype"></i> Skype Id:
-                          aryajana@0124
+                          <i className="fab fa-skype"></i> Skype Id:{" "}
+                          {data?.skype_id}
                         </span>
                       </div>
                     </div>
@@ -43,7 +59,8 @@ const DoctorId = () => {
                     <div className="clini-infos">
                       <ul>
                         <li>
-                          <i className="fas fa-certificate"></i> MBBS
+                          <i className="fas fa-certificate"></i>{" "}
+                          {data?.qualification}
                         </li>
 
                         <li>
@@ -122,8 +139,9 @@ const DoctorId = () => {
                     className="tab-pane fade show active"
                   >
                     <div className="location-list">
-                      <DoctorTimetableCard />
-                      <DoctorTimetableCard />
+                      {data?.timetable?.map((items, index) => (
+                        <DoctorTimetableCard schedule={items} key={index} />
+                      ))}
                     </div>
                   </div>
 
@@ -136,17 +154,7 @@ const DoctorId = () => {
                       <div className="col-md-12 col-lg-9">
                         <div className="widget about-widget">
                           <h4 className="widget-title">About Me</h4>
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate velit esse cillum dolore
-                            eu fugiat nulla pariatur. Excepteur sint occaecat
-                            cupidatat non proident, sunt in culpa qui officia
-                            deserunt mollit anim id est laborum.
-                          </p>
+                          <p>{data?.bio}</p>
                         </div>
 
                         <div className="widget education-widget">

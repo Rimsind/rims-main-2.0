@@ -27,7 +27,7 @@ const ProfileSettings = () => {
                                 <Image
                                   height="100"
                                   width="100"
-                                  src="/user_assets/img/patients/patient.jpg"
+                                  src="/assets/images/profile.png"
                                   alt="User Image"
                                 />
                               </div>
