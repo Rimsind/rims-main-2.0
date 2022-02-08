@@ -1,4 +1,4 @@
-const States = [
+const StatesList = [
   "Andaman and Nicobar Islands",
   "Andhra Pradesh",
   "Arunachal Pradesh",
