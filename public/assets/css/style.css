@@ -1738,11 +1738,33 @@ ul {
       touch-action: pan-y;
 }
 
-.section-doctor .doctor-slider .slick-slide {
-  display: block;
-  margin-left: 0;
-  padding: 10px;
-  width: 280px;
+.section-doctor .doctor-slider .carousel-styling .rec.rec-arrow {
+  background-color: #10defd;
+  color: white;
+}
+
+.section-doctor .doctor-slider .carousel-styling .rec.rec-arrow:disabled {
+  background-color: #10defd80;
+}
+
+.section-doctor .doctor-slider .carousel-styling .rec.rec-dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+}
+
+.section-doctor .doctor-slider .carousel-styling .rec.rec-dot_active {
+  background-color: #10defd;
+  border-color: #10defd;
+  -webkit-box-shadow: 0 0 1px 3px #78eeff;
+          box-shadow: 0 0 1px 3px #78eeff;
+}
+
+.section-doctor .doctor-slider .carousel-styling .rec.rec-dot:hover,
+.section-doctor .doctor-slider .carousel-styling .rec.rec-dot:focus {
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 1px 3px #78eeff;
+          box-shadow: 0 0 1px 3px #78eeff;
 }
 
 .section-doctor .doctor-slider .profile-widget {
@@ -1885,6 +1907,35 @@ ul {
   padding: 16px 50px;
 }
 
+.section-features .features-slider .carousel-styling .rec.rec-arrow {
+  background-color: #10defd;
+  color: white;
+}
+
+.section-features .features-slider .carousel-styling .rec.rec-arrow:disabled {
+  background-color: #10defd80;
+}
+
+.section-features .features-slider .carousel-styling .rec.rec-dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+}
+
+.section-features .features-slider .carousel-styling .rec.rec-dot_active {
+  background-color: #10defd;
+  border-color: #10defd;
+  -webkit-box-shadow: 0 0 1px 3px #78eeff;
+          box-shadow: 0 0 1px 3px #78eeff;
+}
+
+.section-features .features-slider .carousel-styling .rec.rec-dot:hover,
+.section-features .features-slider .carousel-styling .rec.rec-dot:focus {
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 1px 3px #78eeff;
+          box-shadow: 0 0 1px 3px #78eeff;
+}
+
 .section-features .features-slider .feature-item {
   width: 100%;
   display: inline-block;
@@ -1990,6 +2041,35 @@ ul {
 .our-doctors-section {
   padding: 60px 0;
   background: #fff;
+}
+
+.our-doctors-section .our-doctors .carousel-styling .rec.rec-arrow {
+  background-color: #10defd;
+  color: white;
+}
+
+.our-doctors-section .our-doctors .carousel-styling .rec.rec-arrow:disabled {
+  background-color: #10defd80;
+}
+
+.our-doctors-section .our-doctors .carousel-styling .rec.rec-dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+}
+
+.our-doctors-section .our-doctors .carousel-styling .rec.rec-dot_active {
+  background-color: #10defd;
+  border-color: #10defd;
+  -webkit-box-shadow: 0 0 1px 3px #78eeff;
+          box-shadow: 0 0 1px 3px #78eeff;
+}
+
+.our-doctors-section .our-doctors .carousel-styling .rec.rec-dot:hover,
+.our-doctors-section .our-doctors .carousel-styling .rec.rec-dot:focus {
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 1px 3px #78eeff;
+          box-shadow: 0 0 1px 3px #78eeff;
 }
 
 .our-doctors-section .section-heading {
@@ -2174,6 +2254,12 @@ ul {
   text-align: center;
   display: block;
   font-weight: 500;
+}
+
+.our-doctors-section .item .our-doctors-card .doctors-body .view-btn:hover {
+  background: #0de0fe;
+  border: 1px solid #0de0fe;
+  color: #ffffffe6;
 }
 
 .our-doctors-section .item .our-doctors-card .doctors-body .book-btn {

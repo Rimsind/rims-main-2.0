@@ -5,8 +5,8 @@ const FeatureIcon = (props) => {
       <div className="col-md">
         <div className="feature-item text-center">
           <Image
-            height={500}
-            width={500}
+            height={150}
+            width={150}
             src={props.img}
             className="img"
             alt="Feature"

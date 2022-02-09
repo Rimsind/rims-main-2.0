@@ -153,7 +153,7 @@ const Index = () => {
               </div>
               <div className="col-lg-8">
                 <div className="doctor-slider slider">
-                  <div className="row">
+                  <div className="row carousel-styling">
                     <Carousel breakPoints={breakPoints}>
                       <VerticalDoctorCard />
                       <VerticalDoctorCard />
@@ -191,7 +191,7 @@ const Index = () => {
                   </p>
                 </div>
                 <div className="features-slider slider">
-                  <div className="row">
+                  <div className="row carousel-styling">
                     <Carousel breakPoints={breakPoints}>
                       <FeatureIcon
                         title="Operation"
@@ -280,7 +280,7 @@ const Index = () => {
               <div className="col-md-6 text-end"></div>
             </div>
             <div className="our-doctors">
-              <div className="d-flex">
+              <div className="d-flex carousel-styling">
                 <Carousel breakPoints={breakPoints}>
                   <VerticalPolyclinicCard />
                   <VerticalPolyclinicCard />
