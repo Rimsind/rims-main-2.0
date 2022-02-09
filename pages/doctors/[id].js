@@ -67,14 +67,14 @@ const DoctorId = () => {
                           <i className="fas fa-map-marker-alt"></i> City Center,
                           Haldia, WB
                         </li>
-                        <li>
+                        {/* <li>
                           <i className="far fa-money-bill-alt"></i> ₹300 - ₹1000
                           <i
                             className="fas fa-info-circle"
                             data-bs-toggle="tooltip"
                             title="Lorem Ipsum"
                           ></i>
-                        </li>
+                        </li> */}
                       </ul>
                     </div>
                     <div className="doctor-action">
@@ -140,7 +140,11 @@ const DoctorId = () => {
                   >
                     <div className="location-list">
                       {data?.timetable?.map((items, index) => (
-                        <DoctorTimetableCard schedule={items} key={index} />
+                        <DoctorTimetableCard
+                          schedule={items}
+                          key={index}
+                          doctor={id}
+                        />
                       ))}
                     </div>
                   </div>

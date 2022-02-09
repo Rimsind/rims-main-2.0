@@ -1,6 +1,6 @@
 import Image from "next/image";
-const DoctorTimetableCard = ({ schedule }) => {
-  console.log(schedule);
+import Link from "next/link";
+const DoctorTimetableCard = ({ schedule, doctor }) => {
   return (
     <>
       <div className="card location_card shadow-sm">
@@ -26,7 +26,9 @@ const DoctorTimetableCard = ({ schedule }) => {
                   <a href="doctor-profile.html">{schedule?.polyclinic?.name}</a>
                 </h4>
                 <p className="doc-speciality">
-                  {schedule?.polyclinic?.city},{schedule?.polyclinic?.state}
+                  {schedule.polyclinic?.street_address},
+                  {schedule.polyclinic?.city}
+                  {schedule.polyclinic?.state}
                 </p>
                 <i className="far fa-envelope"></i>{" "}
                 {schedule?.polyclinic?.email}
@@ -66,19 +68,16 @@ const DoctorTimetableCard = ({ schedule }) => {
                   </li>
 
                   <li>
-                    <i className="fas fa-map-marker-alt"></i>
-                    {schedule.polyclinic?.street_address},
-                    {schedule.polyclinic?.city}
-                    <br />
-                    {schedule.polyclinic?.state}, Pin -
-                    {schedule.polyclinic?.pincode}
+                    <i className="far fa-money-bill-alt"></i>₹ {schedule?.fee}
                   </li>
                 </ul>
               </div>
               <div className="clinic-booking">
-                <a className="apt-btn" href="booking.html">
-                  Book Appointment
-                </a>
+                <Link
+                  href={`/schedule?doctor=${doctor}&&polyclinic=${schedule?.polyclinic?.id}&&fee=${schedule?.fee}`}
+                >
+                  <a className="apt-btn">Book Appointment</a>
+                </Link>
               </div>
             </div>
           </div>

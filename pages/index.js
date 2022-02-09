@@ -7,8 +7,23 @@ import {
   VerticalPolyclinicCard,
 } from "components/common/";
 
+import { apiUrl, fetcher } from "config/api";
+import useSWR from "swr";
+import Carousel from "react-elastic-carousel";
 import Image from "next/image";
 const Index = () => {
+  const { data: specialties } = useSWR(`${apiUrl}/specialties`, fetcher);
+  const { data: doctors } = useSWR(`${apiUrl}/doctors`, fetcher);
+  const { data: polyclinics } = useSWR(`${apiUrl}/polyclinics`, fetcher);
+  const { data: nursingHomes } = useSWR(`${apiUrl}/nursing-homes`, fetcher);
+
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 550, itemsToShow: 4, itemsToScroll: 3 },
+    { width: 768, itemsToShow: 4, itemsToScroll: 4 },
+    { width: 1200, itemsToShow: 1 },
+  ];
+
   return (
     <>
       <main className="main">
@@ -91,11 +106,11 @@ const Index = () => {
               <div className="col-md-9">
                 <div className="specialities-slider slider">
                   <div className="row">
-                    <SpecialityBlock />
-                    <SpecialityBlock />
-                    <SpecialityBlock />
-                    <SpecialityBlock />
-                    <SpecialityBlock />
+                    <Carousel breakPoints={breakPoints}>
+                      {specialties?.map((items, index) => (
+                        <SpecialityBlock specialties={items} key={index} />
+                      ))}
+                    </Carousel>
                   </div>
                 </div>
               </div>
@@ -139,10 +154,15 @@ const Index = () => {
               <div className="col-lg-8">
                 <div className="doctor-slider slider">
                   <div className="row">
-                    <VerticalDoctorCard />
-                    <VerticalDoctorCard />
-                    <VerticalDoctorCard />
-                    <VerticalDoctorCard />
+                    <Carousel breakPoints={breakPoints}>
+                      <VerticalDoctorCard />
+                      <VerticalDoctorCard />
+                      <VerticalDoctorCard />
+                      <VerticalDoctorCard />
+                      <VerticalDoctorCard />
+                      <VerticalDoctorCard />
+                      <VerticalDoctorCard />
+                    </Carousel>
                   </div>
                 </div>
               </div>
@@ -172,34 +192,36 @@ const Index = () => {
                 </div>
                 <div className="features-slider slider">
                   <div className="row">
-                    <FeatureIcon
-                      title="Operation"
-                      img="/assets/images/features/feature-01.jpg"
-                    />
-                    <FeatureIcon
-                      title="Medical"
-                      img="/assets/images/features/feature-02.jpg"
-                    />
-                    <FeatureIcon
-                      title="Patient Ward"
-                      img="/assets/images/features/feature-03.jpg"
-                    />
-                    <FeatureIcon
-                      title="Test Room"
-                      img="/assets/images/features/feature-04.jpg"
-                    />
-                    <FeatureIcon
-                      title="ICU"
-                      img="/assets/images/features/feature-05.jpg"
-                    />
-                    <FeatureIcon
-                      title="Laboartory"
-                      img="/assets/images/features/feature-06.jpg"
-                    />
-                    <FeatureIcon
-                      title="Operation"
-                      img="/assets/images/features/feature-07.jpg"
-                    />
+                    <Carousel breakPoints={breakPoints}>
+                      <FeatureIcon
+                        title="Operation"
+                        img="/assets/images/features/feature-01.jpg"
+                      />
+                      <FeatureIcon
+                        title="Medical"
+                        img="/assets/images/features/feature-02.jpg"
+                      />
+                      <FeatureIcon
+                        title="Patient Ward"
+                        img="/assets/images/features/feature-03.jpg"
+                      />
+                      <FeatureIcon
+                        title="Test Room"
+                        img="/assets/images/features/feature-04.jpg"
+                      />
+                      <FeatureIcon
+                        title="ICU"
+                        img="/assets/images/features/feature-05.jpg"
+                      />
+                      <FeatureIcon
+                        title="Laboartory"
+                        img="/assets/images/features/feature-06.jpg"
+                      />
+                      <FeatureIcon
+                        title="Operation"
+                        img="/assets/images/features/feature-07.jpg"
+                      />
+                    </Carousel>
                   </div>
                 </div>
               </div>
@@ -259,10 +281,16 @@ const Index = () => {
             </div>
             <div className="our-doctors">
               <div className="row">
-                <VerticalPolyclinicCard />
-                <VerticalPolyclinicCard />
-                <VerticalPolyclinicCard />
-                <VerticalPolyclinicCard />
+                <Carousel breakPoints={breakPoints}>
+                  <VerticalPolyclinicCard />
+                  <VerticalPolyclinicCard />
+                  <VerticalPolyclinicCard />
+                  <VerticalPolyclinicCard />
+                  <VerticalPolyclinicCard />
+                  <VerticalPolyclinicCard />
+                  <VerticalPolyclinicCard />
+                  <VerticalPolyclinicCard />
+                </Carousel>
               </div>
             </div>
           </div>

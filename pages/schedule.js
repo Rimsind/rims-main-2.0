@@ -1,5 +1,13 @@
 import { BreadCrums, VerifyCard } from "components/common";
+
+import { useRouter } from "next/router";
+import { useState } from "react";
+
 const Schedule = () => {
+  const { doctor, polyclinic, fee } = useRouter().query;
+  const [data, setData] = useState();
+  console.log(data);
+
   return (
     <>
       <main className="main">
@@ -22,7 +30,7 @@ const Schedule = () => {
                 </div>
 
                 <div className="card booking-schedule schedule-widget">
-                  <div className="schedule-header">
+                  {/* <div className="schedule-header">
                     <div className="row">
                       <div className="col-md-12">
                         <div className="day-slot">
@@ -90,7 +98,7 @@ const Schedule = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
 
                   <div className="schedule-cont">
                     <div className="row">
@@ -98,81 +106,76 @@ const Schedule = () => {
                         <div className="time-slot">
                           <ul className="clearfix">
                             <li>
-                              <a className="timing" href="#">
-                                <span>9:00</span> <span>AM</span>
-                              </a>
-                              <a className="timing" href="#">
-                                <span>10:00</span> <span>AM</span>
-                              </a>
-                              <a className="timing" href="#">
-                                <span>11:00</span> <span>AM</span>
-                              </a>
+                              <button
+                                className="btm btn-primary my-2 mx-2"
+                                value="9:00 AM"
+                                onClick={(e) => setData(e.target.value)}
+                              >
+                                9:00 AM
+                              </button>
+
+                              <button
+                                className="btm btn-primary my-2"
+                                value="10:00 AM"
+                                onClick={(e) => setData(e.target.value)}
+                              >
+                                9:00 AM
+                              </button>
+                              <button
+                                className="btm btn-primary my-2"
+                                value="9:00 AM"
+                                onClick={(e) => setData(e.target.value)}
+                              >
+                                9:00 AM
+                              </button>
                             </li>
                             <li>
-                              <a className="timing" href="#">
-                                <span>9:00</span> <span>AM</span>
-                              </a>
-                              <a className="timing" href="#">
-                                <span>10:00</span> <span>AM</span>
-                              </a>
-                              <a className="timing" href="#">
-                                <span>11:00</span> <span>AM</span>
-                              </a>
+                              <button
+                                className="btm btn-primary my-2"
+                                value="9:00 AM"
+                                onClick={(e) => setData(e.target.value)}
+                              >
+                                9:00 AM - 9:15 AM
+                              </button>
+
+                              <button
+                                className="btm btn-primary my-2"
+                                value="9:00 AM"
+                                onClick={(e) => setData(e.target.value)}
+                              >
+                                9:00 AM
+                              </button>
+                              <button
+                                className="btm btn-primary my-2"
+                                value="9:00 AM"
+                                onClick={(e) => setData(e.target.value)}
+                              >
+                                9:00 AM
+                              </button>
                             </li>
                             <li>
-                              <a className="timing" href="#">
-                                <span>9:00</span> <span>AM</span>
-                              </a>
-                              <a className="timing" href="#">
-                                <span>10:00</span> <span>AM</span>
-                              </a>
-                              <a className="timing" href="#">
-                                <span>11:00</span> <span>AM</span>
-                              </a>
-                            </li>
-                            <li>
-                              <a className="timing" href="#">
-                                <span>9:00</span> <span>AM</span>
-                              </a>
-                              <a className="timing" href="#">
-                                <span>10:00</span> <span>AM</span>
-                              </a>
-                              <a className="timing" href="#">
-                                <span>11:00</span> <span>AM</span>
-                              </a>
-                            </li>
-                            <li>
-                              <a className="timing" href="#">
-                                <span>9:00</span> <span>AM</span>
-                              </a>
-                              <a className="timing selected" href="#">
-                                <span>10:00</span> <span>AM</span>
-                              </a>
-                              <a className="timing" href="#">
-                                <span>11:00</span> <span>AM</span>
-                              </a>
-                            </li>
-                            <li>
-                              <a className="timing" href="#">
-                                <span>9:00</span> <span>AM</span>
-                              </a>
-                              <a className="timing" href="#">
-                                <span>10:00</span> <span>AM</span>
-                              </a>
-                              <a className="timing" href="#">
-                                <span>11:00</span> <span>AM</span>
-                              </a>
-                            </li>
-                            <li>
-                              <a className="timing" href="#">
-                                <span>9:00</span> <span>AM</span>
-                              </a>
-                              <a className="timing" href="#">
-                                <span>10:00</span> <span>AM</span>
-                              </a>
-                              <a className="timing" href="#">
-                                <span>11:00</span> <span>AM</span>
-                              </a>
+                              <button
+                                className="btm btn-primary my-2"
+                                value="9:00 AM"
+                                onClick={(e) => setData(e.target.value)}
+                              >
+                                9:00 AM
+                              </button>
+
+                              <button
+                                className="btm btn-primary my-2"
+                                value="9:00 AM"
+                                onClick={(e) => setData(e.target.value)}
+                              >
+                                9:00 AM
+                              </button>
+                              <button
+                                className="btm btn-primary my-2"
+                                value="9:00 AM"
+                                onClick={(e) => setData(e.target.value)}
+                              >
+                                9:00 AM
+                              </button>
                             </li>
                           </ul>
                         </div>

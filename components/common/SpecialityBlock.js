@@ -1,13 +1,11 @@
-import Image from "next/image";
-const SpecialityBlock = () => {
+const SpecialityBlock = ({ specialties }) => {
+  console.log(specialties);
   return (
     <>
       <div className="col-md">
         <div className="speicality-item text-center">
           <div className="speicality-img">
-            <Image
-              height="100"
-              width="100"
+            <img
               src="/assets/images/specialities/specialities-01.png"
               className="img-fluid"
               alt="Speciality"
@@ -16,7 +14,7 @@ const SpecialityBlock = () => {
               <i className="fa fa-circle" aria-hidden="true"></i>
             </span>
           </div>
-          <p>Urology</p>
+          <p>{specialties?.name}</p>
         </div>
       </div>
     </>
