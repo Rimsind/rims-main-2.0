@@ -5,7 +5,7 @@ const SpecialityBlock = ({ specialties }) => {
         <div className="speicality-item text-center">
           <div className="speicality-img">
             <img
-              src="/assets/images/specialities/specialities-01.png"
+              src={specialties?.image?.url}
               className="img-fluid"
               alt="Speciality"
             />

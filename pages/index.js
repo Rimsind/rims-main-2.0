@@ -19,9 +19,9 @@ const Index = () => {
 
   const breakPoints = [
     { width: 1, itemsToShow: 1 },
-    { width: 550, itemsToShow: 4, itemsToScroll: 3 },
-    { width: 768, itemsToShow: 4, itemsToScroll: 4 },
-    { width: 1200, itemsToShow: 1 },
+    { width: 550, itemsToShow: 3, itemsToScroll: 1 },
+    { width: 768, itemsToShow: 4, itemsToScroll: 1 },
+    { width: 1200, itemsToShow: 4 },
   ];
 
   return (
