@@ -105,7 +105,7 @@ const Index = () => {
             <div className="row justify-content-center mb-lg-5">
               <div className="col-md-9">
                 <div className="specialities-slider slider">
-                  <div className="row">
+                  <div className="row carousel-styling">
                     <Carousel breakPoints={breakPoints}>
                       {specialties?.map((items, index) => (
                         <SpecialityBlock specialties={items} key={index} />
@@ -280,7 +280,7 @@ const Index = () => {
               <div className="col-md-6 text-end"></div>
             </div>
             <div className="our-doctors">
-              <div className="row">
+              <div className="d-flex">
                 <Carousel breakPoints={breakPoints}>
                   <VerticalPolyclinicCard />
                   <VerticalPolyclinicCard />

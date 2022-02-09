@@ -1274,12 +1274,30 @@ ul {
     }
   }
   .specialities-slider {
-    .slick-slide {
-      display: block;
-      padding: 0 12px;
-      margin-left: 0;
-      margin-right: 20px;
-      margin-top: 10px;
+    .carousel-styling {
+      .rec.rec-arrow {
+        background-color: #10defd;
+        color: white;
+      }
+      .rec.rec-arrow:disabled {
+        background-color: #10defd80;
+      }
+      .rec.rec-dot {
+        height: 10px;
+        width: 10px;
+
+        border-radius: 50%;
+      }
+      .rec.rec-dot_active {
+        background-color: #10defd;
+        border-color: #10defd;
+        box-shadow: 0 0 1px 3px #78eeff;
+      }
+      .rec.rec-dot:hover,
+      .rec.rec-dot:focus {
+        cursor: pointer;
+        box-shadow: 0 0 1px 3px #78eeff;
+      }
     }
   }
   .speicality-item {
