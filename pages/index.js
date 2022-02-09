@@ -272,8 +272,8 @@ const Index = () => {
                 <div className="section-heading">
                   <h2>Clinic & Specialities</h2>
                   <p>
-                    Access to expert physicians and surgeons, advanced
-                    technologies and top-quality surgery facilities right here.
+                    Access to expert physicians and surgeons, technologies and
+                    top-quality surgery facilities right here.
                   </p>
                 </div>
               </div>
