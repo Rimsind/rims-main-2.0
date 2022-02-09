@@ -1,5 +1,4 @@
 const SpecialityBlock = ({ specialties }) => {
-  console.log(specialties);
   return (
     <>
       <div className="col-md">
