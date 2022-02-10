@@ -1,5 +1,7 @@
 import Image from "next/image";
-const VerticalPolyclinicCard = () => {
+import Link from "next/link";
+const VerticalPolyclinicCard = ({ data }) => {
+  console.log(data);
   return (
     <>
       <div className="item me-4">
@@ -9,7 +11,7 @@ const VerticalPolyclinicCard = () => {
               <Image
                 height={200}
                 width={300}
-                src="/assets/images/doctors/doctor-01.jpg"
+                src={data?.coverImage?.url}
                 alt=""
                 className="img-fluid"
               />
@@ -17,12 +19,13 @@ const VerticalPolyclinicCard = () => {
           </div>
           <div className="doctors-body">
             <a href="doctor-profile.html">
-              <h4>Haldia Polyclinics</h4>
+              <h4>{data?.name}</h4>
             </a>
             <p>Dental Filling, Whitning</p>
             <div className="location d-flex">
               <p>
-                <i className="fas fa-map-marker-alt"></i> City Center, Haldia
+                <i className="fas fa-map-marker-alt"></i> {data?.city},{" "}
+                {data?.state}
               </p>
               <p className="ms-auto">
                 <i className="far fa-clock"></i> 10:00 A.M to 8:00 P.M
@@ -30,13 +33,11 @@ const VerticalPolyclinicCard = () => {
             </div>
             <div className="row row-sm">
               <div className="col-12">
-                <a
-                  href="doctor-profile.html"
-                  className="btn view-btn"
-                  tabIndex="0"
-                >
-                  View Profile
-                </a>
+                <Link href={`/polyclinics/${data?.id}`}>
+                  <a className="btn view-btn" tabIndex="0">
+                    View Profile
+                  </a>
+                </Link>
               </div>
             </div>
           </div>

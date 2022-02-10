@@ -11,6 +11,7 @@ import { apiUrl, fetcher } from "config/api";
 import useSWR from "swr";
 import Carousel from "react-elastic-carousel";
 import Image from "next/image";
+import Link from "next/link";
 const Index = () => {
   const { data: specialties } = useSWR(`${apiUrl}/specialties`, fetcher);
   const { data: doctors } = useSWR(`${apiUrl}/doctors`, fetcher);
@@ -148,20 +149,18 @@ const Index = () => {
                     many web sites still in their infancy. Various versions have
                     evolved over the years, sometimes
                   </p>
-                  <a href="#">Read More..</a>
+                  <Link href="/doctors">
+                    <a>Read More...</a>
+                  </Link>
                 </div>
               </div>
               <div className="col-lg-8">
                 <div className="doctor-slider slider">
                   <div className="row carousel-styling">
                     <Carousel breakPoints={breakPoints}>
-                      <VerticalDoctorCard />
-                      <VerticalDoctorCard />
-                      <VerticalDoctorCard />
-                      <VerticalDoctorCard />
-                      <VerticalDoctorCard />
-                      <VerticalDoctorCard />
-                      <VerticalDoctorCard />
+                      {doctors?.map((items, index) => (
+                        <VerticalDoctorCard data={items} key={index} />
+                      ))}
                     </Carousel>
                   </div>
                 </div>
@@ -282,14 +281,9 @@ const Index = () => {
             <div className="our-doctors">
               <div className="d-flex carousel-styling">
                 <Carousel breakPoints={breakPoints}>
-                  <VerticalPolyclinicCard />
-                  <VerticalPolyclinicCard />
-                  <VerticalPolyclinicCard />
-                  <VerticalPolyclinicCard />
-                  <VerticalPolyclinicCard />
-                  <VerticalPolyclinicCard />
-                  <VerticalPolyclinicCard />
-                  <VerticalPolyclinicCard />
+                  {polyclinics?.map((items, index) => (
+                    <VerticalPolyclinicCard data={items} key={index} />
+                  ))}
                 </Carousel>
               </div>
             </div>
