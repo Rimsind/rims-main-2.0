@@ -18,6 +18,7 @@ const Layout = ({ children }) => {
           rel="stylesheet"
           href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         />
+        <link rel="shortcut icon" href="/assets/images/favicon.png" />
       </Head>
       <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></Script>
       <NavBar />

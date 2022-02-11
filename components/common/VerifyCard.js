@@ -1,5 +1,5 @@
 import Image from "next/image";
-const VerifyCard = () => {
+const VerifyCard = ({ doctorDetails, polyclinicDetails }) => {
   return (
     <>
       <div className="card">
@@ -12,18 +12,22 @@ const VerifyCard = () => {
                   <Image
                     height="100"
                     width="100"
-                    src="/assets/images/doctors/doctor-thumb-01.jpg"
+                    src={doctorDetails?.image?.url || "/images/profile.png"}
                     alt="User Image"
                   />
                 </a>
                 <div className="booking-info">
                   <h6 className="fs-6 fw-bold">
-                    <a href="doctor-profile.html">Dr. Bappa Kamila</a>
+                    <a href="doctor-profile.html">
+                      Dr. {doctorDetails?.firstName} {doctorDetails?.lastName}
+                    </a>
                   </h6>
-                  <h6 className="text-muted fs-6">MBBS</h6>
+                  <h6 className="text-muted fs-6">
+                    {doctorDetails?.qualification}
+                  </h6>
                   <h5 className="doc-department fs-6">
                     <i className="fas fa-user-tag"></i>
-                    Heart
+                    {doctorDetails?.specialty?.name}
                   </h5>
                 </div>
               </div>
@@ -35,16 +39,20 @@ const VerifyCard = () => {
                   <Image
                     height="100"
                     width="100"
-                    src="/assets/images/card_image.jpg"
+                    src={
+                      polyclinicDetails?.coverImage?.url ||
+                      "/assets/images/card_image.jpg"
+                    }
                     alt="User Image"
                   />
                 </a>
                 <div className="booking-info">
                   <h6 className="fs-6 fw-bold">
-                    <a href="doctor-profile.html">Mediland Nursing Home</a>
+                    <a href="doctor-profile.html">{polyclinicDetails?.name}</a>
                   </h6>
                   <p className="text-muted fs-6">
-                    HPL Link Road, Haldia, West Bengal
+                    {polyclinicDetails?.street_address},
+                    {polyclinicDetails?.city}, {polyclinicDetails?.state}
                   </p>
                 </div>
               </div>

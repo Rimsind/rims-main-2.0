@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 const VerticalPolyclinicCard = ({ data }) => {
-  console.log(data);
   return (
     <>
       <div className="item me-4">

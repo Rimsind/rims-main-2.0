@@ -34,13 +34,16 @@ const Index = () => {
               <div className="col-md-7 col-lg-8 col-xl-9">
                 <div className="row">
                   <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
-                    <div className="card">
+                    <div
+                      className="card heart-rate"
+                      style={{ backgroundColor: "#ff000054" }}
+                    >
                       <div className="card-body text-center">
                         <div className="mb-3">
                           <Image
                             height="55"
                             width="55"
-                            src="/user_assets/img/specialities/pt-dashboard-01.png"
+                            src="/user_assets/img/specialities/pic-1.png"
                             alt=""
                           />
                         </div>
@@ -52,13 +55,16 @@ const Index = () => {
                     </div>
                   </div>
                   <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
-                    <div className="card">
+                    <div
+                      className="card body-temp"
+                      style={{ backgroundColor: "#006bff63" }}
+                    >
                       <div className="card-body text-center">
                         <div className="mb-3">
                           <Image
                             height="55"
                             width="55"
-                            src="/user_assets/img/specialities/pt-dashboard-02.png"
+                            src="/user_assets/img/specialities/pic-2.png"
                             alt=""
                           />
                         </div>
@@ -70,13 +76,16 @@ const Index = () => {
                     </div>
                   </div>
                   <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
-                    <div className="card">
+                    <div
+                      className="card glucose-lvl "
+                      style={{ backgroundColor: "#e74e8473" }}
+                    >
                       <div className="card-body text-center">
                         <div className="mb-3">
                           <Image
                             height="55"
                             width="55"
-                            src="/user_assets/img/specialities/pt-dashboard-03.png"
+                            src="/user_assets/img/specialities/pic-3.png"
                             alt=""
                           />
                         </div>
@@ -86,13 +95,16 @@ const Index = () => {
                     </div>
                   </div>
                   <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
-                    <div className="card">
+                    <div
+                      className="card blood-presr"
+                      style={{ backgroundColor: "#75ff7087" }}
+                    >
                       <div className="card-body text-center">
                         <div className="mb-3">
                           <Image
                             height="55"
                             width="55"
-                            src="/user_assets/img/specialities/pt-dashboard-04.png"
+                            src="/user_assets/img/specialities/pic-4.png"
                             alt=""
                           />
                         </div>
@@ -104,119 +116,89 @@ const Index = () => {
                     </div>
                   </div>
                 </div>
-                <div className="row patient-graph-col">
-                  <div className="col-12">
-                    <div className="card">
-                      <div className="card-header">
-                        <h4 className="card-title">Graph Status</h4>
-                      </div>
-                      <div className="card-body pt-2 pb-2 mt-1 mb-1">
-                        <div className="row">
-                          <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-graph-box">
-                            <a
-                              href="#"
-                              className="graph-box"
-                              data-bs-toggle="modal"
-                              data-bs-target="#graph1"
-                            >
-                              <div>
-                                <h4>BMI Status</h4>
-                              </div>
-                              <div className="graph-img">
-                                <Image
-                                  height="50"
-                                  width="50"
-                                  src="/user_assets/img/shapes/graph-01.png"
-                                  alt=""
-                                />
-                              </div>
-                              <div className="graph-status-result mt-3">
-                                <span className="graph-update-date">
-                                  Last Update 6d
-                                </span>
-                              </div>
-                            </a>
-                          </div>
-                          <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-graph-box">
-                            <a
-                              href="#"
-                              className="graph-box pink-graph"
-                              data-bs-toggle="modal"
-                              data-bs-target="#graph2"
-                            >
-                              <div>
-                                <h4>Heart Rate Status</h4>
-                              </div>
-                              <div className="graph-img">
-                                <Image
-                                  height="50"
-                                  width="50"
-                                  src="/user_assets/img/shapes/graph-02.png"
-                                  alt=""
-                                />
-                              </div>
-                              <div className="graph-status-result mt-3">
-                                <span className="graph-update-date">
-                                  Last Update 2d
-                                </span>
-                              </div>
-                            </a>
-                          </div>
-                          <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-graph-box">
-                            <a
-                              href="#"
-                              className="graph-box sky-blue-graph"
-                              data-bs-toggle="modal"
-                              data-bs-target="#graph3"
-                            >
-                              <div>
-                                <h4>FBC Status</h4>
-                              </div>
-                              <div className="graph-img">
-                                <Image
-                                  height="50"
-                                  width="50"
-                                  src="/user_assets/img/shapes/graph-03.png"
-                                  alt=""
-                                />
-                              </div>
-                              <div className="graph-status-result mt-3">
-                                <span className="graph-update-date">
-                                  Last Update 5d
-                                </span>
-                              </div>
-                            </a>
-                          </div>
-                          <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-graph-box">
-                            <a
-                              href="#"
-                              className="graph-box orange-graph"
-                              data-bs-toggle="modal"
-                              data-bs-target="#graph4"
-                            >
-                              <div>
-                                <h4>Weight Status</h4>
-                              </div>
-                              <div className="graph-img">
-                                <Image
-                                  height="50"
-                                  width="50"
-                                  src="/user_assets/img/shapes/graph-04.png"
-                                  alt=""
-                                />
-                              </div>
-                              <div className="graph-status-result mt-3">
-                                <span className="graph-update-date">
-                                  Last Update 3d
-                                </span>
-                              </div>
-                            </a>
-                          </div>
+                <div className="row">
+                  <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
+                    <div
+                      className="card bmi"
+                      style={{ backgroundColor: "#fff7d9" }}
+                    >
+                      <div className="card-body text-center">
+                        <div className="mb-3">
+                          <Image
+                            height="55"
+                            width="55"
+                            src="/user_assets/img/specialities/pic-6.png"
+                            alt=""
+                          />
                         </div>
+                        <h5>BMI</h5>
+                        <h6>121.33</h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
+                    <div
+                      className="card oxygen-lvl"
+                      style={{ backgroundColor: "#80ffd4" }}
+                    >
+                      <div className="card-body text-center">
+                        <div className="mb-3">
+                          <Image
+                            height="55"
+                            width="55"
+                            src="/user_assets/img/specialities/pic-8.png"
+                            alt=""
+                          />
+                        </div>
+                        <h5>Oxygen Level</h5>
+                        <h6>
+                          18 <sub>C</sub>
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
+                    <div
+                      className="card dimension"
+                      style={{ backgroundColor: "#fff599" }}
+                    >
+                      <div className="card-body text-center">
+                        <div className="mb-3">
+                          <Image
+                            height="55"
+                            width="55"
+                            src="/user_assets/img/specialities/pic-5.png"
+                            alt=""
+                          />
+                        </div>
+                        <h5>Dimensions</h5>
+                        <h6>154 Cm - 90 Kg</h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
+                    <div
+                      className="card resp-rate"
+                      style={{ backgroundColor: "#83ffff75" }}
+                    >
+                      <div className="card-body text-center">
+                        <div className="mb-3">
+                          <Image
+                            height="55"
+                            width="55"
+                            src="/user_assets/img/specialities/pic-13.png"
+                            alt=""
+                          />
+                        </div>
+                        <h5>Respiratory rate</h5>
+                        <h6>
+                          202/90 <sub>mg/dl</sub>
+                        </h6>
                       </div>
                     </div>
                   </div>
                 </div>
+
                 <div className="card">
                   <div className="card-body pt-0">
                     <nav className="user-tabs mb-4">

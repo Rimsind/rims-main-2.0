@@ -74,7 +74,7 @@ const DoctorTimetableCard = ({ schedule, doctor }) => {
               </div>
               <div className="clinic-booking">
                 <Link
-                  href={`/schedule?doctor=${doctor}&&polyclinic=${schedule?.polyclinic?.id}&&fee=${schedule?.fee}`}
+                  href={`/schedule?doctorId=${doctor}&&polyclinicId=${schedule?.polyclinic?.id}&&fee=${schedule?.fee}`}
                 >
                   <a className="apt-btn">Book Appointment</a>
                 </Link>

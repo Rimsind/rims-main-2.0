@@ -1,6 +1,113 @@
 import { BreadCrums, VerifyCard } from "components/common";
+import useSWR from "swr";
+import { apiUrl, fetcher } from "config/api";
+import { useState } from "react";
+import { useRouter } from "next/router";
+import Link from "next/link";
 import Image from "next/image";
 const ChiefComplaints = () => {
+  const { doctorId, polyclinicId, fee, date } = useRouter().query;
+  const { data: doctor } = useSWR(`${apiUrl}/doctors/${doctorId}`, fetcher);
+  const { data: polyclinic } = useSWR(
+    `${apiUrl}/polyclinics/${polyclinicId}`,
+    fetcher
+  );
+
+  const [description, setDescription] = useState();
+  const [duration, setDuration] = useState();
+  const [complainList, setComplainList] = useState([]);
+
+  const addComplaints = () => {
+    setComplainList([
+      ...complainList,
+      {
+        description: description,
+        duration: duration,
+      },
+    ]);
+    setDescription("");
+    setDuration("");
+  };
+
+  const generalProblems = [
+    "Fever",
+    "Chills",
+    "Sweating",
+    "Excessive weight loss",
+    "Excessive weight gain",
+    "Appetite loss",
+    "Vomiting",
+    "Felling of vomit",
+    "High Blood pressure",
+    "Low Blood pressure",
+    "High temperature",
+    "Weakness",
+    "Sleeping problems",
+    "Tiredness & lack of energy",
+  ];
+
+  const rehumatologic = [
+    " Joint swelling",
+    "Muscle pain",
+    "Muscle Weakness",
+    "Skin Rashes",
+    "Reaction to sunlight",
+    "Nail color change",
+  ];
+  const neurologicProblems = [
+    "Headaches",
+    "Pain spreading from one place to another",
+    "Visibility problems",
+    "Dizziness",
+    "Numbness or burnings feedings",
+  ];
+
+  const heartRelatedProblems = [
+    "Chest pain",
+    "Fast heart beat",
+    "Heavy cough",
+    "Claudication (leg pain cramps)",
+    "Shortness of breath",
+    "Difficulty in walking",
+    "Feeling of tiredness easily",
+    "Snoring a lot & Sweating a lot",
+    "Coughing a lot ",
+    "Swollen leg ankle and feet",
+    "Heart is beating fast ",
+  ];
+
+  const bloodRelatedProblems = [
+    "Skin color change",
+    "Nail bed change",
+    "Nose bleeding",
+    "Gums bleeding",
+    "Headache",
+    "Irritability",
+  ];
+
+  const stomachAdbdominalProblems = [
+    "Abdominal pain",
+    "Vomiting",
+    "Difficulty in swallowing",
+    "Diarrhea",
+    "Heart burn",
+  ];
+
+  const mentalProblems = [
+    "High Stress Level",
+    "Sleeping problems",
+    "Depression",
+    "Confusion",
+    "Anxiety",
+    "Appetite change",
+  ];
+
+  const genetialProblem = [
+    "Changein urine color",
+    "Testicular pain or swelling",
+    "Difficulty in controlling urination",
+    "Pain or difficulty in urination",
+  ];
   return (
     <>
       <main className="main">
@@ -10,7 +117,10 @@ const ChiefComplaints = () => {
           <div className="container">
             <div className="row">
               <div className="col-md-12">
-                <VerifyCard />
+                <VerifyCard
+                  doctorDetails={doctor}
+                  polyclinicDetails={polyclinic}
+                />
                 <div className="card shadow-sm">
                   <div className="prbl-header">
                     <p className="fs-6 fw-bold">Explain Your Problem</p>
@@ -22,6 +132,8 @@ const ChiefComplaints = () => {
                           className="form-control mb-3"
                           rows="2"
                           cols="8"
+                          onChange={(e) => setDescription(e.target.value)}
+                          value={description}
                         ></textarea>
                         <div className="row">
                           <div className="col-md">
@@ -29,6 +141,8 @@ const ChiefComplaints = () => {
                               type="text"
                               className="form-control mb-3"
                               placeholder="Duration"
+                              onChange={(e) => setDuration(e.target.value)}
+                              value={duration}
                             />
                           </div>
                           <div className="col-md">
@@ -36,6 +150,7 @@ const ChiefComplaints = () => {
                               <button
                                 type="button"
                                 className="btn btn-primary w-100"
+                                onClick={addComplaints}
                               >
                                 ADD
                               </button>
@@ -56,27 +171,15 @@ const ChiefComplaints = () => {
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <td className="table-action">
-                                <i className="far fa-times-circle"></i>
-                              </td>
-                              <td>Mental Problem</td>
-                              <td>5 months</td>
-                            </tr>
-                            <tr>
-                              <td className="table-action">
-                                <i className="far fa-times-circle"></i>
-                              </td>
-                              <td>Mental Problem</td>
-                              <td>5 months</td>
-                            </tr>
-                            <tr>
-                              <td className="table-action">
-                                <i className="far fa-times-circle"></i>
-                              </td>
-                              <td>Mental Problem</td>
-                              <td>5 months</td>
-                            </tr>
+                            {complainList.map((item, index) => (
+                              <tr key={index}>
+                                <td className="table-action">
+                                  <i className="far fa-times-circle"></i>
+                                </td>
+                                <td>{item.description}</td>
+                                <td>{item.duration}</td>
+                              </tr>
+                            ))}
                           </tbody>
                         </table>
                       </div>
@@ -128,32 +231,22 @@ const ChiefComplaints = () => {
                             >
                               <div className="accordion-body">
                                 <div className="form-check">
-                                  <input
-                                    className="form-check-input"
-                                    type="checkbox"
-                                    value=""
-                                    id="flexCheckDefault"
-                                  />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="flexCheckDefault"
-                                  >
-                                    Fiver
-                                  </label>
-                                </div>
-                                <div className="form-check">
-                                  <input
-                                    className="form-check-input"
-                                    type="checkbox"
-                                    value=""
-                                    id="flexCheckDefault"
-                                  />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="flexCheckDefault"
-                                  >
-                                    Chills
-                                  </label>
+                                  {generalProblems.map((item, index) => (
+                                    <div key={index}>
+                                      <input
+                                        className="form-check-input"
+                                        type="checkbox"
+                                        name="general_problems"
+                                        value={item}
+                                      />
+                                      <label
+                                        className="form-check-label"
+                                        htmlFor="flexCheckDefault"
+                                      >
+                                        {item}
+                                      </label>
+                                    </div>
+                                  ))}
                                 </div>
                               </div>
                             </div>
@@ -195,32 +288,22 @@ const ChiefComplaints = () => {
                             >
                               <div className="accordion-body">
                                 <div className="form-check">
-                                  <input
-                                    className="form-check-input"
-                                    type="checkbox"
-                                    value=""
-                                    id="flexCheckDefault"
-                                  />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="flexCheckDefault"
-                                  >
-                                    Joint Swelling
-                                  </label>
-                                </div>
-                                <div className="form-check">
-                                  <input
-                                    className="form-check-input"
-                                    type="checkbox"
-                                    value=""
-                                    id="flexCheckDefault"
-                                  />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="flexCheckDefault"
-                                  >
-                                    Muscle Pain
-                                  </label>
+                                  {rehumatologic.map((item, index) => (
+                                    <div key={index}>
+                                      <input
+                                        className="form-check-input"
+                                        type="checkbox"
+                                        name="joint_related_problems"
+                                        value={item}
+                                      />
+                                      <label
+                                        className="form-check-label"
+                                        htmlFor="flexCheckDefault"
+                                      >
+                                        {item}
+                                      </label>
+                                    </div>
+                                  ))}
                                 </div>
                               </div>
                             </div>
@@ -262,32 +345,22 @@ const ChiefComplaints = () => {
                             >
                               <div className="accordion-body">
                                 <div className="form-check">
-                                  <input
-                                    className="form-check-input"
-                                    type="checkbox"
-                                    value=""
-                                    id="flexCheckDefault"
-                                  />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="flexCheckDefault"
-                                  >
-                                    Headaches
-                                  </label>
-                                </div>
-                                <div className="form-check">
-                                  <input
-                                    className="form-check-input"
-                                    type="checkbox"
-                                    value=""
-                                    id="flexCheckDefault"
-                                  />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="flexCheckDefault"
-                                  >
-                                    Pain spreading from one place to another
-                                  </label>
+                                  {neurologicProblems.map((item, index) => (
+                                    <div key={index}>
+                                      <input
+                                        className="form-check-input"
+                                        type="checkbox"
+                                        name="neuro_problems"
+                                        value={item}
+                                      />
+                                      <label
+                                        className="form-check-label"
+                                        htmlFor="flexCheckDefault"
+                                      >
+                                        {item}
+                                      </label>
+                                    </div>
+                                  ))}
                                 </div>
                               </div>
                             </div>
@@ -329,32 +402,22 @@ const ChiefComplaints = () => {
                             >
                               <div className="accordion-body">
                                 <div className="form-check">
-                                  <input
-                                    className="form-check-input"
-                                    type="checkbox"
-                                    value=""
-                                    id="flexCheckDefault"
-                                  />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="flexCheckDefault"
-                                  >
-                                    Chest Pain
-                                  </label>
-                                </div>
-                                <div className="form-check">
-                                  <input
-                                    className="form-check-input"
-                                    type="checkbox"
-                                    value=""
-                                    id="flexCheckDefault"
-                                  />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="flexCheckDefault"
-                                  >
-                                    Fast Heart Beat
-                                  </label>
+                                  {heartRelatedProblems.map((item, index) => (
+                                    <div key={index}>
+                                      <input
+                                        className="form-check-input"
+                                        type="checkbox"
+                                        name="heart_problems"
+                                        value={item}
+                                      />
+                                      <label
+                                        className="form-check-label"
+                                        htmlFor="flexCheckDefault"
+                                      >
+                                        {item}
+                                      </label>
+                                    </div>
+                                  ))}
                                 </div>
                               </div>
                             </div>
@@ -402,32 +465,22 @@ const ChiefComplaints = () => {
                             >
                               <div className="accordion-body">
                                 <div className="form-check">
-                                  <input
-                                    className="form-check-input"
-                                    type="checkbox"
-                                    value=""
-                                    id="flexCheckDefault"
-                                  />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="flexCheckDefault"
-                                  >
-                                    Skin Color Change
-                                  </label>
-                                </div>
-                                <div className="form-check">
-                                  <input
-                                    className="form-check-input"
-                                    type="checkbox"
-                                    value=""
-                                    id="flexCheckDefault"
-                                  />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="flexCheckDefault"
-                                  >
-                                    Nail Bed Change
-                                  </label>
+                                  {bloodRelatedProblems.map((item, index) => (
+                                    <div key={index}>
+                                      <input
+                                        className="form-check-input"
+                                        type="checkbox"
+                                        name="blood_problems"
+                                        value={item}
+                                      />
+                                      <label
+                                        className="form-check-label"
+                                        htmlFor="flexCheckDefault"
+                                      >
+                                        {item}
+                                      </label>
+                                    </div>
+                                  ))}
                                 </div>
                               </div>
                             </div>
@@ -469,32 +522,24 @@ const ChiefComplaints = () => {
                             >
                               <div className="accordion-body">
                                 <div className="form-check">
-                                  <input
-                                    className="form-check-input"
-                                    type="checkbox"
-                                    value=""
-                                    id="flexCheckDefault"
-                                  />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="flexCheckDefault"
-                                  >
-                                    Abdominal Pain
-                                  </label>
-                                </div>
-                                <div className="form-check">
-                                  <input
-                                    className="form-check-input"
-                                    type="checkbox"
-                                    value=""
-                                    id="flexCheckDefault"
-                                  />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="flexCheckDefault"
-                                  >
-                                    Vomiting
-                                  </label>
+                                  {stomachAdbdominalProblems.map(
+                                    (item, index) => (
+                                      <div key={index}>
+                                        <input
+                                          className="form-check-input"
+                                          type="checkbox"
+                                          name="stomach_problems"
+                                          value={item}
+                                        />
+                                        <label
+                                          className="form-check-label"
+                                          htmlFor="flexCheckDefault"
+                                        >
+                                          {item}
+                                        </label>
+                                      </div>
+                                    )
+                                  )}
                                 </div>
                               </div>
                             </div>
@@ -536,32 +581,22 @@ const ChiefComplaints = () => {
                             >
                               <div className="accordion-body">
                                 <div className="form-check">
-                                  <input
-                                    className="form-check-input"
-                                    type="checkbox"
-                                    value=""
-                                    id="flexCheckDefault"
-                                  />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="flexCheckDefault"
-                                  >
-                                    High Strees Level
-                                  </label>
-                                </div>
-                                <div className="form-check">
-                                  <input
-                                    className="form-check-input"
-                                    type="checkbox"
-                                    value=""
-                                    id="flexCheckDefault"
-                                  />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="flexCheckDefault"
-                                  >
-                                    Sleeping Problems
-                                  </label>
+                                  {mentalProblems.map((item, index) => (
+                                    <div key={index}>
+                                      <input
+                                        className="form-check-input"
+                                        type="checkbox"
+                                        name="mental_problems"
+                                        value={item}
+                                      />
+                                      <label
+                                        className="form-check-label"
+                                        htmlFor="flexCheckDefault"
+                                      >
+                                        {item}
+                                      </label>
+                                    </div>
+                                  ))}
                                 </div>
                               </div>
                             </div>
@@ -603,32 +638,22 @@ const ChiefComplaints = () => {
                             >
                               <div className="accordion-body">
                                 <div className="form-check">
-                                  <input
-                                    className="form-check-input"
-                                    type="checkbox"
-                                    value=""
-                                    id="flexCheckDefault"
-                                  />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="flexCheckDefault"
-                                  >
-                                    Changein urine color
-                                  </label>
-                                </div>
-                                <div className="form-check">
-                                  <input
-                                    className="form-check-input"
-                                    type="checkbox"
-                                    value=""
-                                    id="flexCheckDefault"
-                                  />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="flexCheckDefault"
-                                  >
-                                    Testicular pain or swelling
-                                  </label>
+                                  {genetialProblem.map((item, index) => (
+                                    <div key={index}>
+                                      <input
+                                        className="form-check-input"
+                                        type="checkbox"
+                                        name="genetal_problems"
+                                        value={item}
+                                      />
+                                      <label
+                                        className="form-check-label"
+                                        htmlFor="flexCheckDefault"
+                                      >
+                                        {item}
+                                      </label>
+                                    </div>
+                                  ))}
                                 </div>
                               </div>
                             </div>
@@ -639,9 +664,11 @@ const ChiefComplaints = () => {
                   </div>
                 </div>
                 <div className="btn-next text-end">
-                  <a href="checkout.html" className="btn btn-primary">
-                    Next
-                  </a>
+                  <Link
+                    href={`/checkout?doctorId=${doctorId}&&polyclinicId=${polyclinicId}&&fee=${fee}&&date=${date}`}
+                  >
+                    <a className="btn btn-primary">Next</a>
+                  </Link>
                 </div>
               </div>
             </div>

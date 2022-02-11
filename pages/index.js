@@ -100,7 +100,7 @@ const Index = () => {
               <h2 className="fs-4">Clinic and Specialities</h2>
               <p className="sub-title">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                .
               </p>
             </div>
             <div className="row justify-content-center mb-lg-5">
@@ -182,7 +182,7 @@ const Index = () => {
               </div>
               <div className="col-md-7">
                 <div className="section-header">
-                  <h2 className="mt-2">Availabe Features in Our Clinic</h2>
+                  <h2 className="mt-2">Your Top Rated Services & Facilities</h2>
                   <p>
                     It is a long established fact that a reader will be
                     distracted by the readable content of a page when looking at
@@ -232,8 +232,7 @@ const Index = () => {
             <div className="row">
               <div className="col-md-6">
                 <div className="section-heading">
-                  <h2>Availabe Features in Our Clinic</h2>
-                  <p>Meet our Experts & Book Online</p>
+                  <h2>Availabe Features in Our Polyclinic</h2>
                 </div>
               </div>
               <div className="col-md-6"></div>
@@ -269,7 +268,7 @@ const Index = () => {
             <div className="row">
               <div className="col-md-6">
                 <div className="section-heading">
-                  <h2>Clinic & Specialities</h2>
+                  <h2>Your Best Rated Polyclinics</h2>
                   <p>
                     Access to expert physicians and surgeons, technologies and
                     top-quality surgery facilities right here.

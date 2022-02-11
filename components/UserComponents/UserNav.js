@@ -53,7 +53,7 @@ const UserNav = (props) => {
                     </a>
                   </Link>
                 </li>
-                <li className={props.status3}>
+                {/* <li className={props.status3}>
                   <Link href="/user/orders">
                     <a>
                       <i className="fas fa-list-alt"></i>
@@ -61,7 +61,7 @@ const UserNav = (props) => {
                       <small className="unread-msg">7</small>
                     </a>
                   </Link>
-                </li>
+                </li> */}
                 <li className={props.status4}>
                   <Link href="/user/profile-settings">
                     <a>
