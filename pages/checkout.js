@@ -58,8 +58,6 @@ const Checkout = () => {
       genetal_problems: data.genetal_problems.toString(),
     };
 
-    console.log(payload);
-
     const res = await axios.post(`${apiUrl}/appointments`, payload, {
       headers: {
         Authorization: `Bearer ${auth.token}`,

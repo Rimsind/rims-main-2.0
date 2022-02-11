@@ -14,7 +14,6 @@ const Schedule = () => {
   );
 
   const { auth } = useAuth();
-  console.log(auth);
 
   if (!auth.user && !auth.token) {
     Router.push(`user/login`);
