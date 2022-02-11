@@ -1062,6 +1062,20 @@ const MedicalHistory = ({ patient }) => {
             />
           </div>
         </div>
+        <div className="row mb-3">
+          <div className="col-md-4">
+            <h3 className="fs-6 fs-bold text-dark">Vaccination</h3>
+            <p className="space-x-4">Known Vaccine to date</p>
+          </div>
+          <div className="col-md-8">
+            <input
+              type="text"
+              className="form-control"
+              name="allergies"
+              placeholder=""
+            />
+          </div>
+        </div>
         <div className="gen-form-soft-button">
           <div className="row">
             <div className="col-md-4"></div>

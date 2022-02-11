@@ -13,7 +13,7 @@ const Schedule = () => {
     fetcher
   );
 
-  const { auth } = useAuth();
+  // const { auth } = useAuth();
 
   // if (!auth.user && !auth.token) {
   //   Router.push(`user/login`);
