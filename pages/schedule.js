@@ -15,9 +15,9 @@ const Schedule = () => {
 
   const { auth } = useAuth();
 
-  if (!auth.user && !auth.token) {
-    Router.push(`user/login`);
-  }
+  // if (!auth.user && !auth.token) {
+  //   Router.push(`user/login`);
+  // }
 
   const { register, handleSubmit } = useForm();
   const addDate = async (data, event) => {
