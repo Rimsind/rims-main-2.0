@@ -118,7 +118,7 @@ const Login = () => {
                       {...register("email")}
                     />
                     <div id="emailHelp" className="form-text">
-                      We'll never share your email with anyone else.
+                      We&apos;ll never share your email with anyone else.
                     </div>
                   </div>
                   <div className="mb-3">
@@ -166,7 +166,7 @@ const Login = () => {
                         Login
                       </button>
                       <p className="mt-2">
-                        Don't have an account?
+                        Don&apos;t have an account?
                         <Link href="/polyclinics/signup">
                           <a href="#" className="text-dark fw-bold">
                             Register{" "}
@@ -177,7 +177,7 @@ const Login = () => {
                   </div>
                   <div className="warning-text">
                     <p className="fs-6 fw-lighter mt-2">
-                      By signing up, you agree to Rims's
+                      By signing up, you agree to Rims&apos;s
                       <a href="#">Terms & Condition</a> &
                       <a href="#">Privacy Policy</a>
                     </p>
