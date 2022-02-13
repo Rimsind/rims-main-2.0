@@ -58,7 +58,7 @@ const HorizontalPolyclinicCard = (props) => {
                 </ul>
               </div>
               <div className="clinic-booking">
-                <Link href={`/${props.link}/${data?.id}`}>
+                <Link href={`/${props.link}/details?id=${data?.id}`}>
                   <a className="view-pro-btn">View Profile</a>
                 </Link>
               </div>

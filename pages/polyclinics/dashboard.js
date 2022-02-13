@@ -1,5 +1,9 @@
 const Dashboard = () => {
-  return <></>;
+  return (
+    <>
+      <h1>Polyclionic Dashboard</h1>
+    </>
+  );
 };
 
 export default Dashboard;

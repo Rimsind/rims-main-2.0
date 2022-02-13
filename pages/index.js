@@ -240,24 +240,24 @@ const Index = () => {
             <div className="clinic-feature">
               <div className="row">
                 <FacilityCard
-                  title="Operation"
-                  img="/assets/images/clinic/clinic-1.jpg"
-                />
-                <FacilityCard
-                  title="Medical"
-                  img="/assets/images/clinic/clinic-2.jpg"
-                />
-                <FacilityCard
                   title="Patient Ward"
-                  img="/assets/images/clinic/clinic-3.jpg"
+                  img="/assets/images/clinic/clinic-1.png"
                 />
                 <FacilityCard
-                  title="TEST ROOM"
-                  img="/assets/images/clinic/clinic-4.jpg"
+                  title="Pharmacy"
+                  img="/assets/images/clinic/clinic-2.png"
                 />
                 <FacilityCard
-                  title="ICU"
-                  img="/assets/images/clinic/clinic-5.jpg"
+                  title="Pathology"
+                  img="/assets/images/clinic/clinic-3.png"
+                />
+                <FacilityCard
+                  title="Doctors"
+                  img="/assets/images/clinic/clinic-4.png"
+                />
+                <FacilityCard
+                  title="Ambulance"
+                  img="/assets/images/clinic/clinic-5.png"
                 />
               </div>
             </div>

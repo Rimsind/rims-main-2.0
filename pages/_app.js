@@ -4,6 +4,8 @@ import "../public/assets/css/admin.css";
 import "../public/user_assets/plugins/apex/apexcharts.css";
 import "../public/user_assets/css/style.css";
 import "../public/user_assets/css/main.css";
+import "../public/assets/css/style2.css";
+import "../public/assets/css/style3.css";
 import GlobalProvider from "context";
 
 function MyApp({ Component, pageProps }) {

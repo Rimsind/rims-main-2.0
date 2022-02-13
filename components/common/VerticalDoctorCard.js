@@ -11,7 +11,7 @@ const VerticalDoctorCard = ({ data }) => {
               width={320}
               className="img-fluid"
               alt="User Image"
-              src={data?.image?.url}
+              src={data?.image?.url || "/assets/images/profile.png"}
             />
           </a>
         </div>

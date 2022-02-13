@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 const Administration = () => {
   return (
     <>
@@ -16,42 +17,44 @@ const Administration = () => {
 
             <div className="card_list">
               <div className="card-inner">
-                <a href="#">
-                  <div className="card-item shadow bg-primary p-4 rounded-3">
-                    <div className="card-item-inner d-flex align-items-center">
-                      <div className="card-inner-icon">
-                        <i className="fas fa-user-md fs-1 border rounded-circle p-3 text-light bg-primary"></i>
-                      </div>
-                      <div className="card-inner-con ms-3">
-                        <p className="fs-5 text-light">Doctor Login</p>
-                      </div>
+                <div className="card-item shadow bg-primary p-4 rounded-3">
+                  <div className="card-item-inner d-flex align-items-center">
+                    <div className="card-inner-icon">
+                      <i className="fas fa-user-md fs-1 border rounded-circle p-3 text-light bg-primary"></i>
+                    </div>
+                    <div className="card-inner-con ms-3">
+                      <Link href="#">
+                        <a className="fs-5 text-light">Doctor Login</a>
+                      </Link>
                     </div>
                   </div>
-                </a>
+                </div>
               </div>
               <div className="card-inner">
-                <a href="#">
-                  <div className="card-item shadow bg-primary p-4 rounded-3">
-                    <div className="card-item-inner d-flex align-items-center">
-                      <div className="card-inner-icon">
-                        <i className="fas fa-capsules fs-1 border rounded-circle p-3 text-light bg-primary"></i>
-                      </div>
-                      <div className="card-inner-con ms-3">
-                        <p className="fs-5 text-light">Polyclinic Login</p>
-                      </div>
+                <div className="card-item shadow bg-primary p-4 rounded-3">
+                  <div className="card-item-inner d-flex align-items-center">
+                    <div className="card-inner-icon">
+                      <i className="fas fa-capsules fs-1 border rounded-circle p-3 text-light bg-primary"></i>
+                    </div>
+                    <div className="card-inner-con ms-3">
+                      <Link href="/polyclinics/login">
+                        <a className="fs-5 text-light">Polyclinic Login</a>
+                      </Link>
                     </div>
                   </div>
-                </a>
+                </div>
               </div>
               <div className="card-inner">
-                <a href="#">
+                <a>
                   <div className="card-item shadow bg-primary p-4 rounded-3">
                     <div className="card-item-inner d-flex align-items-center">
                       <div className="card-inner-icon">
                         <i className="fas fa-hospital fs-1 border rounded-circle p-3 text-light bg-primary"></i>
                       </div>
                       <div className="card-inner-con ms-3">
-                        <p className="fs-5 text-light">Nursing Home Login</p>
+                        <Link href="/nursing-homes/login">
+                          <a className="fs-5 text-light">Nursing Home Login</a>
+                        </Link>
                       </div>
                     </div>
                   </div>
