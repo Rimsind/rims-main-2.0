@@ -110,10 +110,9 @@ const Signup = () => {
             <div className="col-6 px-5 py-4">
               <div className="login-logo mt-3">
                 <Image
-                  height="50"
-                  width="100"
-                  src="./imag/logo-dark.png"
-                  width="70px"
+                  height="60"
+                  width="90"
+                  src="/assets/images/logo-dark.png"
                 />
               </div>
               <div className="login-con mt-4">
