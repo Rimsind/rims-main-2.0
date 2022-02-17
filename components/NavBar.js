@@ -96,7 +96,7 @@ const NavBar = () => {
               <ul className="navbar-nav mx-auto">
                 <li className="nav-item">
                   <Link href="/">
-                    <a className="nav-link active" aria-current="page">
+                    <a className="nav-link" aria-current="page">
                       HOME
                     </a>
                   </Link>
@@ -128,7 +128,7 @@ const NavBar = () => {
                   </Link>
                 </li>
               </ul>
-              <ul className="navbar-nav ms-auto d-flex align-items-center">
+              <ul className="navbar-nav">
                 {/* <li className="nav-item">
                   <a className="nav-link" href="#">
                     <i className="fas fa-phone-alt"></i> Contact: +1 315 369

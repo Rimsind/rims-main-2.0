@@ -129,15 +129,15 @@ const Index = () => {
               </div>
             </div>
             <div className="row">
-              <div className="col-md-5"></div>
-              <div className="col-md-2">
-                <div className="d-grid gap-2 read-more">
+              <div className="col-md col-lg-5"></div>
+              <div className="col-md col-lg-2">
+                <div className="d-grid gap-2 read-more mt-sm-2 mt-md-2">
                   <button className="btn btn-primary" type="button">
                     View More
                   </button>
                 </div>
               </div>
-              <div className="col-md-5"></div>
+              <div className="col-md col-lg-5"></div>
             </div>
           </div>
         </section>
@@ -194,7 +194,7 @@ const Index = () => {
         <section className="section section-features">
           <div className="container-fluid">
             <div className="row">
-              <div className="col-md-5 features-img">
+              <div className="col-md-5 features-img text-sm-center">
                 <Image
                   height="380"
                   width="390"
@@ -260,7 +260,7 @@ const Index = () => {
               </div>
               <div className="col-md-6"></div>
             </div>
-            <div className="clinic-feature">
+            <div className="clinic-feature text-md-center text-sm-center">
               <div className="row">
                 <FacilityCard
                   title="Patient Ward"
