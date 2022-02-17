@@ -1,7 +1,7 @@
 import Link from "next/link";
 import axios from "axios";
 import { useForm } from "react-hook-form";
-
+import AuthLayout from "components/layout/AuthLayout";
 import Router from "next/router";
 import Image from "next/image";
 const Signup = () => {
@@ -204,3 +204,5 @@ const Signup = () => {
 };
 
 export default Signup;
+
+Signup.getLayout = (Signup) => <AuthLayout>{Signup}</AuthLayout>;

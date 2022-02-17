@@ -1,17 +1,16 @@
 import { BreadCrums } from "components/common";
 import UserNav from "components/UserComponents/UserNav";
-
 import { apiUrl } from "config/api";
 import axios from "axios";
 import useSWR from "swr";
 import { ProfileInfo, ProfilePicture, AddressInfo } from "components/forms";
-
 import { useAuth } from "context";
+import { UserPageLoader } from "components/Loaders";
 
 const ProfileSettings = () => {
   const { auth } = useAuth();
 
-  const { data, loading, error } = useSWR(
+  const { data } = useSWR(
     `${apiUrl}/patients/${auth.user?.profileId}`,
     async (url) => {
       const res = await axios.get(url, {
@@ -39,14 +38,17 @@ const ProfileSettings = () => {
           <div className="container-fluid">
             <div className="row">
               <UserNav status4="active" patient={data} />
-
-              <div className="col-md-7 col-lg-8 col-xl-9">
-                <div>
-                  <ProfilePicture patient={data} />
-                  <ProfileInfo patient={data} />
-                  <AddressInfo patient={data} />
+              {data ? (
+                <div className="col-md-7 col-lg-8 col-xl-9">
+                  <div>
+                    <ProfilePicture patient={data} />
+                    <ProfileInfo patient={data} />
+                    <AddressInfo patient={data} />
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <UserPageLoader />
+              )}
             </div>
           </div>
         </div>

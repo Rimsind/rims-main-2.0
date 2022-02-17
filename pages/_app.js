@@ -1,4 +1,4 @@
-import Layout from "../components/Layout";
+import Layout from "components/layout/Layout";
 import "../public/assets/css/style.css";
 import "../public/assets/css/admin.css";
 import "../public/user_assets/plugins/apex/apexcharts.css";
@@ -8,14 +8,18 @@ import "../public/assets/css/style2.css";
 import "../public/assets/css/style3.css";
 import GlobalProvider from "context";
 
-function MyApp({ Component, pageProps }) {
-  return (
+export default function MyApp({ Component, pageProps }) {
+  const getLayout =
+    Component.getLayout ||
+    ((page) => (
+      <GlobalProvider>
+        <Layout>{page}</Layout>
+      </GlobalProvider>
+    ));
+
+  return getLayout(
     <GlobalProvider>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <Component {...pageProps} />
     </GlobalProvider>
   );
 }
-
-export default MyApp;

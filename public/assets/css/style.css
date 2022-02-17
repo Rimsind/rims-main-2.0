@@ -2833,4 +2833,45 @@ p.right-doc-info-con-load-w {
     transform: rotate(360deg);
   }
 }
+
+ul li a.disabled {
+  color: gray;
+  pointer-events: none;
+  background-color: #f0f0f026;
+}
+
+.card-body-right-sec {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.loader-sec-center-big {
+  border: 16px solid #efefef;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 100px;
+  height: 100px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
 /* loader end */

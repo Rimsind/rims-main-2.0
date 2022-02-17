@@ -5,6 +5,7 @@ import { setCookie } from "nookies";
 import router from "next/router";
 import { useAuth } from "context/index";
 import Image from "next/image";
+import AuthLayout from "components/layout/AuthLayout";
 
 const Login = () => {
   const { dispatchAuth } = useAuth();
@@ -198,3 +199,5 @@ const Login = () => {
 };
 
 export default Login;
+
+Login.getLayout = (Login) => <AuthLayout>{Login}</AuthLayout>;

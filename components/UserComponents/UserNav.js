@@ -9,30 +9,47 @@ const UserNav = (props) => {
       <div className="col-md-5 col-lg-4 col-xl-3 sticky-top">
         <div className="profile-sidebar sticky-top">
           <div className="widget-profile pro-widget-content">
-            <div className="profile-info-widget">
-              <a href="#" className="booking-doc-img">
-                <Image
-                  height="145"
-                  width="145"
-                  src={patient?.image?.url || "/assets/images/profile.png"}
-                  alt="User Image"
-                />
-              </a>
-              <div className="profile-det-info">
-                <h3>
-                  {patient?.first_name} {patient?.last_name}
-                </h3>
-                <div className="patient-details">
-                  <h5>
-                    <i className="fas fa-birthday-cake"></i> {patient?.dob}, 38
-                    years
-                  </h5>
-                  <h5 className="mb-0">
-                    <i className="fas fa-map-marker-alt"></i> Newyork, USA
-                  </h5>
+            {patient ? (
+              <>
+                <div className="profile-info-widget">
+                  <a href="#" className="booking-doc-img">
+                    <Image
+                      height="145"
+                      width="145"
+                      src={patient?.image?.url || "/assets/images/profile.png"}
+                      alt="User Image"
+                    />
+                  </a>
+                  <div className="profile-det-info">
+                    <h3>
+                      {patient?.first_name} {patient?.last_name}
+                    </h3>
+                    <div className="patient-details">
+                      <h5>
+                        <i className="fas fa-birthday-cake"></i> {patient?.dob},
+                        38 years
+                      </h5>
+                      <h5 className="mb-0">
+                        <i className="fas fa-map-marker-alt"></i> Newyork, USA
+                      </h5>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </>
+            ) : (
+              <>
+                <div class="profile-info-widget">
+                  <div class="doc-img card-img-loader-sec mb-3"></div>
+                  <div class="profile-det-info">
+                    <p class="placeholder-glow">
+                      <span class="placeholder col-8 bg-primary"></span>
+                      <span class="placeholder col-9 bg-secondary"></span>
+                      <span class="placeholder col-6 bg-secondary"></span>
+                    </p>
+                  </div>
+                </div>
+              </>
+            )}
           </div>
           <div className="dashboard-widget">
             <nav className="dashboard-menu">

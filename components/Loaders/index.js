@@ -3,6 +3,7 @@ import DetailsPageLoader from "./DetailsPageLoader";
 import SliderCardLoader from "./SliderCardLoader";
 import Spinner from "./Spinner";
 import SpecialtyLoader from "./SpecialtyLoader";
+import UserPageLoader from "./UserPageLoader";
 
 export {
   ListingPageLoader,
@@ -10,4 +11,5 @@ export {
   Spinner,
   SliderCardLoader,
   SpecialtyLoader,
+  UserPageLoader,
 };
