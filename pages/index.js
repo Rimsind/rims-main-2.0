@@ -12,6 +12,7 @@ import useSWR from "swr";
 import Carousel from "react-elastic-carousel";
 import Image from "next/image";
 import Link from "next/link";
+import { SliderCardLoader, SpecialtyLoader } from "components/Loaders";
 const Index = () => {
   const { data: specialties } = useSWR(`${apiUrl}/specialties`, fetcher);
   const { data: doctors } = useSWR(`${apiUrl}/doctors`, fetcher);
@@ -107,11 +108,22 @@ const Index = () => {
               <div className="col-md-9">
                 <div className="specialities-slider slider">
                   <div className="row carousel-styling">
-                    <Carousel breakPoints={breakPoints}>
-                      {specialties?.map((items, index) => (
-                        <SpecialityBlock specialties={items} key={index} />
-                      ))}
-                    </Carousel>
+                    {specialties ? (
+                      <Carousel breakPoints={breakPoints}>
+                        {specialties?.map((items, index) => (
+                          <SpecialityBlock specialties={items} key={index} />
+                        ))}
+                      </Carousel>
+                    ) : (
+                      <>
+                        <Carousel breakPoints={breakPoints}>
+                          <SpecialtyLoader />
+                          <SpecialtyLoader />
+                          <SpecialtyLoader />
+                          <SpecialtyLoader />
+                        </Carousel>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
@@ -157,11 +169,22 @@ const Index = () => {
               <div className="col-lg-8">
                 <div className="doctor-slider slider">
                   <div className="row carousel-styling">
-                    <Carousel breakPoints={breakPoints}>
-                      {doctors?.map((items, index) => (
-                        <VerticalDoctorCard data={items} key={index} />
-                      ))}
-                    </Carousel>
+                    {doctors ? (
+                      <Carousel breakPoints={breakPoints}>
+                        {doctors?.map((items, index) => (
+                          <VerticalDoctorCard data={items} key={index} />
+                        ))}
+                      </Carousel>
+                    ) : (
+                      <>
+                        <Carousel breakPoints={breakPoints}>
+                          <SliderCardLoader />
+                          <SliderCardLoader />
+                          <SliderCardLoader />
+                          <SliderCardLoader />
+                        </Carousel>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
@@ -279,11 +302,20 @@ const Index = () => {
             </div>
             <div className="our-doctors">
               <div className="d-flex carousel-styling">
-                <Carousel breakPoints={breakPoints}>
-                  {polyclinics?.map((items, index) => (
-                    <VerticalPolyclinicCard data={items} key={index} />
-                  ))}
-                </Carousel>
+                {polyclinics ? (
+                  <Carousel breakPoints={breakPoints}>
+                    {polyclinics?.map((items, index) => (
+                      <VerticalPolyclinicCard data={items} key={index} />
+                    ))}
+                  </Carousel>
+                ) : (
+                  <Carousel breakPoints={breakPoints}>
+                    <SliderCardLoader />
+                    <SliderCardLoader />
+                    <SliderCardLoader />
+                    <SliderCardLoader />
+                  </Carousel>
+                )}
               </div>
             </div>
           </div>

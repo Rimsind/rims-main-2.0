@@ -3,6 +3,7 @@ import {
   HorizontalPolyclinicCard,
   LocationFilter,
 } from "components/common/index";
+import { ListingPageLoader } from "components/Loaders";
 import { apiUrl, fetcher } from "config/api";
 import useSWR from "swr";
 const Index = () => {
@@ -28,13 +29,24 @@ const Index = () => {
                 </div>
               </div>
               <div className="col-md-12 col-lg-8 col-xl-9">
-                {data?.map((items, index) => (
-                  <HorizontalPolyclinicCard
-                    data={items}
-                    link="polyclinics"
-                    key={index}
-                  />
-                ))}
+                {data ? (
+                  <>
+                    {data?.map((items, index) => (
+                      <HorizontalPolyclinicCard
+                        data={items}
+                        link="polyclinics"
+                        key={index}
+                      />
+                    ))}
+                  </>
+                ) : (
+                  <>
+                    <ListingPageLoader />
+                    <ListingPageLoader />
+                    <ListingPageLoader />
+                    <ListingPageLoader />
+                  </>
+                )}
 
                 <div className="load-more text-center mb-4">
                   <a className="btn btn-load btn-sm" href="javascript:void(0);">

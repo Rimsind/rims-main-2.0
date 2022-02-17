@@ -7,6 +7,7 @@ import {
 
 import useSWR from "swr";
 import { apiUrl, fetcher } from "config/api";
+import { ListingPageLoader } from "components/Loaders";
 
 const Index = () => {
   const { data: doctors } = useSWR(`${apiUrl}/doctors`, fetcher);
@@ -25,9 +26,20 @@ const Index = () => {
                 </div>
               </div>
               <div className="col-md-12 col-lg-8 col-xl-9">
-                {doctors?.map((item, index) => (
-                  <HorizontalDoctorCard doctorData={item} key={index} />
-                ))}
+                {doctors ? (
+                  <>
+                    {doctors?.map((item, index) => (
+                      <HorizontalDoctorCard doctorData={item} key={index} />
+                    ))}
+                  </>
+                ) : (
+                  <>
+                    <ListingPageLoader />
+                    <ListingPageLoader />
+                    <ListingPageLoader />
+                    <ListingPageLoader />
+                  </>
+                )}
 
                 <div className="load-more text-center mb-4">
                   <a className="btn btn-load btn-sm" href="javascript:void(0);">
