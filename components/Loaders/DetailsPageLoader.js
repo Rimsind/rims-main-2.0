@@ -28,7 +28,7 @@ const DetailsPageLoader = () => {
               <div className="doctor-action">
                 <a
                   href="#"
-                  tabindex="-1"
+                  tabIndex="-1"
                   className="btn btn-white disabled placeholder"
                   aria-hidden="true"
                 >
@@ -37,7 +37,7 @@ const DetailsPageLoader = () => {
 
                 <a
                   href="#"
-                  tabindex="-1"
+                  tabIndex="-1"
                   className="btn btn-white disabled placeholder"
                   aria-hidden="true"
                 >
@@ -46,7 +46,7 @@ const DetailsPageLoader = () => {
 
                 <a
                   href="#"
-                  tabindex="-1"
+                  tabIndex="-1"
                   className="btn btn-white disabled placeholder"
                   aria-hidden="true"
                 >
@@ -55,7 +55,7 @@ const DetailsPageLoader = () => {
 
                 <a
                   href="#"
-                  tabindex="-1"
+                  tabIndex="-1"
                   className="btn btn-white disabled placeholder"
                   aria-hidden="true"
                 >

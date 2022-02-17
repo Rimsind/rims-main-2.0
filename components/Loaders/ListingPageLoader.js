@@ -28,7 +28,7 @@ const ListingPageLoader = () => {
               <div className="clinic-booking">
                 <a
                   href="#"
-                  tabindex="-1"
+                  tabIndex="-1"
                   className="btn btn-primary disabled placeholder col-4"
                   aria-hidden="true"
                 >

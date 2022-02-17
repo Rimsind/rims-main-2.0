@@ -20,7 +20,7 @@ const SliderCardLoader = () => {
             <div className="col-12">
               <a
                 href="#"
-                tabindex="-1"
+                tabIndex="-1"
                 className="btn btn-primary disabled placeholder col-12"
                 aria-hidden="true"
               ></a>

@@ -4,6 +4,7 @@ import axios from "axios";
 import { setCookie } from "nookies";
 import router from "next/router";
 import { useAuth } from "context/index";
+import Image from "next/image";
 
 const Login = () => {
   const { dispatchAuth } = useAuth();
@@ -85,7 +86,12 @@ const Login = () => {
           <div className="row form-box">
             <div className="col-6 px-5 py-4">
               <div className="login-logo mt-3">
-                <img src="/assets/images/logo-dark.png" width="70px" />
+                <Image
+                  height="50"
+                  width="100"
+                  src="/assets/images/logo-dark.png"
+                  width="70px"
+                />
               </div>
               <div className="login-con mt-4">
                 <p className="fs-5 text-secondary">

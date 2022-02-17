@@ -3,6 +3,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 
 import Router from "next/router";
+import Image from "next/image";
 const Signup = () => {
   //react-hook-form
   const {
@@ -109,7 +110,12 @@ const Signup = () => {
           <div className="row form-box">
             <div className="col-6 px-5 py-4">
               <div className="login-logo mt-3">
-                <img src="./imag/logo-dark.png" width="70px" />
+                <Image
+                  height="50"
+                  width="100"
+                  src="./imag/logo-dark.png"
+                  width="70px"
+                />
               </div>
               <div className="login-con mt-4">
                 <p className="fs-5 text-secondary">
