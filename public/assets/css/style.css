@@ -394,7 +394,7 @@ ul {
   -webkit-transition: 240ms;
   transition: 240ms;
   left: 12px;
-  top: -8px;
+  top: -17px;
   z-index: 1;
   color: #b8b8b8;
   margin-bottom: 0;
@@ -3448,6 +3448,32 @@ ul li a.disabled {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+/* Custome Left Navbar */
+
+.left-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+
+@media screen and (min-width: 300px) and (max-width: 600px) {
+  .left-nav {
+    position: static;
+  }
+  .upload-profile {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 950px) {
+  .left-nav {
+    position: static;
+  }
+  /* .upload-profile {
+    flex-direction: column;
+  } */
 }
 
 /* loader end */

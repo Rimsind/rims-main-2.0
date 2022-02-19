@@ -38,7 +38,7 @@ const ProfilePicture = ({ patient }) => {
         <div className="col-12 col-md-12">
           <div className="card">
             <div className="card-body">
-              <div className="form-group d-flex justify-content-between align-items-center">
+              <div className="form-group d-flex justify-content-between align-items-center upload-profile">
                 <div className="change-avatar">
                   <div className="profile-img">
                     <Image

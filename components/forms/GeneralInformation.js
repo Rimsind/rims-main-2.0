@@ -46,15 +46,15 @@ const GeneralInformation = ({ patient }) => {
           className="gen-form mb-3"
           style={{ borderBottom: "1px solid #bbbaba" }}
         >
-          <div className="row justify-content-between align-items-start">
-            <div className="col-md-3">
+          <div className="row align-items-start">
+            <div className="col-lg-3 col-sm-4">
               <h3 className="fs-6 fs-bold text-dark">Race / Ethnicity</h3>
             </div>
-            <div className="col-md-9">
+            <div className="col-md-9 col-sm-8">
               <div className="row">
-                <div className="col-md-4" {...register("race")}>
+                <div className="col-md-4 col-sm-4" {...register("race")}>
                   <div className="row">
-                    <div className="col-md-2">
+                    <div className="col-md-2 col-sm-2">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -66,14 +66,14 @@ const GeneralInformation = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 col-sm-8">
                       <p className="space-x-4">Asian</p>
                     </div>
                   </div>
                 </div>
-                <div className="col-md-4" {...register("race")}>
+                <div className="col-md-4 col-sm-4" {...register("race")}>
                   <div className="row">
-                    <div className="col-md-2">
+                    <div className="col-md-2 col-sm-2">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -85,14 +85,14 @@ const GeneralInformation = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 col-sm-8">
                       <p className="space-x-4">African</p>
                     </div>
                   </div>
                 </div>
-                <div className="col-md-4" {...register("race")}>
+                <div className="col-md-4 col-sm-4" {...register("race")}>
                   <div className="row">
-                    <div className="col-md-2">
+                    <div className="col-md-2 col-sm-2">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -104,14 +104,14 @@ const GeneralInformation = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 col-sm-8">
                       <p className="space-x-4">European</p>
                     </div>
                   </div>
                 </div>
-                <div className="col-md-5" {...register("race")}>
+                <div className="col-md-5 col-sm-5" {...register("race")}>
                   <div className="row">
-                    <div className="col-md-2">
+                    <div className="col-md-2 col-sm-2">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -123,14 +123,14 @@ const GeneralInformation = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 col-sm-10">
                       <p className="space-x-4">North American</p>
                     </div>
                   </div>
                 </div>
-                <div className="col-md-5" {...register("race")}>
+                <div className="col-md-5 col-sm-5" {...register("race")}>
                   <div className="row">
-                    <div className="col-md-2">
+                    <div className="col-md-2 col-sm-2">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -142,14 +142,14 @@ const GeneralInformation = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 col-sm-10">
                       <p className="space-x-4">South American</p>
                     </div>
                   </div>
                 </div>
-                <div className="col-md-5" {...register("race")}>
+                <div className="col-md-5 col-sm-5" {...register("race")}>
                   <div className="row">
-                    <div className="col-md-2">
+                    <div className="col-md-2 col-sm-2">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -161,14 +161,14 @@ const GeneralInformation = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 col-sm-10">
                       <p className="space-x-4">Australian</p>
                     </div>
                   </div>
                 </div>
-                <div className="col-md-3" {...register("race")}>
+                <div className="col-md-3 col-sm-3" {...register("race")}>
                   <div className="row">
-                    <div className="col-md-2">
+                    <div className="col-md-2 col-sm-2">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -180,7 +180,7 @@ const GeneralInformation = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 col-sm-9">
                       <p className="space-x-4">Others</p>
                     </div>
                   </div>
@@ -193,13 +193,13 @@ const GeneralInformation = ({ patient }) => {
           className="row align-items-start mb-3"
           style={{ borderBottom: "1px solid #bbbaba" }}
         >
-          <div className="col-md-6">
+          <div className="col-md-6 col-sm-6">
             <div className="gen-form mb-3">
               <div className="row justify-content-between align-items-start">
-                <div className="col-md-6">
+                <div className="col-md-6 col-sm-6">
                   <h3 className="fs-6 fs-bold text-dark">Language</h3>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6 col-sm-6">
                   <select
                     className="form-select form-select-sm"
                     aria-label=".form-select-sm example"
@@ -247,15 +247,15 @@ const GeneralInformation = ({ patient }) => {
               </div>
             </div>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-6 col-sm-6">
             <div className="gen-form mb-3">
               <div className="row justify-content-between align-items-start">
-                <div className="col-md-8">
+                <div className="col-md-8 col-sm-6">
                   <h3 className="fs-6 fs-bold text-dark">
                     Highest Level of Education
                   </h3>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4 col-sm-6">
                   <select
                     className="form-select form-select-sm"
                     aria-label=".form-select-sm example"
@@ -305,14 +305,17 @@ const GeneralInformation = ({ patient }) => {
           style={{ borderBottom: "1px solid #bbbaba" }}
         >
           <div className="row justify-centent-between align-items-start">
-            <div className="col-md-4">
+            <div className="col-md-4 col-sm-4">
               <h3 className="fs-6 fs-bold text-dark">Hand Foot Dominance</h3>
             </div>
-            <div className="col-md-8">
+            <div className="col-md-8 col-sm-8">
               <div className="row">
-                <div className="col-md-4" {...register("handFootDominance")}>
+                <div
+                  className="col-md-4 col-sm-4"
+                  {...register("handFootDominance")}
+                >
                   <div className="row">
-                    <div className="col-md-2">
+                    <div className="col-md-2 col-sm-2">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -324,15 +327,18 @@ const GeneralInformation = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 col-sm-8">
                       <p className="space-x-4">N/A</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="col-md-4" {...register("handFootDominance")}>
+                <div
+                  className="col-md-4 col-sm-4"
+                  {...register("handFootDominance")}
+                >
                   <div className="row">
-                    <div className="col-md-2">
+                    <div className="col-md-2 col-sm-2">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -344,14 +350,17 @@ const GeneralInformation = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 col-sm-8">
                       <p className="space-x-4">Left</p>
                     </div>
                   </div>
                 </div>
-                <div className="col-md-4" {...register("handFootDominance")}>
+                <div
+                  className="col-md-4 col-sm-4"
+                  {...register("handFootDominance")}
+                >
                   <div className="row">
-                    <div className="col-md-2">
+                    <div className="col-md-2 col-sm-2">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -363,7 +372,7 @@ const GeneralInformation = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 col-sm-8">
                       <p className="space-x-4">Right</p>
                     </div>
                   </div>
@@ -374,9 +383,9 @@ const GeneralInformation = ({ patient }) => {
         </div>
         <div className="gen-form-soft-button">
           <div className="row">
-            <div className="col-md-4"></div>
-            <div className="col-md-4"></div>
-            <div className="col-md-4">
+            <div className="col-md-4 col-sm-4"></div>
+            <div className="col-md-4 col-sm-4"></div>
+            <div className="col-md-4 col-sm-4">
               <div className="right-button" style={{ textAlign: "right" }}>
                 <input
                   type="submit"
