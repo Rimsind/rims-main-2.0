@@ -50,7 +50,7 @@ const Index = () => {
             <div className="row">
               <UserNav status2="active" patient={patient} />
               {appointments ? (
-                <div className="col-md-7 col-lg-8 col-xl-9">
+                <div className="col-md-12 col-sm-12 col-lg-8 col-xl-9">
                   <div className="card card-table mb-0">
                     <div className="card-body">
                       <div className="table-responsive">

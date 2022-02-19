@@ -39,7 +39,7 @@ const ProfileSettings = () => {
             <div className="row">
               <UserNav status4="active" patient={data} />
               {data ? (
-                <div className="col-md-7 col-lg-8 col-xl-9">
+                <div className="col-md-12 col-sm-12 col-lg-8 col-xl-9">
                   <div>
                     <ProfilePicture patient={data} />
                     <ProfileInfo patient={data} />

@@ -14,7 +14,7 @@ const PrivacySettings = () => {
             <div className="row">
               <UserNav status6="active" />
 
-              <div className="col-md-7 col-lg-8 col-xl-9">
+              <div className="col-md-12 col-sm-12 col-lg-8 col-xl-9">
                 <div className="card">
                   <div className="card-body">
                     <div className="row">

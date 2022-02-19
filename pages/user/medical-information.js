@@ -45,7 +45,7 @@ const MedicalInformation = () => {
             <div className="row">
               <UserNav status5="active" patient={data} />
               {data ? (
-                <div className="col-md-7 col-lg-8 col-xl-9">
+                <div className="col-sm-12 col-md-12 col-lg-8 col-xl-9">
                   <div className="card shadow-sm">
                     <div className="card-body">
                       <div className="flex-fill">
