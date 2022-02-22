@@ -179,7 +179,7 @@ ul {
   box-shadow: -2px 2px 2px -1px #0000001a;
 }
 .header li.logged-item .dropdown-menu {
-  z-index: 9999;
+  z-index: 9999 !important;
 }
 
 .header li.logged-item .dropdown-menu .user-header {
@@ -320,8 +320,14 @@ ul {
   }
 }
 
+.brand-logo a {
+  color: #15558d;
+  font-size: 18px;
+  font-weight: 600;
+}
+
 nav.custom-bg {
-  background-color: #00789c;
+  background-color: #15558d;
 }
 
 li.nav-item a.navbar-link,
