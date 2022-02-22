@@ -179,60 +179,6 @@ ul {
   box-shadow: -2px 2px 2px -1px #0000001a;
 }
 
-/* Width 412px */
-
-@media screen and (width: 412px) {
-  .header li.logged-item .dropdown-menu::before {
-    top: 111px;
-    right: 304px !important;
-  }
-}
-
-/* Width 360px */
-
-@media screen and (width: 360px) {
-  .header li.logged-item .dropdown-menu::before {
-    top: 111px;
-    right: 255px;
-  }
-}
-
-/* Width 740px */
-
-@media screen and (width: 740px) {
-  .header li.logged-item .dropdown-menu::before {
-    top: 111px;
-    right: 631px !important;
-  }
-}
-
-/* Width 768px */
-
-@media screen and (width: 768px) {
-  .header li.logged-item .dropdown-menu::before {
-    top: 111px;
-    right: 645px !important;
-  }
-}
-
-/* Width 820px */
-
-@media screen and (width: 820px) {
-  .header li.logged-item .dropdown-menu::before {
-    top: 111px;
-    right: 700px !important;
-  }
-}
-
-/* Width 915px */
-
-@media screen and (width: 915px) {
-  .header li.logged-item .dropdown-menu::before {
-    top: 111px;
-    right: 795px !important;
-  }
-}
-
 .header li.logged-item .dropdown-menu .user-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -342,4 +288,69 @@ ul {
   display: inline-block;
   width: 120px;
 }
+
+/* Custom Stylesheet */
+
+.topbar-right-items .topbar-items a.items-icon {
+  border-right: 1px solid;
+  padding-right: 10px;
+}
+
+.topbar-right-items .topbar-items span.small-screen {
+  display: none;
+}
+
+@media screen and (min-width: 300px) and (max-width: 920px) {
+  .topbar-right-items .topbar-items a.items-icon {
+    border-right: 0;
+    padding-right: 0;
+  }
+  .topbar-right-items .topbar-items span.large-screen {
+    display: none;
+  }
+  .topbar-right-items .topbar-items span.small-screen {
+    display: contents;
+  }
+
+  .item-none {
+    display: none;
+  }
+}
+
+nav.custom-bg {
+  background-color: #00789c;
+}
+
+li.nav-item a.navbar-link,
+li.nav-item i {
+  font-size: 18px;
+}
+
+li.nav-item a.navbar-link::after {
+  content: "";
+  border-right: 1px solid #000;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 300px) and (max-width: 920px) {
+  li.nav-item a.navbar-link::after {
+    display: none;
+  }
+  li.nav-item a.navbar-link {
+    border-bottom: 1px solid #000 !important;
+    margin-bottom: 20px;
+  }
+}
+
+a.find-doctor {
+  display: none !important;
+}
+
+@media screen and (min-width: 300px) and (max-width: 920px) {
+  a.find-doctor {
+    display: block !important;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */

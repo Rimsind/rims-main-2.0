@@ -117,19 +117,19 @@ const SocialHistory = ({ patient }) => {
           style={{ borderBottom: "1px solid #bbbaba" }}
         >
           <div className="row justify-content-between align-items-start">
-            <div className="col-md-3">
+            <div className="col-md-3 col-sm-12">
               <h3 className="fs-6 fs-bold text-dark">Where do you live?</h3>
             </div>
-            <div className="col-md-9">
+            <div className="col-md-9 col-sm-12">
               <div className="row">
                 {live_where.map((item, index) => (
                   <div
-                    className="col-md-4"
+                    className="col-md-4 col-sm-4"
                     {...register("live_where")}
                     key={index}
                   >
                     <div className="row">
-                      <div className="col-md-2">
+                      <div className="col-md-2 col-sm-2">
                         <input
                           className="form-check-input"
                           type="checkbox"
@@ -143,7 +143,7 @@ const SocialHistory = ({ patient }) => {
                           }
                         />
                       </div>
-                      <div className="col-md-10">
+                      <div className="col-md-10 col-sm-9">
                         <p className="space-x-4">{item}</p>
                       </div>
                     </div>
@@ -158,19 +158,19 @@ const SocialHistory = ({ patient }) => {
           style={{ borderBottom: "1px solid #bbbaba" }}
         >
           <div className="row justify-content-between align-items-start">
-            <div className="col-md-3">
+            <div className="col-md-3 col-sm-12">
               <h3 className="fs-6 fs-bold text-dark">With whom do you live?</h3>
             </div>
-            <div className="col-md-9">
+            <div className="col-md-9 col-sm-12">
               <div className="row">
                 {live_with.map((item, index) => (
                   <div
-                    className="col-md-4"
+                    className="col-md-4 col-sm-4"
                     {...register("live_with")}
                     key={index}
                   >
                     <div className="row">
-                      <div className="col-md-2">
+                      <div className="col-md-2 col-sm-2">
                         <input
                           className="form-check-input"
                           type="checkbox"
@@ -184,7 +184,7 @@ const SocialHistory = ({ patient }) => {
                           }
                         />
                       </div>
-                      <div className="col-md-10">
+                      <div className="col-md-10 col-sm-10">
                         <p className="space-x-4">{item}</p>
                       </div>
                     </div>
@@ -199,15 +199,15 @@ const SocialHistory = ({ patient }) => {
           style={{ borderBottom: "1px solid #bbbaba" }}
         >
           <div className="row justify-centent-between align-items-start">
-            <div className="col-md-3">
+            <div className="col-md-3 col-sm-12">
               <h3 className="fs-6 fs-bold text-dark">Does your home have?</h3>
             </div>
-            <div className="col-md-9">
+            <div className="col-md-9 col-sm-12">
               <div className="row">
                 {home_haves.map((item, index) => (
-                  <div className="col-md-4" key={index}>
+                  <div className="col-md-4 col-sm-4" key={index}>
                     <div className="row">
-                      <div className="col-md-2">
+                      <div className="col-md-2 col-sm-2">
                         <input
                           className="form-check-input"
                           type="checkbox"
@@ -222,16 +222,19 @@ const SocialHistory = ({ patient }) => {
                           }
                         />
                       </div>
-                      <div className="col-md-10">
+                      <div className="col-md-10 col-sm-10">
                         <p className="space-x-4">{item}</p>
                       </div>
                     </div>
                   </div>
                 ))}
 
-                <div className="col-md-9">
+                <div className="col-md-9 col-sm-9">
                   <div className="row">
-                    <div className="col-md-1" {...register("homeHave")}>
+                    <div
+                      className="col-md-1 col-sm-1"
+                      {...register("homeHave")}
+                    >
                       <input
                         className="form-check-input"
                         type="checkbox"
@@ -239,12 +242,15 @@ const SocialHistory = ({ patient }) => {
                         value="value9"
                       />
                     </div>
-                    <div className="col-md-11" {...register("homeHaveText")}>
+                    <div
+                      className="col-md-11 col-sm-11"
+                      {...register("homeHaveText")}
+                    >
                       <div className="row justify-centent-between align-items-center">
-                        <div className="col-md-5">
+                        <div className="col-md-5 col-sm-5">
                           <p className="space-x-4">Any Obstacles (List):</p>
                         </div>
-                        <div className="col-md-7">
+                        <div className="col-md-7 col-sm-7 mb-2">
                           <input
                             type="text"
                             className="form-control"
@@ -275,7 +281,7 @@ const SocialHistory = ({ patient }) => {
                     <div className="col-md-8">
                       <p className="space-x-4">No. Steps Outside The Home:</p>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-4 mb-2">
                       <input
                         type="number"
                         className="form-control"
@@ -295,7 +301,7 @@ const SocialHistory = ({ patient }) => {
                     <div className="col-md-8">
                       <p className="space-x-4">No. Steps Inside The Home:</p>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-4 mb-2">
                       <input
                         type="number"
                         className="form-control"
@@ -319,15 +325,15 @@ const SocialHistory = ({ patient }) => {
           style={{ borderBottom: "1px solid #bbbaba" }}
         >
           <div className="row justify-content-between align-items-start">
-            <div className="col-md-3">
+            <div className="col-md-3 col-sm-12">
               <h3 className="fs-6 fs-bold text-dark">Do You Use?</h3>
             </div>
-            <div className="col-md-9">
+            <div className="col-md-9 col-sm-12">
               <div className="row">
                 {do_uses.map((item, index) => (
-                  <div className="col-md-4" key={index}>
+                  <div className="col-md-4 col-sm-4" key={index}>
                     <div className="row">
-                      <div className="col-md-2">
+                      <div className="col-md-2 col-sm-2">
                         <input
                           className="form-check-input"
                           type="checkbox"
@@ -342,7 +348,7 @@ const SocialHistory = ({ patient }) => {
                           }
                         />
                       </div>
-                      <div className="col-md-10">
+                      <div className="col-md-10 col-sm-10">
                         <p className="space-x-4">{item}</p>
                       </div>
                     </div>
@@ -364,7 +370,7 @@ const SocialHistory = ({ patient }) => {
                 care?
               </p>
             </div>
-            <div className="col-md-8">
+            <div className="col-md-8 mb-3">
               <input
                 type="text"
                 className="form-control"
@@ -383,16 +389,19 @@ const SocialHistory = ({ patient }) => {
           <h5 className="fs-5 fs-bold text-dark">Social / Health Habits</h5>
           <div className="gen-form">
             <div className="row justify-content-between align-items-start">
-              <div className="col-md-3">
+              <div className="col-md-3 col-sm-12">
                 <h3 className="fs-6 fs-bold text-dark">
                   Do You Smoke Tobacco?
                 </h3>
               </div>
-              <div className="col-md-9">
+              <div className="col-md-9 col-sm-12">
                 <div className="row">
-                  <div className="col-md-2" {...register("smokeTobacco")}>
+                  <div
+                    className="col-md-2 col-sm-2"
+                    {...register("smokeTobacco")}
+                  >
                     <div className="row">
-                      <div className="col-md-2">
+                      <div className="col-md-2 col-sm-2">
                         <input
                           className="form-check-input"
                           type="radio"
@@ -404,14 +413,17 @@ const SocialHistory = ({ patient }) => {
                           }
                         />
                       </div>
-                      <div className="col-md-8">
+                      <div className="col-md-8 col-sm-8">
                         <p className="space-x-4">No</p>
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-4" {...register("smokeTobacco")}>
+                  <div
+                    className="col-md-4 col-sm-4"
+                    {...register("smokeTobacco")}
+                  >
                     <div className="row">
-                      <div className="col-md-2">
+                      <div className="col-md-2 col-sm-2">
                         <input
                           className="form-check-input"
                           type="radio"
@@ -423,7 +435,7 @@ const SocialHistory = ({ patient }) => {
                           }
                         />
                       </div>
-                      <div className="col-md-8">
+                      <div className="col-md-8 col-sm-8">
                         <p className="space-x-4">Occasionally</p>
                       </div>
                     </div>
@@ -447,9 +459,12 @@ const SocialHistory = ({ patient }) => {
                             </div>
                           </div>
                         </div> */}
-                  <div className="col-md-3" {...register("smokeTobacco")}>
+                  <div
+                    className="col-md-3 col-sm-3"
+                    {...register("smokeTobacco")}
+                  >
                     <div className="row">
-                      <div className="col-md-2">
+                      <div className="col-md-2 col-sm-2">
                         <input
                           className="form-check-input"
                           type="radio"
@@ -461,14 +476,17 @@ const SocialHistory = ({ patient }) => {
                           }
                         />
                       </div>
-                      <div className="col-md-8">
+                      <div className="col-md-8 col-sm-8">
                         <p className="space-x-4">Socially</p>
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3" {...register("smokeTobacco")}>
+                  <div
+                    className="col-md-3 col-sm-3"
+                    {...register("smokeTobacco")}
+                  >
                     <div className="row">
-                      <div className="col-md-2">
+                      <div className="col-md-2 col-sm-2">
                         <input
                           className="form-check-input"
                           type="radio"
@@ -480,7 +498,7 @@ const SocialHistory = ({ patient }) => {
                           }
                         />
                       </div>
-                      <div className="col-md-8">
+                      <div className="col-md-8 col-sm-8">
                         <p className="space-x-4">Heavily</p>
                       </div>
                     </div>
@@ -491,16 +509,19 @@ const SocialHistory = ({ patient }) => {
           </div>
           <div className="gen-form">
             <div className="row justify-content-between align-items-start">
-              <div className="col-md-3">
+              <div className="col-md-3 col-sm-12">
                 <h3 className="fs-6 fs-bold text-dark">
                   Do You Drink Alcohol?
                 </h3>
               </div>
-              <div className="col-md-9">
+              <div className="col-md-9 col-sm-12">
                 <div className="row">
-                  <div className="col-md-2" {...register("drinkAlcohol")}>
+                  <div
+                    className="col-md-2 col-sm-2"
+                    {...register("drinkAlcohol")}
+                  >
                     <div className="row">
-                      <div className="col-md-2">
+                      <div className="col-md-2 col-sm-2">
                         <input
                           className="form-check-input"
                           type="radio"
@@ -512,14 +533,17 @@ const SocialHistory = ({ patient }) => {
                           }
                         />
                       </div>
-                      <div className="col-md-8">
+                      <div className="col-md-8 col-sm-8">
                         <p className="space-x-4">No</p>
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-4" {...register("drinkAlcohol")}>
+                  <div
+                    className="col-md-4 col-sm-4"
+                    {...register("drinkAlcohol")}
+                  >
                     <div className="row">
-                      <div className="col-md-2">
+                      <div className="col-md-2 col-sm-2">
                         <input
                           className="form-check-input"
                           type="radio"
@@ -531,7 +555,7 @@ const SocialHistory = ({ patient }) => {
                           }
                         />
                       </div>
-                      <div className="col-md-8">
+                      <div className="col-md-8 col-sm-8">
                         <p className="space-x-4">Occasionally</p>
                       </div>
                     </div>
@@ -555,9 +579,12 @@ const SocialHistory = ({ patient }) => {
                             </div>
                           </div>
                         </div> */}
-                  <div className="col-md-3" {...register("drinkAlcohol")}>
+                  <div
+                    className="col-md-3 col-sm-3"
+                    {...register("drinkAlcohol")}
+                  >
                     <div className="row">
-                      <div className="col-md-2">
+                      <div className="col-md-2 col-sm-2">
                         <input
                           className="form-check-input"
                           type="radio"
@@ -569,14 +596,17 @@ const SocialHistory = ({ patient }) => {
                           }
                         />
                       </div>
-                      <div className="col-md-8">
+                      <div className="col-md-8 col-sm-8">
                         <p className="space-x-4">Socially</p>
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3" {...register("drinkAlcohol")}>
+                  <div
+                    className="col-md-3 col-sm-3"
+                    {...register("drinkAlcohol")}
+                  >
                     <div className="row">
-                      <div className="col-md-2">
+                      <div className="col-md-2 col-sm-2">
                         <input
                           className="form-check-input"
                           type="radio"
@@ -588,7 +618,7 @@ const SocialHistory = ({ patient }) => {
                           }
                         />
                       </div>
-                      <div className="col-md-8">
+                      <div className="col-md-8 col-sm-8">
                         <p className="space-x-4">Heavily</p>
                       </div>
                     </div>
@@ -599,14 +629,14 @@ const SocialHistory = ({ patient }) => {
           </div>
           <div className="gen-form">
             <div className="row ">
-              <div className="col-md-3">
+              <div className="col-md-3 col-sm-12">
                 <h3 className="fs-6 fs-bold text-dark">Excercise?</h3>
               </div>
-              <div className="col-md-9">
+              <div className="col-md-9 col-sm-12">
                 <div className="row">
-                  <div className="col-md-3">
+                  <div className="col-md-3 col-sm-3">
                     <div className="row">
-                      <div className="col-md-2">
+                      <div className="col-md-2 col-sm-2">
                         <input
                           className="form-check-input"
                           type="radio"
@@ -618,14 +648,14 @@ const SocialHistory = ({ patient }) => {
                           }
                         />
                       </div>
-                      <div className="col-md-8">
+                      <div className="col-md-8 col-sm-8">
                         <p className="space-x-4">No</p>
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3">
+                  <div className="col-md-3 col-sm-3">
                     <div className="row">
-                      <div className="col-md-2">
+                      <div className="col-md-2 col-sm-2">
                         <input
                           className="form-check-input"
                           type="radio"
@@ -637,21 +667,21 @@ const SocialHistory = ({ patient }) => {
                           }
                         />
                       </div>
-                      <div className="col-md-8">
+                      <div className="col-md-8 col-sm-8">
                         <p className="space-x-4">Yes</p>
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-6"></div>
+                  <div className="col-md-6 col-sm-6"></div>
                 </div>
                 <div
                   className="row justify-centent-between align-items-center mb-3"
                   {...register("exerciseNoInWeek")}
                 >
-                  <div className="col-md-6">
+                  <div className="col-md-6 col-sm-6">
                     <p className="space-x-4">If yes how many times per week?</p>
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-md-6 col-sm-6">
                     <input
                       type="number"
                       className="form-control"

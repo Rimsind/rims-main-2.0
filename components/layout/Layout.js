@@ -2,6 +2,7 @@ import NavBar from "components/NavBar";
 import Footer from "components/Footer";
 import Head from "next/head";
 import Script from "next/script";
+import { TestNav } from "components/common";
 const Layout = ({ children }) => {
   return (
     <>
@@ -21,7 +22,8 @@ const Layout = ({ children }) => {
         <link rel="shortcut icon" href="/assets/images/favicon.png" />
       </Head>
       <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></Script>
-      <NavBar />
+      {/* <NavBar /> */}
+      <TestNav />
       <main>{children}</main>
       <Footer />
     </>

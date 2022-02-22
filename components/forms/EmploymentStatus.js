@@ -78,14 +78,14 @@ const EmploymentStatus = ({ patient }) => {
           style={{ borderBottom: "1px solid #bbbaba" }}
         >
           <div className="row justify-content-between align-items-start">
-            <div className="col-md-3">
+            <div className="col-md-3 col-sm-12">
               <h3 className="fs-6 fs-bold text-dark">Work Status</h3>
             </div>
-            <div className="col-md-9">
+            <div className="col-md-9 col-sm-12">
               <div className="row">
-                <div className="col-md-4" {...register("workStatus")}>
+                <div className="col-md-4 col-sm-4" {...register("workStatus")}>
                   <div className="row">
-                    <div className="col-md-2">
+                    <div className="col-md-2 col-sm-2">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -97,14 +97,14 @@ const EmploymentStatus = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-9">
+                    <div className="col-md-9 col-sm-9">
                       <p className="space-x-4">Work Full Time</p>
                     </div>
                   </div>
                 </div>
-                <div className="col-md-4" {...register("workStatus")}>
+                <div className="col-md-4 col-sm-4" {...register("workStatus")}>
                   <div className="row">
-                    <div className="col-md-2">
+                    <div className="col-md-2 col-sm-2">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -116,14 +116,14 @@ const EmploymentStatus = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-10">
+                    <div className="col-md-10 col-sm-10">
                       <p className="space-x-4">Work Part Time</p>
                     </div>
                   </div>
                 </div>
-                <div className="col-md-4" {...register("workStatus")}>
+                <div className="col-md-4 col-sm-4" {...register("workStatus")}>
                   <div className="row">
-                    <div className="col-md-2">
+                    <div className="col-md-2 col-sm-2">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -135,14 +135,14 @@ const EmploymentStatus = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-9">
+                    <div className="col-md-9 col-sm-9">
                       <p className="space-x-4">Work Light Duty</p>
                     </div>
                   </div>
                 </div>
-                <div className="col-md-4" {...register("workStatus")}>
+                <div className="col-md-4 col-sm-4" {...register("workStatus")}>
                   <div className="row">
-                    <div className="col-md-2">
+                    <div className="col-md-2 col-sm-2">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -154,14 +154,14 @@ const EmploymentStatus = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-10">
+                    <div className="col-md-10 col-sm-10">
                       <p className="space-x-4">Homemaker</p>
                     </div>
                   </div>
                 </div>
-                <div className="col-md-4" {...register("workStatus")}>
+                <div className="col-md-4 col-sm-4" {...register("workStatus")}>
                   <div className="row">
-                    <div className="col-md-2">
+                    <div className="col-md-2 col-sm-2">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -173,14 +173,14 @@ const EmploymentStatus = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-10">
+                    <div className="col-md-10 col-sm-10">
                       <p className="space-x-4">Retired</p>
                     </div>
                   </div>
                 </div>
-                <div className="col-md-4" {...register("workStatus")}>
+                <div className="col-md-4 col-sm-4" {...register("workStatus")}>
                   <div className="row">
-                    <div className="col-md-2">
+                    <div className="col-md-2 col-sm-2">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -192,14 +192,14 @@ const EmploymentStatus = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-10">
+                    <div className="col-md-10 col-sm-10">
                       <p className="space-x-4">Disabled</p>
                     </div>
                   </div>
                 </div>
-                <div className="col-md-4" {...register("workStatus")}>
+                <div className="col-md-4 col-sm-4" {...register("workStatus")}>
                   <div className="row">
-                    <div className="col-md-2">
+                    <div className="col-md-2 col-sm-2">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -211,15 +211,15 @@ const EmploymentStatus = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 col-sm-8">
                       <p className="space-x-4">Unemployed</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="col-md-4" {...register("workStatus")}>
+                <div className="col-md-4 col-sm-4" {...register("workStatus")}>
                   <div className="row">
-                    <div className="col-md-2">
+                    <div className="col-md-2 col-sm-2">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -231,7 +231,7 @@ const EmploymentStatus = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 col-sm-8">
                       <p className="space-x-4">Student</p>
                     </div>
                   </div>
@@ -248,10 +248,10 @@ const EmploymentStatus = ({ patient }) => {
             className="row justify-content-between align-items-center mb-3"
             {...register("occupation")}
           >
-            <div className="col-md-3">
+            <div className="col-md-3 col-sm-12">
               <h3 className="fs-6 fs-bold text-dark">Occupation?</h3>
             </div>
-            <div className="col-md-9">
+            <div className="col-md-9 col-sm-12">
               <input
                 type="text"
                 className="form-control"
@@ -268,17 +268,17 @@ const EmploymentStatus = ({ patient }) => {
         </div>
         <div className="gen-form mb-3">
           <div className="row justify-centent-between align-items-start">
-            <div className="col-md-3">
+            <div className="col-md-3 col-sm-12">
               <h3 className="fs-6 fs-bold text-dark">
                 Your Work Involves (Check all that apply)
               </h3>
             </div>
-            <div className="col-md-9">
+            <div className="col-md-9 col-sm-12">
               <div className="row">
                 {work_involves.map((item, index) => (
-                  <div className="col-md-4" key={index}>
+                  <div className="col-md-4 col-sm-4" key={index}>
                     <div className="row">
-                      <div className="col-md-2">
+                      <div className="col-md-2 col-sm-2">
                         <input
                           className="form-check-input"
                           type="checkbox"
@@ -293,7 +293,7 @@ const EmploymentStatus = ({ patient }) => {
                           }
                         />
                       </div>
-                      <div className="col-md-10">
+                      <div className="col-md-10 col-sm-10">
                         <p className="space-x-4">{item}</p>
                       </div>
                     </div>

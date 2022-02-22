@@ -252,9 +252,9 @@ const MedicalHistory = ({ patient }) => {
           </h3>
           <div className="row justify-content-between align-items-center">
             {pastMedicalHistory.map((item, index) => (
-              <div className="col-md-3" key={index}>
+              <div className="col-md-3 col-sm-3" key={index}>
                 <div className="row">
-                  <div className="col-md-2">
+                  <div className="col-md-2 col-sm-2">
                     <input
                       className="form-check-input"
                       type="checkbox"
@@ -270,7 +270,7 @@ const MedicalHistory = ({ patient }) => {
                       }
                     />
                   </div>
-                  <div className="col-md-10">
+                  <div className="col-md-10 col-sm-10">
                     <p className="space-x-4">{item}</p>
                   </div>
                 </div>
@@ -288,14 +288,14 @@ const MedicalHistory = ({ patient }) => {
             Past medical history - For Women Only:
           </h3>
           <div className="row justify-content-between align-items-start">
-            <div className="col-md-6">
+            <div className="col-md-6 col-sm-6">
               <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-6 col-sm-6">
                   <p className="space-x-4">☆ Pelvic Inflammatory Disease</p>
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-3 col-sm-3">
                   <div className="row">
-                    <div className="col-md-4">
+                    <div className="col-md-4 col-sm-4">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -310,14 +310,14 @@ const MedicalHistory = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 col-sm-8">
                       <p className="space-x-4">Yes</p>
                     </div>
                   </div>
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-3 col-sm-3">
                   <div className="row">
-                    <div className="col-md-4">
+                    <div className="col-md-4 col-sm-4">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -332,21 +332,21 @@ const MedicalHistory = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 col-sm-8">
                       <p className="space-x-4">No</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 col-sm-6">
               <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-6 col-sm-6">
                   <p className="space-x-4">☆ Trouble with Period</p>
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-3 col-sm-3">
                   <div className="row">
-                    <div className="col-md-4">
+                    <div className="col-md-4 col-sm-4">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -361,14 +361,14 @@ const MedicalHistory = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 col-sm-8">
                       <p className="space-x-4">Yes</p>
                     </div>
                   </div>
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-3 col-sm-3">
                   <div className="row">
-                    <div className="col-md-4">
+                    <div className="col-md-4 col-sm-4">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -383,21 +383,21 @@ const MedicalHistory = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 col-sm-8">
                       <p className="space-x-4">No</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 col-sm-6">
               <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-6 col-sm-6">
                   <p className="space-x-4">☆ Complicated Pregnancies</p>
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-3 col-sm-3">
                   <div className="row">
-                    <div className="col-md-4">
+                    <div className="col-md-4 col-sm-4">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -412,14 +412,14 @@ const MedicalHistory = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 col-sm-8">
                       <p className="space-x-4">Yes</p>
                     </div>
                   </div>
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-3 col-sm-3">
                   <div className="row">
-                    <div className="col-md-4">
+                    <div className="col-md-4 col-sm-4">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -434,21 +434,21 @@ const MedicalHistory = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 col-sm-8">
                       <p className="space-x-4">No</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 col-sm-6">
               <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-6 col-sm-6">
                   <p className="space-x-4">☆ Pregnant</p>
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-3 col-sm-3">
                   <div className="row">
-                    <div className="col-md-4">
+                    <div className="col-md-4 col-sm-4">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -463,14 +463,14 @@ const MedicalHistory = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 col-sm-8">
                       <p className="space-x-4">Yes</p>
                     </div>
                   </div>
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-3 col-sm-3">
                   <div className="row">
-                    <div className="col-md-4">
+                    <div className="col-md-4 col-sm-4">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -485,21 +485,21 @@ const MedicalHistory = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 col-sm-8">
                       <p className="space-x-4">No</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 col-sm-6">
               <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-6 col-sm-6">
                   <p className="space-x-4">☆ Endometriosis</p>
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-3 col-sm-3">
                   <div className="row">
-                    <div className="col-md-4">
+                    <div className="col-md-4 col-sm-4">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -514,14 +514,14 @@ const MedicalHistory = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 col-sm-8">
                       <p className="space-x-4">Yes</p>
                     </div>
                   </div>
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-3 col-sm-3">
                   <div className="row">
-                    <div className="col-md-4">
+                    <div className="col-md-4 col-sm-4">
                       <input
                         className="form-check-input"
                         type="radio"
@@ -536,19 +536,19 @@ const MedicalHistory = ({ patient }) => {
                         }
                       />
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 col-sm-8">
                       <p className="space-x-4">No</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-md-6" {...register("other")}>
+            <div className="col-md-6 col-sm-6" {...register("other")}>
               <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-6 col-sm-6">
                   <p className="space-x-4">☆ Any Other</p>
                 </div>
-                <div className="col-md-6 mb-3">
+                <div className="col-md-6 col-sm-6 mb-3">
                   <input
                     type="text"
                     className="form-control"

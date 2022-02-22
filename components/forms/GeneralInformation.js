@@ -47,10 +47,10 @@ const GeneralInformation = ({ patient }) => {
           style={{ borderBottom: "1px solid #bbbaba" }}
         >
           <div className="row align-items-start">
-            <div className="col-lg-3 col-sm-4">
+            <div className="col-lg-3 col-sm-12">
               <h3 className="fs-6 fs-bold text-dark">Race / Ethnicity</h3>
             </div>
-            <div className="col-md-9 col-sm-8">
+            <div className="col-md-9 col-sm-12">
               <div className="row">
                 <div className="col-md-4 col-sm-4" {...register("race")}>
                   <div className="row">
