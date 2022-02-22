@@ -1,7 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useAuth } from "context";
+import { apiUrl } from "config/api";
+import useSWR from "swr";
+import axios from "axios";
 
 const TestNav = () => {
+  const { auth } = useAuth();
+  const { data } = useSWR(
+    `${apiUrl}/patients/${auth.user?.profileId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
   return (
     <>
       <section className="main-nav">
@@ -19,7 +36,7 @@ const TestNav = () => {
               </a>
             </div>
             <div className="topbar-right-items d-flex justify-content-between align-items-center">
-              <div className="topbar-items">
+              <div className="topbar-items item-none">
                 <a className="items-icon me-3 fs-6" href="#">
                   <i className="fad fa-phone fs-5 fw-bold text-danger me-2"></i>
                   <span className="large-screen">987-564-231</span>
@@ -53,11 +70,73 @@ const TestNav = () => {
                   <span className="small-screen">Sample</span>
                 </a>
               </div>
+              <div className="topbar-items">
+                {auth?.token && auth?.user ? (
+                  <>
+                    <li className="nav-item dropdown has-arrow logged-item">
+                      <a
+                        href="#"
+                        className="dropdown-toggle nav-link"
+                        data-bs-toggle="dropdown"
+                      >
+                        <span className="user-img">
+                          <Image
+                            className="rounded-circle "
+                            src={
+                              data?.image?.url || "/assets/images/profile.png"
+                            }
+                            width="35"
+                            height="35"
+                            alt="Darren Elder"
+                          />
+                        </span>
+                      </a>
+                      <div className="dropdown-menu dropdown-menu-end">
+                        <div className="user-header">
+                          <div className="avatar avatar-sm">
+                            <Image
+                              height="100"
+                              width="100"
+                              src={
+                                data?.image?.url || "/assets/images/profile.png"
+                              }
+                              alt="User Image"
+                              className="avatar-img rounded-circle"
+                            />
+                          </div>
+                          <div className="user-text">
+                            <h6>
+                              {data?.first_name} {data?.last_name}
+                            </h6>
+                          </div>
+                        </div>
+                        <Link href="/user/">
+                          <a className="dropdown-item">Dashboard</a>
+                        </Link>
+                        <Link href="/user/profile-settings">
+                          <a className="dropdown-item">Profile Settings</a>
+                        </Link>
+                        <a className="dropdown-item" href="login.html">
+                          Logout
+                        </a>
+                      </div>
+                    </li>
+                  </>
+                ) : (
+                  <>
+                    <li className="nav-item">
+                      <Link href="/user/login">
+                        <a className="nav-link login_font">LOGIN / SIGNUP</a>
+                      </Link>
+                    </li>
+                  </>
+                )}
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <section className="main-header">
+      <section className="main-header sticky-lg-top sticky-md-top">
         <nav class="navbar navbar-expand-lg navbar-light custom-bg">
           <div class="container-fluid">
             <a className="nav-link navbar-link find-doctor fs-6 text-white">

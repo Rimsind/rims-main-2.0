@@ -178,6 +178,9 @@ ul {
   -webkit-box-shadow: -2px 2px 2px -1px #0000001a;
   box-shadow: -2px 2px 2px -1px #0000001a;
 }
+.header li.logged-item .dropdown-menu {
+  z-index: 9999;
+}
 
 .header li.logged-item .dropdown-menu .user-header {
   display: -webkit-box;
