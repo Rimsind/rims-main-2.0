@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 const HorizontalDoctorCard = ({ doctorData }) => {
+  console.log(doctorData);
   return (
     <>
       <div className="card">
@@ -49,11 +50,12 @@ const HorizontalDoctorCard = ({ doctorData }) => {
                   </li>
 
                   <li>
-                    <i className="fas fa-map-marker-alt"></i> City Center,
-                    Haldia, WB
+                    <i className="fas fa-map-marker-alt"></i>{" "}
+                    {doctorData?.address?.city}, {doctorData?.address?.state}
                   </li>
                   <li>
-                    <i className="far fa-money-bill-alt"></i> ₹300 - ₹1000
+                    <i className="far fa-money-bill-alt"></i> ₹
+                    {doctorData?.feeScale?.min} - ₹{doctorData?.feeScale?.max}
                     <i
                       className="fas fa-info-circle"
                       data-bs-toggle="tooltip"

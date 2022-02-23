@@ -20,6 +20,7 @@ const Index = () => {
       return result;
     }
   );
+  console.log(data);
 
   return (
     <>
@@ -49,7 +50,7 @@ const Index = () => {
                         </div>
                         <h5>Heart Rate</h5>
                         <h6>
-                          12 <sub>bpm</sub>
+                          {data?.vitalSigns?.heartRate} <sub>bpm</sub>
                         </h6>
                       </div>
                     </div>
@@ -70,7 +71,8 @@ const Index = () => {
                         </div>
                         <h5>Body Temperature</h5>
                         <h6>
-                          18 <sub>C</sub>
+                          {data?.vitalSigns?.temperature}
+                          <sup>°</sup> <sub>C</sub>
                         </h6>
                       </div>
                     </div>
@@ -90,7 +92,9 @@ const Index = () => {
                           />
                         </div>
                         <h5>Glucose Level</h5>
-                        <h6>70 - 90</h6>
+                        <h6>
+                          {data?.vitalSigns?.glucose} <sub>mg/dl</sub>
+                        </h6>
                       </div>
                     </div>
                   </div>
@@ -110,7 +114,7 @@ const Index = () => {
                         </div>
                         <h5>Blood Pressure</h5>
                         <h6>
-                          202/90 <sub>mg/dl</sub>
+                          {data?.vitalSigns?.bloodPressure} <sub>mmHg</sub>
                         </h6>
                       </div>
                     </div>
@@ -132,7 +136,7 @@ const Index = () => {
                           />
                         </div>
                         <h5>BMI</h5>
-                        <h6>121.33</h6>
+                        <h6>{data?.vitalSigns?.bmi}</h6>
                       </div>
                     </div>
                   </div>
@@ -151,9 +155,7 @@ const Index = () => {
                           />
                         </div>
                         <h5>Oxygen Level</h5>
-                        <h6>
-                          18 <sub>C</sub>
-                        </h6>
+                        <h6>{data?.vitalSigns?.oxygen}%</h6>
                       </div>
                     </div>
                   </div>
@@ -172,7 +174,10 @@ const Index = () => {
                           />
                         </div>
                         <h5>Dimensions</h5>
-                        <h6>154 Cm - 90 Kg</h6>
+                        <h6>
+                          {data?.vitalSigns?.height} <sub>Cm</sub> -{" "}
+                          {data?.vitalSigns?.weight} <sub>Kg</sub>
+                        </h6>
                       </div>
                     </div>
                   </div>
@@ -192,7 +197,7 @@ const Index = () => {
                         </div>
                         <h5>Respiratory rate</h5>
                         <h6>
-                          202/90 <sub>mg/dl</sub>
+                          {data?.vitalSigns?.respiration} <sub>BPM</sub>
                         </h6>
                       </div>
                     </div>
