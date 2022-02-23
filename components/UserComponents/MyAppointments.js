@@ -1,6 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
 const MyAppointments = ({ data }) => {
-  console.log(data);
   return (
     <>
       <tr>
@@ -15,10 +15,12 @@ const MyAppointments = ({ data }) => {
                 alt="User Image"
               />
             </a>
-            <a href="doctor-profile.html">
-              Dr. {data?.doctor?.firstName} {data?.doctor?.lastName}
-              <span>{data?.doctor?.specialty}</span>
-            </a>
+            <Link href="/user/appointments/1">
+              <a>
+                Dr. {data?.doctor?.firstName} {data?.doctor?.lastName}
+                <span>{data?.doctor?.specialty}</span>
+              </a>
+            </Link>
           </h2>
         </td>
         <td>
@@ -33,9 +35,11 @@ const MyAppointments = ({ data }) => {
         </td>
         <td className="text-end">
           <div className="table-action">
-            <a href="javascript:void(0);" className="btn btn-sm bg-info-light">
-              <i className="far fa-eye"></i> View
-            </a>
+            <Link href="/user/appointments/1">
+              <a className="btn btn-sm bg-info-light">
+                <i className="far fa-eye"></i> View
+              </a>
+            </Link>
           </div>
         </td>
       </tr>
