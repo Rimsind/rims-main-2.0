@@ -12499,3 +12499,19 @@ ul.benifits-col li i {
     width: auto;
   }
 }
+
+/* Custom Stylesheet */
+.upper-section .left-upper-content {
+  background: linear-gradient(300deg, #19588fd6 60%, #15558dfa 60%);
+}
+
+.left-para-date {
+  animation: beat 0.5s infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes beat {
+  to {
+    transform: scale(1.1);
+  }
+}
