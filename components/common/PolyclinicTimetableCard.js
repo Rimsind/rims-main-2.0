@@ -77,8 +77,8 @@ const PolyclinicTimetableCard = ({ schedule }) => {
               </li>
 
               <li>
-                <i className="fas fa-map-marker-alt"></i> City Center, Haldia,
-                WB
+                <i className="fas fa-map-marker-alt"></i>{" "}
+                {schedule?.address?.city}, {schedule?.address?.state}
               </li>
               <li>
                 <i className="far fa-money-bill-alt"></i> ₹300 - ₹1000

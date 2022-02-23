@@ -7,6 +7,7 @@ import { DetailsPageLoader } from "components/Loaders";
 const NursingHomeId = () => {
   const { id } = useRouter().query;
   const { data } = useSWR(`${apiUrl}/nursing-homes/${id}`, fetcher);
+  console.log(data);
 
   return (
     <>
@@ -61,7 +62,8 @@ const NursingHomeId = () => {
                             </li>
                             <li>
                               <i className="far fa-clock"></i>
-                              10:00 A.M to 8:00 P.M
+                              {data?.workingHours?.Start} to{" "}
+                              {data?.workingHours?.end}
                             </li>
                             <li>
                               <i className="fas fa-map-marker-alt"></i>{" "}

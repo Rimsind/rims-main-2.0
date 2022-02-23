@@ -60,8 +60,8 @@ const DoctorId = () => {
                             </li>
 
                             <li>
-                              <i className="fas fa-map-marker-alt"></i> City
-                              Center, Haldia, WB
+                              <i className="fas fa-map-marker-alt"></i>{" "}
+                              {data?.address?.city}, {data?.address?.state}
                             </li>
                             {/* <li>
                           <i className="far fa-money-bill-alt"></i> ₹300 - ₹1000
@@ -157,96 +157,31 @@ const DoctorId = () => {
                             </div>
 
                             <div className="widget education-widget">
-                              <h4 className="widget-title">Education</h4>
-                              <div className="experience-box">
-                                <ul className="experience-list">
-                                  <li>
-                                    <div className="experience-user">
-                                      <div className="before-circle"></div>
-                                    </div>
-                                    <div className="experience-content">
-                                      <div className="timeline-content">
-                                        <a href="#/" className="name">
-                                          American Dental Medical University
-                                        </a>
-                                        <div>BDS</div>
-                                        <span className="time">
-                                          1998 - 2003
-                                        </span>
-                                      </div>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <div className="experience-user">
-                                      <div className="before-circle"></div>
-                                    </div>
-                                    <div className="experience-content">
-                                      <div className="timeline-content">
-                                        <a href="#/" className="name">
-                                          American Dental Medical University
-                                        </a>
-                                        <div>MDS</div>
-                                        <span className="time">
-                                          2003 - 2005
-                                        </span>
-                                      </div>
-                                    </div>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-
-                            <div className="widget experience-widget">
                               <h4 className="widget-title">
-                                Work & Experience
+                                Education & Awards
                               </h4>
                               <div className="experience-box">
                                 <ul className="experience-list">
-                                  <li>
-                                    <div className="experience-user">
-                                      <div className="before-circle"></div>
-                                    </div>
-                                    <div className="experience-content">
-                                      <div className="timeline-content">
-                                        <a href="#/" className="name">
-                                          Glowing Smiles Family Dental Clinic
-                                        </a>
-                                        <span className="time">
-                                          2010 - Present (5 years)
-                                        </span>
-                                      </div>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <div className="experience-user">
-                                      <div className="before-circle"></div>
-                                    </div>
-                                    <div className="experience-content">
-                                      <div className="timeline-content">
-                                        <a href="#/" className="name">
-                                          Comfort Care Dental Clinic
-                                        </a>
-                                        <span className="time">
-                                          2007 - 2010 (3 years)
-                                        </span>
-                                      </div>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <div className="experience-user">
-                                      <div className="before-circle"></div>
-                                    </div>
-                                    <div className="experience-content">
-                                      <div className="timeline-content">
-                                        <a href="#/" className="name">
-                                          Dream Smile Dental Practice
-                                        </a>
-                                        <span className="time">
-                                          2005 - 2007 (2 years)
-                                        </span>
-                                      </div>
-                                    </div>
-                                  </li>
+                                  {data?.educationAndAwards.map(
+                                    (items, index) => (
+                                      <li key={index}>
+                                        <div className="experience-user">
+                                          <div className="before-circle"></div>
+                                        </div>
+                                        <div className="experience-content">
+                                          <div className="timeline-content">
+                                            <a href="#/" className="name">
+                                              {items?.degreeOrAward}
+                                            </a>
+                                            <div>{items?.institution}</div>
+                                            <span className="time">
+                                              {items?.receivingYear}
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </li>
+                                    )
+                                  )}
                                 </ul>
                               </div>
                             </div>

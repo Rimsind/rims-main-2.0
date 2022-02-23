@@ -49,7 +49,7 @@ const HorizontalPolyclinicCard = (props) => {
                   </li>
                   <li>
                     <i className="far fa-clock"></i>
-                    10:00 A.M to 8:00 P.M
+                    {data?.workingHours?.Start} to {data?.workingHours?.end}
                   </li>
                   <li>
                     <i className="fas fa-map-marker-alt"></i>{" "}
