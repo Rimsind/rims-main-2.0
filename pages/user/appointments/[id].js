@@ -70,9 +70,9 @@ const AppointmentId = () => {
                         <div className="right-upper-content">
                           <div className="row">
                             <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6 text-end">
-                              <div class="d-grid gap-2">
+                              <div className="d-grid gap-2">
                                 <button
-                                  class="btn btn-success py-2"
+                                  className="btn btn-success py-2"
                                   type="button"
                                 >
                                   Download Clinical Assessments
@@ -80,9 +80,9 @@ const AppointmentId = () => {
                               </div>
                             </div>
                             <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                              <div class="d-grid gap-2">
+                              <div className="d-grid gap-2">
                                 <button
-                                  class="btn btn-danger py-2"
+                                  className="btn btn-danger py-2"
                                   type="button"
                                 >
                                   Download e-Prescription
@@ -159,11 +159,11 @@ const AppointmentId = () => {
                   </div>
                   <div className="card mb-2">
                     <div className="card-body">
-                      <p className="fs-5 text-center border-bottom pb-3">
+                      <p className="fs-5 text-center border-bottom pb-2">
                         Chief Complains
                       </p>
-                      <table class="table table-striped mt-2">
-                        <thead>
+                      <table className="table table-striped mt-4">
+                        <thead className="table-primary">
                           <tr>
                             <th scope="col">Title</th>
                             <th scope="col">Details</th>
@@ -177,6 +177,10 @@ const AppointmentId = () => {
                           <tr>
                             <td>Jacob</td>
                             <td>Thornton</td>
+                          </tr>
+                          <tr>
+                            <td>Mark</td>
+                            <td>Otto</td>
                           </tr>
                         </tbody>
                       </table>

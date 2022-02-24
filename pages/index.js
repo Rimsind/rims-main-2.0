@@ -34,7 +34,7 @@ const Index = () => {
           style={{ backgroundImage: "url(/assets/images/main.jpg)" }}
         >
           <div className="container">
-            <div className="row">
+            {/* <div className="row">
               <div className="col-md-5 search-doctor">
                 <div className="search-area">
                   <h2 className="text-center fs-5 mb-3">
@@ -92,6 +92,92 @@ const Index = () => {
                 </div>
               </div>
               <div className="col-md-7"></div>
+            </div> */}
+          </div>
+        </section>
+        <section className="section section-about-filter">
+          <div className="container">
+            <div className="row align-items-center">
+              <div className="col-8">
+                <div className="left-about">
+                  <div className="row">
+                    <div className="col-6">
+                      <p className="fs-2">
+                        Safety of your data is our
+                        <br />
+                        <span className="fw-bold">top priority.</span>
+                      </p>
+                      <ul>
+                        <li>Multi-evel security checks</li>
+                        <li>Multiple data backups</li>
+                        <li>Stringent data privacy policies</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-4">
+                <div className="right-about">
+                  <div className="about-filter">
+                    <div className="search-doctor">
+                      <div className="search-area">
+                        <h2 className="text-center fs-5 mb-3">
+                          Search Doctor, Make an Appointment
+                        </h2>
+                        <form className="search-input">
+                          <div className="row">
+                            <div className="col-12 col-md-12 mb-3">
+                              <div className="form-group">
+                                <select className="form-select form-control">
+                                  <option>Select State</option>
+                                  <option>West Bengal</option>
+                                  <option>Delhi</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div className="col-12 col-md-12 mb-3">
+                              <div className="form-group">
+                                <select className="form-select form-control">
+                                  <option>Select City</option>
+                                  <option>Haldia</option>
+                                  <option>Tamluk</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div className="col-12 col-md-12 mb-3">
+                              <div className="form-group">
+                                <select className="form-select form-control">
+                                  <option>Select Speciality</option>
+                                  <option>Heart</option>
+                                  <option>Eye</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div className="col-12 col-md-12">
+                              <div className="form-group">
+                                <select className="form-select form-control">
+                                  <option>Select Doctor</option>
+                                  <option>Dr. Samir Barman</option>
+                                  <option>Dr. Bappa Kamila</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="submit-section">
+                            <button
+                              type="submit"
+                              className="btn btn-primary submit-btn"
+                            >
+                              Search
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
