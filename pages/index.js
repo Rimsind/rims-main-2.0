@@ -98,10 +98,10 @@ const Index = () => {
         <section className="section section-about-filter">
           <div className="container">
             <div className="row align-items-center">
-              <div className="col-8">
+              <div className="col-12 col-md-12 col-lg-8 col-xl-8 col-xxl-8">
                 <div className="left-about">
                   <div className="row">
-                    <div className="col-6">
+                    <div className="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mt-3 mt-md-3 mt-lg-0 mt-xl-0 mt-xxl-0">
                       <p className="fs-2">
                         Safety of your data is our
                         <br />
@@ -197,7 +197,7 @@ const Index = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-6">
+                    <div className="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mt-3 mt-md-3 mt-lg-0 mt-xl-0 mt-xxl-0">
                       <div className="secure-batch-items text-center">
                         <Image
                           className="img-fluid"
@@ -210,7 +210,7 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-4">
+              <div className="col-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 mt-3 mt-md-3 mt-lg-0 mt-xl-0 mt-xxl-0">
                 <div className="right-about">
                   <div className="about-filter">
                     <div className="search-doctor">

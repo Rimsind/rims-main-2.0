@@ -21,13 +21,21 @@ const TestNav = () => {
   );
   return (
     <>
-      <section className="main-nav">
+      <section className="upper-main-mrq bg-primary pt-2">
+        <div className="container-fluid">
+          <marquee data-pause="hover">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget
+            magna pulvinar
+          </marquee>
+        </div>
+      </section>
+      <section className="main-nav pt-2">
         <div className="container-fluid">
           <div className="nav-topbar d-flex justify-content-between align-items-center">
             <div className="brand-logo">
               <a className="navbar-brand me-auto" href="#">
                 <Image
-                  height="80"
+                  height="70"
                   width="100"
                   className="logo"
                   src="/assets/images/logo-dark.png"
@@ -125,9 +133,11 @@ const TestNav = () => {
                   </>
                 ) : (
                   <>
-                    <li className="nav-item">
+                    <li className="nav-item ms-2">
                       <Link href="/user/login">
-                        <a className="nav-link login_font">LOGIN / SIGNUP</a>
+                        <button className="nav-link login_font btn bg-custom-login text-light">
+                          LOGIN / SIGNUP
+                        </button>
                       </Link>
                     </li>
                   </>

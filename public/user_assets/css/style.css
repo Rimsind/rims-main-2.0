@@ -12524,3 +12524,11 @@ ul.benifits-col li i {
 .search-area {
   border-radius: 0;
 }
+
+.bg-custom-login {
+  background-color: #0de0fe;
+}
+
+.bg-custom-login:hover {
+  background-color: #00cc52;
+}
