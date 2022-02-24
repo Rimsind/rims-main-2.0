@@ -181,6 +181,7 @@ const Index = () => {
             </div>
           </div>
         </section>
+
         <section className="section section-specialities">
           <div className="container-fluid">
             <div className="section-header text-center">
