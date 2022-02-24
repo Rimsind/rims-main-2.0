@@ -574,129 +574,47 @@ const MedicalHistory = ({ patient }) => {
             Surgical History – Please list any surgeries you had, and if known
             include dates:
           </h3>
-          <div className="row justify-content-between align-items-center">
-            <div className="col-md-12">
-              <div className="row justify-content-between align-items-center">
-                <div className="col-md-9"></div>
-                <div className="col-md-3">
-                  <div className="text-end">
-                    <button
-                      type="button"
-                      className="btn btn-primary"
-                      data-bs-toggle="modal"
-                      data-bs-target="#surgicalhistory"
-                    >
-                      Add New Entry
-                    </button>
+          <div
+            className="gen-form mb-3 mt-3"
+            style={{ backgroundColor: "aliceblue", padding: "15px" }}
+          >
+            <div className="row justify-centent-between align-items-center">
+              <div className="col-md-1 col-lg-1 col-xl-1 mb-2 mb-md-0 mb-lg-0">
+                Title:
+              </div>
+              <div className="col-md-3 col-lg-5 col-xl-5 mb-2 mb-md-0 mb-lg-0">
+                <input
+                  type="text"
+                  className="form-control"
+                  name="surgery"
+                  value={surgery}
+                  onChange={(e) => setSurgery(e.target.value)}
+                />
+              </div>
+              <div className="col-md-5 col-lg-4 col-xl-4">
+                <div className="row justify-centent-between align-items-center">
+                  <div className="col-md-3 col-lg-2 col-xl-2 mb-2 mb-md-0 mb-lg-0">
+                    Date:
                   </div>
-
-                  <div
-                    className="modal fade"
-                    id="surgicalhistory"
-                    tabIndex="-1"
-                    aria-labelledby="exampleModalLabel"
-                    aria-hidden="true"
-                  >
-                    <div className="modal-dialog modal-dialog-centered modal-lg">
-                      <div className="modal-content">
-                        <div className="modal-header">
-                          <h3 className="fs-6 fs-bold text-dark">
-                            Surgical History – Please list any surgeries you
-                            had, and if known include dates:
-                          </h3>
-                          <button
-                            type="button"
-                            className="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          ></button>
-                        </div>
-                        <div className="modal-body">
-                          <div className="gen-form mb-3">
-                            <div className="row justify-centent-between align-items-start mb-3">
-                              <div className="col-md-12">
-                                <div className="row">
-                                  <div className="col-md-1">Title:</div>
-                                  <div className="col-md-6">
-                                    <input
-                                      type="text"
-                                      className="form-control"
-                                      name="surgery"
-                                      value={surgery}
-                                      onChange={(e) =>
-                                        setSurgery(e.target.value)
-                                      }
-                                    />
-                                  </div>
-                                  <div className="col-md-5">
-                                    <div className="row">
-                                      <div className="col-md-4">Date:</div>
-                                      <div className="col-md-8">
-                                        <input
-                                          type="date"
-                                          className="form-control"
-                                          name="surgeryDate"
-                                          value={surgeryDate}
-                                          onChange={(e) =>
-                                            setSurgeryDate(e.target.value)
-                                          }
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="add_btn text-end mb-3">
-                            <span
-                              className="btn btn-primary"
-                              onClick={addSurgicalHistory}
-                            >
-                              Add
-                            </span>
-                          </div>
-                          <div
-                            className="table-responsive"
-                            style={{ borderTop: "1px solid #bbbaba" }}
-                          >
-                            <table className="table">
-                              <thead>
-                                <tr>
-                                  <th scope="col">Title</th>
-                                  <th scope="col">Date</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                {allSurgery.map((item, index) => (
-                                  <tr key={index}>
-                                    <td>{item.name}</td>
-                                    <td>{item.date}</td>
-                                  </tr>
-                                ))}
-                              </tbody>
-                            </table>
-                          </div>
-                        </div>
-                        <div className="modal-footer">
-                          <button
-                            type="button"
-                            className="btn btn-secondary"
-                            data-bs-dismiss="modal"
-                          >
-                            Close
-                          </button>
-                          <span
-                            className="btn btn-primary"
-                            onClick={submitSurgicalHistory}
-                          >
-                            Save changes
-                          </span>
-                        </div>
-                      </div>
-                    </div>
+                  <div className="col-md-9">
+                    <input
+                      type="date"
+                      className="form-control"
+                      name="surgeryDate"
+                      value={surgeryDate}
+                      onChange={(e) => setSurgeryDate(e.target.value)}
+                    />
                   </div>
                 </div>
+              </div>
+              <div className="col-md-3 col-lg-2 col-xl-2 text-end mt-2 mt-md-0 mt-lg-0">
+                <button
+                  className="btn btn-primary"
+                  onClick={addSurgicalHistory}
+                  type="button"
+                >
+                  Add Items
+                </button>
               </div>
             </div>
           </div>
@@ -761,259 +679,181 @@ const MedicalHistory = ({ patient }) => {
           </div>
         </div>
 
-        <div className="row mb-3">
-          <div className="col-md-9">
-            <h3 className="fs-6 fs-bold text-dark">
-              Medications & Allergies – please check or list all medications or
-              allergies:
-            </h3>
-          </div>
-          <div className="col-md-3">
-            <div className="text-end">
-              <button
-                type="button"
-                className="btn btn-primary"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-              >
-                Add New Entry
-              </button>
-            </div>
-
-            <div
-              className="modal fade"
-              id="exampleModal"
-              tabIndex="-1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div className="modal-dialog modal-dialog-centered modal-lg">
-                <div className="modal-content">
-                  <div className="modal-header">
-                    <h3 className="fs-6 fs-bold text-dark">
-                      Medications & Allergies – please check or list all
-                      medications or allergies:
-                    </h3>
-                    <button
-                      type="button"
-                      className="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div className="modal-body">
-                    <div className="gen-form mb-3">
-                      <div className="row justify-centent-between align-items-start mb-3">
-                        <div className="col-md-12">
-                          <div className="row">
-                            <div className="col-md-3">Type:</div>
-                            <div className="col-md-9">
-                              <select
-                                className="form-select form-select-sm"
-                                aria-label=".form-select-sm example"
-                                onChange={(e) => setType(e.target.value)}
-                              >
-                                <option selected>Select Items</option>
-                                <option value="Prescribed">Prescribed</option>
-                                <option value="Non-Prescribed">
-                                  Non-Prescribed
-                                </option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row justify-centent-between align-items-start mb-3">
-                        <div className="col-md-12">
-                          <div className="row">
-                            <div className="col-md-3">Medicine Name:</div>
-                            <div className="col-md-9">
-                              <input
-                                type="text"
-                                className="form-control"
-                                name="MedicineName"
-                                value={medicineName}
-                                onChange={(e) =>
-                                  setMedicineName(e.target.value)
-                                }
-                              />
-                            </div>
-                          </div>
-                          <div className="row mt-2">
-                            <div className="col-md-4">
-                              Medicine Dose (MG/MCG):
-                            </div>
-                            <div className="col-md-2">
-                              <input
-                                type="text"
-                                className="form-control"
-                                name="MedicineName"
-                                value={dose}
-                                onChange={(e) => setDose(e.target.value)}
-                              />
-                            </div>
-                            <div className="col-md-6">
-                              <div className="row">
-                                <div className="col-md-4">Start Date:</div>
-                                <div className="col-md-8">
-                                  <input
-                                    type="date"
-                                    className="form-control"
-                                    name="MedicineName"
-                                    value={date}
-                                    onChange={(e) => setDate(e.target.value)}
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row justify-centent-between align-items-start mb-3">
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">Status:</div>
-                            <div className="col-md-8">
-                              <select
-                                className="form-select form-select-sm"
-                                aria-label=".form-select-sm example"
-                                onChange={(e) => setStatus(e.target.value)}
-                              >
-                                <option selected>Select Status</option>
-                                <option value="Continue">Continue</option>
-                                <option value="End">End</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">Friquency:</div>
-                            <div className="col-md-8">
-                              <select
-                                className="form-select form-select-sm"
-                                aria-label=".form-select-sm example"
-                                onChange={(e) => setFrequency(e.target.value)}
-                              >
-                                {frequencyList.map((item, index) => (
-                                  <option value={item} key={index}>
-                                    {item}
-                                  </option>
-                                ))}
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row justify-centent-between align-items-center mb-3">
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-4">Route:</div>
-                            <div className="col-md-8">
-                              <select
-                                className="form-select form-select-sm"
-                                aria-label=".form-select-sm example"
-                                onChange={(e) => setRoute(e.target.value)}
-                              >
-                                <option selected>Select Items</option>
-                                <option value="Capsule">Capsule</option>
-                                <option value="Injection">Injection</option>
-                                <option value="Other Way">Other Way</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="row">
-                            <div className="col-md-5">Any Side Effect:</div>
-                            <div className="col-md-7">
-                              <select
-                                className="form-select form-select-sm"
-                                aria-label=".form-select-sm example"
-                                onChange={(e) => setSideEffect(e.target.value)}
-                              >
-                                <option selected>Select Items</option>
-                                <option value="Yes">Yes</option>
-                                <option value="No">No</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="row justify-centent-between align-items-start mb-3">
-                        <div className="col-md-12">
-                          <div className="row">
-                            <div className="col-md-2">If Yes:</div>
-                            <div className="col-md-10">
-                              <input
-                                type="text"
-                                className="form-control"
-                                name="MedicineName"
-                                value={ifYes}
-                                onChange={(e) => setIfYes(e.target.value)}
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="add_btn text-end mb-3">
-                      <span className="btn btn-primary" onClick={addMedicine}>
-                        Add
-                      </span>
-                    </div>
-                    <div
-                      className="table-responsive"
-                      style={{ borderTop: "1px solid #bbbaba" }}
-                    >
-                      <table className="table">
-                        <thead>
-                          <tr>
-                            <th scope="col">Medicine Name</th>
-                            <th scope="col">Medicine Dose</th>
-                            <th scope="col">Start Date</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Type</th>
-                            <th scope="col">Route</th>
-                            <th scope="col">Friquency </th>
-                            <th scope="col">Any Side Effect</th>
-                            <th scope="col">If Yes </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {medicineList.map((item, index) => (
-                            <tr key={index}>
-                              <td>{item.medicineName}</td>
-                              <td>{item.dose}</td>
-                              <td>{item.date}</td>
-                              <td>{item.status}</td>
-                              <td>{item.type}</td>
-                              <td>{item.route}</td>
-                              <td>{item.frequency}</td>
-                              <td>{item.sideEffect}</td>
-                              <td>{item.ifYes}</td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                  <div className="modal-footer">
-                    <button
-                      type="button"
-                      className="btn btn-secondary"
-                      data-bs-dismiss="modal"
-                    >
-                      Close
-                    </button>
-                    <button type="button" className="btn btn-primary">
-                      Save changes
-                    </button>
-                  </div>
+        <h3 className="fs-6 fs-bold text-dark">
+          Medications & Allergies – please check or list all medications or
+          allergies:
+        </h3>
+        <div
+          className="gen-form mb-3"
+          style={{ backgroundColor: "aliceblue", padding: "15px" }}
+        >
+          <div className="row justify-centent-between align-items-start mb-3 mt-3">
+            <div className="col-md-4 col-lg-3 col-xxl-3 col-xl-3 mb-0 mb-md-3 mb-lg-0 mb-xl-0">
+              <div className="row justify-centent-between align-items-center">
+                <div className="col-md-4 col-lg-3 col-xxl-3 col-xl-3">
+                  Type:
+                </div>
+                <div className="col-md-8 col-lg-9 col-xxl-9 col-xl-9">
+                  <select
+                    className="form-select"
+                    aria-label="Default select example"
+                    onChange={(e) => setType(e.target.value)}
+                  >
+                    <option selected>Select Types</option>
+                    <option value="Prescribed">Prescribed</option>
+                    <option value="Non-Prescribed">Non-Prescribed</option>
+                  </select>
                 </div>
               </div>
             </div>
+            <div className="col-md-8 col-lg-3 col-xxl-3 col-xl-3 mb-0 mb-md-3 mb-lg-0 mb-xl-0">
+              <div className="row justify-centent-between align-items-center">
+                <div className="col-md-4 col-lg-6 col-xxl-6 col-xl-6">
+                  Medicine Name:
+                </div>
+                <div className="col-md-8 col-lg-6 col-xxl-6 col-xl-6">
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="MedicineName"
+                    value={medicineName}
+                    onChange={(e) => setMedicineName(e.target.value)}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="col-md-6 col-lg-3 col-xxl-3 col-xl-3 mb-0 mb-md-3 mb-lg-0 mb-xl-0">
+              <div className="row justify-centent-between align-items-center">
+                <div className="col-md-8 col-lg-9 col-xxl-9 col-xl-9">
+                  Medicine Dose (MG/MCG):
+                </div>
+                <div className="col-md-4 col-lg-3 col-xxl-3 col-xl-3">
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="MedicineName"
+                    value={dose}
+                    onChange={(e) => setDose(e.target.value)}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="col-md-6 col-lg-3 col-xxl-3 col-xl-3 mb-0 mb-md-3 mb-lg-0 mb-xl-0">
+              <div className="row justify-centent-between align-items-center">
+                <div className="col-md-4 col-lg-4 col-xxl-4 col-xl-4">
+                  Start Date:
+                </div>
+                <div className="col-md-8 col-lg-8 col-xxl-8 col-xl-8">
+                  <input
+                    type="date"
+                    className="form-control"
+                    name="MedicineName"
+                    value={date}
+                    onChange={(e) => setDate(e.target.value)}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="row justify-centent-between align-items-start mb-3 mt-3">
+            <div className="col-md-6 col-lg-3 col-xxl-3 col-xl-3 mb-0 mb-md-3 mb-lg-0 mb-xl-0">
+              <div className="row justify-centent-between align-items-center">
+                <div className="col-md-3 col-lg-3 col-xxl-3 col-xl-3">
+                  Status:
+                </div>
+                <div className="col-md-9 col-lg-9 col-xxl-9 col-xl-9">
+                  <select
+                    className="form-select"
+                    aria-label="Default select example"
+                    onChange={(e) => setStatus(e.target.value)}
+                  >
+                    <option selected>Select Status</option>
+                    <option value="Continue">Continue</option>
+                    <option value="End">End</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-6 col-lg-3 col-xxl-3 col-xl-3 mb-0 mb-md-3 mb-lg-0 mb-xl-0">
+              <div className="row justify-centent-between align-items-center">
+                <div className="col-md-4 col-lg-4 col-xxl-4 col-xl-4">
+                  Friquency:
+                </div>
+                <div className="col-md-8 col-lg-8 col-xxl-8 col-xl-8">
+                  <select
+                    className="form-select"
+                    aria-label="Default select example"
+                    onChange={(e) => setFrequency(e.target.value)}
+                  >
+                    {frequencyList.map((item, index) => (
+                      <option value={item} key={index}>
+                        {item}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-6 col-lg-3 col-xxl-3 col-xl-3 mb-0 mb-md-3 mb-lg-0 mb-xl-0">
+              <div className="row justify-centent-between align-items-center">
+                <div className="col-md-3 col-lg-3 col-xxl-3 col-xl-3">
+                  Route:
+                </div>
+                <div className="col-md-9 col-lg-9 col-xxl-9 col-xl-9">
+                  <select
+                    className="form-select"
+                    aria-label="Default select example"
+                    onChange={(e) => setRoute(e.target.value)}
+                  >
+                    <option selected>Select Route</option>
+                    <option value="Capsule">Capsule</option>
+                    <option value="Injection">Injection</option>
+                    <option value="Other Way">Other Way</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-6 col-lg-3 col-xxl-3 col-xl-3 mb-0 mb-md-3 mb-lg-0 mb-xl-0">
+              <div className="row justify-centent-between align-items-center">
+                <div className="col-md-6 col-lg-6 col-xxl-6 col-xl-6">
+                  Any Side Effect:
+                </div>
+                <div className="col-md-6 col-lg-6 col-xxl-6 col-xl-6">
+                  <select
+                    className="form-select"
+                    aria-label="Default select example"
+                    onChange={(e) => setSideEffect(e.target.value)}
+                  >
+                    <option selected>Select Effects</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="row justify-centent-between align-items-center mb-3 mt-3">
+            <div className="col-md-2 col-lg-1 col-xxl-1 col-xl-1">If Yes:</div>
+            <div className="col-md-10 col-lg-11 col-xxl-11 col-xl-11">
+              <input
+                type="text"
+                className="form-control"
+                name="MedicineName"
+                value={ifYes}
+                onChange={(e) => setIfYes(e.target.value)}
+              />
+            </div>
+          </div>
+          <div className="text-end">
+            <button
+              className="btn btn-primary"
+              onClick={addSurgicalHistory}
+              type="button"
+            >
+              Add Items
+            </button>
           </div>
         </div>
 
@@ -1033,18 +873,19 @@ const MedicalHistory = ({ patient }) => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Cipcal</td>
-                <td>500</td>
-                <td>13/01/2022</td>
-                <td>Continue</td>
-                <td>Prescribed</td>
-                <td>Oral</td>
-                <td>2 times per day</td>
-                <td>Yes</td>
-                <td>Headech</td>
-                <td>Rashes</td>
-              </tr>
+              {medicineList.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.medicineName}</td>
+                  <td>{item.dose}</td>
+                  <td>{item.date}</td>
+                  <td>{item.status}</td>
+                  <td>{item.type}</td>
+                  <td>{item.route}</td>
+                  <td>{item.frequency}</td>
+                  <td>{item.sideEffect}</td>
+                  <td>{item.ifYes}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>

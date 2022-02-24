@@ -44,7 +44,7 @@ const UploadMedicalRecord = ({ patient }) => {
       <form>
         <div className="gen-form mb-3">
           <div className="row justify-centent-between align-items-center">
-            <div className="col-md-6">
+            <div className="col-md-6 mb-3 mb-md-0 md-lg-0 md-xl-0">
               <div className="row">
                 <div className="col-md-4">
                   <label htmlFor="" className="form-label">
