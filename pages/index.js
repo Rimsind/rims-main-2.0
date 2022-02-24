@@ -107,11 +107,105 @@ const Index = () => {
                         <br />
                         <span className="fw-bold">top priority.</span>
                       </p>
-                      <ul>
-                        <li>Multi-evel security checks</li>
-                        <li>Multiple data backups</li>
-                        <li>Stringent data privacy policies</li>
+                      <ul className="fa-ul">
+                        <li className="lh-lg">
+                          <span className="fa-li">
+                            <i className="fas fa-check text-primary"></i>
+                          </span>
+                          Multi-level security checks
+                        </li>
+                        <li className="lh-lg">
+                          <span className="fa-li">
+                            <i className="fas fa-check text-primary"></i>
+                          </span>
+                          Multiple data backups
+                        </li>
+                        <li className="lh-lg">
+                          <span className="fa-li">
+                            <i className="fas fa-check text-primary"></i>
+                          </span>
+                          Stringent data privacy policies
+                        </li>
                       </ul>
+                      <div className="about-btn-new mb-3">
+                        <button className="btn btn-primary" type="button">
+                          Read More
+                        </button>
+                      </div>
+                      <div className="secure-batch mt-5">
+                        <div className="row align-items-center">
+                          <div className="col-3">
+                            <div className="secure-batch-items text-center">
+                              <Image
+                                className="img-fluid"
+                                src="/user_assets/img/security_2.png"
+                                height={50}
+                                width={50}
+                              />
+                              <p>
+                                256-bit
+                                <br />
+                                encryption
+                              </p>
+                            </div>
+                          </div>
+                          <div className="col-3">
+                            <div className="secure-batch-items text-center">
+                              <Image
+                                className="img-fluid"
+                                src="/user_assets/img/security_3.png"
+                                height={50}
+                                width={50}
+                              />
+                              <p>
+                                ISO 27001
+                                <br />
+                                certified
+                              </p>
+                            </div>
+                          </div>
+                          <div className="col-3">
+                            <div className="secure-batch-items text-center">
+                              <Image
+                                className="img-fluid"
+                                src="/user_assets/img/security_4.png"
+                                height={50}
+                                width={50}
+                              />
+                              <p>
+                                HIPAA
+                                <br />
+                                data centers
+                              </p>
+                            </div>
+                          </div>
+                          <div className="col-3">
+                            <div className="secure-batch-items text-center">
+                              <Image
+                                className="img-fluid"
+                                src="/user_assets/img/security_5.png"
+                                height={50}
+                                width={50}
+                              />
+                              <p>
+                                DSCI
+                                <br />
+                                member
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-6">
+                      <div className="secure-batch-items text-center">
+                        <Image
+                          className="img-fluid"
+                          src="/assets/images/doctor-symbol.png"
+                          height={500}
+                          width={500}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -164,7 +258,7 @@ const Index = () => {
                               </div>
                             </div>
                           </div>
-                          <div className="submit-section">
+                          <div className="submit-section text-end">
                             <button
                               type="submit"
                               className="btn btn-primary submit-btn"
@@ -284,8 +378,8 @@ const Index = () => {
               <div className="col-md-5 features-img text-sm-center">
                 <Image
                   height="380"
-                  width="390"
-                  src="/assets/images/features/feature.png"
+                  width="500"
+                  src="/user_assets/img/gif/app_demo.gif"
                   className="img-fluid"
                   alt="Feature"
                 />
