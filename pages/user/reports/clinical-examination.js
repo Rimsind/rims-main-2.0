@@ -127,94 +127,7 @@ const ClinicalExamination = () => {
                         </div>
                       </div>
 
-<<<<<<< HEAD
                       <div class="patient_intro mb-2">
-=======
-                      {/* <div className="patient_intro mb-2">
-                        <p
-                          className="fs-5 fw-bold"
-                          style={{ borderBottom: "1px solid white" }}
-                        >
-                          Additional Chief Complaint
-                        </p>
-                        <div className="patient_details_inner">
-                          {appointment?.general_problems === "false" ? (
-                            <></>
-                          ) : (
-                            <p>
-                              General Problem: {appointment?.general_problems}
-                            </p>
-                          )}
-                          {appointment?.genetal_problems === "false" ? (
-                            <></>
-                          ) : (
-                            <p>
-                              Genital Problem : {appointment?.genetal_problems}
-                            </p>
-                          )}
-                          {appointment?.heart_problems === "false" ? (
-                            <></>
-                          ) : (
-                            <p>
-                              Heart Related Problems :{" "}
-                              {appointment?.heart_problems}
-                            </p>
-                          )}
-                          {appointment?.joint_related_problems === "false" ? (
-                            <></>
-                          ) : (
-                            <p>
-                              Joint Related Problems :{" "}
-                              {appointment?.joint_related_problems}
-                            </p>
-                          )}
-                          {appointment?.mental_problems === "false" ? (
-                            <></>
-                          ) : (
-                            <p>
-                              Mental Problems : {appointment?.mental_problems}
-                            </p>
-                          )}
-                          {appointment?.neuro_problems === "false" ? (
-                            <></>
-                          ) : (
-                            <p>
-                              Neurologic Problems :{" "}
-                              {appointment?.neuro_problems}
-                            </p>
-                          )}
-                          {appointment?.stomach_problems === "false" ? (
-                            <></>
-                          ) : (
-                            <p>
-                              Stomach & Abdominal Problems :{" "}
-                              {appointment?.stomach_problems}
-                            </p>
-                          )}
-                          {appointment?.blood_problems === "false" ? (
-                            <></>
-                          ) : (
-                            <p>
-                              Stomach & Abdominal Problems :{" "}
-                              {appointment?.blood_problems}
-                            </p>
-                          )}
-                        </div>
-                      </div> */}
-                      {/* <div className="patient_intro mb-2">
-                        <p
-                          className="fs-5 fw-bold"
-                          style={{ borderBottom: "1px solid white" }}
-                        >
-                          Recent Appointment
-                        </p>
-                        <div className="patient_details_inner">
-                          <p>Any Appointment: Yes</p>
-                          <p>Last Appointment Date: 17/10/2021</p>
-                        </div>
-                      </div> */}
-                      <div className="patient_intro mb-2">
->>>>>>> 598b5528bda24859c65e8cf5df50a5f0bea0038d
                         <p
                           className="fs-5 fw-bold"
                           style={{ borderBottom: "1px solid white" }}
@@ -378,17 +291,11 @@ const ClinicalExamination = () => {
                         className="patient_details_inner"
                         style={{ marginLeft: "2rem" }}
                       >
-<<<<<<< HEAD
                         <div class="row">
                           <div class="col-md-12 main_column">
                             <p>
                               {appointment?.assesment?.clinicalInvestigation}
                             </p>
-=======
-                        <div className="row">
-                          <div className="col-md-12 main_column">
-                            <p>{assesment?.clinicalInvestigation}</p>
->>>>>>> 598b5528bda24859c65e8cf5df50a5f0bea0038d
                           </div>
                         </div>
                       </div>
@@ -458,13 +365,8 @@ const ClinicalExamination = () => {
                         className="patient_details_inner"
                         style={{ marginLeft: "2rem" }}
                       >
-<<<<<<< HEAD
                         <div class="col-md-12 main_column">
                           <p>{appointment?.assesment?.treatmentPlan}</p>
-=======
-                        <div className="col-md-12 main_column">
-                          <p>{assesment?.treatmentPlan}</p>
->>>>>>> 598b5528bda24859c65e8cf5df50a5f0bea0038d
                         </div>
                       </div>
                     </div>
