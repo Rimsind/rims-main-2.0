@@ -25,40 +25,46 @@ const ClinicalExamination = () => {
   return (
     <>
       <div style={{ backgroundColor: "whitesmoke" }}>
-        <div class="container" style={{ backgroundColor: "white" }}>
+        <div className="container" style={{ backgroundColor: "white" }}>
           <header style={{ borderBottom: "5px soli", padding: "2rem" }}>
-            <div class="row align-items-center">
-              <div class="col-md-2">
-                <div class="left-content">
+            <div className="row align-items-center">
+              <div className="col-md-2">
+                <div className="left-content">
                   <img
                     src="/assets/images/logo-dark.png"
                     style={{ height: "8rem" }}
                   />
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="middle-content">
-                  <p class="fs-4 fw-bold" style={{ color: "#680634" }}>
+              <div className="col-md-6">
+                <div className="middle-content">
+                  <p className="fs-4 fw-bold" style={{ color: "#680634" }}>
                     REHAB INTEGRATED MEDICAL SOLUTIONS
                   </p>
                 </div>
               </div>
               <div
-                class="col-md-4"
+                className="col-md-4"
                 style={{ display: "flex", justifyContent: "end" }}
               >
-                <div class="right-content">
+                <div className="right-content">
                   <p>
-                    <i class="fas fa-map-pin" style={{ color: "#680634" }}></i>{" "}
+                    <i
+                      className="fas fa-map-pin"
+                      style={{ color: "#680634" }}
+                    ></i>{" "}
                     Haldia IT Park , City Centre , WB, INDIA (HO)
                   </p>
                   <p>
-                    <i class="fas fa-phone" style={{ color: "#680634" }}></i>
+                    <i
+                      className="fas fa-phone"
+                      style={{ color: "#680634" }}
+                    ></i>
                     +91-90384-43073
                   </p>
                   <p>
                     <i
-                      class="fas fa-envelope-open-text"
+                      className="fas fa-envelope-open-text"
                       style={{ color: "#680634" }}
                     ></i>
                     demo@email.com
@@ -68,27 +74,27 @@ const ClinicalExamination = () => {
             </div>
           </header>
 
-          <main class="main mt-3">
-            <div class="profile_details mb-3">
-              <div class="profile_heading">
+          <main className="main mt-3">
+            <div className="profile_details mb-3">
+              <div className="profile_heading">
                 <p
-                  class="fs-3 fw-bold text-center"
+                  className="fs-3 fw-bold text-center"
                   style={{ color: "#720330" }}
                 >
                   Clinical Examination Report
                 </p>
               </div>
-              <div class="row">
-                <div class="col-md-4">
+              <div className="row">
+                <div className="col-md-4">
                   <div
-                    class="left_content"
+                    className="left_content"
                     style={{
                       background: "linear-gradient(45deg, #116aa1, #720330)",
                       padding: "1rem",
                       color: "white",
                     }}
                   >
-                    <div class="patient_image mb-2">
+                    <div className="patient_image mb-2">
                       <img
                         src={
                           patient?.image?.url || "/assets/images/profile.png"
@@ -96,15 +102,15 @@ const ClinicalExamination = () => {
                         style={{ height: "24rem", padding: "1rem" }}
                       />
                     </div>
-                    <div class="patient_left_content">
-                      <div class="patient_intro mb-2">
+                    <div className="patient_left_content">
+                      <div className="patient_intro mb-2">
                         <p
-                          class="fs-5 fw-bold"
+                          className="fs-5 fw-bold"
                           style={{ borderBottom: "1px solid white" }}
                         >
                           Patient Details
                         </p>
-                        <div class="patient_details_inner">
+                        <div className="patient_details_inner">
                           <p>
                             Name : {patient?.first_name} {patient?.last_name}
                           </p>
@@ -115,14 +121,14 @@ const ClinicalExamination = () => {
                         </div>
                       </div>
 
-                      {/* <div class="patient_intro mb-2">
+                      {/* <div className="patient_intro mb-2">
                         <p
-                          class="fs-5 fw-bold"
+                          className="fs-5 fw-bold"
                           style={{ borderBottom: "1px solid white" }}
                         >
                           Additional Chief Complaint
                         </p>
-                        <div class="patient_details_inner">
+                        <div className="patient_details_inner">
                           {appointment?.general_problems === "false" ? (
                             <></>
                           ) : (
@@ -186,26 +192,26 @@ const ClinicalExamination = () => {
                           )}
                         </div>
                       </div> */}
-                      {/* <div class="patient_intro mb-2">
+                      {/* <div className="patient_intro mb-2">
                         <p
-                          class="fs-5 fw-bold"
+                          className="fs-5 fw-bold"
                           style={{ borderBottom: "1px solid white" }}
                         >
                           Recent Appointment
                         </p>
-                        <div class="patient_details_inner">
+                        <div className="patient_details_inner">
                           <p>Any Appointment: Yes</p>
                           <p>Last Appointment Date: 17/10/2021</p>
                         </div>
                       </div> */}
-                      <div class="patient_intro mb-2">
+                      <div className="patient_intro mb-2">
                         <p
-                          class="fs-5 fw-bold"
+                          className="fs-5 fw-bold"
                           style={{ borderBottom: "1px solid white" }}
                         >
                           Consulting With
                         </p>
-                        <div class="patient_details_inner">
+                        <div className="patient_details_inner">
                           <p>
                             Dr. {doctor?.firstName} {doctor?.lastName}
                           </p>
@@ -217,11 +223,11 @@ const ClinicalExamination = () => {
                     </div>
                   </div>
                 </div>
-                <div class="col-md-8">
-                  <div class="right_content">
-                    <div class="right_content_inner">
+                <div className="col-md-8">
+                  <div className="right_content">
+                    <div className="right_content_inner">
                       <p
-                        class="fs-5"
+                        className="fs-5"
                         style={{
                           background:
                             "linear-gradient(45deg, #6f0734, transparent)",
@@ -233,17 +239,17 @@ const ClinicalExamination = () => {
                         Chief Complaints with Duration
                       </p>
                       <div
-                        class="patient_details_inner"
+                        className="patient_details_inner"
                         style={{ marginLeft: "2rem" }}
                       >
                         <div
-                          class="patient_details_inner"
+                          className="patient_details_inner"
                           style={{ marginLeft: "2rem" }}
                         >
-                          <div class="row">
-                            <div class="col-md-12 main_column mb-5">
-                              <table class="table table-striped">
-                                <thead class="table-dark">
+                          <div className="row">
+                            <div className="col-md-12 main_column mb-5">
+                              <table className="table table-striped">
+                                <thead className="table-dark">
                                   <tr>
                                     <th scope="col">Sl.</th>
                                     <th scope="col">Description</th>
@@ -261,12 +267,12 @@ const ClinicalExamination = () => {
                                 </tbody>
                               </table>
                               <p
-                                class="fs-5 fw-bold"
+                                className="fs-5 fw-bold"
                                 style={{ borderBottom: "1px solid white" }}
                               >
                                 Additional Chief Complaint
                               </p>
-                              <div class="patient_details_inner">
+                              <div className="patient_details_inner">
                                 {appointment?.general_problems === "false" ? (
                                   <></>
                                 ) : (
@@ -338,9 +344,9 @@ const ClinicalExamination = () => {
                         </div>
                       </div>
                     </div>
-                    <div class="right_content_inner">
+                    <div className="right_content_inner">
                       <p
-                        class="fs-5"
+                        className="fs-5"
                         style={{
                           background:
                             "linear-gradient(45deg, #6f0734, transparent)",
@@ -352,19 +358,19 @@ const ClinicalExamination = () => {
                         Clinical Investigation
                       </p>
                       <div
-                        class="patient_details_inner"
+                        className="patient_details_inner"
                         style={{ marginLeft: "2rem" }}
                       >
-                        <div class="row">
-                          <div class="col-md-12 main_column">
+                        <div className="row">
+                          <div className="col-md-12 main_column">
                             <p>{assesment?.clinicalInvestigation}</p>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="right_content_inner">
+                    <div className="right_content_inner">
                       <p
-                        class="fs-5"
+                        className="fs-5"
                         style={{
                           background:
                             "linear-gradient(45deg, #6f0734, transparent)",
@@ -376,17 +382,17 @@ const ClinicalExamination = () => {
                         Medical Diagnosis
                       </p>
                       <div
-                        class="patient_details_inner"
+                        className="patient_details_inner"
                         style={{ marginLeft: "2rem" }}
                       >
                         <div
-                          class="patient_details_inner"
+                          className="patient_details_inner"
                           style={{ marginLeft: "2rem" }}
                         >
-                          <div class="row">
-                            <div class="col-md-12 main_column mb-5">
-                              <table class="table table-striped">
-                                <thead class="table-dark">
+                          <div className="row">
+                            <div className="col-md-12 main_column mb-5">
+                              <table className="table table-striped">
+                                <thead className="table-dark">
                                   <tr>
                                     <th scope="col">Sl.</th>
                                     <th scope="col">ICD 10 Code</th>
@@ -408,9 +414,9 @@ const ClinicalExamination = () => {
                         </div>
                       </div>
                     </div>
-                    <div class="right_content_inner">
+                    <div className="right_content_inner">
                       <p
-                        class="fs-5"
+                        className="fs-5"
                         style={{
                           background:
                             "linear-gradient(45deg, #6f0734, transparent)",
@@ -422,10 +428,10 @@ const ClinicalExamination = () => {
                         Treatment Plan
                       </p>
                       <div
-                        class="patient_details_inner"
+                        className="patient_details_inner"
                         style={{ marginLeft: "2rem" }}
                       >
-                        <div class="col-md-12 main_column">
+                        <div className="col-md-12 main_column">
                           <p>{assesment?.treatmentPlan}</p>
                         </div>
                       </div>
@@ -438,7 +444,7 @@ const ClinicalExamination = () => {
 
           <footer style={{ marginBottom: "1rem" }}>
             <p
-              class="text-center"
+              className="text-center"
               style={{
                 background: "linear-gradient(45deg, #116aa1, #720330)",
                 color: "white",
