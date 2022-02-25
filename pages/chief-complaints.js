@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 const ChiefComplaints = () => {
   const { doctorId, polyclinicId, fee, date } = useRouter().query;
+
   const { data: doctor } = useSWR(`${apiUrl}/doctors/${doctorId}`, fetcher);
   const { data: polyclinic } = useSWR(
     `${apiUrl}/polyclinics/${polyclinicId}`,

@@ -35,7 +35,8 @@ const VerticalDoctorCard = ({ data }) => {
               <i className="fas fa-user-tag"></i> {data?.specialty?.name}
             </li>
             <li>
-              <i className="far fa-money-bill-alt"></i> $0 - $0
+              <i className="far fa-money-bill-alt"></i> ₹{data?.feeScale?.min} -
+              ₹{data?.feeScale?.max}
               <i
                 className="fas fa-info-circle"
                 data-bs-toggle="tooltip"

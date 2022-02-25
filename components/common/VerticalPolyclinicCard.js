@@ -27,7 +27,8 @@ const VerticalPolyclinicCard = ({ data }) => {
                 {data?.state}
               </p>
               <p className="ms-auto">
-                <i className="far fa-clock"></i> 10:00 A.M to 8:00 P.M
+                <i className="far fa-clock"></i> {data?.workingHours?.Start} to
+                {data?.workingHours?.end}
               </p>
             </div>
             <div className="row row-sm">

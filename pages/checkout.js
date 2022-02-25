@@ -8,7 +8,8 @@ import { useAuth } from "context";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 const Checkout = () => {
-  const { doctorId, polyclinicId, fee, date } = useRouter().query;
+  const { doctorId, polyclinicId, fee, date, time } = useRouter().query;
+  console.log(time);
   const { data: doctor } = useSWR(`${apiUrl}/doctors/${doctorId}`, fetcher);
   const { data: polyclinic } = useSWR(
     `${apiUrl}/polyclinics/${polyclinicId}`,
@@ -735,7 +736,7 @@ const Checkout = () => {
                               Date <span>{date}</span>
                             </li>
                             <li>
-                              Time <span>10:00 AM</span>
+                              Time <span>{time}</span>
                             </li>
                           </ul>
                           <ul className="booking-fee">

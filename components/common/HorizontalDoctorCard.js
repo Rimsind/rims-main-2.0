@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 const HorizontalDoctorCard = ({ doctorData }) => {
-  console.log(doctorData);
   return (
     <>
       <div className="card">
