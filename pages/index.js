@@ -197,13 +197,13 @@ const Index = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mt-3 mt-md-3 mt-lg-0 mt-xl-0 mt-xxl-0">
+                    <div className="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mt-3 mt-md-3 mt-lg-3 mt-xl-3 mt-xxl-5">
                       <div className="secure-batch-items text-center">
                         <Image
                           className="img-fluid"
-                          src="/assets/images/doctor-symbol.png"
-                          height={500}
-                          width={500}
+                          src="/user_assets/img/security-seal.png"
+                          height={300}
+                          width={300}
                         />
                       </div>
                     </div>
@@ -377,9 +377,9 @@ const Index = () => {
             <div className="row">
               <div className="col-md-5 features-img text-sm-center">
                 <Image
-                  height="380"
+                  height="500"
                   width="500"
-                  src="/user_assets/img/gif/app_demo.gif"
+                  src="/user_assets/img/gif/solid-1.gif"
                   className="img-fluid"
                   alt="Feature"
                 />

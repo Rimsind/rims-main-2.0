@@ -147,7 +147,7 @@ const TestNav = () => {
           </div>
         </div>
       </section>
-      <section className="main-header sticky-lg-top sticky-md-top">
+      <section className="main-header">
         <nav className="navbar navbar-expand-lg navbar-light custom-bg">
           <div className="container-fluid">
             <a className="nav-link navbar-link find-doctor fs-6 text-white">
