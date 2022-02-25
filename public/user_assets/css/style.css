@@ -12545,3 +12545,8 @@ ul.benifits-col li i {
 }
 
 /* Polyclinic Details */
+@media screenn and (max-width: 300px) and (min-width: 576px) {
+  .polymap iframe {
+    width: 50px !important;
+  }
+}
