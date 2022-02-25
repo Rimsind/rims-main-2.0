@@ -30,7 +30,7 @@ const HorizontalDoctorCard = ({ doctorData }) => {
                   <i className="fas fa-user-tag"></i>
                   {doctorData?.specialty?.name}
                 </h5>
-                <i className="far fa-envelope mb-3"></i>
+                <i className="far fa-envelope mb-3 me-2"></i>
                 {doctorData?.email}
                 <div className="clinic-services">
                   <span>

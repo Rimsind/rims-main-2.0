@@ -12544,13 +12544,6 @@ ul.benifits-col li i {
   box-shadow: 4px -2px 8px 1px #000000ad;
 }
 
-/* Polyclinic Details */
-@media screenn and (max-width: 300px) and (min-width: 576px) {
-  .polymap iframe {
-    width: 50px !important;
-  }
-}
-
 /* Prescription Stylesheet*/
 .prescription {
   background-color: whitesmoke;

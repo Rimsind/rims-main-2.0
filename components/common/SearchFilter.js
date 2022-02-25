@@ -8,56 +8,76 @@ const SearchFilter = () => {
         <div className="card-body">
           <div className="filter-widget">
             <h4>Gender</h4>
-            <div>
-              <label className="custom_check">
-                <input type="checkbox" name="gender_type" checked />
-                <span className="checkmark"></span> Male Doctor
-              </label>
-            </div>
-            <div>
-              <label className="custom_check">
-                <input type="checkbox" name="gender_type" />
-                <span className="checkmark"></span> Female Doctor
-              </label>
+            <div className="row">
+              <div className="col-12">
+                <div className="form-check form-check-inline">
+                  <input className="form-check-input" type="checkbox" />
+                  <label className="form-check-label" for="inlineCheckbox1">
+                    Male Doctor
+                  </label>
+                </div>
+              </div>
+              <div className="col-12">
+                <div className="form-check form-check-inline">
+                  <input className="form-check-input" type="checkbox" />
+                  <label className="form-check-label" for="inlineCheckbox1">
+                    Female Doctor
+                  </label>
+                </div>
+              </div>
             </div>
           </div>
           <div className="filter-widget">
             <h4>Select Specialist</h4>
-            <div>
-              <label className="custom_check">
-                <input type="checkbox" name="select_specialist" checked />
-                <span className="checkmark"></span> Urology
-              </label>
-            </div>
-            <div>
-              <label className="custom_check">
-                <input type="checkbox" name="select_specialist" checked />
-                <span className="checkmark"></span> Neurology
-              </label>
-            </div>
-            <div>
-              <label className="custom_check">
-                <input type="checkbox" name="select_specialist" />
-                <span className="checkmark"></span> Dentist
-              </label>
-            </div>
-            <div>
-              <label className="custom_check">
-                <input type="checkbox" name="select_specialist" />
-                <span className="checkmark"></span> Orthopedic
-              </label>
-            </div>
-            <div>
-              <label className="custom_check">
-                <input type="checkbox" name="select_specialist" />
-                <span className="checkmark"></span> Cardiologist
-              </label>
-            </div>
-            <div>
-              <label className="custom_check">
-                <input type="checkbox" name="select_specialist" />
-                <span className="checkmark"></span> Cardiologist
-              </label>
+            <div className="row">
+              <div className="col-12">
+                <div className="form-check form-check-inline">
+                  <input className="form-check-input" type="checkbox" />
+                  <label className="form-check-label" for="inlineCheckbox1">
+                    Urology
+                  </label>
+                </div>
+              </div>
+              <div className="col-12">
+                <div className="form-check form-check-inline">
+                  <input className="form-check-input" type="checkbox" />
+                  <label className="form-check-label" for="inlineCheckbox1">
+                    Neurology
+                  </label>
+                </div>
+              </div>
+              <div className="col-12">
+                <div className="form-check form-check-inline">
+                  <input className="form-check-input" type="checkbox" />
+                  <label className="form-check-label" for="inlineCheckbox1">
+                    Dentist
+                  </label>
+                </div>
+              </div>
+              <div className="col-12">
+                <div className="form-check form-check-inline">
+                  <input className="form-check-input" type="checkbox" />
+                  <label className="form-check-label" for="inlineCheckbox1">
+                    Orthopedic
+                  </label>
+                </div>
+              </div>
+              <div className="col-12">
+                <div className="form-check form-check-inline">
+                  <input className="form-check-input" type="checkbox" />
+                  <label className="form-check-label" for="inlineCheckbox1">
+                    Cardiologist
+                  </label>
+                </div>
+              </div>
+              <div className="col-12">
+                <div className="form-check form-check-inline">
+                  <input className="form-check-input" type="checkbox" />
+                  <label className="form-check-label" for="inlineCheckbox1">
+                    Heart Specialist
+                  </label>
+                </div>
+              </div>
             </div>
           </div>
           <div className="btn-search">

@@ -285,7 +285,7 @@ const NursingHomeId = () => {
                         id="doc_locations"
                         className="tab-pane fade"
                       >
-                        <div className="poly-location d-flex justify-content-between">
+                        <div className="poly-location d-flex justify-content-between flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row py-4 px-3">
                           <div className="poly-address">
                             <div className="contact-section poly-location">
                               <div className="contact-box">
@@ -330,7 +330,7 @@ const NursingHomeId = () => {
                           <div className="poly-map">
                             <iframe
                               src={data?.google_map}
-                              width="400"
+                              width="300"
                               height="300"
                               style={{ border: "0" }}
                               allowFullScreen=""
