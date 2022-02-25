@@ -15,7 +15,7 @@ const MyAppointments = ({ data }) => {
                 alt="User Image"
               />
             </a>
-            <Link href="/user/appointments/1">
+            <Link href={`/user/appointments/${data?.id}`}>
               <a>
                 Dr. {data?.doctor?.firstName} {data?.doctor?.lastName}
                 <span>{data?.doctor?.specialty}</span>
@@ -35,7 +35,7 @@ const MyAppointments = ({ data }) => {
         </td>
         <td className="text-end">
           <div className="table-action">
-            <Link href="/user/appointments/1">
+            <Link href={`/user/appointments/${data?.id}`}>
               <a className="btn btn-sm bg-info-light">
                 <i className="far fa-eye"></i> View
               </a>

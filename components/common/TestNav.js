@@ -148,13 +148,13 @@ const TestNav = () => {
         </div>
       </section>
       <section className="main-header sticky-lg-top sticky-md-top">
-        <nav class="navbar navbar-expand-lg navbar-light custom-bg">
-          <div class="container-fluid">
+        <nav className="navbar navbar-expand-lg navbar-light custom-bg">
+          <div className="container-fluid">
             <a className="nav-link navbar-link find-doctor fs-6 text-white">
               Find Doctor
             </a>
             <button
-              class="navbar-toggler"
+              className="navbar-toggler"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent"
@@ -162,9 +162,12 @@ const TestNav = () => {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span class="navbar-toggler-icon"></span>
+              <span className="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div
+              className="collapse navbar-collapse"
+              id="navbarSupportedContent"
+            >
               <ul className="navbar-nav mx-auto">
                 <li className="nav-item">
                   <Link href="/">
@@ -209,14 +212,14 @@ const TestNav = () => {
                   </Link>
                 </li>
               </ul>
-              <form class="d-flex">
+              <form className="d-flex">
                 <input
-                  class="form-control me-2"
+                  className="form-control me-2"
                   type="search"
                   placeholder="Search"
                   aria-label="Search"
                 />
-                <button class="btn btn-outline-success" type="submit">
+                <button className="btn btn-outline-success" type="submit">
                   Search
                 </button>
               </form>
