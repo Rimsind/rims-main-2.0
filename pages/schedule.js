@@ -2,12 +2,15 @@ import { BreadCrums, VerifyCard } from "components/common";
 import useSWR from "swr";
 import { apiUrl, fetcher } from "config/api";
 import Router, { useRouter } from "next/router";
-import { useForm } from "react-hook-form";
-import { useAuth } from "context";
+
 import { useState } from "react";
+import ForbidenPage from "components/Loaders/ForbidenPage";
 
 const Schedule = () => {
   const { doctorId, polyclinicId, fee } = useRouter().query;
+  if (!doctorId || !polyclinicId || !fee) {
+    return <ForbidenPage />;
+  }
   const { data: doctor } = useSWR(`${apiUrl}/doctors/${doctorId}`, fetcher);
   const { data: polyclinic } = useSWR(
     `${apiUrl}/polyclinics/${polyclinicId}`,
@@ -63,8 +66,8 @@ const Schedule = () => {
                 />
                 <div className="row">
                   <div className="col-12 col-sm-4 col-md-6">
-                    <h4 className="mb-1">11 November 2019</h4>
-                    <p className="text-muted">Monday</p>
+                    <h4 className="mb-1">{date}</h4>
+                    <p className="text-muted">{time}</p>
                   </div>
                   <div className="col-12 col-sm-8 col-md-6 text-sm-end">
                     <div className="date-picker mb-3">

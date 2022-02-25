@@ -1,6 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
-const DoctorTimetableCard = ({ schedule, doctor }) => {
+import Router from "next/router";
+const DoctorTimetableCard = ({ schedule, doctor, auth }) => {
+  console.log(auth);
+
+  const authCheck = () => {
+    if (auth.token && auth.user) {
+      Router.push(
+        `/schedule?doctorId=${doctor}&&polyclinicId=${schedule?.polyclinic?.id}&&fee=${schedule?.fee}`
+      );
+    } else {
+      alert("Please Login to Continue");
+    }
+  };
+
   return (
     <>
       <div className="card location_card shadow-sm">
@@ -73,11 +86,9 @@ const DoctorTimetableCard = ({ schedule, doctor }) => {
                 </ul>
               </div>
               <div className="clinic-booking">
-                <Link
-                  href={`/schedule?doctorId=${doctor}&&polyclinicId=${schedule?.polyclinic?.id}&&fee=${schedule?.fee}`}
-                >
-                  <a className="apt-btn">Book Appointment</a>
-                </Link>
+                <button className="btn btn-primary" onClick={authCheck}>
+                  Book Appointment
+                </button>
               </div>
             </div>
           </div>

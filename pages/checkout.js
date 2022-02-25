@@ -1,4 +1,5 @@
 import { BreadCrums, VerifyCard } from "components/common";
+import ForbidenPage from "components/Loaders/ForbidenPage";
 import useSWR from "swr";
 import { apiUrl, fetcher } from "config/api";
 import { useState } from "react";
@@ -9,7 +10,10 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 const Checkout = () => {
   const { doctorId, polyclinicId, fee, date, time } = useRouter().query;
-  console.log(time);
+  if (!doctorId || !polyclinicId || !fee || !date || !time) {
+    return <ForbidenPage />;
+  }
+
   const { data: doctor } = useSWR(`${apiUrl}/doctors/${doctorId}`, fetcher);
   const { data: polyclinic } = useSWR(
     `${apiUrl}/polyclinics/${polyclinicId}`,
@@ -47,6 +51,7 @@ const Checkout = () => {
       patient: auth.user.profileId,
       doctor: doctor.id,
       date: date,
+      timeSlot: time,
       chiefComplaints: complainList,
       polyclinic: polyclinic.id,
       general_problems: data.general_problems.toString(),

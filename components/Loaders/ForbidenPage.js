@@ -1,4 +1,4 @@
-const Custom404 = () => {
+const ForbidenPage = () => {
   return (
     <>
       <main className="main mb-5">
@@ -6,9 +6,9 @@ const Custom404 = () => {
           <div className="container">
             <div className="page-not-found-sec text-center">
               <img src="/assets/images/404.png" className="mb-4" />
-              <p className="fs-2 fw-bold my-3">Oops! This Page Not Found</p>
+              <p className="fs-2 fw-bold my-3">Oops! This Link is Forbiden</p>
               <p>
-                We are Really Sorry But the Page you Requested is Missing :(
+                We are Really Sorry But the Link you Requested is Forbiden :(
               </p>
               <button className="btn btn-primary py-2 px-lg-5">
                 Go Back To Home
@@ -21,4 +21,4 @@ const Custom404 = () => {
   );
 };
 
-export default Custom404;
+export default ForbidenPage;
