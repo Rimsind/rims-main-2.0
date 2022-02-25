@@ -144,7 +144,7 @@ const PolyclinicId = () => {
                         id="doc_locations"
                         className="tab-pane fade"
                       >
-                        <div className="poly-location d-flex justify-content-between">
+                        <div className="poly-location d-flex justify-content-between align-items-center py-4 px-3">
                           <div className="poly-address">
                             <div className="contact-section poly-location">
                               <div className="contact-box">

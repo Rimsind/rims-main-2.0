@@ -10531,14 +10531,14 @@ ul.benifits-col li i {
   width: 350px;
   margin: 0 15px;
 }
-.contact-section {
+/* .contact-section {
   padding: 50px 0 60px;
   background: linear-gradient(
     360deg,
     rgba(0, 113, 220, 0.06) 40.94%,
     rgba(229, 241, 251, 0) 100%
   );
-}
+} */
 .contact-section h3 {
   color: #272b41;
   font-size: 36px;
@@ -12535,5 +12535,13 @@ ul.benifits-col li i {
 
 /* Header Custom */
 .main-header {
-  box-shadow: 0px 15px 10px -10px #000000a8;
+  box-shadow: 0px 15px 12px -12px #00437c;
 }
+
+.navbar-toggler {
+  background-color: white;
+  border-color: white;
+  box-shadow: 4px -2px 8px 1px #000000ad;
+}
+
+/* Polyclinic Details */
