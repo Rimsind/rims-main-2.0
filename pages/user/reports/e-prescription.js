@@ -1,5 +1,28 @@
 import AuthLayout from "components/layout/AuthLayout";
+import { useRouter } from "next/router";
+import { useAuth } from "context";
+import useSWR from "swr";
+import { apiUrl } from "config/api";
 const Eprescription = () => {
+  const { id } = useRouter().query;
+
+  const { auth } = useAuth();
+
+  const { data: appointments } = useSWR(
+    `${apiUrl}/appointments/${id}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
+
+  const { doctor, patient, eprescription } = appointments;
+
   return (
     <>
       <div style={{ backgroundColor: "whitesmoke" }}>
@@ -60,13 +83,13 @@ const Eprescription = () => {
             <div class="row align-items-center m-auto">
               <div class="col-md-4">
                 <div class="header-inner-item text-start">
-                  <p class="fs-3 fw-bold fst-italic lh-1">Dr. Samir Barman</p>
-                  <p class="fs-6 fw-bold lh-1">MBBS.MD.(O&G)</p>
-                  <p class="fs-6 lh-1">
-                    Consultant Gynaecologist & Obstetrician
+                  <p class="fs-3 fw-bold fst-italic lh-1">
+                    Dr. {doctor?.firstName} {doctor?.lastName}
                   </p>
+                  <p class="fs-6 fw-bold lh-1">{doctor?.qualification}</p>
+                  <p class="fs-6 lh-1">{doctor?.specialty}</p>
                   <p class="fs-6 lh-1">Reg. No.-58905 (WBMC)</p>
-                  <p class="fs-6 lh-1">Mob.-987-456-321</p>
+                  <p class="fs-6 lh-1">Mob: {doctor?.phone}</p>
                 </div>
               </div>
               <div class="col-md-4">
@@ -77,13 +100,13 @@ const Eprescription = () => {
 
               <div class="col-md-4">
                 <div class="header-inner-item text-end">
-                  <p class="fs-3 fw-bold fst-italic lh-1">Dr. Samir Barman</p>
-                  <p class="fs-6 fw-bold lh-1">MBBS.MD.(O&G)</p>
-                  <p class="fs-6 lh-1">
-                    Consultant Gynaecologist & Obstetrician
+                  <p class="fs-3 fw-bold fst-italic lh-1">
+                    Dr. {doctor?.firstName} {doctor?.lastName}
                   </p>
+                  <p class="fs-6 fw-bold lh-1">{doctor?.qualification}</p>
+                  <p class="fs-6 lh-1">{doctor?.specialty}</p>
                   <p class="fs-6 lh-1">Reg. No.-58905 (WBMC)</p>
-                  <p class="fs-6 lh-1">Mob.-987-456-321</p>
+                  <p class="fs-6 lh-1">Mob: {doctor?.phone}</p>
                 </div>
               </div>
             </div>
@@ -105,7 +128,7 @@ const Eprescription = () => {
                 <div class="row align-items-center">
                   <div class="col-md-4">
                     <img
-                      src="/assets/images/amit_1.jpg"
+                      src={patient?.image?.url || "/assets/images/profile.png"}
                       style={{
                         height: "19rem",
                         background: "#0b6ea5",
@@ -136,34 +159,45 @@ const Eprescription = () => {
                               class="fs-6 fw-bold"
                               style={{ color: "white", lineHeight: "1" }}
                             >
-                              Name:
-                              <span class="fs-6 fw-light">Amit Mahapatra</span>
+                              Name :
+                              <span class="fs-6 fw-light">
+                                {" "}
+                                {patient?.first_name} {patient?.last_name}
+                              </span>
                             </p>
                             <p
                               class="fs-6 fw-bold"
                               style={{ color: "white", lineHeight: "1" }}
                             >
-                              Material Status:
-                              <span class="fs-6 fw-light">Married</span>
+                              Material Status :{" "}
+                              <span class="fs-6 fw-light">
+                                {patient?.marital_status}
+                              </span>
                             </p>
                             <p
                               class="fs-6 fw-bold"
                               style={{ color: "white", lineHeight: "1" }}
                             >
-                              Blood Group: <span class="fs-6 fw-light">6</span>
+                              Blood Group :{" "}
+                              <span class="fs-6 fw-light">
+                                {patient?.blood_group}
+                              </span>
                             </p>
                             <p
                               class="fs-6 fw-bold"
                               style={{ color: "white", lineHeight: "1" }}
                             >
-                              Date of Birth:
-                              <span class="fs-6 fw-light">1999-06-23 </span>
+                              Date of Birth :{" "}
+                              <span class="fs-6 fw-light">{patient?.dob}</span>
                             </p>
                             <p
                               class="fs-6 fw-bold"
                               style={{ color: "white", lineHeight: "1" }}
                             >
-                              Gender: <span class="fs-6 fw-light">Male </span>
+                              Gender :{" "}
+                              <span class="fs-6 fw-light">
+                                {patient?.gender}{" "}
+                              </span>
                             </p>
                           </div>
                         </div>
@@ -175,35 +209,43 @@ const Eprescription = () => {
                               class="fs-6 fw-bold"
                               style={{ color: "white", lineHeight: "1" }}
                             >
-                              Mobile:{" "}
-                              <span class="fs-6 fw-light">8945632148</span>
+                              Mobile :{" "}
+                              <span class="fs-6 fw-light">
+                                {patient?.mobile}
+                              </span>
                             </p>
                             <p
                               class="fs-6 fw-bold"
                               style={{ color: "white", lineHeight: "1" }}
                             >
-                              Email:
-                              <span class="fs-6 fw-light">amit@gmail.com</span>
+                              Email :{" "}
+                              <span class="fs-6 fw-light">
+                                {patient?.email}
+                              </span>
                             </p>
                             <p
                               class="fs-6 fw-bold"
                               style={{ color: "white", lineHeight: "1" }}
                             >
-                              Street Address:
-                              <span class="fs-6 fw-light">City Center</span>
+                              City :{" "}
+                              <span class="fs-6 fw-light">
+                                {patient?.address.city}
+                              </span>
                             </p>
                             <p
                               class="fs-6 fw-bold"
                               style={{ color: "white", lineHeight: "1" }}
                             >
-                              Country: <span class="fs-6 fw-light">India</span>
+                              Country : <span class="fs-6 fw-light">India</span>
                             </p>
                             <p
                               class="fs-6 fw-bold"
                               style={{ color: "white", lineHeight: "1" }}
                             >
-                              State: <span class="fs-6 fw-light">WB</span> ; Pin
-                              -<span class="fs-6 fw-light">721657</span>
+                              State :{" "}
+                              <span class="fs-6 fw-light">
+                                {patient?.address.state}
+                              </span>
                             </p>
                           </div>
                         </div>
@@ -249,39 +291,19 @@ const Eprescription = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Moexipril (Univasc)</td>
-                      <td>500</td>
-                      <td>Oral</td>
-                      <td>60</td>
-                      <td>Daily</td>
-                      <td>hgavcfjhdvjhvbfh</td>
-                      <td>fjhvdfjhbh</td>
-                      <td>fjhvdfjhbh</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Moexipril (Univasc)</td>
-                      <td>500</td>
-                      <td>Oral</td>
-                      <td>60</td>
-                      <td>Daily</td>
-                      <td>hgavcfjhdvjhvbfh</td>
-                      <td>fjhvdfjhbh</td>
-                      <td>fjhvdfjhbh</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Moexipril (Univasc)</td>
-                      <td>500</td>
-                      <td>Oral</td>
-                      <td>60</td>
-                      <td>Daily</td>
-                      <td>hgavcfjhdvjhvbfh</td>
-                      <td>fjhvdfjhbh</td>
-                      <td>fjhvdfjhbh</td>
-                    </tr>
+                    {eprescription?.medicine.map((items, index) => (
+                      <tr key={index}>
+                        <th scope="row">*</th>
+                        <td>{items?.name}</td>
+                        <td>{items?.mg}</td>
+                        <td>{items?.route}</td>
+                        <td>{items?.duration}</td>
+                        <td>{items?.frequency}</td>
+                        <td>{items?.reason}</td>
+                        <td>{items?.instruction}</td>
+                        <td>{items?.sideEffects}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -313,30 +335,13 @@ const Eprescription = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit.
-                      </td>
-                      <td>Modi repudiandae qui temporibus voluptate eaque</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit.
-                      </td>
-                      <td>Modi repudiandae qui temporibus voluptate eaque</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit.
-                      </td>
-                      <td>Modi repudiandae qui temporibus voluptate eaque</td>
-                    </tr>
+                    {eprescription?.test?.map((items, index) => (
+                      <tr key={index}>
+                        <th scope="row">*</th>
+                        <td>{items?.name}</td>
+                        <td>{items?.specification}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -368,25 +373,8 @@ const Eprescription = () => {
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row">1</th>
-                      <td>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit.
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit.
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit.
-                      </td>
+                      <th scope="row">*</th>
+                      <td>{eprescription?.restrictions}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -419,25 +407,76 @@ const Eprescription = () => {
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row">1</th>
-                      <td>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit.
-                      </td>
+                      <th scope="row">*</th>
+                      <td>{eprescription?.patient_education}</td>
                     </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div
+                class="rfa-gen-form-data-table mt-4"
+                style={{
+                  background: "white",
+                  padding: "10px",
+                  borderRadius: "3px",
+                }}
+              >
+                <p
+                  class="fs-5"
+                  style={{
+                    background: "linear-gradient(45deg, #6f0734, transparent)",
+                    padding: "1rem",
+                    color: "white",
+                    borderRadius: "30px 4px 4px 30px",
+                  }}
+                >
+                  Precaution & Safety Measures
+                </p>
+                <table class="table table-striped table-borderless">
+                  <thead>
                     <tr>
-                      <th scope="row">2</th>
-                      <td>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit.
-                      </td>
+                      <th scope="col">Sl.</th>
+                      <th scope="col">Patient Education</th>
                     </tr>
+                  </thead>
+                  <tbody>
                     <tr>
-                      <th scope="row">3</th>
-                      <td>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit.
-                      </td>
+                      <th scope="row">*</th>
+                      <td>{eprescription?.safetyMeasures}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div
+                class="rfa-gen-form-data-table mt-4"
+                style={{
+                  background: "white",
+                  padding: "10px",
+                  borderRadius: "3px",
+                }}
+              >
+                <p
+                  class="fs-5"
+                  style={{
+                    background: "linear-gradient(45deg, #6f0734, transparent)",
+                    padding: "1rem",
+                    color: "white",
+                    borderRadius: "30px 4px 4px 30px",
+                  }}
+                >
+                  Other Treatment Referral
+                </p>
+                <table class="table table-striped table-borderless">
+                  <thead>
+                    <tr>
+                      <th scope="col">Sl.</th>
+                      <th scope="col">Patient Education</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">*</th>
+                      <td>{eprescription?.treatmentreferral}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -464,34 +503,17 @@ const Eprescription = () => {
                 <table class="table table-striped table-borderless">
                   <thead>
                     <tr>
-                      <th scope="col">Sl.</th>
-                      <th scope="col">Days</th>
-                      <th scope="col">Weeks</th>
-                      <th scope="col">Months</th>
-                      <th scope="col">Followup Time</th>
+                      <th></th>
+                      <th scope="col">Date</th>
+
+                      <th scope="col">Followup Type</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row">1</th>
-                      <td>02</td>
-                      <td>1st</td>
-                      <td>January</td>
-                      <td>Regular Visit</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>02</td>
-                      <td>1st</td>
-                      <td>January</td>
-                      <td>Regular Visit</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>02</td>
-                      <td>1st</td>
-                      <td>January</td>
-                      <td>Regular Visit</td>
+                      <td>*</td>
+                      <td>{eprescription?.followup?.date}</td>
+                      <td>{eprescription?.followup?.type}</td>
                     </tr>
                   </tbody>
                 </table>
