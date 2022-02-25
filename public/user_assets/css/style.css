@@ -12592,6 +12592,52 @@ ul.benifits-col li i {
   background: linear-gradient(45deg, #116aa1, #720330);
 }
 
+/* Clinical Examination */
+.clini-exam {
+  background-color: whitesmoke;
+}
+.clini-exam-body {
+  background-color: white;
+}
+.clini-exam-header {
+  border-bottom: 5px solid;
+  padding: 2rem;
+}
+.clini-exam-logo-name {
+  color: #680634;
+}
+i.clini-exam-right-icon {
+  color: #680634;
+}
+p.clini-exam-profile-heading-text {
+  color: #720330;
+}
+.clini-exam-left-content {
+  background: linear-gradient(45deg, #116aa1, #720330);
+  padding: 1rem;
+}
+img.clini-exam-img {
+  height: 24rem;
+  padding: 1rem;
+}
+p.clini-exam-right-content-inner-text {
+  background: linear-gradient(45deg, #6f0734, transparent);
+  padding: 1rem;
+  color: white;
+  border-radius: 30px 4px 4px 30px;
+}
+p.clini-exam-right-content-inner {
+  background: linear-gradient(45deg, #6f0734, transparent);
+  padding: 1rem;
+  color: white;
+  border-radius: 30px 4px 4px 30px;
+}
+p.clini-exam-footer-content {
+  background: linear-gradient(45deg, #116aa1, #720330);
+  color: white;
+  padding: 1rem 0;
+}
+
 /* Appointments Style */
 @media screen and (min-width: 1000px) and (max-width: 1500px) {
   .end-items {
