@@ -3386,7 +3386,7 @@ html.menu-opened body {
   margin-bottom: 0;
 }
 .search-area {
-  background: #ffffff6b;
+  background: #d1d1d1;
   padding: 60px 30px;
   position: relative;
   z-index: 1;
@@ -12519,10 +12519,6 @@ ul.benifits-col li i {
 .section-about-filter {
   /* background: radial-gradient(white, #0000000d); */
   background: #f0f0f5;
-}
-
-.search-area {
-  border-radius: 0;
 }
 
 .bg-custom-login {
