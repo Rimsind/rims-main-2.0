@@ -79,7 +79,7 @@ const AppointmentId = () => {
                                 href={`/user/reports/clinical-examination?id=${id}`}
                               >
                                 <a
-                                  className="btn btn-success py-2"
+                                  className="btn btn-primary py-2"
                                   type="button"
                                 >
                                   Download Clinical Assessments

@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useAuth } from "context";
 import useSWR from "swr";
 import { apiUrl } from "config/api";
+import Image from "next/image";
 const Eprescription = () => {
   const { id } = useRouter().query;
 
@@ -23,24 +24,23 @@ const Eprescription = () => {
 
   return (
     <>
-      <div style={{ backgroundColor: "whitesmoke" }}>
-        <div className="container" style={{ backgroundColor: "white" }}>
-          <div
-            className="topbar-ribbon py-1 px-1"
-            style={{ backgroundColor: "#075f99 !important" }}
-          >
+      <div className="prescription">
+        <div className="container prescription-body">
+          <div className="pres-topbar-ribbon py-1 px-1">
             <div className="row align-items-end">
               <div className="col-md-1">
                 <div className="left-content">
-                  <img
+                  <Image
                     src="/assets/images/logo-white.png"
-                    style={{ height: "3rem" }}
+                    alt="logo"
+                    width={500}
+                    height={350}
                   />
                 </div>
               </div>
               <div className="col-md-4">
                 <div className="middle-content">
-                  <p className="fs-6 fw-bold" style={{ color: "white" }}>
+                  <p className="fs-6 fw-bold text-light">
                     REHAB INTEGRATED MEDICAL SOLUTIONS
                   </p>
                 </div>
@@ -50,28 +50,19 @@ const Eprescription = () => {
                   <div className="row align-items-center">
                     <div className="col-md-4">
                       <p className="text-light">
-                        <i
-                          className="fas fa-map-marker-alt"
-                          style={{ color: "white" }}
-                        ></i>
+                        <i className="fas fa-map-marker-alt text-light me-2"></i>
                         Haldia City Centre , WB
                       </p>
                     </div>
                     <div className="col-md-4">
                       <p className="text-light">
-                        <i
-                          className="fas fa-phone"
-                          style={{ color: "white" }}
-                        ></i>
+                        <i className="fas fa-phone text-light me-2"></i>
                         +91-90384-43073
                       </p>
                     </div>
                     <div className="col-md-4">
                       <p className="text-light">
-                        <i
-                          className="fas fa-envelope-open-text"
-                          style={{ color: "white" }}
-                        ></i>
+                        <i className="fas fa-envelope-open-text text-light me-2"></i>
                         demo@email.com
                       </p>
                     </div>
@@ -80,98 +71,77 @@ const Eprescription = () => {
               </div>
             </div>
           </div>
-          <header class="py-1 px-2" style={{ borderBottom: "5px solid" }}>
-            <div class="row align-items-center m-auto">
-              <div class="col-md-4">
-                <div class="header-inner-item text-start">
-                  <p class="fs-3 fw-bold fst-italic lh-1">
+          <header className="py-1 px-2 presc-header">
+            <div className="row align-items-center m-auto">
+              <div className="col-md-4">
+                <div className="header-inner-item text-start">
+                  <p className="fs-3 fw-bold fst-italic lh-1">
                     Dr. {appointments?.doctor?.firstName}{" "}
                     {appointments?.doctor?.lastName}
                   </p>
-                  <p class="fs-6 fw-bold lh-1">
+                  <p className="fs-6 fw-bold lh-1">
                     {appointments?.doctor?.qualification}
                   </p>
-                  <p class="fs-6 lh-1">{appointments?.doctor?.specialty}</p>
-                  <p class="fs-6 lh-1">Reg. No.-58905 (WBMC)</p>
-                  <p class="fs-6 lh-1">Mob: {appointments?.doctor?.phone}</p>
+                  <p className="fs-6 lh-1">{appointments?.doctor?.specialty}</p>
+                  <p className="fs-6 lh-1">Reg. No.-58905 (WBMC)</p>
+                  <p className="fs-6 lh-1">
+                    Mob: {appointments?.doctor?.phone}
+                  </p>
                 </div>
               </div>
               <div className="col-md-4">
                 <div className="doctor-symbol text-center">
-                  <img src="/assets/images/doctor-symbol.png" height="150px" />
+                  <Image
+                    src="/assets/images/doctor-symbol.png"
+                    alt="Doctor Symbol"
+                    width={150}
+                    height={150}
+                  />
                 </div>
               </div>
 
-              <div class="col-md-4">
-                <div class="header-inner-item text-end">
-                  <p class="fs-3 fw-bold fst-italic lh-1">
+              <div className="col-md-4">
+                <div className="header-inner-item text-end">
+                  <p className="fs-3 fw-bold fst-italic lh-1">
                     Dr. {appointments?.doctor?.firstName}{" "}
                     {appointments?.doctor?.lastName}
                   </p>
-                  <p class="fs-6 fw-bold lh-1">
+                  <p className="fs-6 fw-bold lh-1">
                     {appointments?.doctor?.qualification}
                   </p>
-                  <p class="fs-6 lh-1">{appointments?.doctor?.specialty}</p>
-                  <p class="fs-6 lh-1">Reg. No.-58905 (WBMC)</p>
-                  <p class="fs-6 lh-1">Mob: {appointments?.doctor?.phone}</p>
+                  <p className="fs-6 lh-1">{appointments?.doctor?.specialty}</p>
+                  <p className="fs-6 lh-1">Reg. No.-58905 (WBMC)</p>
+                  <p className="fs-6 lh-1">
+                    Mob: {appointments?.doctor?.phone}
+                  </p>
                 </div>
               </div>
             </div>
           </header>
 
           <main className="main mt-3">
-            <p
-              className="fs-3 fw-bold text-center"
-              style={{ color: "#720330" }}
-            >
-              e-Prescption
-            </p>
-            <div
-              className="main_outer_bg"
-              style={{
-                background: "linear-gradient(45deg, #116aa1, #720330)",
-                position: "relative",
-                padding: "1rem",
-              }}
-            >
+            <p className="presc-title fs-3 fw-bold text-center">e-Prescption</p>
+            <div className="presc-main_outer_bg">
               <div className="profile_details mb-3">
                 <div className="row align-items-center">
                   <div className="col-md-4">
                     <img
+                      className="presc-img-profile"
                       src={
                         appointments?.patient?.image?.url ||
                         "/assets/images/profile.png"
                       }
-                      style={{
-                        height: "19rem",
-                        background: "#0b6ea5",
-                        padding: "1rem",
-                        position: "absolute",
-                        marginTop: "-145px",
-                        marginLeft: "25px",
-                        boxShadow: "1px 8px 12px 0px #00000038",
-                        borderRadius: "100%",
-                      }}
                     />
                   </div>
                   <div className="col-md-8">
-                    <p
-                      className="fs-5 fw-bold"
-                      style={{
-                        borderBottom: "1px solid white",
-                        color: "white",
-                      }}
-                    >
+                    <p className="fs-5 fw-bold text-light border-bottom border-light">
                       Patient Details
                     </p>
                     <div className="row">
                       <div className="col-md-6">
                         <div className="patient_intro mb-2">
                           <div className="patient_details_inner">
-                            <p
-                              className="fs-6 fw-bold"
-                              style={{ color: "white", lineHeight: "1" }}
-                            >
+                            <p className="fs-6 fw-bold text-light lh-1 text-light lh-1">
                               Name :
                               <span className="fs-6 fw-light">
                                 {" "}
@@ -179,39 +149,27 @@ const Eprescription = () => {
                                 {appointments?.patient?.last_name}
                               </span>
                             </p>
-                            <p
-                              className="fs-6 fw-bold"
-                              style={{ color: "white", lineHeight: "1" }}
-                            >
+                            <p className="fs-6 fw-bold text-light lh-1">
                               Material Status :{" "}
-                              <span class="fs-6 fw-light">
+                              <span className="fs-6 fw-light">
                                 {appointments?.patient?.marital_status}
                               </span>
                             </p>
-                            <p
-                              className="fs-6 fw-bold"
-                              style={{ color: "white", lineHeight: "1" }}
-                            >
+                            <p className="fs-6 fw-bold text-light lh-1">
                               Blood Group :{" "}
-                              <span class="fs-6 fw-light">
+                              <span className="fs-6 fw-light">
                                 {appointments?.patient?.blood_group}
                               </span>
                             </p>
-                            <p
-                              className="fs-6 fw-bold"
-                              style={{ color: "white", lineHeight: "1" }}
-                            >
+                            <p className="fs-6 fw-bold text-light lh-1">
                               Date of Birth :{" "}
-                              <span class="fs-6 fw-light">
+                              <span className="fs-6 fw-light">
                                 {appointments?.patient?.dob}
                               </span>
                             </p>
-                            <p
-                              className="fs-6 fw-bold"
-                              style={{ color: "white", lineHeight: "1" }}
-                            >
+                            <p className="fs-6 fw-bold text-light lh-1">
                               Gender :{" "}
-                              <span class="fs-6 fw-light">
+                              <span className="fs-6 fw-light">
                                 {appointments?.patient?.gender}{" "}
                               </span>
                             </p>
@@ -221,46 +179,31 @@ const Eprescription = () => {
                       <div className="col-md-6">
                         <div className="patient_intro mb-2">
                           <div className="patient_details_inner">
-                            <p
-                              className="fs-6 fw-bold"
-                              style={{ color: "white", lineHeight: "1" }}
-                            >
+                            <p className="fs-6 fw-bold text-light lh-1">
                               Mobile :{" "}
-                              <span class="fs-6 fw-light">
+                              <span className="fs-6 fw-light">
                                 {appointments?.patient?.mobile}
                               </span>
                             </p>
-                            <p
-                              className="fs-6 fw-bold"
-                              style={{ color: "white", lineHeight: "1" }}
-                            >
+                            <p className="fs-6 fw-bold text-light lh-1">
                               Email :{" "}
-                              <span class="fs-6 fw-light">
+                              <span className="fs-6 fw-light">
                                 {appointments?.patient?.email}
                               </span>
                             </p>
-                            <p
-                              className="fs-6 fw-bold"
-                              style={{ color: "white", lineHeight: "1" }}
-                            >
+                            <p className="fs-6 fw-bold text-light lh-1">
                               City :{" "}
-                              <span class="fs-6 fw-light">
+                              <span className="fs-6 fw-light">
                                 {appointments?.patient?.address.city}
                               </span>
                             </p>
-                            <p
-                              className="fs-6 fw-bold"
-                              style={{ color: "white", lineHeight: "1" }}
-                            >
+                            <p className="fs-6 fw-bold text-light lh-1">
                               Country :{" "}
                               <span className="fs-6 fw-light">India</span>
                             </p>
-                            <p
-                              className="fs-6 fw-bold"
-                              style={{ color: "white", lineHeight: "1" }}
-                            >
+                            <p className="fs-6 fw-bold text-light lh-1">
                               State :{" "}
-                              <span class="fs-6 fw-light">
+                              <span className="fs-6 fw-light">
                                 {appointments?.patient?.address.state}
                               </span>
                             </p>
@@ -274,25 +217,8 @@ const Eprescription = () => {
             </div>
 
             <div>
-              <div
-                className="rfa-gen-form-data-table mt-4"
-                style={{
-                  background: "white",
-                  padding: "10px",
-                  borderRadius: "3px",
-                }}
-              >
-                <p
-                  className="fs-5"
-                  style={{
-                    background: "linear-gradient(45deg, #6f0734, transparent)",
-                    padding: "1rem",
-                    color: "white",
-                    borderRadius: "30px 4px 4px 30px",
-                  }}
-                >
-                  Medicine
-                </p>
+              <div className="rfa-gen-form-data-table mt-4 p-3">
+                <p className="fs-5 presc-table-title">Medicine</p>
                 <table className="table table-striped table-borderless">
                   <thead>
                     <tr>
@@ -326,25 +252,8 @@ const Eprescription = () => {
                   </tbody>
                 </table>
               </div>
-              <div
-                className="rfa-gen-form-data-table mt-4"
-                style={{
-                  background: "white",
-                  padding: "10px",
-                  borderRadius: "3px",
-                }}
-              >
-                <p
-                  className="fs-5"
-                  style={{
-                    background: "linear-gradient(45deg, #6f0734, transparent)",
-                    padding: "1rem",
-                    color: "white",
-                    borderRadius: "30px 4px 4px 30px",
-                  }}
-                >
-                  Test
-                </p>
+              <div className="rfa-gen-form-data-table mt-4 p-3">
+                <p className="fs-5 presc-table-title">Test</p>
                 <table className="table table-striped table-borderless">
                   <thead>
                     <tr>
@@ -364,23 +273,8 @@ const Eprescription = () => {
                   </tbody>
                 </table>
               </div>
-              <div
-                className="rfa-gen-form-data-table mt-4"
-                style={{
-                  background: "white",
-                  padding: "10px",
-                  borderRadius: "3px",
-                }}
-              >
-                <p
-                  className="fs-5"
-                  style={{
-                    background: "linear-gradient(45deg, #6f0734, transparent)",
-                    padding: "1rem",
-                    color: "white",
-                    borderRadius: "30px 4px 4px 30px",
-                  }}
-                >
+              <div className="rfa-gen-form-data-table mt-4 p-3">
+                <p className="fs-5 presc-table-title">
                   Food & Fluid Restriction
                 </p>
                 <table className="table table-striped table-borderless">
@@ -398,25 +292,8 @@ const Eprescription = () => {
                   </tbody>
                 </table>
               </div>
-              <div
-                className="rfa-gen-form-data-table mt-4"
-                style={{
-                  background: "white",
-                  padding: "10px",
-                  borderRadius: "3px",
-                }}
-              >
-                <p
-                  className="fs-5"
-                  style={{
-                    background: "linear-gradient(45deg, #6f0734, transparent)",
-                    padding: "1rem",
-                    color: "white",
-                    borderRadius: "30px 4px 4px 30px",
-                  }}
-                >
-                  Patient Education
-                </p>
+              <div className="rfa-gen-form-data-table mt-4 p-3">
+                <p className="fs-5 presc-table-title">Patient Education</p>
                 <table className="table table-striped table-borderless">
                   <thead>
                     <tr>
@@ -432,23 +309,8 @@ const Eprescription = () => {
                   </tbody>
                 </table>
               </div>
-              <div
-                className="rfa-gen-form-data-table mt-4"
-                style={{
-                  background: "white",
-                  padding: "10px",
-                  borderRadius: "3px",
-                }}
-              >
-                <p
-                  className="fs-5"
-                  style={{
-                    background: "linear-gradient(45deg, #6f0734, transparent)",
-                    padding: "1rem",
-                    color: "white",
-                    borderRadius: "30px 4px 4px 30px",
-                  }}
-                >
+              <div className="rfa-gen-form-data-table mt-4 p-3">
+                <p className="fs-5 presc-table-title">
                   Precaution & Safety Measures
                 </p>
                 <table className="table table-striped table-borderless">
@@ -466,23 +328,8 @@ const Eprescription = () => {
                   </tbody>
                 </table>
               </div>
-              <div
-                className="rfa-gen-form-data-table mt-4"
-                style={{
-                  background: "white",
-                  padding: "10px",
-                  borderRadius: "3px",
-                }}
-              >
-                <p
-                  className="fs-5"
-                  style={{
-                    background: "linear-gradient(45deg, #6f0734, transparent)",
-                    padding: "1rem",
-                    color: "white",
-                    borderRadius: "30px 4px 4px 30px",
-                  }}
-                >
+              <div className="rfa-gen-form-data-table mt-4 p-3">
+                <p className="fs-5 presc-table-title">
                   Other Treatment Referral
                 </p>
                 <table className="table table-striped table-borderless">
@@ -500,25 +347,8 @@ const Eprescription = () => {
                   </tbody>
                 </table>
               </div>
-              <div
-                className="rfa-gen-form-data-table mt-4"
-                style={{
-                  background: "white",
-                  padding: "10px",
-                  borderRadius: "3px",
-                }}
-              >
-                <p
-                  className="fs-5"
-                  style={{
-                    background: "linear-gradient(45deg, #6f0734, transparent)",
-                    padding: "1rem",
-                    color: "white",
-                    borderRadius: "30px 4px 4px 30px",
-                  }}
-                >
-                  Set Follow Time Period
-                </p>
+              <div className="rfa-gen-form-data-table mt-4 p-3">
+                <p className="fs-5 presc-table-title">Set Follow Time Period</p>
                 <table className="table table-striped table-borderless">
                   <thead>
                     <tr>
@@ -540,9 +370,7 @@ const Eprescription = () => {
             </div>
           </main>
 
-          <footer
-            style={{ background: "linear-gradient(45deg, #116aa1, #720330)" }}
-          >
+          <footer className="presc-footer">
             <div className="row align-items-center pt-3 px-3">
               <div className="col-md-4">
                 <p className="text-light text-start">
