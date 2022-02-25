@@ -24,49 +24,52 @@ const Eprescription = () => {
   return (
     <>
       <div style={{ backgroundColor: "whitesmoke" }}>
-        <div class="container" style={{ backgroundColor: "white" }}>
+        <div className="container" style={{ backgroundColor: "white" }}>
           <div
-            class="topbar-ribbon py-1 px-1"
+            className="topbar-ribbon py-1 px-1"
             style={{ backgroundColor: "#075f99 !important" }}
           >
-            <div class="row align-items-end">
-              <div class="col-md-1">
-                <div class="left-content">
+            <div className="row align-items-end">
+              <div className="col-md-1">
+                <div className="left-content">
                   <img
                     src="/assets/images/logo-white.png"
                     style={{ height: "3rem" }}
                   />
                 </div>
               </div>
-              <div class="col-md-4">
-                <div class="middle-content">
-                  <p class="fs-6 fw-bold" style={{ color: "white" }}>
+              <div className="col-md-4">
+                <div className="middle-content">
+                  <p className="fs-6 fw-bold" style={{ color: "white" }}>
                     REHAB INTEGRATED MEDICAL SOLUTIONS
                   </p>
                 </div>
               </div>
-              <div class="col-md-7">
-                <div class="right-content">
-                  <div class="row align-items-center">
-                    <div class="col-md-4">
-                      <p class="text-light">
+              <div className="col-md-7">
+                <div className="right-content">
+                  <div className="row align-items-center">
+                    <div className="col-md-4">
+                      <p className="text-light">
                         <i
-                          class="fas fa-map-marker-alt"
+                          className="fas fa-map-marker-alt"
                           style={{ color: "white" }}
                         ></i>
                         Haldia City Centre , WB
                       </p>
                     </div>
-                    <div class="col-md-4">
-                      <p class="text-light">
-                        <i class="fas fa-phone" style={{ color: "white" }}></i>
+                    <div className="col-md-4">
+                      <p className="text-light">
+                        <i
+                          className="fas fa-phone"
+                          style={{ color: "white" }}
+                        ></i>
                         +91-90384-43073
                       </p>
                     </div>
-                    <div class="col-md-4">
-                      <p class="text-light">
+                    <div className="col-md-4">
+                      <p className="text-light">
                         <i
-                          class="fas fa-envelope-open-text"
+                          className="fas fa-envelope-open-text"
                           style={{ color: "white" }}
                         ></i>
                         demo@email.com
@@ -93,8 +96,8 @@ const Eprescription = () => {
                   <p class="fs-6 lh-1">Mob: {appointments?.doctor?.phone}</p>
                 </div>
               </div>
-              <div class="col-md-4">
-                <div class="doctor-symbol text-center">
+              <div className="col-md-4">
+                <div className="doctor-symbol text-center">
                   <img src="/assets/images/doctor-symbol.png" height="150px" />
                 </div>
               </div>
@@ -116,21 +119,24 @@ const Eprescription = () => {
             </div>
           </header>
 
-          <main class="main mt-3">
-            <p class="fs-3 fw-bold text-center" style={{ color: "#720330" }}>
+          <main className="main mt-3">
+            <p
+              className="fs-3 fw-bold text-center"
+              style={{ color: "#720330" }}
+            >
               e-Prescption
             </p>
             <div
-              class="main_outer_bg"
+              className="main_outer_bg"
               style={{
                 background: "linear-gradient(45deg, #116aa1, #720330)",
                 position: "relative",
                 padding: "1rem",
               }}
             >
-              <div class="profile_details mb-3">
-                <div class="row align-items-center">
-                  <div class="col-md-4">
+              <div className="profile_details mb-3">
+                <div className="row align-items-center">
+                  <div className="col-md-4">
                     <img
                       src={
                         appointments?.patient?.image?.url ||
@@ -148,9 +154,9 @@ const Eprescription = () => {
                       }}
                     />
                   </div>
-                  <div class="col-md-8">
+                  <div className="col-md-8">
                     <p
-                      class="fs-5 fw-bold"
+                      className="fs-5 fw-bold"
                       style={{
                         borderBottom: "1px solid white",
                         color: "white",
@@ -158,23 +164,23 @@ const Eprescription = () => {
                     >
                       Patient Details
                     </p>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="patient_intro mb-2">
-                          <div class="patient_details_inner">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="patient_intro mb-2">
+                          <div className="patient_details_inner">
                             <p
-                              class="fs-6 fw-bold"
+                              className="fs-6 fw-bold"
                               style={{ color: "white", lineHeight: "1" }}
                             >
                               Name :
-                              <span class="fs-6 fw-light">
+                              <span className="fs-6 fw-light">
                                 {" "}
                                 {appointments?.patient?.first_name}{" "}
                                 {appointments?.patient?.last_name}
                               </span>
                             </p>
                             <p
-                              class="fs-6 fw-bold"
+                              className="fs-6 fw-bold"
                               style={{ color: "white", lineHeight: "1" }}
                             >
                               Material Status :{" "}
@@ -183,7 +189,7 @@ const Eprescription = () => {
                               </span>
                             </p>
                             <p
-                              class="fs-6 fw-bold"
+                              className="fs-6 fw-bold"
                               style={{ color: "white", lineHeight: "1" }}
                             >
                               Blood Group :{" "}
@@ -192,7 +198,7 @@ const Eprescription = () => {
                               </span>
                             </p>
                             <p
-                              class="fs-6 fw-bold"
+                              className="fs-6 fw-bold"
                               style={{ color: "white", lineHeight: "1" }}
                             >
                               Date of Birth :{" "}
@@ -201,7 +207,7 @@ const Eprescription = () => {
                               </span>
                             </p>
                             <p
-                              class="fs-6 fw-bold"
+                              className="fs-6 fw-bold"
                               style={{ color: "white", lineHeight: "1" }}
                             >
                               Gender :{" "}
@@ -212,11 +218,11 @@ const Eprescription = () => {
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-6">
-                        <div class="patient_intro mb-2">
-                          <div class="patient_details_inner">
+                      <div className="col-md-6">
+                        <div className="patient_intro mb-2">
+                          <div className="patient_details_inner">
                             <p
-                              class="fs-6 fw-bold"
+                              className="fs-6 fw-bold"
                               style={{ color: "white", lineHeight: "1" }}
                             >
                               Mobile :{" "}
@@ -225,7 +231,7 @@ const Eprescription = () => {
                               </span>
                             </p>
                             <p
-                              class="fs-6 fw-bold"
+                              className="fs-6 fw-bold"
                               style={{ color: "white", lineHeight: "1" }}
                             >
                               Email :{" "}
@@ -234,7 +240,7 @@ const Eprescription = () => {
                               </span>
                             </p>
                             <p
-                              class="fs-6 fw-bold"
+                              className="fs-6 fw-bold"
                               style={{ color: "white", lineHeight: "1" }}
                             >
                               City :{" "}
@@ -243,13 +249,14 @@ const Eprescription = () => {
                               </span>
                             </p>
                             <p
-                              class="fs-6 fw-bold"
+                              className="fs-6 fw-bold"
                               style={{ color: "white", lineHeight: "1" }}
                             >
-                              Country : <span class="fs-6 fw-light">India</span>
+                              Country :{" "}
+                              <span className="fs-6 fw-light">India</span>
                             </p>
                             <p
-                              class="fs-6 fw-bold"
+                              className="fs-6 fw-bold"
                               style={{ color: "white", lineHeight: "1" }}
                             >
                               State :{" "}
@@ -268,7 +275,7 @@ const Eprescription = () => {
 
             <div>
               <div
-                class="rfa-gen-form-data-table mt-4"
+                className="rfa-gen-form-data-table mt-4"
                 style={{
                   background: "white",
                   padding: "10px",
@@ -276,7 +283,7 @@ const Eprescription = () => {
                 }}
               >
                 <p
-                  class="fs-5"
+                  className="fs-5"
                   style={{
                     background: "linear-gradient(45deg, #6f0734, transparent)",
                     padding: "1rem",
@@ -286,7 +293,7 @@ const Eprescription = () => {
                 >
                   Medicine
                 </p>
-                <table class="table table-striped table-borderless">
+                <table className="table table-striped table-borderless">
                   <thead>
                     <tr>
                       <th scope="col">Sl.</th>
@@ -320,7 +327,7 @@ const Eprescription = () => {
                 </table>
               </div>
               <div
-                class="rfa-gen-form-data-table mt-4"
+                className="rfa-gen-form-data-table mt-4"
                 style={{
                   background: "white",
                   padding: "10px",
@@ -328,7 +335,7 @@ const Eprescription = () => {
                 }}
               >
                 <p
-                  class="fs-5"
+                  className="fs-5"
                   style={{
                     background: "linear-gradient(45deg, #6f0734, transparent)",
                     padding: "1rem",
@@ -338,7 +345,7 @@ const Eprescription = () => {
                 >
                   Test
                 </p>
-                <table class="table table-striped table-borderless">
+                <table className="table table-striped table-borderless">
                   <thead>
                     <tr>
                       <th scope="col">Sl.</th>
@@ -358,7 +365,7 @@ const Eprescription = () => {
                 </table>
               </div>
               <div
-                class="rfa-gen-form-data-table mt-4"
+                className="rfa-gen-form-data-table mt-4"
                 style={{
                   background: "white",
                   padding: "10px",
@@ -366,7 +373,7 @@ const Eprescription = () => {
                 }}
               >
                 <p
-                  class="fs-5"
+                  className="fs-5"
                   style={{
                     background: "linear-gradient(45deg, #6f0734, transparent)",
                     padding: "1rem",
@@ -376,7 +383,7 @@ const Eprescription = () => {
                 >
                   Food & Fluid Restriction
                 </p>
-                <table class="table table-striped table-borderless">
+                <table className="table table-striped table-borderless">
                   <thead>
                     <tr>
                       <th scope="col">Sl.</th>
@@ -392,7 +399,7 @@ const Eprescription = () => {
                 </table>
               </div>
               <div
-                class="rfa-gen-form-data-table mt-4"
+                className="rfa-gen-form-data-table mt-4"
                 style={{
                   background: "white",
                   padding: "10px",
@@ -400,7 +407,7 @@ const Eprescription = () => {
                 }}
               >
                 <p
-                  class="fs-5"
+                  className="fs-5"
                   style={{
                     background: "linear-gradient(45deg, #6f0734, transparent)",
                     padding: "1rem",
@@ -410,7 +417,7 @@ const Eprescription = () => {
                 >
                   Patient Education
                 </p>
-                <table class="table table-striped table-borderless">
+                <table className="table table-striped table-borderless">
                   <thead>
                     <tr>
                       <th scope="col">Sl.</th>
@@ -426,7 +433,7 @@ const Eprescription = () => {
                 </table>
               </div>
               <div
-                class="rfa-gen-form-data-table mt-4"
+                className="rfa-gen-form-data-table mt-4"
                 style={{
                   background: "white",
                   padding: "10px",
@@ -434,7 +441,7 @@ const Eprescription = () => {
                 }}
               >
                 <p
-                  class="fs-5"
+                  className="fs-5"
                   style={{
                     background: "linear-gradient(45deg, #6f0734, transparent)",
                     padding: "1rem",
@@ -444,7 +451,7 @@ const Eprescription = () => {
                 >
                   Precaution & Safety Measures
                 </p>
-                <table class="table table-striped table-borderless">
+                <table className="table table-striped table-borderless">
                   <thead>
                     <tr>
                       <th scope="col">Sl.</th>
@@ -460,7 +467,7 @@ const Eprescription = () => {
                 </table>
               </div>
               <div
-                class="rfa-gen-form-data-table mt-4"
+                className="rfa-gen-form-data-table mt-4"
                 style={{
                   background: "white",
                   padding: "10px",
@@ -468,7 +475,7 @@ const Eprescription = () => {
                 }}
               >
                 <p
-                  class="fs-5"
+                  className="fs-5"
                   style={{
                     background: "linear-gradient(45deg, #6f0734, transparent)",
                     padding: "1rem",
@@ -478,7 +485,7 @@ const Eprescription = () => {
                 >
                   Other Treatment Referral
                 </p>
-                <table class="table table-striped table-borderless">
+                <table className="table table-striped table-borderless">
                   <thead>
                     <tr>
                       <th scope="col">Sl.</th>
@@ -494,7 +501,7 @@ const Eprescription = () => {
                 </table>
               </div>
               <div
-                class="rfa-gen-form-data-table mt-4"
+                className="rfa-gen-form-data-table mt-4"
                 style={{
                   background: "white",
                   padding: "10px",
@@ -502,7 +509,7 @@ const Eprescription = () => {
                 }}
               >
                 <p
-                  class="fs-5"
+                  className="fs-5"
                   style={{
                     background: "linear-gradient(45deg, #6f0734, transparent)",
                     padding: "1rem",
@@ -512,7 +519,7 @@ const Eprescription = () => {
                 >
                   Set Follow Time Period
                 </p>
-                <table class="table table-striped table-borderless">
+                <table className="table table-striped table-borderless">
                   <thead>
                     <tr>
                       <th></th>
@@ -536,25 +543,25 @@ const Eprescription = () => {
           <footer
             style={{ background: "linear-gradient(45deg, #116aa1, #720330)" }}
           >
-            <div class="row align-items-center pt-3 px-3">
-              <div class="col-md-4">
-                <p class="text-light text-start">
+            <div className="row align-items-center pt-3 px-3">
+              <div className="col-md-4">
+                <p className="text-light text-start">
                   For next appointment click <a href="#">this link</a>
                 </p>
               </div>
-              <div class="col-md-4">
-                <div class="banner-logo text-center mb-2">
+              <div className="col-md-4">
+                <div className="banner-logo text-center mb-2">
                   <img src="/assets/images/logo-white.png" height="50px" />
                 </div>
-                <p class="text-light fs-5 fw-bold text-center lh-1">
+                <p className="text-light fs-5 fw-bold text-center lh-1">
                   Powered by Rims Technology
                 </p>
-                <p class="text-light text-center fs-6 lh-1 fst-italic">
+                <p className="text-light text-center fs-6 lh-1 fst-italic">
                   A unit of Retar Mediserve Pvt. Ltd.
                 </p>
               </div>
-              <div class="col-md-4">
-                <p class="text-light text-end">
+              <div className="col-md-4">
+                <p className="text-light text-end">
                   For appointment click <a href>this link</a>
                 </p>
               </div>
