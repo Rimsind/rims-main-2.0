@@ -33,7 +33,7 @@ const TestNav = () => {
         <div className="container-fluid">
           <div className="nav-topbar d-flex justify-content-between align-items-center">
             <div className="brand-logo">
-              <a className="navbar-brand me-auto" href="#">
+              <a className="navbar-brand me-auto" href="/">
                 <Image
                   height="70"
                   width="100"

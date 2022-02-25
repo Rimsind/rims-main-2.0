@@ -6,7 +6,7 @@ const Footer = () => {
       <footer className="footer">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-md-4">
+            <div className="col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3 ">
               <div className="footer_logo">
                 <Image
                   height="100"
@@ -16,7 +16,7 @@ const Footer = () => {
                 />
               </div>
               <div className="footer_para">
-                <p className="ft_para">
+                <p className="ft_para text-light">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Tempora saepe quaerat atque eaque dolor ab eos at quod
                   aspernatur, explicabo quia reprehenderit eius, cupiditate
@@ -40,7 +40,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-md">
+            <div className="col-6 col-sm-3 col-md-3 col-lg-2 col-xl-2 col-xxl-2 mt-3 mt-sm-3 mt-md-3 mt-lg-0 mt-xl-0 mt-xxl-0">
               <div className="patient_sec">
                 <p>For Patients</p>
                 <ul>
@@ -62,7 +62,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-md">
+            <div className=" col-6 col-sm-3 col-md-3 col-lg-2 col-xl-2 col-xxl-2 mt-3 mt-sm-3 mt-md-3 mt-lg-0 mt-xl-0 mt-xxl-0">
               <div className="doctor_sec">
                 <p>For Doctors</p>
                 <ul>
@@ -84,7 +84,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-md">
+            <div className="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 mt-3 mt-sm-3 mt-md-3 mt-lg-0 mt-xl-0 mt-xxl-0">
               <div className="contact_info">
                 <p>Contact Us</p>
                 <ul>
@@ -97,7 +97,7 @@ const Footer = () => {
                   <li>
                     <i className="fas fa-mobile topbar_lft_icn pe-2"></i>
                     <a href="#" className="topbar_links">
-                      987456321
+                      987356321
                     </a>
                   </li>
                   <li>
@@ -109,7 +109,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-md">
+            <div className="col-6 col-sm-3 col-md-3 col-lg-2 col-xl-2 col-xxl-2">
               <div className="admn_btn">
                 <Link href="/administration">
                   <a className="btn btn-primary">Administrative</a>
