@@ -12638,6 +12638,13 @@ p.clini-exam-footer-content {
   padding: 1rem 0;
 }
 
+@media screen and (min-width: 1000px) and (max-width: 1500px) {
+  img.clini-exam-img {
+    height: 20rem;
+    padding: 1rem;
+  }
+}
+
 /* Appointments Style */
 @media screen and (min-width: 1000px) and (max-width: 1500px) {
   .end-items {
