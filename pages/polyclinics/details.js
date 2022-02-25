@@ -144,7 +144,7 @@ const PolyclinicId = () => {
                         id="doc_locations"
                         className="tab-pane fade"
                       >
-                        <div className="poly-location d-flex justify-content-between align-items-center py-4 px-3">
+                        <div className="poly-location d-flex justify-content-between align-items-center flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row py-4 px-3">
                           <div className="poly-address">
                             <div className="contact-section poly-location">
                               <div className="contact-box">
@@ -186,7 +186,7 @@ const PolyclinicId = () => {
                               </div>
                             </div>
                           </div>
-                          <div className="poly-map">
+                          <div className="poly-map mt-sm-4 mt-md-4 mt-lg-0 mt-xl-0 mt-xxl-0">
                             <iframe
                               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59162.79901960036!2d88.05869855798426!3d22.062026721715704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02f0cb35788045%3A0x58f6d5c69f0de04d!2sHaldia%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1642855030171!5m2!1sen!2sin"
                               width="400"

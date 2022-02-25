@@ -174,8 +174,6 @@ const TestNav = () => {
                     <a
                       className="nav-link navbar-link text-white"
                       aria-current="page"
-                      data-bs-toggle="collapse"
-                      data-bs-target="navbar-collapse"
                     >
                       <i className="fad fa-home"></i> Home
                     </a>
