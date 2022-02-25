@@ -12591,3 +12591,10 @@ ul.benifits-col li i {
 .presc-footer {
   background: linear-gradient(45deg, #116aa1, #720330);
 }
+
+/* Appointments Style */
+@media screen and (min-width: 1000px) and (max-width: 1500px) {
+  .end-items {
+    margin-left: -20px;
+  }
+}
