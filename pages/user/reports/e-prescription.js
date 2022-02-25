@@ -21,8 +21,6 @@ const Eprescription = () => {
     }
   );
 
-  const { doctor, patient, eprescription } = appointments;
-
   return (
     <>
       <div style={{ backgroundColor: "whitesmoke" }}>
@@ -84,12 +82,15 @@ const Eprescription = () => {
               <div class="col-md-4">
                 <div class="header-inner-item text-start">
                   <p class="fs-3 fw-bold fst-italic lh-1">
-                    Dr. {doctor?.firstName} {doctor?.lastName}
+                    Dr. {appointments?.doctor?.firstName}{" "}
+                    {appointments?.doctor?.lastName}
                   </p>
-                  <p class="fs-6 fw-bold lh-1">{doctor?.qualification}</p>
-                  <p class="fs-6 lh-1">{doctor?.specialty}</p>
+                  <p class="fs-6 fw-bold lh-1">
+                    {appointments?.doctor?.qualification}
+                  </p>
+                  <p class="fs-6 lh-1">{appointments?.doctor?.specialty}</p>
                   <p class="fs-6 lh-1">Reg. No.-58905 (WBMC)</p>
-                  <p class="fs-6 lh-1">Mob: {doctor?.phone}</p>
+                  <p class="fs-6 lh-1">Mob: {appointments?.doctor?.phone}</p>
                 </div>
               </div>
               <div class="col-md-4">
@@ -101,12 +102,15 @@ const Eprescription = () => {
               <div class="col-md-4">
                 <div class="header-inner-item text-end">
                   <p class="fs-3 fw-bold fst-italic lh-1">
-                    Dr. {doctor?.firstName} {doctor?.lastName}
+                    Dr. {appointments?.doctor?.firstName}{" "}
+                    {appointments?.doctor?.lastName}
                   </p>
-                  <p class="fs-6 fw-bold lh-1">{doctor?.qualification}</p>
-                  <p class="fs-6 lh-1">{doctor?.specialty}</p>
+                  <p class="fs-6 fw-bold lh-1">
+                    {appointments?.doctor?.qualification}
+                  </p>
+                  <p class="fs-6 lh-1">{appointments?.doctor?.specialty}</p>
                   <p class="fs-6 lh-1">Reg. No.-58905 (WBMC)</p>
-                  <p class="fs-6 lh-1">Mob: {doctor?.phone}</p>
+                  <p class="fs-6 lh-1">Mob: {appointments?.doctor?.phone}</p>
                 </div>
               </div>
             </div>
@@ -128,7 +132,10 @@ const Eprescription = () => {
                 <div class="row align-items-center">
                   <div class="col-md-4">
                     <img
-                      src={patient?.image?.url || "/assets/images/profile.png"}
+                      src={
+                        appointments?.patient?.image?.url ||
+                        "/assets/images/profile.png"
+                      }
                       style={{
                         height: "19rem",
                         background: "#0b6ea5",
@@ -162,7 +169,8 @@ const Eprescription = () => {
                               Name :
                               <span class="fs-6 fw-light">
                                 {" "}
-                                {patient?.first_name} {patient?.last_name}
+                                {appointments?.patient?.first_name}{" "}
+                                {appointments?.patient?.last_name}
                               </span>
                             </p>
                             <p
@@ -171,7 +179,7 @@ const Eprescription = () => {
                             >
                               Material Status :{" "}
                               <span class="fs-6 fw-light">
-                                {patient?.marital_status}
+                                {appointments?.patient?.marital_status}
                               </span>
                             </p>
                             <p
@@ -180,7 +188,7 @@ const Eprescription = () => {
                             >
                               Blood Group :{" "}
                               <span class="fs-6 fw-light">
-                                {patient?.blood_group}
+                                {appointments?.patient?.blood_group}
                               </span>
                             </p>
                             <p
@@ -188,7 +196,9 @@ const Eprescription = () => {
                               style={{ color: "white", lineHeight: "1" }}
                             >
                               Date of Birth :{" "}
-                              <span class="fs-6 fw-light">{patient?.dob}</span>
+                              <span class="fs-6 fw-light">
+                                {appointments?.patient?.dob}
+                              </span>
                             </p>
                             <p
                               class="fs-6 fw-bold"
@@ -196,7 +206,7 @@ const Eprescription = () => {
                             >
                               Gender :{" "}
                               <span class="fs-6 fw-light">
-                                {patient?.gender}{" "}
+                                {appointments?.patient?.gender}{" "}
                               </span>
                             </p>
                           </div>
@@ -211,7 +221,7 @@ const Eprescription = () => {
                             >
                               Mobile :{" "}
                               <span class="fs-6 fw-light">
-                                {patient?.mobile}
+                                {appointments?.patient?.mobile}
                               </span>
                             </p>
                             <p
@@ -220,7 +230,7 @@ const Eprescription = () => {
                             >
                               Email :{" "}
                               <span class="fs-6 fw-light">
-                                {patient?.email}
+                                {appointments?.patient?.email}
                               </span>
                             </p>
                             <p
@@ -229,7 +239,7 @@ const Eprescription = () => {
                             >
                               City :{" "}
                               <span class="fs-6 fw-light">
-                                {patient?.address.city}
+                                {appointments?.patient?.address.city}
                               </span>
                             </p>
                             <p
@@ -244,7 +254,7 @@ const Eprescription = () => {
                             >
                               State :{" "}
                               <span class="fs-6 fw-light">
-                                {patient?.address.state}
+                                {appointments?.patient?.address.state}
                               </span>
                             </p>
                           </div>
@@ -291,19 +301,21 @@ const Eprescription = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {eprescription?.medicine.map((items, index) => (
-                      <tr key={index}>
-                        <th scope="row">*</th>
-                        <td>{items?.name}</td>
-                        <td>{items?.mg}</td>
-                        <td>{items?.route}</td>
-                        <td>{items?.duration}</td>
-                        <td>{items?.frequency}</td>
-                        <td>{items?.reason}</td>
-                        <td>{items?.instruction}</td>
-                        <td>{items?.sideEffects}</td>
-                      </tr>
-                    ))}
+                    {appointments?.eprescription?.medicine.map(
+                      (items, index) => (
+                        <tr key={index}>
+                          <th scope="row">*</th>
+                          <td>{items?.name}</td>
+                          <td>{items?.mg}</td>
+                          <td>{items?.route}</td>
+                          <td>{items?.duration}</td>
+                          <td>{items?.frequency}</td>
+                          <td>{items?.reason}</td>
+                          <td>{items?.instruction}</td>
+                          <td>{items?.sideEffects}</td>
+                        </tr>
+                      )
+                    )}
                   </tbody>
                 </table>
               </div>
@@ -335,7 +347,7 @@ const Eprescription = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {eprescription?.test?.map((items, index) => (
+                    {appointments?.eprescription?.test?.map((items, index) => (
                       <tr key={index}>
                         <th scope="row">*</th>
                         <td>{items?.name}</td>
@@ -374,7 +386,7 @@ const Eprescription = () => {
                   <tbody>
                     <tr>
                       <th scope="row">*</th>
-                      <td>{eprescription?.restrictions}</td>
+                      <td>{appointments?.eprescription?.restrictions}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -408,7 +420,7 @@ const Eprescription = () => {
                   <tbody>
                     <tr>
                       <th scope="row">*</th>
-                      <td>{eprescription?.patient_education}</td>
+                      <td>{appointments?.eprescription?.patient_education}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -442,7 +454,7 @@ const Eprescription = () => {
                   <tbody>
                     <tr>
                       <th scope="row">*</th>
-                      <td>{eprescription?.safetyMeasures}</td>
+                      <td>{appointments?.eprescription?.safetyMeasures}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -476,7 +488,7 @@ const Eprescription = () => {
                   <tbody>
                     <tr>
                       <th scope="row">*</th>
-                      <td>{eprescription?.treatmentreferral}</td>
+                      <td>{appointments?.eprescription?.treatmentreferral}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -512,8 +524,8 @@ const Eprescription = () => {
                   <tbody>
                     <tr>
                       <td>*</td>
-                      <td>{eprescription?.followup?.date}</td>
-                      <td>{eprescription?.followup?.type}</td>
+                      <td>{appointments?.eprescription?.followup?.date}</td>
+                      <td>{appointments?.eprescription?.followup?.type}</td>
                     </tr>
                   </tbody>
                 </table>

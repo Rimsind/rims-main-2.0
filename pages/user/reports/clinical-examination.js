@@ -20,8 +20,7 @@ const ClinicalExamination = () => {
       return result;
     }
   );
-  const { patient, assesment, chiefComplaints, doctor } = appointment;
-  console.log(assesment);
+
   return (
     <>
       <div style={{ backgroundColor: "whitesmoke" }}>
@@ -91,7 +90,8 @@ const ClinicalExamination = () => {
                     <div class="patient_image mb-2">
                       <img
                         src={
-                          patient?.image?.url || "/assets/images/profile.png"
+                          appointment?.patient?.image?.url ||
+                          "/assets/images/profile.png"
                         }
                         style={{ height: "24rem", padding: "1rem" }}
                       />
@@ -106,98 +106,21 @@ const ClinicalExamination = () => {
                         </p>
                         <div class="patient_details_inner">
                           <p>
-                            Name : {patient?.first_name} {patient?.last_name}
+                            Name : {appointment?.patient?.first_name}{" "}
+                            {appointment?.patient?.last_name}
                           </p>
-                          <p>Material Status : {patient?.marital_status}</p>
-                          <p>Blood Group : {patient?.blood_group}</p>
-                          <p>Date of Birth : {patient?.dob}</p>
-                          <p>Gender : {patient?.gender}</p>
+                          <p>
+                            Material Status :{" "}
+                            {appointment?.patient?.marital_status}
+                          </p>
+                          <p>
+                            Blood Group : {appointment?.patient?.blood_group}
+                          </p>
+                          <p>Date of Birth : {appointment?.patient?.dob}</p>
+                          <p>Gender : {appointment?.patient?.gender}</p>
                         </div>
                       </div>
 
-                      {/* <div class="patient_intro mb-2">
-                        <p
-                          class="fs-5 fw-bold"
-                          style={{ borderBottom: "1px solid white" }}
-                        >
-                          Additional Chief Complaint
-                        </p>
-                        <div class="patient_details_inner">
-                          {appointment?.general_problems === "false" ? (
-                            <></>
-                          ) : (
-                            <p>
-                              General Problem: {appointment?.general_problems}
-                            </p>
-                          )}
-                          {appointment?.genetal_problems === "false" ? (
-                            <></>
-                          ) : (
-                            <p>
-                              Genital Problem : {appointment?.genetal_problems}
-                            </p>
-                          )}
-                          {appointment?.heart_problems === "false" ? (
-                            <></>
-                          ) : (
-                            <p>
-                              Heart Related Problems :{" "}
-                              {appointment?.heart_problems}
-                            </p>
-                          )}
-                          {appointment?.joint_related_problems === "false" ? (
-                            <></>
-                          ) : (
-                            <p>
-                              Joint Related Problems :{" "}
-                              {appointment?.joint_related_problems}
-                            </p>
-                          )}
-                          {appointment?.mental_problems === "false" ? (
-                            <></>
-                          ) : (
-                            <p>
-                              Mental Problems : {appointment?.mental_problems}
-                            </p>
-                          )}
-                          {appointment?.neuro_problems === "false" ? (
-                            <></>
-                          ) : (
-                            <p>
-                              Neurologic Problems :{" "}
-                              {appointment?.neuro_problems}
-                            </p>
-                          )}
-                          {appointment?.stomach_problems === "false" ? (
-                            <></>
-                          ) : (
-                            <p>
-                              Stomach & Abdominal Problems :{" "}
-                              {appointment?.stomach_problems}
-                            </p>
-                          )}
-                          {appointment?.blood_problems === "false" ? (
-                            <></>
-                          ) : (
-                            <p>
-                              Stomach & Abdominal Problems :{" "}
-                              {appointment?.blood_problems}
-                            </p>
-                          )}
-                        </div>
-                      </div> */}
-                      {/* <div class="patient_intro mb-2">
-                        <p
-                          class="fs-5 fw-bold"
-                          style={{ borderBottom: "1px solid white" }}
-                        >
-                          Recent Appointment
-                        </p>
-                        <div class="patient_details_inner">
-                          <p>Any Appointment: Yes</p>
-                          <p>Last Appointment Date: 17/10/2021</p>
-                        </div>
-                      </div> */}
                       <div class="patient_intro mb-2">
                         <p
                           class="fs-5 fw-bold"
@@ -207,10 +130,15 @@ const ClinicalExamination = () => {
                         </p>
                         <div class="patient_details_inner">
                           <p>
-                            Dr. {doctor?.firstName} {doctor?.lastName}
+                            Dr. {appointment?.doctor?.firstName}{" "}
+                            {appointment?.doctor?.lastName}
                           </p>
-                          <p>Qualification: {doctor?.qualification}</p>
-                          <p>Specialization: {doctor?.specialty}</p>
+                          <p>
+                            Qualification: {appointment?.doctor?.qualification}
+                          </p>
+                          <p>
+                            Specialization: {appointment?.doctor?.specialty}
+                          </p>
                           <p>Clinic Name: {appointment?.polyclinic?.name}</p>
                         </div>
                       </div>
@@ -251,13 +179,15 @@ const ClinicalExamination = () => {
                                   </tr>
                                 </thead>
                                 <tbody>
-                                  {chiefComplaints.map((items, index) => (
-                                    <tr key={index}>
-                                      <th scope="row">*</th>
-                                      <td>{items?.description}</td>
-                                      <td>{items?.duration}</td>
-                                    </tr>
-                                  ))}
+                                  {appointment?.chiefComplaints.map(
+                                    (items, index) => (
+                                      <tr key={index}>
+                                        <th scope="row">*</th>
+                                        <td>{items?.description}</td>
+                                        <td>{items?.duration}</td>
+                                      </tr>
+                                    )
+                                  )}
                                 </tbody>
                               </table>
                               <p
@@ -357,7 +287,9 @@ const ClinicalExamination = () => {
                       >
                         <div class="row">
                           <div class="col-md-12 main_column">
-                            <p>{assesment?.clinicalInvestigation}</p>
+                            <p>
+                              {appointment?.assesment?.clinicalInvestigation}
+                            </p>
                           </div>
                         </div>
                       </div>
@@ -394,13 +326,15 @@ const ClinicalExamination = () => {
                                   </tr>
                                 </thead>
                                 <tbody>
-                                  {assesment?.diagnosis.map((items, index) => (
-                                    <tr key={index}>
-                                      <th scope="row">*</th>
-                                      <td>{items?.icd10}</td>
-                                      <td>{items?.description}</td>
-                                    </tr>
-                                  ))}
+                                  {appointment?.assesment?.diagnosis.map(
+                                    (items, index) => (
+                                      <tr key={index}>
+                                        <th scope="row">*</th>
+                                        <td>{items?.icd10}</td>
+                                        <td>{items?.description}</td>
+                                      </tr>
+                                    )
+                                  )}
                                 </tbody>
                               </table>
                             </div>
@@ -426,7 +360,7 @@ const ClinicalExamination = () => {
                         style={{ marginLeft: "2rem" }}
                       >
                         <div class="col-md-12 main_column">
-                          <p>{assesment?.treatmentPlan}</p>
+                          <p>{appointment?.assesment?.treatmentPlan}</p>
                         </div>
                       </div>
                     </div>
