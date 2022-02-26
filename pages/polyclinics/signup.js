@@ -107,7 +107,7 @@ const Signup = () => {
         </div>
         <div className="container">
           <div className="row form-box">
-            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-6 px-5 py-4 h-auto w-auto">
+            <div className="col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 px-5 py-4">
               <div className="login-logo mt-3">
                 <Image
                   height="60"
@@ -121,11 +121,8 @@ const Signup = () => {
                   consult with doctor, appointment and many more!
                 </p>
               </div>
-              <div className="login-btn-option mt-4 d-flex align-items-center justify-content-between flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-column flex-xxl-row">
-                <button
-                  type="button"
-                  className="btn btn-primary px-4 disabled mb-3 mb-md-3 mb-lg-3 mb-xl-3 mb-xxl-0"
-                >
+              <div className="login-btn-option mt-4 d-flex align-items-center justify-content-between">
+                <button type="button" className="btn btn-primary px-4 disabled">
                   <i className="fab fa-facebook-f me-2"></i> Signup with
                   Facebook
                 </button>
@@ -198,7 +195,7 @@ const Signup = () => {
                 </form>
               </div>
             </div>
-            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-6 bg-background d-none d-sm-none d-md-none d-lg-none d-xl-none d-xxl-block h-auto w-auto"></div>
+            <div className="col-6 bg-background"></div>
           </div>
         </div>
       </div>

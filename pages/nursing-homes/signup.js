@@ -108,7 +108,7 @@ const Signup = () => {
         </div>
         <div className="container">
           <div className="row form-box">
-            <div className="col-6 px-5 py-4">
+            <div className="col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 px-5 py-4">
               <div className="login-logo mt-3">
                 <Image
                   height="60"
@@ -178,7 +178,7 @@ const Signup = () => {
                         <p>
                           Already a member?
                           <Link href="/nursing-homes/login">
-                            <a className="text-dark fw-bold">Login</a>
+                            <a className="text-dark fw-bold ms-2">Login</a>
                           </Link>
                         </p>
                       </div>

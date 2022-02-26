@@ -13,7 +13,7 @@
   position: relative;
 }
 
-@media screen and (min-width: 300px) and (max-width: 1200px) {
+@media screen and (min-width: 300px) and (max-width: 900px) {
   .form-box {
     height: fit-content;
     top: 5vh;
@@ -28,6 +28,35 @@
   height: 775px;
   overflow: hidden;
   background-position: center;
+}
+
+@media screen and (min-width: 300px) and (max-width: 900px) {
+  .bg-background {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+  .bg-background {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1368px) {
+  .form-box {
+    height: fit-content;
+    top: 5vh;
+    bottom: 5vh;
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 600px) {
+  .login-btn-option {
+    flex-direction: column;
+  }
+  .login-btn-option button {
+    margin-bottom: 10px;
+  }
 }
 
 button.btn-custom-login {

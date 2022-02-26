@@ -27,7 +27,7 @@ const HorizontalDoctorCard = ({ doctorData }) => {
                   {doctorData?.specialty?.name}
                 </p>
                 <h5 className="doc-department">
-                  <i className="fas fa-user-tag"></i>
+                  <img src="/assets/images/badge.png"></img>
                   {doctorData?.specialty?.name}
                 </h5>
                 <i className="far fa-envelope mb-3 me-2"></i>

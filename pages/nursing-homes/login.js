@@ -85,7 +85,7 @@ const Login = () => {
         </div>
         <div className="container">
           <div className="row form-box">
-            <div className="col-6 px-5 py-4">
+            <div className="col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 px-5 py-4">
               <div className="login-logo mt-3">
                 <Image
                   height="60"
@@ -171,7 +171,7 @@ const Login = () => {
                       <p className="mt-2">
                         Don&apos;t have an account?
                         <Link href="/nursing-homes/signup">
-                          <a className="text-dark fw-bold">Register </a>
+                          <a className="text-dark fw-bold ms-2">Register </a>
                         </Link>
                       </p>
                     </div>
