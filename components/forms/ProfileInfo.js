@@ -48,7 +48,19 @@ const ProfileInfo = ({ patient }) => {
         <div className="card">
           <div className="card-body">
             <div className="row form-row">
-              <div className="col-12 col-md-6">
+              <div className="col-12 col-md-2">
+                <div className="form-group">
+                  <label>Title</label>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                  >
+                    <option value="1">Mr.</option>
+                    <option value="2">Mrs.</option>
+                  </select>
+                </div>
+              </div>
+              <div className="col-12 col-md-5">
                 <div className="form-group">
                   <label>First Name</label>
                   <input
@@ -61,7 +73,7 @@ const ProfileInfo = ({ patient }) => {
                   />
                 </div>
               </div>
-              <div className="col-12 col-md-6">
+              <div className="col-12 col-md-5">
                 <div className="form-group">
                   <label>Last Name</label>
                   <input

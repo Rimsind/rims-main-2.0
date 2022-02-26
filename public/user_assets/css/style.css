@@ -3386,7 +3386,7 @@ html.menu-opened body {
   margin-bottom: 0;
 }
 .search-area {
-  background: #ffffff6b;
+  background: #d1d1d1;
   padding: 60px 30px;
   position: relative;
   z-index: 1;
@@ -12521,10 +12521,6 @@ ul.benifits-col li i {
   background: #f0f0f5;
 }
 
-.search-area {
-  border-radius: 0;
-}
-
 .bg-custom-login {
   background-color: #0de0fe;
 }
@@ -12542,13 +12538,6 @@ ul.benifits-col li i {
   background-color: white;
   border-color: white;
   box-shadow: 4px -2px 8px 1px #000000ad;
-}
-
-/* Polyclinic Details */
-@media screenn and (max-width: 300px) and (min-width: 576px) {
-  .polymap iframe {
-    width: 50px !important;
-  }
 }
 
 /* Prescription Stylesheet*/

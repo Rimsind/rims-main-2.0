@@ -37,10 +37,10 @@ const FooterBanner = () => {
               <div className="col-md-4">
                 <div className="cta-img">
                   <Image
-                    height="430"
-                    width="550"
-                    src="/assets/images/doc-slide-1.png"
-                    alt=""
+                    className="img-fluid"
+                    src="/user_assets/img/gif/cta-right.gif"
+                    height={300}
+                    width={300}
                   />
                 </div>
               </div>

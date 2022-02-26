@@ -1,7 +1,7 @@
 const SliderCardLoader = () => {
   return (
     <>
-      <div className="profile-widget me-3">
+      <div className="profile-widget me-3 w-100">
         <div className="doc-img card-img-loader-sec"></div>
         <div className="pro-content">
           <p className="placeholder-glow">

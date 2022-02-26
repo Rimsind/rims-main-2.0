@@ -239,7 +239,7 @@ const Index = () => {
                 </div>
               </div>
               <div className="col-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 mt-3 mt-md-3 mt-lg-0 mt-xl-0 mt-xxl-0">
-                <div className="right-about">
+                <div className="right-about py-4">
                   <div className="about-filter">
                     <div className="search-doctor">
                       <div className="search-area">
