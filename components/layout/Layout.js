@@ -1,9 +1,25 @@
-import NavBar from "components/NavBar";
+// import NavBar from "components/NavBar";
 import Footer from "components/Footer";
 import Head from "next/head";
 import Script from "next/script";
 import { TestNav } from "components/common";
+
 const Layout = ({ children }) => {
+  // const { auth } = useAuth();
+
+  // const { data } = useSWR(
+  //   `${apiUrl}/patients/${auth?.user?.profileId}`,
+  //   async (url) => {
+  //     const res = await axios.get(url, {
+  //       headers: {
+  //         authorization: `Bearer ${auth.token}`,
+  //       },
+  //     });
+  //     const result = res.data;
+  //     return result;
+  //   }
+  // );
+  // console.log(data, "data");
   return (
     <>
       <Head>

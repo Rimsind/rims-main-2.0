@@ -7,18 +7,20 @@ import axios from "axios";
 
 const TestNav = () => {
   const { auth } = useAuth();
+
   const { data } = useSWR(
-    `${apiUrl}/patients/${auth.user?.profileId}`,
+    `${apiUrl}/patients/${auth?.user?.profileId}`,
     async (url) => {
       const res = await axios.get(url, {
         headers: {
-          Authorization: `Bearer ${auth.token}`,
+          authorization: `Bearer ${auth.token}`,
         },
       });
       const result = res.data;
       return result;
     }
   );
+
   return (
     <>
       <section className="upper-main-mrq bg-primary pt-2">
