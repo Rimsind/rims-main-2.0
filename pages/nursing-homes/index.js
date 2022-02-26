@@ -2,6 +2,7 @@ import {
   BreadCrums,
   LocationFilter,
   HorizontalPolyclinicCard,
+  ListPagination,
 } from "components/common/index";
 import { apiUrl, fetcher } from "config/api";
 import useSWR from "swr";
@@ -50,10 +51,8 @@ const Index = () => {
                   </>
                 )}
 
-                <div className="load-more text-center mb-4">
-                  <a className="btn btn-load btn-sm" href="javascript:void(0);">
-                    Load More
-                  </a>
+                <div className="user-main-pagination mb-4">
+                  <ListPagination />
                 </div>
               </div>
             </div>

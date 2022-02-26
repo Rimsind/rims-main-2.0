@@ -35,12 +35,12 @@ const FooterBanner = () => {
                 </div>
               </div>
               <div className="col-md-4">
-                <div className="cta-img">
+                <div className="cta-img text-end">
                   <Image
                     className="img-fluid"
                     src="/user_assets/img/gif/cta-right.gif"
-                    height={300}
-                    width={300}
+                    height={400}
+                    width={400}
                   />
                 </div>
               </div>
