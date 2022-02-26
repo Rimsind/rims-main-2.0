@@ -2,26 +2,23 @@ const ListPagination = () => {
   return (
     <>
       <div className="list-pagination">
-        <nav>
-          <ul className="pagination justify-content-end">
-            <li className="page-item disabled">
-              <a
-                className="page-link"
-                href="#"
-                tabindex="-1"
-                aria-disabled="true"
-              >
-                Previous
-              </a>
-            </li>
-
-            <li className="page-item">
-              <a className="page-link active" href="#">
-                Next
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <div className="row">
+          <div className="col-10"></div>
+          <div className="col-2">
+            <div className="row">
+              <div className="col-6">
+                <button className="btn btn-primary">
+                  <i class="fal fa-long-arrow-left me-2"></i>Prev
+                </button>
+              </div>
+              <div className="col-6">
+                <button className="btn btn-primary">
+                  Next<i className="fal fa-long-arrow-right ms-2"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
