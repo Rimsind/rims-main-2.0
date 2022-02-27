@@ -13,11 +13,19 @@
   position: relative;
 }
 
+@media screen and (min-width: 300px) and (max-width: 1200px) {
+  .form-box {
+    height: fit-content;
+    top: 5vh;
+    bottom: 5vh;
+  }
+}
+
 .bg-background1 {
   /* background: url(/assets/images/background-right.png); */
   background-size: cover;
   background-repeat: no-repeat;
-  height: 731px;
+  height: 756px;
   overflow: hidden;
   background-position: center;
 }

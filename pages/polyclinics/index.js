@@ -2,6 +2,7 @@ import {
   BreadCrums,
   HorizontalPolyclinicCard,
   LocationFilter,
+  ListPagination,
 } from "components/common/index";
 import { ListingPageLoader } from "components/Loaders";
 import { apiUrl, fetcher } from "config/api";
@@ -48,10 +49,8 @@ const Index = () => {
                   </>
                 )}
 
-                <div className="load-more text-center mb-4">
-                  <a className="btn btn-load btn-sm" href="javascript:void(0);">
-                    Load More
-                  </a>
+                <div className="user-main-pagination mb-4">
+                  <ListPagination />
                 </div>
               </div>
             </div>

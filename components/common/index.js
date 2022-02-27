@@ -14,6 +14,7 @@ import LocationCard from "./Locationcard";
 import SearchFilter from "./SearchFilter";
 import VerifyCard from "./VerifyCard";
 import TestNav from "./TestNav";
+import ListPagination from "./ListPagination";
 
 export {
   BreadCrums,
@@ -32,4 +33,5 @@ export {
   SearchFilter,
   VerifyCard,
   TestNav,
+  ListPagination,
 };

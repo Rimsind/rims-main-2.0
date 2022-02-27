@@ -173,7 +173,7 @@ const Login = () => {
                       <p className="mt-2">
                         Don&apos;t have an account?
                         <Link href="/polyclinics/signup">
-                          <a href="#" className="text-dark fw-bold">
+                          <a href="#" className="text-dark fw-bold ms-2">
                             Register{" "}
                           </a>
                         </Link>
