@@ -6,6 +6,9 @@ import "../public/user_assets/css/style.css";
 import "../public/user_assets/css/main.css";
 import "../public/assets/css/style2.css";
 import "../public/assets/css/style3.css";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import GlobalProvider from "context";
 
 export default function MyApp({ Component, pageProps }) {

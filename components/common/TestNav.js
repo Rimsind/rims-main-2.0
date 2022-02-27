@@ -202,7 +202,7 @@ const TestNav = () => {
                 </li>
 
                 <li className="nav-item">
-                  <Link href="/">
+                  <Link href="http://medshop.rimsind.com/">
                     <a className="nav-link navbar-link text-white">Pharmacy</a>
                   </Link>
                 </li>

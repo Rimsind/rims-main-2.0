@@ -1,25 +1,9 @@
-// import NavBar from "components/NavBar";
 import Footer from "components/Footer";
 import Head from "next/head";
 import Script from "next/script";
 import { TestNav } from "components/common";
 
 const Layout = ({ children }) => {
-  // const { auth } = useAuth();
-
-  // const { data } = useSWR(
-  //   `${apiUrl}/patients/${auth?.user?.profileId}`,
-  //   async (url) => {
-  //     const res = await axios.get(url, {
-  //       headers: {
-  //         authorization: `Bearer ${auth.token}`,
-  //       },
-  //     });
-  //     const result = res.data;
-  //     return result;
-  //   }
-  // );
-  // console.log(data, "data");
   return (
     <>
       <Head>
@@ -38,7 +22,6 @@ const Layout = ({ children }) => {
         <link rel="shortcut icon" href="/assets/images/favicon.png" />
       </Head>
       <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></Script>
-      {/* <NavBar /> */}
       <TestNav />
       <main>{children}</main>
       <Footer />
