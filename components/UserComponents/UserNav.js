@@ -26,11 +26,12 @@ const UserNav = (props) => {
                     </h3>
                     <div className="patient-details">
                       <h5>
-                        <i className="fas fa-birthday-cake"></i> {patient?.dob},
-                        38 years
+                        <i className="fas fa-birthday-cake"></i>
+                        {patient?.age} years old, {patient?.gender}
                       </h5>
                       <h5 className="mb-0">
-                        <i className="fas fa-map-marker-alt"></i> Newyork, USA
+                        <i className="fas fa-map-marker-alt"></i>{" "}
+                        {patient?.address?.city}, {patient?.address?.state}
                       </h5>
                     </div>
                   </div>

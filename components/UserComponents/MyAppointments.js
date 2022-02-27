@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 const MyAppointments = ({ data }) => {
+  console.log(data);
   return (
     <>
       <tr>
@@ -25,11 +26,11 @@ const MyAppointments = ({ data }) => {
         </td>
         <td>
           {data?.date}
-          <span className="d-block text-info">10.00 AM</span>
+          <span className="d-block text-info">{data?.timeSlot}</span>
         </td>
 
         <td>₹add fee</td>
-        <td>add</td>
+        <td>{data?.eprescription?.followup?.date}</td>
         <td>
           <span className="badge rounded-pill bg-success-light">Confirm</span>
         </td>

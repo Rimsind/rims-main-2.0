@@ -6,29 +6,24 @@ import { useState } from "react";
 
 const MedicalHistory = ({ patient }) => {
   const { medicalHistory } = patient;
+
   const { auth } = useAuth();
 
   const [surgery, setSurgery] = useState();
   const [surgeryDate, setSurgeryDate] = useState();
-  const [allSurgery, setAllSurgery] = useState([]);
-
   const [loading, setLoading] = useState(false);
-  const addSurgicalHistory = () => {
-    setAllSurgery([
-      ...allSurgery,
-      {
-        name: surgery,
-        date: surgeryDate,
-      },
-    ]);
-    setSurgery("");
-    setSurgeryDate("");
-  };
 
-  const submitSurgicalHistory = async () => {
+  const submitSurgery = async () => {
     const payload = {
       medicalHistory: {
-        surgicalHistory: allSurgery,
+        ...medicalHistory,
+        surgicalHistory: [
+          ...medicalHistory?.surgicalHistory,
+          {
+            name: surgery,
+            date: surgeryDate,
+          },
+        ],
       },
     };
     const res = await axios.put(
@@ -41,8 +36,8 @@ const MedicalHistory = ({ patient }) => {
       }
     );
     const result = res.data;
-    alert("Medical History Updated Succesfully");
-    return result;
+    alert("Surgical History added Succesfully");
+    return result, setLoading(false), setSurgery(""), setSurgeryDate("");
   };
 
   const [medicineName, setMedicineName] = useState();
@@ -54,27 +49,40 @@ const MedicalHistory = ({ patient }) => {
   const [frequency, setFrequency] = useState();
   const [sideEffect, setSideEffect] = useState();
   const [ifYes, setIfYes] = useState();
-  const [medicineList, setMedicineList] = useState([]);
 
-  const addMedicine = () => {
-    setMedicineList([
-      ...medicineList,
-      {
-        medicineName: medicineName,
-        dose: dose,
-        data: date,
-        status: status,
-        type: type,
-        route: route,
-        frequency: frequency,
-        sideEffect: sideEffect,
-        ifYes: ifYes,
+  const submitMedicine = async () => {
+    const payload = {
+      medicalHistory: {
+        ...medicalHistory,
+        medicationHistory: [
+          ...medicalHistory?.medicationHistory,
+          {
+            medicineName: medicineName,
+            dose: dose,
+            startData: date,
+            status: status,
+            type: type,
+            route: route,
+            frequency: frequency,
+            sideEffect: sideEffect,
+            ifYes: ifYes,
+          },
+        ],
       },
-    ]);
-    setMedicineName("");
-    setDose("");
-    setDate("");
-    setIfYes("");
+    };
+
+    const res = await axios.put(
+      `${apiUrl}/patients/${auth.user?.profileId}`,
+      payload,
+      {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      }
+    );
+    const result = res.data;
+    alert("Medical History Updated Succesfully");
+    return result, setMedicineName(""), setDose(""), setDate(""), setIfYes("");
   };
 
   const { register, handleSubmit } = useForm();
@@ -84,11 +92,11 @@ const MedicalHistory = ({ patient }) => {
     try {
       const payload = {
         medicalHistory: {
+          ...medicalHistory,
           past_medical_history: data.past_medical_history?.toString(),
           diagnostic_tests: data.diagnostic_tests?.toString(),
-          // allergies: data.allergies,
-          // prescription_medications: data.prescription_medications,
-          // non_prescription_medications: data.non_prescription_medications?.toString(),
+          allergies: data.allergies,
+          vactions: data.vactions,
           pastMedicalHistoryForWomen: {
             pelvicDisease: data.pelvicDisease,
             endometriosis: data.endometriosis,
@@ -97,16 +105,8 @@ const MedicalHistory = ({ patient }) => {
             complicatedPregnancy: data.complicatedPregnancy,
             other: data.other,
           },
-          // surgicalHistory: [
-          //   ...medicalHistory.surgicalHistory,
-          //   {
-          //     name: data.surgicalHistoryTitle,
-          //     date: data.surgicalHistoryDate,
-          //   },
-          // ],
         },
       };
-      // console.log(payload, "surgical history");
 
       const res = await axios.put(
         `${apiUrl}/patients/${auth.user?.profileId}`,
@@ -608,13 +608,9 @@ const MedicalHistory = ({ patient }) => {
                 </div>
               </div>
               <div className="col-md-3 col-lg-2 col-xl-2 text-end mt-2 mt-md-0 mt-lg-0">
-                <button
-                  className="btn btn-primary"
-                  onClick={addSurgicalHistory}
-                  type="button"
-                >
+                <span className="btn btn-primary" onClick={submitSurgery}>
                   Add Items
-                </button>
+                </span>
               </div>
             </div>
           </div>
@@ -622,6 +618,7 @@ const MedicalHistory = ({ patient }) => {
             <table className="table table-striped">
               <thead>
                 <tr>
+                  <th scope="col"></th>
                   <th scope="col">Title</th>
                   <th scope="col">Date</th>
                 </tr>
@@ -629,6 +626,7 @@ const MedicalHistory = ({ patient }) => {
               <tbody>
                 {medicalHistory?.surgicalHistory?.map((item, index) => (
                   <tr key={index}>
+                    <td>*</td>
                     <td>{item.name}</td>
                     <td>{item.date}</td>
                   </tr>
@@ -847,13 +845,9 @@ const MedicalHistory = ({ patient }) => {
             </div>
           </div>
           <div className="text-end">
-            <button
-              className="btn btn-primary"
-              onClick={addSurgicalHistory}
-              type="button"
-            >
+            <span className="btn btn-primary" onClick={submitMedicine}>
               Add Items
-            </button>
+            </span>
           </div>
         </div>
 
@@ -873,11 +867,11 @@ const MedicalHistory = ({ patient }) => {
               </tr>
             </thead>
             <tbody>
-              {medicineList.map((item, index) => (
+              {medicalHistory?.medicationHistory?.map((item, index) => (
                 <tr key={index}>
                   <td>{item.medicineName}</td>
                   <td>{item.dose}</td>
-                  <td>{item.date}</td>
+                  <td>{item.startDate}</td>
                   <td>{item.status}</td>
                   <td>{item.type}</td>
                   <td>{item.route}</td>
@@ -900,6 +894,12 @@ const MedicalHistory = ({ patient }) => {
               className="form-control"
               name="allergies"
               placeholder=""
+              {...register("allergies")}
+              defaultValue={
+                !!medicalHistory && !!medicalHistory.allergies
+                  ? medicalHistory.allergies
+                  : ""
+              }
             />
           </div>
         </div>
@@ -912,8 +912,14 @@ const MedicalHistory = ({ patient }) => {
             <input
               type="text"
               className="form-control"
-              name="allergies"
+              name="vactions"
               placeholder=""
+              defaultValue={
+                !!medicalHistory && !!medicalHistory.vactions
+                  ? medicalHistory.vactions
+                  : ""
+              }
+              {...register("vactions")}
             />
           </div>
         </div>

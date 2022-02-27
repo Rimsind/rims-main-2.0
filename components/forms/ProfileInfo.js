@@ -14,9 +14,11 @@ const ProfileInfo = ({ patient }) => {
     event.preventDefault();
     try {
       const payload = {
+        title: data.title,
         first_name: data.first_name,
         last_name: data.last_name,
         dob: data.dob,
+        age: data.age,
         gender: data.gender,
         marital_status: data.marital_status,
         phone: data.phone,
@@ -42,6 +44,8 @@ const ProfileInfo = ({ patient }) => {
     }
   };
 
+  const titleList = ["Mr", "Mrs", "Ms", "Miss"];
+
   return (
     <>
       <form onSubmit={handleSubmit(updateProfile)}>
@@ -54,9 +58,16 @@ const ProfileInfo = ({ patient }) => {
                   <select
                     class="form-select"
                     aria-label="Default select example"
+                    {...register("title")}
                   >
-                    <option value="1">Mr.</option>
-                    <option value="2">Mrs.</option>
+                    <option defaultValue={!!patient?.title && patient.title}>
+                      {!!patient?.title && patient.title}
+                    </option>
+                    {titleList.map((items, index) => (
+                      <option value={items} key={index}>
+                        {items}
+                      </option>
+                    ))}
                   </select>
                 </div>
               </div>
@@ -84,7 +95,7 @@ const ProfileInfo = ({ patient }) => {
                   />
                 </div>
               </div>
-              <div className="col-12 col-md-4">
+              <div className="col-12 col-md-3">
                 <div className="form-group">
                   <label>Date of Birth</label>
                   <div className="cal-icon">
@@ -97,7 +108,18 @@ const ProfileInfo = ({ patient }) => {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-md-4">
+              <div className="col-12 col-md-3">
+                <div className="form-group">
+                  <label>Age</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    {...register("age")}
+                    defaultValue={!!patient?.age ? patient.age : ""}
+                  />
+                </div>
+              </div>
+              <div className="col-12 col-md-3">
                 <div className="form-group">
                   <label>Gender</label>
                   <select
@@ -116,7 +138,7 @@ const ProfileInfo = ({ patient }) => {
                   </select>
                 </div>
               </div>
-              <div className="col-12 col-md-4">
+              <div className="col-12 col-md-3">
                 <div className="form-group">
                   <label>Martial Status</label>
                   <select
