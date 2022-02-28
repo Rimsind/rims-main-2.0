@@ -39,13 +39,13 @@ const UserNav = (props) => {
               </>
             ) : (
               <>
-                <div class="profile-info-widget">
-                  <div class="doc-img card-img-loader-sec mb-3"></div>
-                  <div class="profile-det-info">
-                    <p class="placeholder-glow">
-                      <span class="placeholder col-8 bg-primary"></span>
-                      <span class="placeholder col-9 bg-secondary"></span>
-                      <span class="placeholder col-6 bg-secondary"></span>
+                <div className="profile-info-widget">
+                  <div className="doc-img card-img-loader-sec mb-3"></div>
+                  <div className="profile-det-info">
+                    <p className="placeholder-glow">
+                      <span className="placeholder col-8 bg-primary"></span>
+                      <span className="placeholder col-9 bg-secondary"></span>
+                      <span className="placeholder col-6 bg-secondary"></span>
                     </p>
                   </div>
                 </div>

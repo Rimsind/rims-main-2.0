@@ -10,15 +10,16 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 const Checkout = () => {
   const { doctorId, polyclinicId, fee, date, time } = useRouter().query;
-  if (!doctorId || !polyclinicId || !fee || !date || !time) {
-    return <ForbidenPage />;
-  }
 
   const { data: doctor } = useSWR(`${apiUrl}/doctors/${doctorId}`, fetcher);
   const { data: polyclinic } = useSWR(
     `${apiUrl}/polyclinics/${polyclinicId}`,
     fetcher
   );
+
+  if (!doctorId || !polyclinicId || !fee || !date || !time) {
+    return <ForbidenPage />;
+  }
 
   const [description, setDescription] = useState();
   const [duration, setDuration] = useState();

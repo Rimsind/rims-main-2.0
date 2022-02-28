@@ -102,6 +102,7 @@ const Index = () => {
                                 src="/user_assets/img/security_2.png"
                                 height={50}
                                 width={50}
+                                alt="img"
                               />
                               <p>
                                 256-bit
@@ -117,6 +118,7 @@ const Index = () => {
                                 src="/user_assets/img/security_3.png"
                                 height={50}
                                 width={50}
+                                alt="img"
                               />
                               <p>
                                 ISO 27001
@@ -132,6 +134,7 @@ const Index = () => {
                                 src="/user_assets/img/security_4.png"
                                 height={50}
                                 width={50}
+                                alt="img"
                               />
                               <p>
                                 HIPAA
@@ -147,6 +150,7 @@ const Index = () => {
                                 src="/user_assets/img/security_5.png"
                                 height={50}
                                 width={50}
+                                alt="img"
                               />
                               <p>
                                 DSCI
@@ -165,6 +169,7 @@ const Index = () => {
                           src="/user_assets/img/security-seal.png"
                           height={300}
                           width={300}
+                          alt="img"
                         />
                       </div>
                     </div>

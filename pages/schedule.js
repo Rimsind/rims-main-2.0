@@ -8,19 +8,18 @@ import ForbidenPage from "components/Loaders/ForbidenPage";
 
 const Schedule = () => {
   const { doctorId, polyclinicId, fee } = useRouter().query;
-  if (!doctorId || !polyclinicId || !fee) {
-    return <ForbidenPage />;
-  }
+
   const { data: doctor } = useSWR(`${apiUrl}/doctors/${doctorId}`, fetcher);
   const { data: polyclinic } = useSWR(
     `${apiUrl}/polyclinics/${polyclinicId}`,
     fetcher
   );
+  if (!doctorId || !polyclinicId || !fee) {
+    return <ForbidenPage />;
+  }
 
   const [date, setDate] = useState();
   const [time, setTime] = useState();
-
-  console.log(date, time);
 
   const submitData = () => {
     if (date && time) {

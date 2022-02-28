@@ -202,7 +202,7 @@ const SubjectiveInformation = () => {
                                 </p>
                               </div>
                               <div className="col-md-4 inner_column">
-                                <p className="fs-6">Master's Degree</p>
+                                <p className="fs-6">Master&apos;s Degree</p>
                               </div>
                             </div>
                           </div>

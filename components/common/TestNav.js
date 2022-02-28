@@ -35,15 +35,17 @@ const TestNav = () => {
         <div className="container-fluid">
           <div className="nav-topbar d-flex justify-content-between align-items-center">
             <div className="brand-logo">
-              <a className="navbar-brand me-auto" href="/">
-                <Image
-                  height="70"
-                  width="100"
-                  className="logo"
-                  src="/assets/images/logo-dark.png"
-                  alt=""
-                />
-              </a>
+              <Link href="/">
+                <a className="navbar-brand me-auto">
+                  <Image
+                    height="70"
+                    width="100"
+                    className="logo"
+                    src="/assets/images/logo-dark.png"
+                    alt=""
+                  />
+                </a>
+              </Link>
             </div>
 
             <div className="topbar-right-items d-flex justify-content-between align-items-center">

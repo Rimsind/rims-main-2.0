@@ -56,7 +56,7 @@ const ProfileInfo = ({ patient }) => {
                 <div className="form-group">
                   <label>Title</label>
                   <select
-                    class="form-select"
+                    className="form-select"
                     aria-label="Default select example"
                     {...register("title")}
                   >

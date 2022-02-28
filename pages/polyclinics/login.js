@@ -90,6 +90,7 @@ const Login = () => {
                   height="60"
                   width="90"
                   src="/assets/images/logo-dark.png"
+                  alt="login Banner"
                 />
               </div>
               <div className="login-con mt-4">

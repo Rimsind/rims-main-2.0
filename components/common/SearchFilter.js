@@ -12,7 +12,7 @@ const SearchFilter = () => {
               <div className="col-12">
                 <div className="form-check form-check-inline">
                   <input className="form-check-input" type="checkbox" />
-                  <label className="form-check-label" for="inlineCheckbox1">
+                  <label className="form-check-label" htmlFor="inlineCheckbox1">
                     Male Doctor
                   </label>
                 </div>
@@ -20,7 +20,7 @@ const SearchFilter = () => {
               <div className="col-12">
                 <div className="form-check form-check-inline">
                   <input className="form-check-input" type="checkbox" />
-                  <label className="form-check-label" for="inlineCheckbox1">
+                  <label className="form-check-label" htmlFor="inlineCheckbox1">
                     Female Doctor
                   </label>
                 </div>
@@ -33,7 +33,7 @@ const SearchFilter = () => {
               <div className="col-12">
                 <div className="form-check form-check-inline">
                   <input className="form-check-input" type="checkbox" />
-                  <label className="form-check-label" for="inlineCheckbox1">
+                  <label className="form-check-label" htmlFor="inlineCheckbox1">
                     Urology
                   </label>
                 </div>
@@ -41,7 +41,7 @@ const SearchFilter = () => {
               <div className="col-12">
                 <div className="form-check form-check-inline">
                   <input className="form-check-input" type="checkbox" />
-                  <label className="form-check-label" for="inlineCheckbox1">
+                  <label className="form-check-label" htmlFor="inlineCheckbox1">
                     Neurology
                   </label>
                 </div>
@@ -49,7 +49,7 @@ const SearchFilter = () => {
               <div className="col-12">
                 <div className="form-check form-check-inline">
                   <input className="form-check-input" type="checkbox" />
-                  <label className="form-check-label" for="inlineCheckbox1">
+                  <label className="form-check-label" htmlFor="inlineCheckbox1">
                     Dentist
                   </label>
                 </div>
@@ -57,7 +57,7 @@ const SearchFilter = () => {
               <div className="col-12">
                 <div className="form-check form-check-inline">
                   <input className="form-check-input" type="checkbox" />
-                  <label className="form-check-label" for="inlineCheckbox1">
+                  <label className="form-check-label" htmlFor="inlineCheckbox1">
                     Orthopedic
                   </label>
                 </div>
@@ -65,7 +65,7 @@ const SearchFilter = () => {
               <div className="col-12">
                 <div className="form-check form-check-inline">
                   <input className="form-check-input" type="checkbox" />
-                  <label className="form-check-label" for="inlineCheckbox1">
+                  <label className="form-check-label" htmlFor="inlineCheckbox1">
                     Cardiologist
                   </label>
                 </div>
@@ -73,7 +73,7 @@ const SearchFilter = () => {
               <div className="col-12">
                 <div className="form-check form-check-inline">
                   <input className="form-check-input" type="checkbox" />
-                  <label className="form-check-label" for="inlineCheckbox1">
+                  <label className="form-check-label" htmlFor="inlineCheckbox1">
                     Heart Specialist
                   </label>
                 </div>

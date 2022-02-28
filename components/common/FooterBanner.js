@@ -41,6 +41,7 @@ const FooterBanner = () => {
                     src="/user_assets/img/gif/cta-right.gif"
                     height={400}
                     width={400}
+                    alt=""
                   />
                 </div>
               </div>
