@@ -1,6 +1,5 @@
 import Image from "next/image";
 const PolyclinicTimetableCard = ({ schedule }) => {
-  console.log(schedule);
   return (
     <>
       <div className="doctor-widget p-4 shadow-sm">
@@ -36,7 +35,7 @@ const PolyclinicTimetableCard = ({ schedule }) => {
             </div>
           </div>
         </div>
-        <div className="doc-info-center ms-auto">
+        {/* <div className="doc-info-center ms-auto">
           <div className="widget business-widget">
             <div className="widget-content">
               <div className="listing-hours">
@@ -68,7 +67,7 @@ const PolyclinicTimetableCard = ({ schedule }) => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="doc-info-right">
           <div className="clini-infos">
             <ul>

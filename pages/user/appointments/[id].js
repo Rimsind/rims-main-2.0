@@ -191,7 +191,7 @@ const AppointmentId = () => {
                       </thead>
                       <tbody>
                         {appointments?.chiefComplaints.map((items, index) => (
-                          <tr>
+                          <tr key={index}>
                             <td>{items?.description}</td>
                             <td>{items?.duration} Days</td>
                           </tr>

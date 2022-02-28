@@ -5,7 +5,7 @@ import { useAuth } from "context";
 import { useState } from "react";
 
 const SocialHistory = ({ patient }) => {
-  const { socialHistory } = patient;
+  const { socialHistory, updated_at } = patient;
   const { auth } = useAuth();
   const [loading, setLoading] = useState(false);
   const { register, handleSubmit } = useForm();
@@ -385,7 +385,10 @@ const SocialHistory = ({ patient }) => {
             </div>
           </div>
         </div>
-        <div className="child-gen-form-heading mb-3">
+        <div
+          className="child-gen-form-heading mb-3"
+          style={{ borderBottom: "1px solid #bbbaba" }}
+        >
           <h5 className="fs-5 fs-bold text-dark">Social / Health Habits</h5>
           <div className="gen-form">
             <div className="row justify-content-between align-items-start">
@@ -440,25 +443,7 @@ const SocialHistory = ({ patient }) => {
                       </div>
                     </div>
                   </div>
-                  {/* <div className="col-md-3" {...register("smokeTobacco")}>
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="smokeTobacco"
-                                value="Occasionally"
-                                defaultChecked={
-                                  !!socialHistory &&
-                                  socialHistory.smokeTobacco === "Occasionally"
-                                }
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">Occasionally</p>
-                            </div>
-                          </div>
-                        </div> */}
+
                   <div
                     className="col-md-3 col-sm-3"
                     {...register("smokeTobacco")}
@@ -560,25 +545,7 @@ const SocialHistory = ({ patient }) => {
                       </div>
                     </div>
                   </div>
-                  {/* <div className="col-md-3" {...register("smokeTobacco")}>
-                          <div className="row">
-                            <div className="col-md-2">
-                              <input
-                                className="form-check-input"
-                                type="radio"
-                                name="smokeTobacco"
-                                value="Occasionally"
-                                defaultChecked={
-                                  !!socialHistory &&
-                                  socialHistory.smokeTobacco === "Occasionally"
-                                }
-                              />
-                            </div>
-                            <div className="col-md-10">
-                              <p className="space-x-4">Occasionally</p>
-                            </div>
-                          </div>
-                        </div> */}
+
                   <div
                     className="col-md-3 col-sm-3"
                     {...register("drinkAlcohol")}
@@ -696,7 +663,7 @@ const SocialHistory = ({ patient }) => {
                   </div>
                 </div>
                 <div
-                  className="row justify-centent-between align-items-center"
+                  className="row justify-centent-between align-items-center mb-3"
                   {...register("exerciseDurationDailyInMin")}
                 >
                   <div className="col-md-6">
@@ -723,8 +690,9 @@ const SocialHistory = ({ patient }) => {
         </div>
         <div className="gen-form-soft-button">
           <div className="row">
-            <div className="col-md-4"></div>
-            <div className="col-md-4"></div>
+            <div className="col-md-8 col-sm-8">
+              <p className="text-info">Last Updated On : {updated_at}</p>
+            </div>
             <div className="col-md-4">
               <div className="right-button" style={{ textAlign: "right" }}>
                 <input

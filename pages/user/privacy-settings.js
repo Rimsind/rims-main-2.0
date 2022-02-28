@@ -1,6 +1,24 @@
 import { BreadCrums } from "components/common";
 import UserNav from "components/UserComponents/UserNav";
+import { useAuth } from "context";
+import { apiUrl } from "config/api";
+import useSWR from "swr";
+import axios from "axios";
 const PrivacySettings = () => {
+  const { auth } = useAuth();
+
+  const { data } = useSWR(
+    `${apiUrl}/patients/${auth.user?.profileId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
   return (
     <>
       <div className="main-wrapper">
@@ -12,7 +30,7 @@ const PrivacySettings = () => {
         <div className="content">
           <div className="container-fluid">
             <div className="row">
-              <UserNav status6="active" />
+              <UserNav status6="active" patient={data} />
 
               <div className="col-md-12 col-sm-12 col-lg-8 col-xl-9">
                 <div className="card">

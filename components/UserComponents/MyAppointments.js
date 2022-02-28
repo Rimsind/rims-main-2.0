@@ -29,7 +29,7 @@ const MyAppointments = ({ data }) => {
           <span className="d-block text-info">{data?.timeSlot}</span>
         </td>
 
-        <td>₹add fee</td>
+        <td>₹{data?.fee}</td>
         <td>{data?.eprescription?.followup?.date}</td>
         <td>
           <span className="badge rounded-pill bg-success-light">Confirm</span>

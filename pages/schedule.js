@@ -17,11 +17,6 @@ const Schedule = () => {
     fetcher
   );
 
-  // const { auth } = useAuth();
-
-  // if (!auth.user && !auth.token) {
-  //   Router.push(`user/login`);
-  // }
   const [date, setDate] = useState();
   const [time, setTime] = useState();
 
@@ -36,21 +31,6 @@ const Schedule = () => {
       alert("Please Select Date and Time");
     }
   };
-
-  // const { register, handleSubmit } = useForm();
-  // const addDate = async (data, event) => {
-  //   event.preventDefault();
-  //   if (!data.date) {
-  //     alert("Please Select Date and Time");
-  //   } else {
-  //     const payload = {
-  //       date: data.date,
-  //     };
-  //     Router.push(
-  //       `/checkout?doctorId=${doctorId}&&polyclinicId=${polyclinicId}&&fee=${fee}&&date=${payload.date}`
-  //     );
-  //   }
-  // };
 
   return (
     <>

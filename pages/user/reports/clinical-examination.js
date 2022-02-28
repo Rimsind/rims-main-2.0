@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useAuth } from "context";
 import useSWR from "swr";
 import { apiUrl } from "config/api";
+import Image from "next/image";
 const ClinicalExamination = () => {
   const { id } = useRouter().query;
 
@@ -29,7 +30,9 @@ const ClinicalExamination = () => {
             <div className="row align-items-center">
               <div className="col-md-2">
                 <div className="left-content">
-                  <img
+                  <Image
+                    height="100"
+                    width="130"
                     src="/assets/images/logo-dark.png"
                     style={{ height: "8rem" }}
                   />
@@ -72,7 +75,9 @@ const ClinicalExamination = () => {
                 <div className="col-md-4">
                   <div className="clini-exam-left-content text-light">
                     <div className="patient_image mb-2">
-                      <img
+                      <Image
+                        height={350}
+                        width={350}
                         className="clini-exam-img"
                         src={
                           appointment?.patient?.image?.url ||

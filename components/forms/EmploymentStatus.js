@@ -4,7 +4,7 @@ import axios from "axios";
 import { useAuth } from "context";
 import { useState } from "react";
 const EmploymentStatus = ({ patient }) => {
-  const { employmentStatus } = patient;
+  const { employmentStatus, updated_at } = patient;
 
   const { auth } = useAuth();
   const [loading, setLoading] = useState(false);
@@ -266,7 +266,10 @@ const EmploymentStatus = ({ patient }) => {
             </div>
           </div>
         </div>
-        <div className="gen-form mb-3">
+        <div
+          className="gen-form mb-3"
+          style={{ borderBottom: "1px solid #bbbaba" }}
+        >
           <div className="row justify-centent-between align-items-start">
             <div className="col-md-3 col-sm-12">
               <h3 className="fs-6 fs-bold text-dark">
@@ -305,8 +308,9 @@ const EmploymentStatus = ({ patient }) => {
         </div>
         <div className="gen-form-soft-button">
           <div className="row">
-            <div className="col-md-4"></div>
-            <div className="col-md-4"></div>
+            <div className="col-md-8 col-sm-8">
+              <p className="text-info">Last Updated On : {updated_at}</p>
+            </div>
             <div className="col-md-4">
               <div className="right-button" style={{ textAlign: "right" }}>
                 <input

@@ -4,7 +4,8 @@ import axios from "axios";
 import { useAuth } from "context";
 import { useState } from "react";
 const FamilyMadicalHistory = ({ patient }) => {
-  const { familyHistory } = patient;
+  const { familyHistory, updated_at } = patient;
+  const dataLength = familyHistory?.length;
   const { auth } = useAuth();
   const [loading, setLoading] = useState(false);
   const { register, handleSubmit, reset } = useForm();
@@ -76,12 +77,21 @@ const FamilyMadicalHistory = ({ patient }) => {
                   </label>
                 </div>
                 <div className="col-md-8">
-                  <input
-                    type="text"
-                    className="form-control"
-                    name="relation"
+                  <select
+                    className="form-select"
+                    aria-label="Default select example"
                     {...register("relation")}
-                  />
+                  >
+                    <option selected>Open this select menu</option>
+                    <option value="Father">Father</option>
+                    <option value="Mother">Mother</option>
+                    <option value="Elder Brother">Elder Brother</option>
+                    <option value="Younger Brother">Younger Brother</option>
+                    <option value="Elder Sister">Elder Sister</option>
+                    <option value="Younger Sister">Younger Sister</option>
+                    <option value="Grand Father">Grand Father</option>
+                    <option value="Grand Mother">Grand Mother</option>
+                  </select>
                 </div>
               </div>
             </div>
@@ -205,19 +215,32 @@ const FamilyMadicalHistory = ({ patient }) => {
               </tr>
             </thead>
             <tbody>
-              {familyHistory.map((item, index) => (
-                <tr key={index}>
-                  <td>{item.relation}</td>
-                  <td>{item.age_if_living}</td>
-                  <td>{item.age_if_death}</td>
-                  <td>{item.cause_of_death}</td>
-                  <td>{item.diseases}</td>
-                </tr>
-              ))}
+              {dataLength === 0 ? (
+                <>
+                  <tr>
+                    <td colSpan="5" className="text-danger text-center">
+                      No Previous Data Found !!
+                    </td>
+                  </tr>
+                </>
+              ) : (
+                <>
+                  {familyHistory.map((item, index) => (
+                    <tr key={index}>
+                      <td>{item.relation}</td>
+                      <td>{item.age_if_living}</td>
+                      <td>{item.age_if_death}</td>
+                      <td>{item.cause_of_death}</td>
+                      <td>{item.diseases}</td>
+                    </tr>
+                  ))}
+                </>
+              )}
             </tbody>
           </table>
         </div>
       </div>
+      <p className="text-info">Last Updated On : {updated_at}</p>
     </>
   );
 };

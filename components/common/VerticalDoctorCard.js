@@ -29,8 +29,7 @@ const VerticalDoctorCard = ({ data }) => {
 
           <ul className="available-info">
             <li>
-              <i className="fas fa-certificate text-danger"></i>{" "}
-              {data?.qualification}
+              <i className="fas fa-certificate "></i> {data?.qualification}
             </li>
             <li>
               <Image height="20" width="20" src={data?.specialty?.image?.url} />{" "}

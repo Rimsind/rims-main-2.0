@@ -52,6 +52,7 @@ const Checkout = () => {
       doctor: doctor.id,
       date: date,
       timeSlot: time,
+      fee: fee,
       chiefComplaints: complainList,
       polyclinic: polyclinic.id,
       general_problems: data.general_problems.toString(),

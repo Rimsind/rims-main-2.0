@@ -47,13 +47,16 @@ const DoctorTimetableCard = ({ schedule, doctor, auth }) => {
                 {schedule?.polyclinic?.email}
                 <div className="clinic-details"></div>
                 <div className="clinic-services">
-                  <span>Dental Fillings</span>
+                  {schedule?.schedule.map((items, index) => (
+                    <span key={index}>{items?.day}</span>
+                  ))}
+                  {/* <span>Dental Fillings</span>
                   <span> Whitneing</span>
-                  <span> Whitneing</span>
+                  <span> Whitneing</span> */}
                 </div>
               </div>
             </div>
-            <div className="doc-info-center ms-auto">
+            {/* <div className="doc-info-center ms-auto">
               <div className="widget business-widget">
                 <div className="widget-content">
                   <div className="listing-hours">
@@ -71,7 +74,7 @@ const DoctorTimetableCard = ({ schedule, doctor, auth }) => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="doc-info-right">
               <div className="clini-infos">
                 <ul>

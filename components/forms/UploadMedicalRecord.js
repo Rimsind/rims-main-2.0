@@ -6,7 +6,9 @@ import { useAuth } from "context";
 import { uploadImage } from "utils/uploadImage";
 
 const UploadMedicalRecord = ({ patient }) => {
-  const { upload_medical_record } = patient;
+  const { upload_medical_record, updated_at } = patient;
+  const dataLenght = upload_medical_record?.length;
+
   const { auth } = useAuth();
 
   const [loading, setLoading] = useState(false);
@@ -99,7 +101,7 @@ const UploadMedicalRecord = ({ patient }) => {
             borderBottom: "1px solid #bbbaba",
           }}
         />
-        <table className="table table-striped">
+        <table className="table table-striped mb-3">
           <thead>
             <tr>
               <th scope="col">Title</th>
@@ -107,18 +109,29 @@ const UploadMedicalRecord = ({ patient }) => {
             </tr>
           </thead>
           <tbody>
-            {upload_medical_record.map((item, index) => (
-              <tr key={index}>
-                <td>{item.title}</td>
-                <td>
-                  <Link href={item.file?.url}>
-                    <a target="_blank">Download</a>
-                  </Link>
+            {dataLenght === 0 ? (
+              <tr>
+                <td colSpan="2" className="text-danger">
+                  No Previous Records Found !!
                 </td>
               </tr>
-            ))}
+            ) : (
+              <>
+                {upload_medical_record?.map((item, index) => (
+                  <tr key={index}>
+                    <td>{item.title}</td>
+                    <td>
+                      <Link href={item?.file?.url}>
+                        <a target="_blank">Download</a>
+                      </Link>
+                    </td>
+                  </tr>
+                ))}
+              </>
+            )}
           </tbody>
         </table>
+        <p className="text-info">Last Updated On : {updated_at}</p>
       </form>
     </>
   );

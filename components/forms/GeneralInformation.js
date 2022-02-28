@@ -5,8 +5,8 @@ import { useAuth } from "context";
 import { useState } from "react";
 
 const GeneralInformation = ({ patient }) => {
-  const { generalInformation } = patient;
-
+  const { generalInformation, updated_at } = patient;
+  console.log(updated_at);
   const { auth } = useAuth();
   const [loading, setLoading] = useState(false);
   const { register, handleSubmit } = useForm();
@@ -383,8 +383,10 @@ const GeneralInformation = ({ patient }) => {
         </div>
         <div className="gen-form-soft-button">
           <div className="row">
-            <div className="col-md-4 col-sm-4"></div>
-            <div className="col-md-4 col-sm-4"></div>
+            <div className="col-md-8 col-sm-8">
+              <p className="text-info">Last Updated On : {updated_at}</p>
+            </div>
+
             <div className="col-md-4 col-sm-4">
               <div className="right-button" style={{ textAlign: "right" }}>
                 <input

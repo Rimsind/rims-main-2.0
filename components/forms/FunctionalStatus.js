@@ -5,7 +5,7 @@ import { useAuth } from "context";
 import { useState } from "react";
 
 const FunctionalStatus = ({ patient }) => {
-  const { functionalStatus } = patient;
+  const { functionalStatus, updated_at } = patient;
 
   const { auth } = useAuth();
   const [loading, setLoading] = useState(false);
@@ -549,7 +549,10 @@ const FunctionalStatus = ({ patient }) => {
             </div>
           </div>
         </div>
-        <div className="gen-form mb-3">
+        <div
+          className="gen-form mb-3"
+          style={{ borderBottom: "1px solid #bbbaba" }}
+        >
           <div className="row justify-content-between align-items-start">
             <h3 className="fs-5 fs-bold text-dark mb-3">
               Any Difficulty With Community And Work Activities Such As
@@ -719,8 +722,9 @@ const FunctionalStatus = ({ patient }) => {
 
         <div className="gen-form-soft-button">
           <div className="row">
-            <div className="col-md-4"></div>
-            <div className="col-md-4"></div>
+            <div className="col-md-8 col-sm-8">
+              <p className="text-info">Last Updated On : {updated_at}</p>
+            </div>
             <div className="col-md-4">
               <div className="right-button" style={{ textAlign: "right" }}>
                 <input

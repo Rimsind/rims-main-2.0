@@ -5,7 +5,9 @@ import { useAuth } from "context";
 import { useState } from "react";
 
 const MedicalHistory = ({ patient }) => {
-  const { medicalHistory } = patient;
+  const { medicalHistory, updated_at, gender } = patient;
+  const surgicalDataLength = medicalHistory?.surgicalHistory.length;
+  const medicineDataLength = medicalHistory?.medicationHistory.length;
 
   const { auth } = useAuth();
 
@@ -280,292 +282,297 @@ const MedicalHistory = ({ patient }) => {
             <div className="col-md-3"></div>
           </div>
         </div>
-        <div
-          className="gen-form mb-3"
-          style={{ borderBottom: "1px solid #bbbaba" }}
-        >
-          <h3 className="fs-6 fs-bold text-dark mb-3">
-            Past medical history - For Women Only:
-          </h3>
-          <div className="row justify-content-between align-items-start">
-            <div className="col-md-6 col-sm-6">
-              <div className="row">
-                <div className="col-md-6 col-sm-6">
-                  <p className="space-x-4">☆ Pelvic Inflammatory Disease</p>
-                </div>
-                <div className="col-md-3 col-sm-3">
-                  <div className="row">
-                    <div className="col-md-4 col-sm-4">
-                      <input
-                        className="form-check-input"
-                        type="radio"
-                        name="pelvicDisease"
-                        value="Yes"
-                        {...register("pelvicDisease")}
-                        defaultChecked={
-                          !!medicalHistory &&
-                          !!medicalHistory.pastMedicalHistoryForWomen &&
-                          medicalHistory.pastMedicalHistoryForWomen
-                            .pelvicDisease === "Yes"
-                        }
-                      />
-                    </div>
-                    <div className="col-md-8 col-sm-8">
-                      <p className="space-x-4">Yes</p>
+        {gender === "Female" ? (
+          <div
+            className="gen-form mb-3"
+            style={{ borderBottom: "1px solid #bbbaba" }}
+          >
+            <h3 className="fs-6 fs-bold text-dark mb-3">
+              Past medical history - For Women Only:
+            </h3>
+            <div className="row justify-content-between align-items-start">
+              <div className="col-md-6 col-sm-6">
+                <div className="row">
+                  <div className="col-md-6 col-sm-6">
+                    <p className="space-x-4">☆ Pelvic Inflammatory Disease</p>
+                  </div>
+                  <div className="col-md-3 col-sm-3">
+                    <div className="row">
+                      <div className="col-md-4 col-sm-4">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="pelvicDisease"
+                          value="Yes"
+                          {...register("pelvicDisease")}
+                          defaultChecked={
+                            !!medicalHistory &&
+                            !!medicalHistory.pastMedicalHistoryForWomen &&
+                            medicalHistory.pastMedicalHistoryForWomen
+                              .pelvicDisease === "Yes"
+                          }
+                        />
+                      </div>
+                      <div className="col-md-8 col-sm-8">
+                        <p className="space-x-4">Yes</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="col-md-3 col-sm-3">
-                  <div className="row">
-                    <div className="col-md-4 col-sm-4">
-                      <input
-                        className="form-check-input"
-                        type="radio"
-                        name="pelvicDisease"
-                        value="No"
-                        {...register("pelvicDisease")}
-                        defaultChecked={
-                          !!medicalHistory &&
-                          !!medicalHistory.pastMedicalHistoryForWomen &&
-                          medicalHistory.pastMedicalHistoryForWomen
-                            .pelvicDisease === "No"
-                        }
-                      />
-                    </div>
-                    <div className="col-md-8 col-sm-8">
-                      <p className="space-x-4">No</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-sm-6">
-              <div className="row">
-                <div className="col-md-6 col-sm-6">
-                  <p className="space-x-4">☆ Trouble with Period</p>
-                </div>
-                <div className="col-md-3 col-sm-3">
-                  <div className="row">
-                    <div className="col-md-4 col-sm-4">
-                      <input
-                        className="form-check-input"
-                        type="radio"
-                        name="periodTrouble"
-                        value="Yes"
-                        {...register("periodTrouble")}
-                        defaultChecked={
-                          !!medicalHistory &&
-                          medicalHistory.pastMedicalHistoryForWomen &&
-                          medicalHistory.pastMedicalHistoryForWomen
-                            .periodTrouble === "Yes"
-                        }
-                      />
-                    </div>
-                    <div className="col-md-8 col-sm-8">
-                      <p className="space-x-4">Yes</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-3 col-sm-3">
-                  <div className="row">
-                    <div className="col-md-4 col-sm-4">
-                      <input
-                        className="form-check-input"
-                        type="radio"
-                        name="periodTrouble"
-                        value="No"
-                        {...register("periodTrouble")}
-                        defaultChecked={
-                          !!medicalHistory &&
-                          medicalHistory.pastMedicalHistoryForWomen &&
-                          medicalHistory.pastMedicalHistoryForWomen
-                            .periodTrouble === "No"
-                        }
-                      />
-                    </div>
-                    <div className="col-md-8 col-sm-8">
-                      <p className="space-x-4">No</p>
+                  <div className="col-md-3 col-sm-3">
+                    <div className="row">
+                      <div className="col-md-4 col-sm-4">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="pelvicDisease"
+                          value="No"
+                          {...register("pelvicDisease")}
+                          defaultChecked={
+                            !!medicalHistory &&
+                            !!medicalHistory.pastMedicalHistoryForWomen &&
+                            medicalHistory.pastMedicalHistoryForWomen
+                              .pelvicDisease === "No"
+                          }
+                        />
+                      </div>
+                      <div className="col-md-8 col-sm-8">
+                        <p className="space-x-4">No</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="col-md-6 col-sm-6">
-              <div className="row">
-                <div className="col-md-6 col-sm-6">
-                  <p className="space-x-4">☆ Complicated Pregnancies</p>
-                </div>
-                <div className="col-md-3 col-sm-3">
-                  <div className="row">
-                    <div className="col-md-4 col-sm-4">
-                      <input
-                        className="form-check-input"
-                        type="radio"
-                        name="complicatedPregnancy"
-                        value="Yes"
-                        {...register("complicatedPregnancy")}
-                        defaultChecked={
-                          !!medicalHistory &&
-                          medicalHistory.pastMedicalHistoryForWomen &&
-                          medicalHistory.pastMedicalHistoryForWomen
-                            .complicatedPregnancy === "Yes"
-                        }
-                      />
-                    </div>
-                    <div className="col-md-8 col-sm-8">
-                      <p className="space-x-4">Yes</p>
+              <div className="col-md-6 col-sm-6">
+                <div className="row">
+                  <div className="col-md-6 col-sm-6">
+                    <p className="space-x-4">☆ Trouble with Period</p>
+                  </div>
+                  <div className="col-md-3 col-sm-3">
+                    <div className="row">
+                      <div className="col-md-4 col-sm-4">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="periodTrouble"
+                          value="Yes"
+                          {...register("periodTrouble")}
+                          defaultChecked={
+                            !!medicalHistory &&
+                            medicalHistory.pastMedicalHistoryForWomen &&
+                            medicalHistory.pastMedicalHistoryForWomen
+                              .periodTrouble === "Yes"
+                          }
+                        />
+                      </div>
+                      <div className="col-md-8 col-sm-8">
+                        <p className="space-x-4">Yes</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="col-md-3 col-sm-3">
-                  <div className="row">
-                    <div className="col-md-4 col-sm-4">
-                      <input
-                        className="form-check-input"
-                        type="radio"
-                        name="complicatedPregnancy"
-                        value="No"
-                        {...register("complicatedPregnancy")}
-                        defaultChecked={
-                          !!medicalHistory &&
-                          medicalHistory.pastMedicalHistoryForWomen &&
-                          medicalHistory.pastMedicalHistoryForWomen
-                            .complicatedPregnancie === "No"
-                        }
-                      />
-                    </div>
-                    <div className="col-md-8 col-sm-8">
-                      <p className="space-x-4">No</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-sm-6">
-              <div className="row">
-                <div className="col-md-6 col-sm-6">
-                  <p className="space-x-4">☆ Pregnant</p>
-                </div>
-                <div className="col-md-3 col-sm-3">
-                  <div className="row">
-                    <div className="col-md-4 col-sm-4">
-                      <input
-                        className="form-check-input"
-                        type="radio"
-                        name="isPregnant"
-                        value="Yes"
-                        {...register("isPregnant")}
-                        defaultChecked={
-                          !!medicalHistory &&
-                          medicalHistory.pastMedicalHistoryForWomen &&
-                          medicalHistory.pastMedicalHistoryForWomen
-                            .isPregnant === "Yes"
-                        }
-                      />
-                    </div>
-                    <div className="col-md-8 col-sm-8">
-                      <p className="space-x-4">Yes</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-3 col-sm-3">
-                  <div className="row">
-                    <div className="col-md-4 col-sm-4">
-                      <input
-                        className="form-check-input"
-                        type="radio"
-                        name="isPregnant"
-                        value="No"
-                        {...register("isPregnant")}
-                        defaultChecked={
-                          !!medicalHistory &&
-                          medicalHistory.pastMedicalHistoryForWomen &&
-                          medicalHistory.pastMedicalHistoryForWomen
-                            .isPregnant === "No"
-                        }
-                      />
-                    </div>
-                    <div className="col-md-8 col-sm-8">
-                      <p className="space-x-4">No</p>
+                  <div className="col-md-3 col-sm-3">
+                    <div className="row">
+                      <div className="col-md-4 col-sm-4">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="periodTrouble"
+                          value="No"
+                          {...register("periodTrouble")}
+                          defaultChecked={
+                            !!medicalHistory &&
+                            medicalHistory.pastMedicalHistoryForWomen &&
+                            medicalHistory.pastMedicalHistoryForWomen
+                              .periodTrouble === "No"
+                          }
+                        />
+                      </div>
+                      <div className="col-md-8 col-sm-8">
+                        <p className="space-x-4">No</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="col-md-6 col-sm-6">
-              <div className="row">
-                <div className="col-md-6 col-sm-6">
-                  <p className="space-x-4">☆ Endometriosis</p>
-                </div>
-                <div className="col-md-3 col-sm-3">
-                  <div className="row">
-                    <div className="col-md-4 col-sm-4">
-                      <input
-                        className="form-check-input"
-                        type="radio"
-                        name="endometriosis"
-                        value="Yes"
-                        {...register("endometriosis")}
-                        defaultChecked={
-                          !!medicalHistory &&
-                          medicalHistory.pastMedicalHistoryForWomen &&
-                          medicalHistory.pastMedicalHistoryForWomen
-                            .endometriosis === "Yes"
-                        }
-                      />
-                    </div>
-                    <div className="col-md-8 col-sm-8">
-                      <p className="space-x-4">Yes</p>
+              <div className="col-md-6 col-sm-6">
+                <div className="row">
+                  <div className="col-md-6 col-sm-6">
+                    <p className="space-x-4">☆ Complicated Pregnancies</p>
+                  </div>
+                  <div className="col-md-3 col-sm-3">
+                    <div className="row">
+                      <div className="col-md-4 col-sm-4">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="complicatedPregnancy"
+                          value="Yes"
+                          {...register("complicatedPregnancy")}
+                          defaultChecked={
+                            !!medicalHistory &&
+                            medicalHistory.pastMedicalHistoryForWomen &&
+                            medicalHistory.pastMedicalHistoryForWomen
+                              .complicatedPregnancy === "Yes"
+                          }
+                        />
+                      </div>
+                      <div className="col-md-8 col-sm-8">
+                        <p className="space-x-4">Yes</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="col-md-3 col-sm-3">
-                  <div className="row">
-                    <div className="col-md-4 col-sm-4">
-                      <input
-                        className="form-check-input"
-                        type="radio"
-                        name="endometriosis"
-                        value="No"
-                        {...register("endometriosis")}
-                        defaultChecked={
-                          !!medicalHistory &&
-                          medicalHistory.pastMedicalHistoryForWomen &&
-                          medicalHistory.pastMedicalHistoryForWomen
-                            .endometriosis === "No"
-                        }
-                      />
-                    </div>
-                    <div className="col-md-8 col-sm-8">
-                      <p className="space-x-4">No</p>
+                  <div className="col-md-3 col-sm-3">
+                    <div className="row">
+                      <div className="col-md-4 col-sm-4">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="complicatedPregnancy"
+                          value="No"
+                          {...register("complicatedPregnancy")}
+                          defaultChecked={
+                            !!medicalHistory &&
+                            medicalHistory.pastMedicalHistoryForWomen &&
+                            medicalHistory.pastMedicalHistoryForWomen
+                              .complicatedPregnancie === "No"
+                          }
+                        />
+                      </div>
+                      <div className="col-md-8 col-sm-8">
+                        <p className="space-x-4">No</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="col-md-6 col-sm-6" {...register("other")}>
-              <div className="row">
-                <div className="col-md-6 col-sm-6">
-                  <p className="space-x-4">☆ Any Other</p>
+              <div className="col-md-6 col-sm-6">
+                <div className="row">
+                  <div className="col-md-6 col-sm-6">
+                    <p className="space-x-4">☆ Pregnant</p>
+                  </div>
+                  <div className="col-md-3 col-sm-3">
+                    <div className="row">
+                      <div className="col-md-4 col-sm-4">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="isPregnant"
+                          value="Yes"
+                          {...register("isPregnant")}
+                          defaultChecked={
+                            !!medicalHistory &&
+                            medicalHistory.pastMedicalHistoryForWomen &&
+                            medicalHistory.pastMedicalHistoryForWomen
+                              .isPregnant === "Yes"
+                          }
+                        />
+                      </div>
+                      <div className="col-md-8 col-sm-8">
+                        <p className="space-x-4">Yes</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-3 col-sm-3">
+                    <div className="row">
+                      <div className="col-md-4 col-sm-4">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="isPregnant"
+                          value="No"
+                          {...register("isPregnant")}
+                          defaultChecked={
+                            !!medicalHistory &&
+                            medicalHistory.pastMedicalHistoryForWomen &&
+                            medicalHistory.pastMedicalHistoryForWomen
+                              .isPregnant === "No"
+                          }
+                        />
+                      </div>
+                      <div className="col-md-8 col-sm-8">
+                        <p className="space-x-4">No</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="col-md-6 col-sm-6 mb-3">
-                  <input
-                    type="text"
-                    className="form-control"
-                    name="other"
-                    placeholder=""
-                    defaultValue={
-                      !!medicalHistory &&
-                      !!medicalHistory.pastMedicalHistoryForWomen
-                        ? medicalHistory.pastMedicalHistoryForWomen.other
-                        : ""
-                    }
-                  />
+              </div>
+              <div className="col-md-6 col-sm-6">
+                <div className="row">
+                  <div className="col-md-6 col-sm-6">
+                    <p className="space-x-4">☆ Endometriosis</p>
+                  </div>
+                  <div className="col-md-3 col-sm-3">
+                    <div className="row">
+                      <div className="col-md-4 col-sm-4">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="endometriosis"
+                          value="Yes"
+                          {...register("endometriosis")}
+                          defaultChecked={
+                            !!medicalHistory &&
+                            medicalHistory.pastMedicalHistoryForWomen &&
+                            medicalHistory.pastMedicalHistoryForWomen
+                              .endometriosis === "Yes"
+                          }
+                        />
+                      </div>
+                      <div className="col-md-8 col-sm-8">
+                        <p className="space-x-4">Yes</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-3 col-sm-3">
+                    <div className="row">
+                      <div className="col-md-4 col-sm-4">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="endometriosis"
+                          value="No"
+                          {...register("endometriosis")}
+                          defaultChecked={
+                            !!medicalHistory &&
+                            medicalHistory.pastMedicalHistoryForWomen &&
+                            medicalHistory.pastMedicalHistoryForWomen
+                              .endometriosis === "No"
+                          }
+                        />
+                      </div>
+                      <div className="col-md-8 col-sm-8">
+                        <p className="space-x-4">No</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-6 col-sm-6" {...register("other")}>
+                <div className="row">
+                  <div className="col-md-6 col-sm-6">
+                    <p className="space-x-4">☆ Any Other</p>
+                  </div>
+                  <div className="col-md-6 col-sm-6 mb-3">
+                    <input
+                      type="text"
+                      className="form-control"
+                      name="other"
+                      placeholder=""
+                      defaultValue={
+                        !!medicalHistory &&
+                        !!medicalHistory.pastMedicalHistoryForWomen
+                          ? medicalHistory.pastMedicalHistoryForWomen.other
+                          : ""
+                      }
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        ) : (
+          <></>
+        )}
+
         <div
           className="gen-form mb-3"
           style={{ borderBottom: "1px solid #bbbaba" }}
@@ -624,13 +631,23 @@ const MedicalHistory = ({ patient }) => {
                 </tr>
               </thead>
               <tbody>
-                {medicalHistory?.surgicalHistory?.map((item, index) => (
-                  <tr key={index}>
-                    <td>*</td>
-                    <td>{item.name}</td>
-                    <td>{item.date}</td>
+                {surgicalDataLength === 0 ? (
+                  <tr>
+                    <td colSpan="3" className="text-danger text-center">
+                      No Previous Records Found !!
+                    </td>
                   </tr>
-                ))}
+                ) : (
+                  <>
+                    {medicalHistory?.surgicalHistory?.map((item, index) => (
+                      <tr key={index}>
+                        <td>*</td>
+                        <td>{item.name}</td>
+                        <td>{item.date}</td>
+                      </tr>
+                    ))}
+                  </>
+                )}
               </tbody>
             </table>
           </div>
@@ -867,19 +884,29 @@ const MedicalHistory = ({ patient }) => {
               </tr>
             </thead>
             <tbody>
-              {medicalHistory?.medicationHistory?.map((item, index) => (
-                <tr key={index}>
-                  <td>{item.medicineName}</td>
-                  <td>{item.dose}</td>
-                  <td>{item.startDate}</td>
-                  <td>{item.status}</td>
-                  <td>{item.type}</td>
-                  <td>{item.route}</td>
-                  <td>{item.frequency}</td>
-                  <td>{item.sideEffect}</td>
-                  <td>{item.ifYes}</td>
+              {medicineDataLength === 0 ? (
+                <tr>
+                  <td colSpan="9" className="text-danger text-center">
+                    No Previous Records Found !!
+                  </td>
                 </tr>
-              ))}
+              ) : (
+                <>
+                  {medicalHistory?.medicationHistory?.map((item, index) => (
+                    <tr key={index}>
+                      <td>{item.medicineName}</td>
+                      <td>{item.dose}</td>
+                      <td>{item.startDate}</td>
+                      <td>{item.status}</td>
+                      <td>{item.type}</td>
+                      <td>{item.route}</td>
+                      <td>{item.frequency}</td>
+                      <td>{item.sideEffect}</td>
+                      <td>{item.ifYes}</td>
+                    </tr>
+                  ))}
+                </>
+              )}
             </tbody>
           </table>
         </div>
@@ -903,7 +930,7 @@ const MedicalHistory = ({ patient }) => {
             />
           </div>
         </div>
-        <div className="row mb-3">
+        <div className="row mb-3" style={{ borderBottom: "1px solid #bbbaba" }}>
           <div className="col-md-4">
             <h3 className="fs-6 fs-bold text-dark">Vaccination</h3>
             <p className="space-x-4">Known Vaccine to date</p>
@@ -925,8 +952,9 @@ const MedicalHistory = ({ patient }) => {
         </div>
         <div className="gen-form-soft-button">
           <div className="row">
-            <div className="col-md-4"></div>
-            <div className="col-md-4"></div>
+            <div className="col-md-8 col-sm-8">
+              <p className="text-info">Last Updated On : {updated_at}</p>
+            </div>
             <div className="col-md-4">
               <div className="right-button" style={{ textAlign: "right" }}>
                 <input
