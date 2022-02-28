@@ -35,50 +35,25 @@ const Index = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000,
-    pauseOnHover: true,
+    autoplaySpeed: 3500,
+    pauseOnHover: false,
   };
 
   return (
     <>
       <main className="main">
         <Slider {...settings}>
-          <div>
-            <section
-              className="section section-banner"
-              style={{ backgroundImage: "url(/assets/images/main.jpg)" }}
-            ></section>
-          </div>
-          <div>
-            <section
-              className="section section-banner"
-              style={{ backgroundImage: "url(/assets/images/main.jpg)" }}
-            ></section>
-          </div>
-          <div>
-            <section
-              className="section section-banner"
-              style={{ backgroundImage: "url(/assets/images/main.jpg)" }}
-            ></section>
-          </div>
-          <div>
-            <section
-              className="section section-banner"
-              style={{ backgroundImage: "url(/assets/images/main.jpg)" }}
-            ></section>
-          </div>
-          <div>
-            <section
-              className="section section-banner"
-              style={{ backgroundImage: "url(/assets/images/main.jpg)" }}
-            ></section>
-          </div>
-          <div>
-            <section
-              className="section section-banner"
-              style={{ backgroundImage: "url(/assets/images/main.jpg)" }}
-            ></section>
-          </div>
+          {banners?.map((items, index) => (
+            <div key={index}>
+              <section
+                className="section section-banner"
+                style={{ backgroundImage: `url(${items.img.url})` }}
+              >
+                <h1>{items.title}</h1>
+                <p>{items.body}</p>
+              </section>
+            </div>
+          ))}
         </Slider>
 
         <section className="section section-about-filter">

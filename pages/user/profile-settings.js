@@ -20,7 +20,8 @@ const ProfileSettings = () => {
       });
       const result = res.data;
       return result;
-    }
+    },
+    { refreshInterval: 1000 }
   );
 
   // if (!data) {

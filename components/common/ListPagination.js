@@ -3,10 +3,10 @@ const ListPagination = () => {
     <>
       <div className="list-pagination">
         <div className="row">
-          <div className="col-10"></div>
+          <div className="col-lg-10"></div>
           <div className="col-2">
             <div className="row">
-              <div className="col-6">
+              <div className="col-6 ">
                 <button className="btn btn-primary">
                   <i class="fal fa-long-arrow-left me-2"></i>Prev
                 </button>

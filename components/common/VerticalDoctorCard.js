@@ -29,14 +29,16 @@ const VerticalDoctorCard = ({ data }) => {
 
           <ul className="available-info">
             <li>
-              <i className="fas fa-certificate"></i> {data?.qualification}
+              <i className="fas fa-certificate text-danger"></i>{" "}
+              {data?.qualification}
             </li>
             <li>
-              <i className="fas fa-user-tag"></i> {data?.specialty?.name}
+              <Image height="20" width="20" src={data?.specialty?.image?.url} />{" "}
+              {data?.specialty?.name}
             </li>
             <li>
-              <i className="far fa-money-bill-alt"></i> ₹{data?.feeScale?.min} -
-              ₹{data?.feeScale?.max}
+              <i className="far fa-money-bill-alt text-primary"></i> ₹
+              {data?.feeScale?.min} - ₹{data?.feeScale?.max}
               <i
                 className="fas fa-info-circle"
                 data-bs-toggle="tooltip"
