@@ -5,6 +5,7 @@ import { useAuth } from "context";
 import { apiUrl } from "config/api";
 import useSWR from "swr";
 import axios from "axios";
+import { UserPageLoader } from "components/Loaders";
 const Index = () => {
   const { auth } = useAuth();
 

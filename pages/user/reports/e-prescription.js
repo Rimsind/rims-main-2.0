@@ -390,7 +390,7 @@ const Eprescription = () => {
               </div>
               <div className="col-md-4">
                 <p className="text-light text-end">
-                  For appointment click <a href>this link</a>
+                  For appointment click <a href="#">this link</a>
                 </p>
               </div>
             </div>
