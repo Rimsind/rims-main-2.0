@@ -17,9 +17,9 @@ const Checkout = () => {
     fetcher
   );
 
-  if (!doctorId || !polyclinicId || !fee || !date || !time) {
-    return <ForbidenPage />;
-  }
+  // if (!doctorId || !polyclinicId || !fee || !date || !time) {
+  //   return <ForbidenPage />;
+  // }
 
   const [description, setDescription] = useState();
   const [duration, setDuration] = useState();

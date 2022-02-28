@@ -14,9 +14,9 @@ const Schedule = () => {
     `${apiUrl}/polyclinics/${polyclinicId}`,
     fetcher
   );
-  if (!doctorId || !polyclinicId || !fee) {
-    return <ForbidenPage />;
-  }
+  // if (!doctorId || !polyclinicId || !fee) {
+  //   return <ForbidenPage />;
+  // }
 
   const [date, setDate] = useState();
   const [time, setTime] = useState();

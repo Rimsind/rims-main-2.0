@@ -8,7 +8,7 @@ const ListPagination = () => {
             <div className="row">
               <div className="col-6 ">
                 <button className="btn btn-primary">
-                  <i class="fal fa-long-arrow-left me-2"></i>Prev
+                  <i className="fal fa-long-arrow-left me-2"></i>Prev
                 </button>
               </div>
               <div className="col-6">
