@@ -49,8 +49,26 @@ const Index = () => {
                 className="section section-banner"
                 style={{ backgroundImage: `url(${items.img.url})` }}
               >
-                <h1>{items.title}</h1>
-                <p>{items.body}</p>
+                {/* <h1>{items.title}</h1>
+                <p>{items.body}</p> */}
+                {/* <div className="banner-content">
+                  <p className="banner-heading">
+                    <span className="banner-heading-span">Professional</span>
+                    <br />
+                    <span className="banner-sub-heading-span">
+                      Family Health Care
+                    </span>
+                  </p>
+                  <p className="fs-5 fst-italic">This is sub heading</p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Donec semper augue ut faucibus fringilla. <br /> Curabitur
+                    scelerisque velit tellus, non ultricies lorem tempus non.
+                    Curabitur at auctor lorem. Morbi tempus turpis non dolor
+                    ornare lacinia. Fusce et bibendum nunc, non dignissim odio.
+                    Nunc nec neque et ligula ultrices convallis eu eu sapien.
+                  </p>
+                </div> */}
               </section>
             </div>
           ))}

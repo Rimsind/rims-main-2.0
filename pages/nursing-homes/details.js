@@ -72,15 +72,21 @@ const NursingHomeId = () => {
                           </ul>
                         </div>
                         <div className="doctor-action">
-                          <a href="#" className="btn btn-white fav-btn">
+                          <a
+                            href="#"
+                            className="btn btn-white fav-btn disabled"
+                          >
                             <i className="far fa-bookmark"></i>
                           </a>
-                          <a href="chat.html" className="btn btn-white msg-btn">
+                          <a
+                            href="chat.html"
+                            className="btn btn-white msg-btn disabled"
+                          >
                             <i className="far fa-comment-alt"></i>
                           </a>
                           <a
                             href="#"
-                            className="btn btn-white call-btn"
+                            className="btn btn-white call-btn disabled"
                             data-bs-toggle="modal"
                             data-bs-target="#voice_call"
                           >
@@ -88,7 +94,7 @@ const NursingHomeId = () => {
                           </a>
                           <a
                             href="#"
-                            className="btn btn-white call-btn"
+                            className="btn btn-white call-btn disabled"
                             data-bs-toggle="modal"
                             data-bs-target="#video_call"
                           >

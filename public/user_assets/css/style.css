@@ -4280,12 +4280,12 @@ select {
   -ms-transition: ease all 0.4s;
   transition: ease all 0.4s;
 }
-.special-box:hover {
+/* .special-box:hover {
   background-color: #1c71ef;
   -webkit-transition: ease all 0.4s;
   -ms-transition: ease all 0.4s;
   transition: ease all 0.4s;
-}
+} */
 .special-box .special-body {
   padding: 20px;
 }
@@ -4340,11 +4340,11 @@ select {
   display: inline-flex;
   font-size: 9px;
 }
-.special-box:hover img,
+/* .special-box:hover img,
 .special-box:hover .special-footer {
   display: none;
-}
-.special-box:hover h4 {
+} */
+/* .special-box:hover h4 {
   color: #fff;
 }
 .special-box:hover .spc-book {
@@ -4357,7 +4357,7 @@ select {
   justify-content: center;
   display: flex;
   flex-direction: column;
-}
+} */
 .view-all-more .btn {
   background: #0ce0ff;
   border-radius: 30px;

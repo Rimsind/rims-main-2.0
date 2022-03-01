@@ -1587,10 +1587,43 @@ ul {
   justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center;
+  flex-direction: column;
+  align-items: start;
   height: 65vh;
   background-size: cover;
 }
+
+.banner-content {
+  width: 700px;
+  background-color: #09e5ab;
+  margin-left: 20px;
+  padding: 10px;
+}
+
+/* .banner-content p.banner-heading {
+  font-size: 40px;
+  font-family: poppins;
+  font-weight: 600;
+} */
+
+/* span.banner-heading-span {
+  font-size: 45px;
+  font-weight: 600;
+  font-family: ubuntu;
+  color: #020054;
+}
+
+span.banner-heading-span::before {
+  content: "";
+  border-left: 5px solid;
+  color: #0c08b58c;
+  padding-right: 10px;
+}
+span.banner-sub-heading-span {
+  font-size: 55px;
+  font-family: poppins;
+  color: #020054;
+} */
 
 @media screen and (max-width: 600px) {
   .section-banner {
@@ -2539,11 +2572,11 @@ ul {
   transition: ease all 0.4s;
 }
 
-.nurshing-facilty .special-box:hover {
+/* .nurshing-facilty .special-box:hover {
   background-color: #1c71ef;
   -webkit-transition: ease all 0.4s;
   transition: ease all 0.4s;
-}
+} */
 
 .nurshing-facilty .special-box .special-body {
   padding: 20px;
@@ -2618,16 +2651,16 @@ ul {
   font-weight: 500;
 }
 
-.nurshing-facilty .special-box:hover img,
+/* .nurshing-facilty .special-box:hover img,
 .nurshing-facilty .special-box:hover .special-footer {
   display: none;
 }
 
 .nurshing-facilty .special-box:hover h4 {
   color: #fff;
-}
+} */
 
-.nurshing-facilty .special-box:hover .spc-book {
+/* .nurshing-facilty .special-box:hover .spc-book {
   margin-top: 10px;
   display: block;
 }
@@ -2647,7 +2680,7 @@ ul {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-}
+} */
 /*# sourceMappingURL=style.css.map */
 
 /* Loader */
