@@ -2,13 +2,12 @@ import { BreadCrums, VerifyCard } from "components/common";
 import useSWR from "swr";
 import { apiUrl, fetcher } from "config/api";
 import Router, { useRouter } from "next/router";
-
+import { useAuth } from "context";
 import { useState } from "react";
-import ForbidenPage from "components/Loaders/ForbidenPage";
 
 const Schedule = () => {
   const { doctorId, polyclinicId, fee } = useRouter().query;
-
+  const { auth } = useAuth();
   const { data: doctor } = useSWR(`${apiUrl}/doctors/${doctorId}`, fetcher);
   const { data: polyclinic } = useSWR(
     `${apiUrl}/polyclinics/${polyclinicId}`,
@@ -22,12 +21,16 @@ const Schedule = () => {
   const [time, setTime] = useState();
 
   const submitData = () => {
-    if (date && time) {
-      Router.push(
-        `/checkout?doctorId=${doctorId}&&polyclinicId=${polyclinicId}&&fee=${fee}&&date=${date}&&time=${time}`
-      );
+    if (!auth.user && !auth.token) {
+      Router.push(`/user/login`);
     } else {
-      alert("Please Select Date and Time");
+      if (date && time) {
+        Router.push(
+          `/checkout?doctorId=${doctorId}&&polyclinicId=${polyclinicId}&&fee=${fee}&&date=${date}&&time=${time}`
+        );
+      } else {
+        alert("Please Select Date and Time");
+      }
     }
   };
 
