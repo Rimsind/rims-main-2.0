@@ -25,6 +25,8 @@ const AppointmentId = () => {
     }
   );
 
+  const chiefComplaintsLength = appointments?.chiefComplaints.length;
+
   const { data: patient } = useSWR(
     `${apiUrl}/patients/${auth.user?.profileId}`,
     async (url) => {
@@ -190,12 +192,29 @@ const AppointmentId = () => {
                         </tr>
                       </thead>
                       <tbody>
-                        {appointments?.chiefComplaints.map((items, index) => (
-                          <tr key={index}>
-                            <td>{items?.description}</td>
-                            <td>{items?.duration} Days</td>
-                          </tr>
-                        ))}
+                        {chiefComplaintsLength === 0 ? (
+                          <>
+                            <tr>
+                              <td
+                                colSpan={2}
+                                className="text-danger text-center"
+                              >
+                                No Records Found !!
+                              </td>
+                            </tr>
+                          </>
+                        ) : (
+                          <>
+                            {appointments?.chiefComplaints.map(
+                              (items, index) => (
+                                <tr key={index}>
+                                  <td>{items?.description}</td>
+                                  <td>{items?.duration} Days</td>
+                                </tr>
+                              )
+                            )}
+                          </>
+                        )}
                       </tbody>
                     </table>
                   </div>

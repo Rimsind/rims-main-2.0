@@ -23,6 +23,7 @@ const Index = () => {
       return result;
     }
   );
+  const appointmentsLength = appointments?.length;
 
   const { data: patient } = useSWR(
     `${apiUrl}/patients/${auth.user?.profileId}`,
@@ -67,9 +68,24 @@ const Index = () => {
                             </tr>
                           </thead>
                           <tbody>
-                            {appointments?.map((items, index) => (
-                              <MyAppointments data={items} key={index} />
-                            ))}
+                            {appointmentsLength === 0 ? (
+                              <>
+                                <tr>
+                                  <td
+                                    colSpan={6}
+                                    className="text-danger text-center"
+                                  >
+                                    No Appointments Found !!
+                                  </td>
+                                </tr>
+                              </>
+                            ) : (
+                              <>
+                                {appointments?.map((items, index) => (
+                                  <MyAppointments data={items} key={index} />
+                                ))}
+                              </>
+                            )}
                           </tbody>
                         </table>
                       </div>

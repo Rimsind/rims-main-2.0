@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 const MyAppointments = ({ data }) => {
-  console.log(data);
   return (
     <>
       <tr>

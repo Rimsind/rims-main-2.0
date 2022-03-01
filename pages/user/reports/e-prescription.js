@@ -103,16 +103,22 @@ const Eprescription = () => {
               <div className="col-md-4">
                 <div className="header-inner-item text-end">
                   <p className="fs-3 fw-bold fst-italic lh-1">
-                    Dr. {appointments?.doctor?.firstName}{" "}
-                    {appointments?.doctor?.lastName}
+                    {appointments?.polyclinic?.name}
                   </p>
-                  <p className="fs-6 fw-bold lh-1">
-                    {appointments?.doctor?.qualification}
-                  </p>
-                  <p className="fs-6 lh-1">{appointments?.doctor?.specialty}</p>
-                  <p className="fs-6 lh-1">Reg. No.-58905 (WBMC)</p>
                   <p className="fs-6 lh-1">
-                    Mob: {appointments?.doctor?.phone}
+                    {appointments?.polyclinic?.street_address},{" "}
+                    {appointments?.polyclinic?.city}
+                  </p>
+                  <p className="fs-6 lh-1">
+                    {appointments?.polyclinic?.state},{" "}
+                    {appointments?.polyclinic?.country}, PIN:{" "}
+                    {appointments?.polyclinic?.pincode}
+                  </p>
+                  <p className="fs-6 lh-1">
+                    Email : {appointments?.polyclinic?.email}
+                  </p>
+                  <p className="fs-6 lh-1">
+                    Mobile No: {appointments?.doctor?.phone}
                   </p>
                 </div>
               </div>
@@ -163,9 +169,9 @@ const Eprescription = () => {
                               </span>
                             </p>
                             <p className="fs-6 fw-bold text-light lh-1">
-                              Date of Birth :{" "}
+                              Age :{" "}
                               <span className="fs-6 fw-light">
-                                {appointments?.patient?.dob}
+                                {appointments?.patient?.age}
                               </span>
                             </p>
                             <p className="fs-6 fw-bold text-light lh-1">
@@ -373,11 +379,7 @@ const Eprescription = () => {
 
           <footer className="presc-footer">
             <div className="row align-items-center pt-3 px-3">
-              <div className="col-md-4">
-                <p className="text-light text-start">
-                  For next appointment click <a href="#">this link</a>
-                </p>
-              </div>
+              <div className="col-md-4"></div>
               <div className="col-md-4">
                 <div className="banner-logo text-center mb-2">
                   <Image
@@ -394,11 +396,7 @@ const Eprescription = () => {
                   A unit of Retar Mediserve Pvt. Ltd.
                 </p>
               </div>
-              <div className="col-md-4">
-                <p className="text-light text-end">
-                  For appointment click <a href="#">this link</a>
-                </p>
-              </div>
+              <div className="col-md-4"></div>
             </div>
           </footer>
         </div>
