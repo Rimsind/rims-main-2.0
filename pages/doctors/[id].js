@@ -45,6 +45,7 @@ const DoctorId = () => {
                               height={20}
                               width={20}
                               src={data?.specialty?.image?.url}
+                              alt=""
                             />{" "}
                             {data?.specialty?.name}
                           </h5>

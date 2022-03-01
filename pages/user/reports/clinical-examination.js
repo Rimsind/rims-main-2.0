@@ -35,6 +35,7 @@ const ClinicalExamination = () => {
                     width="130"
                     src="/assets/images/logo-dark.png"
                     style={{ height: "8rem" }}
+                    alt=""
                   />
                 </div>
               </div>
@@ -78,6 +79,7 @@ const ClinicalExamination = () => {
                       <Image
                         height={350}
                         width={350}
+                        alt=""
                         className="clini-exam-img"
                         src={
                           appointment?.patient?.image?.url ||

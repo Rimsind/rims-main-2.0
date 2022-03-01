@@ -127,6 +127,7 @@ const Eprescription = () => {
                   <div className="col-md-4">
                     <img
                       className="presc-img-profile"
+                      alt=""
                       src={
                         appointments?.patient?.image?.url ||
                         "/assets/images/profile.png"
@@ -379,7 +380,12 @@ const Eprescription = () => {
               </div>
               <div className="col-md-4">
                 <div className="banner-logo text-center mb-2">
-                  <img src="/assets/images/logo-white.png" height="50px" />
+                  <Image
+                    height="50"
+                    width="75"
+                    src="/assets/images/logo-white.png"
+                    alt=""
+                  />
                 </div>
                 <p className="text-light fs-5 fw-bold text-center lh-1">
                   Powered by Rims Technology

@@ -1,4 +1,5 @@
 import AuthLayout from "components/layout/AuthLayout";
+import Image from "next/image";
 const SubjectiveInformation = () => {
   return (
     <>
@@ -8,9 +9,12 @@ const SubjectiveInformation = () => {
             <div className="row align-items-center">
               <div className="col-md-2">
                 <div className="left-content">
-                  <img
+                  <Image
+                    height="100"
+                    width="130"
                     src="/assets/images/logo-dark.png"
                     style={{ height: "8rem" }}
+                    alt=""
                   />
                 </div>
               </div>
@@ -73,7 +77,10 @@ const SubjectiveInformation = () => {
                     }}
                   >
                     <div className="patient_image mb-2">
-                      <img
+                      <Image
+                        height={350}
+                        width={350}
+                        alt=""
                         src="/assets/images/profile.png"
                         style={{ height: "24rem", padding: "1rem" }}
                       />

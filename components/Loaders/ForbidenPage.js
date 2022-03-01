@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const ForbidenPage = () => {
   return (
     <>
@@ -5,7 +7,13 @@ const ForbidenPage = () => {
         <div className="content">
           <div className="container">
             <div className="page-not-found-sec text-center">
-              <img src="/assets/images/404.png" className="mb-4" />
+              <Image
+                height="400"
+                width="450"
+                alt=""
+                src="/assets/images/404.png"
+                className="mb-4"
+              />
               <p className="fs-2 fw-bold my-3">Oops! This Link is Forbiden</p>
               <p>
                 We are Really Sorry But the Link you Requested is Forbiden :(

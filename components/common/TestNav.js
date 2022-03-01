@@ -204,7 +204,7 @@ const TestNav = () => {
                 </li>
 
                 <li className="nav-item">
-                  <Link href="http://medshop.rimsind.com/">
+                  <Link href="http://medshop.rimsind.com/" passHref>
                     <a className="nav-link navbar-link text-white">Pharmacy</a>
                   </Link>
                 </li>

@@ -9,6 +9,7 @@ const Custom404 = () => {
               <Image
                 height={400}
                 width={450}
+                alt=""
                 src="/assets/images/404.png"
                 className="mb-4"
               />
