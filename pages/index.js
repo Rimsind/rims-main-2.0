@@ -485,6 +485,66 @@ const Index = () => {
             </div>
           </div>
         </section>
+        <section className="section-normal-banner">
+          <div className="section-normal-banner-content">
+            <Image
+              src="/user_assets/img/search-bg.png"
+              width="2500px"
+              height="400px"
+              alt="Normal Banner"
+            />
+          </div>
+        </section>
+        <div className="section-nursing-home my-5">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-lg-4">
+                <div className="section-header">
+                  <h2>Your Best Rated Nursing Home</h2>
+                  <p>Lorem Ipsum is simply dummy text</p>
+                </div>
+                <div className="about-content">
+                  <p className="fs-6">
+                    It is a long established fact that a reader will be
+                    distracted by the readable content of a page when looking at
+                    its layout. The point of using Lorem Ipsum.
+                  </p>
+                  <p className="fs-6">
+                    web page editors now use Lorem Ipsum as their default model
+                    text, and a search for &apos;lorem ipsum&apos; will uncover
+                    many web sites still in their infancy. Various versions have
+                    evolved over the years, sometimes
+                  </p>
+                  <Link href="/doctors">
+                    <a>Read More...</a>
+                  </Link>
+                </div>
+              </div>
+              <div className="col-lg-8">
+                <div className="doctor-slider slider">
+                  <div className="row carousel-styling">
+                    {doctors ? (
+                      <Carousel breakPoints={breakPoints}>
+                        {doctors?.map((items, index) => (
+                          <VerticalDoctorCard data={items} key={index} />
+                        ))}
+                      </Carousel>
+                    ) : (
+                      <>
+                        <Carousel breakPoints={breakPoints}>
+                          <SliderCardLoader />
+                          <SliderCardLoader />
+                          <SliderCardLoader />
+                          <SliderCardLoader />
+                        </Carousel>
+                      </>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <FooterBanner />
       </main>
     </>

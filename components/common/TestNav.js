@@ -25,7 +25,7 @@ const TestNav = () => {
     <>
       <section className="upper-main-mrq bg-primary pt-2">
         <div className="container-fluid">
-          <marquee data-pause="hover">
+          <marquee direction="left" behavior="alternate">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget
             magna pulvinar
           </marquee>
