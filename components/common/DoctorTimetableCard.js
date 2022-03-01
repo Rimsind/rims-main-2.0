@@ -2,17 +2,17 @@ import Image from "next/image";
 import Link from "next/link";
 import Router from "next/router";
 const DoctorTimetableCard = ({ schedule, doctor, auth }) => {
-  console.log(auth);
+  // console.log(auth);
 
-  const authCheck = () => {
-    if (auth.token && auth.user) {
-      Router.push(
-        `/schedule?doctorId=${doctor}&&polyclinicId=${schedule?.polyclinic?.id}&&fee=${schedule?.fee}`
-      );
-    } else {
-      alert("Please Login to Continue");
-    }
-  };
+  // const authCheck = () => {
+  //   if (auth.token && auth.user) {
+  //     Router.push(
+  //       `/schedule?doctorId=${doctor}&&polyclinicId=${schedule?.polyclinic?.id}&&fee=${schedule?.fee}`
+  //     );
+  //   } else {
+  //     alert("Please Login to Continue");
+  //   }
+  // };
 
   return (
     <>
@@ -89,10 +89,17 @@ const DoctorTimetableCard = ({ schedule, doctor, auth }) => {
                 </ul>
               </div>
               <div className="clinic-booking">
+                <Link
+                  href={`/schedule?doctorId=${doctor}&&polyclinicId=${schedule?.polyclinic?.id}&&fee=${schedule?.fee}`}
+                >
+                  <a className="btn btn-primary">Book Appointment</a>
+                </Link>
+              </div>
+              {/* <div className="clinic-booking">
                 <button className="btn btn-primary" onClick={authCheck}>
                   Book Appointment
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
