@@ -1146,6 +1146,30 @@ ul {
 }
 
 .thank_you_main .thank_you_inner .scs_inv_btn button {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+}
+.thank_you_main .thank_you_inner .danger_icon i {
+  color: #dc3545;
+  font-size: 3rem;
+}
+
+@media screen and (max-width: 600px) {
+  .thank_you_main .thank_you_inner .danger_icon {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .thank_you_main .thank_you_inner .danger_icon {
+    margin-top: 20px;
+  }
+}
+
+.thank_you_main .thank_you_inner .scs_inv_btn button {
   background-color: #09e5ab;
   border-color: #09e5ab;
   color: white;

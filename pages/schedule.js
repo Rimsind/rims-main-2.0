@@ -13,9 +13,7 @@ const Schedule = () => {
     `${apiUrl}/polyclinics/${polyclinicId}`,
     fetcher
   );
-  // if (!doctorId || !polyclinicId || !fee) {
-  //   return <ForbidenPage />;
-  // }
+  console.log(doctor.timetable);
 
   const [date, setDate] = useState();
   const [time, setTime] = useState();
@@ -33,6 +31,54 @@ const Schedule = () => {
       }
     }
   };
+
+  var today = new Date();
+
+  var day = today.getDate();
+  var month = today.getMonth() + 1;
+  var year = today.getFullYear();
+
+  if (day < 10) {
+    var newDay = "0" + day;
+  } else {
+    var newDay = day;
+  }
+  if (month < 10) {
+    var newMonth = "0" + month;
+  } else {
+    var newMonth = month;
+  }
+  const minDate = year + "-" + newMonth + "-" + newDay;
+
+  var maxDay = today.getDate() + 7;
+  var maxMonth = today.getMonth() + 1;
+  var maxYear = today.getFullYear();
+  if (maxDay < 10) {
+    var newMaxDay = "0" + maxDay;
+  } else {
+    var newMaxDay = maxDay;
+  }
+  if (maxMonth < 10) {
+    var newMaxMonth = "0" + maxMonth;
+  } else {
+    var newMaxMonth = maxMonth;
+  }
+  const maxDate = maxYear + "-" + newMaxMonth + "-" + newMaxDay;
+
+  const timeSlots = [
+    "9:00 AM - 10:00 AM",
+    "10:00 AM - 11:00 AM",
+    "11:00 AM - 12:00 PM",
+    "12:00 PM - 01:00 PM",
+    "01:00 PM - 02:00 PM",
+    "02:00 PM - 03:00 PM",
+    "03:00 PM - 04:00 PM",
+    "04:00 PM - 05:00 PM",
+    "05:00 PM - 06:00 PM",
+    "06:00 PM - 07:00 PM",
+    "07:00 PM - 08:00 PM",
+    "08:00 PM - 09:00 PM",
+  ];
 
   return (
     <>
@@ -55,6 +101,8 @@ const Schedule = () => {
                     <div className="date-picker mb-3">
                       <input
                         type="date"
+                        min={minDate}
+                        max={maxDate}
                         className="form-control"
                         onChange={(e) => setDate(e.target.value)}
                       />
@@ -67,39 +115,22 @@ const Schedule = () => {
                     <div className="row">
                       <div className="col-md-12">
                         <div className="time-slot row mb-2">
-                          <div className="col-3 col-md-3  col-xl-3 col-lg-3 mb-2">
-                            <div className="schd-item me-2">
-                              <button
-                                className="btn btn-primary rounded-1"
-                                value="9:00 AM - 9:15 AM"
-                                onClick={(e) => setTime(e.target.value)}
-                              >
-                                9:00 AM - 9:15 AM
-                              </button>
+                          {timeSlots.map((items, index) => (
+                            <div
+                              className="col-3 col-md-3  col-xl-3 col-lg-3 mb-2"
+                              key={index}
+                            >
+                              <div className="schd-item me-2">
+                                <button
+                                  className="btn btn-primary rounded-1"
+                                  value={items}
+                                  onClick={(e) => setTime(e.target.value)}
+                                >
+                                  {items}
+                                </button>
+                              </div>
                             </div>
-                          </div>
-                          <div className="col-3 col-md-3  col-xl-3 col-lg-3 mb-2">
-                            <div className="schd-item me-2">
-                              <button
-                                className="btn btn-primary rounded-1"
-                                value="9:15 AM - 9:30 AM"
-                                onClick={(e) => setTime(e.target.value)}
-                              >
-                                9:15 AM - 9:30 AM
-                              </button>
-                            </div>
-                          </div>
-                          <div className="col-3 col-md-3  col-xl-3 col-lg-3 mb-2">
-                            <div className="schd-item me-2">
-                              <button
-                                className="btn btn-primary rounded-1"
-                                value="9:30 AM - 9:45 AM"
-                                onClick={(e) => setTime(e.target.value)}
-                              >
-                                9:30 AM - 9:45 AM
-                              </button>
-                            </div>
-                          </div>
+                          ))}
                         </div>
                       </div>
                     </div>

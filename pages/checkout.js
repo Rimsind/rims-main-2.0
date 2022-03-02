@@ -74,7 +74,7 @@ const Checkout = () => {
 
     const result = res.data;
     Router.push(
-      `/success?doctorFirstName=${doctor?.firstName}&&doctorLastName=${doctor?.lastName}&&appointmentId=${result.id}&&date=${result.date}`
+      `/success?doctorFirstName=${doctor?.firstName}&&doctorLastName=${doctor?.lastName}&&appointmentId=${result.id}&&date=${result.date}&timeSlot=${result.timeSlot}`
     );
     return result;
   };

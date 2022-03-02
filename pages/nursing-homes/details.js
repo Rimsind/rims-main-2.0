@@ -160,21 +160,18 @@ const NursingHomeId = () => {
                                     alt=""
                                   />
                                   <h4>Regular Bed</h4>
-                                  <a href="booking.html" className="spc-book">
-                                    Book now{" "}
-                                    <i className="fas fa-caret-right"></i>
-                                  </a>
                                 </div>
                                 <div className="row row-sm special-footer">
                                   <div className="col-6 text-start">
                                     <a href="#" className="doc-count">
-                                      {data?.no_of_regular_beds}
+                                      {data?.totlaRegularBeds}
                                       <span>Total</span>
                                     </a>
                                   </div>
                                   <div className="col-6 text-end">
                                     <a href="#" className="clin-count">
-                                      0 <span>Available</span>
+                                      {data?.availableRegularbeds}{" "}
+                                      <span>Available</span>
                                     </a>
                                   </div>
                                 </div>
@@ -190,20 +187,17 @@ const NursingHomeId = () => {
                                     alt=""
                                   />
                                   <h4>ICU Bed</h4>
-                                  <a href="booking.html" className="spc-book">
-                                    Book now{" "}
-                                    <i className="fas fa-caret-right"></i>
-                                  </a>
                                 </div>
                                 <div className="row row-sm special-footer">
                                   <div className="col-6 text-start">
                                     <a href="#" className="doc-count">
-                                      {data?.no_of_icu_beds} <span>Total</span>
+                                      {data?.TotalIcuBeds} <span>Total</span>
                                     </a>
                                   </div>
                                   <div className="col-6 text-end">
                                     <a href="#" className="clin-count">
-                                      0 <span>Available</span>
+                                      {data?.availableIcuBeds}{" "}
+                                      <span>Available</span>
                                     </a>
                                   </div>
                                 </div>
@@ -219,10 +213,6 @@ const NursingHomeId = () => {
                                     alt=""
                                   />
                                   <h4>Ambulance</h4>
-                                  <a href="booking.html" className="spc-book">
-                                    Book now{" "}
-                                    <i className="fas fa-caret-right"></i>
-                                  </a>
                                 </div>
                                 <div className="row row-sm special-footer">
                                   <div className="col-6 text-start">
@@ -232,7 +222,8 @@ const NursingHomeId = () => {
                                   </div>
                                   <div className="col-6 text-end">
                                     <a href="#" className="clin-count">
-                                      0 <span>Available</span>
+                                      {data?.availableAmbulance}{" "}
+                                      <span>Available</span>
                                     </a>
                                   </div>
                                 </div>
@@ -248,10 +239,6 @@ const NursingHomeId = () => {
                                     alt=""
                                   />
                                   <h4>Icu Ambulance</h4>
-                                  <a href="booking.html" className="spc-book">
-                                    Book now{" "}
-                                    <i className="fas fa-caret-right"></i>
-                                  </a>
                                 </div>
                                 <div className="row row-sm special-footer">
                                   <div className="col-6 text-start">
@@ -262,12 +249,62 @@ const NursingHomeId = () => {
                                   </div>
                                   <div className="col-6 text-end">
                                     <a href="#" className="clin-count">
-                                      0 <span>Available</span>
+                                      {data?.availableIcuAmbulance}{" "}
+                                      <span>Available</span>
                                     </a>
                                   </div>
                                 </div>
                               </div>
                             </div>
+                            <div className="col-lg-3 col-md-4"></div>
+                            <div className="col-lg-3 col-md-4">
+                              <div className="special-box text-center">
+                                <div className="special-body">
+                                  <Image
+                                    height="45"
+                                    width="45"
+                                    src="/assets/images/shapes/spec-04.png"
+                                    alt=""
+                                  />
+                                  <h4>Burn Units</h4>
+                                </div>
+                                <div className="row row-sm special-footer">
+                                  <div className="col-6 text-start">
+                                    <a href="#" className="doc-count">
+                                      {data?.totalBurnUnits} <span>Total</span>
+                                    </a>
+                                  </div>
+                                  <div className="col-6 text-end">
+                                    <a href="#" className="clin-count">
+                                      {data?.availableBurnUnits}{" "}
+                                      <span>Available</span>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4">
+                              <div className="special-box text-center">
+                                <div className="special-body">
+                                  <Image
+                                    height="45"
+                                    width="45"
+                                    src="/assets/images/shapes/spec-04.png"
+                                    alt=""
+                                  />
+                                  <h4>Doctors</h4>
+                                </div>
+                                <div className="row row-sm special-footer">
+                                  <div className="col-6 text-start">
+                                    <a href="#" className="doc-count">
+                                      {data?.TotalDoctors} <span>Total</span>
+                                    </a>
+                                  </div>
+                                  <div className="col-6 text-end"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4"></div>
                           </div>
                         </div>
                       </div>
