@@ -4,13 +4,18 @@ import {
   LocationFilter,
   HorizontalDoctorCard,
 } from "components/common/index";
-
+import { useForm } from "react-hook-form";
 import useSWR from "swr";
 import { apiUrl, fetcher } from "config/api";
 import { ListingPageLoader } from "components/Loaders";
+import { useState } from "react";
 
 const Index = () => {
+  const [gender, setGender] = useState();
+  const [specialty, setspecialty] = useState();
+
   const { data: doctors } = useSWR(`${apiUrl}/doctors`, fetcher);
+  const { data: specialties } = useSWR(`${apiUrl}/specialties`, fetcher);
 
   return (
     <>
@@ -22,7 +27,41 @@ const Index = () => {
               <div className="col-md-12 col-lg-4 col-xl-3">
                 <div className="sticky-top">
                   <LocationFilter />
-                  <SearchFilter />
+
+                  <div className="card search-filter">
+                    <div className="card-header">
+                      <h4 className="card-title mb-0">Search Filter</h4>
+                    </div>
+                    <div className="card-body">
+                      <div className="filter-widget">
+                        <h4>Gender</h4>
+                        <div className="row">
+                          {specialties?.map((items, index) => (
+                            <div className="col-12" key={index}>
+                              <div className="form-check form-check-inline">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value={items?.id}
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="inlineCheckbox1"
+                                >
+                                  {items?.name}
+                                </label>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      {/* <div className="btn-search">
+                        <button type="button" className="btn w-100">
+                          Search
+                        </button>
+                      </div> */}
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="col-md-12 col-lg-8 col-xl-9">
