@@ -27,42 +27,41 @@ const Index = () => {
               <div className="col-md-12 col-lg-4 col-xl-3">
                 <div className="sticky-top">
                   <LocationFilter />
-                  <form onSubmit={handleSubmit(searchForm)}>
-                    <div className="card search-filter">
-                      <div className="card-header">
-                        <h4 className="card-title mb-0">Search Filter</h4>
-                      </div>
-                      <div className="card-body">
-                        <div className="filter-widget">
-                          <h4>Gender</h4>
-                          <div className="row">
-                            {specialties?.map((items, index) => (
-                              <div className="col-12" key={index}>
-                                <div className="form-check form-check-inline">
-                                  <input
-                                    className="form-check-input"
-                                    type="checkbox"
-                                    value={items?.id}
-                                  />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="inlineCheckbox1"
-                                  >
-                                    {items?.name}
-                                  </label>
-                                </div>
+
+                  <div className="card search-filter">
+                    <div className="card-header">
+                      <h4 className="card-title mb-0">Search Filter</h4>
+                    </div>
+                    <div className="card-body">
+                      <div className="filter-widget">
+                        <h4>Gender</h4>
+                        <div className="row">
+                          {specialties?.map((items, index) => (
+                            <div className="col-12" key={index}>
+                              <div className="form-check form-check-inline">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value={items?.id}
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="inlineCheckbox1"
+                                >
+                                  {items?.name}
+                                </label>
                               </div>
-                            ))}
-                          </div>
+                            </div>
+                          ))}
                         </div>
-                        {/* <div className="btn-search">
+                      </div>
+                      {/* <div className="btn-search">
                         <button type="button" className="btn w-100">
                           Search
                         </button>
                       </div> */}
-                      </div>
                     </div>
-                  </form>
+                  </div>
                 </div>
               </div>
               <div className="col-md-12 col-lg-8 col-xl-9">
