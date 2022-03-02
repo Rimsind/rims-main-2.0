@@ -13,7 +13,6 @@ const Schedule = () => {
     `${apiUrl}/polyclinics/${polyclinicId}`,
     fetcher
   );
-  console.log(doctor.timetable);
 
   const [date, setDate] = useState();
   const [time, setTime] = useState();
