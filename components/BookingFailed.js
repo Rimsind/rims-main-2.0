@@ -6,7 +6,7 @@ const BookingFailed = () => {
         <div className="thank_you_inner shadow-lg">
           <div className="container">
             <div className="danger_icon text-center">
-              <i class="fas fa-times-circle"></i>
+              <i className="fas fa-times-circle"></i>
             </div>
             <div className="success_content text-center mt-3">
               <p className="fs-4">Appointment Booking Failed!</p>
