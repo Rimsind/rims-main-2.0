@@ -10592,15 +10592,16 @@ ul.benifits-col li i {
   font-weight: 600;
 }
 .contact-form {
-  padding: 50px 0 60px;
-  background-color: #fff;
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .contact-form .section-header {
   margin-bottom: 50px;
 }
 .contact-form form {
   background: #fff;
-  box-shadow: 0 4px 5px 5px #e5f1fb;
   border-radius: 8px;
   padding: 30px;
   max-width: 1000px;
@@ -12605,7 +12606,7 @@ p.clini-exam-profile-heading-text {
   background: linear-gradient(45deg, #116aa1, #720330);
   padding: 1rem;
 }
-img.clini-exam-img {
+Image.clini-exam-img {
   height: 24rem;
   padding: 1rem;
 }
@@ -12628,7 +12629,7 @@ p.clini-exam-footer-content {
 }
 
 @media screen and (min-width: 1000px) and (max-width: 1500px) {
-  img.clini-exam-img {
+  Image.clini-exam-img {
     height: 20rem;
     padding: 1rem;
   }

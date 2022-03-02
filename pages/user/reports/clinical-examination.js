@@ -78,7 +78,7 @@ const ClinicalExamination = () => {
                     <div className="patient_image mb-2">
                       <Image
                         height={350}
-                        width={350}
+                        width={450}
                         alt=""
                         className="clini-exam-img"
                         src={

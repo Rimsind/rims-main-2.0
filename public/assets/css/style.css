@@ -1269,11 +1269,6 @@ ul {
   width: 100%;
 }
 
-.contact-form {
-  padding: 50px 0 60px;
-  background-color: #fff;
-}
-
 .contact-form .section-header {
   margin-bottom: 50px;
 }
@@ -1282,17 +1277,6 @@ ul {
   font-size: 36px;
   margin-bottom: 0;
   font-weight: 500;
-}
-
-.contact-form form {
-  background: #fff;
-  -webkit-box-shadow: 0 4px 5px 5px #e5f1fb;
-  box-shadow: 0 4px 5px 5px #e5f1fb;
-  border-radius: 8px;
-  padding: 30px;
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
 }
 
 .contact-form form input {

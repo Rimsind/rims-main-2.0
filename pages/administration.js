@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 const Administration = () => {
   return (
@@ -17,48 +16,55 @@ const Administration = () => {
 
             <div className="card_list">
               <div className="card-inner">
-                <div className="card-item shadow bg-primary p-4 rounded-3">
-                  <div className="card-item-inner d-flex align-items-center">
-                    <div className="card-inner-icon">
-                      <i className="fas fa-user-md fs-1 border rounded-circle p-3 text-light bg-primary"></i>
-                    </div>
-                    <div className="card-inner-con ms-3">
-                      <Link href="#">
-                        <a className="fs-5 text-light">Doctor Login</a>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="card-inner">
-                <div className="card-item shadow bg-primary p-4 rounded-3">
-                  <div className="card-item-inner d-flex align-items-center">
-                    <div className="card-inner-icon">
-                      <i className="fas fa-capsules fs-1 border rounded-circle p-3 text-light bg-primary"></i>
-                    </div>
-                    <div className="card-inner-con ms-3">
-                      <Link href="/polyclinics/login">
-                        <a className="fs-5 text-light">Polyclinic Login</a>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="card-inner">
-                <a>
-                  <div className="card-item shadow bg-primary p-4 rounded-3">
-                    <div className="card-item-inner d-flex align-items-center">
-                      <div className="card-inner-icon">
-                        <i className="fas fa-hospital fs-1 border rounded-circle p-3 text-light bg-primary"></i>
+                <Link href="#">
+                  <a className="anchr-main-inner-box">
+                    <div className="card-item shadow bg-primary p-4 rounded-3">
+                      <div className="card-item-inner d-flex align-items-center">
+                        <div className="card-inner-icon">
+                          <i className="fas fa-user-md fs-1 border rounded-circle p-3 text-light bg-primary"></i>
+                        </div>
+
+                        <div className="card-inner-con ms-3">
+                          <a className="fs-5 text-light">Doctor Login</a>
+                        </div>
                       </div>
-                      <div className="card-inner-con ms-3">
-                        <Link href="/nursing-homes/login">
+                    </div>
+                  </a>
+                </Link>
+              </div>
+              <div className="card-inner">
+                <Link href="/polyclinics/login">
+                  <a className="anchr-main-inner-box">
+                    <div className="card-item shadow bg-primary p-4 rounded-3">
+                      <div className="card-item-inner d-flex align-items-center">
+                        <div className="card-inner-icon">
+                          <i className="fas fa-capsules fs-1 border rounded-circle p-3 text-light bg-primary"></i>
+                        </div>
+
+                        <div className="card-inner-con ms-3">
+                          <a className="fs-5 text-light">Polyclinic Login</a>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </Link>
+              </div>
+              <div className="card-inner">
+                <Link href="/nursing-homes/login">
+                  <a className="anchr-main-inner-box">
+                    <div className="card-item shadow bg-primary p-4 rounded-3">
+                      <div className="card-item-inner d-flex align-items-center">
+                        <div className="card-inner-icon">
+                          <i className="fas fa-hospital fs-1 border rounded-circle p-3 text-light bg-primary"></i>
+                        </div>
+
+                        <div className="card-inner-con ms-3">
                           <a className="fs-5 text-light">Nursing Home Login</a>
-                        </Link>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </a>
+                  </a>
+                </Link>
               </div>
             </div>
             {/* <div className="back_to_home text-center">

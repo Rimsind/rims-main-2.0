@@ -149,3 +149,9 @@ ul {
   font-size: 20px;
 }
 /*# sourceMappingURL=admin.css.map */
+
+/* Custom Stylesheet */
+
+a.anchr-main-inner-box {
+  cursor: pointer;
+}
