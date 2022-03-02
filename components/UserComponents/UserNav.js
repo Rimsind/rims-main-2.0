@@ -1,7 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-
+import { useAuth } from "context";
 const UserNav = (props) => {
+  const { logout } = useAuth();
+
   const { patient } = props;
 
   return (
@@ -114,12 +116,10 @@ const UserNav = (props) => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/user">
-                    <a>
-                      <i className="fas fa-sign-out-alt"></i>
-                      <span>Logout</span>
-                    </a>
-                  </Link>
+                  <button onClick={logout}>
+                    <i className="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                  </button>
                 </li>
               </ul>
             </nav>

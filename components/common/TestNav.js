@@ -6,7 +6,7 @@ import useSWR from "swr";
 import axios from "axios";
 
 const TestNav = () => {
-  const { auth } = useAuth();
+  const { auth, profile, logout } = useAuth();
 
   const { data } = useSWR(
     `${apiUrl}/patients/${auth?.user?.profileId}`,
@@ -84,7 +84,7 @@ const TestNav = () => {
                 </a>
               </div>
               <div className="topbar-items">
-                {auth?.token && auth?.user ? (
+                {!!auth?.token && !!auth?.user ? (
                   <>
                     <li className="nav-item dropdown has-arrow logged-item">
                       <a
