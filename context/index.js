@@ -18,15 +18,15 @@ const initialState = {
 
 const GlobalProvider = ({ children }) => {
   const [auth, dispatchAuth] = useReducer(authReducer, initialState);
-  const [profile, setProfile] = useState();
+  // const [profile, setProfile] = useState();
 
   const router = useRouter();
 
-  // const logout = () => {
-  //   destroyCookie(null, "user");
-  //   destroyCookie(null, "token");
-  //   router.push("/");
-  // };
+  const logout = () => {
+    destroyCookie(null, "user");
+    destroyCookie(null, "token");
+    router.push("/");
+  };
 
   useEffect(() => {
     async function loadUserFromCookies() {
@@ -35,26 +35,26 @@ const GlobalProvider = ({ children }) => {
         auth.token = token;
         auth.user = JSON.parse(user);
 
-        const profileData = async () => {
-          const { data } = await axios.get(
-            `${apiUrl}/patients/${auth?.user?.profileId}`,
-            {
-              headers: {
-                authorization: `Bearer ${auth.token}`,
-              },
-            }
-          );
-          return data;
-        };
+        // const profileData = async () => {
+        //   const { data } = await axios.get(
+        //     `${apiUrl}/patients/${auth?.user?.profileId}`,
+        //     {
+        //       headers: {
+        //         authorization: `Bearer ${auth.token}`,
+        //       },
+        //     }
+        //   );
+        //   return data;
+        // };
 
-        setProfile(profileData);
+        // setProfile(profileData);
       }
     }
     loadUserFromCookies();
   }, []);
 
   return (
-    <GlobalContext.Provider value={{ auth, dispatchAuth, profile }}>
+    <GlobalContext.Provider value={{ auth, dispatchAuth }}>
       {children}
     </GlobalContext.Provider>
   );
