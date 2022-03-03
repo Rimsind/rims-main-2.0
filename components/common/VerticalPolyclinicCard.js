@@ -10,7 +10,7 @@ const VerticalPolyclinicCard = ({ data }) => {
               <Image
                 height={200}
                 width={300}
-                src={data?.coverImage?.url}
+                src={data?.coverImage?.url || "/assests/images/polyclinic.jpg"}
                 alt=""
                 className="img-fluid"
               />

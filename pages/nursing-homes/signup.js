@@ -33,7 +33,7 @@ const Signup = () => {
 
     //post function for the user profile
     const res = await axios.post(
-      "https://manage.riimstechnology.com/doctors",
+      "https://manage.riimstechnology.com/nursing-homes",
       profilePayload,
       {
         headers: {
@@ -73,7 +73,7 @@ const Signup = () => {
           `https://manage.riimstechnology.com/users/${result.user.id}`,
           {
             profileId: profile.id,
-            role: 5,
+            role: 7,
           },
           {
             headers: {

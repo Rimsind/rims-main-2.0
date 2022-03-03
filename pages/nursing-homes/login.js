@@ -36,7 +36,7 @@ const Login = () => {
       );
       const result = res.data;
 
-      if (result.jwt && result.user.role.id === 5) {
+      if (result.jwt && result.user.role.id === 7) {
         setCookie(null, "token", result.jwt, {
           maxAge: 30 * 24 * 60 * 60,
           path: "/",

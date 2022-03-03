@@ -1,7 +1,7 @@
 import { createContext, useContext, useReducer, useEffect } from "react";
 import { authReducer } from "./authReducer";
 import { parseCookies, destroyCookie } from "nookies";
-import useSWR from "swr";
+
 import axios from "axios";
 import { apiUrl } from "config/api";
 import { useState } from "react";
@@ -22,11 +22,11 @@ const GlobalProvider = ({ children }) => {
 
   const router = useRouter();
 
-  const logout = () => {
-    destroyCookie(null, "user");
-    destroyCookie(null, "token");
-    router.push("/");
-  };
+  // const logout = () => {
+  //   destroyCookie(null, "user");
+  //   destroyCookie(null, "token");
+  //   router.push("/");
+  // };
 
   useEffect(() => {
     async function loadUserFromCookies() {
@@ -54,7 +54,7 @@ const GlobalProvider = ({ children }) => {
   }, []);
 
   return (
-    <GlobalContext.Provider value={{ auth, dispatchAuth, profile, logout }}>
+    <GlobalContext.Provider value={{ auth, dispatchAuth, profile }}>
       {children}
     </GlobalContext.Provider>
   );
