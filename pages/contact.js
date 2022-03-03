@@ -1,4 +1,5 @@
 import { BreadCrums } from "components/common";
+import Image from "next/image";
 
 const Contact = () => {
   return (
@@ -61,55 +62,59 @@ const Contact = () => {
           </div>
         </section>
 
-        <section
-          className="contact-form"
-          style={{
-            backgroundImage: "url(/user_assets/img/contact_us_2.jpg)",
-            backgroundSize: "cover",
-            backgroundPosition: "inherit",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
+        <section className="contact-form py-5">
           <div className="container">
             <div className="section-header text-center">
               <h2>Get in touch!</h2>
             </div>
-            <div className="contact-form-main">
-              <form action="#">
-                <div className="row">
-                  <div className="col-md-6">
-                    <div className="form-group mb-3 input-level">
-                      <label>
-                        Your Name <span>*</span>
-                      </label>
-                      <input type="text" className="form-control" />
+            <div className="row align-items-center">
+              <div className="col-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+                <Image
+                  src="/user_assets/img/about-2.png"
+                  height="500px"
+                  width="450px"
+                  alt="contact Image"
+                />
+              </div>
+              <div className="col-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+                <div className="contact-form-main shadow">
+                  <form action="#">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="form-group mb-3 input-level">
+                          <label>
+                            Your Name <span>*</span>
+                          </label>
+                          <input type="text" className="form-control" />
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="form-group mb-3 input-level">
+                          <label>
+                            Your Email <span>*</span>
+                          </label>
+                          <input type="text" className="form-control" />
+                        </div>
+                      </div>
+                      <div className="col-md-12">
+                        <div className="form-group mb-3 input-level">
+                          <label>Subject</label>
+                          <input type="text" className="form-control" />
+                        </div>
+                      </div>
+                      <div className="col-md-12">
+                        <div className="form-group mb-3 input-level">
+                          <label>
+                            Comments <span>*</span>
+                          </label>
+                          <textarea className="form-control"> </textarea>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="form-group mb-3 input-level">
-                      <label>
-                        Your Email <span>*</span>
-                      </label>
-                      <input type="text" className="form-control" />
-                    </div>
-                  </div>
-                  <div className="col-md-12">
-                    <div className="form-group mb-3 input-level">
-                      <label>Subject</label>
-                      <input type="text" className="form-control" />
-                    </div>
-                  </div>
-                  <div className="col-md-12">
-                    <div className="form-group mb-3 input-level">
-                      <label>
-                        Comments <span>*</span>
-                      </label>
-                      <textarea className="form-control"> </textarea>
-                    </div>
-                  </div>
+                    <button className="btn bg-cus-primary">Send Message</button>
+                  </form>
                 </div>
-                <button className="btn bg-cus-primary">Send Message</button>
-              </form>
+              </div>
             </div>
           </div>
         </section>
