@@ -121,7 +121,7 @@ const Contact = () => {
         <section className="contact-map d-flex">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3459.716346058072!2d-95.5565430855612!3d29.872453233633234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640cfe4516785ed%3A0x774974592a609121!2s54%20Northwest%20Fwy%20%23558%2C%20Houston%2C%20TX%2077040%2C%20USA!5e0!3m2!1sen!2sin!4v1631855334452!5m2!1sen!2sin"
-            allowfullscreen=""
+            allowFullscreen=""
             loading="lazy"
           ></iframe>
         </section>
