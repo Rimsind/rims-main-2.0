@@ -15,6 +15,7 @@ import SearchFilter from "./SearchFilter";
 import VerifyCard from "./VerifyCard";
 import TestNav from "./TestNav";
 import ListPagination from "./ListPagination";
+import HorizontalHospitalCard from "./HorizontalDoctorCard";
 
 export {
   BreadCrums,
@@ -34,4 +35,5 @@ export {
   VerifyCard,
   TestNav,
   ListPagination,
+  HorizontalHospitalCard,
 };

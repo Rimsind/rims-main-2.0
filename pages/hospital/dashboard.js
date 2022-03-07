@@ -99,7 +99,7 @@ const Dashboard = () => {
                         <div className="row align-items-center">
                           <div className="col-md-4">
                             <div className="nursing-form-input">
-                              <label>Nursing Home Name</label>
+                              <label>Hospital Name</label>
                             </div>
                           </div>
                           <div className="col-md-8">
@@ -107,7 +107,7 @@ const Dashboard = () => {
                               <input
                                 type="text"
                                 className="form-control"
-                                placeholder="Nursing Home Name"
+                                placeholder="Hospital Name"
                               />
                             </div>
                           </div>
