@@ -26,7 +26,7 @@ const Index = () => {
                   {data?.map((items, index) => (
                     <HorizontalHospitalCard
                       data={items}
-                      link="hospital"
+                      link="hospitals"
                       key={index}
                     />
                   ))}

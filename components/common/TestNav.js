@@ -203,7 +203,7 @@ const TestNav = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link href="/hospital">
+                  <Link href="/hospitals">
                     <a className="nav-link navbar-link text-white">Hospital</a>
                   </Link>
                 </li>
