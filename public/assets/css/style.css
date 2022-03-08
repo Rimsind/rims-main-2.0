@@ -2942,3 +2942,189 @@ ul li a.disabled {
 }
 
 /* loader end */
+
+/* Hospital Details Start */
+.hospital-details-main {
+  background: url(../../user_assets/img/slider/slider-4.jpg);
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+p.hospital-details-main-name {
+  font-size: 50px;
+  color: white;
+  font-family: poppins;
+}
+
+.hospital-details-main-content {
+  display: inline-block;
+}
+
+.hospital-details-sub-name {
+  overflow: hidden;
+  border-right: 0.15em solid orange;
+  white-space: nowrap;
+  font-size: 21px;
+  color: white;
+  animation: typing 12s steps(20, end) alternate infinite, blinking 0.75s;
+  width: 0;
+}
+@keyframes typing {
+  0%,
+  100% {
+    width: 0;
+  }
+  20%,
+  80% {
+    width: 100%;
+  }
+}
+
+@keyframes blinking {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: orange;
+  }
+}
+
+.why_choose_heading {
+  border-radius: 50px 50px;
+}
+
+p span.first_choose_text {
+  font-size: 20px;
+  color: #162266;
+  background-color: #000b48;
+  padding: 14px 12px;
+  border-radius: 50px 0 0 50px;
+  margin-left: -7px;
+  text-shadow: 1px 1px 1px #ffffff;
+}
+
+p span.second_choose_text {
+  margin-left: 20px;
+  font-size: 19px;
+  color: white;
+  font-family: ubuntu;
+}
+
+.hospital-facilities-heading p::before,
+.hospital-doctors-heading p::before,
+.hospital-gallery-heading p::before {
+  content: "";
+  border-left: solid #10defd;
+  margin-right: 15px;
+  border-width: 10px;
+  border-bottom: 10px solid #000b48;
+  border-top: 10px solid #000b48;
+  border-radius: 5px 2px;
+}
+
+.hospital-contact-heading p {
+  border-bottom: 2px solid #000b48;
+}
+
+.hospital-details-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 138px;
+  margin-bottom: 20px;
+  background: url(../../user_assets/img/blog-1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.hospital-details-item .main_heading {
+  height: 100px;
+  background-color: aliceblue;
+  width: 270px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.hospital-details-main-sub-heading {
+  display: flex;
+  justify-content: center;
+}
+
+.hospital-details-main-sub-heading p {
+  border: 2px solid #ffc107;
+  border-radius: 50px;
+}
+
+.total_para,
+.avlble_para {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.hospital-doctors,
+.hospital-gallery {
+  margin-bottom: 40px;
+}
+
+/* .hospital-doctors-heading p {
+  color: #000b48;
+  border-bottom: 2px solid #000b48;
+}  */
+
+button.btn-custom-clr {
+  background-color: #000b48;
+  color: white;
+  padding: 10px 25px;
+}
+
+button.btn-custom-clr:hover {
+  background-color: white;
+  color: #000b48;
+  border: 1px solid #000b48;
+}
+
+.hospital-con-info {
+  background-color: #d1e3f2;
+  padding: 55px 0;
+}
+
+p.hospital-name,
+p.hospital-email,
+p.hospital-phone,
+p.hospital-open,
+p.hospital-close,
+p.hospital-street,
+p.hospital-landmark,
+p.hospital-city,
+p.hospital-state,
+p.hospital-country,
+p.hospital-pincode,
+p.hospital-desc {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+span.hospital-con-info-span {
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+.bg-custom-info {
+  background-color: #0dcaf0;
+}

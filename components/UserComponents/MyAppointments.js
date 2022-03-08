@@ -31,7 +31,13 @@ const MyAppointments = ({ data }) => {
         <td>₹{data?.fee}</td>
         <td>{data?.eprescription?.followup?.date}</td>
         <td>
-          <span className="badge rounded-pill bg-success-light">Confirm</span>
+          {!!data.appointment_status === false ? (
+            <span className="badge rounded-pill bg-warning-light">Pending</span>
+          ) : (
+            <span className="badge rounded-pill bg-success-light">
+              Completed
+            </span>
+          )}
         </td>
         <td className="text-end">
           <div className="table-action">
