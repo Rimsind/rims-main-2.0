@@ -2944,7 +2944,7 @@ ul li a.disabled {
 /* loader end */
 
 /* Hospital Details Start */
-.hospital-details-main {
+/* .hospital-details-main {
   background: url(../../user_assets/img/slider/slider-4.jpg);
   height: 500px;
   background-size: cover;
@@ -2959,7 +2959,7 @@ ul li a.disabled {
   -ms-flex-align: center;
   align-items: center;
   flex-direction: column;
-}
+} */
 
 p.hospital-details-main-name {
   font-size: 50px;
@@ -3037,7 +3037,7 @@ p span.second_choose_text {
   border-bottom: 2px solid #000b48;
 }
 
-.hospital-details-item {
+/* .hospital-details-item {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -3046,7 +3046,7 @@ p span.second_choose_text {
   background: url(../../user_assets/img/blog-1.jpg);
   background-repeat: no-repeat;
   background-position: center;
-}
+} */
 
 .hospital-details-item .main_heading {
   height: 100px;

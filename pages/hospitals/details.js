@@ -53,7 +53,23 @@ const HospitalId = () => {
                     </ul>
                   </div>
                 </div>
-                <div className="hospital-details-main text" id="aboutUs">
+                <div
+                  className="hospital-details-main text"
+                  id="aboutUs"
+                  style={{
+                    background: "url(/user_assets/img/slider/slider-4.jpg)",
+                    height: "500px",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+
+                    display: "flex",
+
+                    justifyContent: "center",
+
+                    alignItems: "center",
+                    flexDirection: "column",
+                  }}
+                >
                   <p className="hospital-details-main-name border-bottom border-3 border-warning">
                     Haldia International Super-Specialist Hospital
                   </p>
@@ -165,7 +181,20 @@ const HospitalId = () => {
                           <div className="hospital-facilities-right-center">
                             <div className="row align-items-center">
                               <div className="col-6">
-                                <div className="hospital-details-item">
+                                <div
+                                  className="hospital-details-item"
+                                  style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                    alignItems: "center",
+                                    height: "138px",
+                                    marginBottom: "20px",
+                                    background:
+                                      "url(/user_assets/img/blog-1.jpg)",
+                                    backgroundRepeat: "no-repeat",
+                                    backgroundPosition: "center",
+                                  }}
+                                >
                                   <div className="main_heading">
                                     <p className="main_heading-para">
                                       Regular Bed
@@ -188,7 +217,20 @@ const HospitalId = () => {
                                 </div>
                               </div>
                               <div className="col-6">
-                                <div className="hospital-details-item">
+                                <div
+                                  className="hospital-details-item"
+                                  style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                    alignItems: "center",
+                                    height: "138px",
+                                    marginBottom: "20px",
+                                    background:
+                                      "url(/user_assets/img/blog-1.jpg)",
+                                    backgroundRepeat: "no-repeat",
+                                    backgroundPosition: "center",
+                                  }}
+                                >
                                   <div className="main_heading">
                                     <p className="main_heading-para">ICU Bed</p>
                                     <div className="d-flex align-items-center">
@@ -211,7 +253,20 @@ const HospitalId = () => {
                             </div>
                             <div className="row align-items-center">
                               <div className="col-6">
-                                <div className="hospital-details-item">
+                                <div
+                                  className="hospital-details-item"
+                                  style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                    alignItems: "center",
+                                    height: "138px",
+                                    marginBottom: "20px",
+                                    background:
+                                      "url(/user_assets/img/blog-1.jpg)",
+                                    backgroundRepeat: "no-repeat",
+                                    backgroundPosition: "center",
+                                  }}
+                                >
                                   <div className="main_heading">
                                     <p className="main_heading-para">
                                       Regular Ambulance
@@ -234,7 +289,20 @@ const HospitalId = () => {
                                 </div>
                               </div>
                               <div className="col-6">
-                                <div className="hospital-details-item">
+                                <div
+                                  className="hospital-details-item"
+                                  style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                    alignItems: "center",
+                                    height: "138px",
+                                    marginBottom: "20px",
+                                    background:
+                                      "url(/user_assets/img/blog-1.jpg)",
+                                    backgroundRepeat: "no-repeat",
+                                    backgroundPosition: "center",
+                                  }}
+                                >
                                   <div className="main_heading">
                                     <p className="main_heading-para">
                                       ICU Ambulance
@@ -259,7 +327,20 @@ const HospitalId = () => {
                             </div>
                             <div className="row align-items-center">
                               <div className="col-6">
-                                <div className="hospital-details-item">
+                                <div
+                                  className="hospital-details-item"
+                                  style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                    alignItems: "center",
+                                    height: "138px",
+                                    marginBottom: "20px",
+                                    background:
+                                      "url(/user_assets/img/blog-1.jpg)",
+                                    backgroundRepeat: "no-repeat",
+                                    backgroundPosition: "center",
+                                  }}
+                                >
                                   <div className="main_heading">
                                     <p className="main_heading-para">
                                       Operation Theater
@@ -282,7 +363,20 @@ const HospitalId = () => {
                                 </div>
                               </div>
                               <div className="col-6">
-                                <div className="hospital-details-item">
+                                <div
+                                  className="hospital-details-item"
+                                  style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                    alignItems: "center",
+                                    height: "138px",
+                                    marginBottom: "20px",
+                                    background:
+                                      "url(/user_assets/img/blog-1.jpg)",
+                                    backgroundRepeat: "no-repeat",
+                                    backgroundPosition: "center",
+                                  }}
+                                >
                                   <div className="main_heading">
                                     <p className="main_heading-para">
                                       Burn Care Unit
