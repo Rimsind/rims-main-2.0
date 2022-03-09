@@ -204,7 +204,7 @@ const Index = () => {
                     </div>
                   </div>
 
-                  <div className="card">
+                  {/* <div className="card">
                     <div className="card-body pt-0">
                       <nav className="user-tabs mb-4">
                         <ul className="nav nav-tabs nav-tabs-bottom nav-justified">
@@ -330,6 +330,14 @@ const Index = () => {
                         </div>
                       </div>
                     </div>
+                  </div> */}
+                  <div className="user_dash_banner">
+                    <Image
+                      height="500"
+                      width="2000"
+                      src="/user_assets/img/slide1.jpg"
+                      alt=""
+                    />
                   </div>
                 </div>
               ) : (

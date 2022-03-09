@@ -119,6 +119,13 @@ const UploadMedicalRecord = ({ patient }) => {
               <>
                 {upload_medical_record?.map((item, index) => (
                   <tr key={index}>
+                    <td>
+                      <div className="delete-table-icon">
+                        <button className="btn rounded-circle">
+                          <i className="fad fa-trash"></i>
+                        </button>
+                      </div>
+                    </td>
                     <td>{item.title}</td>
                     <td>
                       <Link href={item?.file?.url}>

@@ -207,6 +207,7 @@ const FamilyMadicalHistory = ({ patient }) => {
           <table className="table table-striped">
             <thead>
               <tr>
+                <th scope="col"></th>
                 <th scope="col">Relation</th>
                 <th scope="col">Age (if living)</th>
                 <th scope="col">Age (if death)</th>
@@ -227,6 +228,13 @@ const FamilyMadicalHistory = ({ patient }) => {
                 <>
                   {familyHistory.map((item, index) => (
                     <tr key={index}>
+                      <td>
+                        <div className="delete-table-icon">
+                          <button className="btn rounded-circle">
+                            <i className="fad fa-trash"></i>
+                          </button>
+                        </div>
+                      </td>
                       <td>{item.relation}</td>
                       <td>{item.age_if_living}</td>
                       <td>{item.age_if_death}</td>

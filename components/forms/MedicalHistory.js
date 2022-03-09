@@ -641,7 +641,13 @@ const MedicalHistory = ({ patient }) => {
                   <>
                     {medicalHistory?.surgicalHistory?.map((item, index) => (
                       <tr key={index}>
-                        <td>*</td>
+                        <td>
+                          <div className="delete-table-icon">
+                            <button className="btn rounded-circle">
+                              <i className="fad fa-trash"></i>
+                            </button>
+                          </div>
+                        </td>
                         <td>{item.name}</td>
                         <td>{item.date}</td>
                       </tr>
@@ -872,6 +878,7 @@ const MedicalHistory = ({ patient }) => {
           <table className="table">
             <thead>
               <tr>
+                <th scope="col"></th>
                 <th scope="col">Medicine Name</th>
                 <th scope="col">Medicine Dose</th>
                 <th scope="col">Start Date</th>
@@ -894,6 +901,13 @@ const MedicalHistory = ({ patient }) => {
                 <>
                   {medicalHistory?.medicationHistory?.map((item, index) => (
                     <tr key={index}>
+                      <td>
+                        <div className="delete-table-icon">
+                          <button className="btn rounded-circle">
+                            <i className="fad fa-trash"></i>
+                          </button>
+                        </div>
+                      </td>
                       <td>{item.medicineName}</td>
                       <td>{item.dose}</td>
                       <td>{item.startDate}</td>
