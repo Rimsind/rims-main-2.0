@@ -3126,7 +3126,7 @@ span.hospital-con-info-span {
 
 /* Hospital Style End */
 
-/* Nursing Home Premium Style */
+/* Polyclinic Premium Style */
 .bg-custom-poly-nav {
   background-color: #000b48;
 }
@@ -3206,4 +3206,53 @@ i.bg-poly-icon {
 
 .poly_details_doctor {
   padding: 50px 0;
+}
+
+/* Polyclinic End */
+/* Nursing Home Start */
+.nursing-home-info {
+  margin-top: -50px;
+}
+.bg-custom-nursing-home {
+  background-color: #241e5e;
+  padding: 50px 25px;
+}
+.nursing-home-service {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.nursing-service-heading {
+  margin-bottom: 50px;
+}
+p.nursing-service-heading-name {
+  color: #241e5e;
+  font-size: 48px;
+  line-height: 1.2;
+  font-weight: 400;
+  font-family: "PT Serif", serif;
+}
+.nursing-service-icon-item i {
+  font-size: 40px;
+  padding: 25px;
+  background-color: white;
+  border: 2px solid #241e5e;
+  color: #241e5e;
+  border-radius: 50%;
+}
+.nursing-service-icon-item i:hover {
+  background-color: #241e5e;
+  color: white;
+}
+p.nursing-service-icon-con-name {
+  color: #000b48;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: ubuntu;
+  margin-top: 15px;
+}
+p.why-choose-heading-main-head {
+  font-size: 45px;
+  color: #000b48;
+  line-height: 1.1;
+  font-weight: 500;
 }
