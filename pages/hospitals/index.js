@@ -1,14 +1,14 @@
 import {
   BreadCrums,
   LocationFilter,
-  HorizontalHospitalCard,
+  HorizontalPolyclinicCard,
   ListPagination,
 } from "components/common/index";
 import { apiUrl, fetcher } from "config/api";
 import useSWR from "swr";
 import { ListingPageLoader } from "components/Loaders";
 const Index = () => {
-  const { data } = useSWR(`${apiUrl}/hospital`, fetcher);
+  const { data } = useSWR(`${apiUrl}/hospitals`, fetcher);
   return (
     <main className="main">
       <BreadCrums title="Home / Hospital" title1="Hospital" />
@@ -24,7 +24,7 @@ const Index = () => {
               {data ? (
                 <>
                   {data?.map((items, index) => (
-                    <HorizontalHospitalCard
+                    <HorizontalPolyclinicCard
                       data={items}
                       link="hospitals"
                       key={index}

@@ -30,7 +30,9 @@ const HorizontalPolyclinicCard = (props) => {
                   <a href="doctor-profile.html">{data?.name}</a>
                 </h4>
                 <p className="doc-speciality">
-                  {data?.city}, {data?.state}
+                  {data?.city}
+                  {data?.address?.city}, {data?.state}
+                  {data?.address?.state}
                 </p>
                 <i className="far fa-envelope"></i> {data?.email}
                 <div className="clinic-details"></div>
@@ -53,7 +55,9 @@ const HorizontalPolyclinicCard = (props) => {
                   </li>
                   <li>
                     <i className="fas fa-map-marker-alt"></i>{" "}
-                    {data?.street_address}, {data?.city}
+                    {data?.street_address}
+                    {data?.address?.street_address}, {data?.city}
+                    {data?.address?.city}
                   </li>
                 </ul>
               </div>

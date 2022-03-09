@@ -123,7 +123,7 @@ const HospitalId = () => {
                             tellus, rhoncus nec orci ac, auctor bibendum lacus.
                           </p>
                           <p className="fs-5 fw-bold border-bottom border-2">
-                            We
+                            Our Advantage
                           </p>
                           <ul className="d-flex justify-content-between list-unstyled">
                             <li>

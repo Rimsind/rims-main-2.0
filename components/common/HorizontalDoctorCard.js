@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-const HorizontalDoctorCard = ({ doctorData }) => {
+const HorizontalDoctorCard = ({ data }) => {
   return (
     <>
       <div className="card">
@@ -12,7 +12,9 @@ const HorizontalDoctorCard = ({ doctorData }) => {
                   <Image
                     height="150"
                     width="150"
-                    src={doctorData?.image?.url || "/assets/images/profile.png"}
+                    src={
+                      data?.profile_image?.url || "/assets/images/profile.png"
+                    }
                     className="img-fluid"
                     alt="User Image"
                   />
@@ -20,27 +22,26 @@ const HorizontalDoctorCard = ({ doctorData }) => {
               </div>
               <div className="doc-info-cont">
                 <h4 className="doc-name">
-                  Dr. {doctorData?.firstName} {doctorData?.lastName}
+                  Dr. {data?.firstName} {data?.lastName}
                 </h4>
                 <p className="doc-speciality">
-                  {doctorData?.experienceInYrs} years experience, Consultant{" "}
-                  {doctorData?.specialty?.name}
+                  {data?.experienceInYrs} years experience, Consultant{" "}
+                  {data?.specialty?.name}
                 </p>
                 <h5 className="doc-department">
                   <Image
                     height="20"
                     width="20"
-                    src={doctorData?.specialty?.image?.url}
+                    src={data?.specialty?.image?.url}
                     alt=""
                   />{" "}
-                  {doctorData?.specialty?.name}
+                  {data?.specialty?.name}
                 </h5>
                 <i className="far fa-envelope mb-3 me-2"></i>
-                {doctorData?.email}
+                {data?.email}
                 <div className="clinic-services">
                   <span>
-                    <i className="fab fa-skype"></i> Skype Id:{" "}
-                    {doctorData?.skype_id}
+                    <i className="fab fa-skype"></i> Skype Id: {data?.skype_id}
                   </span>
                 </div>
               </div>
@@ -50,16 +51,16 @@ const HorizontalDoctorCard = ({ doctorData }) => {
                 <ul>
                   <li>
                     <i className="fas fa-certificate"></i>
-                    {doctorData?.qualification}
+                    {data?.qualification}
                   </li>
 
                   <li>
                     <i className="fas fa-map-marker-alt"></i>{" "}
-                    {doctorData?.address?.city}, {doctorData?.address?.state}
+                    {data?.address?.city}, {data?.address?.state}
                   </li>
                   <li>
                     <i className="far fa-money-bill-alt"></i> ₹
-                    {doctorData?.feeScale?.min} - ₹{doctorData?.feeScale?.max}
+                    {data?.feeScale?.min} - ₹{data?.feeScale?.max}
                     <i
                       className="fas fa-info-circle"
                       data-bs-toggle="tooltip"
@@ -69,7 +70,7 @@ const HorizontalDoctorCard = ({ doctorData }) => {
                 </ul>
               </div>
               <div className="clinic-booking">
-                <Link href={`/doctors/${doctorData?.id}`}>
+                <Link href={`/doctors/${data?.id}`}>
                   <a className="view-pro-btn">View Profile</a>
                 </Link>
               </div>

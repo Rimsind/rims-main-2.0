@@ -2944,22 +2944,6 @@ ul li a.disabled {
 /* loader end */
 
 /* Hospital Details Start */
-/* .hospital-details-main {
-  background: url(../../user_assets/img/slider/slider-4.jpg);
-  height: 500px;
-  background-size: cover;
-  background-position: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  flex-direction: column;
-} */
 
 p.hospital-details-main-name {
   font-size: 50px;
@@ -3138,4 +3122,88 @@ span.hospital-con-info-span {
 .delete-table-icon button:hover {
   background-color: #d50000;
   color: white;
+}
+
+/* Hospital Style End */
+
+/* Nursing Home Premium Style */
+.bg-custom-poly-nav {
+  background-color: #000b48;
+}
+p.polyclinic-details-main-name {
+  font-size: 50px;
+  color: white;
+  font-family: poppins;
+}
+
+p.polyclinic-details-main-sub-name {
+  font-size: 20px;
+  color: white;
+  font-family: ubuntu;
+}
+
+.poly_details_about {
+  background-color: #07599b;
+}
+
+.bg-left-custom-clr {
+  background-color: #07599b;
+  color: #fafcfe;
+  padding: 50px 50px;
+}
+
+.bg-mddl-custom-clr {
+  background-color: #0779bb;
+  color: #fafcfe;
+  padding: 50px 50px;
+}
+
+.bg-right-custom-clr {
+  background-color: #0a8cd7;
+  color: #fafcfe;
+  padding: 50px 50px;
+}
+
+.poly_details_why_choose {
+  padding: 50px 0;
+}
+
+i.bg-poly-icon {
+  background-color: #0c8ed9;
+}
+
+.bg-col-first {
+  background-color: #f1f3f5;
+  border: 1px solid #caccce;
+  padding: 50px;
+}
+
+.bg-col-poly-second {
+  background-color: #0779bb;
+  color: white;
+  padding: 50px;
+}
+.bg-col-poly-third {
+  background-color: #0771b3;
+  color: white;
+  padding: 50px;
+}
+.bg-col-poly-four {
+  background-color: #0769ab;
+  color: white;
+  padding: 50px;
+}
+.bg-col-poly-fifth {
+  background-color: #0762a4;
+  color: white;
+  padding: 50px;
+}
+.bg-col-poly-sixth {
+  background-color: #07599b;
+  color: white;
+  padding: 50px;
+}
+
+.poly_details_doctor {
+  padding: 50px 0;
 }
