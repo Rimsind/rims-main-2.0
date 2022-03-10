@@ -116,7 +116,7 @@ const Details2 = () => {
               </div>
               <div className="col">
                 <div className="nursing-service-icon-item">
-                  <i class="far fa-utensils-alt"></i>
+                  <i className="far fa-utensils-alt"></i>
                 </div>
                 <div className="nursing-service-icon-con">
                   <p className="nursing-service-icon-con-name">Food Care</p>
@@ -124,7 +124,7 @@ const Details2 = () => {
               </div>
               <div className="col">
                 <div className="nursing-service-icon-item">
-                  <i class="far fa-utensils-alt"></i>
+                  <i className="far fa-utensils-alt"></i>
                 </div>
                 <div className="nursing-service-icon-con">
                   <p className="nursing-service-icon-con-name">Physical Care</p>
@@ -132,7 +132,7 @@ const Details2 = () => {
               </div>
               <div className="col">
                 <div className="nursing-service-icon-item">
-                  <i class="far fa-chess"></i>
+                  <i className="far fa-chess"></i>
                 </div>
                 <div className="nursing-service-icon-con">
                   <p className="nursing-service-icon-con-name">Health Care</p>
@@ -140,7 +140,7 @@ const Details2 = () => {
               </div>
               <div className="col">
                 <div className="nursing-service-icon-item">
-                  <i class="far fa-pizza-slice"></i>
+                  <i className="far fa-pizza-slice"></i>
                 </div>
                 <div className="nursing-service-icon-con">
                   <p className="nursing-service-icon-con-name">Health Care</p>
@@ -686,14 +686,14 @@ const Details2 = () => {
             <div className="row">
               <div className="col-4 d-flex align-items-start">
                 <div className="icon-item me-3">
-                  <i class="far fa-quote-right p-3 fs-1"></i>
+                  <i className="far fa-quote-right p-3 fs-1"></i>
                 </div>
                 <div className="icon-con">
                   <p className="fs-6">
-                    I'm very thankful to Polyclinic! Web accessibility refers to
-                    the inclusive practice of removing barriers that prevent
-                    interaction with, or access to websites, by people with
-                    disabilities.
+                    I&apos;m very thankful to Polyclinic! Web accessibility
+                    refers to the inclusive practice of removing barriers that
+                    prevent interaction with, or access to websites, by people
+                    with disabilities.
                   </p>
                   <div className="poly_details_con_name">
                     <p className="fs-5">- Prasenjit Kamila</p>
@@ -702,14 +702,14 @@ const Details2 = () => {
               </div>
               <div className="col-4 d-flex align-items-start">
                 <div className="icon-item me-3">
-                  <i class="far fa-quote-right p-3 fs-1"></i>
+                  <i className="far fa-quote-right p-3 fs-1"></i>
                 </div>
                 <div className="icon-con">
                   <p className="fs-6">
-                    I'm very thankful to Polyclinic! Web accessibility refers to
-                    the inclusive practice of removing barriers that prevent
-                    interaction with, or access to websites, by people with
-                    disabilities.
+                    I&apos;m very thankful to Polyclinic! Web accessibility
+                    refers to the inclusive practice of removing barriers that
+                    prevent interaction with, or access to websites, by people
+                    with disabilities.
                   </p>
                   <div className="poly_details_con_name">
                     <p className="fs-5">- Prasenjit Kamila</p>
@@ -718,14 +718,14 @@ const Details2 = () => {
               </div>
               <div className="col-4 d-flex align-items-start">
                 <div className="icon-item me-3">
-                  <i class="far fa-quote-right p-3 fs-1"></i>
+                  <i className="far fa-quote-right p-3 fs-1"></i>
                 </div>
                 <div className="icon-con">
                   <p className="fs-6">
-                    I'm very thankful to Polyclinic! Web accessibility refers to
-                    the inclusive practice of removing barriers that prevent
-                    interaction with, or access to websites, by people with
-                    disabilities.
+                    I&apos;m very thankful to Polyclinic! Web accessibility
+                    refers to the inclusive practice of removing barriers that
+                    prevent interaction with, or access to websites, by people
+                    with disabilities.
                   </p>
                   <div className="poly_details_con_name">
                     <p className="fs-5">- Prasenjit Kamila</p>
