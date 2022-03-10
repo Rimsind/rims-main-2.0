@@ -8625,7 +8625,7 @@ body .multi-optn {
 }
 .pro-widget-content {
   border-bottom: 1px solid #f0f0f0;
-  padding: 20px;
+  /* padding: 20px; */
   text-align: center;
 }
 .profile-info-widget {
