@@ -3079,6 +3079,28 @@ span.hospital-con-info-span {
   color: white;
 }
 
+.hospital-gallery-bg {
+  background-color: aliceblue;
+}
+
+/* .gallery-img-icon {
+  top: 281px;
+  left: 115px;
+  background-color: #ff0000c7;
+  color: #ffffff;
+  padding: 10px 14px;
+  border-radius: 50%;
+  font-size: 14px;
+}
+.gallery-img-icon:hover {
+  top: 278px;
+  left: 104px;
+  background-color: #ff0000;
+  color: #ffffff;
+  padding: 10px 16px;
+
+  font-size: 20px;
+} */
 /* Hospital Style End */
 
 /* Polyclinic Premium Style */
