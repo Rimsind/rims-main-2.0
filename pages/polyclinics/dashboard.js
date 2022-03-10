@@ -93,13 +93,60 @@ const Dashboard = () => {
             <div className="col-md-7 col-lg-8 col-xl-9">
               <div className="card">
                 <div className="card-body">
+                  <div className="form-group d-flex justify-content-between align-items-center upload-profile">
+                    <div className="change-avatar">
+                      <div className="profile-img">
+                        <Image
+                          height="100"
+                          width="100"
+                          src={"/assets/images/profile.png"}
+                          alt="User Image"
+                        />
+                      </div>
+                      <div className="upload-img">
+                        <div className="change-photo-btn">
+                          <span>
+                            <i className="fa fa-upload"></i> Upload Photo
+                          </span>
+                          <input
+                            type="file"
+                            className="upload"
+                            // onChange={(e) =>
+                            //   setProfileImage(e.target.files[0])
+                            // }
+                          />
+                        </div>
+                        <small className="form-text text-muted">
+                          Allowed JPG, GIF or PNG. Max size of 2MB
+                        </small>
+                      </div>
+                    </div>
+
+                    <div className="upload-btn">
+                      <input
+                        type="btn"
+                        className="btn btn-primary"
+                        value="Upload"
+                        // value={loading ? "Uploading..." : "upload"}
+                        // disabled={loading}
+                        // onClick={uploadProfileImage}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="card">
+                <div className="card-header">
+                  <p className="fs-5 fw-bold text-center">Polyclinic Details</p>
+                </div>
+                <div className="card-body">
                   <form>
                     <div className="row mb-3">
                       <div className="col-md-6">
                         <div className="row align-items-center">
                           <div className="col-md-4">
                             <div className="nursing-form-input">
-                              <label>Nursing Home Name</label>
+                              <label>Polyclinic Name</label>
                             </div>
                           </div>
                           <div className="col-md-8">
@@ -107,7 +154,7 @@ const Dashboard = () => {
                               <input
                                 type="text"
                                 className="form-control"
-                                placeholder="Nursing Home Name"
+                                placeholder="Polyclinic Name"
                               />
                             </div>
                           </div>
@@ -179,6 +226,9 @@ const Dashboard = () => {
                           </div>
                         </div>
                       </div>
+                    </div>
+                    <div className="save-btn-poly mt-4 text-end">
+                      <button className="btn btn-primary">Save Changes</button>
                     </div>
                   </form>
                 </div>
@@ -333,10 +383,13 @@ const Dashboard = () => {
                         </div>
                       </div>
                     </div>
+                    <div className="save-btn-poly mt-4 text-end">
+                      <button className="btn btn-primary">Save Changes</button>
+                    </div>
                   </form>
                 </div>
               </div>
-              <div className="card">
+              {/* <div className="card">
                 <div className="card-header">
                   <p className="fs-5 fw-bold text-center lh-1">Overview</p>
                 </div>
@@ -606,28 +659,33 @@ const Dashboard = () => {
                     </div>
                   </form>
                 </div>
-              </div>
+              </div> */}
               <div className="card">
                 <div className="card-header">
                   <p className="fs-5 fw-bold text-center lh-1">Doctors</p>
                 </div>
                 <div className="card-body">
                   <form>
-                    <div className="row align-items-center mb-3">
-                      <div className="col-md-4">
-                        <label className="fs-6 fw-bold">Add Doctors</label>
+                    <div className="mb-3">
+                      <div className="row align-items-center mb-3">
+                        <div className="col-md-4">
+                          <label className="fs-6 fw-bold">Add Doctors</label>
+                        </div>
+                        <div className="col-md-8">
+                          <select
+                            className="form-select"
+                            aria-label="Default select example"
+                          >
+                            <option selected>Select Doctors</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
                       </div>
-                      <div className="col-md-8">
-                        <select
-                          className="form-select"
-                          aria-label="Default select example"
-                        >
-                          <option selected>Select Doctors</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
-                        </select>
-                      </div>
+                    </div>
+                    <div className="save-btn-poly mt-4 text-end">
+                      <button className="btn btn-primary">Save Changes</button>
                     </div>
                   </form>
                 </div>
@@ -644,7 +702,9 @@ const Dashboard = () => {
                         type="checkbox"
                         value="option1"
                       />
-                      <label className="form-check-label">Pharmacy</label>
+                      <label className="form-check-label">
+                        Dental Fillings
+                      </label>
                     </div>
                     <div className="form-check form-check-inline">
                       <input
@@ -652,7 +712,7 @@ const Dashboard = () => {
                         type="checkbox"
                         value="option1"
                       />
-                      <label className="form-check-label">Pathology</label>
+                      <label className="form-check-label">Whitneing</label>
                     </div>
                     <div className="form-check form-check-inline">
                       <input
@@ -660,9 +720,336 @@ const Dashboard = () => {
                         type="checkbox"
                         value="option1"
                       />
-                      <label className="form-check-label">Radiology</label>
+                      <label className="form-check-label">Whitneing</label>
+                    </div>
+                    <div className="save-btn-poly mt-4 text-end">
+                      <button className="btn btn-primary">Save Changes</button>
                     </div>
                   </form>
+                </div>
+              </div>
+              <p className="fs-5 fw-bold">Premium Page</p>
+              <div className="card">
+                <div className="card-body">
+                  <div
+                    className="form-group upload-profile d-flex justify-content-center"
+                    style={{
+                      background: "url(/user_assets/img/featured-bg.jpg)",
+                      height: "200px",
+                    }}
+                  >
+                    <div className="row align-items-center">
+                      <div className="col-8 col-md-8">
+                        <div className="change-avatar">
+                          <div className="upload-img">
+                            <div className="change-photo-btn">
+                              <span>
+                                <i className="fa fa-upload"></i> Upload Photo
+                              </span>
+                              <input
+                                type="file"
+                                className="upload"
+                                // onChange={(e) =>
+                                //   setProfileImage(e.target.files[0])
+                                // }
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-4 col-md-4">
+                        <div className="upload-btn">
+                          <input
+                            type="btn"
+                            className="btn btn-primary"
+                            value="Upload"
+                            // value={loading ? "Uploading..." : "upload"}
+                            // disabled={loading}
+                            // onClick={uploadProfileImage}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="card-body poly-section2 justify-content-center align-items-center">
+                  <div className="row">
+                    <div className="col-6 col-md-6">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Short Information"
+                      />
+                    </div>
+                    <div className="col-6 col-md-6">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Short Paragraph"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="card-body poly-section3">
+                  <div className="row">
+                    <div
+                      className="col-md-6"
+                      style={{
+                        backgroundColor: "#0779bb",
+                        color: "#fafcfe",
+                        padding: "50px 50px",
+                      }}
+                    >
+                      <div className="poly-item">
+                        <p className="fs-6 fw-bold">Who We Are</p>
+                        <div className="mb-3">
+                          <input
+                            type="text"
+                            className="form-control"
+                            placeholder="EASY TO USE COMPLETE MEDICAL SOLUTION."
+                          />
+                        </div>
+                        <div className="form-floating">
+                          <textarea
+                            className="form-control"
+                            placeholder="Leave a comment here"
+                          ></textarea>
+                          <label>Accessibility matters especially...</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="col-md-6"
+                      style={{
+                        backgroundColor: "#0a8cd7",
+                        color: "#fafcfe",
+                        padding: "50px 50px",
+                      }}
+                    >
+                      <div className="poly-item">
+                        <p className="fs-6 fw-bold">Visiting Hours</p>
+                        <div className="visiting-hours">
+                          <div className="row align-items-center">
+                            <div className="col-2 col-md-2">
+                              <div className="form-check form-check-inline">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  id="inlineCheckbox1"
+                                  value="option1"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  for="inlineCheckbox1"
+                                >
+                                  Monday
+                                </label>
+                              </div>
+                            </div>
+                            <div className="col-4 col-md-4">
+                              <div className="form-check form-check-inline">
+                                <input type="time" />
+                              </div>
+                            </div>
+                            <div className="col-2 col-md-2">
+                              <p className="fs-6 fw-bold text-center">To</p>
+                            </div>
+                            <div className="col-4 col-md-4">
+                              <div className="form-check form-check-inline">
+                                <input type="time" />
+                              </div>
+                            </div>
+                          </div>
+                          <div className="row align-items-center">
+                            <div className="col-2 col-md-2">
+                              <div className="form-check form-check-inline">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  id="inlineCheckbox1"
+                                  value="option1"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  for="inlineCheckbox1"
+                                >
+                                  Tuesday
+                                </label>
+                              </div>
+                            </div>
+                            <div className="col-4 col-md-4">
+                              <div className="form-check form-check-inline">
+                                <input type="time" />
+                              </div>
+                            </div>
+                            <div className="col-2 col-md-2">
+                              <p className="fs-6 fw-bold text-center">To</p>
+                            </div>
+                            <div className="col-4 col-md-4">
+                              <div className="form-check form-check-inline">
+                                <input type="time" />
+                              </div>
+                            </div>
+                          </div>
+                          <div className="row align-items-center">
+                            <div className="col-2 col-md-2">
+                              <div className="form-check form-check-inline">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  id="inlineCheckbox1"
+                                  value="option1"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  for="inlineCheckbox1"
+                                >
+                                  Wednesday
+                                </label>
+                              </div>
+                            </div>
+                            <div className="col-4 col-md-4">
+                              <div className="form-check form-check-inline">
+                                <input type="time" />
+                              </div>
+                            </div>
+                            <div className="col-2 col-md-2">
+                              <p className="fs-6 fw-bold text-center">To</p>
+                            </div>
+                            <div className="col-4 col-md-4">
+                              <div className="form-check form-check-inline">
+                                <input type="time" />
+                              </div>
+                            </div>
+                          </div>
+                          <div className="row align-items-center">
+                            <div className="col-2 col-md-2">
+                              <div className="form-check form-check-inline">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  id="inlineCheckbox1"
+                                  value="option1"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  for="inlineCheckbox1"
+                                >
+                                  Thursday
+                                </label>
+                              </div>
+                            </div>
+                            <div className="col-4 col-md-4">
+                              <div className="form-check form-check-inline">
+                                <input type="time" />
+                              </div>
+                            </div>
+                            <div className="col-2 col-md-2">
+                              <p className="fs-6 fw-bold text-center">To</p>
+                            </div>
+                            <div className="col-4 col-md-4">
+                              <div className="form-check form-check-inline">
+                                <input type="time" />
+                              </div>
+                            </div>
+                          </div>
+                          <div className="row align-items-center">
+                            <div className="col-2 col-md-2">
+                              <div className="form-check form-check-inline">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  id="inlineCheckbox1"
+                                  value="option1"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  for="inlineCheckbox1"
+                                >
+                                  Friday
+                                </label>
+                              </div>
+                            </div>
+                            <div className="col-4 col-md-4">
+                              <div className="form-check form-check-inline">
+                                <input type="time" />
+                              </div>
+                            </div>
+                            <div className="col-2 col-md-2">
+                              <p className="fs-6 fw-bold text-center">To</p>
+                            </div>
+                            <div className="col-4 col-md-4">
+                              <div className="form-check form-check-inline">
+                                <input type="time" />
+                              </div>
+                            </div>
+                          </div>
+                          <div className="row align-items-center">
+                            <div className="col-2 col-md-2">
+                              <div className="form-check form-check-inline">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  id="inlineCheckbox1"
+                                  value="option1"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  for="inlineCheckbox1"
+                                >
+                                  Saturday
+                                </label>
+                              </div>
+                            </div>
+                            <div className="col-4 col-md-4">
+                              <div className="form-check form-check-inline">
+                                <input type="time" />
+                              </div>
+                            </div>
+                            <div className="col-2 col-md-2">
+                              <p className="fs-6 fw-bold text-center">To</p>
+                            </div>
+                            <div className="col-4 col-md-4">
+                              <div className="form-check form-check-inline">
+                                <input type="time" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="card-body">
+                  <div className="row">
+                    <div className="col-6 col-md-6">
+                      <div className="about-heading mb-3">
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Thank you for visiting Polyclinic!"
+                        />
+                      </div>
+                      <div className="about-sub-heading mb-3">
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="WE ARE A CLINIC THAT HAS BEEN IN BUSINESS FOR 15 YEARS PROVIDING TOP LOCAL MEDICAL CARE."
+                        />
+                      </div>
+                      <div className="about-para">
+                        <div className="form-floating">
+                          <textarea
+                            className="form-control"
+                            placeholder="Leave a comment here"
+                            id="floatingTextarea2"
+                            style={{ height: "100px" }}
+                          ></textarea>
+                          <label for="floatingTextarea2">Paragraph</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

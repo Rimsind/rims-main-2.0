@@ -44,7 +44,7 @@ const Index = () => {
           {banners?.map((items, index) => (
             <div key={index}>
               <section
-                className="section section-banner"
+                className="section section-banner d-flex justify-content-center flex-column align-items-center"
                 style={{ backgroundImage: `url(${items.img.url})` }}
               ></section>
             </div>
