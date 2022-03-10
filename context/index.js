@@ -18,7 +18,7 @@ const initialState = {
 
 const GlobalProvider = ({ children }) => {
   const [auth, dispatchAuth] = useReducer(authReducer, initialState);
-  const [profile, setProfile] = useState();
+  // const [profile, setProfile] = useState();
 
   const router = useRouter();
 
@@ -35,26 +35,26 @@ const GlobalProvider = ({ children }) => {
         auth.token = token;
         auth.user = JSON.parse(user);
 
-        const profileData = async () => {
-          const res = await axios.get(
-            `${apiUrl}/patients/${auth?.user?.profileId}`,
-            {
-              headers: {
-                authorization: `Bearer ${auth.token}`,
-              },
-            }
-          );
-          const result = await res.data;
-          return result;
-        };
-        setProfile(profileData);
+        // const profileData = async () => {
+        //   const res = await axios.get(
+        //     `${apiUrl}/patients/${auth?.user?.profileId}`,
+        //     {
+        //       headers: {
+        //         authorization: `Bearer ${auth.token}`,
+        //       },
+        //     }
+        //   );
+        //   const result = await res.data;
+        //   return result;
+        // };
+        // setProfile(profileData);
       }
     }
     loadUserFromCookies();
   }, []);
 
   return (
-    <GlobalContext.Provider value={{ auth, dispatchAuth, logOut, profile }}>
+    <GlobalContext.Provider value={{ auth, dispatchAuth, logOut }}>
       {children}
     </GlobalContext.Provider>
   );

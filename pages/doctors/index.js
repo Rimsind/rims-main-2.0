@@ -4,7 +4,7 @@ import {
   LocationFilter,
   HorizontalDoctorCard,
 } from "components/common/index";
-import { useForm } from "react-hook-form";
+
 import useSWR from "swr";
 import { apiUrl, fetcher } from "config/api";
 import { ListingPageLoader } from "components/Loaders";
@@ -16,6 +16,7 @@ const Index = () => {
 
   const { data: doctors } = useSWR(`${apiUrl}/doctors`, fetcher);
   const { data: specialties } = useSWR(`${apiUrl}/specialties`, fetcher);
+  console.log(doctors);
 
   return (
     <>
@@ -68,7 +69,7 @@ const Index = () => {
                 {doctors ? (
                   <>
                     {doctors?.map((item, index) => (
-                      <HorizontalDoctorCard doctorData={item} key={index} />
+                      <HorizontalDoctorCard data={item} key={index} />
                     ))}
                   </>
                 ) : (

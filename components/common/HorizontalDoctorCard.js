@@ -12,9 +12,7 @@ const HorizontalDoctorCard = ({ data }) => {
                   <Image
                     height="150"
                     width="150"
-                    src={
-                      data?.profile_image?.url || "/assets/images/profile.png"
-                    }
+                    src={data?.image?.url || "/assets/images/profile.png"}
                     className="img-fluid"
                     alt="User Image"
                   />
