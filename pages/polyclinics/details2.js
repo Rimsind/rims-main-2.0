@@ -157,8 +157,8 @@ const Details2 = () => {
                 </form>
               </div>
               <p className="fs-6 fst-italic mt-3">
-                Enter specialist's name into search field and/or narrow down the
-                search results by selecting job position and specialty.
+                Enter specialist&apos;s name into search field and/or narrow
+                down the search results by selecting job position and specialty.
               </p>
             </div>
             <div className="col-6">
@@ -170,8 +170,8 @@ const Details2 = () => {
                   </p>
                   <p className="fs-6 pt-3">
                     Accessibility matters especially with medical institutions,
-                    and that's why the Polyclinic theme is fully accessibility
-                    ready!
+                    and that&apos;s why the Polyclinic theme is fully
+                    accessibility ready!
                   </p>
                 </div>
                 <div className="col-6 bg-right-custom-clr">
@@ -598,14 +598,14 @@ const Details2 = () => {
             <div className="row">
               <div className="col-4 d-flex align-items-start">
                 <div className="icon-item me-3">
-                  <i class="far fa-quote-right p-3 fs-1"></i>
+                  <i className="far fa-quote-right p-3 fs-1"></i>
                 </div>
                 <div className="icon-con">
                   <p className="fs-6">
-                    I'm very thankful to Polyclinic! Web accessibility refers to
-                    the inclusive practice of removing barriers that prevent
-                    interaction with, or access to websites, by people with
-                    disabilities.
+                    I&apos;m very thankful to Polyclinic! Web accessibility
+                    refers to the inclusive practice of removing barriers that
+                    prevent interaction with, or access to websites, by people
+                    with disabilities.
                   </p>
                   <div className="poly_details_con_name">
                     <p className="fs-5">- Prasenjit Kamila</p>
@@ -614,14 +614,14 @@ const Details2 = () => {
               </div>
               <div className="col-4 d-flex align-items-start">
                 <div className="icon-item me-3">
-                  <i class="far fa-quote-right p-3 fs-1"></i>
+                  <i className="far fa-quote-right p-3 fs-1"></i>
                 </div>
                 <div className="icon-con">
                   <p className="fs-6">
-                    I'm very thankful to Polyclinic! Web accessibility refers to
-                    the inclusive practice of removing barriers that prevent
-                    interaction with, or access to websites, by people with
-                    disabilities.
+                    I&apos;m very thankful to Polyclinic! Web accessibility
+                    refers to the inclusive practice of removing barriers that
+                    prevent interaction with, or access to websites, by people
+                    with disabilities.
                   </p>
                   <div className="poly_details_con_name">
                     <p className="fs-5">- Prasenjit Kamila</p>
@@ -630,14 +630,14 @@ const Details2 = () => {
               </div>
               <div className="col-4 d-flex align-items-start">
                 <div className="icon-item me-3">
-                  <i class="far fa-quote-right p-3 fs-1"></i>
+                  <i className="far fa-quote-right p-3 fs-1"></i>
                 </div>
                 <div className="icon-con">
                   <p className="fs-6">
-                    I'm very thankful to Polyclinic! Web accessibility refers to
-                    the inclusive practice of removing barriers that prevent
-                    interaction with, or access to websites, by people with
-                    disabilities.
+                    I&apos;m very thankful to Polyclinic! Web accessibility
+                    refers to the inclusive practice of removing barriers that
+                    prevent interaction with, or access to websites, by people
+                    with disabilities.
                   </p>
                   <div className="poly_details_con_name">
                     <p className="fs-5">- Prasenjit Kamila</p>
