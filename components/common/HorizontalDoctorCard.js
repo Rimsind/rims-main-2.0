@@ -32,7 +32,10 @@ const HorizontalDoctorCard = ({ data }) => {
                   <Image
                     height="20"
                     width="20"
-                    src={data?.specialty?.image?.url}
+                    src={
+                      data?.specialty?.image?.url ||
+                      "/assets/images/profile.png"
+                    }
                     alt=""
                   />{" "}
                   {data?.specialty?.name}

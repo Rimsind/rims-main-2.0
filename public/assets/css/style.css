@@ -1554,50 +1554,9 @@ html::-webkit-scrollbar-thumb:active {
   padding: 16px;
 }
 
-.payment-widget .payment-list label.payment-radio {
-  display: block;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  color: #272b41;
-  text-transform: capitalize;
-}
-
-.payment-widget .payment-list .card-label > label {
-  background-color: #fff;
-  color: #959595;
-  display: inline-block;
-  font-size: 13px;
-  font-weight: 500;
-  margin: 6px auto auto 8px;
-  padding: 0 7px;
-}
-
-.payment-widget .payment-list .card-label > input {
-  background-color: #fff;
-  border: 1px solid #dbdbdb;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 1px 3px 0 #0000000d;
-  box-shadow: 0 1px 3px 0 #0000000d;
-  display: block;
-  height: 50px;
-  margin-top: -13px;
-  padding: 5px 15px 0;
-  -webkit-transition: border-color 0.3s;
-  transition: border-color 0.3s;
-  width: 100%;
-}
-
 .section-banner {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   flex-direction: column;
   align-items: start;
   height: 65vh;
