@@ -4,8 +4,8 @@ import axios from "axios";
 import { useAuth } from "context";
 import { useState } from "react";
 
-const ProfileInfo = ({ patient }) => {
-  // console.log(patient);
+const ProfileInfo = ({ data }) => {
+  // console.log(data);
   const { auth } = useAuth();
   const [loading, setLoading] = useState(false);
   const { register, handleSubmit } = useForm();
@@ -28,7 +28,7 @@ const ProfileInfo = ({ patient }) => {
       };
 
       const res = await axios.put(
-        `${apiUrl}/patients/${auth.user?.profileId}`,
+        `${apiUrl}/${auth?.user?.role.name}s/${auth.user?.profileId}`,
         payload,
         {
           headers: {
@@ -60,8 +60,8 @@ const ProfileInfo = ({ patient }) => {
                     aria-label="Default select example"
                     {...register("title")}
                   >
-                    <option defaultValue={!!patient?.title && patient.title}>
-                      {!!patient?.title && patient.title}
+                    <option defaultValue={!!data?.title && data.title}>
+                      {!!data?.title && data.title}
                     </option>
                     {titleList.map((items, index) => (
                       <option value={items} key={index}>
@@ -78,9 +78,7 @@ const ProfileInfo = ({ patient }) => {
                     type="text"
                     className="form-control"
                     {...register("first_name")}
-                    defaultValue={
-                      !!patient?.first_name ? patient.first_name : ""
-                    }
+                    defaultValue={!!data?.first_name ? data.first_name : ""}
                   />
                 </div>
               </div>
@@ -91,7 +89,7 @@ const ProfileInfo = ({ patient }) => {
                     type="text"
                     className="form-control"
                     {...register("last_name")}
-                    defaultValue={!!patient?.last_name ? patient.last_name : ""}
+                    defaultValue={!!data?.last_name ? data.last_name : ""}
                   />
                 </div>
               </div>
@@ -103,7 +101,7 @@ const ProfileInfo = ({ patient }) => {
                       type="date"
                       className="form-control"
                       {...register("dob")}
-                      defaultValue={!!patient?.dob ? patient.dob : ""}
+                      defaultValue={!!data?.dob ? data.dob : ""}
                     />
                   </div>
                 </div>
@@ -115,7 +113,7 @@ const ProfileInfo = ({ patient }) => {
                     type="text"
                     className="form-control"
                     {...register("age")}
-                    defaultValue={!!patient?.age ? patient.age : ""}
+                    defaultValue={!!data?.age ? data.age : ""}
                   />
                 </div>
               </div>
@@ -128,9 +126,9 @@ const ProfileInfo = ({ patient }) => {
                   >
                     <option
                       name="gender"
-                      defaultValue={!!patient?.gender && patient.gender}
+                      defaultValue={!!data?.gender && data.gender}
                     >
-                      {!!patient?.gender && patient.gender}
+                      {!!data?.gender && data.gender}
                     </option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
@@ -148,10 +146,10 @@ const ProfileInfo = ({ patient }) => {
                     <option
                       name="marital_status"
                       defaultChecked={
-                        !!patient?.marital_status && patient.marital_status
+                        !!data?.marital_status && data.marital_status
                       }
                     >
-                      {!!patient?.marital_status && patient.marital_status}
+                      {!!data?.marital_status && data.marital_status}
                     </option>
                     <option name="marital_status" value="Single">
                       Single
@@ -177,12 +175,9 @@ const ProfileInfo = ({ patient }) => {
                   >
                     <option
                       name="blood_group"
-                      value={
-                        !!patient?.blood_group?.id && patient.blood_group?.id
-                      }
+                      value={!!data?.blood_group?.id && data.blood_group?.id}
                     >
-                      {!!patient?.blood_group?.name &&
-                        patient.blood_group?.name}
+                      {!!data?.blood_group?.name && data.blood_group?.name}
                     </option>
                     <option name="blood_group" value="2">
                       A+
@@ -218,7 +213,7 @@ const ProfileInfo = ({ patient }) => {
                     type="email"
                     className="form-control"
                     readOnly
-                    defaultValue={!!patient?.email ? patient.email : ""}
+                    defaultValue={!!data?.email ? data.email : ""}
                   />
                 </div>
               </div>
@@ -230,7 +225,7 @@ const ProfileInfo = ({ patient }) => {
                     placeholder="+1 202-555-0125"
                     className="form-control"
                     {...register("phone")}
-                    defaultValue={!!patient?.phone ? patient.phone : ""}
+                    defaultValue={!!data?.phone ? data.phone : ""}
                   />
                 </div>
               </div>

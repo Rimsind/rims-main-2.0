@@ -44,7 +44,7 @@ const StatesList = [
   "West Bengal",
 ];
 
-const AddressInfo = ({ patient }) => {
+const AddressInfo = ({ data }) => {
   const { auth } = useAuth();
   const [loading, setLoading] = useState(false);
   const { register, handleSubmit } = useForm();
@@ -63,7 +63,7 @@ const AddressInfo = ({ patient }) => {
       };
 
       const res = await axios.put(
-        `${apiUrl}/patients/${auth.user?.profileId}`,
+        `${apiUrl}/${auth?.user?.role.name}s/${auth.user?.profileId}`,
         payload,
         {
           headers: {
@@ -94,8 +94,8 @@ const AddressInfo = ({ patient }) => {
                     placeholder="806 Twin Willow Lane"
                     {...register("street")}
                     defaultValue={
-                      !!patient?.address && !!patient.address.street_address
-                        ? patient.address.street_address
+                      !!data?.address && !!data.address.street_address
+                        ? data.address.street_address
                         : ""
                     }
                   />
@@ -110,8 +110,8 @@ const AddressInfo = ({ patient }) => {
                     placeholder="Old Forge"
                     {...register("city")}
                     defaultValue={
-                      !!patient?.address && !!patient.address.city
-                        ? patient.address.city
+                      !!data?.address && !!data.address.city
+                        ? data.address.city
                         : ""
                     }
                   />
@@ -126,13 +126,13 @@ const AddressInfo = ({ patient }) => {
                   >
                     <option
                       defaultValue={
-                        !!patient?.address && !!patient.address.state
-                          ? patient.address.state
+                        !!data?.address && !!data.address.state
+                          ? data.address.state
                           : ""
                       }
                     >
-                      {!!patient?.address && !!patient.address.state
-                        ? patient.address.state
+                      {!!data?.address && !!data.address.state
+                        ? data.address.state
                         : ""}
                     </option>
                     {StatesList.map((items, index) => (
@@ -150,8 +150,8 @@ const AddressInfo = ({ patient }) => {
                     placeholder="13420"
                     {...register("pinCode")}
                     defaultValue={
-                      !!patient?.address && !!patient.address.pincode
-                        ? patient.address.pincode
+                      !!data?.address && !!data.address.pincode
+                        ? data.address.pincode
                         : ""
                     }
                   />
@@ -166,13 +166,13 @@ const AddressInfo = ({ patient }) => {
                   >
                     <option
                       defaultValue={
-                        !!patient?.address && !!patient.address.country
-                          ? patient.address.country
+                        !!data?.address && !!data.address.country
+                          ? data.address.country
                           : ""
                       }
                     >
-                      {!!patient?.address && !!patient.address.country
-                        ? patient.address.country
+                      {!!data?.address && !!data.address.country
+                        ? data.address.country
                         : ""}
                     </option>
                     <option>India</option>

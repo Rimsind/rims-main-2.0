@@ -18,7 +18,7 @@ const initialState = {
 
 const GlobalProvider = ({ children }) => {
   const [auth, dispatchAuth] = useReducer(authReducer, initialState);
-  // const [profile, setProfile] = useState();
+  const [profile, setProfile] = useState();
 
   const router = useRouter();
 
@@ -37,7 +37,7 @@ const GlobalProvider = ({ children }) => {
 
         // const profileData = async () => {
         //   const res = await axios.get(
-        //     `${apiUrl}/patients/${auth?.user?.profileId}`,
+        //     `${apiUrl}/${user?.role?.name}/${auth?.user?.profileId}`,
         //     {
         //       headers: {
         //         authorization: `Bearer ${auth.token}`,

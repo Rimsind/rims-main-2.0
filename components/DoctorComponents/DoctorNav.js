@@ -5,11 +5,11 @@ import { apiUrl } from "config/api";
 import useSWR from "swr";
 import axios from "axios";
 
-const TestNav = () => {
-  const { auth, logOut } = useAuth();
+const DoctorNav = () => {
+  const { auth } = useAuth();
 
   const { data } = useSWR(
-    `${apiUrl}/${auth?.user?.role?.name}s/${auth?.user?.profileId}`,
+    `${apiUrl}/doctors/${auth?.user?.profileId}`,
     async (url) => {
       const res = await axios.get(url, {
         headers: {
@@ -20,18 +20,16 @@ const TestNav = () => {
       return result;
     }
   );
-  console.log(auth);
-
   return (
     <>
-      <section className="upper-main-mrq bg-primary pt-2">
+      {/* <section className="upper-main-mrq bg-primary pt-2">
         <div className="container-fluid">
           <marquee direction="left" behavior="alternate">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget
             magna pulvinar
           </marquee>
         </div>
-      </section>
+      </section> */}
       <section className="main-nav pt-2">
         <div className="container-fluid">
           <div className="nav-topbar d-flex justify-content-between align-items-center">
@@ -97,9 +95,7 @@ const TestNav = () => {
                           <Image
                             className="rounded-circle "
                             src={
-                              data?.image?.url ||
-                              data?.coverImage?.url ||
-                              "/assets/images/profile.png"
+                              data?.image?.url || "/assets/images/profile.png"
                             }
                             width="35"
                             height="35"
@@ -114,10 +110,7 @@ const TestNav = () => {
                               height="100"
                               width="100"
                               src={
-                                data?.image?.url ||
-                                data?.coverImage?.url ||
-                                data?.profile_image?.url ||
-                                "/assets/images/profile.png"
+                                data?.image?.url || "/assets/images/profile.png"
                               }
                               alt="User Image"
                               className="avatar-img rounded-circle"
@@ -126,66 +119,18 @@ const TestNav = () => {
                           <div className="user-text">
                             <h6>
                               {data?.first_name} {data?.last_name}
-                              {data?.name}
                             </h6>
                           </div>
                         </div>
-                        {auth?.user?.role?.id === 6 ? (
-                          <>
-                            <Link href="/polyclinics/dashboard">
-                              <a className="dropdown-item">Dashboard</a>
-                            </Link>
-
-                            <button className="dropdown-item" onClick={logOut}>
-                              Logout
-                            </button>
-                          </>
-                        ) : (
-                          <></>
-                        )}
-                        {auth?.user?.role?.id === 7 ? (
-                          <>
-                            <Link href="/nursing-homes/dashboard">
-                              <a className="dropdown-item">Dashboard</a>
-                            </Link>
-
-                            <button className="dropdown-item" onClick={logOut}>
-                              Logout
-                            </button>
-                          </>
-                        ) : (
-                          <></>
-                        )}
-                        {auth?.user?.role?.id === 3 ? (
-                          <>
-                            <Link href="/doctors/dashboard">
-                              <a className="dropdown-item">Dashboard</a>
-                            </Link>
-                            <Link href="/doctors/profile-settings">
-                              <a className="dropdown-item">Profile Settings</a>
-                            </Link>
-                            <button className="dropdown-item" onClick={logOut}>
-                              Logout
-                            </button>
-                          </>
-                        ) : (
-                          <></>
-                        )}
-                        {auth?.user?.role?.id === 1 ? (
-                          <>
-                            <Link href="/user/">
-                              <a className="dropdown-item">Dashboard</a>
-                            </Link>
-                            <Link href="/user/profile-settings">
-                              <a className="dropdown-item">Profile Settings</a>
-                            </Link>
-                            <button className="dropdown-item" onClick={logOut}>
-                              Logout
-                            </button>
-                          </>
-                        ) : (
-                          <></>
-                        )}
+                        <Link href="/user/">
+                          <a className="dropdown-item">Dashboard</a>
+                        </Link>
+                        <Link href="/user/profile-settings">
+                          <a className="dropdown-item">Profile Settings</a>
+                        </Link>
+                        <a className="dropdown-item" href="login.html">
+                          Logout
+                        </a>
                       </div>
                     </li>
                   </>
@@ -293,4 +238,4 @@ const TestNav = () => {
   );
 };
 
-export default TestNav;
+export default DoctorNav;
