@@ -13,6 +13,7 @@ import Carousel from "react-elastic-carousel";
 import Image from "next/image";
 import Link from "next/link";
 import Slider from "react-slick";
+// import Script from "next/script";
 import { SliderCardLoader, SpecialtyLoader } from "components/Loaders";
 const Index = () => {
   const { data: banners } = useSWR(`${apiUrl}/banners`, fetcher);
@@ -36,6 +37,10 @@ const Index = () => {
     autoplaySpeed: 3500,
     pauseOnHover: false,
   };
+
+  // <Script>
+  //   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  // </Script>;
 
   return (
     <>
@@ -340,7 +345,7 @@ const Index = () => {
                 <Image
                   height="500"
                   width="500"
-                  src="/user_assets/img/gif/solid-1.gif"
+                  src="/user_assets/img/gif/left-image.gif"
                   className="img-fluid"
                   alt="Feature"
                 />
