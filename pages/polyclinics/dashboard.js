@@ -1,5 +1,25 @@
 import Image from "next/image";
+import { useAuth } from "context";
+import { apiUrl } from "config/api";
+import useSWR from "swr";
+import axios from "axios";
 const Dashboard = () => {
+  const { auth } = useAuth();
+
+  const { data } = useSWR(
+    `${apiUrl}/polyclinics/${auth?.user?.profileId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
+  console.log(auth);
+
   return (
     <>
       <div className="content mb-3">
@@ -31,7 +51,7 @@ const Dashboard = () => {
                     </div>
                   </div>
                 </div>
-                <div className="dashboard-widget">
+                {/* <div className="dashboard-widget">
                   <nav className="dashboard-menu">
                     <ul>
                       <li className="active">
@@ -86,7 +106,7 @@ const Dashboard = () => {
                       </li>
                     </ul>
                   </nav>
-                </div>
+                </div> */}
               </div>
             </div>
 
