@@ -1,6 +1,6 @@
 import useSWR from "swr";
-import { useAuth } from "../../context";
-import { apiUrl } from "../../config/api";
+import { useAuth } from "context";
+import { apiUrl } from "config/api";
 const CheifComplaints = ({ appointmentId }) => {
   const { auth } = useAuth();
   const { data } = useSWR(

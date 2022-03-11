@@ -1,5 +1,37 @@
+import {
+  CheifComplaints,
+  FamilyHistory,
+  FunctionalStatus,
+  GeneralInfo,
+  EmploymentStatus,
+  VitalSigns,
+  MedicalHistory,
+  SocialHistory,
+  MedicalRecords,
+} from "components/DoctorComponents/subjectiveForm";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useAuth } from "context";
+import useSWR from "swr";
+import { apiUrl } from "config/api";
+import axios from "axios";
+
 const SubjectiveDetails = () => {
+  const { id } = useRouter().query;
+  const { auth } = useAuth();
+  const { data: appointment } = useSWR(
+    `${apiUrl}/appointments/${id}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
+
   return (
     <>
       <div
@@ -34,7 +66,7 @@ const SubjectiveDetails = () => {
 
           <div className="row">
             <div className="col-md-2 col-lg-2 col-xl-2">
-              {/* <PatientDemographics patientInfo={data?.patient} /> */}
+              {/* <PatientDemographics patientInfo={appointment?.patient} /> */}
               <div className="card profile-sidebar patient-card shadow-sm">
                 <div className="widget-profile pro-widget-content">
                   <div className="profile-info-widget">
@@ -121,7 +153,7 @@ const SubjectiveDetails = () => {
                   <div className="custom-tab row align-items-center">
                     <div className="col-6 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                       <div
-                        className="tablinks diag-inner-content bg-primary pt-4 pb-1 text-center active"
+                        className="tablinks diag-inner-content  pt-4 pb-1 text-center active"
                         id="defaultOpen"
                       >
                         <p className="fs-5 fw-bold text-light">
@@ -130,15 +162,15 @@ const SubjectiveDetails = () => {
                       </div>
                     </div>
                     <div className="col-6 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                      <div className="tablinks diag-inner-content bg-primary pt-4 pb-1 text-center">
-                        <Link
-                          href={`/doctors/appointments/clinical-examination`}
-                        >
+                      <Link
+                        href={`/doctors/appointments/clinical-examination?id=${id}`}
+                      >
+                        <div className="tablinks diag-inner-content bg-danger pt-4 pb-1 text-center">
                           <p className="fs-5 fw-bold text-light">
                             Clinical Assesment
                           </p>
-                        </Link>
-                      </div>
+                        </div>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -230,84 +262,84 @@ const SubjectiveDetails = () => {
                           id="tab-8"
                           className="tab-pane fade show active"
                         >
-                          {/* <CheifComplaints appointmentId={id} /> */}
-                          <p>Cheif Complaints</p>
+                          <CheifComplaints appointmentId={id} />
                         </div>
                         <div
                           role="tabpanel"
                           id="tab-1"
                           className="tab-pane fade  "
                         >
-                          {/* <GeneralInfo
-                            patientId={data?.patient?.id}
+                          <GeneralInfo
+                            patientId={appointment?.patient?.id}
                             generalInformation={
-                              data?.patient?.generalInformation
+                              appointment?.patient?.generalInformation
                             }
-                          /> */}
-                          <p>General Info</p>
+                          />
                         </div>
                         <div
                           role="tabpanel"
                           id="tab-2"
                           className="tab-pane fade"
                         >
-                          {/* <SocialHistory
-                            patientId={data?.patient?.id}
-                            socialHistory={data?.patient?.socialHistory}
-                          /> */}
-                          <p>Social History</p>
+                          <SocialHistory
+                            patientId={appointment?.patient?.id}
+                            socialHistory={appointment?.patient?.socialHistory}
+                          />
                         </div>
                         <div
                           role="tabpanel"
                           id="tab-3"
                           className="tab-pane fade"
                         >
-                          {/* <EmploymentStatus
-                            patientId={data?.patient?.id}
-                            employmentStatus={data?.patient?.employmentStatus}
-                          /> */}
-                          <p>Employment Status</p>
+                          <EmploymentStatus
+                            patientId={appointment?.patient?.id}
+                            employmentStatus={
+                              appointment?.patient?.employmentStatus
+                            }
+                          />
                         </div>
                         <div
                           role="tabpanel"
                           id="tab-4"
                           className="tab-pane fade"
                         >
-                          {/* <MedicalHistory
-                            patientId={data?.patient?.id}
-                            medicalHistory={data?.patient?.medicalHistory}
-                          /> */}
-                          <p>Medical History</p>
+                          <MedicalHistory
+                            patientId={appointment?.patient?.id}
+                            medicalHistory={
+                              appointment?.patient?.medicalHistory
+                            }
+                          />
                         </div>
                         <div
                           role="tabpanel"
                           id="tab-5"
                           className="tab-pane fade"
                         >
-                          {/* <FunctionalStatus
-                            patientId={data?.patient?.id}
-                            functionalStatus={data?.patient?.functionalStatus}
-                          /> */}
-                          <p>Functional Status</p>
+                          <FunctionalStatus
+                            patientId={appointment?.patient?.id}
+                            functionalStatus={
+                              appointment?.patient?.functionalStatus
+                            }
+                          />
                         </div>
                         <div
                           role="tabpanel"
                           id="tab-6"
                           className="tab-pane fade"
                         >
-                          {/* <FamilyHistory
-                            patientId={data?.patient?.id}
-                            familyHistory={data?.patient?.familyHistory}
-                          /> */}
-                          <p>Family History</p>
+                          <FamilyHistory
+                            patientId={appointment?.patient?.id}
+                            familyHistory={appointment?.patient?.familyHistory}
+                          />
                         </div>
                         <div
                           role="tabpanel"
                           id="tab-7"
                           className="tab-pane fade"
                         >
-                          {/* <MedicalRecords patientId={data?.patient?.id} /> */}
-                          <p>Medical Records</p>
+                          <MedicalRecords
+                            patientId={appointment?.patient?.id}
+                          />
                         </div>
                       </div>
                     </div>

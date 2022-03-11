@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 const ClinicalExamination = () => {
+  const { id } = useRouter().query;
   return (
     <>
       <div
@@ -120,18 +122,18 @@ const ClinicalExamination = () => {
                 <div className="card-header">
                   <div className="custom-tab row align-items-center">
                     <div className="col-6 col-sm-12 col-md-6 col-lg-6 col-xl-6 appt-tab-btn">
-                      <div
-                        className="tablinks diag-inner-content bg-primary pt-4 pb-1 text-center "
-                        id="defaultOpen"
+                      <Link
+                        href={`/doctors/appointments/subjective-details?id=${id}`}
                       >
-                        <Link
-                          href={`/doctors/appointments/subjective-information`}
+                        <div
+                          className="tablinks diag-inner-content bg-danger pt-4 pb-1 text-center "
+                          id="defaultOpen"
                         >
                           <p className="fs-5 fw-bold text-light">
                             Subjective Informtion
                           </p>
-                        </Link>
-                      </div>
+                        </div>
+                      </Link>
                     </div>
                     <div className="col-6 col-sm-12 col-md-6 col-lg-6 col-xl-6 appt-tab-btn">
                       <div className="tablinks diag-inner-content bg-primary pt-4 pb-1 text-center active">

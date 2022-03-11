@@ -44,7 +44,9 @@ const AppointmentList = ({ data }) => {
         </td>
         <td className="text-end">
           <div className="table-action">
-            <Link href={`/doctors/appointments/subjective-details?${data?.id}`}>
+            <Link
+              href={`/doctors/appointments/subjective-details?id=${data?.id}`}
+            >
               <a className="btn btn-sm bg-info-light">
                 <i className="far fa-eye"></i> View
               </a>
