@@ -5,7 +5,7 @@ const AppointmentList = ({ data }) => {
   return (
     <>
       <tr>
-        <td>01</td>
+        <td>{data?.id}</td>
         <td>
           <h2 className="table-avatar">
             <a href="doctor-profile.html" className="avatar avatar-sm me-2">

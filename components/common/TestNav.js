@@ -20,7 +20,6 @@ const TestNav = () => {
       return result;
     }
   );
-  console.log(auth);
 
   return (
     <>

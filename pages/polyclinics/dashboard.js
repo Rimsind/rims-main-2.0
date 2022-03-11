@@ -1120,7 +1120,7 @@ const Dashboard = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="inlineCheckbox1"
+                                  htmlFor="inlineCheckbox1"
                                 >
                                   Monday
                                 </label>
@@ -1151,7 +1151,7 @@ const Dashboard = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="inlineCheckbox1"
+                                  htmlFor="inlineCheckbox1"
                                 >
                                   Tuesday
                                 </label>
@@ -1182,7 +1182,7 @@ const Dashboard = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="inlineCheckbox1"
+                                  htmlFor="inlineCheckbox1"
                                 >
                                   Wednesday
                                 </label>
@@ -1213,7 +1213,7 @@ const Dashboard = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="inlineCheckbox1"
+                                  htmlFor="inlineCheckbox1"
                                 >
                                   Thursday
                                 </label>
@@ -1244,7 +1244,7 @@ const Dashboard = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="inlineCheckbox1"
+                                  htmlFor="inlineCheckbox1"
                                 >
                                   Friday
                                 </label>
@@ -1275,7 +1275,7 @@ const Dashboard = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="inlineCheckbox1"
+                                  htmlFor="inlineCheckbox1"
                                 >
                                   Saturday
                                 </label>
@@ -1327,7 +1327,7 @@ const Dashboard = () => {
                             id="floatingTextarea2"
                             style={{ height: "100px" }}
                           ></textarea>
-                          <label for="floatingTextarea2">Paragraph</label>
+                          <label htmlFor="floatingTextarea2">Paragraph</label>
                         </div>
                       </div>
                     </div>
