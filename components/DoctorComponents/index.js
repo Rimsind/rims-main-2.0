@@ -5,6 +5,8 @@ import PatientList from "./PatientList";
 import PatientDemographics from "./PatientDemographics";
 import NotesCard from "./NotesCard";
 import AllergyCard from "./AllergyCard";
+import OrthoExamination from "./orthopedic/OrthoExamination";
+import NeuroExamination from "./neurology/NeuroExamination";
 
 export {
   DoctorSidebar,
@@ -14,4 +16,6 @@ export {
   AllergyCard,
   PatientDemographics,
   NotesCard,
+  OrthoExamination,
+  NeuroExamination,
 };

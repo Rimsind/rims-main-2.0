@@ -1064,7 +1064,7 @@ const Dashboard = () => {
                           <div className="col-5 col-md-5">
                             <div className="poly-service-item">
                               <input
-                                class="form-control"
+                                className="form-control"
                                 type="file"
                                 id="formFile"
                               />

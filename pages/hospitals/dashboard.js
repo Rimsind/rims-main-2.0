@@ -1495,7 +1495,7 @@ const Dashboard = () => {
                       </div>
                       <div className="col-4 col-md-4">
                         <div className="mb-3">
-                          <label for="formFile" className="form-label">
+                          <label htmlFor="formFile" className="form-label">
                             Upload gallery images
                           </label>
                           <input

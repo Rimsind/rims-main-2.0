@@ -220,7 +220,7 @@ const FamilyHistory = ({ familyHistory, patientId, updated_at }) => {
                 </>
               ) : (
                 <>
-                  {familyHistory.map((item, index) => (
+                  {familyHistory?.map((item, index) => (
                     <tr key={index}>
                       <td>
                         <div className="delete-table-icon">
