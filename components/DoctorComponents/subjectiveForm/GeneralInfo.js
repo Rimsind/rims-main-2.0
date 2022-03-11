@@ -3,11 +3,15 @@ import { useAuth } from "context";
 import { apiUrl } from "config/api";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { useState } from "react";
 
-const GeneralInfo = ({ generalInformation, patientId }) => {
+const GeneralInfo = ({ generalInformation, patientId, updated_at }) => {
   const { auth } = useAuth();
+  const [loading, setLoading] = useState(false);
   const { register, handleSubmit } = useForm();
+
   const updateGeneralInformation = async (data, event) => {
+    setLoading(true);
     event.preventDefault();
     try {
       const payload = {
@@ -26,7 +30,7 @@ const GeneralInfo = ({ generalInformation, patientId }) => {
       });
       const result = res.data;
       alert("General Information Updated Succesfully");
-      console.log(result);
+      setLoading(false);
       return result;
     } catch (err) {
       console.log(err.message);
@@ -377,7 +381,7 @@ const GeneralInfo = ({ generalInformation, patientId }) => {
         <div className="gen-form-soft-button">
           <div className="row">
             <div className="col-md-8 col-sm-8">
-              {/* <p className="text-info">Last Updated On : {updated_at}</p> */}
+              <p className="text-info">Last Updated On : {updated_at}</p>
             </div>
 
             <div className="col-md-4 col-sm-4">
@@ -385,8 +389,8 @@ const GeneralInfo = ({ generalInformation, patientId }) => {
                 <input
                   type="submit"
                   className="btn btn-primary"
-                  // value={loading ? "Saving..." : "Save Changes"}
-                  // disabled={loading}
+                  value={loading ? "Saving..." : "Save Changes"}
+                  disabled={loading}
                 />
               </div>
             </div>

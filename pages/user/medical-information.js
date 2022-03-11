@@ -31,7 +31,6 @@ const MedicalInformation = () => {
       return result;
     }
   );
-  console.log(data);
 
   return (
     <>

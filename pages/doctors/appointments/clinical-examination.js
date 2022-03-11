@@ -1,7 +1,31 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useAuth } from "context";
+import useSWR from "swr";
+import { apiUrl } from "config/api";
+import axios from "axios";
+import { useState, useEffect } from "react";
+import {
+  AllergyCard,
+  PatientDemographics,
+  NotesCard,
+} from "components/DoctorComponents";
+
 const ClinicalExamination = () => {
   const { id } = useRouter().query;
+  const { auth } = useAuth();
+  const { data: appointment } = useSWR(
+    `${apiUrl}/appointments/${id}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
   return (
     <>
       <div
@@ -36,86 +60,11 @@ const ClinicalExamination = () => {
 
           <div className="row">
             <div className="col-md-2 col-lg-2 col-xl-2">
-              {/* <PatientDemographics patientInfo={data?.patient} /> */}
-              <div className="card profile-sidebar patient-card shadow-sm">
-                <div className="widget-profile pro-widget-content">
-                  <div className="profile-info-widget">
-                    <div className="patient-img text-center">
-                      <img
-                        src="../../user_assets/img/profile.png"
-                        alt="User Image"
-                      />
-                    </div>
-                    <div className="profile-det-info pt-2 ps-3 text-center">
-                      <p className="fs-5">Prasenjit kamila</p>
-                      <div className="patient-details">
-                        <p className="text-success fs-6 fw-bold">ID- #1097</p>
-                      </div>
-                    </div>
-                    <div className="profile-inner-con">
-                      <div className="inner-item d-flex justify-content-between px-3">
-                        <div className="profile-item-inner">
-                          <p className="text-muted">Gender</p>
-                        </div>
-                        <div className="profile-item-inner">
-                          <p className="fw-bold">Other</p>
-                        </div>
-                      </div>
-                      <div className="inner-item d-flex justify-content-between px-3">
-                        <div className="profile-item-inner">
-                          <p className="text-muted">Age</p>
-                        </div>
-                        <div className="profile-item-inner">
-                          <p className="fw-bold">20</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* <AllergyCard /> */}
-              <div className="card profile-sidebar patient-card shadow-sm">
-                <div className="widget-profile pro-widget-content">
-                  <div className="profile-info-widget">
-                    <div className="profile-det-info px-3 pt-2">
-                      <p className="spcl-para fs-5 text-muted">Allergies</p>
-                    </div>
-                    <div className="profile-inner-con">
-                      <div className="inner-item d-flex justify-content-between px-3">
-                        <div className="profile-item-inner">
-                          <p className="text-muted">Penicillin</p>
-                        </div>
-                        <div className="profile-item-inner">
-                          <p className="fw-bold text-danger">High</p>
-                        </div>
-                      </div>
-                      <div className="inner-item d-flex justify-content-between px-3">
-                        <div className="profile-item-inner">
-                          <p className="text-muted">Tilorone</p>
-                        </div>
-                        <div className="profile-item-inner">
-                          <p className="fw-bold text-info">Medium</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* <NotesCard /> */}
-              <div className="card profile-sidebar patient-card shadow-sm">
-                <div className="widget-profile pro-widget-content">
-                  <div className="profile-info-widget">
-                    <div className="profile-det-info px-3 pt-2">
-                      <p className="fs-5 text-muted">Notes</p>
-                    </div>
-                    <div className="profile-inner-con">
-                      <p className="text-muted fs-6 ps-3 pe-3">
-                        Knee pain, Headeches, Last time he looked sick
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <PatientDemographics patientInfo={appointment?.patient} />
+
+              <AllergyCard />
+
+              <NotesCard />
             </div>
             <div className="col-md-10 col-lg-10 col-xl-10">
               <div className="card">
