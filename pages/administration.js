@@ -16,7 +16,7 @@ const Administration = () => {
 
             <div className="card_list">
               <div className="card-inner">
-                <Link href="#">
+                <Link href="/doctors/login">
                   <a className="anchr-main-inner-box">
                     <div className="card-item shadow bg-primary p-4 rounded-3">
                       <div className="card-item-inner d-flex align-items-center">

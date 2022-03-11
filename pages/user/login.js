@@ -59,6 +59,7 @@ const Login = () => {
         // }
       }
     } catch (error) {
+      alert("Email Or Password does not exist.");
       dispatchAuth({
         type: "LOGIN_FAILED",
         payload: error.message

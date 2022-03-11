@@ -78,7 +78,7 @@ const AppointmentId = () => {
                           <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6 text-end">
                             <div className="d-grid gap-2">
                               <Link
-                                href={`/user/reports/clinical-examination?id=${id}`}
+                                href={`/reports/clinical-examination?id=${id}`}
                               >
                                 <a
                                   className="btn btn-primary py-2"
@@ -91,9 +91,7 @@ const AppointmentId = () => {
                           </div>
                           <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                             <div className="d-grid gap-2">
-                              <Link
-                                href={`/user/reports/e-prescription?id=${id}`}
-                              >
+                              <Link href={`/reports/e-prescription?id=${id}`}>
                                 <a
                                   className="btn btn-danger py-2"
                                   type="button"

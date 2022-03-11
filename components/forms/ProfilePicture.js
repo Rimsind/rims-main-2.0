@@ -5,7 +5,7 @@ import { apiUrl } from "config/api";
 import { uploadImage } from "utils/uploadImage";
 import { useAuth } from "context";
 
-const ProfilePicture = ({ patient }) => {
+const ProfilePicture = ({ data }) => {
   const { auth } = useAuth();
 
   const [loading, setLoading] = useState(false);
@@ -20,7 +20,7 @@ const ProfilePicture = ({ patient }) => {
       image,
     };
     const response = await axios.put(
-      `${apiUrl}/patients/${auth.user.profileId}`,
+      `${apiUrl}/${auth?.user?.role.name}s/${auth.user.profileId}`,
       payload,
       {
         headers: {
@@ -44,7 +44,7 @@ const ProfilePicture = ({ patient }) => {
                     <Image
                       height="100"
                       width="100"
-                      src={patient?.image?.url || "/assets/images/profile.png"}
+                      src={data?.image?.url || "/assets/images/profile.png"}
                       alt="User Image"
                     />
                   </div>
