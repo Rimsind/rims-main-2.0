@@ -13,7 +13,7 @@ const DoctorSidebar = (props) => {
           <div className="widget-profile pro-widget-content">
             {data ? (
               <>
-                <div className="profile-info-widget">
+                <div className="profile-info-widget my-4">
                   <a href="#" className="booking-doc-img">
                     <Image
                       height="145"
