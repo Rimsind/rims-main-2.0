@@ -3705,3 +3705,19 @@ button.btn-custom-time-slot:visited {
     padding-bottom: 10px;
   }
 }
+
+/* Inner Tab Style Sheet */
+#inner-nav-link .nav-link.active,
+#inner-nav-link .nav-link::selection,
+#inner-nav-link .nav-link:focus,
+#inner-nav-link .nav-link:visited {
+  border: 0;
+}
+#inner-nav-link .nav-link {
+  border: 0;
+}
+#inner-nav-link .nav-link.active,
+#inner-nav-link .nav-link:hover {
+  background-color: #230dec;
+  color: white;
+}
