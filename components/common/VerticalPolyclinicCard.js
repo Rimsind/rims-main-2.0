@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-const VerticalPolyclinicCard = ({ data }) => {
+const VerticalPolyclinicCard = ({ data, link }) => {
   return (
     <>
       <div className="item me-4">
@@ -10,7 +10,11 @@ const VerticalPolyclinicCard = ({ data }) => {
               <Image
                 height={200}
                 width={300}
-                src={data?.coverImage?.url || "/assests/images/polyclinic.jpg"}
+                src={
+                  data?.coverImage?.url ||
+                  data?.profile_image?.url ||
+                  "/assests/images/polyclinic.jpg"
+                }
                 alt=""
                 className="img-fluid"
               />
@@ -33,7 +37,7 @@ const VerticalPolyclinicCard = ({ data }) => {
             </div>
             <div className="row row-sm">
               <div className="col-12">
-                <Link href={`/polyclinics/${data?.id}`}>
+                <Link href={`/${link}/details?id${data?.id}`}>
                   <a className="btn view-btn" tabIndex="0">
                     View Profile
                   </a>

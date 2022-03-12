@@ -131,7 +131,7 @@ const PolyclinicId = () => {
                         id="doc_overview"
                         className="tab-pane fade show active"
                       >
-                        {data?.doctors.map((items, index) => (
+                        {data?.doctors?.map((items, index) => (
                           <PolyclinicTimetableCard
                             schedule={items}
                             key={index}

@@ -452,7 +452,11 @@ const Index = () => {
                 {polyclinics ? (
                   <Carousel breakPoints={breakPoints}>
                     {polyclinics?.map((items, index) => (
-                      <VerticalPolyclinicCard data={items} key={index} />
+                      <VerticalPolyclinicCard
+                        data={items}
+                        key={index}
+                        link="polyclinics"
+                      />
                     ))}
                   </Carousel>
                 ) : (
@@ -477,56 +481,44 @@ const Index = () => {
             />
           </div>
         </section>
-        <div className="section-nursing-home my-5">
-          <div className="container-fluid">
+        <section className="our-doctors-section">
+          <div className="container">
             <div className="row">
-              <div className="col-lg-4">
-                <div className="section-header">
-                  <h2>Your Best Rated Nursing Home</h2>
-                  <p>Lorem Ipsum is simply dummy text</p>
-                </div>
-                <div className="about-content">
-                  <p className="fs-6">
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout. The point of using Lorem Ipsum.
+              <div className="col-md-6">
+                <div className="section-heading">
+                  <h2>Your Best Rated Nursing Homes</h2>
+                  <p>
+                    Access to expert physicians and surgeons, technologies and
+                    top-quality surgery facilities right here.
                   </p>
-                  <p className="fs-6">
-                    web page editors now use Lorem Ipsum as their default model
-                    text, and a search for &apos;lorem ipsum&apos; will uncover
-                    many web sites still in their infancy. Various versions have
-                    evolved over the years, sometimes
-                  </p>
-                  <Link href="/doctors">
-                    <a>Read More...</a>
-                  </Link>
                 </div>
               </div>
-              <div className="col-lg-8">
-                <div className="doctor-slider slider">
-                  <div className="row carousel-styling">
-                    {doctors ? (
-                      <Carousel breakPoints={breakPoints}>
-                        {doctors?.map((items, index) => (
-                          <VerticalDoctorCard data={items} key={index} />
-                        ))}
-                      </Carousel>
-                    ) : (
-                      <>
-                        <Carousel breakPoints={breakPoints}>
-                          <SliderCardLoader />
-                          <SliderCardLoader />
-                          <SliderCardLoader />
-                          <SliderCardLoader />
-                        </Carousel>
-                      </>
-                    )}
-                  </div>
-                </div>
+              <div className="col-md-6 text-end"></div>
+            </div>
+            <div className="our-doctors">
+              <div className="d-flex carousel-styling">
+                {nursingHomes ? (
+                  <Carousel breakPoints={breakPoints}>
+                    {nursingHomes?.map((items, index) => (
+                      <VerticalPolyclinicCard
+                        data={items}
+                        key={index}
+                        link="nursing-homes"
+                      />
+                    ))}
+                  </Carousel>
+                ) : (
+                  <Carousel breakPoints={breakPoints}>
+                    <SliderCardLoader />
+                    <SliderCardLoader />
+                    <SliderCardLoader />
+                    <SliderCardLoader />
+                  </Carousel>
+                )}
               </div>
             </div>
           </div>
-        </div>
+        </section>
         <FooterBanner />
       </main>
     </>
