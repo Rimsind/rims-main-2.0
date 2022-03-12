@@ -16,7 +16,6 @@ const Index = () => {
 
   const { data: doctors } = useSWR(`${apiUrl}/doctors`, fetcher);
   const { data: specialties } = useSWR(`${apiUrl}/specialties`, fetcher);
-  console.log(doctors);
 
   return (
     <>

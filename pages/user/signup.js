@@ -61,7 +61,7 @@ const SignUp = () => {
       };
 
       const result = await registerUser(payload);
-      // console.log(result);
+
       if (result.jwt) {
         // create profile
 
@@ -84,7 +84,6 @@ const SignUp = () => {
       router.push("/user/login");
     } catch (err) {
       alert("Registration Failed");
-      console.log(err.message);
     }
   };
 

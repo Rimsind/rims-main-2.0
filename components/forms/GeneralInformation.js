@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const GeneralInformation = ({ patient }) => {
   const { generalInformation, updated_at } = patient;
-  console.log(updated_at);
+
   const { auth } = useAuth();
   const [loading, setLoading] = useState(false);
   const { register, handleSubmit } = useForm();

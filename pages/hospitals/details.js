@@ -7,7 +7,6 @@ import { DetailsPageLoader } from "components/Loaders";
 const HospitalId = () => {
   const { id } = useRouter().query;
   const { data } = useSWR(`${apiUrl}/nursing-homes/${id}`, fetcher);
-  console.log(data);
 
   return (
     <>

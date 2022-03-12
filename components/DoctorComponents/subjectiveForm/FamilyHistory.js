@@ -24,7 +24,7 @@ const FamilyHistory = ({ familyHistory, patientId, updated_at }) => {
           },
         ],
       };
-      // console.log(payload, "payload");
+
       const res = await axios.put(`${apiUrl}/patients/${patientId}`, payload, {
         headers: {
           Authorization: `Bearer ${auth.token}`,

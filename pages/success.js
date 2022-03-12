@@ -12,7 +12,7 @@ const Success = () => {
   } else {
     var bookingStatus = "success";
   }
-  console.log(bookingStatus);
+
   return (
     <>
       <main className="main">

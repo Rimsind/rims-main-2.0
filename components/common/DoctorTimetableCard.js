@@ -1,9 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Router from "next/router";
-const DoctorTimetableCard = ({ schedule, doctor, auth }) => {
-  // console.log(auth);
-
+const DoctorTimetableCard = ({ schedule, doctor }) => {
   // const authCheck = () => {
   //   if (auth.token && auth.user) {
   //     Router.push(

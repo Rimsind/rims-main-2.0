@@ -18,7 +18,6 @@ const Dashboard = () => {
       return result;
     }
   );
-  console.log(auth);
 
   return (
     <>

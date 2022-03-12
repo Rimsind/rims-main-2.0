@@ -67,7 +67,6 @@ const Signup = () => {
         // create profile
 
         const profile = await createUserProfile(data, result.jwt);
-        console.log(profile);
 
         await axios.put(
           `https://manage.riimstechnology.com/users/${result.user.id}`,

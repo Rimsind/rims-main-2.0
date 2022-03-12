@@ -25,7 +25,7 @@ const FamilyMadicalHistory = ({ patient }) => {
           },
         ],
       };
-      // console.log(payload, "payload");
+
       const res = await axios.put(
         `${apiUrl}/patients/${auth.user?.profileId}`,
         payload,

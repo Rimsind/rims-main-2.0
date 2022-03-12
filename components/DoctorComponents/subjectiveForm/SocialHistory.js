@@ -28,7 +28,6 @@ const SocialHistory = ({ patientId, socialHistory, updated_at }) => {
           do_uses: data.do_uses.toString(),
         },
       };
-      console.log(payload);
 
       const res = await axios.put(`${apiUrl}/patients/${patientId}`, payload, {
         headers: {

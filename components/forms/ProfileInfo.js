@@ -5,7 +5,6 @@ import { useAuth } from "context";
 import { useState } from "react";
 
 const ProfileInfo = ({ data }) => {
-  // console.log(data);
   const { auth } = useAuth();
   const [loading, setLoading] = useState(false);
   const { register, handleSubmit } = useForm();
