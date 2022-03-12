@@ -5,7 +5,7 @@ import useSWR from "swr";
 import axios from "axios";
 const Dashboard = () => {
   const { auth } = useAuth();
-
+  console.log(auth);
   const { data } = useSWR(
     `${apiUrl}/polyclinics/${auth?.user?.profileId}`,
     async (url) => {
@@ -18,6 +18,7 @@ const Dashboard = () => {
       return result;
     }
   );
+ 
 
   return (
     <>
