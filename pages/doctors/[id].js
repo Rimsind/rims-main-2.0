@@ -44,7 +44,10 @@ const DoctorId = () => {
                             <Image
                               height={20}
                               width={20}
-                              src={data?.specialty?.image?.url}
+                              src={
+                                data?.specialty?.image?.url ||
+                                "/images/profile.png"
+                              }
                               alt=""
                             />{" "}
                             {data?.specialty?.name}
@@ -170,7 +173,7 @@ const DoctorId = () => {
                               </h4>
                               <div className="experience-box">
                                 <ul className="experience-list">
-                                  {data?.educationAndAwards.map(
+                                  {data?.educationAndAwards?.map(
                                     (items, index) => (
                                       <li key={index}>
                                         <div className="experience-user">

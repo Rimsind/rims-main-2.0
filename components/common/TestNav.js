@@ -8,8 +8,21 @@ import axios from "axios";
 const TestNav = () => {
   const { auth, logOut } = useAuth();
 
+  if (auth?.user?.role?.id === 1) {
+    var role = "patients";
+  }
+  if (auth?.user?.role?.id === 3) {
+    var role = "doctors";
+  }
+  if (auth?.user?.role?.id === 6) {
+    var role = "polyclinics";
+  }
+  if (auth?.user?.role?.id === 7) {
+    var role = "nursing-homes";
+  }
+
   const { data } = useSWR(
-    `${apiUrl}/${auth?.user?.role?.name}s/${auth?.user?.profileId}`,
+    `${apiUrl}/${role}/${auth?.user?.profileId}`,
     async (url) => {
       const res = await axios.get(url, {
         headers: {
@@ -98,6 +111,7 @@ const TestNav = () => {
                             src={
                               data?.image?.url ||
                               data?.coverImage?.url ||
+                              data?.profile_image?.url ||
                               "/assets/images/profile.png"
                             }
                             width="35"

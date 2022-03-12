@@ -8,6 +8,19 @@ import { useAuth } from "context";
 const ProfilePicture = ({ data }) => {
   const { auth } = useAuth();
 
+  if (auth?.user?.role?.id === 1) {
+    var role = "patients";
+  }
+  if (auth?.user?.role?.id === 3) {
+    var role = "doctors";
+  }
+  if (auth?.user?.role?.id === 6) {
+    var role = "polyclinics";
+  }
+  if (auth?.user?.role?.id === 7) {
+    var role = "nursing-homes";
+  }
+
   const [loading, setLoading] = useState(false);
 
   const [profileImage, setProfileImage] = useState();
@@ -20,7 +33,7 @@ const ProfilePicture = ({ data }) => {
       image,
     };
     const response = await axios.put(
-      `${apiUrl}/${auth?.user?.role.name}s/${auth.user.profileId}`,
+      `${apiUrl}/${role}/${auth.user.profileId}`,
       payload,
       {
         headers: {
@@ -44,7 +57,11 @@ const ProfilePicture = ({ data }) => {
                     <Image
                       height="100"
                       width="100"
-                      src={data?.image?.url || "/assets/images/profile.png"}
+                      src={
+                        data?.image?.url ||
+                        data?.coverImage?.url ||
+                        "/assets/images/profile.png"
+                      }
                       alt="User Image"
                     />
                   </div>

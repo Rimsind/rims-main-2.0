@@ -8,20 +8,26 @@ const HorizontalDoctorCard = ({ data }) => {
           <div className="doctor-widget">
             <div className="doc-info-left">
               <div className="doctor-img">
-                <a href="doctor-profile.html">
-                  <Image
-                    height="150"
-                    width="150"
-                    src={data?.image?.url || "/assets/images/profile.png"}
-                    className="img-fluid"
-                    alt="User Image"
-                  />
-                </a>
+                <Link href={`/doctors/${data?.id}`}>
+                  <a>
+                    <Image
+                      height="150"
+                      width="150"
+                      src={data?.image?.url || "/assets/images/profile.png"}
+                      className="img-fluid"
+                      alt="User Image"
+                    />
+                  </a>
+                </Link>
               </div>
               <div className="doc-info-cont">
-                <h4 className="doc-name">
-                  Dr. {data?.firstName} {data?.lastName}
-                </h4>
+                <Link href={`/doctors/${data?.id}`}>
+                  <a>
+                    <h4 className="doc-name">
+                      Dr. {data?.firstName} {data?.lastName}
+                    </h4>
+                  </a>
+                </Link>
                 <p className="doc-speciality">
                   {data?.experienceInYrs} years experience, Consultant{" "}
                   {data?.specialty?.name}

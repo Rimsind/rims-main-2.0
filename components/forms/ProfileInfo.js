@@ -27,7 +27,7 @@ const ProfileInfo = ({ data }) => {
       };
 
       const res = await axios.put(
-        `${apiUrl}/${auth?.user?.role.name}s/${auth.user?.profileId}`,
+        `${apiUrl}/patients/${auth.user?.profileId}`,
         payload,
         {
           headers: {

@@ -1,16 +1,12 @@
-import { BreadCrums } from "components/common/index";
 import Image from "next/image";
 import Link from "next/link";
 
-const Details2 = () => {
+const PremiumPolyclinic = () => {
   return (
     <>
-      <BreadCrums
-        title="Home / Nursing Home Details"
-        title1="Nursing Home Details"
-      />
-      <div className="hospital_details_nav sticky-top">
-        <div className="bg-dark text-light">
+      {" "}
+      <div className="polyclinic_details_nav sticky-top">
+        <div className="bg-custom-poly-nav text-light">
           <ul className="list-unstyled d-flex justify-content-center align-items-center pt-4 pb-4 mb-0">
             <li className="me-2 border-end border-light pe-2">
               <a className="fs-6 text-light" href="#aboutUs">
@@ -23,8 +19,8 @@ const Details2 = () => {
               </a>
             </li>
             <li className="me-2 border-end border-light pe-2">
-              <a className="fs-6 text-light" href="#whatWeOffer">
-                What We Offer
+              <a className="fs-6 text-light" href="#services">
+                Services
               </a>
             </li>
             <li className="me-2 border-end border-light pe-2">
@@ -33,8 +29,8 @@ const Details2 = () => {
               </a>
             </li>
             <li className="me-2 border-end border-light pe-2">
-              <a className="fs-6 text-light" href="#gallery">
-                Gallery
+              <a className="fs-6 text-light" href="#testimonial">
+                Testimonial
               </a>
             </li>
             <li className="me-2">
@@ -46,7 +42,7 @@ const Details2 = () => {
         </div>
       </div>
       <div
-        className="hospital-details-main text"
+        className="polyclinic-details-main text"
         id="aboutUs"
         style={{
           background: "url(/user_assets/img/slider/slider-4.jpg)",
@@ -59,364 +55,276 @@ const Details2 = () => {
           flexDirection: "column",
         }}
       >
-        <p className="hospital-details-main-name border-bottom border-3 border-warning">
-          Haldia Mediland Nursing Home
+        <p className="polyclinic-details-main-name">
+          Kathi Super-Specialist Polyclinic
         </p>
-        <div className="hospital-details-main-content">
-          <p className="hospital-details-sub-name bg-custom-info px-2 py-2">
-            24x7 Ready for Help
-          </p>
-        </div>
+        <p className="polyclinic-details-main-sub-name border-bottom border-3 border-warning">
+          Kathi, West Bengal
+        </p>
       </div>
-      <div className="nursing-home-info">
+      <div
+        className="polyclinic_details_info d-flex align-items-center"
+        id="aboutUs"
+        style={{
+          background: "url(/user_assets/img/poly-about-item.png)",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center top",
+          backgroundAttachment: "scroll",
+          borderColor: "#caccce",
+          borderTopWidth: "1px",
+          borderBottomWidth: "1px",
+          backgroundColor: "#000428",
+          color: "#fafcfe",
+          borderColor: "#3a3c4e",
+        }}
+      >
         <div className="container">
-          <div className="row bg-custom-nursing-home rounded align-items-center">
-            <div className="col-5 text-center border-end border-light border-2">
-              <div className="nursing-home-details-main-sub-heading">
-                <p className="text-light fs-5">
-                  Email ID: info.haldianursing-home@rims.com
+          <div className="row align-items-center py-5">
+            <div className="col-6">
+              <div className="left-poly-item">
+                <p className="d-flex flex-column fs-2 text-end me-5">
+                  <span>
+                    <strong>Polyclinic</strong> is suitable for wide
+                  </span>{" "}
+                  <span>variety of business websites</span>
                 </p>
               </div>
             </div>
-            <div className="col-3 text-center border-end border-light border-2">
-              <div className="nursing-home-details-main-sub-heading">
-                <p className=" text-light fs-5 ">Phone No: 987-456-321</p>
-              </div>
-            </div>
-            <div className="col-2 text-center border-end border-light border-2">
-              <div className="nursing-home-details-main-sub-heading">
-                <p className="text-light fs-5 ">Opening: 10:00 A.M</p>
-              </div>
-            </div>
-            <div className="col-2 text-center">
-              <div className="nursing-home-details-main-sub-heading">
-                <p className=" text-light fs-5 ">Closing: 10:00 P.M</p>
+            <div className="col-6 border-start border-1 border-info">
+              <div className="right-poly-item ms-5">
+                <p className="d-flex flex-column fs-6">
+                  Suitable for any medical business related websites: from small
+                  clinics to hospitals, veterinary, dentist, plastic surgery,
+                  chiropractic clinics, rehabs, laboratory, spa, pharmacy,
+                  ambulance, beauty salons and many more.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="nursing-home-service">
+      <div className="poly_details_about" id="whyChooseUs">
         <div className="container">
-          <div className="nursing-service-heading text-center">
-            <p>+ What We Do +</p>
-            <p className="nursing-service-heading-name">
-              We Take Care For Humanity <br /> Not For Money
-            </p>
-          </div>
-          <div className="nursing-service-icon">
-            <div className="row align-items-center">
-              <div className="col">
-                <div className="nursing-service-icon-item">
-                  <i className="far fa-heartbeat"></i>
-                </div>
-                <div className="nursing-service-icon-con">
-                  <p className="nursing-service-icon-con-name">Health Care</p>
-                </div>
+          <div className="row">
+            <div className="col-6 bg-left-custom-clr">
+              <p className="fs-4">Find a Doctor</p>
+              <div className="poly_details_find_doctor_form">
+                <form>
+                  <div className="row align-items-baseline">
+                    <div className="col-6">
+                      <div className="mb-3">
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Search Doctor"
+                        />
+                      </div>
+                    </div>
+                    <div className="col-6">
+                      <div className="mb-3">
+                        <select
+                          className="form-select"
+                          aria-label="Default select example"
+                        >
+                          <option selected>Select Position</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div className="col-8">
+                      <div className="mb-3">
+                        <select
+                          className="form-select"
+                          aria-label="Default select example"
+                        >
+                          <option selected>Select Specialities</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div className="col-4 text-end">
+                      <button className="btn btn-dark">Search Doctor</button>
+                    </div>
+                  </div>
+                </form>
               </div>
-              <div className="col">
-                <div className="nursing-service-icon-item">
-                  <i className="far fa-utensils-alt"></i>
+              <p className="fs-6 fst-italic mt-3">
+                Enter specialist&apos;s name into search field and/or narrow
+                down the search results by selecting job position and specialty.
+              </p>
+            </div>
+            <div className="col-6">
+              <div className="row">
+                <div className="col-6 bg-mddl-custom-clr">
+                  <p className="fs-4">Who Are We?</p>
+                  <p className="fs-6 pt-3">
+                    EASY TO USE COMPLETE MEDICAL SOLUTION.
+                  </p>
+                  <p className="fs-6 pt-3">
+                    Accessibility matters especially with medical institutions,
+                    and that&apos;s why the Polyclinic theme is fully
+                    accessibility ready!
+                  </p>
                 </div>
-                <div className="nursing-service-icon-con">
-                  <p className="nursing-service-icon-con-name">Food Care</p>
-                </div>
-              </div>
-              <div className="col">
-                <div className="nursing-service-icon-item">
-                  <i className="far fa-utensils-alt"></i>
-                </div>
-                <div className="nursing-service-icon-con">
-                  <p className="nursing-service-icon-con-name">Physical Care</p>
-                </div>
-              </div>
-              <div className="col">
-                <div className="nursing-service-icon-item">
-                  <i className="far fa-chess"></i>
-                </div>
-                <div className="nursing-service-icon-con">
-                  <p className="nursing-service-icon-con-name">Health Care</p>
-                </div>
-              </div>
-              <div className="col">
-                <div className="nursing-service-icon-item">
-                  <i className="far fa-pizza-slice"></i>
-                </div>
-                <div className="nursing-service-icon-con">
-                  <p className="nursing-service-icon-con-name">Health Care</p>
+                <div className="col-6 bg-right-custom-clr">
+                  <p className="fs-4">Visiting Hours</p>
+                  <p className="fs-6 pt-3 lh-1">
+                    <i className="fad fa-clock me-2"></i>
+                    <span className="me-2 border-bottom border-light">
+                      Mon – Fri
+                    </span>{" "}
+                    <span className="border-bottom border-light">
+                      6:30 – 18:00
+                    </span>
+                  </p>
+                  <p className="fs-6 pt-3 lh-1">
+                    <i className="fad fa-clock me-2"></i>
+                    <span className="me-2 border-bottom border-light">
+                      Weekend
+                    </span>{" "}
+                    <span className="border-bottom border-light">
+                      6:30 – 18:00
+                    </span>
+                  </p>
+                  <p className="fs-6 pt-3 lh-1">
+                    <i className="fad fa-clock me-2"></i>
+                    <span className="me-2 border-bottom border-light">
+                      Holiday
+                    </span>{" "}
+                    <span className="border-bottom border-light">
+                      6:30 – 18:00
+                    </span>
+                  </p>
+                  <p className="fs-6 pt-3">
+                    <i className="fad fa-mobile me-2"></i>
+                    <span className="me-2 ">911-123-456 for nonstop</span>{" "}
+                    <span>emergency service</span>
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="hospital-about my-4 mb-4" id="whyChooseUs">
+      <div className="poly_details_why_choose">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-6">
-              <div className="why_choose_heading">
-                <p className="fs-6">+ Learn About Nursing Home</p>
-                <p className="why-choose-heading-main-head">Learn About Us</p>
-              </div>
-              <div className="why_choose_para mt-3 ms-2">
-                <div>
-                  <div className="row">
-                    <div className="col-3">
-                      <p className="bg-info py-4 px-5 text-light text-center">
-                        <span className="fs-1">25</span>{" "}
-                        <span className="fs-5">Years</span>
-                      </p>
-                    </div>
-                    <div className="col-9">
-                      <p className="fs-6">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Duis quis dignissim sapien. Nunc quam tellus, rhoncus
-                        nec orci ac, auctor bibendum lacus. Nunc quam tellus,
-                        rhoncus nec orci ac, auctor bibendum lacus.Lorem ipsum
-                        dolor sit amet, consectetur adipiscing elit. Duis quis
-                        dignissim sapien.
-                      </p>
-                    </div>
-                  </div>
-                  Nunc quam tellus, rhoncus nec orci ac, auctor bibendum lacus.
-                  Nunc quam tellus, rhoncus nec orci ac, auctor bibendum lacus.
-                  Nunc quam tellus, rhoncus nec orci ac, auctor bibendum lacus.
-                  Nunc quam tellus, rhoncus nec orci ac, auctor bibendum lacus.
-                </div>
+              <div className="left_why_choose_item">
+                <p className="fs-4">
+                  Thank you for visiting <strong>Polyclinic</strong>!
+                </p>
+                <p className="fs-6">
+                  WE ARE A CLINIC THAT HAS BEEN IN BUSINESS FOR 15 YEARS
+                  PROVIDING TOP LOCAL MEDICAL CARE.
+                </p>
+                <p className="fs-6">
+                  We have 7 treatment rooms and a comfortable waiting area with
+                  receptionist. We treat patients of all ages. Web accessibility
+                  refers to the inclusive practice of removing barriers that
+                  prevent interaction with, or access to websites, by people
+                  with disabilities.
+                </p>
               </div>
             </div>
             <div className="col-6">
-              <Image
-                alt="Hospital About Image"
-                src="/user_assets/img/features/feature-01.jpg"
-                width="700px"
-                height="500px"
-              />
+              <div className="row">
+                <div className="col-6">
+                  <Image
+                    src="/user_assets/img/lab-image.jpg"
+                    alt="Image"
+                    width={500}
+                    height={450}
+                  />
+                </div>
+                <div className="col-6 d-flex flex-column">
+                  <Image
+                    src="/user_assets/img/lab-image.jpg"
+                    alt="Image"
+                    width={500}
+                    height={450}
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="hospital-facilities mt-5" id="whatWeOffer">
+      <div className="poly_details_advantage" id="services">
         <div className="container">
-          <div className="hospital-facilities-content">
-            <div className="row align-items-start">
-              <div className="col-6">
-                <div className="hospital-facilities-left-content">
-                  <Image
-                    src="/user_assets/img/img-01.jpg"
-                    alt="Hospital Facilities Image"
-                    height="500px"
-                    width="700px"
-                  />
-                </div>
+          <div className="row">
+            <div className="col-4 bg-col-first p-4">
+              <p className="fs-3">
+                Take advantage of the <br />
+                wide range of services
+              </p>
+              <p className="fs-6">
+                If you aren’t a patient, would like to become one and live
+                within our locality, please contact us or pop in to see us.
+              </p>
+            </div>
+            <div className="col-4 d-flex bg-col-poly-second">
+              <div className="icon-item me-3">
+                <i className="fad fa-plus fs-1 p-3 bg-poly-icon text-light rounded"></i>
               </div>
-              <div className="col-6">
-                <div className="hospital-facilities-right-center">
-                  <div className="row align-items-center">
-                    <div className="col-6">
-                      <div
-                        className="hospital-details-item"
-                        style={{
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          height: "138px",
-                          marginBottom: "20px",
-                          background: "url(/user_assets/img/blog-1.jpg)",
-                          backgroundRepeat: "no-repeat",
-                          backgroundPosition: "center",
-                        }}
-                      >
-                        <div className="main_heading">
-                          <p className="main_heading-para">Regular Bed</p>
-                          <div className="d-flex align-items-center">
-                            <p className="total_para me-3 text-success">
-                              Total -{" "}
-                              <span className="text-dark total_para_count">
-                                20
-                              </span>
-                            </p>
-                            <p className="avlble_para text-danger">
-                              Available -{" "}
-                              <span className="text-dark total_para_count">
-                                15
-                              </span>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-6">
-                      <div
-                        className="hospital-details-item"
-                        style={{
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          height: "138px",
-                          marginBottom: "20px",
-                          background: "url(/user_assets/img/blog-1.jpg)",
-                          backgroundRepeat: "no-repeat",
-                          backgroundPosition: "center",
-                        }}
-                      >
-                        <div className="main_heading">
-                          <p className="main_heading-para">ICU Bed</p>
-                          <div className="d-flex align-items-center">
-                            <p className="total_para me-3 text-success">
-                              Total -{" "}
-                              <span className="text-dark total_para_count">
-                                20
-                              </span>
-                            </p>
-                            <p className="avlble_para text-danger">
-                              Available -{" "}
-                              <span className="text-dark total_para_count">
-                                15
-                              </span>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row align-items-center">
-                    <div className="col-6">
-                      <div
-                        className="hospital-details-item"
-                        style={{
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          height: "138px",
-                          marginBottom: "20px",
-                          background: "url(/user_assets/img/blog-1.jpg)",
-                          backgroundRepeat: "no-repeat",
-                          backgroundPosition: "center",
-                        }}
-                      >
-                        <div className="main_heading">
-                          <p className="main_heading-para">Regular Ambulance</p>
-                          <div className="d-flex align-items-center">
-                            <p className="total_para me-3 text-success">
-                              Total -{" "}
-                              <span className="text-dark total_para_count">
-                                20
-                              </span>
-                            </p>
-                            <p className="avlble_para text-danger">
-                              Available -{" "}
-                              <span className="text-dark total_para_count">
-                                15
-                              </span>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-6">
-                      <div
-                        className="hospital-details-item"
-                        style={{
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          height: "138px",
-                          marginBottom: "20px",
-                          background: "url(/user_assets/img/blog-1.jpg)",
-                          backgroundRepeat: "no-repeat",
-                          backgroundPosition: "center",
-                        }}
-                      >
-                        <div className="main_heading">
-                          <p className="main_heading-para">ICU Ambulance</p>
-                          <div className="d-flex align-items-center">
-                            <p className="total_para me-3 text-success">
-                              Total -{" "}
-                              <span className="text-dark total_para_count">
-                                20
-                              </span>
-                            </p>
-                            <p className="avlble_para text-danger">
-                              Available -{" "}
-                              <span className="text-dark total_para_count">
-                                15
-                              </span>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row align-items-center">
-                    <div className="col-6">
-                      <div
-                        className="hospital-details-item"
-                        style={{
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          height: "138px",
-                          marginBottom: "20px",
-                          background: "url(/user_assets/img/blog-1.jpg)",
-                          backgroundRepeat: "no-repeat",
-                          backgroundPosition: "center",
-                        }}
-                      >
-                        <div className="main_heading">
-                          <p className="main_heading-para">Operation Theater</p>
-                          <div className="d-flex align-items-center">
-                            <p className="total_para me-3 text-success">
-                              Total -{" "}
-                              <span className="text-dark total_para_count">
-                                20
-                              </span>
-                            </p>
-                            <p className="avlble_para text-danger">
-                              Available -{" "}
-                              <span className="text-dark total_para_count">
-                                15
-                              </span>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-6">
-                      <div
-                        className="hospital-details-item"
-                        style={{
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          height: "138px",
-                          marginBottom: "20px",
-                          background: "url(/user_assets/img/blog-1.jpg)",
-                          backgroundRepeat: "no-repeat",
-                          backgroundPosition: "center",
-                        }}
-                      >
-                        <div className="main_heading">
-                          <p className="main_heading-para">Burn Care Unit</p>
-                          <div className="d-flex align-items-center">
-                            <p className="total_para me-3 text-success">
-                              Total -{" "}
-                              <span className="text-dark total_para_count">
-                                20
-                              </span>
-                            </p>
-                            <p className="avlble_para text-danger">
-                              Available -{" "}
-                              <span className="text-dark total_para_count">
-                                15
-                              </span>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className="icon-con">
+                <p className="fs-3">Cancer Care</p>
+                <p className="fs-6">
+                  The physicians and staff are committed to providing
+                  convenient, high-quality, compassionate care.
+                </p>
+              </div>
+            </div>
+            <div className="col-4 d-flex bg-col-poly-third">
+              <div className="icon-item me-3">
+                <i className="fad fa-plus fs-1 p-3 bg-poly-icon text-light rounded"></i>
+              </div>
+              <div className="icon-con">
+                <p className="fs-3">Cancer Care</p>
+                <p className="fs-6">
+                  The physicians and staff are committed to providing
+                  convenient, high-quality, compassionate care.
+                </p>
+              </div>
+            </div>
+            <div className="col-4 d-flex bg-col-poly-four">
+              <div className="icon-item me-3">
+                <i className="fad fa-plus fs-1 p-3 bg-poly-icon text-light rounded"></i>
+              </div>
+              <div className="icon-con">
+                <p className="fs-3">Cancer Care</p>
+                <p className="fs-6">
+                  The physicians and staff are committed to providing
+                  convenient, high-quality, compassionate care.
+                </p>
+              </div>
+            </div>
+            <div className="col-4 d-flex bg-col-poly-fifth">
+              <div className="icon-item me-3">
+                <i className="fad fa-plus fs-1 p-3 bg-poly-icon text-light rounded"></i>
+              </div>
+              <div className="icon-con">
+                <p className="fs-3">Cancer Care</p>
+                <p className="fs-6">
+                  The physicians and staff are committed to providing
+                  convenient, high-quality, compassionate care.
+                </p>
+              </div>
+            </div>
+            <div className="col-4 d-flex bg-col-poly-sixth">
+              <div className="icon-item me-3">
+                <i className="fad fa-plus fs-1 p-3 bg-poly-icon text-light rounded"></i>
+              </div>
+              <div className="icon-con">
+                <p className="fs-3">Cancer Care</p>
+                <p className="fs-6">
+                  The physicians and staff are committed to providing
+                  convenient, high-quality, compassionate care.
+                </p>
               </div>
             </div>
           </div>
@@ -815,4 +723,4 @@ const Details2 = () => {
   );
 };
 
-export default Details2;
+export default PremiumPolyclinic;

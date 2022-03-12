@@ -46,6 +46,19 @@ const StatesList = [
 
 const AddressInfo = ({ data }) => {
   const { auth } = useAuth();
+  if (auth?.user?.role?.id === 1) {
+    var role = "patients";
+  }
+  if (auth?.user?.role?.id === 3) {
+    var role = "doctors";
+  }
+  if (auth?.user?.role?.id === 6) {
+    var role = "polyclinics";
+  }
+  if (auth?.user?.role?.id === 7) {
+    var role = "nursing-homes";
+  }
+
   const [loading, setLoading] = useState(false);
   const { register, handleSubmit } = useForm();
   const updateAddress = async (data, event) => {
@@ -63,7 +76,7 @@ const AddressInfo = ({ data }) => {
       };
 
       const res = await axios.put(
-        `${apiUrl}/${auth?.user?.role.name}s/${auth.user?.profileId}`,
+        `${apiUrl}/${role}/${auth.user?.profileId}`,
         payload,
         {
           headers: {
