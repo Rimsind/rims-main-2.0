@@ -71,7 +71,7 @@ const Assesment = ({ appointmentId }) => {
     );
     const result = res.data;
     alert("Form Submitted Succesfully");
-    router.push(`/diagnosis?appointmentId=${appointmentId}`);
+    // router.push(`/diagnosis?appointmentId=${appointmentId}`);
     return result;
   };
   return (

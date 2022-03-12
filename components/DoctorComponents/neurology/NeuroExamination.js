@@ -104,7 +104,6 @@ const NeuroExamination = ({ appointmentId }) => {
       return result;
     }
   );
-  console.log(appointment);
 
   const { register, handleSubmit } = useForm();
   const SubmitForm = async (data, event) => {
@@ -127,9 +126,9 @@ const NeuroExamination = ({ appointmentId }) => {
     );
     const result = res.data;
     alert("Form Submitted Succesfully");
-    router.push(
-      `/doctors/appointments/clinical-examination?id=${appointmentId}`
-    );
+    // router.push(
+    //   `/doctors/appointments/clinical-examination?id=${appointmentId}`
+    // );
     return result;
   };
   return (

@@ -79,9 +79,9 @@ const OrthoExamination = ({ appointmentId }) => {
     );
     const result = res.data;
     alert("Form Submitted Succesfully");
-    router.push(
-      `/doctors/appointments/clinical-examination?id=${appointmentId}`
-    );
+    // router.push(
+    //   `/doctors/appointments/clinical-examination?id=${appointmentId}`
+    // );
     return result;
   };
   return (

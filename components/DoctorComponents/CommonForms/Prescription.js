@@ -106,8 +106,7 @@ const Prescription = ({ appointmentId }) => {
   };
 
   const { register, handleSubmit } = useForm();
-  const submitPrescription = async (data, e) => {
-    e.preventDefault();
+  const submitPrescription = async (data) => {
     const payload = {
       eprescription: {
         ...appointmentDetails.eprescription,
@@ -135,7 +134,7 @@ const Prescription = ({ appointmentId }) => {
     );
     const result = res.data;
     alert("Form Submitted Succesfully");
-    router.push(`/diagnosis?appointmentId=${appointmentId}`);
+    // router.push(`/diagnosis?appointmentId=${appointmentId}`);
     return result;
   };
 

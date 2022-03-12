@@ -7,7 +7,8 @@ import NotesCard from "./NotesCard";
 import AllergyCard from "./AllergyCard";
 import OrthoExamination from "./orthopedic/OrthoExamination";
 import NeuroExamination from "./neurology/NeuroExamination";
-
+import RehabExamination from "./rehab/RehabExamination";
+import MedicineExamination from "./medicine/MedicineExamination";
 export {
   DoctorSidebar,
   DoctorNav,
@@ -18,4 +19,6 @@ export {
   NotesCard,
   OrthoExamination,
   NeuroExamination,
+  RehabExamination,
+  MedicineExamination,
 };

@@ -1,45 +1,26 @@
 import {
-  Skin,
-  Head,
-  Eyes,
-  Ears,
-  Nose,
-  Throat,
-  Neck,
-  Neurological,
-  Psychological,
-  Endocrinal,
-  Abdominal,
-  Rectal,
-  PeripheralVascular,
-  Hematological,
-  Gastrointestinal,
-  Cardiovascular,
-  LymphNodes,
-  Genitourinary,
-  Breasts,
-  Respiratory,
-} from "components/DoctorComponents/medicine/ExaminationForm";
-import axios from "axios";
-import { apiUrl } from "config/api";
-import { useAuth } from "context";
-import useSWR from "swr";
-const MedicineExamination = ({ appointmentId }) => {
-  const { auth } = useAuth();
-  const { data: appointmentDetails } = useSWR(
-    `${apiUrl}/appointments/${appointmentId}`,
-    async (url) => {
-      const res = await axios.get(url, {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      });
-      const result = res.data;
-      return result;
-    }
-  );
+  Form1,
+  Form2,
+  Form3,
+  Form4,
+  Form5,
+  Form6,
+  Form7,
+  Form8,
+  Form9,
+  Form10,
+  Form11,
+  Form12,
+  Form13,
+  Form14,
+  Form15,
+  Form16,
+  Form17,
+} from "components/DoctorComponents/rehab/examinationform";
+const RehabExamination = ({ appointmentId }) => {
   return (
     <>
+      {" "}
       <div className="clinical-assesment-tab-panel">
         <ul
           role="tablist"
@@ -181,30 +162,6 @@ const MedicineExamination = ({ appointmentId }) => {
             <a href="#tab-117" data-bs-toggle="tab" className="nav-link fs-6">
               Form 17
             </a>
-          </li>{" "}
-          <li className="nav-icon">
-            <i className="fad fa-arrow-alt-right fs-6 me-3"></i>
-          </li>
-          <li className="nav-item me-3" id="inner-nav-link">
-            <a href="#tab-118" data-bs-toggle="tab" className="nav-link fs-6">
-              Form 18
-            </a>
-          </li>{" "}
-          <li className="nav-icon">
-            <i className="fad fa-arrow-alt-right fs-6 me-3"></i>
-          </li>
-          <li className="nav-item me-3" id="inner-nav-link">
-            <a href="#tab-119" data-bs-toggle="tab" className="nav-link fs-6">
-              Form 19
-            </a>
-          </li>{" "}
-          <li className="nav-icon">
-            <i className="fad fa-arrow-alt-right fs-6 me-3"></i>
-          </li>
-          <li className="nav-item me-3" id="inner-nav-link">
-            <a href="#tab-120" data-bs-toggle="tab" className="nav-link fs-6">
-              Form 20
-            </a>
           </li>
         </ul>
         <div className="tab-content">
@@ -213,124 +170,55 @@ const MedicineExamination = ({ appointmentId }) => {
             id="tab-101"
             className="tab-pane fade show active"
           >
-            <Skin
-              data={appointmentDetails?.medicine}
-              appointmentId={appointmentId}
-            />
+            <Form1 appointmentId={appointmentId} />
           </div>
           <div role="tabpanel" id="tab-102" className="tab-pane fade">
-            <Head
-              data={appointmentDetails?.medicine}
-              appointmentId={appointmentId}
-            />
+            <Form2 appointmentId={appointmentId} />
           </div>
           <div role="tabpanel" id="tab-103" className="tab-pane fade">
-            <Eyes
-              data={appointmentDetails?.medicine}
-              appointmentId={appointmentId}
-            />
+            <Form3 appointmentId={appointmentId} />
           </div>
           <div role="tabpanel" id="tab-104" className="tab-pane fade">
-            <Ears
-              data={appointmentDetails?.medicine}
-              appointmentId={appointmentId}
-            />
+            <Form4 appointmentId={appointmentId} />
           </div>
           <div role="tabpanel" id="tab-105" className="tab-pane fade">
-            <Nose
-              data={appointmentDetails?.medicine}
-              appointmentId={appointmentId}
-            />
+            <Form5 appointmentId={appointmentId} />
           </div>
           <div role="tabpanel" id="tab-106" className="tab-pane fade">
-            <Throat
-              data={appointmentDetails?.medicine}
-              appointmentId={appointmentId}
-            />
+            <Form6 appointmentId={appointmentId} />
           </div>
           <div role="tabpanel" id="tab-107" className="tab-pane fade">
-            <Neck
-              data={appointmentDetails?.medicine}
-              appointmentId={appointmentId}
-            />
+            <Form7 appointmentId={appointmentId} />
           </div>
           <div role="tabpanel" id="tab-108" className="tab-pane fade">
-            <LymphNodes
-              data={appointmentDetails?.medicine}
-              appointmentId={appointmentId}
-            />
+            <Form8 appointmentId={appointmentId} />
           </div>
           <div role="tabpanel" id="tab-109" className="tab-pane fade">
-            <Respiratory
-              data={appointmentDetails?.medicine}
-              appointmentId={appointmentId}
-            />
+            <Form9 appointmentId={appointmentId} />
           </div>
           <div role="tabpanel" id="tab-110" className="tab-pane fade">
-            <Cardiovascular
-              data={appointmentDetails?.medicine}
-              appointmentId={appointmentId}
-            />
+            <Form10 appointmentId={appointmentId} />
           </div>
           <div role="tabpanel" id="tab-111" className="tab-pane fade">
-            <Gastrointestinal
-              data={appointmentDetails?.medicine}
-              appointmentId={appointmentId}
-            />
+            <Form11 appointmentId={appointmentId} />
           </div>
           <div role="tabpanel" id="tab-112" className="tab-pane fade">
-            <Breasts
-              data={appointmentDetails?.medicine}
-              appointmentId={appointmentId}
-            />
+            <Form12 appointmentId={appointmentId} />
           </div>
           <div role="tabpanel" id="tab-113" className="tab-pane fade">
-            <Abdominal
-              data={appointmentDetails?.medicine}
-              appointmentId={appointmentId}
-            />
+            <Form13 appointmentId={appointmentId} />
           </div>
           <div role="tabpanel" id="tab-114" className="tab-pane fade">
-            <Genitourinary
-              data={appointmentDetails?.medicine}
-              appointmentId={appointmentId}
-            />
+            <Form14 appointmentId={appointmentId} />
           </div>
           <div role="tabpanel" id="tab-115" className="tab-pane fade">
-            <Rectal
-              data={appointmentDetails?.medicine}
-              appointmentId={appointmentId}
-            />
+            <Form15 appointmentId={appointmentId} />
           </div>
           <div role="tabpanel" id="tab-116" className="tab-pane fade">
-            <PeripheralVascular
-              data={appointmentDetails?.medicine}
-              appointmentId={appointmentId}
-            />
+            <Form16 appointmentId={appointmentId} />
           </div>
           <div role="tabpanel" id="tab-117" className="tab-pane fade">
-            <Neurological
-              data={appointmentDetails?.medicine}
-              appointmentId={appointmentId}
-            />
-          </div>
-          <div role="tabpanel" id="tab-118" className="tab-pane fade">
-            <Hematological
-              data={appointmentDetails?.medicine}
-              appointmentId={appointmentId}
-            />
-          </div>
-          <div role="tabpanel" id="tab-119" className="tab-pane fade">
-            <Endocrinal
-              data={appointmentDetails?.medicine}
-              appointmentId={appointmentId}
-            />
-          </div>
-          <div role="tabpanel" id="tab-120" className="tab-pane fade">
-            <Psychological
-              data={appointmentDetails?.medicine}
-              appointmentId={appointmentId}
-            />
+            <Form17 appointmentId={appointmentId} />
           </div>
         </div>
       </div>
@@ -338,4 +226,4 @@ const MedicineExamination = ({ appointmentId }) => {
   );
 };
 
-export default MedicineExamination;
+export default RehabExamination;

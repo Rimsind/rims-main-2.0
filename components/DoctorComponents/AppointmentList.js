@@ -19,7 +19,8 @@ const AppointmentList = ({ data }) => {
             </a>
             <Link href={`/user/appointments/${data?.id}`}>
               <a>
-                Dr. {data?.patient?.first_name} {data?.patient?.last_name}
+                {data?.patient?.title}. {data?.patient?.first_name}{" "}
+                {data?.patient?.last_name}
                 <span>{data?.patient?.gender}</span>
               </a>
             </Link>
