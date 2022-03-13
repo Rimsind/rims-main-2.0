@@ -16,6 +16,8 @@ import VerifyCard from "./VerifyCard";
 import TestNav from "./TestNav";
 import ListPagination from "./ListPagination";
 import HorizontalHospitalCard from "./HorizontalDoctorCard";
+import PolyclinicSideBar from "./PolyclinicSideBar";
+import NursingSideBar from "./NursingSideBar";
 
 export {
   BreadCrums,
@@ -36,4 +38,6 @@ export {
   TestNav,
   ListPagination,
   HorizontalHospitalCard,
+  PolyclinicSideBar,
+  NursingSideBar,
 };

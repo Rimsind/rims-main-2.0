@@ -44,7 +44,11 @@ const ProfilePicture = ({ data }) => {
                     <Image
                       height="100"
                       width="100"
-                      src={data?.image?.url || "/assets/images/profile.png"}
+                      src={
+                        data?.image?.url ||
+                        data?.coverImage?.url ||
+                        "/assets/images/profile.png"
+                      }
                       alt="User Image"
                     />
                   </div>

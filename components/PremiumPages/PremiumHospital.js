@@ -1,12 +1,6 @@
-import { BreadCrums, PolyclinicTimetableCard } from "components/common/index";
+import { BreadCrums } from "components/common/index";
 import Image from "next/image";
-import { useRouter } from "next/router";
-import useSWR from "swr";
-import { apiUrl, fetcher } from "config/api";
-import { DetailsPageLoader } from "components/Loaders";
-const HospitalId = () => {
-  const { id } = useRouter().query;
-
+const PremiumHospital = () => {
   return (
     <>
       <main className="main">
@@ -706,4 +700,4 @@ const HospitalId = () => {
   );
 };
 
-export default HospitalId;
+export default PremiumHospital;

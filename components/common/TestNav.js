@@ -98,6 +98,7 @@ const TestNav = () => {
                             src={
                               data?.image?.url ||
                               data?.coverImage?.url ||
+                              data?.profile_image?.url ||
                               "/assets/images/profile.png"
                             }
                             width="35"
