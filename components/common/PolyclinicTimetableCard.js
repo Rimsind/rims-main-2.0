@@ -1,24 +1,33 @@
 import Image from "next/image";
+import Link from "next/link";
 const PolyclinicTimetableCard = ({ schedule }) => {
+  console.log(schedule);
   return (
     <>
       <div className="doctor-widget p-4 shadow-sm">
         <div className="doc-info-left">
           <div className="doctor-img">
-            <a href="doctor-profile.html">
-              <Image
-                height="150"
-                width="150"
-                src={schedule?.image?.url || "/assets/images/polyclinic.jpg"}
-                className="img-fluid"
-                alt="User Image"
-              />
-            </a>
+            <Link href={`/doctors/${schedule?.id}`}>
+              <a>
+                <Image
+                  height="150"
+                  width="150"
+                  src={schedule?.image?.url || "/assets/images/polyclinic.jpg"}
+                  className="img-fluid"
+                  alt="User Image"
+                />
+              </a>
+            </Link>
           </div>
           <div className="doc-info-cont">
-            <h4 className="doc-name">
-              Dr. {schedule?.firstName} {schedule?.lastName}
-            </h4>
+            <Link href={`/doctors/${schedule?.id}`}>
+              <a>
+                {" "}
+                <h4 className="doc-name">
+                  Dr. {schedule?.firstName} {schedule?.lastName}
+                </h4>
+              </a>
+            </Link>
             <p className="doc-speciality">
               {schedule?.experienceInYrs} years experience, Consultant{" "}
               {schedule?.specialty}
@@ -72,7 +81,8 @@ const PolyclinicTimetableCard = ({ schedule }) => {
           <div className="clini-infos">
             <ul>
               <li>
-                <i className="fas fa-certificate"></i> {schedule?.qualification}
+                <i className="fas fa-certificate"></i> hii
+                {schedule?.qualification}
               </li>
 
               <li>
@@ -90,9 +100,9 @@ const PolyclinicTimetableCard = ({ schedule }) => {
             </ul>
           </div>
           <div className="clinic-booking">
-            <a className="apt-btn" href="booking.html">
-              Book Appointment
-            </a>
+            <Link href={`/doctors/${schedule?.id}`}>
+              <a className="apt-btn">View Profile</a>
+            </Link>
           </div>
         </div>
       </div>

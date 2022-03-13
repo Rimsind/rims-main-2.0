@@ -11,23 +11,27 @@ const HorizontalPolyclinicCard = (props) => {
           <div className="doctor-widget">
             <div className="doc-info-left">
               <div className="doctor-img poly-img">
-                <a href="doctor-profile.html">
-                  <Image
-                    height="130"
-                    width="145"
-                    src={
-                      data?.coverImage?.url ||
-                      data?.profile_image?.url ||
-                      "/assets/images/polyclinic.jpg"
-                    }
-                    className="img-fluid"
-                    alt="User Image"
-                  />
-                </a>
+                <Link href={`/${props.link}/details?id=${data?.id}`}>
+                  <a>
+                    <Image
+                      height="130"
+                      width="145"
+                      src={
+                        data?.coverImage?.url ||
+                        data?.profile_image?.url ||
+                        "/assets/images/polyclinic.jpg"
+                      }
+                      className="img-fluid"
+                      alt="User Image"
+                    />
+                  </a>
+                </Link>
               </div>
               <div className="doc-info-cont">
                 <h4 className="doc-name">
-                  <a href="doctor-profile.html">{data?.name}</a>
+                  <Link href={`/${props.link}/details?id=${data?.id}`}>
+                    <a>{data?.name}</a>
+                  </Link>
                 </h4>
                 <p className="doc-speciality">
                   {data?.city}
