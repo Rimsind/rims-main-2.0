@@ -3,6 +3,8 @@ import { apiUrl } from "config/api";
 import axios from "axios";
 import { useAuth } from "context";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const StatesList = [
   "Andaman and Nicobar Islands",
@@ -64,17 +66,17 @@ const AddressInfo = ({ data }) => {
   const updateAddress = async (data, event) => {
     setLoading(true);
     event.preventDefault();
-    try {
-      const payload = {
-        address: {
-          street_address: data.street,
-          city: data.city,
-          pincode: data.pinCode,
-          state: data.state,
-          country: data.country,
-        },
-      };
 
+    const payload = {
+      address: {
+        street_address: data.street,
+        city: data.city,
+        pincode: data.pinCode,
+        state: data.state,
+        country: data.country,
+      },
+    };
+    try {
       const res = await axios.put(
         `${apiUrl}/${role}/${auth.user?.profileId}`,
         payload,
@@ -85,10 +87,29 @@ const AddressInfo = ({ data }) => {
         }
       );
       const result = res.data;
-      alert("Details Updated Succesfully");
+      toast.success("Address Updated Succesfully", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
       return result, setLoading(false);
     } catch (err) {
       console.log(err.message);
+      toast.error("Address Update Error", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     }
   };
 
@@ -204,6 +225,7 @@ const AddressInfo = ({ data }) => {
           </form>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 };

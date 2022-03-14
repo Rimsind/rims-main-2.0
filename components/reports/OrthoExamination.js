@@ -1,27 +1,7 @@
 import AuthLayout from "components/layout/AuthLayout";
-import { useRouter } from "next/router";
-import { useAuth } from "context";
-import useSWR from "swr";
-import { apiUrl } from "config/api";
 import Image from "next/image";
-const OrthoClinicalExam = () => {
-  // const { id } = useRouter().query;
 
-  // const { auth } = useAuth();
-
-  // const { data: appointments } = useSWR(
-  //   `${apiUrl}/appointments/${id}`,
-  //   async (url) => {
-  //     const res = await axios.get(url, {
-  //       headers: {
-  //         Authorization: `Bearer ${auth.token}`,
-  //       },
-  //     });
-  //     const result = res.data;
-  //     return result;
-  //   }
-  // );
-
+const OrthoExamination = ({ data }) => {
   return (
     <>
       <div className="prescription">
@@ -276,8 +256,8 @@ const OrthoClinicalExam = () => {
   );
 };
 
-export default OrthoClinicalExam;
+export default OrthoExamination;
 
-// OrthoClinicalExam.getLayout = (OrthoClinicalExam) => (
-//   <AuthLayout>{OrthoClinicalExam}</AuthLayout>
-// );
+OrthoExamination.getLayout = (OrthoExamination) => (
+  <AuthLayout>{OrthoExamination}</AuthLayout>
+);

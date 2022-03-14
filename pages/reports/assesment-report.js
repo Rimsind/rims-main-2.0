@@ -4,7 +4,7 @@ import { useAuth } from "context";
 import useSWR from "swr";
 import { apiUrl } from "config/api";
 import Image from "next/image";
-const ClinicalExamination = () => {
+const AssesmentReport = () => {
   const { id } = useRouter().query;
 
   const { auth } = useAuth();
@@ -307,8 +307,8 @@ const ClinicalExamination = () => {
   );
 };
 
-export default ClinicalExamination;
+export default AssesmentReport;
 
-ClinicalExamination.getLayout = (ClinicalExamination) => (
-  <AuthLayout>{ClinicalExamination}</AuthLayout>
+AssesmentReport.getLayout = (AssesmentReport) => (
+  <AuthLayout>{AssesmentReport}</AuthLayout>
 );
