@@ -1,27 +1,34 @@
 import AuthLayout from "components/layout/AuthLayout";
+import {
+  OrthoExamination,
+  MedicineExamination,
+  RehabExamination,
+  NeuroExamination,
+} from "components/reports";
 import { useRouter } from "next/router";
 import { useAuth } from "context";
 import useSWR from "swr";
+import axios from "axios";
 import { apiUrl } from "config/api";
 import Image from "next/image";
-const NeuroClinicalExam = () => {
-  // const { id } = useRouter().query;
+const ExaminationReport = () => {
+  const { id } = useRouter().query;
 
-  // const { auth } = useAuth();
+  const { auth } = useAuth();
 
-  // const { data: appointments } = useSWR(
-  //   `${apiUrl}/appointments/${id}`,
-  //   async (url) => {
-  //     const res = await axios.get(url, {
-  //       headers: {
-  //         Authorization: `Bearer ${auth.token}`,
-  //       },
-  //     });
-  //     const result = res.data;
-  //     return result;
-  //   }
-  // );
-
+  const { data: appointment } = useSWR(
+    `${apiUrl}/appointments/${id}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
+  const { doctor, polyclinic, patient } = appointment;
   return (
     <>
       <div className="prescription">
@@ -76,12 +83,12 @@ const NeuroClinicalExam = () => {
               <div className="col-md-4">
                 <div className="header-inner-item text-start">
                   <p className="fs-3 fw-bold fst-italic lh-1">
-                    Dr. Samir Barman
+                    Dr. {doctor?.firstName} {doctor?.lastName}
                   </p>
-                  <p className="fs-6 fw-bold lh-1">MBBS</p>
-                  <p className="fs-6 lh-1">30</p>
+                  <p className="fs-6 fw-bold lh-1">{doctor?.qualification}</p>
+                  <p className="fs-6 lh-1">{doctor?.specialty}</p>
                   <p className="fs-6 lh-1">Reg. No.-58905 (WBMC)</p>
-                  <p className="fs-6 lh-1">Mob: 8101719935</p>
+                  <p className="fs-6 lh-1">Mob: {doctor?.phone}</p>
                 </div>
               </div>
               <div className="col-md-4">
@@ -98,20 +105,24 @@ const NeuroClinicalExam = () => {
               <div className="col-md-4">
                 <div className="header-inner-item text-end">
                   <p className="fs-3 fw-bold fst-italic lh-1">
-                    Mediland Nursing Home
+                    {polyclinic?.name}
                   </p>
-                  <p className="fs-6 lh-1">HPL Link Road 34JQ+FJ8, Haldia</p>
-                  <p className="fs-6 lh-1">West Bengal, India, PIN: 721602</p>
-                  <p className="fs-6 lh-1">Email : rimsind21@gmail.com</p>
-                  <p className="fs-6 lh-1">Mobile No: 8101719935</p>
+                  <p className="fs-6 lh-1">
+                    {polyclinic?.street_address}, {polyclinic?.city}
+                  </p>
+                  <p className="fs-6 lh-1">
+                    {polyclinic?.state}, {polyclinic?.country}, PIN:{" "}
+                    {polyclinic?.pincode}
+                  </p>
+                  <p className="fs-6 lh-1">Email : {polyclinic?.email}</p>
+                  <p className="fs-6 lh-1">Mobile No: {polyclinic?.phone}</p>
                 </div>
               </div>
             </div>
           </header>
-
           <main className="main mt-3">
             <p className="presc-title fs-3 fw-bold text-center">
-              Neurology Clinical Examination
+              Rehabilation Clinical Examination
             </p>
             <div className="presc-main_outer_bg">
               <div className="profile_details mb-3">
@@ -120,10 +131,7 @@ const NeuroClinicalExam = () => {
                     <img
                       className="presc-img-profile"
                       alt=""
-                      src={
-                        // appointments?.patient?.image?.url ||
-                        "/assets/images/profile.png"
-                      }
+                      src={patient?.image?.url || "/assets/images/profile.png"}
                     />
                   </div>
                   <div className="col-md-8">
@@ -137,7 +145,7 @@ const NeuroClinicalExam = () => {
                             <p className="fs-6 fw-bold text-light lh-1 text-light">
                               Name :
                               <span className="fs-6 fw-light ms-2">
-                                Prasenjit Kamila
+                                {patient?.first_name} {patient?.last_name}
                               </span>
                             </p>
                             <p className="fs-6 fw-bold text-light lh-1">
@@ -154,11 +162,15 @@ const NeuroClinicalExam = () => {
                             </p>
                             <p className="fs-6 fw-bold text-light lh-1">
                               Age :
-                              <span className="fs-6 fw-light ms-2">25</span>
+                              <span className="fs-6 fw-light ms-2">
+                                {patient?.age}
+                              </span>
                             </p>
                             <p className="fs-6 fw-bold text-light lh-1">
                               Gender :
-                              <span className="fs-6 fw-light ms-2">Male</span>
+                              <span className="fs-6 fw-light ms-2">
+                                {patient?.gender}
+                              </span>
                             </p>
                           </div>
                         </div>
@@ -202,52 +214,11 @@ const NeuroClinicalExam = () => {
                 </div>
               </div>
             </div>
-
-            <div>
-              <div className="rfa-gen-form-data-table mt-4 p-3">
-                <div className="table-responsive">
-                  <table className="table table-bordered">
-                    <thead>
-                      <tr>
-                        <th
-                          className="text-center bg-info text-light"
-                          colSpan="3"
-                        >
-                          Clinical Examination
-                        </th>
-                      </tr>
-                      <tr className="text-center">
-                        <th scope="col">#</th>
-                        <th scope="col">Categories</th>
-                        <th scope="col">Test</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr className="text-center">
-                        <th>1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                      </tr>
-                      <tr className="text-center">
-                        <th>2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div className="assessment-content mt-4">
-                  <div className="assessment-title">
-                    <p className="fs-5 fw-bold">Assessment :</p>
-                  </div>
-                  <div className="assessment-info">
-                    <p className="fs-6">Hello This is Assessment</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <RehabExamination data={appointment?.rehab} />
+            {/* <MedicineExamination data={appointment} />
+      <OrthoExamination data={appointment} />
+      <NeuroExamination data={appointment} /> */}
           </main>
-
           <footer className="presc-footer">
             <div className="row align-items-center pt-3 px-3">
               <div className="col-md-4"></div>
@@ -276,8 +247,7 @@ const NeuroClinicalExam = () => {
   );
 };
 
-export default NeuroClinicalExam;
-
-// NeuroClinicalExam.getLayout = (NeuroClinicalExam) => (
-//   <AuthLayout>{NeuroClinicalExam}</AuthLayout>
-// );
+export default ExaminationReport;
+ExaminationReport.getLayout = (ExaminationReport) => (
+  <AuthLayout>{ExaminationReport}</AuthLayout>
+);

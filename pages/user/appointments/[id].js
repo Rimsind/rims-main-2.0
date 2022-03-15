@@ -55,7 +55,7 @@ const AppointmentId = () => {
               <div className="col-md-12 col-sm-12 col-lg-8 col-xl-9">
                 <div className="upper-section">
                   <div className="row align-items-baseline">
-                    <div className="col-4">
+                    <div className="col-3">
                       <div className="left-upper-content pt-3 ps-2 mb-3 rounded text-light">
                         <div className="row">
                           <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6">
@@ -72,24 +72,36 @@ const AppointmentId = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-8">
+                    <div className="col-9">
                       <div className="right-upper-content">
                         <div className="row">
-                          <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6 text-end">
+                          <div className="col-sm-4 col-md-4 col-lg-4 col-xl-4 text-end">
                             <div className="d-grid gap-2">
                               <Link
-                                href={`/reports/clinical-examination?id=${id}`}
+                                href={`/reports/examination-report?id=${id}`}
                               >
                                 <a
                                   className="btn btn-primary py-2"
                                   type="button"
                                 >
-                                  Download Clinical Assessments
+                                  Download Examination
                                 </a>
                               </Link>
                             </div>
                           </div>
-                          <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                          <div className="col-sm-4 col-md-4 col-lg-4 col-xl-4 text-end">
+                            <div className="d-grid gap-2">
+                              <Link href={`/reports/assesment-report?id=${id}`}>
+                                <a
+                                  className="btn btn-primary py-2"
+                                  type="button"
+                                >
+                                  Download Assessments
+                                </a>
+                              </Link>
+                            </div>
+                          </div>
+                          <div className="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                             <div className="d-grid gap-2">
                               <Link href={`/reports/e-prescription?id=${id}`}>
                                 <a
