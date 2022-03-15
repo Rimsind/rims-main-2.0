@@ -3,6 +3,8 @@ import { apiUrl } from "config/api";
 import axios from "axios";
 import { useAuth } from "context";
 import { useState } from "react";
+import { ToastContainer, toast, Slide } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ProfileInfo = ({ data }) => {
   const { auth } = useAuth();
@@ -36,10 +38,33 @@ const ProfileInfo = ({ data }) => {
         }
       );
       const result = res.data;
-      alert("Profile Updated Succesfully");
+
+      toast.success("Profile Updated Succesfully", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
       return result, setLoading(false);
     } catch (error) {
       console.log(error.message);
+      toast.error("Address Update Error", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+      setLoading(false);
     }
   };
 
@@ -47,7 +72,11 @@ const ProfileInfo = ({ data }) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit(updateProfile)}>
+      <form
+        className=" needs-validation"
+        onSubmit={handleSubmit(updateProfile)}
+        novalidate
+      >
         <div className="card">
           <div className="card-body">
             <div className="row form-row">
@@ -57,6 +86,7 @@ const ProfileInfo = ({ data }) => {
                   <select
                     className="form-select"
                     aria-label="Default select example"
+                    required
                     {...register("title")}
                   >
                     <option defaultValue={!!data?.title && data.title}>
@@ -76,6 +106,7 @@ const ProfileInfo = ({ data }) => {
                   <input
                     type="text"
                     className="form-control"
+                    required
                     {...register("first_name")}
                     defaultValue={!!data?.first_name ? data.first_name : ""}
                   />
@@ -87,6 +118,7 @@ const ProfileInfo = ({ data }) => {
                   <input
                     type="text"
                     className="form-control"
+                    required
                     {...register("last_name")}
                     defaultValue={!!data?.last_name ? data.last_name : ""}
                   />
@@ -99,6 +131,7 @@ const ProfileInfo = ({ data }) => {
                     <input
                       type="date"
                       className="form-control"
+                      required
                       {...register("dob")}
                       defaultValue={!!data?.dob ? data.dob : ""}
                     />
@@ -111,6 +144,7 @@ const ProfileInfo = ({ data }) => {
                   <input
                     type="text"
                     className="form-control"
+                    required
                     {...register("age")}
                     defaultValue={!!data?.age ? data.age : ""}
                   />
@@ -122,6 +156,7 @@ const ProfileInfo = ({ data }) => {
                   <select
                     className="form-select form-control"
                     {...register("gender")}
+                    required
                   >
                     <option
                       name="gender"
@@ -141,6 +176,7 @@ const ProfileInfo = ({ data }) => {
                   <select
                     className="form-select form-control"
                     {...register("marital_status")}
+                    required
                   >
                     <option
                       name="marital_status"
@@ -171,12 +207,15 @@ const ProfileInfo = ({ data }) => {
                   <select
                     className="form-select form-control"
                     {...register("blood_group")}
+                    required
                   >
                     <option
                       name="blood_group"
                       value={!!data?.blood_group?.id && data.blood_group?.id}
                     >
-                      {!!data?.blood_group?.name && data.blood_group?.name}
+                      {!!data?.blood_group && !!data.blood_group?.name
+                        ? data.blood_group?.name
+                        : "Select"}
                     </option>
                     <option name="blood_group" value="2">
                       A+
@@ -202,6 +241,9 @@ const ProfileInfo = ({ data }) => {
                     <option name="blood_group" value="8">
                       O-
                     </option>
+                    <option name="blood_group" value="8">
+                      NA
+                    </option>
                   </select>
                 </div>
               </div>
@@ -223,6 +265,7 @@ const ProfileInfo = ({ data }) => {
                     type="text"
                     placeholder="+1 202-555-0125"
                     className="form-control"
+                    required
                     {...register("phone")}
                     defaultValue={!!data?.phone ? data.phone : ""}
                   />
@@ -240,6 +283,7 @@ const ProfileInfo = ({ data }) => {
           </div>
         </div>
       </form>
+      <ToastContainer />
     </>
   );
 };

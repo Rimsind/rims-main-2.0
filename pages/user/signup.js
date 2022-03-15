@@ -3,6 +3,8 @@ import Link from "next/link";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const SignUp = () => {
   const router = useRouter();
   const {
@@ -79,11 +81,29 @@ const SignUp = () => {
           }
         );
       }
-      alert("Registartion Completed");
+      toast.success("Registration Succesful", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
       reset();
       router.push("/user/login");
     } catch (err) {
-      alert("Registration Failed");
+      toast.error("Registration Failed", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     }
   };
 
@@ -117,6 +137,7 @@ const SignUp = () => {
                           <input
                             type="text"
                             className="form-control floating"
+                            required
                             {...register("firstName")}
                           />
                           <label className="focus-label">First Name</label>
@@ -125,6 +146,7 @@ const SignUp = () => {
                           <input
                             type="text"
                             className="form-control floating"
+                            required
                             {...register("lastName")}
                           />
                           <label className="focus-label">Last Name</label>
@@ -133,6 +155,7 @@ const SignUp = () => {
                           <input
                             type="email"
                             className="form-control floating"
+                            required
                             {...register("email")}
                           />
                           <label className="focus-label">Email</label>
@@ -141,6 +164,7 @@ const SignUp = () => {
                           <input
                             type="password"
                             className="form-control floating"
+                            required
                             {...register("password")}
                           />
                           <label className="focus-label">Create Password</label>
@@ -192,6 +216,7 @@ const SignUp = () => {
           </div>
         </div>
       </main>
+      <ToastContainer />
     </>
   );
 };

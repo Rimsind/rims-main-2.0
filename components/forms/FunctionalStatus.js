@@ -53,6 +53,7 @@ const FunctionalStatus = ({ patient }) => {
       return result, setLoading(false);
     } catch (err) {
       console.log(err.message);
+      setLoading(false);
     }
   };
 

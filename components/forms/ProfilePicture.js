@@ -4,6 +4,8 @@ import axios from "axios";
 import { apiUrl } from "config/api";
 import { uploadImage } from "utils/uploadImage";
 import { useAuth } from "context";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ProfilePicture = ({ data }) => {
   const { auth } = useAuth();
@@ -27,23 +29,49 @@ const ProfilePicture = ({ data }) => {
 
   const uploadProfileImage = async () => {
     setLoading(true);
-    const image = await uploadImage(profileImage, auth.token);
+    try {
+      const image = await uploadImage(profileImage, auth.token);
 
-    const payload = {
-      image,
-    };
-    const response = await axios.put(
-      `${apiUrl}/${role}/${auth.user.profileId}`,
-      payload,
-      {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      }
-    );
-    const result = await response.data;
-    alert("Image uploaded succesfully");
-    return result, setLoading(false);
+      const payload = {
+        image,
+      };
+
+      const response = await axios.put(
+        `${apiUrl}/${role}/${auth.user.profileId}`,
+        payload,
+        {
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+          },
+        }
+      );
+      const result = await response.data;
+
+      toast.success("Profile Picture updated Succesfully", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+      return result, setLoading(false);
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong try again.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+      setLoading(false);
+    }
   };
   return (
     <>
@@ -96,6 +124,7 @@ const ProfilePicture = ({ data }) => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 };

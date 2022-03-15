@@ -3,7 +3,7 @@ import { apiUrl } from "config/api";
 import axios from "axios";
 import { useAuth } from "context";
 import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const StatesList = [
@@ -89,27 +89,30 @@ const AddressInfo = ({ data }) => {
       const result = res.data;
       toast.success("Address Updated Succesfully", {
         position: "top-center",
-        autoClose: 5000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
         draggable: true,
         progress: undefined,
         theme: "colored",
+        transition: Slide,
       });
       return result, setLoading(false);
     } catch (err) {
       console.log(err.message);
       toast.error("Address Update Error", {
         position: "top-center",
-        autoClose: 5000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
         draggable: true,
         progress: undefined,
         theme: "colored",
+        transition: Slide,
       });
+      setLoading(false);
     }
   };
 
@@ -130,7 +133,7 @@ const AddressInfo = ({ data }) => {
                     defaultValue={
                       !!data?.address && !!data.address.street_address
                         ? data.address.street_address
-                        : ""
+                        : "Enter Street Address"
                     }
                   />
                 </div>
@@ -146,7 +149,7 @@ const AddressInfo = ({ data }) => {
                     defaultValue={
                       !!data?.address && !!data.address.city
                         ? data.address.city
-                        : ""
+                        : "Enter City"
                     }
                   />
                 </div>
@@ -162,12 +165,12 @@ const AddressInfo = ({ data }) => {
                       defaultValue={
                         !!data?.address && !!data.address.state
                           ? data.address.state
-                          : ""
+                          : "Select State"
                       }
                     >
                       {!!data?.address && !!data.address.state
                         ? data.address.state
-                        : ""}
+                        : "Select State"}
                     </option>
                     {StatesList.map((items, index) => (
                       <option key={index}>{items}</option>
@@ -186,7 +189,7 @@ const AddressInfo = ({ data }) => {
                     defaultValue={
                       !!data?.address && !!data.address.pincode
                         ? data.address.pincode
-                        : ""
+                        : "Enter PIN Code"
                     }
                   />
                 </div>
@@ -194,23 +197,18 @@ const AddressInfo = ({ data }) => {
               <div className="col-12 col-md-6">
                 <div className="form-group">
                   <label>Country</label>
-                  <select
-                    className="form-select form-control"
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="13420"
+                    readOnly
                     {...register("country")}
-                  >
-                    <option
-                      defaultValue={
-                        !!data?.address && !!data.address.country
-                          ? data.address.country
-                          : ""
-                      }
-                    >
-                      {!!data?.address && !!data.address.country
+                    defaultValue={
+                      !!data?.address && !!data.address.country
                         ? data.address.country
-                        : ""}
-                    </option>
-                    <option>India</option>
-                  </select>
+                        : "India"
+                    }
+                  />
                 </div>
               </div>
               <div className="submit-section text-end">
