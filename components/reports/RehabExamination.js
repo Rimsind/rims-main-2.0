@@ -16,6 +16,19 @@ const RehabExamination = ({ data }) => {
   //   wheel_chair_assessment,
   //   wound_assessment,
   // } = data;
+  if (data) {
+    const {
+      adaptive_equipment_assessment,
+      environmental_barrier_assessmnet,
+      joint_integrety_mobility_assessmnet,
+      orthotic_assessment,
+      pain_assessment,
+      prosthetic_assessment,
+      ventilation_respiration_gas_exchange,
+      wheel_chair_assessment,
+      wound_assessment,
+    } = data;
+  }
 
   return (
     <>

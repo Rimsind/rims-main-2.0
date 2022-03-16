@@ -10,40 +10,64 @@ const MedicalHistory = ({ patient }) => {
     medicalHistory,
     updated_at,
     gender,
-    surgicalHistory,
-    medicationHistory,
+    past_surgical_history,
+    past_medication_history,
   } = patient;
-  console.log(medicalHistory);
-  const surgicalDataLength = medicalHistory?.surgicalHistory.length;
-  const medicineDataLength = medicalHistory?.medicationHistory.length;
+  console.log(patient);
+  const surgicalDataLength = past_surgical_history?.length;
+  const medicineDataLength = past_medication_history?.length;
 
   const { auth } = useAuth();
   const [surgery, setSurgery] = useState();
   const [surgeryDate, setSurgeryDate] = useState();
   const [loading, setLoading] = useState(false);
-  const [allSurg, SetAllSurg] = useState([]);
+
   const submitSurgery = async () => {
-    const payload = {
-      surgicalHistory: [
-        ...medicalHistory?.surgicalHistory,
+    if (!!surgery && !!surgeryDate) {
+      const payload = {
+        past_surgical_history: [
+          ...past_surgical_history,
+          {
+            name: surgery,
+            date: surgeryDate,
+          },
+        ],
+      };
+      const res = await axios.put(
+        `${apiUrl}/patients/${auth.user?.profileId}`,
+        payload,
         {
-          name: surgery,
-          date: surgeryDate,
-        },
-      ],
-    };
-    const res = await axios.put(
-      `${apiUrl}/patients/${auth.user?.profileId}`,
-      payload,
-      {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      }
-    );
-    const result = res.data;
-    alert("Surgical History added Succesfully");
-    return result, setLoading(false), setSurgery(""), setSurgeryDate("");
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+          },
+        }
+      );
+      const result = res.data;
+
+      toast.success("Surgical History Updated", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+      return result, setLoading(false), setSurgery(""), setSurgeryDate("");
+    } else {
+      toast("Please enter all the fields", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        transition: Slide,
+      });
+    }
   };
 
   const [medicineName, setMedicineName] = useState();
@@ -57,35 +81,62 @@ const MedicalHistory = ({ patient }) => {
   const [ifYes, setIfYes] = useState();
 
   const submitMedicine = async () => {
-    const payload = {
-      medicationHistory: [
-        ...medicalHistory?.medicationHistory,
-        {
-          medicineName: medicineName,
-          dose: dose,
-          startData: date,
-          status: status,
-          type: type,
-          route: route,
-          frequency: frequency,
-          sideEffect: sideEffect,
-          ifYes: ifYes,
-        },
-      ],
-    };
+    if (!!medicineName && !!dose && !!type) {
+      const payload = {
+        past_medication_history: [
+          ...past_medication_history,
+          {
+            medicineName: medicineName,
+            dose: dose,
+            startData: date,
+            status: status,
+            type: type,
+            route: route,
+            frequency: frequency,
+            sideEffect: sideEffect,
+            ifYes: ifYes,
+          },
+        ],
+      };
 
-    const res = await axios.put(
-      `${apiUrl}/patients/${auth.user?.profileId}`,
-      payload,
-      {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      }
-    );
-    const result = res.data;
-    alert("Medical History Updated Succesfully");
-    return result, setMedicineName(""), setDose(""), setDate(""), setIfYes("");
+      const res = await axios.put(
+        `${apiUrl}/patients/${auth.user?.profileId}`,
+        payload,
+        {
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+          },
+        }
+      );
+      const result = res.data;
+
+      toast.success("Medication History Updated", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+      return (
+        result, setMedicineName(""), setDose(""), setDate(""), setIfYes("")
+      );
+    } else {
+      toast("Please enter all the fields ", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+
+        transition: Slide,
+      });
+    }
   };
 
   const { register, handleSubmit } = useForm();
@@ -662,7 +713,7 @@ const MedicalHistory = ({ patient }) => {
                   </tr>
                 ) : (
                   <>
-                    {medicalHistory?.surgicalHistory?.map((item, index) => (
+                    {past_surgical_history?.map((item, index) => (
                       <tr key={index}>
                         <td>
                           <div className="delete-table-icon">
@@ -922,7 +973,7 @@ const MedicalHistory = ({ patient }) => {
                 </tr>
               ) : (
                 <>
-                  {medicalHistory?.medicationHistory?.map((item, index) => (
+                  {past_medication_history?.map((item, index) => (
                     <tr key={index}>
                       <td>
                         <div className="delete-table-icon">
