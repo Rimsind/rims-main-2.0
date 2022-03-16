@@ -6,7 +6,13 @@ import { useState } from "react";
 import { Slide, toast } from "react-toastify";
 
 const MedicalHistory = ({ patient }) => {
-  const { medicalHistory, updated_at, gender } = patient;
+  const {
+    medicalHistory,
+    updated_at,
+    gender,
+    surgicalHistory,
+    medicationHistory,
+  } = patient;
   console.log(medicalHistory);
   const surgicalDataLength = medicalHistory?.surgicalHistory.length;
   const medicineDataLength = medicalHistory?.medicationHistory.length;
@@ -18,16 +24,13 @@ const MedicalHistory = ({ patient }) => {
   const [allSurg, SetAllSurg] = useState([]);
   const submitSurgery = async () => {
     const payload = {
-      medicalHistory: {
-        ...medicalHistory,
-        surgicalHistory: [
-          ...medicalHistory?.surgicalHistory,
-          {
-            name: surgery,
-            date: surgeryDate,
-          },
-        ],
-      },
+      surgicalHistory: [
+        ...medicalHistory?.surgicalHistory,
+        {
+          name: surgery,
+          date: surgeryDate,
+        },
+      ],
     };
     const res = await axios.put(
       `${apiUrl}/patients/${auth.user?.profileId}`,
@@ -55,23 +58,20 @@ const MedicalHistory = ({ patient }) => {
 
   const submitMedicine = async () => {
     const payload = {
-      medicalHistory: {
-        ...medicalHistory,
-        medicationHistory: [
-          ...medicalHistory?.medicationHistory,
-          {
-            medicineName: medicineName,
-            dose: dose,
-            startData: date,
-            status: status,
-            type: type,
-            route: route,
-            frequency: frequency,
-            sideEffect: sideEffect,
-            ifYes: ifYes,
-          },
-        ],
-      },
+      medicationHistory: [
+        ...medicalHistory?.medicationHistory,
+        {
+          medicineName: medicineName,
+          dose: dose,
+          startData: date,
+          status: status,
+          type: type,
+          route: route,
+          frequency: frequency,
+          sideEffect: sideEffect,
+          ifYes: ifYes,
+        },
+      ],
     };
 
     const res = await axios.put(

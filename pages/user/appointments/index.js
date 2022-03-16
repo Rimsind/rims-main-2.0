@@ -23,6 +23,7 @@ const Index = () => {
       return result;
     }
   );
+
   const appointmentsLength = appointments?.length;
 
   const { data: patient } = useSWR(

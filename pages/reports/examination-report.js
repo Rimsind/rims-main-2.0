@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 import { useAuth } from "context";
 import useSWR from "swr";
 import axios from "axios";
-import { apiUrl } from "config/api";
+import { apiUrl, fetcher } from "config/api";
 import Image from "next/image";
 const ExaminationReport = () => {
   const { id } = useRouter().query;
@@ -29,6 +29,15 @@ const ExaminationReport = () => {
     }
   );
   const { doctor, polyclinic, patient } = appointment;
+
+  const { data: specialty } = useSWR(
+    `${apiUrl}/specialties/${appointment?.doctor?.specialty}`,
+    fetcher
+  );
+  const { data: bloodGroup } = useSWR(
+    `${apiUrl}/blood-groups/${appointment?.patient?.blood_group}`,
+    fetcher
+  );
   return (
     <>
       <div className="prescription">
@@ -86,7 +95,7 @@ const ExaminationReport = () => {
                     Dr. {doctor?.firstName} {doctor?.lastName}
                   </p>
                   <p className="fs-6 fw-bold lh-1">{doctor?.qualification}</p>
-                  <p className="fs-6 lh-1">{doctor?.specialty}</p>
+                  <p className="fs-6 lh-1">{specialty?.name}</p>
                   <p className="fs-6 lh-1">Reg. No.-58905 (WBMC)</p>
                   <p className="fs-6 lh-1">Mob: {doctor?.phone}</p>
                 </div>
@@ -157,7 +166,7 @@ const ExaminationReport = () => {
                             <p className="fs-6 fw-bold text-light lh-1">
                               Blood Group :
                               <span className="fs-6 fw-light ms-2">
-                                B Positive(+)
+                                {bloodGroup?.name}
                               </span>
                             </p>
                             <p className="fs-6 fw-bold text-light lh-1">

@@ -75,7 +75,6 @@ const ProfileInfo = ({ data }) => {
       <form
         className=" needs-validation"
         onSubmit={handleSubmit(updateProfile)}
-        novalidate
       >
         <div className="card">
           <div className="card-body">
