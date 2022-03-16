@@ -87,7 +87,7 @@ const AddressInfo = ({ data }) => {
         }
       );
       const result = res.data;
-      toast.success("Address Updated Succesfully", {
+      toast.success("Address Updated Succesfully.", {
         position: "top-center",
         autoClose: 2000,
         hideProgressBar: false,
@@ -101,7 +101,7 @@ const AddressInfo = ({ data }) => {
       return result, setLoading(false);
     } catch (err) {
       console.log(err.message);
-      toast.error("Address Update Error", {
+      toast.error("Something Went Wrong Try Again.", {
         position: "top-center",
         autoClose: 2000,
         hideProgressBar: false,

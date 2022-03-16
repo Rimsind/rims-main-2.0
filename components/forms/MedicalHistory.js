@@ -3,18 +3,19 @@ import { apiUrl } from "config/api";
 import axios from "axios";
 import { useAuth } from "context";
 import { useState } from "react";
+import { Slide, toast } from "react-toastify";
 
 const MedicalHistory = ({ patient }) => {
   const { medicalHistory, updated_at, gender } = patient;
+  console.log(medicalHistory);
   const surgicalDataLength = medicalHistory?.surgicalHistory.length;
   const medicineDataLength = medicalHistory?.medicationHistory.length;
 
   const { auth } = useAuth();
-
   const [surgery, setSurgery] = useState();
   const [surgeryDate, setSurgeryDate] = useState();
   const [loading, setLoading] = useState(false);
-
+  const [allSurg, SetAllSurg] = useState([]);
   const submitSurgery = async () => {
     const payload = {
       medicalHistory: {
@@ -95,7 +96,7 @@ const MedicalHistory = ({ patient }) => {
       const payload = {
         medicalHistory: {
           ...medicalHistory,
-          past_medical_history: data.past_medical_history?.toString(),
+          past_symptoms: data.past_symptoms?.toString(),
           diagnostic_tests: data.diagnostic_tests?.toString(),
           allergies: data.allergies,
           vactions: data.vactions,
@@ -120,10 +121,32 @@ const MedicalHistory = ({ patient }) => {
         }
       );
       const result = res.data;
-      alert("Medical History Updated Succesfully");
+      toast.success("Medical History Updated", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
       return result, setLoading(false);
     } catch (err) {
       console.log(err.message);
+      toast.error("Something Went Wrong Try Again.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+      setLoading(false);
     }
   };
 
@@ -260,14 +283,14 @@ const MedicalHistory = ({ patient }) => {
                     <input
                       className="form-check-input"
                       type="checkbox"
-                      name="past_medical_history"
+                      name="past_symptoms"
                       value={item}
-                      {...register("past_medical_history")}
+                      {...register("past_symptoms")}
                       defaultChecked={
                         !!medicalHistory &&
-                        !!medicalHistory.past_medical_history &&
+                        !!medicalHistory.past_symptoms &&
                         makeArrfromString(
-                          medicalHistory.past_medical_history
+                          medicalHistory.past_symptoms
                         ).includes(item)
                       }
                     />

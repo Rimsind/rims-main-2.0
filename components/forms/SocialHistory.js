@@ -3,6 +3,7 @@ import { apiUrl } from "config/api";
 import axios from "axios";
 import { useAuth } from "context";
 import { useState } from "react";
+import { Slide, toast } from "react-toastify";
 
 const SocialHistory = ({ patient }) => {
   const { socialHistory, updated_at } = patient;
@@ -40,10 +41,31 @@ const SocialHistory = ({ patient }) => {
         }
       );
       const result = res.data;
-      alert("Social History Updated Succesfully");
+      toast.success("Social History Updated", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
       return result, setLoading(false);
     } catch (err) {
       console.log(err.message);
+      toast.error("Something Went Wrong Try Again.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
       setLoading(false);
     }
   };
@@ -286,12 +308,12 @@ const SocialHistory = ({ patient }) => {
                       <input
                         type="number"
                         className="form-control"
-                        name="homeStepsOut"
+                        min="0"
                         {...register("homeStepsOut")}
                         defaultValue={
                           !!socialHistory && !!socialHistory.homeStepsOut
                             ? socialHistory.homeStepsOut
-                            : ""
+                            : "0"
                         }
                       />
                     </div>
@@ -306,12 +328,12 @@ const SocialHistory = ({ patient }) => {
                       <input
                         type="number"
                         className="form-control"
-                        name="homeStepsIn"
+                        min="0"
                         {...register("homeStepsIn")}
                         defaultValue={
                           !!socialHistory && !!socialHistory.homeStepsIn
                             ? socialHistory.homeStepsIn
-                            : ""
+                            : "0"
                         }
                       />
                     </div>
@@ -655,10 +677,11 @@ const SocialHistory = ({ patient }) => {
                       className="form-control"
                       name="exerciseNoInWeek"
                       placeholder=""
+                      min="0"
                       defaultValue={
                         !!socialHistory && !!socialHistory.exerciseNoInWeek
                           ? socialHistory.exerciseNoInWeek
-                          : ""
+                          : "0"
                       }
                     />
                   </div>
@@ -676,11 +699,12 @@ const SocialHistory = ({ patient }) => {
                       className="form-control"
                       name="exerciseDurationDailyInMin"
                       placeholder=""
+                      min="0"
                       defaultValue={
                         !!socialHistory &&
                         !!socialHistory.exerciseDurationDailyInMin
                           ? socialHistory.exerciseDurationDailyInMin
-                          : ""
+                          : "0"
                       }
                     />
                   </div>
