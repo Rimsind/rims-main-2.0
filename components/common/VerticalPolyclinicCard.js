@@ -37,7 +37,7 @@ const VerticalPolyclinicCard = ({ data, link }) => {
             </div>
             <div className="row row-sm">
               <div className="col-12">
-                <Link href={`/${link}/details?id${data?.id}`}>
+                <Link href={`/${link}/details?id=${data?.id}`}>
                   <a className="btn view-btn" tabIndex="0">
                     View Profile
                   </a>

@@ -1,7 +1,24 @@
+import axios from "axios";
 import { BreadCrums } from "components/common";
 import Image from "next/image";
-
+import { useForm } from "react-hook-form";
+import { apiUrl } from "config/api";
 const Contact = () => {
+  const { register, handleSubmit } = useForm();
+  const submitEnquirey = async (data, event) => {
+    event.preventDefault();
+    const payload = {
+      name: data.name,
+      email: data.email,
+      subject: data.subject,
+      message: data.message,
+    };
+
+    const res = await axios.post(`${apiUrl}/enquireys`);
+    const result = res.data;
+
+    return result;
+  };
   return (
     <>
       <main className="main">
@@ -78,14 +95,19 @@ const Contact = () => {
               </div>
               <div className="col-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
                 <div className="contact-form-main shadow">
-                  <form action="#">
+                  <form onSubmit={handleSubmit(submitEnquirey)}>
                     <div className="row">
                       <div className="col-md-6">
                         <div className="form-group mb-3 input-level">
                           <label>
                             Your Name <span>*</span>
                           </label>
-                          <input type="text" className="form-control" />
+                          <input
+                            type="text"
+                            className="form-control"
+                            required
+                            {...register("name")}
+                          />
                         </div>
                       </div>
                       <div className="col-md-6">
@@ -93,13 +115,23 @@ const Contact = () => {
                           <label>
                             Your Email <span>*</span>
                           </label>
-                          <input type="text" className="form-control" />
+                          <input
+                            type="text"
+                            className="form-control"
+                            required
+                            {...register("email")}
+                          />
                         </div>
                       </div>
                       <div className="col-md-12">
                         <div className="form-group mb-3 input-level">
                           <label>Subject</label>
-                          <input type="text" className="form-control" />
+                          <input
+                            type="text"
+                            className="form-control"
+                            required
+                            {...register("subject")}
+                          />
                         </div>
                       </div>
                       <div className="col-md-12">
@@ -107,7 +139,13 @@ const Contact = () => {
                           <label>
                             Comments <span>*</span>
                           </label>
-                          <textarea className="form-control"> </textarea>
+                          <textarea
+                            className="form-control"
+                            required
+                            {...register("message")}
+                          >
+                            {" "}
+                          </textarea>
                         </div>
                       </div>
                     </div>
