@@ -28,10 +28,9 @@ const ExaminationReport = () => {
       return result;
     }
   );
-  const { doctor, polyclinic, patient } = appointment;
 
   const { data: specialty } = useSWR(
-    `${apiUrl}/specialties/${appointment?.doctor?.specialty}`,
+    `${apiUrl}/specialties/${appointment?.appointment?.doctor?.specialty}`,
     fetcher
   );
   const { data: bloodGroup } = useSWR(
@@ -92,12 +91,15 @@ const ExaminationReport = () => {
               <div className="col-md-4">
                 <div className="header-inner-item text-start">
                   <p className="fs-3 fw-bold fst-italic lh-1">
-                    Dr. {doctor?.firstName} {doctor?.lastName}
+                    Dr. {appointment?.doctor?.firstName}{" "}
+                    {appointment?.doctor?.lastName}
                   </p>
-                  <p className="fs-6 fw-bold lh-1">{doctor?.qualification}</p>
+                  <p className="fs-6 fw-bold lh-1">
+                    {appointment?.doctor?.qualification}
+                  </p>
                   <p className="fs-6 lh-1">{specialty?.name}</p>
                   <p className="fs-6 lh-1">Reg. No.-58905 (WBMC)</p>
-                  <p className="fs-6 lh-1">Mob: {doctor?.phone}</p>
+                  <p className="fs-6 lh-1">Mob: {appointment?.doctor?.phone}</p>
                 </div>
               </div>
               <div className="col-md-4">
@@ -114,17 +116,23 @@ const ExaminationReport = () => {
               <div className="col-md-4">
                 <div className="header-inner-item text-end">
                   <p className="fs-3 fw-bold fst-italic lh-1">
-                    {polyclinic?.name}
+                    {appointment?.polyclinic?.name}
                   </p>
                   <p className="fs-6 lh-1">
-                    {polyclinic?.street_address}, {polyclinic?.city}
+                    {appointment?.polyclinic?.street_address},{" "}
+                    {appointment?.polyclinic?.city}
                   </p>
                   <p className="fs-6 lh-1">
-                    {polyclinic?.state}, {polyclinic?.country}, PIN:{" "}
-                    {polyclinic?.pincode}
+                    {appointment?.polyclinic?.state},{" "}
+                    {appointment?.polyclinic?.country}, PIN:{" "}
+                    {appointment?.polyclinic?.pincode}
                   </p>
-                  <p className="fs-6 lh-1">Email : {polyclinic?.email}</p>
-                  <p className="fs-6 lh-1">Mobile No: {polyclinic?.phone}</p>
+                  <p className="fs-6 lh-1">
+                    Email : {appointment?.polyclinic?.email}
+                  </p>
+                  <p className="fs-6 lh-1">
+                    Mobile No: {appointment?.polyclinic?.phone}
+                  </p>
                 </div>
               </div>
             </div>
@@ -140,7 +148,10 @@ const ExaminationReport = () => {
                     <img
                       className="presc-img-profile"
                       alt=""
-                      src={patient?.image?.url || "/assets/images/profile.png"}
+                      src={
+                        appointment?.patient?.image?.url ||
+                        "/assets/images/profile.png"
+                      }
                     />
                   </div>
                   <div className="col-md-8">
@@ -154,7 +165,8 @@ const ExaminationReport = () => {
                             <p className="fs-6 fw-bold text-light lh-1 text-light">
                               Name :
                               <span className="fs-6 fw-light ms-2">
-                                {patient?.first_name} {patient?.last_name}
+                                {appointment?.patient?.first_name}{" "}
+                                {appointment?.patient?.last_name}
                               </span>
                             </p>
                             <p className="fs-6 fw-bold text-light lh-1">
@@ -172,13 +184,13 @@ const ExaminationReport = () => {
                             <p className="fs-6 fw-bold text-light lh-1">
                               Age :
                               <span className="fs-6 fw-light ms-2">
-                                {patient?.age}
+                                {appointment?.patient?.age}
                               </span>
                             </p>
                             <p className="fs-6 fw-bold text-light lh-1">
                               Gender :
                               <span className="fs-6 fw-light ms-2">
-                                {patient?.gender}
+                                {appointment?.patient?.gender}
                               </span>
                             </p>
                           </div>
