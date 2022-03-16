@@ -240,6 +240,12 @@ const SubjectiveDetails = () => {
                             medicalHistory={
                               appointment?.patient?.medicalHistory
                             }
+                            past_sugrical_history={
+                              appointment?.patient?.past_sugrical_history
+                            }
+                            past_medication_history={
+                              appointment?.patient?.past_medication_history
+                            }
                             updated_at={appointment?.updated_at}
                             gender={appointment?.patient?.gender}
                           />

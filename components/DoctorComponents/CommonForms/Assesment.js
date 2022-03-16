@@ -5,7 +5,7 @@ import axios from "axios";
 import { fetcher } from "config/api";
 import useSWR from "swr";
 import { apiUrl } from "config/api";
-
+import { Slide, toast } from "react-toastify";
 const Assesment = ({ appointmentId }) => {
   const { auth } = useAuth();
   const [investigation, setInvestigation] = useState();
@@ -60,19 +60,45 @@ const Assesment = ({ appointmentId }) => {
         treatmentPlan: treatmentPlan,
       },
     };
-    const res = await axios.put(
-      `${apiUrl}/appointments/${appointmentId}`,
-      payload,
-      {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      }
-    );
-    const result = res.data;
-    alert("Form Submitted Succesfully");
-    // router.push(`/diagnosis?appointmentId=${appointmentId}`);
-    return result;
+
+    try {
+      const res = await axios.put(
+        `${apiUrl}/appointments/${appointmentId}`,
+        payload,
+        {
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+          },
+        }
+      );
+      const result = res.data;
+
+      toast.success("Form Submitted Succesfully", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+      return result;
+    } catch (error) {
+      console.log(err.message);
+      toast.error("Something Went Wrong Try Again.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+    }
   };
   return (
     <>

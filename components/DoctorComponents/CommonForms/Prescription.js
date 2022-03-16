@@ -116,26 +116,49 @@ const Prescription = ({ appointmentId }) => {
         safetyMeasures: allPrecaution.toString(),
         treatmentreferral: allReferral.toString(),
         test: testList,
-        followup: {
-          date: data.revisitDate,
-          type: data.revisitType,
-        },
+        followUp_date: data.followup_date,
+        followUp_type: data.followup_type,
       },
     };
 
-    const res = await axios.put(
-      `${apiUrl}/appointments/${appointmentId}`,
-      payload,
-      {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      }
-    );
-    const result = res.data;
-    alert("Form Submitted Succesfully");
-    // router.push(`/diagnosis?appointmentId=${appointmentId}`);
-    return result;
+    try {
+      const res = await axios.put(
+        `${apiUrl}/appointments/${appointmentId}`,
+        payload,
+        {
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+          },
+        }
+      );
+      const result = res.data;
+      alert("Form Submitted Succesfully");
+      toast.success("Form Submitted Succesfully", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+      return result;
+    } catch (error) {
+      console.log(err.message);
+      toast.error("Something Went Wrong Try Again.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+    }
   };
 
   const testNameList = [
@@ -394,7 +417,7 @@ const Prescription = ({ appointmentId }) => {
                       </tr>
                     </thead>
                     <tbody>
-                      {appointmentDetails?.patient?.medicalHistory?.medicationHistory.map(
+                      {appointmentDetails?.past_medication_history?.map(
                         (items, index) => (
                           <tr key={index}>
                             <td>{items?.medicineName}</td>
@@ -927,7 +950,7 @@ const Prescription = ({ appointmentId }) => {
                         !!appointmentDetails?.eprescription &&
                         appointmentDetails?.eprescription?.followup?.date
                       }
-                      {...register("revisitDate")}
+                      {...register("followUp_date")}
                     />
                   </div>
                   <div className="col-md-6">
@@ -935,7 +958,7 @@ const Prescription = ({ appointmentId }) => {
                     <select
                       className="form-control"
                       aria-label="Default select example"
-                      {...register("revisitType")}
+                      {...register("followUp_type")}
                     >
                       <option
                         name="language"
@@ -945,8 +968,8 @@ const Prescription = ({ appointmentId }) => {
                         }
                       >
                         {!!appointmentDetails?.eprescription &&
-                        appointmentDetails?.eprescription?.followup?.type
-                          ? appointmentDetails?.eprescription?.followup?.type
+                        appointmentDetails?.eprescription?.followup_type
+                          ? appointmentDetails?.eprescription?.followup_type
                           : "Select"}
                       </option>
                       <option value="Regular Visit">Regular Visit</option>

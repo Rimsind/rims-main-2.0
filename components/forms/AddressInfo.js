@@ -3,8 +3,7 @@ import { apiUrl } from "config/api";
 import axios from "axios";
 import { useAuth } from "context";
 import { useState } from "react";
-import { ToastContainer, toast, Slide } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast, Slide } from "react-toastify";
 
 const StatesList = [
   "Andaman and Nicobar Islands",
@@ -223,7 +222,6 @@ const AddressInfo = ({ data }) => {
           </form>
         </div>
       </div>
-      <ToastContainer />
     </>
   );
 };
