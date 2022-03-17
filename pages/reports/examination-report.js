@@ -56,7 +56,7 @@ const ExaminationReport = () => {
               <div className="col-md-4">
                 <div className="middle-content">
                   <p className="fs-6 fw-bold text-light">
-                    REHAB INTEGRATED MEDICAL SOLUTIONS
+                    Clinical Examination Report
                   </p>
                 </div>
               </div>

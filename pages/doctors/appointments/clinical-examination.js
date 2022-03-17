@@ -53,7 +53,6 @@ const ClinicalExamination = () => {
           padding: "1.875rem 1.875rem 0",
         }}
       >
-        <BreadCrum title="Diagnosis" />
         <p>Diagnosis</p>
         <div className="content container-fluid">
           <div className="page-header">
