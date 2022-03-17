@@ -19,16 +19,13 @@ const NeuroExamination = ({ data }) => {
               </tr>
             </thead>
             <tbody>
-              <tr className="text-center">
-                <th>1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-              </tr>
-              <tr className="text-center">
-                <th>2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-              </tr>
+              {data?.examination?.map((items, index) => (
+                <tr className="text-center" key={index}>
+                  <th>{index + 1}</th>
+                  <td>{items?.category}</td>
+                  <td>{items?.test}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
@@ -37,7 +34,7 @@ const NeuroExamination = ({ data }) => {
             <p className="fs-5 fw-bold">Assessment :</p>
           </div>
           <div className="assessment-info">
-            <p className="fs-6">Hello This is Assessment</p>
+            <p className="fs-6">{data?.assesment}</p>
           </div>
         </div>
       </div>

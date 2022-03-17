@@ -30,9 +30,10 @@ const ExaminationReport = () => {
   );
 
   const { data: specialty } = useSWR(
-    `${apiUrl}/specialties/${appointment?.appointment?.doctor?.specialty}`,
+    `${apiUrl}/specialties/${appointment?.doctor?.specialty}`,
     fetcher
   );
+
   const { data: bloodGroup } = useSWR(
     `${apiUrl}/blood-groups/${appointment?.patient?.blood_group}`,
     fetcher
@@ -235,10 +236,34 @@ const ExaminationReport = () => {
                 </div>
               </div>
             </div>
-            <RehabExamination data={appointment?.rehab} />
-            {/* <MedicineExamination data={appointment} />
-      <OrthoExamination data={appointment} />
-      <NeuroExamination data={appointment} /> */}
+            {specialty?.name === "Neurologist" ? (
+              <>
+                <NeuroExamination data={appointment?.neurology} />
+              </>
+            ) : (
+              <></>
+            )}
+            {specialty?.name === "Orthopedic" ? (
+              <>
+                <OrthoExamination data={appointment?.orthopedic} />
+              </>
+            ) : (
+              <></>
+            )}
+            {specialty?.name === "Rehabilitation" ? (
+              <>
+                <RehabExamination data={appointment?.rehab} />
+              </>
+            ) : (
+              <></>
+            )}
+            {specialty?.name === "Medicine" ? (
+              <>
+                <MedicineExamination data={appointment?.medicine} />
+              </>
+            ) : (
+              <></>
+            )}
           </main>
           <footer className="presc-footer">
             <div className="row align-items-center pt-3 px-3">

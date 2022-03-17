@@ -24,16 +24,13 @@ const MedicineExamination = ({ data }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="text-center">
-                      <th>1</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
-                    <tr className="text-center">
-                      <th>2</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
+                    {data?.skin?.map((items, index) => (
+                      <tr className="text-center" key={index}>
+                        <th>{index + 1}</th>
+                        <td>{items?.option}</td>
+                        <td>{items?.description}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -57,16 +54,13 @@ const MedicineExamination = ({ data }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="text-center">
-                      <th>1</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
-                    <tr className="text-center">
-                      <th>2</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
+                    {data?.head?.map((items, index) => (
+                      <tr className="text-center" key={index}>
+                        <th>{index + 1}</th>
+                        <td>{items?.option}</td>
+                        <td>{items?.description}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -92,16 +86,13 @@ const MedicineExamination = ({ data }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="text-center">
-                      <th>1</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
-                    <tr className="text-center">
-                      <th>2</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
+                    {data?.eyes?.map((items, index) => (
+                      <tr className="text-center" key={index}>
+                        <th>{index + 1}</th>
+                        <td>{items?.option}</td>
+                        <td>{items?.description}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -125,16 +116,13 @@ const MedicineExamination = ({ data }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="text-center">
-                      <th>1</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
-                    <tr className="text-center">
-                      <th>2</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
+                    {data?.ears?.map((items, index) => (
+                      <tr className="text-center" key={index}>
+                        <th>{index + 1}</th>
+                        <td>{items?.option}</td>
+                        <td>{items?.description}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -160,16 +148,13 @@ const MedicineExamination = ({ data }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="text-center">
-                      <th>1</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
-                    <tr className="text-center">
-                      <th>2</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
+                    {data?.nose?.map((items, index) => (
+                      <tr className="text-center" key={index}>
+                        <th>{index + 1}</th>
+                        <td>{items?.option}</td>
+                        <td>{items?.description}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -193,16 +178,13 @@ const MedicineExamination = ({ data }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="text-center">
-                      <th>1</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
-                    <tr className="text-center">
-                      <th>2</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
+                    {data?.throat?.map((items, index) => (
+                      <tr className="text-center" key={index}>
+                        <th>{index + 1}</th>
+                        <td>{items?.option}</td>
+                        <td>{items?.description}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -228,16 +210,13 @@ const MedicineExamination = ({ data }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="text-center">
-                      <th>1</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
-                    <tr className="text-center">
-                      <th>2</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
+                    {data?.neck?.map((items, index) => (
+                      <tr className="text-center" key={index}>
+                        <th>{index + 1}</th>
+                        <td>{items?.option}</td>
+                        <td>{items?.description}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -261,16 +240,13 @@ const MedicineExamination = ({ data }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="text-center">
-                      <th>1</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
-                    <tr className="text-center">
-                      <th>2</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
+                    {data?.lymphNodes?.map((items, index) => (
+                      <tr className="text-center" key={index}>
+                        <th>{index + 1}</th>
+                        <td>{items?.option}</td>
+                        <td>{items?.description}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -296,16 +272,13 @@ const MedicineExamination = ({ data }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="text-center">
-                      <th>1</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
-                    <tr className="text-center">
-                      <th>2</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
+                    {data?.respiratoryThorax?.map((items, index) => (
+                      <tr className="text-center" key={index}>
+                        <th>{index + 1}</th>
+                        <td>{items?.option}</td>
+                        <td>{items?.description}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -329,16 +302,13 @@ const MedicineExamination = ({ data }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="text-center">
-                      <th>1</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
-                    <tr className="text-center">
-                      <th>2</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
+                    {data?.cardiovascular?.map((items, index) => (
+                      <tr className="text-center" key={index}>
+                        <th>{index + 1}</th>
+                        <td>{items?.option}</td>
+                        <td>{items?.description}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -364,16 +334,13 @@ const MedicineExamination = ({ data }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="text-center">
-                      <th>1</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
-                    <tr className="text-center">
-                      <th>2</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
+                    {data?.gastrointestinal?.map((items, index) => (
+                      <tr className="text-center" key={index}>
+                        <th>{index + 1}</th>
+                        <td>{items?.option}</td>
+                        <td>{items?.description}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -397,16 +364,13 @@ const MedicineExamination = ({ data }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="text-center">
-                      <th>1</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
-                    <tr className="text-center">
-                      <th>2</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
+                    {data?.breasts?.map((items, index) => (
+                      <tr className="text-center" key={index}>
+                        <th>{index + 1}</th>
+                        <td>{items?.option}</td>
+                        <td>{items?.description}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -432,16 +396,13 @@ const MedicineExamination = ({ data }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="text-center">
-                      <th>1</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
-                    <tr className="text-center">
-                      <th>2</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
+                    {data?.Abdominal?.map((items, index) => (
+                      <tr className="text-center" key={index}>
+                        <th>{index + 1}</th>
+                        <td>{items?.option}</td>
+                        <td>{items?.description}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -465,16 +426,13 @@ const MedicineExamination = ({ data }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="text-center">
-                      <th>1</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
-                    <tr className="text-center">
-                      <th>2</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
+                    {data?.genitourinary?.map((items, index) => (
+                      <tr className="text-center" key={index}>
+                        <th>{index + 1}</th>
+                        <td>{items?.option}</td>
+                        <td>{items?.description}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -500,16 +458,13 @@ const MedicineExamination = ({ data }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="text-center">
-                      <th>1</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
-                    <tr className="text-center">
-                      <th>2</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
+                    {data?.rectal?.map((items, index) => (
+                      <tr className="text-center" key={index}>
+                        <th>{index + 1}</th>
+                        <td>{items?.option}</td>
+                        <td>{items?.description}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -533,16 +488,13 @@ const MedicineExamination = ({ data }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="text-center">
-                      <th>1</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
-                    <tr className="text-center">
-                      <th>2</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
+                    {data?.peripheralVascular?.map((items, index) => (
+                      <tr className="text-center" key={index}>
+                        <th>{index + 1}</th>
+                        <td>{items?.option}</td>
+                        <td>{items?.description}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -568,16 +520,13 @@ const MedicineExamination = ({ data }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="text-center">
-                      <th>1</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
-                    <tr className="text-center">
-                      <th>2</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
+                    {data?.neurological?.map((items, index) => (
+                      <tr className="text-center" key={index}>
+                        <th>{index + 1}</th>
+                        <td>{items?.option}</td>
+                        <td>{items?.description}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -601,16 +550,13 @@ const MedicineExamination = ({ data }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="text-center">
-                      <th>1</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
-                    <tr className="text-center">
-                      <th>2</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
+                    {data?.hematological?.map((items, index) => (
+                      <tr className="text-center" key={index}>
+                        <th>{index + 1}</th>
+                        <td>{items?.option}</td>
+                        <td>{items?.description}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -636,16 +582,13 @@ const MedicineExamination = ({ data }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="text-center">
-                      <th>1</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
-                    <tr className="text-center">
-                      <th>2</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
+                    {data?.endocrinal?.map((items, index) => (
+                      <tr className="text-center" key={index}>
+                        <th>{index + 1}</th>
+                        <td>{items?.option}</td>
+                        <td>{items?.description}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -669,16 +612,13 @@ const MedicineExamination = ({ data }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="text-center">
-                      <th>1</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
-                    <tr className="text-center">
-                      <th>2</th>
-                      <td>No Rashes or Other Changes</td>
-                      <td>No no I have no rashes in my body.. Help!</td>
-                    </tr>
+                    {data?.psychological?.map((items, index) => (
+                      <tr className="text-center" key={index}>
+                        <th>{index + 1}</th>
+                        <td>{items?.option}</td>
+                        <td>{items?.description}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
