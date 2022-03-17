@@ -1,20 +1,6 @@
 import AuthLayout from "components/layout/AuthLayout";
 
 const RehabExamination = ({ data }) => {
-  if (data) {
-    const {
-      adaptive_equipment_assessment,
-      environmental_barrier_assessmnet,
-      joint_integrety_mobility_assessmnet,
-      orthotic_assessment,
-      pain_assessment,
-      prosthetic_assessment,
-      ventilation_respiration_gas_exchange,
-      wheel_chair_assessment,
-      wound_assessment,
-    } = data;
-  }
-
   return (
     <>
       <div>
@@ -2732,7 +2718,7 @@ const RehabExamination = ({ data }) => {
             </div>
             <div className="col-9">
               <div className="items-rehab-clinic">
-                <p className="fs-6">{pain_assessment?.onset_of_pain}</p>
+                <p className="fs-6">{data?.pain_assessment?.onset_of_pain}</p>
               </div>
             </div>
           </div>
@@ -2742,7 +2728,9 @@ const RehabExamination = ({ data }) => {
             </div>
             <div className="col-9">
               <div className="items-rehab-clinic">
-                <p className="fs-6">{pain_assessment?.location_of_pain}</p>
+                <p className="fs-6">
+                  {data?.pain_assessment?.location_of_pain}
+                </p>
               </div>
             </div>
           </div>
@@ -2753,7 +2741,7 @@ const RehabExamination = ({ data }) => {
             </div>
             <div className="col-9">
               <div className="items-rehab-clinic">
-                <p className="fs-6">{pain_assessment?.vascular}</p>
+                <p className="fs-6">{data?.pain_assessment?.vascular}</p>
               </div>
             </div>
           </div>
@@ -2764,7 +2752,7 @@ const RehabExamination = ({ data }) => {
             </div>
             <div className="col-9">
               <div className="items-rehab-clinic">
-                <p className="fs-6">{pain_assessment?.neurogenic}</p>
+                <p className="fs-6">{data?.pain_assessment?.neurogenic}</p>
               </div>
             </div>
           </div>
@@ -2775,7 +2763,7 @@ const RehabExamination = ({ data }) => {
             </div>
             <div className="col-9">
               <div className="items-rehab-clinic">
-                <p className="fs-6">{pain_assessment?.musculoskeletal}</p>
+                <p className="fs-6">{data?.pain_assessment?.musculoskeletal}</p>
               </div>
             </div>
           </div>
@@ -2786,7 +2774,7 @@ const RehabExamination = ({ data }) => {
             </div>
             <div className="col-9">
               <div className="items-rehab-clinic">
-                <p className="fs-6">{pain_assessment?.emotional}</p>
+                <p className="fs-6">{data?.pain_assessment?.emotional}</p>
               </div>
             </div>
           </div>
@@ -2796,7 +2784,7 @@ const RehabExamination = ({ data }) => {
             </div>
             <div className="col-9">
               <div className="items-rehab-clinic">
-                <p className="fs-6">{pain_assessment?.type_of_pain}</p>
+                <p className="fs-6">{data?.pain_assessment?.type_of_pain}</p>
               </div>
             </div>
           </div>
@@ -2809,7 +2797,7 @@ const RehabExamination = ({ data }) => {
                 <div className="col-6">
                   <div className="items-rehab-clinic">
                     <p className="fs-6">
-                      {pain_assessment?.severity_of_pain_scale}
+                      {data?.pain_assessment?.severity_of_pain_scale}
                     </p>
                   </div>
                 </div>
@@ -2823,7 +2811,7 @@ const RehabExamination = ({ data }) => {
                 <div className="col-6">
                   <div className="items-rehab-clinic">
                     <p className="fs-6">
-                      {pain_assessment?.severity_of_pain_value}
+                      {data?.pain_assessment?.severity_of_pain_value}
                     </p>
                   </div>
                 </div>
@@ -2836,7 +2824,9 @@ const RehabExamination = ({ data }) => {
             </div>
             <div className="col-9">
               <div className="items-rehab-clinic">
-                <p className="fs-6">{pain_assessment?.frequency_of_pain}</p>
+                <p className="fs-6">
+                  {data?.pain_assessment?.frequency_of_pain}
+                </p>
               </div>
             </div>
           </div>
@@ -2846,7 +2836,9 @@ const RehabExamination = ({ data }) => {
             </div>
             <div className="col-9">
               <div className="items-rehab-clinic">
-                <p className="fs-6">{pain_assessment?.duration_of_pain}</p>
+                <p className="fs-6">
+                  {data?.pain_assessment?.duration_of_pain}
+                </p>
               </div>
             </div>
           </div>
@@ -2857,7 +2849,7 @@ const RehabExamination = ({ data }) => {
             <div className="col-9">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {pain_assessment?.aggravating_factor_of_pain}
+                  {data?.pain_assessment?.aggravating_factor_of_pain}
                 </p>
               </div>
             </div>
@@ -2869,7 +2861,7 @@ const RehabExamination = ({ data }) => {
             <div className="col-9">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {pain_assessment?.releiving_factor_of_pain}
+                  {data?.pain_assessment?.releiving_factor_of_pain}
                 </p>
               </div>
             </div>
@@ -2884,7 +2876,7 @@ const RehabExamination = ({ data }) => {
             <div className="col-6">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {pain_assessment?.releiving_pain_medication}
+                  {data?.pain_assessment?.releiving_pain_medication}
                 </p>
               </div>
             </div>
@@ -2896,7 +2888,7 @@ const RehabExamination = ({ data }) => {
             <div className="col-9">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {pain_assessment?.pattern_of_joint_involvement}
+                  {data?.pain_assessment?.pattern_of_joint_involvement}
                 </p>
               </div>
             </div>
@@ -2907,7 +2899,9 @@ const RehabExamination = ({ data }) => {
             </div>
             <div className="col-9">
               <div className="items-rehab-clinic">
-                <p className="fs-6">{pain_assessment?.joint_irritability}</p>
+                <p className="fs-6">
+                  {data?.pain_assessment?.joint_irritability}
+                </p>
               </div>
             </div>
           </div>
@@ -2917,7 +2911,9 @@ const RehabExamination = ({ data }) => {
             </div>
             <div className="col-9">
               <div className="items-rehab-clinic">
-                <p className="fs-6">{pain_assessment?.progress_of_pain}</p>
+                <p className="fs-6">
+                  {data?.pain_assessment?.progress_of_pain}
+                </p>
               </div>
             </div>
           </div>
@@ -2927,7 +2923,7 @@ const RehabExamination = ({ data }) => {
             </div>
             <div className="col-9">
               <div className="items-rehab-clinic">
-                <p className="fs-6">{pain_assessment?.worse_problem}</p>
+                <p className="fs-6">{data?.pain_assessment?.worse_problem}</p>
               </div>
             </div>
           </div>
@@ -2937,7 +2933,7 @@ const RehabExamination = ({ data }) => {
             </div>
             <div className="col-9">
               <div className="items-rehab-clinic">
-                <p className="fs-6">{pain_assessment?.related_signs}</p>
+                <p className="fs-6">{data?.pain_assessment?.related_signs}</p>
               </div>
             </div>
           </div>
@@ -2946,7 +2942,7 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Identified Problems</p>
             </div>
             <div className="col-9">
-              <p>{pain_assessment?.identified_problems}</p>
+              <p>{data?.pain_assessment?.identified_problems}</p>
             </div>
           </div>
           <div className="row border-bottom border-2 border-dark mt-3">
@@ -2954,7 +2950,7 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Short Term Goals</p>
             </div>
             <div className="col-9">
-              <p>{pain_assessment?.short_term_goals}</p>
+              <p>{data?.pain_assessment?.short_term_goals}</p>
             </div>
           </div>
           <div className="row border-bottom border-2 border-dark mt-3">
@@ -2962,7 +2958,7 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Long Term Goals</p>
             </div>
             <div className="col-9">
-              <p>{pain_assessment?.long_term_goals}</p>
+              <p>{data?.pain_assessment?.long_term_goals}</p>
             </div>
           </div>
           <div className="row border-bottom border-2 border-dark mt-3">
@@ -2970,7 +2966,7 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Treatment Plan</p>
             </div>
             <div className="col-9">
-              <p>{pain_assessment?.treatment_plan}</p>
+              <p>{data?.pain_assessment?.treatment_plan}</p>
             </div>
           </div>
         </div>
@@ -2985,7 +2981,10 @@ const RehabExamination = ({ data }) => {
             <div className="col-3">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {environmental_barrier_assessmnet?.environmental_barriers}
+                  {
+                    data?.environmental_barrier_assessmnet
+                      ?.environmental_barriers
+                  }
                 </p>
               </div>
             </div>
@@ -2997,7 +2996,10 @@ const RehabExamination = ({ data }) => {
             <div className="col-3">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {environmental_barrier_assessmnet?.facilitators_assessmnet}
+                  {
+                    data?.environmental_barrier_assessmnet
+                      ?.facilitators_assessmnet
+                  }
                 </p>
               </div>
             </div>
@@ -3011,7 +3013,7 @@ const RehabExamination = ({ data }) => {
             <div className="col-6">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {environmental_barrier_assessmnet?.family_members}
+                  {data?.environmental_barrier_assessmnet?.family_members}
                 </p>
               </div>
             </div>
@@ -3023,7 +3025,7 @@ const RehabExamination = ({ data }) => {
             <div className="col-6">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {environmental_barrier_assessmnet?.friends}
+                  {data?.environmental_barrier_assessmnet?.friends}
                 </p>
               </div>
             </div>
@@ -3037,7 +3039,10 @@ const RehabExamination = ({ data }) => {
             <div className="col-6">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {environmental_barrier_assessmnet?.personal_care_provider}
+                  {
+                    data?.environmental_barrier_assessmnet
+                      ?.personal_care_provider
+                  }
                 </p>
               </div>
             </div>
@@ -3049,7 +3054,7 @@ const RehabExamination = ({ data }) => {
             <div className="col-6">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {environmental_barrier_assessmnet?.personal_assistants}
+                  {data?.environmental_barrier_assessmnet?.personal_assistants}
                 </p>
               </div>
             </div>
@@ -3063,7 +3068,7 @@ const RehabExamination = ({ data }) => {
             <div className="col-6">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {environmental_barrier_assessmnet?.health_professionals}
+                  {data?.environmental_barrier_assessmnet?.health_professionals}
                 </p>
               </div>
             </div>
@@ -3075,7 +3080,7 @@ const RehabExamination = ({ data }) => {
             <div className="col-6">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {environmental_barrier_assessmnet?.societal_attitudes}
+                  {data?.environmental_barrier_assessmnet?.societal_attitudes}
                 </p>
               </div>
             </div>
@@ -3089,7 +3094,7 @@ const RehabExamination = ({ data }) => {
             <div className="col-6">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {environmental_barrier_assessmnet?.social_norms}
+                  {data?.environmental_barrier_assessmnet?.social_norms}
                 </p>
               </div>
             </div>
@@ -3099,7 +3104,7 @@ const RehabExamination = ({ data }) => {
           </p>
           <div className="items-rehab-clinic">
             <p className="fs-6">
-              {environmental_barrier_assessmnet?.home_work_barrier}
+              {data?.environmental_barrier_assessmnet?.home_work_barrier}
             </p>
           </div>
 
@@ -3108,7 +3113,9 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Identified Problems</p>
             </div>
             <div className="col-9">
-              <p>{environmental_barrier_assessmnet?.identified_problems}</p>
+              <p>
+                {data?.environmental_barrier_assessmnet?.identified_problems}
+              </p>
             </div>
           </div>
           <div className="row border-bottom border-2 border-dark mt-3">
@@ -3116,7 +3123,7 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Short Term Goals</p>
             </div>
             <div className="col-9">
-              <p>{environmental_barrier_assessmnet?.short_term_goals}</p>
+              <p>{data?.environmental_barrier_assessmnet?.short_term_goals}</p>
             </div>
           </div>
           <div className="row border-bottom border-2 border-dark mt-3">
@@ -3124,7 +3131,7 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Long Term Goals</p>
             </div>
             <div className="col-9">
-              <p>{environmental_barrier_assessmnet?.long_term_goals}</p>
+              <p>{data?.environmental_barrier_assessmnet?.long_term_goals}</p>
             </div>
           </div>
           <div className="row border-bottom border-2 border-dark mt-3">
@@ -3132,7 +3139,7 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Treatment Plan</p>
             </div>
             <div className="col-9">
-              <p>{environmental_barrier_assessmnet?.treatment_plans}</p>
+              <p>{data?.environmental_barrier_assessmnet?.treatment_plans}</p>
             </div>
           </div>
         </div>
@@ -3147,7 +3154,9 @@ const RehabExamination = ({ data }) => {
             </div>
             <div className="col-3">
               <div className="items-rehab-clinic">
-                <p className="fs-6">{orthotic_assessment?.type_of_device}</p>
+                <p className="fs-6">
+                  {data?.orthotic_assessment?.type_of_device}
+                </p>
               </div>
             </div>
             <div className="col-3">
@@ -3159,7 +3168,9 @@ const RehabExamination = ({ data }) => {
             </div>
             <div className="col-3">
               <div className="items-rehab-clinic">
-                <p className="fs-6">{orthotic_assessment?.alignment_fitting}</p>
+                <p className="fs-6">
+                  {data?.orthotic_assessment?.alignment_fitting}
+                </p>
               </div>
             </div>
             <div className="col-3">
@@ -3169,7 +3180,9 @@ const RehabExamination = ({ data }) => {
             </div>
             <div className="col-3">
               <div className="items-rehab-clinic">
-                <p className="fs-6">{orthotic_assessment?.patinet_ability}</p>
+                <p className="fs-6">
+                  {data?.orthotic_assessment?.patinet_ability}
+                </p>
               </div>
             </div>
             <div className="col-3">
@@ -3179,7 +3192,9 @@ const RehabExamination = ({ data }) => {
             </div>
             <div className="col-3">
               <div className="items-rehab-clinic">
-                <p className="fs-6">{orthotic_assessment?.level_of_safety}</p>
+                <p className="fs-6">
+                  {data?.orthotic_assessment?.level_of_safety}
+                </p>
               </div>
             </div>
             <div className="col-3">
@@ -3191,7 +3206,9 @@ const RehabExamination = ({ data }) => {
             </div>
             <div className="col-3">
               <div className="items-rehab-clinic">
-                <p className="fs-6">{orthotic_assessment?.movement_analysis}</p>
+                <p className="fs-6">
+                  {data?.orthotic_assessment?.movement_analysis}
+                </p>
               </div>
             </div>
             <div className="col-3">
@@ -3203,7 +3220,9 @@ const RehabExamination = ({ data }) => {
             </div>
             <div className="col-3">
               <div className="items-rehab-clinic">
-                <p className="fs-6">{orthotic_assessment?.functional_effect}</p>
+                <p className="fs-6">
+                  {data?.orthotic_assessment?.functional_effect}
+                </p>
               </div>
             </div>
           </div>
@@ -3216,7 +3235,9 @@ const RehabExamination = ({ data }) => {
             </div>
             <div className="col-3">
               <div className="items-rehab-clinic">
-                <p className="fs-6">{prosthetic_assessment?.type_of_device}</p>
+                <p className="fs-6">
+                  {data?.prosthetic_assessment?.type_of_device}
+                </p>
               </div>
             </div>
             <div className="col-3">
@@ -3229,7 +3250,7 @@ const RehabExamination = ({ data }) => {
             <div className="col-3">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {prosthetic_assessment?.alignment_fitting}
+                  {data?.prosthetic_assessment?.alignment_fitting}
                 </p>
               </div>
             </div>
@@ -3240,7 +3261,9 @@ const RehabExamination = ({ data }) => {
             </div>
             <div className="col-3">
               <div className="items-rehab-clinic">
-                <p className="fs-6">{prosthetic_assessment?.patinet_ability}</p>
+                <p className="fs-6">
+                  {data?.prosthetic_assessment?.patinet_ability}
+                </p>
               </div>
             </div>
             <div className="col-3">
@@ -3250,7 +3273,9 @@ const RehabExamination = ({ data }) => {
             </div>
             <div className="col-3">
               <div className="items-rehab-clinic">
-                <p className="fs-6">{prosthetic_assessment?.level_of_safety}</p>
+                <p className="fs-6">
+                  {data?.prosthetic_assessment?.level_of_safety}
+                </p>
               </div>
             </div>
             <div className="col-3">
@@ -3263,7 +3288,7 @@ const RehabExamination = ({ data }) => {
             <div className="col-3">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {prosthetic_assessment?.movement_analysis}
+                  {data?.prosthetic_assessment?.movement_analysis}
                 </p>
               </div>
             </div>
@@ -3277,7 +3302,7 @@ const RehabExamination = ({ data }) => {
             <div className="col-3">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {prosthetic_assessment?.functional_effect}
+                  {data?.prosthetic_assessment?.functional_effect}
                 </p>
               </div>
             </div>
@@ -3292,7 +3317,7 @@ const RehabExamination = ({ data }) => {
             <div className="col-3">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {adaptive_equipment_assessment?.type_of_device}
+                  {data?.adaptive_equipment_assessment?.type_of_device}
                 </p>
               </div>
             </div>
@@ -3306,7 +3331,7 @@ const RehabExamination = ({ data }) => {
             <div className="col-3">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {adaptive_equipment_assessment?.alignment_fitting}
+                  {data?.adaptive_equipment_assessment?.alignment_fitting}
                 </p>
               </div>
             </div>
@@ -3318,7 +3343,7 @@ const RehabExamination = ({ data }) => {
             <div className="col-3">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {adaptive_equipment_assessment?.patinet_ability}
+                  {data?.adaptive_equipment_assessment?.patinet_ability}
                 </p>
               </div>
             </div>
@@ -3330,7 +3355,7 @@ const RehabExamination = ({ data }) => {
             <div className="col-3">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {adaptive_equipment_assessment?.level_of_safety}
+                  {data?.adaptive_equipment_assessment?.level_of_safety}
                 </p>
               </div>
             </div>
@@ -3344,7 +3369,7 @@ const RehabExamination = ({ data }) => {
             <div className="col-3">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {adaptive_equipment_assessment?.movement_analysis}
+                  {data?.adaptive_equipment_assessment?.movement_analysis}
                 </p>
               </div>
             </div>
@@ -3358,7 +3383,7 @@ const RehabExamination = ({ data }) => {
             <div className="col-3">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {adaptive_equipment_assessment?.functional_effect}
+                  {data?.adaptive_equipment_assessment?.functional_effect}
                 </p>
               </div>
             </div>
@@ -3369,7 +3394,7 @@ const RehabExamination = ({ data }) => {
           <div className="row align-items-center border-bottom border-2 border-dark mt-3">
             <div className="col-12 text-center">
               <p className="fs-6 pb-3 mt-3">
-                Type :{wheel_chair_assessment?.type}
+                Type :{data?.wheel_chair_assessment?.type}
               </p>
             </div>
             <div className="col-4">
@@ -3378,7 +3403,7 @@ const RehabExamination = ({ data }) => {
                   <p className="fs-6 fw-bold">A: Shoulder Width</p>
                 </div>
                 <div className="col-6">
-                  <p>{wheel_chair_assessment?.A}</p>
+                  <p>{data?.wheel_chair_assessment?.A}</p>
                 </div>
               </div>
             </div>
@@ -3388,7 +3413,7 @@ const RehabExamination = ({ data }) => {
                   <p className="fs-6 fw-bold">B: Chest Width</p>
                 </div>
                 <div className="col-6">
-                  <p>{wheel_chair_assessment?.B}</p>
+                  <p>{data?.wheel_chair_assessment?.B}</p>
                 </div>
               </div>
             </div>
@@ -3398,7 +3423,7 @@ const RehabExamination = ({ data }) => {
                   <p className="fs-6 fw-bold">C: Chect Depth (Front-Back)</p>
                 </div>
                 <div className="col-6">
-                  <p>{wheel_chair_assessment?.C}</p>
+                  <p>{data?.wheel_chair_assessment?.C}</p>
                 </div>
               </div>
             </div>
@@ -3408,7 +3433,7 @@ const RehabExamination = ({ data }) => {
                   <p className="fs-6 fw-bold">D1: Hip Width</p>
                 </div>
                 <div className="col-6">
-                  <p>{wheel_chair_assessment?.D1}</p>
+                  <p>{data?.wheel_chair_assessment?.D1}</p>
                 </div>
               </div>
             </div>
@@ -3418,7 +3443,7 @@ const RehabExamination = ({ data }) => {
                   <p className="fs-6 fw-bold">D2: Degree of Hip Flexion</p>
                 </div>
                 <div className="col-6">
-                  <p>{wheel_chair_assessment?.D2}</p>
+                  <p>{data?.wheel_chair_assessment?.D2}</p>
                 </div>
               </div>
             </div>
@@ -3428,7 +3453,7 @@ const RehabExamination = ({ data }) => {
                   <p className="fs-6 fw-bold">E: Between Knees</p>
                 </div>
                 <div className="col-6">
-                  <p>{wheel_chair_assessment?.E}</p>
+                  <p>{data?.wheel_chair_assessment?.E}</p>
                 </div>
               </div>
             </div>
@@ -3438,7 +3463,7 @@ const RehabExamination = ({ data }) => {
                   <p className="fs-6 fw-bold">F: Top to Head</p>
                 </div>
                 <div className="col-6">
-                  <p>{wheel_chair_assessment?.F}</p>
+                  <p>{data?.wheel_chair_assessment?.F}</p>
                 </div>
               </div>
             </div>
@@ -3448,7 +3473,7 @@ const RehabExamination = ({ data }) => {
                   <p className="fs-6 fw-bold">G: Occiput</p>
                 </div>
                 <div className="col-6">
-                  <p>{wheel_chair_assessment?.G}</p>
+                  <p>{data?.wheel_chair_assessment?.G}</p>
                 </div>
               </div>
             </div>
@@ -3458,7 +3483,7 @@ const RehabExamination = ({ data }) => {
                   <p className="fs-6 fw-bold">H: Top To Shoulder</p>
                 </div>
                 <div className="col-6">
-                  <p>{wheel_chair_assessment?.H}</p>
+                  <p>{data?.wheel_chair_assessment?.H}</p>
                 </div>
               </div>
             </div>
@@ -3470,7 +3495,7 @@ const RehabExamination = ({ data }) => {
                   </p>
                 </div>
                 <div className="col-6">
-                  <p>{wheel_chair_assessment?.I}</p>
+                  <p>{data?.wheel_chair_assessment?.I}</p>
                 </div>
               </div>
             </div>
@@ -3480,7 +3505,7 @@ const RehabExamination = ({ data }) => {
                   <p className="fs-6 fw-bold">J: Infeior Angie of Scapula</p>
                 </div>
                 <div className="col-6">
-                  <p>{wheel_chair_assessment?.J}</p>
+                  <p>{data?.wheel_chair_assessment?.J}</p>
                 </div>
               </div>
             </div>
@@ -3490,7 +3515,7 @@ const RehabExamination = ({ data }) => {
                   <p className="fs-6 fw-bold">K: Elbow</p>
                 </div>
                 <div className="col-6">
-                  <p>{wheel_chair_assessment?.K}</p>
+                  <p>{data?.wheel_chair_assessment?.K}</p>
                 </div>
               </div>
             </div>
@@ -3500,7 +3525,7 @@ const RehabExamination = ({ data }) => {
                   <p className="fs-6 fw-bold">L: Liac Crest</p>
                 </div>
                 <div className="col-6">
-                  <p>{wheel_chair_assessment?.L}</p>
+                  <p>{data?.wheel_chair_assessment?.L}</p>
                 </div>
               </div>
             </div>
@@ -3510,7 +3535,7 @@ const RehabExamination = ({ data }) => {
                   <p className="fs-6 fw-bold">M: Sacrum to Popliteal Fossa</p>
                 </div>
                 <div className="col-6">
-                  <p>{wheel_chair_assessment?.M}</p>
+                  <p>{data?.wheel_chair_assessment?.M}</p>
                 </div>
               </div>
             </div>
@@ -3520,7 +3545,7 @@ const RehabExamination = ({ data }) => {
                   <p className="fs-6 fw-bold">N: Knee to Heel</p>
                 </div>
                 <div className="col-6">
-                  <p>{wheel_chair_assessment?.N}</p>
+                  <p>{data?.wheel_chair_assessment?.N}</p>
                 </div>
               </div>
             </div>
@@ -3530,7 +3555,7 @@ const RehabExamination = ({ data }) => {
                   <p className="fs-6 fw-bold">O: Foot Length</p>
                 </div>
                 <div className="col-6">
-                  <p>{wheel_chair_assessment?.O}</p>
+                  <p>{data?.wheel_chair_assessment?.O}</p>
                 </div>
               </div>
             </div>
@@ -3541,7 +3566,7 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Identified Problems</p>
             </div>
             <div className="col-9">
-              <p>{wheel_chair_assessment?.identified_problems}</p>
+              <p>{data?.wheel_chair_assessment?.identified_problems}</p>
             </div>
           </div>
           <div className="row border-bottom border-2 border-dark mt-3">
@@ -3549,7 +3574,7 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Short Term Goals</p>
             </div>
             <div className="col-9">
-              <p>{wheel_chair_assessment?.short_term_goals}</p>
+              <p>{data?.wheel_chair_assessment?.short_term_goals}</p>
             </div>
           </div>
           <div className="row border-bottom border-2 border-dark mt-3">
@@ -3557,7 +3582,7 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Long Term Goals</p>
             </div>
             <div className="col-9">
-              <p>{wheel_chair_assessment?.long_term_goals}</p>
+              <p>{data?.wheel_chair_assessment?.long_term_goals}</p>
             </div>
           </div>
           <div className="row border-bottom border-2 border-dark mt-3">
@@ -3565,7 +3590,7 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Treatment Plan</p>
             </div>
             <div className="col-9">
-              <p>{wheel_chair_assessment?.treatment_plan}</p>
+              <p>{data?.wheel_chair_assessment?.treatment_plan}</p>
             </div>
           </div>
         </div>
@@ -3580,7 +3605,7 @@ const RehabExamination = ({ data }) => {
             <div className="col-3">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {joint_integrety_mobility_assessmnet?.apprehension_test}
+                  {data?.joint_integrety_mobility_assessmnet?.apprehension_test}
                 </p>
               </div>
             </div>
@@ -3593,7 +3618,8 @@ const RehabExamination = ({ data }) => {
               <div className="items-rehab-clinic">
                 <p className="fs-6">
                   {
-                    joint_integrety_mobility_assessmnet?.compression_distraction_test
+                    data?.joint_integrety_mobility_assessmnet
+                      ?.compression_distraction_test
                   }
                 </p>
               </div>
@@ -3606,7 +3632,7 @@ const RehabExamination = ({ data }) => {
             <div className="col-3">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {joint_integrety_mobility_assessmnet?.drawer_test}
+                  {data?.joint_integrety_mobility_assessmnet?.drawer_test}
                 </p>
               </div>
             </div>
@@ -3618,7 +3644,7 @@ const RehabExamination = ({ data }) => {
             <div className="col-3">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {joint_integrety_mobility_assessmnet?.glide_test}
+                  {data?.joint_integrety_mobility_assessmnet?.glide_test}
                 </p>
               </div>
             </div>
@@ -3630,7 +3656,7 @@ const RehabExamination = ({ data }) => {
             <div className="col-3">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {joint_integrety_mobility_assessmnet?.impingement_test}
+                  {data?.joint_integrety_mobility_assessmnet?.impingement_test}
                 </p>
               </div>
             </div>
@@ -3642,7 +3668,7 @@ const RehabExamination = ({ data }) => {
             <div className="col-3">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {joint_integrety_mobility_assessmnet?.palpation}
+                  {data?.joint_integrety_mobility_assessmnet?.palpation}
                 </p>
               </div>
             </div>
@@ -3654,7 +3680,7 @@ const RehabExamination = ({ data }) => {
             <div className="col-3">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {joint_integrety_mobility_assessmnet?.shear_tests}
+                  {data?.joint_integrety_mobility_assessmnet?.shear_tests}
                 </p>
               </div>
             </div>
@@ -3667,7 +3693,8 @@ const RehabExamination = ({ data }) => {
               <div className="items-rehab-clinic">
                 <p className="fs-6">
                   {
-                    joint_integrety_mobility_assessmnet?.valgus_varus_stress_test
+                    data?.joint_integrety_mobility_assessmnet
+                      ?.valgus_varus_stress_test
                   }
                 </p>
               </div>
@@ -3679,7 +3706,9 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Identified Problems</p>
             </div>
             <div className="col-9">
-              <p>{joint_integrety_mobility_assessmnet?.identified_problems}</p>
+              <p>
+                {data?.joint_integrety_mobility_assessmnet?.identified_problems}
+              </p>
             </div>
           </div>
           <div className="row border-bottom border-2 border-dark mt-3">
@@ -3687,7 +3716,9 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Short Term Goals</p>
             </div>
             <div className="col-9">
-              <p>{joint_integrety_mobility_assessmnet?.short_term_goals}</p>
+              <p>
+                {data?.joint_integrety_mobility_assessmnet?.short_term_goals}
+              </p>
             </div>
           </div>
           <div className="row border-bottom border-2 border-dark mt-3">
@@ -3695,7 +3726,9 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Long Term Goals</p>
             </div>
             <div className="col-9">
-              <p>{joint_integrety_mobility_assessmnet?.long_term_goals}</p>
+              <p>
+                {data?.joint_integrety_mobility_assessmnet?.long_term_goals}
+              </p>
             </div>
           </div>
           <div className="row border-bottom border-2 border-dark mt-3">
@@ -3703,7 +3736,7 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Treatment Plan</p>
             </div>
             <div className="col-9">
-              <p>{joint_integrety_mobility_assessmnet?.treatment_plan}</p>
+              <p>{data?.joint_integrety_mobility_assessmnet?.treatment_plan}</p>
             </div>
           </div>
         </div>
@@ -3723,11 +3756,19 @@ const RehabExamination = ({ data }) => {
                 <td>CHEST WALL AND RELATED STRUCTURES</td>
 
                 <td>
-                  <p>{ventilation_respiration_gas_exchange?.chest_wall_text}</p>
+                  <p>
+                    {
+                      data?.ventilation_respiration_gas_exchange
+                        ?.chest_wall_text
+                    }
+                  </p>
                 </td>
                 <td>
                   <p>
-                    {ventilation_respiration_gas_exchange?.chest_wall_value}
+                    {
+                      data?.ventilation_respiration_gas_exchange
+                        ?.chest_wall_value
+                    }
                   </p>
                 </td>
               </tr>
@@ -3735,11 +3776,18 @@ const RehabExamination = ({ data }) => {
                 <td>PHONATION</td>
 
                 <td>
-                  <p>{ventilation_respiration_gas_exchange?.phonation_text}</p>
+                  <p>
+                    {data?.ventilation_respiration_gas_exchange?.phonation_text}
+                  </p>
                 </td>
 
                 <td>
-                  <p>{ventilation_respiration_gas_exchange?.phonation_value}</p>
+                  <p>
+                    {
+                      data?.ventilation_respiration_gas_exchange
+                        ?.phonation_value
+                    }
+                  </p>
                 </td>
               </tr>
               <tr className="text-center">
@@ -3748,7 +3796,8 @@ const RehabExamination = ({ data }) => {
                 <td>
                   <p>
                     {
-                      ventilation_respiration_gas_exchange?.pulmonary_related_text
+                      data?.ventilation_respiration_gas_exchange
+                        ?.pulmonary_related_text
                     }
                   </p>
                 </td>
@@ -3756,7 +3805,8 @@ const RehabExamination = ({ data }) => {
                 <td>
                   <p>
                     {
-                      ventilation_respiration_gas_exchange?.pulmonary_related_text
+                      data?.ventilation_respiration_gas_exchange
+                        ?.pulmonary_related_text
                     }
                   </p>
                 </td>
@@ -3766,14 +3816,18 @@ const RehabExamination = ({ data }) => {
 
                 <td>
                   <p>
-                    {ventilation_respiration_gas_exchange?.pulmonary_vital_text}
+                    {
+                      data?.ventilation_respiration_gas_exchange
+                        ?.pulmonary_vital_text
+                    }
                   </p>
                 </td>
 
                 <td>
                   <p>
                     {
-                      ventilation_respiration_gas_exchange?.pulmonary_vital_value
+                      data?.ventilation_respiration_gas_exchange
+                        ?.pulmonary_vital_value
                     }
                   </p>
                 </td>
@@ -3784,7 +3838,8 @@ const RehabExamination = ({ data }) => {
                 <td>
                   <p>
                     {
-                      ventilation_respiration_gas_exchange?.thoracoabdominal_text
+                      data?.ventilation_respiration_gas_exchange
+                        ?.thoracoabdominal_text
                     }
                   </p>
                 </td>
@@ -3792,7 +3847,8 @@ const RehabExamination = ({ data }) => {
                 <td>
                   <p>
                     {
-                      ventilation_respiration_gas_exchange?.thoracoabdominal_value
+                      data?.ventilation_respiration_gas_exchange
+                        ?.thoracoabdominal_value
                     }
                   </p>
                 </td>
@@ -3802,13 +3858,19 @@ const RehabExamination = ({ data }) => {
 
                 <td>
                   <p>
-                    {ventilation_respiration_gas_exchange?.presence_level_text}
+                    {
+                      data?.ventilation_respiration_gas_exchange
+                        ?.presence_level_text
+                    }
                   </p>
                 </td>
 
                 <td>
                   <p>
-                    {ventilation_respiration_gas_exchange?.presence_level_value}
+                    {
+                      data?.ventilation_respiration_gas_exchange
+                        ?.presence_level_value
+                    }
                   </p>
                 </td>
               </tr>
@@ -3817,14 +3879,18 @@ const RehabExamination = ({ data }) => {
 
                 <td>
                   <p>
-                    {ventilation_respiration_gas_exchange?.protect_airways_text}
+                    {
+                      data?.ventilation_respiration_gas_exchange
+                        ?.protect_airways_text
+                    }
                   </p>
                 </td>
 
                 <td>
                   <p>
                     {
-                      ventilation_respiration_gas_exchange?.protect_airways_value
+                      data?.ventilation_respiration_gas_exchange
+                        ?.protect_airways_value
                     }
                   </p>
                 </td>
@@ -3834,13 +3900,19 @@ const RehabExamination = ({ data }) => {
 
                 <td>
                   <p>
-                    {ventilation_respiration_gas_exchange?.gas_exchange_text}
+                    {
+                      data?.ventilation_respiration_gas_exchange
+                        ?.gas_exchange_text
+                    }
                   </p>
                 </td>
 
                 <td>
                   <p>
-                    {ventilation_respiration_gas_exchange?.gas_exchange_value}
+                    {
+                      data?.ventilation_respiration_gas_exchange
+                        ?.gas_exchange_value
+                    }
                   </p>
                 </td>
               </tr>
@@ -3850,7 +3922,8 @@ const RehabExamination = ({ data }) => {
                 <td>
                   <p>
                     {
-                      ventilation_respiration_gas_exchange?.ventilatory_mechanism_text
+                      data?.ventilation_respiration_gas_exchange
+                        ?.ventilatory_mechanism_text
                     }
                   </p>
                 </td>
@@ -3858,7 +3931,8 @@ const RehabExamination = ({ data }) => {
                 <td>
                   <p>
                     {
-                      ventilation_respiration_gas_exchange?.ventilatory_mechanism_value
+                      data?.ventilation_respiration_gas_exchange
+                        ?.ventilatory_mechanism_value
                     }
                   </p>
                 </td>
@@ -3868,13 +3942,19 @@ const RehabExamination = ({ data }) => {
 
                 <td>
                   <p>
-                    {ventilation_respiration_gas_exchange?.breath_voice_text}
+                    {
+                      data?.ventilation_respiration_gas_exchange
+                        ?.breath_voice_text
+                    }
                   </p>
                 </td>
 
                 <td>
                   <p>
-                    {ventilation_respiration_gas_exchange?.breath_voice_value}
+                    {
+                      data?.ventilation_respiration_gas_exchange
+                        ?.breath_voice_value
+                    }
                   </p>
                 </td>
               </tr>
@@ -3885,7 +3965,12 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Identified Problems</p>
             </div>
             <div className="col-9">
-              <p>{ventilation_respiration_gas_exchange?.identified_problems}</p>
+              <p>
+                {
+                  data?.ventilation_respiration_gas_exchange
+                    ?.identified_problems
+                }
+              </p>
             </div>
           </div>
           <div className="row border-bottom border-2 border-dark mt-3">
@@ -3893,7 +3978,9 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Short Term Goals</p>
             </div>
             <div className="col-9">
-              <p>{ventilation_respiration_gas_exchange?.short_term_goals}</p>
+              <p>
+                {data?.ventilation_respiration_gas_exchange?.short_term_goals}
+              </p>
             </div>
           </div>
           <div className="row border-bottom border-2 border-dark mt-3">
@@ -3901,7 +3988,9 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Long Term Goals</p>
             </div>
             <div className="col-9">
-              <p>{ventilation_respiration_gas_exchange?.long_term_goals}</p>
+              <p>
+                {data?.ventilation_respiration_gas_exchange?.long_term_goals}
+              </p>
             </div>
           </div>
           <div className="row border-bottom border-2 border-dark mt-3">
@@ -3909,7 +3998,9 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Treatment Plan</p>
             </div>
             <div className="col-9">
-              <p>{ventilation_respiration_gas_exchange?.treatment_plan}</p>
+              <p>
+                {data?.ventilation_respiration_gas_exchange?.treatment_plan}
+              </p>
             </div>
           </div>
         </div>
@@ -3925,7 +4016,7 @@ const RehabExamination = ({ data }) => {
                 </div>
                 <div className="col-6">
                   <div className="items-rehab-clinic">
-                    <p className="fs-6">{wound_assessment?.location}</p>
+                    <p className="fs-6">{data?.wound_assessment?.location}</p>
                   </div>
                 </div>
               </div>
@@ -3939,7 +4030,9 @@ const RehabExamination = ({ data }) => {
                 </div>
                 <div className="col-6">
                   <div className="items-rehab-clinic">
-                    <p className="fs-6">{wound_assessment?.type_of_ulcer}</p>
+                    <p className="fs-6">
+                      {data?.wound_assessment?.type_of_ulcer}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -3951,7 +4044,7 @@ const RehabExamination = ({ data }) => {
                 </div>
                 <div className="col-6">
                   <div className="items-rehab-clinic">
-                    <p className="fs-6">{wound_assessment?.stage}</p>
+                    <p className="fs-6">{data?.wound_assessment?.stage}</p>
                   </div>
                 </div>
               </div>
@@ -3968,7 +4061,7 @@ const RehabExamination = ({ data }) => {
                 <div className="col-6">
                   <div className="items-rehab-clinic">
                     <p className="fs-6">
-                      {wound_assessment?.thickness_of_ulcer}
+                      {data?.wound_assessment?.thickness_of_ulcer}
                     </p>
                   </div>
                 </div>
@@ -3983,7 +4076,7 @@ const RehabExamination = ({ data }) => {
                 </div>
                 <div className="col-6">
                   <div className="items-rehab-clinic">
-                    <p className="fs-6">{wound_assessment?.size}</p>
+                    <p className="fs-6">{data?.wound_assessment?.size}</p>
                   </div>
                 </div>
               </div>
@@ -3997,7 +4090,7 @@ const RehabExamination = ({ data }) => {
                 </div>
                 <div className="col-6">
                   <div className="items-rehab-clinic">
-                    <p className="fs-6">{wound_assessment?.depth}</p>
+                    <p className="fs-6">{data?.wound_assessment?.depth}</p>
                   </div>
                 </div>
               </div>
@@ -4011,7 +4104,7 @@ const RehabExamination = ({ data }) => {
                 </div>
                 <div className="col-6">
                   <div className="items-rehab-clinic">
-                    <p className="fs-6">{wound_assessment?.tunnelling}</p>
+                    <p className="fs-6">{data?.wound_assessment?.tunnelling}</p>
                   </div>
                 </div>
               </div>
@@ -4025,7 +4118,9 @@ const RehabExamination = ({ data }) => {
                 </div>
                 <div className="col-6">
                   <div className="items-rehab-clinic">
-                    <p className="fs-6">{wound_assessment?.undermining}</p>
+                    <p className="fs-6">
+                      {data?.wound_assessment?.undermining}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -4039,7 +4134,9 @@ const RehabExamination = ({ data }) => {
                 </div>
                 <div className="col-6">
                   <div className="items-rehab-clinic">
-                    <p className="fs-6">{wound_assessment?.necrotic_tissue}</p>
+                    <p className="fs-6">
+                      {data?.wound_assessment?.necrotic_tissue}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -4053,7 +4150,7 @@ const RehabExamination = ({ data }) => {
                 </div>
                 <div className="col-6">
                   <div className="items-rehab-clinic">
-                    <p className="fs-6">{wound_assessment?.slough}</p>
+                    <p className="fs-6">{data?.wound_assessment?.slough}</p>
                   </div>
                 </div>
               </div>
@@ -4068,7 +4165,7 @@ const RehabExamination = ({ data }) => {
                 <div className="col-6">
                   <div className="items-rehab-clinic">
                     <p className="fs-6">
-                      {wound_assessment?.granulation_tissue}
+                      {data?.wound_assessment?.granulation_tissue}
                     </p>
                   </div>
                 </div>
@@ -4084,7 +4181,7 @@ const RehabExamination = ({ data }) => {
                 <div className="col-6">
                   <div className="items-rehab-clinic">
                     <p className="fs-6">
-                      {wound_assessment?.epitheliazation_in_process}
+                      {data?.wound_assessment?.epitheliazation_in_process}
                     </p>
                   </div>
                 </div>
@@ -4100,7 +4197,7 @@ const RehabExamination = ({ data }) => {
                 </div>
                 <div className="col-6">
                   <div className="items-rehab-clinic">
-                    <p className="fs-6">{wound_assessment?.amount}</p>
+                    <p className="fs-6">{data?.wound_assessment?.amount}</p>
                   </div>
                 </div>
               </div>
@@ -4114,7 +4211,7 @@ const RehabExamination = ({ data }) => {
                 </div>
                 <div className="col-6">
                   <div className="items-rehab-clinic">
-                    <p className="fs-6">{wound_assessment?.color}</p>
+                    <p className="fs-6">{data?.wound_assessment?.color}</p>
                   </div>
                 </div>
               </div>
@@ -4126,14 +4223,14 @@ const RehabExamination = ({ data }) => {
                 </div>
                 <div className="col-6">
                   <div className="items-rehab-clinic">
-                    <p className="fs-6">{wound_assessment?.odor}</p>
+                    <p className="fs-6">{data?.wound_assessment?.odor}</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <p className="fs-6 fw-bold pb-3 mt-3 text-center">
-            Pain : {wound_assessment?.pain}
+            Pain : {data?.wound_assessment?.pain}
           </p>
           <div className="row align-items-center border-bottom border-2 border-dark mt-3">
             <div className="col-4">
@@ -4144,7 +4241,7 @@ const RehabExamination = ({ data }) => {
             <div className="col-4">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {wound_assessment?.describe_surrounding_tissue}
+                  {data?.wound_assessment?.describe_surrounding_tissue}
                 </p>
               </div>
             </div>
@@ -4156,7 +4253,9 @@ const RehabExamination = ({ data }) => {
             </div>
             <div className="col-9">
               <div className="items-rehab-clinic">
-                <p className="fs-6">{wound_assessment?.signs_of_infection}</p>
+                <p className="fs-6">
+                  {data?.wound_assessment?.signs_of_infection}
+                </p>
               </div>
             </div>
           </div>
@@ -4169,7 +4268,7 @@ const RehabExamination = ({ data }) => {
             <div className="col-7">
               <div className="items-rehab-clinic">
                 <p className="fs-6">
-                  {wound_assessment?.recucing_relieving_devices}
+                  {data?.wound_assessment?.recucing_relieving_devices}
                 </p>
               </div>
             </div>
@@ -4180,7 +4279,7 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Describe device in place</p>
             </div>
             <div className="col-9">
-              <p>{wound_assessment?.describe_device}</p>
+              <p>{data?.wound_assessment?.describe_device}</p>
             </div>
           </div>
           <div className="row border-bottom border-2 border-dark mt-3">
@@ -4188,7 +4287,7 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Positioning Concerns</p>
             </div>
             <div className="col-9">
-              <p>{wound_assessment?.positioning_concerns}</p>
+              <p>{data?.wound_assessment?.positioning_concerns}</p>
             </div>
           </div>
           <div className="row border-bottom border-2 border-dark mt-3">
@@ -4196,7 +4295,7 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Dressing to be used</p>
             </div>
             <div className="col-9">
-              <p>{wound_assessment?.dressing_tobe_used}</p>
+              <p>{data?.wound_assessment?.dressing_tobe_used}</p>
             </div>
           </div>
           <div className="row border-bottom border-2 border-dark mt-3">
@@ -4204,7 +4303,7 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Barriers to Progress</p>
             </div>
             <div className="col-9">
-              <p>{wound_assessment?.barriers_to_progress}</p>
+              <p>{data?.wound_assessment?.barriers_to_progress}</p>
             </div>
           </div>
 
@@ -4213,7 +4312,7 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Identified Problems</p>
             </div>
             <div className="col-9">
-              <p>{wound_assessment?.identified_problems}</p>
+              <p>{data?.wound_assessment?.identified_problems}</p>
             </div>
           </div>
           <div className="row border-bottom border-2 border-dark mt-3">
@@ -4221,7 +4320,7 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Short Term Goals</p>
             </div>
             <div className="col-9">
-              <p>{wound_assessment?.short_term_goals}</p>
+              <p>{data?.wound_assessment?.short_term_goals}</p>
             </div>
           </div>
           <div className="row border-bottom border-2 border-dark mt-3">
@@ -4229,7 +4328,7 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Long Term Goals</p>
             </div>
             <div className="col-9">
-              <p>{wound_assessment?.long_term_goals}</p>
+              <p>{data?.wound_assessment?.long_term_goals}</p>
             </div>
           </div>
           <div className="row border-bottom border-2 border-dark mt-3">
@@ -4237,7 +4336,7 @@ const RehabExamination = ({ data }) => {
               <p className="fs-6 fw-bold">Treatment Plan</p>
             </div>
             <div className="col-9">
-              <p>{wound_assessment?.treatment_plan}</p>
+              <p>{data?.wound_assessment?.treatment_plan}</p>
             </div>
           </div>
         </div>
