@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { apiUrl } from "config/api";
 import useSWR from "swr";
-
+import { Slide, toast } from "react-toastify";
 const catagoryList = [
   "Mental status examination",
   "Cranial nerve examination",
@@ -114,22 +114,44 @@ const NeuroExamination = ({ appointmentId }) => {
         examination: examination,
       },
     };
-
-    const res = await axios.put(
-      `${apiUrl}/appointments/${appointmentId}`,
-      payload,
-      {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      }
-    );
-    const result = res.data;
-    alert("Form Submitted Succesfully");
-    // router.push(
-    //   `/doctors/appointments/clinical-examination?id=${appointmentId}`
-    // );
-    return result;
+    try {
+      const res = await axios.put(
+        `${apiUrl}/appointments/${appointmentId}`,
+        payload,
+        {
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+          },
+        }
+      );
+      const result = res.data;
+      alert("Form Submitted Succesfully");
+      toast.success("Form Submitted Succesfully", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+      return result;
+    } catch (error) {
+      console.log(error);
+      toast.error("Something Went Wrong Try Again.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+    }
   };
   return (
     <>

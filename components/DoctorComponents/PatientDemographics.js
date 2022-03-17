@@ -1,4 +1,10 @@
+import useSWR from "swr";
+import { apiUrl, fetcher } from "config/api";
 const PatientDemographics = ({ patientInfo }) => {
+  const { data: bloodGroup } = useSWR(
+    `${apiUrl}/blood-groups/${patientInfo?.blood_group}`,
+    fetcher
+  );
   return (
     <>
       <div className="card profile-sidebar patient-card shadow-sm">
@@ -35,6 +41,14 @@ const PatientDemographics = ({ patientInfo }) => {
                 </div>
                 <div className="profile-item-inner">
                   <p className="fw-bold">{patientInfo?.age}</p>
+                </div>
+              </div>
+              <div className="inner-item d-flex justify-content-between px-3">
+                <div className="profile-item-inner">
+                  <p className="text-muted">Blood Group</p>
+                </div>
+                <div className="profile-item-inner">
+                  <p className="fw-bold">{bloodGroup?.name}</p>
                 </div>
               </div>
             </div>

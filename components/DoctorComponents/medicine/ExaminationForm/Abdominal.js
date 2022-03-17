@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { apiUrl } from "config/api";
 import { useAuth } from "context";
-import { set } from "react-hook-form";
+import { Slide, toast } from "react-toastify";
 
 const Abdominal = ({ data, appointmentId }) => {
   const { auth } = useAuth();
@@ -40,10 +40,31 @@ const Abdominal = ({ data, appointmentId }) => {
         }
       );
       const result = res.data;
-      alert("Form Submitted Succesfully");
+      toast.success("Form Submitted Succesfully", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
       return result;
     } catch (error) {
       console.log(error);
+      toast.error("Something Went Wrong Try Again.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
     }
   };
 

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useAuth } from "context";
-import router from "next/router";
 import axios from "axios";
 import { fetcher } from "config/api";
 import useSWR from "swr";

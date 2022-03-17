@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { apiUrl } from "config/api";
 import { useAuth } from "context";
-
+import { Slide, toast } from "react-toastify";
 const Throat = ({ data, appointmentId }) => {
   const { auth } = useAuth();
 
@@ -28,18 +28,43 @@ const Throat = ({ data, appointmentId }) => {
         throat: allData,
       },
     };
-    const res = await axios.put(
-      `${apiUrl}/appointments/${appointmentId}`,
-      payload,
-      {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      }
-    );
-    const result = res.data;
-    alert("Form Submitted Succesfully");
-    return result;
+    try {
+      const res = await axios.put(
+        `${apiUrl}/appointments/${appointmentId}`,
+        payload,
+        {
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+          },
+        }
+      );
+      const result = res.data;
+      toast.success("Form Submitted Succesfully", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+      return result, setAllData("");
+    } catch (error) {
+      console.log(error);
+      toast.error("Something Went Wrong Try Again.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+    }
   };
   const throat = ["Checkbox"];
   return (

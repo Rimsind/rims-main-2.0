@@ -4,6 +4,7 @@ import axios from "axios";
 import { useAuth } from "context/index";
 import { apiUrl } from "config/api";
 import { useState } from "react";
+import { Slide, toast } from "react-toastify";
 const Form10 = ({ appointmentId }) => {
   const { auth } = useAuth();
   const { data: appointment } = useSWR(
@@ -39,22 +40,44 @@ const Form10 = ({ appointmentId }) => {
         },
       },
     };
+    try {
+      const res = await axios.put(
+        `${apiUrl}/appointments/${appointmentId}`,
+        payload,
+        {
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+          },
+        }
+      );
+      const result = res.data;
+      toast.success("Form Submitted Succesfully", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
 
-    const res = await axios.put(
-      `${apiUrl}/appointments/${appointmentId}`,
-      payload,
-      {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      }
-    );
-    const result = res.data;
-    alert("Form Submitted Succesfully");
-    // router.push(
-    //   `/rehab-form/physical-asst-form/form11?appointmentId=${appointmentId}`
-    // );
-    return result;
+      return result;
+    } catch (error) {
+      console.log(error);
+      toast.error("Something Went Wrong Try Again.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+    }
   };
 
   const involuntoryList = [

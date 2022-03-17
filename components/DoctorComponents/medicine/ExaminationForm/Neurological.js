@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { apiUrl } from "config/api";
 import { useAuth } from "context";
-
+import { Slide, toast } from "react-toastify";
 const Neurological = ({ data, appointmentId }) => {
   const { auth } = useAuth();
 
