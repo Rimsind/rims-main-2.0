@@ -6,9 +6,10 @@ import { apiUrl } from "config/api";
 import useSWR from "swr";
 import axios from "axios";
 import { UserPageLoader } from "components/Loaders";
+import { withAuth } from "helpers/withAuth";
 const Index = () => {
   const { auth } = useAuth();
-
+  // console.log(typeof window);
   const { data } = useSWR(
     `${apiUrl}/patients/${auth.user?.profileId}`,
     async (url) => {
@@ -351,4 +352,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default withAuth(Index);

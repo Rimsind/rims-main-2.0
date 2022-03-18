@@ -4,7 +4,7 @@ import axios from "axios";
 import { useAuth } from "context";
 import { useState } from "react";
 import useSWR from "swr";
-
+import { Slide, toast } from "react-toastify";
 const ProfileInfo = ({ data }) => {
   const { auth } = useAuth();
   const [loading, setLoading] = useState(false);
@@ -39,10 +39,32 @@ const ProfileInfo = ({ data }) => {
       );
       const result = res.data;
       setLoading(false);
-      alert("Profile Updated Succesfully");
+
+      toast.success("Profile Updated Succesfully", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
       return result;
     } catch (err) {
       console.log(err.message);
+      toast.error("Something Went Wrong Try Again.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
     }
   };
 

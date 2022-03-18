@@ -2,7 +2,7 @@ import AuthLayout from "components/layout/AuthLayout";
 import { useRouter } from "next/router";
 import { useAuth } from "context";
 import useSWR from "swr";
-import { apiUrl } from "config/api";
+import { apiUrl, fetcher } from "config/api";
 import Image from "next/image";
 const Eprescription = () => {
   const { id } = useRouter().query;
@@ -20,6 +20,15 @@ const Eprescription = () => {
       const result = res.data;
       return result;
     }
+  );
+
+  const { data: specialty } = useSWR(
+    `${apiUrl}/specialties/${appointments?.doctor?.specialty}`,
+    fetcher
+  );
+  const { data: bloodGroup } = useSWR(
+    `${apiUrl}/blood-groups/${appointments?.patient?.blood_group}`,
+    fetcher
   );
 
   return (
@@ -82,7 +91,7 @@ const Eprescription = () => {
                   <p className="fs-6 fw-bold lh-1">
                     {appointments?.doctor?.qualification}
                   </p>
-                  <p className="fs-6 lh-1">{appointments?.doctor?.specialty}</p>
+                  <p className="fs-6 lh-1">{specialty?.name}</p>
                   <p className="fs-6 lh-1">Reg. No.-58905 (WBMC)</p>
                   <p className="fs-6 lh-1">
                     Mob: {appointments?.doctor?.phone}
@@ -165,7 +174,7 @@ const Eprescription = () => {
                             <p className="fs-6 fw-bold text-light lh-1">
                               Blood Group :{" "}
                               <span className="fs-6 fw-light">
-                                {appointments?.patient?.blood_group}
+                                {bloodGroup?.name}
                               </span>
                             </p>
                             <p className="fs-6 fw-bold text-light lh-1">

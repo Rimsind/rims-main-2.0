@@ -3,6 +3,7 @@ import { apiUrl } from "config/api";
 import axios from "axios";
 import { useAuth } from "context";
 import { useState } from "react";
+import { Slide, toast } from "react-toastify";
 const FamilyMadicalHistory = ({ patient }) => {
   const { familyHistory, updated_at } = patient;
   const dataLength = familyHistory?.length;
@@ -37,10 +38,32 @@ const FamilyMadicalHistory = ({ patient }) => {
       );
       const result = res.data;
       reset();
-      alert("FamilyMedical History Updated Succesfully");
+      toast.success("FamilyMedical History Updated", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
       return result, setLoading(false);
     } catch (err) {
       console.log(err.message);
+      toast.error("Something Went Wrong Try Again.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+      setLoading(false);
     }
   };
 

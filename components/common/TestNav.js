@@ -1,38 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useAuth } from "context";
-import { apiUrl } from "config/api";
-import useSWR from "swr";
-import axios from "axios";
 
 const TestNav = () => {
-  const { auth, logOut } = useAuth();
-
-  if (auth?.user?.role?.id === 1) {
-    var role = "patients";
-  }
-  if (auth?.user?.role?.id === 3) {
-    var role = "doctors";
-  }
-  if (auth?.user?.role?.id === 6) {
-    var role = "polyclinics";
-  }
-  if (auth?.user?.role?.id === 7) {
-    var role = "nursing-homes";
-  }
-
-  const { data } = useSWR(
-    `${apiUrl}/${role}/${auth?.user?.profileId}`,
-    async (url) => {
-      const res = await axios.get(url, {
-        headers: {
-          authorization: `Bearer ${auth.token}`,
-        },
-      });
-      const result = res.data;
-      return result;
-    }
-  );
+  const { auth, logOut, profile } = useAuth();
 
   return (
     <>
@@ -109,9 +80,9 @@ const TestNav = () => {
                           <Image
                             className="rounded-circle "
                             src={
-                              data?.image?.url ||
-                              data?.coverImage?.url ||
-                              data?.profile_image?.url ||
+                              profile?.image?.url ||
+                              profile?.coverImage?.url ||
+                              profile?.profile_image?.url ||
                               "/assets/images/profile.png"
                             }
                             width="35"
@@ -127,9 +98,9 @@ const TestNav = () => {
                               height="100"
                               width="100"
                               src={
-                                data?.image?.url ||
-                                data?.coverImage?.url ||
-                                data?.profile_image?.url ||
+                                profile?.image?.url ||
+                                profile?.coverImage?.url ||
+                                profile?.profile_image?.url ||
                                 "/assets/images/profile.png"
                               }
                               alt="User Image"
@@ -138,8 +109,8 @@ const TestNav = () => {
                           </div>
                           <div className="user-text">
                             <h6>
-                              {data?.first_name} {data?.last_name}
-                              {data?.name}
+                              {profile?.first_name} {profile?.last_name}
+                              {profile?.name}
                             </h6>
                           </div>
                         </div>

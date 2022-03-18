@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { apiUrl } from "config/api";
 import { useAuth } from "context";
-
+import { Slide, toast } from "react-toastify";
 const skin = [
   "No rashes or other changes",
   "No cyanosis",
@@ -34,19 +34,43 @@ const Skin = ({ data, appointmentId }) => {
         skin: allData,
       },
     };
-
-    const res = await axios.put(
-      `${apiUrl}/appointments/${appointmentId}`,
-      payload,
-      {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      }
-    );
-    const result = res.data;
-    alert("Form Submitted Succesfully");
-    return result;
+    try {
+      const res = await axios.put(
+        `${apiUrl}/appointments/${appointmentId}`,
+        payload,
+        {
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+          },
+        }
+      );
+      const result = res.data;
+      toast.success("Form Submitted Succesfully", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+      return result;
+    } catch (error) {
+      console.log(error);
+      toast.error("Something Went Wrong Try Again.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+    }
   };
 
   return (
@@ -62,7 +86,7 @@ const Skin = ({ data, appointmentId }) => {
                 onChange={(e) => setOption(e.target.value)}
               >
                 <option selected>Select any one</option>
-                {skin.map((items, index) => (
+                {skin?.map((items, index) => (
                   <option value={items} key={index}>
                     {items}
                   </option>
@@ -98,7 +122,7 @@ const Skin = ({ data, appointmentId }) => {
                 </tr>
               </thead>
               <tbody>
-                {allData.map((items, index) => (
+                {allData?.map((items, index) => (
                   <tr key={index}>
                     <td>X</td>
                     <td>{items?.option}</td>

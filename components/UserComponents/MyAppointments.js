@@ -1,6 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import useSWR from "swr";
+import { apiUrl, fetcher } from "config/api";
 const MyAppointments = ({ data }) => {
+  const { data: specialty } = useSWR(
+    `${apiUrl}/specialties/${data?.doctor?.specialty}`,
+    fetcher
+  );
+
   return (
     <>
       <tr>
@@ -18,7 +25,7 @@ const MyAppointments = ({ data }) => {
             <Link href={`/user/appointments/${data?.id}`}>
               <a>
                 Dr. {data?.doctor?.firstName} {data?.doctor?.lastName}
-                <span>{data?.doctor?.specialty}</span>
+                <span>{specialty?.name}</span>
               </a>
             </Link>
           </h2>
@@ -41,11 +48,15 @@ const MyAppointments = ({ data }) => {
         </td>
         <td className="text-end">
           <div className="table-action">
-            <Link href={`/user/appointments/${data?.id}`}>
-              <a className="btn btn-sm bg-info-light">
-                <i className="far fa-eye"></i> View
-              </a>
-            </Link>
+            {!!data.appointment_status === false ? (
+              <></>
+            ) : (
+              <Link href={`/user/appointments/${data?.id}`}>
+                <a className="btn btn-sm bg-info-light">
+                  <i className="far fa-eye"></i> View
+                </a>
+              </Link>
+            )}
           </div>
         </td>
       </tr>

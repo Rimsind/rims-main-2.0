@@ -4,7 +4,7 @@ import { useAuth } from "context";
 import { apiUrl } from "config/api";
 import useSWR from "swr";
 import axios from "axios";
-
+import { withAuth } from "helpers/withAuth";
 const AdvanceSettings = () => {
   const { auth } = useAuth();
 
@@ -52,4 +52,4 @@ const AdvanceSettings = () => {
     </>
   );
 };
-export default AdvanceSettings;
+export default withAuth(AdvanceSettings);

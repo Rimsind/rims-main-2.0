@@ -90,14 +90,14 @@ const DoctorSidebar = (props) => {
                     </a>
                   </Link>
                 </li>
-                <li className={props.status5}>
+                {/* <li className={props.status5}>
                   <Link href="/doctors/my-patients">
                     <a href="medical-info.html">
                       <i className="fas fa-user-cog"></i>
                       <span>My Patients</span>
                     </a>
                   </Link>
-                </li>
+                </li> */}
 
                 <li className={props.status6}>
                   <Link href="/doctors/privacy-settings">

@@ -5,6 +5,8 @@ import axios from "axios";
 import { setCookie } from "nookies";
 import Router from "next/router";
 import { useAuth } from "context";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Login = () => {
   const {
     register,
@@ -50,7 +52,17 @@ const Login = () => {
         });
 
         reset();
-        alert("login success");
+
+        toast.success("login success", {
+          position: "top-center",
+          autoClose: 4000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
         Router.push("/");
         // if (redirect) {
         //   Router.push(`/${redirect}`);
@@ -59,14 +71,22 @@ const Login = () => {
         // }
       }
     } catch (error) {
-      alert("Email Or Password does not exist.");
+      toast.error("Email Or Password does not exist", {
+        position: "top-center",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
       dispatchAuth({
         type: "LOGIN_FAILED",
         payload: error.message
           ? error.message
           : "Something went wrong, try agin",
       });
-      alert("login failed");
     }
   };
   return (
@@ -153,6 +173,7 @@ const Login = () => {
           </div>
         </div>
       </main>
+      <ToastContainer />
     </>
   );
 };

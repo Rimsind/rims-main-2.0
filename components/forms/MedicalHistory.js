@@ -3,43 +3,71 @@ import { apiUrl } from "config/api";
 import axios from "axios";
 import { useAuth } from "context";
 import { useState } from "react";
+import { Slide, toast } from "react-toastify";
 
 const MedicalHistory = ({ patient }) => {
-  const { medicalHistory, updated_at, gender } = patient;
-  const surgicalDataLength = medicalHistory?.surgicalHistory.length;
-  const medicineDataLength = medicalHistory?.medicationHistory.length;
+  const {
+    medicalHistory,
+    updated_at,
+    gender,
+    past_surgical_history,
+    past_medication_history,
+  } = patient;
+  console.log(patient);
+  const surgicalDataLength = past_surgical_history?.length;
+  const medicineDataLength = past_medication_history?.length;
 
   const { auth } = useAuth();
-
   const [surgery, setSurgery] = useState();
   const [surgeryDate, setSurgeryDate] = useState();
   const [loading, setLoading] = useState(false);
 
   const submitSurgery = async () => {
-    const payload = {
-      medicalHistory: {
-        ...medicalHistory,
-        surgicalHistory: [
-          ...medicalHistory?.surgicalHistory,
+    if (!!surgery && !!surgeryDate) {
+      const payload = {
+        past_surgical_history: [
+          ...past_surgical_history,
           {
             name: surgery,
             date: surgeryDate,
           },
         ],
-      },
-    };
-    const res = await axios.put(
-      `${apiUrl}/patients/${auth.user?.profileId}`,
-      payload,
-      {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      }
-    );
-    const result = res.data;
-    alert("Surgical History added Succesfully");
-    return result, setLoading(false), setSurgery(""), setSurgeryDate("");
+      };
+      const res = await axios.put(
+        `${apiUrl}/patients/${auth.user?.profileId}`,
+        payload,
+        {
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+          },
+        }
+      );
+      const result = res.data;
+
+      toast.success("Surgical History Updated", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+      return result, setLoading(false), setSurgery(""), setSurgeryDate("");
+    } else {
+      toast("Please enter all the fields", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        transition: Slide,
+      });
+    }
   };
 
   const [medicineName, setMedicineName] = useState();
@@ -53,11 +81,10 @@ const MedicalHistory = ({ patient }) => {
   const [ifYes, setIfYes] = useState();
 
   const submitMedicine = async () => {
-    const payload = {
-      medicalHistory: {
-        ...medicalHistory,
-        medicationHistory: [
-          ...medicalHistory?.medicationHistory,
+    if (!!medicineName && !!dose && !!type) {
+      const payload = {
+        past_medication_history: [
+          ...past_medication_history,
           {
             medicineName: medicineName,
             dose: dose,
@@ -70,21 +97,46 @@ const MedicalHistory = ({ patient }) => {
             ifYes: ifYes,
           },
         ],
-      },
-    };
+      };
 
-    const res = await axios.put(
-      `${apiUrl}/patients/${auth.user?.profileId}`,
-      payload,
-      {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      }
-    );
-    const result = res.data;
-    alert("Medical History Updated Succesfully");
-    return result, setMedicineName(""), setDose(""), setDate(""), setIfYes("");
+      const res = await axios.put(
+        `${apiUrl}/patients/${auth.user?.profileId}`,
+        payload,
+        {
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+          },
+        }
+      );
+      const result = res.data;
+
+      toast.success("Medication History Updated", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+      return (
+        result, setMedicineName(""), setDose(""), setDate(""), setIfYes("")
+      );
+    } else {
+      toast("Please enter all the fields ", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+
+        transition: Slide,
+      });
+    }
   };
 
   const { register, handleSubmit } = useForm();
@@ -95,7 +147,7 @@ const MedicalHistory = ({ patient }) => {
       const payload = {
         medicalHistory: {
           ...medicalHistory,
-          past_medical_history: data.past_medical_history?.toString(),
+          past_symptoms: data.past_symptoms?.toString(),
           diagnostic_tests: data.diagnostic_tests?.toString(),
           allergies: data.allergies,
           vactions: data.vactions,
@@ -120,10 +172,32 @@ const MedicalHistory = ({ patient }) => {
         }
       );
       const result = res.data;
-      alert("Medical History Updated Succesfully");
+      toast.success("Medical History Updated", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
       return result, setLoading(false);
     } catch (err) {
       console.log(err.message);
+      toast.error("Something Went Wrong Try Again.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+      setLoading(false);
     }
   };
 
@@ -260,14 +334,14 @@ const MedicalHistory = ({ patient }) => {
                     <input
                       className="form-check-input"
                       type="checkbox"
-                      name="past_medical_history"
+                      name="past_symptoms"
                       value={item}
-                      {...register("past_medical_history")}
+                      {...register("past_symptoms")}
                       defaultChecked={
                         !!medicalHistory &&
-                        !!medicalHistory.past_medical_history &&
+                        !!medicalHistory.past_symptoms &&
                         makeArrfromString(
-                          medicalHistory.past_medical_history
+                          medicalHistory.past_symptoms
                         ).includes(item)
                       }
                     />
@@ -639,7 +713,7 @@ const MedicalHistory = ({ patient }) => {
                   </tr>
                 ) : (
                   <>
-                    {medicalHistory?.surgicalHistory?.map((item, index) => (
+                    {past_surgical_history?.map((item, index) => (
                       <tr key={index}>
                         <td>
                           <div className="delete-table-icon">
@@ -720,7 +794,7 @@ const MedicalHistory = ({ patient }) => {
                     aria-label="Default select example"
                     onChange={(e) => setType(e.target.value)}
                   >
-                    <option selected>Select Types</option>
+                    <option>Select Types</option>
                     <option value="Prescribed">Prescribed</option>
                     <option value="Non-Prescribed">Non-Prescribed</option>
                   </select>
@@ -789,7 +863,7 @@ const MedicalHistory = ({ patient }) => {
                     aria-label="Default select example"
                     onChange={(e) => setStatus(e.target.value)}
                   >
-                    <option selected>Select Status</option>
+                    <option>Select Status</option>
                     <option value="Continue">Continue</option>
                     <option value="End">End</option>
                   </select>
@@ -827,7 +901,7 @@ const MedicalHistory = ({ patient }) => {
                     aria-label="Default select example"
                     onChange={(e) => setRoute(e.target.value)}
                   >
-                    <option selected>Select Route</option>
+                    <option>Select Route</option>
                     <option value="Capsule">Capsule</option>
                     <option value="Injection">Injection</option>
                     <option value="Other Way">Other Way</option>
@@ -846,7 +920,7 @@ const MedicalHistory = ({ patient }) => {
                     aria-label="Default select example"
                     onChange={(e) => setSideEffect(e.target.value)}
                   >
-                    <option selected>Select Effects</option>
+                    <option>Select Effects</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                   </select>
@@ -899,7 +973,7 @@ const MedicalHistory = ({ patient }) => {
                 </tr>
               ) : (
                 <>
-                  {medicalHistory?.medicationHistory?.map((item, index) => (
+                  {past_medication_history?.map((item, index) => (
                     <tr key={index}>
                       <td>
                         <div className="delete-table-icon">

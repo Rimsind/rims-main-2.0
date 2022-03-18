@@ -3,11 +3,18 @@ import axios from "axios";
 import { useAuth } from "context";
 import { apiUrl } from "config/api";
 import { useState } from "react";
-
-const MedicalHistory = ({ medicalHistory, patientId, updated_at, gender }) => {
+import { toast, Slide } from "react-toastify";
+const MedicalHistory = ({
+  medicalHistory,
+  patientId,
+  updated_at,
+  gender,
+  past_medication_history,
+  past_surgical_history,
+}) => {
   //
-  const surgicalDataLength = medicalHistory?.surgicalHistory.length;
-  const medicineDataLength = medicalHistory?.medicationHistory.length;
+  const surgicalDataLength = past_surgical_history?.length;
+  const medicineDataLength = past_medication_history?.length;
   //
   const { auth } = useAuth();
   //
@@ -16,26 +23,47 @@ const MedicalHistory = ({ medicalHistory, patientId, updated_at, gender }) => {
   const [loading, setLoading] = useState(false);
   //
   const submitSurgery = async () => {
-    const payload = {
-      medicalHistory: {
-        ...medicalHistory,
-        surgicalHistory: [
-          ...medicalHistory?.surgicalHistory,
+    if (!!surgery && !!surgeryDate) {
+      const payload = {
+        past_surgical_history: [
+          ...past_surgical_history,
           {
             name: surgery,
             date: surgeryDate,
           },
         ],
-      },
-    };
-    const res = await axios.put(`${apiUrl}/patients/${patientId}`, payload, {
-      headers: {
-        Authorization: `Bearer ${auth.token}`,
-      },
-    });
-    const result = res.data;
-    alert("Surgical History added Succesfully");
-    return result, setLoading(false), setSurgery(""), setSurgeryDate("");
+      };
+      const res = await axios.put(`${apiUrl}/patients/${patientId}`, payload, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+
+      toast.success("Surgical History Updated", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+      return result, setLoading(false), setSurgery(""), setSurgeryDate("");
+    } else {
+      toast("Please enter all the fields", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        transition: Slide,
+      });
+    }
   };
   //
   const [medicineName, setMedicineName] = useState();
@@ -49,11 +77,10 @@ const MedicalHistory = ({ medicalHistory, patientId, updated_at, gender }) => {
   const [ifYes, setIfYes] = useState();
 
   const submitMedicine = async () => {
-    const payload = {
-      medicalHistory: {
-        ...medicalHistory,
-        medicationHistory: [
-          ...medicalHistory?.medicationHistory,
+    if (!!medicineName && !!dose && !!type) {
+      const payload = {
+        past_medication_history: [
+          ...past_medication_history,
           {
             medicineName: medicineName,
             dose: dose,
@@ -66,17 +93,42 @@ const MedicalHistory = ({ medicalHistory, patientId, updated_at, gender }) => {
             ifYes: ifYes,
           },
         ],
-      },
-    };
+      };
 
-    const res = await axios.put(`${apiUrl}/patients/${patientId}`, payload, {
-      headers: {
-        Authorization: `Bearer ${auth.token}`,
-      },
-    });
-    const result = res.data;
-    alert("Medical History Updated Succesfully");
-    return result, setMedicineName(""), setDose(""), setDate(""), setIfYes("");
+      const res = await axios.put(`${apiUrl}/patients/${patientId}`, payload, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+
+      toast.success("Medication History Updated", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+      return (
+        result, setMedicineName(""), setDose(""), setDate(""), setIfYes("")
+      );
+    } else {
+      toast("Please enter all the fields ", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+
+        transition: Slide,
+      });
+    }
   };
 
   const { register, handleSubmit } = useForm();
@@ -87,7 +139,7 @@ const MedicalHistory = ({ medicalHistory, patientId, updated_at, gender }) => {
       const payload = {
         medicalHistory: {
           ...medicalHistory,
-          past_medical_history: data.past_medical_history?.toString(),
+          past_symptoms: data.past_symptoms?.toString(),
           diagnostic_tests: data.diagnostic_tests?.toString(),
           allergies: data.allergies,
           vactions: data.vactions,
@@ -108,10 +160,32 @@ const MedicalHistory = ({ medicalHistory, patientId, updated_at, gender }) => {
         },
       });
       const result = res.data;
-      alert("Medical History Updated Succesfully");
+      toast.success("Medical History Updated", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
       return result, setLoading(false);
     } catch (err) {
       console.log(err.message);
+      toast.error("Something Went Wrong Try Again.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+      setLoading(false);
     }
   };
 
@@ -247,14 +321,14 @@ const MedicalHistory = ({ medicalHistory, patientId, updated_at, gender }) => {
                     <input
                       className="form-check-input"
                       type="checkbox"
-                      name="past_medical_history"
+                      name="past_symptoms"
                       value={item}
-                      {...register("past_medical_history")}
+                      {...register("past_symptoms")}
                       defaultChecked={
                         !!medicalHistory &&
-                        !!medicalHistory?.past_medical_history &&
+                        !!medicalHistory.past_symptoms &&
                         makeArrfromString(
-                          medicalHistory?.past_medical_history
+                          medicalHistory.past_symptoms
                         ).includes(item)
                       }
                     />
@@ -626,7 +700,7 @@ const MedicalHistory = ({ medicalHistory, patientId, updated_at, gender }) => {
                   </tr>
                 ) : (
                   <>
-                    {medicalHistory?.surgicalHistory?.map((item, index) => (
+                    {past_surgical_history?.map((item, index) => (
                       <tr key={index}>
                         <td>
                           <div className="delete-table-icon">
@@ -886,7 +960,7 @@ const MedicalHistory = ({ medicalHistory, patientId, updated_at, gender }) => {
                 </tr>
               ) : (
                 <>
-                  {medicalHistory?.medicationHistory?.map((item, index) => (
+                  {past_medication_history?.map((item, index) => (
                     <tr key={index}>
                       <td>
                         <div className="delete-table-icon">

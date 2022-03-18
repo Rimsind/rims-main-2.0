@@ -6,7 +6,8 @@ import "../public/user_assets/css/style.css";
 import "../public/user_assets/css/main.css";
 import "../public/assets/css/style2.css";
 import "../public/assets/css/style3.css";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import GlobalProvider from "context";
@@ -16,13 +17,17 @@ export default function MyApp({ Component, pageProps }) {
     Component.getLayout ||
     ((page) => (
       <GlobalProvider>
-        <Layout>{page}</Layout>
+        <Layout>
+          {page}
+          <ToastContainer />
+        </Layout>
       </GlobalProvider>
     ));
 
   return getLayout(
     <GlobalProvider>
       <Component {...pageProps} />
+      <ToastContainer />
     </GlobalProvider>
   );
 }

@@ -2,7 +2,7 @@ import AuthLayout from "components/layout/AuthLayout";
 import { useRouter } from "next/router";
 import { useAuth } from "context";
 import useSWR from "swr";
-import { apiUrl } from "config/api";
+import { apiUrl, fetcher } from "config/api";
 import Image from "next/image";
 const AssesmentReport = () => {
   const { id } = useRouter().query;
@@ -20,6 +20,14 @@ const AssesmentReport = () => {
       const result = res.data;
       return result;
     }
+  );
+  const { data: specialty } = useSWR(
+    `${apiUrl}/specialties/${appointment?.doctor?.specialty}`,
+    fetcher
+  );
+  const { data: bloodGroup } = useSWR(
+    `${apiUrl}/blood-groups/${appointment?.patient?.blood_group}`,
+    fetcher
   );
 
   return (
@@ -101,9 +109,7 @@ const AssesmentReport = () => {
                             Material Status :{" "}
                             {appointment?.patient?.marital_status}
                           </p>
-                          <p>
-                            Blood Group : {appointment?.patient?.blood_group}
-                          </p>
+                          <p>Blood Group : {bloodGroup?.name}</p>
                           <p>Date of Birth : {appointment?.patient?.dob}</p>
                           <p>Gender : {appointment?.patient?.gender}</p>
                         </div>
@@ -121,9 +127,7 @@ const AssesmentReport = () => {
                           <p>
                             Qualification: {appointment?.doctor?.qualification}
                           </p>
-                          <p>
-                            Specialization: {appointment?.doctor?.specialty}
-                          </p>
+                          <p>Specialization: {specialty?.name}</p>
                           <p>Clinic Name: {appointment?.polyclinic?.name}</p>
                         </div>
                       </div>

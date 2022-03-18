@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 import { useAuth } from "context";
 import useSWR from "swr";
 import axios from "axios";
-import { apiUrl } from "config/api";
+import { apiUrl, fetcher } from "config/api";
 import Image from "next/image";
 const ExaminationReport = () => {
   const { id } = useRouter().query;
@@ -28,7 +28,16 @@ const ExaminationReport = () => {
       return result;
     }
   );
-  const { doctor, polyclinic, patient } = appointment;
+
+  const { data: specialty } = useSWR(
+    `${apiUrl}/specialties/${appointment?.doctor?.specialty}`,
+    fetcher
+  );
+
+  const { data: bloodGroup } = useSWR(
+    `${apiUrl}/blood-groups/${appointment?.patient?.blood_group}`,
+    fetcher
+  );
   return (
     <>
       <div className="prescription">
@@ -48,7 +57,7 @@ const ExaminationReport = () => {
               <div className="col-md-4">
                 <div className="middle-content">
                   <p className="fs-6 fw-bold text-light">
-                    REHAB INTEGRATED MEDICAL SOLUTIONS
+                    Clinical Examination Report
                   </p>
                 </div>
               </div>
@@ -83,12 +92,15 @@ const ExaminationReport = () => {
               <div className="col-md-4">
                 <div className="header-inner-item text-start">
                   <p className="fs-3 fw-bold fst-italic lh-1">
-                    Dr. {doctor?.firstName} {doctor?.lastName}
+                    Dr. {appointment?.doctor?.firstName}{" "}
+                    {appointment?.doctor?.lastName}
                   </p>
-                  <p className="fs-6 fw-bold lh-1">{doctor?.qualification}</p>
-                  <p className="fs-6 lh-1">{doctor?.specialty}</p>
+                  <p className="fs-6 fw-bold lh-1">
+                    {appointment?.doctor?.qualification}
+                  </p>
+                  <p className="fs-6 lh-1">{specialty?.name}</p>
                   <p className="fs-6 lh-1">Reg. No.-58905 (WBMC)</p>
-                  <p className="fs-6 lh-1">Mob: {doctor?.phone}</p>
+                  <p className="fs-6 lh-1">Mob: {appointment?.doctor?.phone}</p>
                 </div>
               </div>
               <div className="col-md-4">
@@ -105,17 +117,23 @@ const ExaminationReport = () => {
               <div className="col-md-4">
                 <div className="header-inner-item text-end">
                   <p className="fs-3 fw-bold fst-italic lh-1">
-                    {polyclinic?.name}
+                    {appointment?.polyclinic?.name}
                   </p>
                   <p className="fs-6 lh-1">
-                    {polyclinic?.street_address}, {polyclinic?.city}
+                    {appointment?.polyclinic?.street_address},{" "}
+                    {appointment?.polyclinic?.city}
                   </p>
                   <p className="fs-6 lh-1">
-                    {polyclinic?.state}, {polyclinic?.country}, PIN:{" "}
-                    {polyclinic?.pincode}
+                    {appointment?.polyclinic?.state},{" "}
+                    {appointment?.polyclinic?.country}, PIN:{" "}
+                    {appointment?.polyclinic?.pincode}
                   </p>
-                  <p className="fs-6 lh-1">Email : {polyclinic?.email}</p>
-                  <p className="fs-6 lh-1">Mobile No: {polyclinic?.phone}</p>
+                  <p className="fs-6 lh-1">
+                    Email : {appointment?.polyclinic?.email}
+                  </p>
+                  <p className="fs-6 lh-1">
+                    Mobile No: {appointment?.polyclinic?.phone}
+                  </p>
                 </div>
               </div>
             </div>
@@ -131,7 +149,10 @@ const ExaminationReport = () => {
                     <img
                       className="presc-img-profile"
                       alt=""
-                      src={patient?.image?.url || "/assets/images/profile.png"}
+                      src={
+                        appointment?.patient?.image?.url ||
+                        "/assets/images/profile.png"
+                      }
                     />
                   </div>
                   <div className="col-md-8">
@@ -145,7 +166,8 @@ const ExaminationReport = () => {
                             <p className="fs-6 fw-bold text-light lh-1 text-light">
                               Name :
                               <span className="fs-6 fw-light ms-2">
-                                {patient?.first_name} {patient?.last_name}
+                                {appointment?.patient?.first_name}{" "}
+                                {appointment?.patient?.last_name}
                               </span>
                             </p>
                             <p className="fs-6 fw-bold text-light lh-1">
@@ -157,19 +179,19 @@ const ExaminationReport = () => {
                             <p className="fs-6 fw-bold text-light lh-1">
                               Blood Group :
                               <span className="fs-6 fw-light ms-2">
-                                B Positive(+)
+                                {bloodGroup?.name}
                               </span>
                             </p>
                             <p className="fs-6 fw-bold text-light lh-1">
                               Age :
                               <span className="fs-6 fw-light ms-2">
-                                {patient?.age}
+                                {appointment?.patient?.age}
                               </span>
                             </p>
                             <p className="fs-6 fw-bold text-light lh-1">
                               Gender :
                               <span className="fs-6 fw-light ms-2">
-                                {patient?.gender}
+                                {appointment?.patient?.gender}
                               </span>
                             </p>
                           </div>
@@ -214,10 +236,34 @@ const ExaminationReport = () => {
                 </div>
               </div>
             </div>
-            <RehabExamination data={appointment?.rehab} />
-            {/* <MedicineExamination data={appointment} />
-      <OrthoExamination data={appointment} />
-      <NeuroExamination data={appointment} /> */}
+            {specialty?.name === "Neurologist" ? (
+              <>
+                <NeuroExamination data={appointment?.neurology} />
+              </>
+            ) : (
+              <></>
+            )}
+            {specialty?.name === "Orthopedic" ? (
+              <>
+                <OrthoExamination data={appointment?.orthopedic} />
+              </>
+            ) : (
+              <></>
+            )}
+            {specialty?.name === "Rehabilitation" ? (
+              <>
+                <RehabExamination data={appointment?.rehab} />
+              </>
+            ) : (
+              <></>
+            )}
+            {specialty?.name === "Medicine" ? (
+              <>
+                <MedicineExamination data={appointment?.medicine} />
+              </>
+            ) : (
+              <></>
+            )}
           </main>
           <footer className="presc-footer">
             <div className="row align-items-center pt-3 px-3">

@@ -4,7 +4,7 @@ import { apiUrl } from "config/api";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useState } from "react";
-
+import { Slide, toast } from "react-toastify";
 const GeneralInfo = ({ generalInformation, patientId, updated_at }) => {
   const { auth } = useAuth();
   const [loading, setLoading] = useState(false);
@@ -29,11 +29,33 @@ const GeneralInfo = ({ generalInformation, patientId, updated_at }) => {
         },
       });
       const result = res.data;
-      alert("General Information Updated Succesfully");
-      setLoading(false);
+      toast.success("General Information Updated", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+      return result, setLoading(false);
       return result;
     } catch (err) {
       console.log(err.message);
+      toast.error("Something Went Wrong Try Again.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+      setLoading(false);
     }
   };
   return (

@@ -4,6 +4,7 @@ import axios from "axios";
 import Link from "next/link";
 import { useAuth } from "context";
 import { uploadImage } from "utils/uploadImage";
+import { toast, Slide } from "react-toastify";
 const MedicalRecords = ({ upload_medical_record, updated_at, patientId }) => {
   const dataLenght = upload_medical_record?.length;
 
@@ -25,19 +26,46 @@ const MedicalRecords = ({ upload_medical_record, updated_at, patientId }) => {
         },
       ],
     };
-    const response = await axios.put(
-      `${apiUrl}/patients/${patientId}`,
-      payload,
-      {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      }
-    );
-    const result = await response.data;
-    alert("Image uploaded succesfully");
-    setLoading(false);
-    return result;
+    try {
+      const response = await axios.put(
+        `${apiUrl}/patients/${patientId}`,
+        payload,
+        {
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+          },
+        }
+      );
+      const result = await response.data;
+      alert("Image uploaded succesfully");
+      toast.success("Medical Records Updated", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+      setLoading(false);
+      return result;
+    } catch (error) {
+      console.lod(error);
+      toast.error("Something Went Wrong Try Again.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+      setLoading(false);
+    }
   };
   return (
     <>

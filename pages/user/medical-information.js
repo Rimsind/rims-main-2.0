@@ -15,7 +15,7 @@ import { useAuth } from "context";
 import { apiUrl } from "config/api";
 import axios from "axios";
 import { UserPageLoader } from "components/Loaders";
-
+import { withAuth } from "helpers/withAuth";
 const MedicalInformation = () => {
   const { auth } = useAuth();
 
@@ -58,7 +58,13 @@ const MedicalInformation = () => {
                               <a
                                 href="#tab-1"
                                 data-bs-toggle="tab"
-                                className="nav-link active"
+                                className="nav-link active "
+                                style={{
+                                  border: "1px solid #e1e1e1",
+                                  borderBottom: "none",
+                                  borderTopLeftRadius: "5px",
+                                  borderTopRightRadius: "5px",
+                                }}
                               >
                                 Genral Information
                               </a>
@@ -68,6 +74,12 @@ const MedicalInformation = () => {
                                 href="#tab-2"
                                 data-bs-toggle="tab"
                                 className="nav-link"
+                                style={{
+                                  border: "1px solid #e1e1e1",
+                                  borderBottom: "none",
+                                  borderTopLeftRadius: "5px",
+                                  borderTopRightRadius: "5px",
+                                }}
                               >
                                 Social Histroy & Living Environment
                               </a>
@@ -77,6 +89,12 @@ const MedicalInformation = () => {
                                 href="#tab-3"
                                 data-bs-toggle="tab"
                                 className="nav-link"
+                                style={{
+                                  border: "1px solid #e1e1e1",
+                                  borderBottom: "none",
+                                  borderTopLeftRadius: "5px",
+                                  borderTopRightRadius: "5px",
+                                }}
                               >
                                 Employment Status
                               </a>
@@ -86,6 +104,12 @@ const MedicalInformation = () => {
                                 href="#tab-4"
                                 data-bs-toggle="tab"
                                 className="nav-link"
+                                style={{
+                                  border: "1px solid #e1e1e1",
+                                  borderBottom: "none",
+                                  borderTopLeftRadius: "5px",
+                                  borderTopRightRadius: "5px",
+                                }}
                               >
                                 Medical History
                               </a>
@@ -95,6 +119,12 @@ const MedicalInformation = () => {
                                 href="#tab-5"
                                 data-bs-toggle="tab"
                                 className="nav-link"
+                                style={{
+                                  border: "1px solid #e1e1e1",
+                                  borderBottom: "none",
+                                  borderTopLeftRadius: "5px",
+                                  borderTopRightRadius: "5px",
+                                }}
                               >
                                 Functional Status
                               </a>
@@ -104,6 +134,12 @@ const MedicalInformation = () => {
                                 href="#tab-6"
                                 data-bs-toggle="tab"
                                 className="nav-link"
+                                style={{
+                                  border: "1px solid #e1e1e1",
+                                  borderBottom: "none",
+                                  borderTopLeftRadius: "5px",
+                                  borderTopRightRadius: "5px",
+                                }}
                               >
                                 Family Medical History
                               </a>
@@ -113,6 +149,12 @@ const MedicalInformation = () => {
                                 href="#tab-7"
                                 data-bs-toggle="tab"
                                 className="nav-link"
+                                style={{
+                                  border: "1px solid #e1e1e1",
+                                  borderBottom: "none",
+                                  borderTopLeftRadius: "5px",
+                                  borderTopRightRadius: "5px",
+                                }}
                               >
                                 Medical Records
                               </a>
@@ -201,4 +243,4 @@ const MedicalInformation = () => {
   );
 };
 
-export default MedicalInformation;
+export default withAuth(MedicalInformation);

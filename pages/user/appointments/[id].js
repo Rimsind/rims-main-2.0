@@ -8,6 +8,7 @@ import { useAuth } from "context";
 import { UserPageLoader } from "components/Loaders";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { withAuth } from "helpers/withAuth";
 const AppointmentId = () => {
   const { id } = useRouter().query;
   const { auth } = useAuth();
@@ -238,4 +239,4 @@ const AppointmentId = () => {
   );
 };
 
-export default AppointmentId;
+export default withAuth(AppointmentId);
