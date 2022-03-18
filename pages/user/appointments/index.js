@@ -7,7 +7,7 @@ import axios from "axios";
 import { useAuth } from "context";
 import MyAppointments from "components/UserComponents/MyAppointments";
 import { UserPageLoader } from "components/Loaders";
-
+import { withAuth } from "helpers/withAuth";
 const Index = () => {
   const { auth } = useAuth();
 
@@ -104,4 +104,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default withAuth(Index);

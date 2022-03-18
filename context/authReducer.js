@@ -8,6 +8,7 @@ export const authReducer = (state, action) => {
         user: null,
         error: null,
       };
+
     case "LOGIN_SUCCESS":
       return {
         ...state,
@@ -42,6 +43,13 @@ export const authReducer = (state, action) => {
         token: null,
         user: null,
         error: action.payload,
+      };
+    case "AUTH_RESET":
+      return {
+        loading: false,
+        token: null,
+        user: null,
+        error: null,
       };
 
     default:

@@ -23,7 +23,9 @@ import {
 
 const SubjectiveDetails = () => {
   const { id } = useRouter().query;
+
   const { auth } = useAuth();
+
   const { data: appointment } = useSWR(
     `${apiUrl}/appointments/${id}`,
     async (url) => {
@@ -95,8 +97,8 @@ const SubjectiveDetails = () => {
                       <Link
                         href={`/doctors/appointments/clinical-examination?id=${id}`}
                       >
-                        <div className="tablinks diag-inner-content bg-danger pt-4 pb-1 text-center">
-                          <p className="fs-5 fw-bold text-light">
+                        <div className="tablinks diag-inner-content bg-light pt-4 pb-1 text-center border border-dark">
+                          <p className="fs-5 fw-bold text-dark">
                             Clinical Assesment
                           </p>
                         </div>

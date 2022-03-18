@@ -794,7 +794,7 @@ const MedicalHistory = ({ patient }) => {
                     aria-label="Default select example"
                     onChange={(e) => setType(e.target.value)}
                   >
-                    <option selected>Select Types</option>
+                    <option>Select Types</option>
                     <option value="Prescribed">Prescribed</option>
                     <option value="Non-Prescribed">Non-Prescribed</option>
                   </select>
@@ -863,7 +863,7 @@ const MedicalHistory = ({ patient }) => {
                     aria-label="Default select example"
                     onChange={(e) => setStatus(e.target.value)}
                   >
-                    <option selected>Select Status</option>
+                    <option>Select Status</option>
                     <option value="Continue">Continue</option>
                     <option value="End">End</option>
                   </select>
@@ -901,7 +901,7 @@ const MedicalHistory = ({ patient }) => {
                     aria-label="Default select example"
                     onChange={(e) => setRoute(e.target.value)}
                   >
-                    <option selected>Select Route</option>
+                    <option>Select Route</option>
                     <option value="Capsule">Capsule</option>
                     <option value="Injection">Injection</option>
                     <option value="Other Way">Other Way</option>
@@ -920,7 +920,7 @@ const MedicalHistory = ({ patient }) => {
                     aria-label="Default select example"
                     onChange={(e) => setSideEffect(e.target.value)}
                   >
-                    <option selected>Select Effects</option>
+                    <option>Select Effects</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                   </select>

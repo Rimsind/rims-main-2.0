@@ -22,39 +22,57 @@ const GlobalProvider = ({ children }) => {
 
   const router = useRouter();
 
-  const logOut = () => {
-    destroyCookie(null, "user");
-    destroyCookie(null, "token");
+  const logOut = async () => {
+    await destroyCookie(null, "user");
+    await destroyCookie(null, "token");
+    dispatchAuth({ type: "AUTH_RESET" });
     router.push("/");
   };
 
   useEffect(() => {
+    dispatchAuth({ type: "AUTH_LOADING" });
     async function loadUserFromCookies() {
       const { token, user } = parseCookies();
       if (!!token && !!user) {
         auth.token = token;
         auth.user = JSON.parse(user);
+        dispatchAuth({
+          type: "LOGIN_SUCCESS",
+          payload: { token, user: auth.user },
+        });
 
-        // const profileData = async () => {
-        //   const res = await axios.get(
-        //     `${apiUrl}/${user?.role?.name}/${auth?.user?.profileId}`,
-        //     {
-        //       headers: {
-        //         authorization: `Bearer ${auth.token}`,
-        //       },
-        //     }
-        //   );
-        //   const result = await res.data;
-        //   return result;
-        // };
-        // setProfile(profileData);
+        if (auth?.user?.role?.id === 1) {
+          var role = "patients";
+        }
+        if (auth?.user?.role?.id === 3) {
+          var role = "doctors";
+        }
+        if (auth?.user?.role?.id === 6) {
+          var role = "polyclinics";
+        }
+        if (auth?.user?.role?.id === 7) {
+          var role = "nursing-homes";
+        }
+
+        const res = await axios.get(
+          `${apiUrl}/${role}/${auth?.user?.profileId}`,
+          {
+            headers: {
+              authorization: `Bearer ${auth.token}`,
+            },
+          }
+        );
+        const result = await res.data;
+        setProfile(result);
+      } else {
+        dispatchAuth({ type: "LOGIN_FAILED" });
       }
     }
     loadUserFromCookies();
   }, []);
 
   return (
-    <GlobalContext.Provider value={{ auth, dispatchAuth, logOut }}>
+    <GlobalContext.Provider value={{ auth, dispatchAuth, logOut, profile }}>
       {children}
     </GlobalContext.Provider>
   );

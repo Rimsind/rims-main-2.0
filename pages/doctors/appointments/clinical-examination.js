@@ -32,6 +32,7 @@ const ClinicalExamination = () => {
       return result;
     }
   );
+
   const { data: doctor } = useSWR(
     `${apiUrl}/doctors/${auth.user?.profileId}`,
     async (url) => {
@@ -92,10 +93,10 @@ const ClinicalExamination = () => {
                         href={`/doctors/appointments/subjective-details?id=${id}`}
                       >
                         <div
-                          className="tablinks diag-inner-content bg-danger pt-4 pb-1 text-center "
+                          className="tablinks diag-inner-content bg-light pt-4 pb-1 text-center border border-dark "
                           id="defaultOpen"
                         >
-                          <p className="fs-5 fw-bold text-light">
+                          <p className="fs-5 fw-bold text-dark">
                             Subjective Informtion
                           </p>
                         </div>

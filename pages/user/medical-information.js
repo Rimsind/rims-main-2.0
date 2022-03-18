@@ -15,7 +15,7 @@ import { useAuth } from "context";
 import { apiUrl } from "config/api";
 import axios from "axios";
 import { UserPageLoader } from "components/Loaders";
-
+import { withAuth } from "helpers/withAuth";
 const MedicalInformation = () => {
   const { auth } = useAuth();
 
@@ -243,4 +243,4 @@ const MedicalInformation = () => {
   );
 };
 
-export default MedicalInformation;
+export default withAuth(MedicalInformation);

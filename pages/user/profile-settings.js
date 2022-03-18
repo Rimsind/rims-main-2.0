@@ -6,7 +6,7 @@ import useSWR from "swr";
 import { ProfileInfo, ProfilePicture, AddressInfo } from "components/forms";
 import { useAuth } from "context";
 import { UserPageLoader } from "components/Loaders";
-
+import { withAuth } from "helpers/withAuth";
 const ProfileSettings = () => {
   const { auth } = useAuth();
 
@@ -58,4 +58,4 @@ const ProfileSettings = () => {
   );
 };
 
-export default ProfileSettings;
+export default withAuth(ProfileSettings);

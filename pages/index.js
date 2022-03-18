@@ -15,7 +15,10 @@ import Link from "next/link";
 import Slider from "react-slick";
 // import Script from "next/script";
 import { SliderCardLoader, SpecialtyLoader } from "components/Loaders";
+import { useAuth } from "context";
 const Index = () => {
+  const { auth, profile } = useAuth();
+  console.log(auth, "auth");
   const { data: banners } = useSWR(`${apiUrl}/banners`, fetcher);
   const { data: specialties } = useSWR(`${apiUrl}/specialties`, fetcher);
   const { data: doctors } = useSWR(`${apiUrl}/doctors`, fetcher);

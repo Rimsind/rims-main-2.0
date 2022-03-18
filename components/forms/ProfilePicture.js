@@ -24,14 +24,30 @@ const ProfilePicture = ({ data }) => {
   }
 
   const [loading, setLoading] = useState(false);
-
+  const [previewImage, setPreviewImage] = useState(null);
   const [profileImage, setProfileImage] = useState();
+  const [error, setError] = useState(false);
+  const imageHandler = (e) => {
+    const selected = e.target.files[0];
+    setProfileImage(e.target.files[0]);
+    const ALLOWED_TYPES = ["image/png", "image/jpeg", "image/jpg"];
+    if (selected && ALLOWED_TYPES.includes(selected.type)) {
+      setError(false);
+      let reader = new FileReader();
+      reader.onloadend = () => {
+        setPreviewImage(reader.result);
+      };
+      reader.readAsDataURL(selected);
+    } else {
+      setError(true);
+    }
+  };
 
   const uploadProfileImage = async () => {
     setLoading(true);
     try {
       const image = await uploadImage(profileImage, auth.token);
-
+      console.log(image);
       const payload = {
         image,
       };
@@ -85,28 +101,22 @@ const ProfilePicture = ({ data }) => {
                     <Image
                       height="100"
                       width="100"
-                      src={
-                        data?.image?.url ||
-                        data?.coverImage?.url ||
-                        "/assets/images/profile.png"
-                      }
+                      src={previewImage || "/assets/images/profile.png"}
                       alt="User Image"
                     />
                   </div>
                   <div className="upload-img">
-                    <div className="change-photo-btn">
-                      <span>
-                        <i className="fa fa-upload"></i> Upload Photo
-                      </span>
-                      <input
-                        type="file"
-                        className="upload"
-                        onChange={(e) => setProfileImage(e.target.files[0])}
-                      />
-                    </div>
-                    <small className="form-text text-muted">
-                      Allowed JPG, GIF or PNG. Max size of 2MB
-                    </small>
+                    <input
+                      type="file"
+                      className="upload form-control"
+                      onChange={imageHandler}
+                    />
+
+                    {!!error === true && (
+                      <small className="form-text text-danger">
+                        Allowed JPG, JPEG or PNG. Max size of 2MB
+                      </small>
+                    )}
                   </div>
                 </div>
 
