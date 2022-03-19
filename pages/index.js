@@ -59,7 +59,10 @@ const Index = () => {
           ))}
         </Slider>
 
-        <section className="category-sec">
+        <section
+          className="category-sec"
+          style={{ marginTop: "-105px", background: "#f0f0f5" }}
+        >
           <div className="container">
             <div className="row">
               <div className="col-md-4">
