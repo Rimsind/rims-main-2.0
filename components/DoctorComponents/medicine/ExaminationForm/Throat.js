@@ -131,9 +131,11 @@ const Throat = ({ data, appointmentId }) => {
           </tbody>
         </table>
       </div>
-      <button onClick={submitForm} className="mt-3">
-        Save Changes
-      </button>
+      <div className="medicine-save-btn text-center">
+        <button className="btn btn-primary mt-3" onClick={submitForm}>
+          Save Changes
+        </button>
+      </div>
     </>
   );
 };
