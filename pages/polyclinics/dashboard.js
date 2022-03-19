@@ -6,7 +6,7 @@ import axios from "axios";
 import { PolyclinicSideBar } from "components/common";
 const Dashboard = () => {
   const { auth } = useAuth();
-
+  console.log(auth);
   const { data } = useSWR(
     `${apiUrl}/polyclinics/${auth?.user?.profileId}`,
     async (url) => {
@@ -19,6 +19,7 @@ const Dashboard = () => {
       return result;
     }
   );
+ 
 
   return (
     <>
