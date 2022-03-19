@@ -136,7 +136,11 @@ const Psychological = ({ data, appointmentId }) => {
             </table>
           </div>
         </div>
-        <button onClick={submitForm}>Save Changes</button>
+        <div className="medicine-save-btn text-center">
+          <button className="btn btn-primary mt-3" onClick={submitForm}>
+            Save Changes
+          </button>
+        </div>
       </div>
     </>
   );

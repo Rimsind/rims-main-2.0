@@ -87,15 +87,15 @@ const Form6 = ({ appointmentId }) => {
   };
   return (
     <>
-      <div className="general-information-form relative p-6 flex-auto">
+      <div className="general-information-form relative p-6 flex-auto mt-3">
         <div className="max-w-6xl mx-auto md:py-10">
           <div className="space-y-5 border-2 p-10 rounded">
             <div className="space-y-2 pb-5">
               <form onSubmit={handleSubmit(submit_form6)}>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-6">
-                      <h3>
+                      <h3 className="fs-6">
                         Deep Tendon Reflex And Supercial Reflex Examination
                       </h3>
                     </div>
@@ -117,18 +117,18 @@ const Form6 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <p className="fs-5 fw-bpld mt-4 mb-4">
                     Samatosensory Assessment:
                   </p>
                   <div className="row align-items-center">
                     <div className="col-md-6">
-                      <h3>Discriminative Touch</h3>
+                      <h3 className="fs-6">Discriminative Touch</h3>
                     </div>
                     <div className="col-md-6">
                       <div className="row">
                         <div className="col-md-6">
-                          <h3>Touch Awareness</h3>
+                          <h3 className="fs-6">Touch Awareness</h3>
                         </div>
                         <div className="col-md-6">
                           <div className="row">
@@ -182,7 +182,7 @@ const Form6 = ({ appointmentId }) => {
 
                       <div className="row">
                         <div className="col-md-6">
-                          <h3>Touch Localization</h3>
+                          <h3 className="fs-6">Touch Localization</h3>
                         </div>
                         <div className="col-md-6">
                           <div className="row">
@@ -235,7 +235,7 @@ const Form6 = ({ appointmentId }) => {
                       </div>
                       <div className="row">
                         <div className="col-md-6">
-                          <h3>Touch Pressure Threshold</h3>
+                          <h3 className="fs-6">Touch Pressure Threshold</h3>
                         </div>
                         <div className="col-md-6">
                           <div className="row">
@@ -288,7 +288,7 @@ const Form6 = ({ appointmentId }) => {
                       </div>
                       <div className="row">
                         <div className="col-md-6">
-                          <h3>Two point discrimination</h3>
+                          <h3 className="fs-6">Two point discrimination</h3>
                         </div>
                         <div className="col-md-6">
                           <div className="row">
@@ -342,15 +342,15 @@ const Form6 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row align-items-center">
                     <div className="col-md-6">
-                      <h3>Plain</h3>
+                      <h3 className="fs-6">Plain</h3>
                     </div>
                     <div className="col-md-6">
                       <div className="row">
                         <div className="col-md-6">
-                          <h3>Sharp</h3>
+                          <h3 className="fs-6">Sharp</h3>
                         </div>
                         <div className="col-md-6">
                           <div className="row">
@@ -403,7 +403,7 @@ const Form6 = ({ appointmentId }) => {
                       </div>
                       <div className="row">
                         <div className="col-md-6">
-                          <h3>Dull</h3>
+                          <h3 className="fs-6">Dull</h3>
                         </div>
                         <div className="col-md-6">
                           <div className="row">
@@ -457,15 +457,15 @@ const Form6 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row align-items-center">
                     <div className="col-md-6">
-                      <h3>Proprioception</h3>
+                      <h3 className="fs-6">Proprioception</h3>
                     </div>
                     <div className="col-md-6">
                       <div className="row">
                         <div className="col-md-6">
-                          <h3>Vibration</h3>
+                          <h3 className="fs-6">Vibration</h3>
                         </div>
                         <div className="col-md-6">
                           <div className="row">
@@ -518,7 +518,7 @@ const Form6 = ({ appointmentId }) => {
                       </div>
                       <div className="row">
                         <div className="col-md-6">
-                          <h3>Joint Position</h3>
+                          <h3 className="fs-6">Joint Position</h3>
                         </div>
                         <div className="col-md-6">
                           <div className="row">
@@ -571,7 +571,7 @@ const Form6 = ({ appointmentId }) => {
                       </div>
                       <div className="row">
                         <div className="col-md-6">
-                          <h3>Joint Motion</h3>
+                          <h3 className="fs-6">Joint Motion</h3>
                         </div>
                         <div className="col-md-6">
                           <div className="row">
@@ -624,7 +624,7 @@ const Form6 = ({ appointmentId }) => {
                       </div>
                       <div className="row">
                         <div className="col-md-6">
-                          <h3>Stereognosis</h3>
+                          <h3 className="fs-6">Stereognosis</h3>
                         </div>
                         <div className="col-md-6">
                           <div className="row">
@@ -678,15 +678,15 @@ const Form6 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row align-items-center">
                     <div className="col-md-6">
-                      <h3>Temperature</h3>
+                      <h3 className="fs-6">Temperature</h3>
                     </div>
                     <div className="col-md-6">
                       <div className="row">
                         <div className="col-md-6">
-                          <h3>Hot</h3>
+                          <h3 className="fs-6">Hot</h3>
                         </div>
                         <div className="col-md-6">
                           <div className="row">
@@ -739,7 +739,7 @@ const Form6 = ({ appointmentId }) => {
                       </div>
                       <div className="row">
                         <div className="col-md-6">
-                          <h3>Cold</h3>
+                          <h3 className="fs-6">Cold</h3>
                         </div>
                         <div className="col-md-6">
                           <div className="row">
@@ -793,10 +793,10 @@ const Form6 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Identified Problems</h3>
+                      <h3 className="fs-6">Identified Problems</h3>
                     </div>
                     <div className="col-md-9">
                       <textarea
@@ -816,10 +816,10 @@ const Form6 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Short Term Goals </h3>
+                      <h3 className="fs-6">Short Term Goals </h3>
                     </div>
                     <div className="col-md-9">
                       <textarea
@@ -838,10 +838,10 @@ const Form6 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Long Term Goals </h3>
+                      <h3 className="fs-6">Long Term Goals </h3>
                     </div>
                     <div className="col-md-9">
                       <textarea
@@ -860,10 +860,10 @@ const Form6 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Treatment Plan </h3>
+                      <h3 className="fs-6">Treatment Plan </h3>
                     </div>
                     <div className="col-md-9">
                       <textarea

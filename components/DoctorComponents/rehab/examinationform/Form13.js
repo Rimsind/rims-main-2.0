@@ -122,16 +122,15 @@ const Form13 = ({ appointmentId }) => {
   };
   return (
     <>
-      {" "}
-      <div className="general-information-form relative p-6 flex-auto">
+      <div className="general-information-form relative p-6 flex-auto mt-3">
         <div className="max-w-6xl mx-auto md:py-10">
           <div className="space-y-5 border-2 p-10 rounded">
             <div className="space-y-2 pb-5">
               <form onSubmit={handleSubmit(submit_form13)}>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-3">
-                      <h3>ENVIRONMENTAL BARRIERS</h3>
+                      <h3 className="fs-6">ENVIRONMENTAL BARRIERS</h3>
                     </div>
                     <div className="col-md-3">
                       <select
@@ -171,7 +170,7 @@ const Form13 = ({ appointmentId }) => {
                       </select>
                     </div>
                     <div className="col-md-3">
-                      <h3>FACILITATORS ASSESSMNET</h3>
+                      <h3 className="fs-6">FACILITATORS ASSESSMNET</h3>
                     </div>
                     <div className="col-md-3">
                       <select
@@ -216,11 +215,13 @@ const Form13 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-1"></div>
                     <div className="col-md-4">
-                      <h3>Individual attitudes of immediate family members</h3>
+                      <h3 className="fs-6">
+                        Individual attitudes of immediate family members
+                      </h3>
                     </div>
                     <div className="col-md-7">
                       <input
@@ -242,11 +243,11 @@ const Form13 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-1"></div>
                     <div className="col-md-4">
-                      <h3>Individual attitudes of friends</h3>
+                      <h3 className="fs-6">Individual attitudes of friends</h3>
                     </div>
                     <div className="col-md-7">
                       <input
@@ -267,11 +268,11 @@ const Form13 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-1"></div>
                     <div className="col-md-4">
-                      <h3>
+                      <h3 className="fs-6">
                         Individual attitudes of personal care providers and
                       </h3>
                     </div>
@@ -295,11 +296,11 @@ const Form13 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-1"></div>
                     <div className="col-md-4">
-                      <h3>personal assistants</h3>
+                      <h3 className="fs-6">personal assistants</h3>
                     </div>
                     <div className="col-md-7">
                       <input
@@ -321,11 +322,13 @@ const Form13 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-1"></div>
                     <div className="col-md-4">
-                      <h3>Individual attitudes of health professionals</h3>
+                      <h3 className="fs-6">
+                        Individual attitudes of health professionals
+                      </h3>
                     </div>
                     <div className="col-md-7">
                       <input
@@ -347,11 +350,11 @@ const Form13 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-1"></div>
                     <div className="col-md-4">
-                      <h3>Societal attitudes</h3>
+                      <h3 className="fs-6">Societal attitudes</h3>
                     </div>
                     <div className="col-md-7">
                       <input
@@ -373,11 +376,13 @@ const Form13 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-1"></div>
                     <div className="col-md-4">
-                      <h3>Social norms, practices and ideologies</h3>
+                      <h3 className="fs-6">
+                        Social norms, practices and ideologies
+                      </h3>
                     </div>
                     <div className="col-md-7">
                       <input
@@ -399,156 +404,145 @@ const Form13 = ({ appointmentId }) => {
                   </div>
                 </div>
 
-                <div className="space-y-2 pb-5">
-                  <div className="gen-form-upper row">
-                    <div className="col-md-12">
-                      <div className="text-center pb-6">
-                        <h3 className="general-information-form-title font-bold">
-                          HOME AND WORK BARRIER ASSESSMNET
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="gen-form">
-                      <div className="row justify-content-between align-items-start">
-                        {workBarrierList.map((items, index) => (
-                          <div className="col-md-3" key={index}>
-                            <div className="row">
-                              <div className="col-md-2">
-                                <input
-                                  className="form-check-input"
-                                  type="checkbox"
-                                  value={items}
-                                  {...register("home_work_barrier")}
-                                  defaultChecked={
-                                    !!appointment?.rehab
-                                      ?.environmental_barrier_assessmnet &&
-                                    makeArrfromString(
-                                      appointment?.rehab
-                                        ?.environmental_barrier_assessmnet
-                                        .home_work_barrier
-                                    )?.includes(items)
-                                  }
-                                />
-                              </div>
-                              <div className="col-md-10">
-                                <p className="space-x-4">{items}</p>
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                <div className="text-center py-4">
+                  <h3 className="general-information-form-title font-bold">
+                    HOME AND WORK BARRIER ASSESSMNET
+                  </h3>
+                </div>
 
-                    <div className="gen-form">
-                      <div className="row justify-centent-between align-items-center">
-                        <div className="col-md-3">
-                          <h3>Identified Problems</h3>
+                <div className="gen-form mb-3">
+                  <div className="row justify-content-between align-items-start">
+                    {workBarrierList.map((items, index) => (
+                      <div className="col-md-3" key={index}>
+                        <div className="row">
+                          <div className="col-md-2">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value={items}
+                              {...register("home_work_barrier")}
+                              defaultChecked={
+                                !!appointment?.rehab
+                                  ?.environmental_barrier_assessmnet &&
+                                makeArrfromString(
+                                  appointment?.rehab
+                                    ?.environmental_barrier_assessmnet
+                                    .home_work_barrier
+                                )?.includes(items)
+                              }
+                            />
+                          </div>
+                          <div className="col-md-10">
+                            <p className="space-x-4">{items}</p>
+                          </div>
                         </div>
-                        <div className="col-md-9">
-                          <textarea
-                            className="form-control"
-                            rows="3"
-                            placeholder="Describe your problems here"
-                            {...register("identified_problems")}
-                            defaultValue={
-                              !!appointment?.rehab
-                                ?.environmental_barrier_assessmnet &&
-                              !!appointment?.rehab
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="gen-form mb-3">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3 className="fs-6">Identified Problems</h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        rows="3"
+                        placeholder="Describe your problems here"
+                        {...register("identified_problems")}
+                        defaultValue={
+                          !!appointment?.rehab
+                            ?.environmental_barrier_assessmnet &&
+                          !!appointment?.rehab?.environmental_barrier_assessmnet
+                            .identified_problems
+                            ? appointment?.rehab
                                 ?.environmental_barrier_assessmnet
                                 .identified_problems
-                                ? appointment?.rehab
-                                    ?.environmental_barrier_assessmnet
-                                    .identified_problems
-                                : ""
-                            }
-                          ></textarea>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="gen-form">
-                      <div className="row justify-centent-between align-items-center">
-                        <div className="col-md-3">
-                          <h3>Short Term Goals </h3>
-                        </div>
-                        <div className="col-md-9">
-                          <textarea
-                            className="form-control"
-                            placeholder="Describe your problems here"
-                            {...register("short_term_goals")}
-                            defaultValue={
-                              !!appointment?.rehab
-                                ?.environmental_barrier_assessmnet &&
-                              !!appointment?.rehab
-                                ?.environmental_barrier_assessmnet
-                                .short_term_goals
-                                ? appointment?.rehab
-                                    ?.environmental_barrier_assessmnet
-                                    .short_term_goals
-                                : ""
-                            }
-                          ></textarea>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="gen-form">
-                      <div className="row justify-centent-between align-items-center">
-                        <div className="col-md-3">
-                          <h3>Long Term Goals </h3>
-                        </div>
-                        <div className="col-md-9">
-                          <textarea
-                            className="form-control"
-                            placeholder="Describe your problems here"
-                            {...register("long_term_goals")}
-                            defaultValue={
-                              !!appointment?.rehab
-                                ?.environmental_barrier_assessmnet &&
-                              !!appointment?.rehab
-                                ?.environmental_barrier_assessmnet
-                                .long_term_goals
-                                ? appointment?.rehab
-                                    ?.environmental_barrier_assessmnet
-                                    .long_term_goals
-                                : ""
-                            }
-                          ></textarea>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="gen-form">
-                      <div className="row justify-centent-between align-items-center">
-                        <div className="col-md-3">
-                          <h3>Treatment Plan </h3>
-                        </div>
-                        <div className="col-md-9">
-                          <textarea
-                            className="form-control"
-                            rows="3"
-                            placeholder="Describe your problems here"
-                            {...register("treatment_plans")}
-                            defaultValue={
-                              !!appointment?.rehab
-                                ?.environmental_barrier_assessmnet &&
-                              !!appointment?.rehab
-                                ?.environmental_barrier_assessmnet
-                                .treatment_plans
-                                ? appointment?.rehab
-                                    ?.environmental_barrier_assessmnet
-                                    .treatment_plans
-                                : ""
-                            }
-                          ></textarea>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="submit-btn mt-2 text-center">
-                      <button className="btn btn-primary" type="submit">
-                        Save Changes
-                      </button>
+                            : ""
+                        }
+                      ></textarea>
                     </div>
                   </div>
+                </div>
+                <div className="gen-form mb-3">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3 className="fs-6">Short Term Goals </h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        placeholder="Describe your problems here"
+                        {...register("short_term_goals")}
+                        defaultValue={
+                          !!appointment?.rehab
+                            ?.environmental_barrier_assessmnet &&
+                          !!appointment?.rehab?.environmental_barrier_assessmnet
+                            .short_term_goals
+                            ? appointment?.rehab
+                                ?.environmental_barrier_assessmnet
+                                .short_term_goals
+                            : ""
+                        }
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="gen-form mb-3">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3 className="fs-6">Long Term Goals </h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        placeholder="Describe your problems here"
+                        {...register("long_term_goals")}
+                        defaultValue={
+                          !!appointment?.rehab
+                            ?.environmental_barrier_assessmnet &&
+                          !!appointment?.rehab?.environmental_barrier_assessmnet
+                            .long_term_goals
+                            ? appointment?.rehab
+                                ?.environmental_barrier_assessmnet
+                                .long_term_goals
+                            : ""
+                        }
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="gen-form mb-3">
+                  <div className="row justify-centent-between align-items-center">
+                    <div className="col-md-3">
+                      <h3 className="fs-6">Treatment Plan </h3>
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="form-control"
+                        rows="3"
+                        placeholder="Describe your problems here"
+                        {...register("treatment_plans")}
+                        defaultValue={
+                          !!appointment?.rehab
+                            ?.environmental_barrier_assessmnet &&
+                          !!appointment?.rehab?.environmental_barrier_assessmnet
+                            .treatment_plans
+                            ? appointment?.rehab
+                                ?.environmental_barrier_assessmnet
+                                .treatment_plans
+                            : ""
+                        }
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div className="submit-btn mt-2 text-center">
+                  <button className="btn btn-primary" type="submit">
+                    Save Changes
+                  </button>
                 </div>
               </form>
             </div>

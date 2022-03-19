@@ -379,9 +379,9 @@ const Prescription = ({ appointmentId }) => {
   return (
     <>
       <div className="general-information-form">
-        <div className="gen-form">
+        <div className="gen-form border-bottom border-2 border-dark py-4">
           <div className="row align-items-start">
-            <div className="col-6">
+            <div className="col-6 border-end border-2">
               <p className="fs-5 fw-bold">Medical Diagnosis</p>
               <div className="rfa-gen-form-data-table mt-4 bg-white p-2 rounded-3">
                 <table className="table table-striped">
@@ -436,7 +436,7 @@ const Prescription = ({ appointmentId }) => {
           </div>
         </div>
 
-        <div className="gen-form">
+        <div className="gen-form border-bottom border-2 border-dark py-4">
           <p className="fs-5 fw-bold">Medicine</p>
           <div className="row justify-content-between align-items-end mt-3">
             <div className="col-md-4">
@@ -543,7 +543,7 @@ const Prescription = ({ appointmentId }) => {
             </div>
           </div>
         </div>
-        <div className="rfa-gen-form-data-table mt-4 bg-white p-2 rounded-3">
+        <div className="rfa-gen-form-data-table mt-4 bg-white p-2 rounded-3 border-bottom border-2 border-dark py-4">
           <table className="table table-striped">
             <thead className="bg-info">
               <tr>
@@ -594,9 +594,9 @@ const Prescription = ({ appointmentId }) => {
             </tbody>
           </table>
         </div>
-        <div className="gen-form mt-3">
+        <div className="gen-form mt-3 border-bottom border-2 border-dark py-4">
           <div className="row align-items-center mt-3">
-            <div className="col-md-6">
+            <div className="col-md-6 border-end border-2">
               <p className="fs-5 fw-bold">Test</p>
               <div className="row align-items-end">
                 <div className="col-4">
@@ -738,9 +738,9 @@ const Prescription = ({ appointmentId }) => {
           </div>
         </div>
 
-        <div className="gen-form mt-3">
+        <div className="gen-form mt-3 border-bottom border-2 border-dark py-4">
           <div className="row align-items-center mt-3">
-            <div className="col-md-6">
+            <div className="col-md-6 border-end border-2">
               <p className="fs-5 fw-bold">Food & Fluid Restriction</p>
               <div className="row align-items-end">
                 <div className="col-4">
@@ -875,7 +875,7 @@ const Prescription = ({ appointmentId }) => {
 
         <div className="gen-form mt-3">
           <div className="row align-items-center mt-3">
-            <div className="col-md-6">
+            <div className="col-md-6 border-end border-2">
               <p className="fs-5 fw-bold">Other Treatment Referral</p>
               <div className="row align-items-end">
                 <div className="col-4">

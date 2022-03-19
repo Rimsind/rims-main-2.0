@@ -125,16 +125,16 @@ const Form1 = ({ appointmentId }) => {
   };
   return (
     <>
-      <div className="general-information-form relative p-6 flex-auto">
+      <div className="general-information-form relative p-6 flex-auto mt-3">
         <div className="max-w-6xl mx-auto md:py-10">
           <div className="space-y-5 border-2 p-10 rounded">
             <div className="space-y-2 pb-5">
               <form onSubmit={handleSubmit(submit_form1)}>
                 <div>
-                  <div className="gen-form">
+                  <div className="gen-form mb-3">
                     <div className="row align-items-start mb-3">
                       <div className="col-md-9">
-                        <h3>
+                        <h3 className="fs-6 fw-bold">
                           Aerobic capacity during bed mobility (modified borg
                           RPE scale)
                         </h3>
@@ -185,7 +185,7 @@ const Form1 = ({ appointmentId }) => {
                     </div>
                     <div className="row justify-content-between align-items-start mb-3">
                       <div className="col-md-9">
-                        <h3>
+                        <h3 className="fs-6 fw-bold">
                           Aerobic capacity during transfer task (modified borg
                           RPE scale)
                         </h3>
@@ -236,7 +236,7 @@ const Form1 = ({ appointmentId }) => {
                     </div>
                     <div className="row justify-content-between align-items-start mb-3">
                       <div className="col-md-9">
-                        <h3>
+                        <h3 className="fs-6 fw-bold">
                           Aerobic capacity during Ambulation task (modified borg
                           RPE scale)
                         </h3>
@@ -286,10 +286,10 @@ const Form1 = ({ appointmentId }) => {
                       </div>
                     </div>
                   </div>
-                  <div className="gen-form">
+                  <div className="gen-form mb-3">
                     <div className="row justify-content-between align-items-start">
                       <div className="col-md-7">
-                        <h3>
+                        <h3 className="fs-6 fw-bold">
                           Aerobic Capacity during standarized test includes
                         </h3>
                       </div>
@@ -379,10 +379,10 @@ const Form1 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-center mb-4">
                     <div className="col-md-12">
-                      <h3>
+                      <h3 className="fs-6 fw-bold">
                         Cardiovascular and pulmonary signs and symptoms related
                         to increase oxygen demand
                       </h3>
@@ -861,10 +861,10 @@ const Form1 = ({ appointmentId }) => {
                   </div>
                 </div>
 
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Identified Problems</h3>
+                      <h3 className="fs-6 fw-bold">Identified Problems</h3>
                     </div>
                     <div className="col-md-9">
                       <textarea
@@ -884,10 +884,10 @@ const Form1 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Short Term Goals </h3>
+                      <h3 className="fs-6 fw-bold">Short Term Goals </h3>
                     </div>
                     <div className="col-md-9">
                       <div className="row">
@@ -1170,10 +1170,10 @@ const Form1 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Long Term Goals </h3>
+                      <h3 className="fs-6 fw-bold">Long Term Goals </h3>
                     </div>
                     <div className="col-md-9">
                       <div className="row">
@@ -1456,13 +1456,13 @@ const Form1 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Treatment Plan </h3>
+                      <h3 className="fs-6 fw-bold">Treatment Plan </h3>
                     </div>
                     <div className="col-md-9">
-                      <div className="row align-items-center">
+                      <div className="row align-items-start">
                         <div className="col-md-2">
                           <label className="mb-3 fs-6 fw-bold">
                             Aerobic capacity retraining for

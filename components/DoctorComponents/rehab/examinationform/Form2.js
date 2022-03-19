@@ -85,16 +85,18 @@ const Form2 = ({ appointmentId }) => {
   };
   return (
     <>
-      <div className="general-information-form relative p-6 flex-auto">
+      <div className="general-information-form relative p-6 flex-auto mt-3">
         <div className="max-w-6xl mx-auto md:py-10">
           <div className="space-y-5 border-2 p-10 rounded">
             <div className="space-y-2 pb-5">
               <form onSubmit={handleSubmit(submit_form2)}>
-                <div className="gen-form">
-                  <h3>Body composition assessment includes</h3>
+                <div className="gen-form mb-3">
+                  <h3 className="fs-6 fw-bold">
+                    Body composition assessment includes
+                  </h3>
                   <div className="row align-items-center mb-3">
                     <div className="col-md-4">
-                      <h3>Body Mass Index</h3>
+                      <h3 className="fs-6 fw-bold">Body Mass Index</h3>
                     </div>
                     <div className="col-md-8">
                       <div className="row mt-3">
@@ -163,7 +165,7 @@ const Form2 = ({ appointmentId }) => {
                   </div>
                   <div className="row align-items-center mb-3">
                     <div className="col-md-4">
-                      <h3>Impedence Measurement</h3>
+                      <h3 className="fs-6 fw-bold">Impedence Measurement</h3>
                     </div>
                     <div className="col-md-8">
                       <input
@@ -182,7 +184,9 @@ const Form2 = ({ appointmentId }) => {
                   </div>
                   <div className="row align-items-center mb-3">
                     <div className="col-md-4">
-                      <h3>Skin Fold Thickness Measurement</h3>
+                      <h3 className="fs-6 fw-bold">
+                        Skin Fold Thickness Measurement
+                      </h3>
                     </div>
                     <div className="col-md-8">
                       <input
@@ -200,12 +204,12 @@ const Form2 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
-                  <h3>Body Dimension Includes</h3>
+                <div className="gen-form mb-3">
+                  <h3 className="fs-6 fw-bold">Body Dimension Includes</h3>
 
                   <div className="row align-items-center mb-3">
                     <div className="col-md-4">
-                      <h3>Girth Measurement </h3>
+                      <h3 className="fs-6 fw-bold">Girth Measurement </h3>
                     </div>
                     <div className="col-md-8">
                       <input
@@ -226,7 +230,7 @@ const Form2 = ({ appointmentId }) => {
                   </div>
                   <div className="row align-items-center mb-3">
                     <div className="col-md-4">
-                      <h3>Length Measurement</h3>
+                      <h3 className="fs-6 fw-bold">Length Measurement</h3>
                     </div>
                     <div className="col-md-8">
                       <input
@@ -247,10 +251,12 @@ const Form2 = ({ appointmentId }) => {
                   </div>
                 </div>
 
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row align-items-start">
                     <div className="col-md-4">
-                      <h3>Edema Measurement includes</h3>
+                      <h3 className="fs-6 fw-bold">
+                        Edema Measurement includes
+                      </h3>
                     </div>
                     <div className="col-md-8">
                       <div className="row mb-3">
@@ -341,10 +347,10 @@ const Form2 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Identified Problems</h3>
+                      <h3 className="fs-6 fw-bold">Identified Problems</h3>
                     </div>
                     <div className="col-md-9">
                       <textarea
@@ -364,10 +370,10 @@ const Form2 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Short Term Goals </h3>
+                      <h3 className="fs-6 fw-bold">Short Term Goals </h3>
                     </div>
                     <div className="col-md-9">
                       <textarea
@@ -385,10 +391,10 @@ const Form2 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Long Term Goals </h3>
+                      <h3 className="fs-6 fw-bold">Long Term Goals </h3>
                     </div>
                     <div className="col-md-9">
                       <textarea
@@ -405,10 +411,10 @@ const Form2 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Treatment Plan </h3>
+                      <h3 className="fs-6 fw-bold">Treatment Plan </h3>
                     </div>
                     <div className="col-md-9">
                       <textarea

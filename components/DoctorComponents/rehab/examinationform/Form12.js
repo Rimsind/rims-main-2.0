@@ -104,15 +104,15 @@ const Form12 = ({ appointmentId }) => {
   };
   return (
     <>
-      <div className="general-information-form relative p-6 flex-auto">
+      <div className="general-information-form relative p-6 flex-auto mt-3">
         <div className="max-w-6xl mx-auto md:py-10">
           <div className="space-y-5 border-2 p-10 rounded">
             <div className="space-y-2 pb-5">
               <form onSubmit={handleSubmit(submit_form12)}>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-6">
-                      <h3>ONSET OF PAIN</h3>
+                      <h3 className="fs-6">ONSET OF PAIN</h3>
                     </div>
                     <div className="col-md-3">
                       <div className="row">
@@ -157,10 +157,10 @@ const Form12 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-4">
-                      <h3>LOCATION OF PAIN</h3>
+                      <h3 className="fs-6">LOCATION OF PAIN</h3>
                     </div>
                     <div className="col-md-8">
                       <input
@@ -179,11 +179,11 @@ const Form12 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
-                  <h3 className="mt-4 mb-4">Description of Pain:</h3>
+                <div className="gen-form mb-3">
+                  <h3 className="fs-6 mt-4 mb-4">Description of Pain:</h3>
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-4">
-                      <h3>Vascular</h3>
+                      <h3 className="fs-6">Vascular</h3>
                     </div>
                     <div className="col-md-8">
                       <div className="row">
@@ -275,11 +275,11 @@ const Form12 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
-                  <h3 className="mt-4 mb-4">Description of Pain:</h3>
+                <div className="gen-form mb-3">
+                  <h3 className="fs-6 mt-4 mb-4">Description of Pain:</h3>
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-4">
-                      <h3>Neurogenic</h3>
+                      <h3 className="fs-6">Neurogenic</h3>
                     </div>
                     <div className="col-md-8">
                       <div className="row">
@@ -551,11 +551,11 @@ const Form12 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
-                  <h3 className="mt-4 mb-4">Description of Pain:</h3>
+                <div className="gen-form mb-3">
+                  <h3 className="fs-6 mt-4 mb-4">Description of Pain:</h3>
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-4">
-                      <h3>Musculoskeletal</h3>
+                      <h3 className="fs-6">Musculoskeletal</h3>
                     </div>
                     <div className="col-md-8">
                       <div className="row">
@@ -674,11 +674,11 @@ const Form12 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
-                  <h3 className="mt-4 mb-4">Description of Pain:</h3>
+                <div className="gen-form mb-3">
+                  <h3 className="fs-6 mt-4 mb-4">Description of Pain:</h3>
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-4">
-                      <h3>Emotional</h3>
+                      <h3 className="fs-6">Emotional</h3>
                     </div>
                     <div className="col-md-8">
                       <div className="row">
@@ -972,12 +972,12 @@ const Form12 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
-                    <div className="col-md-6">
-                      <h3>TYPE OF PAIN</h3>
+                    <div className="col-md-4">
+                      <h3 className="fs-6">TYPE OF PAIN</h3>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-8">
                       <div className="row">
                         <div className="col-md-4">
                           <div className="row">
@@ -1043,14 +1043,14 @@ const Form12 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
-                    <div className="col-md-6">
-                      <h3>SEVERITY OF PAIN</h3>
+                    <div className="col-md-4">
+                      <h3 className="fs-6">SEVERITY OF PAIN</h3>
                     </div>
-                    <div className="col-md-2">
+                    <div className="col-md-3">
                       <div className="row">
-                        <div className="col-md-4">
+                        <div className="col-md-2">
                           <input
                             className="form-check-input"
                             type="radio"
@@ -1064,14 +1064,14 @@ const Form12 = ({ appointmentId }) => {
                             }
                           />
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-md-10">
                           <p className="space-x-4">VISUAL ANALOG SCALE</p>
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-2">
+                    <div className="col-md-3">
                       <div className="row">
-                        <div className="col-md-4">
+                        <div className="col-md-2">
                           <input
                             className="form-check-input"
                             type="radio"
@@ -1084,7 +1084,7 @@ const Form12 = ({ appointmentId }) => {
                             }
                           />
                         </div>
-                        <div className="col-md-2">
+                        <div className="col-md-10">
                           <p className="space-x-4">FACIAL EXPRESSION</p>
                         </div>
                       </div>
@@ -1119,10 +1119,10 @@ const Form12 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-4">
-                      <h3>Frequency of pain</h3>
+                      <h3 className="fs-6">Frequency of pain</h3>
                     </div>
                     <div className="col-md-2">
                       <div className="row">
@@ -1206,10 +1206,10 @@ const Form12 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-6">
-                      <h3>Duration of pain (in hrs)</h3>
+                      <h3 className="fs-6">Duration of pain (in hrs)</h3>
                     </div>
                     <div className="col-md-6">
                       <input
@@ -1231,10 +1231,10 @@ const Form12 = ({ appointmentId }) => {
                   </div>
                 </div>
 
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-6">
-                      <h3>Aggravating factor of pain</h3>
+                      <h3 className="fs-6">Aggravating factor of pain</h3>
                     </div>
                     <div className="col-md-6">
                       <input
@@ -1254,10 +1254,10 @@ const Form12 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-4">
-                      <h3>Releiving factor of pain</h3>
+                      <h3 className="fs-6">Releiving factor of pain</h3>
                     </div>
                     <div className="col-md-2">
                       <div className="row">
@@ -1651,10 +1651,10 @@ const Form12 = ({ appointmentId }) => {
                     <div className="col-md-2"></div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-4">
-                      <h3>
+                      <h3 className="fs-6">
                         Relieving of pain with medication (include type of
                         medication,dosage and hours of releive)
                       </h3>
@@ -1677,10 +1677,10 @@ const Form12 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-4">
-                      <h3>Pattern of joint involvement</h3>
+                      <h3 className="fs-6">Pattern of joint involvement</h3>
                     </div>
                     <div className="col-md-2">
                       <div className="row">
@@ -1772,10 +1772,10 @@ const Form12 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-6">
-                      <h3>Joint irritability</h3>
+                      <h3 className="fs-6">Joint irritability</h3>
                     </div>
                     <div className="col-md-2">
                       <div className="row">
@@ -1839,10 +1839,10 @@ const Form12 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-4">
-                      <h3>Progress of pain</h3>
+                      <h3 className="fs-6">Progress of pain</h3>
                     </div>
                     <div className="col-md-2">
                       <div className="row">
@@ -1929,10 +1929,10 @@ const Form12 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-6">
-                      <h3>Worse problem (loss of function)</h3>
+                      <h3 className="fs-6">Worse problem (loss of function)</h3>
                     </div>
 
                     <div className="col-md-2">
@@ -1997,10 +1997,10 @@ const Form12 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-4">
-                      <h3>Related signs and symprtoms</h3>
+                      <h3 className="fs-6">Related signs and symprtoms</h3>
                     </div>
                     <div className="col-md-2">
                       <div className="row">
@@ -2182,10 +2182,10 @@ const Form12 = ({ appointmentId }) => {
                   </div>
                 </div>
 
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Identified Problems</h3>
+                      <h3 className="fs-6">Identified Problems</h3>
                     </div>
                     <div className="col-md-9">
                       <textarea
@@ -2205,10 +2205,10 @@ const Form12 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Short Term Goals </h3>
+                      <h3 className="fs-6">Short Term Goals </h3>
                     </div>
                     <div className="col-md-9">
                       <textarea
@@ -2226,10 +2226,10 @@ const Form12 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Long Term Goals </h3>
+                      <h3 className="fs-6">Long Term Goals </h3>
                     </div>
                     <div className="col-md-9">
                       <textarea
@@ -2247,10 +2247,10 @@ const Form12 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Treatment Plan </h3>
+                      <h3 className="fs-6">Treatment Plan </h3>
                     </div>
                     <div className="col-md-9">
                       <textarea

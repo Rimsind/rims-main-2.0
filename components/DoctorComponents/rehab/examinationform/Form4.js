@@ -88,15 +88,15 @@ const Form4 = ({ appointmentId }) => {
   };
   return (
     <>
-      <div className="general-information-form relative p-6 flex-auto">
+      <div className="general-information-form relative p-6 flex-auto mt-3">
         <div className="max-w-6xl mx-auto md:py-10">
           <div className="space-y-5 border-2 p-10 rounded">
             <div className="space-y-2 pb-5">
               <form onSubmit={handleSubmit(submit_form4)}>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-9">
-                      <h3>Attention</h3>
+                      <h3 className="fs-6">Attention</h3>
                     </div>
                     <div className="col-md-3">
                       <div className="row">
@@ -144,10 +144,10 @@ const Form4 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-9">
-                      <h3>Focussed</h3>
+                      <h3 className="fs-6">Focussed</h3>
                     </div>
                     <div className="col-md-3">
                       <div className="row">
@@ -195,10 +195,10 @@ const Form4 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-9">
-                      <h3>Sustained</h3>
+                      <h3 className="fs-6">Sustained</h3>
                     </div>
                     <div className="col-md-3">
                       <div className="row">
@@ -246,10 +246,10 @@ const Form4 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-9">
-                      <h3>Selective</h3>
+                      <h3 className="fs-6">Selective</h3>
                     </div>
                     <div className="col-md-3">
                       <div className="row">
@@ -297,10 +297,10 @@ const Form4 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-9">
-                      <h3>Alternating</h3>
+                      <h3 className="fs-6">Alternating</h3>
                     </div>
                     <div className="col-md-3">
                       <div className="row">
@@ -348,10 +348,10 @@ const Form4 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-9">
-                      <h3>Orientation</h3>
+                      <h3 className="fs-6">Orientation</h3>
                     </div>
                     <div className="col-md-3">
                       <div className="row">
@@ -399,10 +399,12 @@ const Form4 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-9">
-                      <h3>Ability To Recognise Time, Person, Place </h3>
+                      <h3 className="fs-6">
+                        Ability To Recognise Time, Person, Place{" "}
+                      </h3>
                     </div>
                     <div className="col-md-3">
                       <div className="row">
@@ -450,10 +452,10 @@ const Form4 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-7">
-                      <h3>Consciousness</h3>
+                      <h3 className="fs-6">Consciousness</h3>
                     </div>
                     <div className="col-md-5">
                       <div className="row">
@@ -521,10 +523,10 @@ const Form4 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-9">
-                      <h3>Motivation To Participate</h3>
+                      <h3 className="fs-6">Motivation To Participate</h3>
                     </div>
                     <div className="col-md-3">
                       <div className="row">
@@ -572,10 +574,10 @@ const Form4 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-9">
-                      <h3>Communication</h3>
+                      <h3 className="fs-6">Communication</h3>
                     </div>
                     <div className="col-md-3">
                       <div className="row">
@@ -623,11 +625,11 @@ const Form4 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <p className="fs-5 fw-bold mt-4 mb-4">Problem Solving:</p>
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-9">
-                      <h3>Preparation</h3>
+                      <h3 className="fs-6">Preparation</h3>
                     </div>
                     <div className="col-md-3">
                       <div className="row">
@@ -675,10 +677,10 @@ const Form4 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-9">
-                      <h3>Production</h3>
+                      <h3 className="fs-6">Production</h3>
                     </div>
                     <div className="col-md-3">
                       <div className="row">
@@ -726,10 +728,10 @@ const Form4 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-9">
-                      <h3>Judgement</h3>
+                      <h3 className="fs-6">Judgement</h3>
                     </div>
                     <div className="col-md-3">
                       <div className="row">
@@ -777,11 +779,11 @@ const Form4 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <p className="fs-5 fw-bold mt-4 mb-4">Short Term Memory:</p>
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-9">
-                      <h3>Mini Mental Test</h3>
+                      <h3 className="fs-6">Mini Mental Test</h3>
                     </div>
                     <div className="col-md-3">
                       <div className="row">
@@ -829,10 +831,10 @@ const Form4 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Identified Problems</h3>
+                      <h3 className="fs-6">Identified Problems</h3>
                     </div>
                     <div className="col-md-9">
                       <textarea
@@ -852,10 +854,10 @@ const Form4 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Short Term Goals </h3>
+                      <h3 className="fs-6">Short Term Goals </h3>
                     </div>
                     <div className="col-md-9">
                       <textarea
@@ -874,10 +876,10 @@ const Form4 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Long Term Goals </h3>
+                      <h3 className="fs-6">Long Term Goals </h3>
                     </div>
                     <div className="col-md-9">
                       <textarea
@@ -896,10 +898,10 @@ const Form4 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Treatment Plan </h3>
+                      <h3 className="fs-6">Treatment Plan </h3>
                     </div>
                     <div className="col-md-9">
                       <textarea
