@@ -1,12 +1,12 @@
 import Image from "next/image";
+import AuthLayout from "components/layout/AuthLayout";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { setCookie } from "nookies";
 import Router from "next/router";
 import { useAuth } from "context";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 const Login = () => {
   const {
     register,
@@ -91,91 +91,84 @@ const Login = () => {
   };
   return (
     <>
-      <main className="main">
-        <div className="content user_login_main">
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-md-8 offset-md-2">
-                <div className="account-content">
-                  <div className="row align-items-center justify-content-center">
-                    <div className="col-md-7 col-lg-6 login-left">
-                      <Image
-                        height="400"
-                        width="400"
-                        src="/assets/images/login.png"
-                        className="img-fluid"
-                        alt="Doccure Login"
+      <div
+        className="patient-login d-flex justify-content-center align-items-center"
+        style={{
+          backgroundImage: "url(/assets/images/ererere.png)",
+          backgroundSize: "cover",
+          height: "100vh",
+        }}
+      >
+        <div className="container">
+          <div className="row">
+            <div className="col-4"></div>
+            <div className="col-4">
+              <div
+                className="patient-login-content text-center d-flex justify-content-center align-items-center pt-5 pb-5"
+                style={{
+                  backgroundImage: "url(/assets/images/Loginerer.png)",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  boxShadow: "0px 5px 60px 2px #000",
+                }}
+              >
+                <form onSubmit={handleSubmit(onSubmit)}>
+                  <Image
+                    src="/assets/images/logo-white.png"
+                    width="150px"
+                    height="100px"
+                    alt="Rims Logo"
+                  />
+                  <p className="fs-5 text-light my-4">Patient / User</p>
+                  <div
+                    className="patient-login-form"
+                    style={{ width: "360px" }}
+                  >
+                    <div className="mb-3">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Username"
+                        {...register("email")}
                       />
                     </div>
-                    <div className="col-md-12 col-lg-6 login-right">
-                      <div className="login-header">
-                        <h3>Patient Login</h3>
-                      </div>
-                      <form onSubmit={handleSubmit(onSubmit)}>
-                        <div className="form-group form-focus">
-                          <input
-                            type="email"
-                            className="form-control floating"
-                            {...register("email")}
-                          />
-                          <label className="focus-label">Email</label>
-                        </div>
-                        <div className="form-group form-focus">
-                          <input
-                            type="password"
-                            className="form-control floating"
-                            {...register("password")}
-                          />
-                          <label className="focus-label">Password</label>
-                        </div>
-                        <div className="text-end">
-                          <a
-                            className="forgot-link"
-                            href="forgot-password.html"
-                          >
-                            Forgot Password ?
-                          </a>
-                        </div>
-                        <button
-                          className="btn btn-primary w-100 btn-lg login-btn"
-                          type="submit"
-                        >
-                          Login
-                        </button>
-                        <div className="login-or">
-                          <span className="or-line"></span>
-                          <span className="span-or">or</span>
-                        </div>
-                        <div className="row form-row social-login">
-                          <div className="col-6">
-                            <a href="#" className="btn btn-patient w-100">
-                              Patient Login
-                            </a>
-                          </div>
-                          <div className="col-6">
-                            <a href="#" className="btn btn-doctor w-100">
-                              Doctor Login
-                            </a>
-                          </div>
-                        </div>
-                        <div className="text-center mt-3">
-                          Don&apos;t have an account?
-                          <Link href="/user/signup">
-                            <a>Register</a>
-                          </Link>
-                        </div>
-                      </form>
+                    <div className="mb-3">
+                      <input
+                        type="password"
+                        className="form-control"
+                        {...register("password")}
+                      />
                     </div>
+                    <button
+                      className="btn btn-outline-light text-dark rounded-pill px-5"
+                      type="submit"
+                    >
+                      Login
+                    </button>
+                    <div className="forgot-password-sec my-4">
+                      <p className="fs-6">Forgot Your Password</p>
+                    </div>
+                    <div className="welcome-heading mt-5 mb-4">
+                      <p className="fs-1 text-capitalize text-light">Welcome</p>
+                    </div>
+                    <div className="dont-account">
+                      <p>Don't You Have Account?</p>
+                    </div>
+                    <Link href="/user/signup">
+                      <a className="btn btn-dark rounded-pill px-5">Sign up</a>
+                    </Link>
                   </div>
-                </div>
+                </form>
               </div>
             </div>
+            <div className="col-4"></div>
           </div>
         </div>
-      </main>
-      <ToastContainer />
+      </div>
     </>
   );
 };
 
 export default Login;
+
+Login.getLayout = (Login) => <AuthLayout>{Login}</AuthLayout>;

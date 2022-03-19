@@ -1,11 +1,11 @@
 import Image from "next/image";
+import AuthLayout from "components/layout/AuthLayout";
 import Link from "next/link";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-const SignUp = () => {
+import { toast } from "react-toastify";
+const Signup = () => {
   const router = useRouter();
   const {
     register,
@@ -50,8 +50,17 @@ const SignUp = () => {
   const onSubmit = async (data, e) => {
     e.preventDefault();
 
-    if (!data.firstName || !data.lastName || !data.email || !data.password) {
-      alert("please fill all data");
+    if (data.password != data.confirmPassword) {
+      toast.error("Passwords do not match", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
       return;
     }
 
@@ -106,119 +115,116 @@ const SignUp = () => {
       });
     }
   };
-
   return (
     <>
-      {" "}
-      <main className="main">
-        <div className="content user_login_main">
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-md-8 offset-md-2">
-                <div className="account-content">
-                  <div className="row align-items-center justify-content-center">
-                    <div className="col-md-7 col-lg-6 login-left">
-                      <Image
-                        height="400"
-                        width="450"
-                        src="/assets/images/login.png"
-                        className="img-fluid"
-                        alt="Doccure Login"
+      <div
+        className="patient-login d-flex justify-content-center align-items-center"
+        style={{
+          backgroundImage: "url(/assets/images/ererere.png)",
+          backgroundSize: "cover",
+          height: "100vh",
+        }}
+      >
+        <div className="container">
+          <div className="row">
+            <div className="col-4"></div>
+            <div className="col-4">
+              <div
+                className="patient-login-content text-center d-flex justify-content-center align-items-center pt-5 pb-5"
+                style={{
+                  backgroundImage: "url(/assets/images/Loginerer.png)",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  boxShadow: "0px 5px 60px 2px #000",
+                }}
+              >
+                <form onSubmit={handleSubmit(onSubmit)}>
+                  <Image
+                    src="/assets/images/logo-white.png"
+                    width="150px"
+                    height="100px"
+                    alt="Rims Logo"
+                  />
+                  <p className="fs-5 text-light my-4">Patient / User</p>
+                  <div
+                    className="patient-login-form"
+                    style={{ width: "360px" }}
+                  >
+                    <div className="mb-3">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="First Name"
+                        required
+                        {...register("firstName")}
                       />
                     </div>
-                    <div className="col-md-12 col-lg-6 login-right">
-                      <div className="login-header">
-                        <h3>
-                          Patient <span>Register</span>
-                        </h3>
-                      </div>
-                      <form onSubmit={handleSubmit(onSubmit)}>
-                        <div className="form-group form-focus">
-                          <input
-                            type="text"
-                            className="form-control floating"
-                            required
-                            {...register("firstName")}
-                          />
-                          <label className="focus-label">First Name</label>
-                        </div>
-                        <div className="form-group form-focus">
-                          <input
-                            type="text"
-                            className="form-control floating"
-                            required
-                            {...register("lastName")}
-                          />
-                          <label className="focus-label">Last Name</label>
-                        </div>
-                        <div className="form-group form-focus">
-                          <input
-                            type="email"
-                            className="form-control floating"
-                            required
-                            {...register("email")}
-                          />
-                          <label className="focus-label">Email</label>
-                        </div>
-                        <div className="form-group form-focus">
-                          <input
-                            type="password"
-                            className="form-control floating"
-                            required
-                            {...register("password")}
-                          />
-                          <label className="focus-label">Create Password</label>
-                        </div>
-                        {/* <div className="form-group form-focus">
-                          <input
-                            type="password"
-                            className="form-control floating"
-                          />
-                          <label className="focus-label">
-                            Confirm Password
-                          </label>
-                        </div> */}
-                        <div className="text-end">
-                          <Link href="/user/login">
-                            <a className="forgot-link">
-                              Already have an account ?
-                            </a>
-                          </Link>
-                        </div>
-                        <button
-                          className="btn btn-primary w-100 btn-lg login-btn"
-                          type="submit"
-                        >
-                          Signup
-                        </button>
-                        <div className="login-or">
-                          <span className="or-line"></span>
-                          <span className="span-or">or</span>
-                        </div>
-                        <div className="row form-row social-login">
-                          <div className="col-6">
-                            <a href="#" className="btn btn-patient w-100">
-                              Polyclinic Register
-                            </a>
-                          </div>
-                          <div className="col-6">
-                            <a href="#" className="btn btn-doctor w-100">
-                              Doctor Register
-                            </a>
-                          </div>
-                        </div>
-                      </form>
+                    <div className="mb-3">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Last Name"
+                        required
+                        {...register("lastName")}
+                      />
                     </div>
+                    <div className="mb-3">
+                      <input
+                        type="email"
+                        className="form-control"
+                        placeholder="Email"
+                        required
+                        {...register("email")}
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <input
+                        type="password"
+                        className="form-control"
+                        placeholder="Create Password"
+                        required
+                        {...register("password")}
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <input
+                        type="password"
+                        className="form-control"
+                        placeholder="Confirm Password"
+                        required
+                        {...register("confirmPassword")}
+                      />
+                    </div>
+                    <button
+                      className="btn btn-outline-light text-dark rounded-pill px-5"
+                      type="submit"
+                    >
+                      Sign up
+                    </button>
+                    {/* <div className="forgot-password-sec my-4">
+                      <p className="fs-6">Forgot Your Password</p>
+                    </div> */}
+                    {/* <div className="welcome-heading mt-5 mb-4">
+                      <p className="fs-1 text-capitalize text-light">Welcome</p>
+                    </div> */}
+                    <div className="dont-account my-4">
+                      <p>Already Have An Account?</p>
+                    </div>
+                    <Link href="/user/login">
+                      <a className="btn btn-dark rounded-pill px-5">Login</a>
+                    </Link>
                   </div>
-                </div>
+                </form>
               </div>
             </div>
+            <div className="col-4"></div>
           </div>
         </div>
-      </main>
-      <ToastContainer />
+      </div>
     </>
   );
 };
 
-export default SignUp;
+export default Signup;
+
+Signup.getLayout = (Signup) => <AuthLayout>{Signup}</AuthLayout>;
