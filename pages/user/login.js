@@ -152,7 +152,7 @@ const Login = () => {
                       <p className="fs-1 text-capitalize text-light">Welcome</p>
                     </div>
                     <div className="dont-account">
-                      <p>Don't You Have Account?</p>
+                      <p>Don&apos;t You Have Account?</p>
                     </div>
                     <Link href="/user/signup">
                       <a className="btn btn-dark rounded-pill px-5">Sign up</a>
