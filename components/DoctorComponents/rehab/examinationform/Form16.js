@@ -94,22 +94,21 @@ const Form16 = ({ appointmentId }) => {
   };
   return (
     <>
-      {" "}
-      <div className="general-information-form relative p-6 flex-auto">
+      <div className="general-information-form relative p-6 flex-auto mt-3">
         <div className="max-w-6xl mx-auto md:py-10">
           <div className="space-y-5 border-2 p-10 rounded">
             <div className="space-y-2 pb-5">
               <form onSubmit={handleSubmit(submit_form16)}>
-                <div className="gen-form-table mt-4">
+                <div className="gen-form-table mt-4 mb-3">
                   <table className="table table-bordered">
-                    <tr>
+                    <tr className="text-center">
                       <th></th>
                       <th></th>
-                      <th>WNL</th>
-                      <th>NA</th>
+                      <th className="py-3">WNL</th>
+                      <th className="py-3">NA</th>
                     </tr>
 
-                    <tr>
+                    <tr className="text-center">
                       <td>CHEST WALL AND RELATED STRUCTURES</td>
 
                       <td>
@@ -164,7 +163,7 @@ const Form16 = ({ appointmentId }) => {
                         />
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>PHONATION</td>
 
                       <td>
@@ -220,7 +219,7 @@ const Form16 = ({ appointmentId }) => {
                         />
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>PULMONARY RELATED SYMPTOMS</td>
 
                       <td>
@@ -276,7 +275,7 @@ const Form16 = ({ appointmentId }) => {
                         />
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>PULMONARY VITAL SIGNS</td>
 
                       <td>
@@ -332,7 +331,7 @@ const Form16 = ({ appointmentId }) => {
                         />
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>THORACOABDOMINAL VENTILATORY PATTERNS</td>
 
                       <td>
@@ -388,7 +387,7 @@ const Form16 = ({ appointmentId }) => {
                         />
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>PRESENCE AND LEVEL OF CYANOSIS</td>
 
                       <td>
@@ -444,7 +443,7 @@ const Form16 = ({ appointmentId }) => {
                         />
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>Ability to clear and protect airways</td>
 
                       <td>
@@ -500,7 +499,7 @@ const Form16 = ({ appointmentId }) => {
                         />
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>Gas exchange and oxygen level/transport</td>
 
                       <td>
@@ -556,7 +555,7 @@ const Form16 = ({ appointmentId }) => {
                         />
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>pulmonary function and ventilatory mechanism</td>
 
                       <td>
@@ -612,7 +611,7 @@ const Form16 = ({ appointmentId }) => {
                         />
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>BREATH AND VOICE SOUNDS</td>
 
                       <td>
@@ -671,10 +670,10 @@ const Form16 = ({ appointmentId }) => {
                   </table>
                 </div>
 
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Identified Problems</h3>
+                      <h3 className="fs-6">Identified Problems</h3>
                     </div>
                     <div className="col-md-9">
                       <textarea
@@ -697,10 +696,10 @@ const Form16 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Short Term Goals </h3>
+                      <h3 className="fs-6">Short Term Goals </h3>
                     </div>
                     <div className="col-md-9">
                       <textarea
@@ -722,10 +721,10 @@ const Form16 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Long Term Goals </h3>
+                      <h3 className="fs-6">Long Term Goals </h3>
                     </div>
                     <div className="col-md-9">
                       <textarea
@@ -747,10 +746,10 @@ const Form16 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Treatment Plan </h3>
+                      <h3 className="fs-6">Treatment Plan </h3>
                     </div>
                     <div className="col-md-9">
                       <textarea

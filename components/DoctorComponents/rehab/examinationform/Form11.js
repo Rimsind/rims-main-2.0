@@ -178,24 +178,26 @@ const Form11 = ({ appointmentId }) => {
   ];
   return (
     <>
-      <div className="general-information-form relative p-6 flex-auto">
+      <div className="general-information-form relative p-6 flex-auto mt-3">
         <div className="max-w-6xl mx-auto md:py-10">
           <div className="space-y-5 border-2 p-10 rounded">
             <div className="space-y-2 pb-5">
               <form onSubmit={handleSubmit(submit_form11)}>
-                <div className="gen-form-table mt-4">
+                <div className="gen-form-table mt-4 mb-3">
                   <table className="table table-bordered border-dark">
-                    <tr>
+                    <tr className="text-center">
                       <th></th>
                       <th></th>
-                      <th>WNL Value</th>
-                      <th>WFL Value</th>
+                      <th className="text-center py-3">WNL Value</th>
+                      <th className="text-center py-3">WFL Value</th>
 
-                      <th>Range Of Motion Score</th>
-                      <th>Strength</th>
+                      <th className="text-center py-3">
+                        Range Of Motion Score
+                      </th>
+                      <th className="text-center py-3">Strength</th>
                     </tr>
 
-                    <tr>
+                    <tr className="text-center">
                       <td
                         className="fs-5 fw-bold"
                         rowSpan="5"
@@ -253,7 +255,7 @@ const Form11 = ({ appointmentId }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>Extension / Extensors</p>
                       </td>
@@ -303,7 +305,7 @@ const Form11 = ({ appointmentId }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>Abduction / Abductors</p>
                       </td>
@@ -354,7 +356,7 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                     </tr>
 
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>External Rotation / External Rotators</p>
                       </td>
@@ -405,7 +407,7 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                     </tr>
 
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>Internal Rotation / Internal Rotators</p>
                       </td>
@@ -456,7 +458,7 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                     </tr>
 
-                    <tr>
+                    <tr className="text-center">
                       <td
                         className="fs-5 fw-bold"
                         rowSpan="3"
@@ -514,7 +516,7 @@ const Form11 = ({ appointmentId }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>Extension </p>
                       </td>
@@ -564,7 +566,7 @@ const Form11 = ({ appointmentId }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>STRAIGHT LEG RAISE</p>
                       </td>
@@ -615,7 +617,7 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                     </tr>
 
-                    <tr>
+                    <tr className="text-center">
                       <td
                         className="fs-5 fw-bold"
                         rowSpan="4"
@@ -674,7 +676,7 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                     </tr>
 
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>PLANTERFLEXION/FLEXORS</p>
                       </td>
@@ -724,7 +726,7 @@ const Form11 = ({ appointmentId }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>INVERSION/INVERTORS</p>
                       </td>
@@ -774,7 +776,7 @@ const Form11 = ({ appointmentId }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>EVERSION/EVERTORS</p>
                       </td>
@@ -824,7 +826,7 @@ const Form11 = ({ appointmentId }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td
                         className="fs-5 fw-bold"
                         rowSpan="6"
@@ -883,7 +885,7 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                     </tr>
 
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>EXTENSION / EXTENSORS</p>
                       </td>
@@ -933,7 +935,7 @@ const Form11 = ({ appointmentId }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>SIDE FLEXION / SIDE FLEXORS (LEFT)</p>
                       </td>
@@ -983,7 +985,7 @@ const Form11 = ({ appointmentId }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>SIDE FLEXION / SIDE FLEXORS (RIGHT)</p>
                       </td>
@@ -1033,7 +1035,7 @@ const Form11 = ({ appointmentId }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>ROTATION / ROTATORS (LEFT)</p>
                       </td>
@@ -1083,7 +1085,7 @@ const Form11 = ({ appointmentId }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>ROTATION / ROTATORS (RIGHT)</p>
                       </td>
@@ -1133,7 +1135,7 @@ const Form11 = ({ appointmentId }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td
                         className="fs-5 fw-bold"
                         rowSpan="7"
@@ -1192,7 +1194,7 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                     </tr>
 
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>EXTENSION / EXTENSORS</p>
                       </td>
@@ -1242,7 +1244,7 @@ const Form11 = ({ appointmentId }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>SIDE FLEXION / SIDE FLEXORS (LEFT)</p>
                       </td>
@@ -1292,7 +1294,7 @@ const Form11 = ({ appointmentId }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>SIDE FLEXION / SIDE FLEXORS (RIGHT)</p>
                       </td>
@@ -1342,7 +1344,7 @@ const Form11 = ({ appointmentId }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>ROTATION / ROTATORS (LEFT)</p>
                       </td>
@@ -1392,7 +1394,7 @@ const Form11 = ({ appointmentId }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>ROTATION / ROTATORS (RIGHT)</p>
                       </td>
@@ -1442,7 +1444,7 @@ const Form11 = ({ appointmentId }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>KYPOSIS POSTURE</p>
                       </td>
@@ -1492,7 +1494,7 @@ const Form11 = ({ appointmentId }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td
                         className="fs-5 fw-bold"
                         rowSpan="11"
@@ -1551,7 +1553,7 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                     </tr>
 
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>STANDING LORDOSIS</p>
                       </td>
@@ -1602,7 +1604,7 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                     </tr>
 
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>STANDING HIP FLEXION</p>
                       </td>
@@ -1652,7 +1654,7 @@ const Form11 = ({ appointmentId }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>FLEXION (AMA method)</p>
                       </td>
@@ -1702,7 +1704,7 @@ const Form11 = ({ appointmentId }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>EXTENSION (AMA method)</p>
                       </td>
@@ -1752,7 +1754,7 @@ const Form11 = ({ appointmentId }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>FLEXION (curve angle method)</p>
                       </td>
@@ -1802,7 +1804,7 @@ const Form11 = ({ appointmentId }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>EXTENSION (curve angle method)</p>
                       </td>
@@ -1852,7 +1854,7 @@ const Form11 = ({ appointmentId }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>SIDE FLEXION / SIDE FLEXORS (LEFT)</p>
                       </td>
@@ -1902,7 +1904,7 @@ const Form11 = ({ appointmentId }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>SIDE FLEXION / SIDE FLEXORS (RIGHT)</p>
                       </td>
@@ -1952,7 +1954,7 @@ const Form11 = ({ appointmentId }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>ROTATION / ROTATORS (LEFT)</p>
                       </td>
@@ -2002,7 +2004,7 @@ const Form11 = ({ appointmentId }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr>
+                    <tr className="text-center">
                       <td>
                         <p>ROTATION / ROTATORS (RIGHT)</p>
                       </td>
@@ -2054,10 +2056,10 @@ const Form11 = ({ appointmentId }) => {
                     </tr>
                   </table>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Identified Problems</h3>
+                      <h3 className="fs-6">Identified Problems</h3>
                     </div>
                     <div className="col-md-9">
                       <textarea
@@ -2077,10 +2079,10 @@ const Form11 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Short Term Goals </h3>
+                      <h3 className="fs-6">Short Term Goals </h3>
                     </div>
                     <div className="col-md-9">
                       <textarea
@@ -2099,10 +2101,10 @@ const Form11 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Long Term Goals </h3>
+                      <h3 className="fs-6">Long Term Goals </h3>
                     </div>
                     <div className="col-md-9">
                       <textarea
@@ -2121,10 +2123,10 @@ const Form11 = ({ appointmentId }) => {
                     </div>
                   </div>
                 </div>
-                <div className="gen-form">
+                <div className="gen-form mb-3">
                   <div className="row justify-centent-between align-items-center">
                     <div className="col-md-3">
-                      <h3>Treatment Plan </h3>
+                      <h3 className="fs-6">Treatment Plan </h3>
                     </div>
                     <div className="col-md-9">
                       <textarea
