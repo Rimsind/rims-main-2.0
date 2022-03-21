@@ -67,7 +67,7 @@ const Login = () => {
   };
   return (
     <>
-      <div className="login-form-main">
+      {/* <div className="login-form-main">
         <div className="area">
           <ul className="circles">
             <li></li>
@@ -197,6 +197,131 @@ const Login = () => {
                 backgroundImage: "url(/assets/images/background-right.png)",
               }}
             ></div>
+          </div>
+        </div>
+      </div> */}
+      <div
+        className="doctor-login-main-sec d-flex justify-content-center align-items-center shadow"
+        style={{
+          height: "100vh",
+          background: "url(/user_assets/img/background.jpg)",
+          backgroundSize: "cover",
+        }}
+      >
+        <div
+          className="doctor-admin-login-sec"
+          style={{
+            background: "url(/user_assets/img/polyclinic-login/polyclinic.jpg)",
+            backgroundSize: "cover",
+            backgroundPosition: "no-repeat",
+            height: "70vh",
+            width: "22vw",
+          }}
+        >
+          <div
+            className="doctor-admin-login-title"
+            style={{
+              height: "48%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flexDirection: "column",
+            }}
+          >
+            <Image
+              src="/user_assets/img/logo-dark.png"
+              height="100px"
+              width="100px"
+              alt="Rims Logo"
+            />
+            <p
+              className="text-center"
+              style={{
+                fontSize: "50px",
+                fontWeight: "600",
+                textShadow: "3px 5px 2px #022856c7",
+                color: "#fff",
+              }}
+            >
+              Polyclinics Login
+            </p>
+          </div>
+          <div
+            className="doctor-admin-login"
+            style={{
+              height: "52%",
+              backgroundColor: "#b9d171a3",
+              paddingTop: "10px",
+              paddingBottom: "10px",
+            }}
+          >
+            <div className="user-title my-2">
+              <p
+                className="text-center"
+                style={{ letterSpacing: "5px", fontSize: "20px" }}
+              >
+                USER LOGIN
+              </p>
+            </div>
+            <form style={{ width: "350px", margin: "auto" }}>
+              <div className="mb-3">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Username"
+                />
+              </div>
+              <div className="mb-3">
+                <input
+                  type="password"
+                  className="form-control"
+                  placeholder="Password"
+                />
+              </div>
+              <div className="row align-items-center">
+                <div className="col-6">
+                  <div className="mb-3 form-check">
+                    <input
+                      type="checkbox"
+                      className="form-check-input"
+                      id="exampleCheck1"
+                    />
+                    <label className="form-check-label" for="exampleCheck1">
+                      Remember Me
+                    </label>
+                  </div>
+                </div>
+                <div className="col-6">
+                  <div className="mb-3">
+                    <a className="fs-6" style={{ color: "#3f51b5" }}>
+                      Forgot Password?
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div className="login-btn text-center my-3">
+                <button
+                  type="submit"
+                  className="btn btn-dark"
+                  style={{
+                    backgroundColor: "#ffffff",
+                    padding: "10px 40px",
+                    color: "#022856c7",
+                    fontSize: "18px",
+                    fontWeight: "600",
+                    borderColor: "#022856c7",
+                    boxShadow: "4px 4px 10px 0px #022856c7",
+                  }}
+                >
+                  LOGIN
+                </button>
+              </div>
+            </form>
+            <div className="create-account-link text-center my-3">
+              <p style={{ letterSpacing: "5px", fontSize: "20px" }}>
+                CREATE ACCOUNT
+              </p>
+            </div>
           </div>
         </div>
       </div>

@@ -3,7 +3,14 @@ const Administration = () => {
   return (
     <>
       <main>
-        <div className="admin_page">
+        <div
+          className="admin_page"
+          style={{
+            background: "url(/user_assets/img/background.jpg)",
+            backgroundSize: "cover",
+            height: "94vh",
+          }}
+        >
           <div className="container">
             {/* <div className="admin_page_logo">
               <Image
@@ -18,14 +25,22 @@ const Administration = () => {
               <div className="card-inner">
                 <Link href="/doctors/login">
                   <a className="anchr-main-inner-box">
-                    <div className="card-item shadow bg-primary p-4 rounded-3">
-                      <div className="card-item-inner d-flex align-items-center">
-                        <div className="card-inner-icon">
-                          <i className="fas fa-user-md fs-1 border rounded-circle p-3 text-light bg-primary"></i>
-                        </div>
-
+                    <div
+                      className="card-item shadow p-4"
+                      style={{
+                        background:
+                          "url(/user_assets/img/doctor-login/doctor_admin_login.jpg)",
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "center",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <div className="card-item-inner">
                         <div className="card-inner-con ms-3">
-                          <a className="fs-5 text-light">Doctor Login</a>
+                          <a className="fs-4 text-light">Doctor Login</a>
                         </div>
                       </div>
                     </div>
@@ -35,14 +50,22 @@ const Administration = () => {
               <div className="card-inner">
                 <Link href="/polyclinics/login">
                   <a className="anchr-main-inner-box">
-                    <div className="card-item shadow bg-primary p-4 rounded-3">
-                      <div className="card-item-inner d-flex align-items-center">
-                        <div className="card-inner-icon">
-                          <i className="fas fa-capsules fs-1 border rounded-circle p-3 text-light bg-primary"></i>
-                        </div>
-
+                    <div
+                      className="card-item shadow p-4"
+                      style={{
+                        background:
+                          "url(/user_assets/img/polyclinic-login/polyclinic_admin_login.jpg)",
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "center",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <div className="card-item-inner">
                         <div className="card-inner-con ms-3">
-                          <a className="fs-5 text-light">Polyclinic Login</a>
+                          <a className="fs-4 text-light">Polyclinics Login</a>
                         </div>
                       </div>
                     </div>
@@ -52,14 +75,22 @@ const Administration = () => {
               <div className="card-inner">
                 <Link href="/nursing-homes/login">
                   <a className="anchr-main-inner-box">
-                    <div className="card-item shadow bg-primary p-4 rounded-3">
-                      <div className="card-item-inner d-flex align-items-center">
-                        <div className="card-inner-icon">
-                          <i className="fas fa-hospital fs-1 border rounded-circle p-3 text-light bg-primary"></i>
-                        </div>
-
+                    <div
+                      className="card-item shadow p-4"
+                      style={{
+                        background:
+                          "url(/user_assets/img/nursing-login/nursing_admin_login.jpg)",
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "center",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <div className="card-item-inner">
                         <div className="card-inner-con ms-3">
-                          <a className="fs-5 text-light">Nursing Home Login</a>
+                          <a className="fs-4 text-light">Nursing Home Login</a>
                         </div>
                       </div>
                     </div>
