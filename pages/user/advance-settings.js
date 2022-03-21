@@ -5,6 +5,7 @@ import { apiUrl } from "config/api";
 import useSWR from "swr";
 import axios from "axios";
 import { withAuth } from "helpers/withAuth";
+import { useState } from "react";
 const AdvanceSettings = () => {
   const { auth } = useAuth();
 
@@ -20,6 +21,15 @@ const AdvanceSettings = () => {
       return result;
     }
   );
+
+  const [Delete, setDelete] = useState(false);
+  const changeState = () => {
+    if (Delete === false) {
+      setDelete(true);
+    } else {
+      setDelete(false);
+    }
+  };
   return (
     <>
       <div className="main-wrapper">
@@ -39,45 +49,56 @@ const AdvanceSettings = () => {
                       Do you want to delete the account? Please press below
                       &quot;Delete&quot; button
                     </p>
-                    <button type="button" className="btn btn-danger shadow">
+                    <button
+                      type="button"
+                      className="btn btn-secondary shadow"
+                      onClick={changeState}
+                    >
                       Delete Account
                     </button>
-                    <div className="row">
-                      <div className="col-6">
-                        <div className="delete-form mt-5">
-                          <form>
-                            <div className="mb-3">
-                              <label className="mb-2">
-                                Why you delete your account?
-                              </label>
-                              <select
-                                className="form-select"
-                                aria-label="Default select example"
-                              >
-                                <option selected>Select Any One</option>
-                                <option>Mind has been change</option>
-                                <option>Find better option</option>
-                                <option>Doctor fees very high</option>
-                                <option>Just kidding</option>
-                                <option>Software is not user friendly</option>
-                              </select>
-                            </div>
-                            <div className="mb-3">
-                              <label className="mb-2">
-                                Describe reason (optional)
-                              </label>
-                              <textarea className="form-control"></textarea>
-                            </div>
-                            <div className="complain-submit-btn">
-                              <button type="submit" className="btn btn-danger">
-                                Request For Delete
-                              </button>
-                            </div>
-                          </form>
+                    {Delete === true ? (
+                      <div className="row">
+                        <div className="col-6">
+                          <div className="delete-form mt-5">
+                            <form>
+                              <div className="mb-3">
+                                <label className="mb-2">
+                                  Why you delete your account?
+                                </label>
+                                <select
+                                  className="form-select"
+                                  aria-label="Default select example"
+                                >
+                                  <option selected>Select Any One</option>
+                                  <option>Mind has been change</option>
+                                  <option>Find better option</option>
+                                  <option>Doctor fees very high</option>
+                                  <option>Just kidding</option>
+                                  <option>Software is not user friendly</option>
+                                </select>
+                              </div>
+                              <div className="mb-3">
+                                <label className="mb-2">
+                                  Describe reason (optional)
+                                </label>
+                                <textarea className="form-control"></textarea>
+                              </div>
+                              <div className="complain-submit-btn">
+                                <button
+                                  type="submit"
+                                  className="btn btn-danger"
+                                >
+                                  Request For Delete
+                                </button>
+                              </div>
+                            </form>
+                          </div>
                         </div>
+                        <div className="col-6"></div>
                       </div>
-                      <div className="col-6"></div>
-                    </div>
+                    ) : (
+                      <></>
+                    )}
                   </div>
                 </div>
               </div>

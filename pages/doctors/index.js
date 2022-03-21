@@ -13,7 +13,6 @@ import { useState } from "react";
 const Index = () => {
   const { data: doctors } = useSWR(`${apiUrl}/doctors`, fetcher);
   const { data: specialties } = useSWR(`${apiUrl}/specialties`, fetcher);
-
   const [search, setSearch] = useState("");
 
   return (

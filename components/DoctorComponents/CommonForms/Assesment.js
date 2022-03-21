@@ -35,10 +35,7 @@ const Assesment = ({ appointmentId }) => {
       return result;
     }
   );
-  const { data } = useSWR(
-    `http://icd10api.com/?s=${icd}&desc=short&r=json`,
-    fetcher
-  );
+  const { data } = useSWR(`/api/icdCode?s=${icd}&desc=short&r=json`, fetcher);
 
   const addIcd = (event) => {
     setAllIcd([
