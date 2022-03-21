@@ -555,7 +555,7 @@ const Index = () => {
         <section className="section-normal-banner">
           <div className="section-normal-banner-content">
             <Image
-              src="/user_assets/img/search-bg.png"
+              src="/user_assets/img/search-bg12.png"
               width="2500px"
               height="400px"
               alt="Normal Banner"
