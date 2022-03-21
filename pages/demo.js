@@ -1,37 +1,39 @@
-import { ToastContainer, toast, Slide } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
+import { useState } from "react";
+import useSWR from "swr";
+import { apiUrl, fetcher } from "config/api";
 const demo = () => {
-  const btn1 = () => {
-    toast.success("1", {
-      position: "top-center",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-      transition: Slide,
-    });
-  };
-  const btn2 = () => {
-    toast.success("2", {
-      position: "top-left",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-      transition: Slide,
-    });
-  };
+  const { data: doctors } = useSWR(`${apiUrl}/doctors`, fetcher);
+
+  const [search, setSearch] = useState("");
   return (
     <>
-      <button onClick={btn1}>hcfvwvf</button>
-      <button onClick={btn2}>gvegvegf</button> <ToastContainer />
+      <input
+        type="text"
+        className="my-5"
+        placeholder="ejfbejf"
+        onChange={(e) => setSearch(e.target.value)}
+      />
+      <ul>
+        {doctors
+          ?.filter((items) => {
+            if (search === "") {
+              return items;
+            } else if (
+              items.firstName.toLowerCase().includes(search.toLowerCase())
+            ) {
+              return items;
+            } else if (
+              items.lastName.toLowerCase().includes(search.toLowerCase())
+            ) {
+              return items;
+            }
+          })
+          .map((items, index) => (
+            <li>
+              {items?.firstName} {items?.lastName}
+            </li>
+          ))}
+      </ul>
     </>
   );
 };

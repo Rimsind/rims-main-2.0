@@ -11,11 +11,10 @@ import { ListingPageLoader } from "components/Loaders";
 import { useState } from "react";
 
 const Index = () => {
-  const [gender, setGender] = useState();
-  const [specialty, setspecialty] = useState();
-
   const { data: doctors } = useSWR(`${apiUrl}/doctors`, fetcher);
   const { data: specialties } = useSWR(`${apiUrl}/specialties`, fetcher);
+
+  const [search, setSearch] = useState("");
 
   return (
     <>
@@ -37,6 +36,7 @@ const Index = () => {
                           type="search"
                           placeholder="Search"
                           aria-label="Search"
+                          onChange={(e) => setSearch(e.target.value)}
                         />
                       </form>
                     </div>
@@ -132,9 +132,27 @@ const Index = () => {
               <div className="col-md-12 col-lg-8 col-xl-9">
                 {doctors ? (
                   <>
-                    {doctors?.map((item, index) => (
-                      <HorizontalDoctorCard data={item} key={index} />
-                    ))}
+                    {doctors
+                      ?.filter((items) => {
+                        if (search === "") {
+                          return items;
+                        } else if (
+                          items.firstName
+                            .toLowerCase()
+                            .includes(search.toLowerCase())
+                        ) {
+                          return items;
+                        } else if (
+                          items.lastName
+                            .toLowerCase()
+                            .includes(search.toLowerCase())
+                        ) {
+                          return items;
+                        }
+                      })
+                      .map((item, index) => (
+                        <HorizontalDoctorCard data={item} key={index} />
+                      ))}
                   </>
                 ) : (
                   <>
