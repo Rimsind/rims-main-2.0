@@ -22,12 +22,11 @@ const MyAppointments = ({ data }) => {
                 alt="User Image"
               />
             </a>
-            <Link href={`/user/appointments/${data?.id}`}>
-              <a>
-                Dr. {data?.doctor?.firstName} {data?.doctor?.lastName}
-                <span>{specialty?.name}</span>
-              </a>
-            </Link>
+
+            <a>
+              Dr. {data?.doctor?.firstName} {data?.doctor?.lastName}
+              <span>{specialty?.name}</span>
+            </a>
           </h2>
         </td>
         <td>

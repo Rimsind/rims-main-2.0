@@ -1,21 +1,13 @@
-import {
-  BreadCrums,
-  SearchFilter,
-  LocationFilter,
-  HorizontalDoctorCard,
-} from "components/common/index";
-
+import { BreadCrums, HorizontalDoctorCard } from "components/common/index";
 import useSWR from "swr";
 import { apiUrl, fetcher } from "config/api";
 import { ListingPageLoader } from "components/Loaders";
 import { useState } from "react";
 
 const Index = () => {
-  const [gender, setGender] = useState();
-  const [specialty, setspecialty] = useState();
-
   const { data: doctors } = useSWR(`${apiUrl}/doctors`, fetcher);
   const { data: specialties } = useSWR(`${apiUrl}/specialties`, fetcher);
+  const [search, setSearch] = useState("");
 
   return (
     <>
@@ -37,11 +29,45 @@ const Index = () => {
                           type="search"
                           placeholder="Search"
                           aria-label="Search"
+                          onChange={(e) => setSearch(e.target.value)}
                         />
                       </form>
                     </div>
                   </div>
-                  <LocationFilter />
+                  <div className="card search-filter">
+                    <div className="card-header">
+                      <h4 className="card-title mb-0">Location Filter</h4>
+                    </div>
+                    <div className="card-body">
+                      <div className="filter-widget">
+                        <select
+                          className="form-select"
+                          aria-label="Default select example"
+                        >
+                          <option selected>Select State</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                      </div>
+                      <div className="filter-widget">
+                        <select
+                          className="form-select"
+                          aria-label="Default select example"
+                        >
+                          <option selected>Select City</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                      </div>
+                      <div className="btn-search">
+                        <button type="button" className="btn w-100">
+                          Search
+                        </button>
+                      </div>
+                    </div>
+                  </div>
 
                   <div className="card search-filter">
                     <div className="card-header">
@@ -132,9 +158,27 @@ const Index = () => {
               <div className="col-md-12 col-lg-8 col-xl-9">
                 {doctors ? (
                   <>
-                    {doctors?.map((item, index) => (
-                      <HorizontalDoctorCard data={item} key={index} />
-                    ))}
+                    {doctors
+                      ?.filter((items) => {
+                        if (search === "") {
+                          return items;
+                        } else if (
+                          items.firstName
+                            .toLowerCase()
+                            .includes(search.toLowerCase())
+                        ) {
+                          return items;
+                        } else if (
+                          items.lastName
+                            .toLowerCase()
+                            .includes(search.toLowerCase())
+                        ) {
+                          return items;
+                        }
+                      })
+                      .map((item, index) => (
+                        <HorizontalDoctorCard data={item} key={index} />
+                      ))}
                   </>
                 ) : (
                   <>

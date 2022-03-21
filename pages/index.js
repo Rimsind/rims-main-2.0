@@ -13,12 +13,9 @@ import Carousel from "react-elastic-carousel";
 import Image from "next/image";
 import Link from "next/link";
 import Slider from "react-slick";
-// import Script from "next/script";
 import { SliderCardLoader, SpecialtyLoader } from "components/Loaders";
-import { useAuth } from "context";
+
 const Index = () => {
-  const { auth, profile } = useAuth();
-  console.log(auth, "auth");
   const { data: banners } = useSWR(`${apiUrl}/banners`, fetcher);
   const { data: specialties } = useSWR(`${apiUrl}/specialties`, fetcher);
   const { data: doctors } = useSWR(`${apiUrl}/doctors`, fetcher);
@@ -38,7 +35,7 @@ const Index = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3500,
-    pauseOnHover: false,
+    pauseOnHover: true,
   };
 
   // <Script>
@@ -69,7 +66,7 @@ const Index = () => {
               <div className="set-category">
                 <div className="d-flex align-items-center">
                   <div className="img-holder">
-                    <a href="javascript:void(0);">
+                    <a href="#">
                       <i
                         className="fas fa-bed fs-4"
                         style={{ color: "#1860ca" }}
@@ -91,7 +88,7 @@ const Index = () => {
               <div className="set-category light">
                 <div className="d-flex align-items-center">
                   <div className="img-holder">
-                    <a href="javascript:void(0);">
+                    <a href="#">
                       <i
                         className="fas fa-plus fs-4"
                         style={{ color: "#0ce0ff" }}
@@ -113,7 +110,7 @@ const Index = () => {
               <div className="set-category lighter">
                 <div className="d-flex align-items-center">
                   <div className="img-holder">
-                    <a href="javascript:void(0);">
+                    <a href="#">
                       <i
                         className="fas fa-city fs-4"
                         style={{ color: "#00bcd1" }}
