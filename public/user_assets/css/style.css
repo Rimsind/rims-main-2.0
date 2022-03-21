@@ -5188,7 +5188,6 @@ body .multi-optn {
   display: flex;
   justify-content: center;
   padding: 15px;
-  border-radius: 20px;
   min-height: 200px;
   position: relative;
 }
@@ -5224,7 +5223,7 @@ body .multi-optn {
   margin: 4px 6px;
   position: absolute;
 }
-.set-category h1 {
+/* .set-category h1 {
   font-size: 60px;
   position: absolute;
   font-weight: 700;
@@ -5233,12 +5232,12 @@ body .multi-optn {
   color: #fff;
   opacity: 0.1;
   margin: 0;
-}
+} */
 .set-category.light {
-  background-color: #0ce0ff;
+  background-color: #1860ca;
 }
 .set-category.lighter {
-  background-color: #00bcd1;
+  background-color: #1860ca;
 }
 .clinic-section {
   padding: 50px 0 20px;
@@ -12648,5 +12647,3 @@ p.clini-exam-footer-content {
 }
 
 /* tab Style */
-
-

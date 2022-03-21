@@ -59,90 +59,83 @@ const Index = () => {
           ))}
         </Slider>
 
+        {/* Banner down categories section start here */}
         <section
           className="category-sec"
           style={{ marginTop: "-105px", background: "#f0f0f5" }}
         >
           <div className="container">
-            <div className="row">
-              <div className="col-md-4">
-                <div className="set-category">
-                  <div className="d-flex align-items-center">
-                    <div className="img-holder">
-                      <a href="javascript:void(0);">
-                        <i
-                          className="fas fa-bed fs-4"
-                          style={{ color: "#1860ca" }}
-                        ></i>
-                      </a>
-                    </div>
-                    <div className="info-holder">
-                      <h3>Visit a Doctor</h3>
-                      <p>
-                        We hire the best specialists to deliver top-notch
-                        diagnostic services for you.
-                      </p>
-                      <a href="#" className="book-now">
-                        Book Now <i className="fas fa-long-arrow-alt-right"></i>
-                      </a>
-                    </div>
+            <div className="d-flex">
+              <div className="set-category">
+                <div className="d-flex align-items-center">
+                  <div className="img-holder">
+                    <a href="javascript:void(0);">
+                      <i
+                        className="fas fa-bed fs-4"
+                        style={{ color: "#1860ca" }}
+                      ></i>
+                    </a>
                   </div>
-                  <h1>01</h1>
+                  <div className="info-holder border-end border-1">
+                    <h3>Visit a Doctor</h3>
+                    <p>
+                      We hire the best specialists to deliver top-notch
+                      diagnostic services for you.
+                    </p>
+                    <a href="#" className="book-now">
+                      Book Now <i className="fas fa-long-arrow-alt-right"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
-              <div className="col-md-4">
-                <div className="set-category light">
-                  <div className="d-flex align-items-center">
-                    <div className="img-holder">
-                      <a href="javascript:void(0);">
-                        <i
-                          className="fas fa-plus fs-4"
-                          style={{ color: "#0ce0ff" }}
-                        ></i>
-                      </a>
-                    </div>
-                    <div className="info-holder">
-                      <h3>Find a Pharmacy</h3>
-                      <p>
-                        We provide the a wide range of medical services, so
-                        every person could have the opportunity.
-                      </p>
-                      <a href="#" className="book-now">
-                        Book Now <i className="fas fa-long-arrow-alt-right"></i>
-                      </a>
-                    </div>
+              <div className="set-category light">
+                <div className="d-flex align-items-center">
+                  <div className="img-holder">
+                    <a href="javascript:void(0);">
+                      <i
+                        className="fas fa-plus fs-4"
+                        style={{ color: "#0ce0ff" }}
+                      ></i>
+                    </a>
                   </div>
-                  <h1>02</h1>
+                  <div className="info-holder border-end border-1">
+                    <h3>Find a Pharmacy</h3>
+                    <p>
+                      We provide the a wide range of medical services, so every
+                      person could have the opportunity.
+                    </p>
+                    <a href="#" className="book-now">
+                      Book Now <i className="fas fa-long-arrow-alt-right"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
-              <div className="col-md-4">
-                <div className="set-category lighter">
-                  <div className="d-flex align-items-center">
-                    <div className="img-holder">
-                      <a href="javascript:void(0);">
-                        <i
-                          className="fas fa-city fs-4"
-                          style={{ color: "#00bcd1" }}
-                        ></i>
-                      </a>
-                    </div>
-                    <div className="info-holder">
-                      <h3>Find a Lab</h3>
-                      <p>
-                        We use the first-class medical equipment for timely
-                        diagnostics of various diseases.
-                      </p>
-                      <a href="#" className="book-now">
-                        Book Now <i className="fas fa-long-arrow-alt-right"></i>
-                      </a>
-                    </div>
+              <div className="set-category lighter">
+                <div className="d-flex align-items-center">
+                  <div className="img-holder">
+                    <a href="javascript:void(0);">
+                      <i
+                        className="fas fa-city fs-4"
+                        style={{ color: "#00bcd1" }}
+                      ></i>
+                    </a>
                   </div>
-                  <h1>03</h1>
+                  <div className="info-holder">
+                    <h3>Find a Lab</h3>
+                    <p>
+                      We use the first-class medical equipment for timely
+                      diagnostics of various diseases.
+                    </p>
+                    <a href="#" className="book-now">
+                      Book Now <i className="fas fa-long-arrow-alt-right"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
+        {/* Banner down categories section end here */}
 
         <section className="section section-about-filter">
           <div className="container">
