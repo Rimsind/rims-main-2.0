@@ -26,6 +26,21 @@ const Index = () => {
             <div className="row">
               <div className="col-md-12 col-lg-4 col-xl-3">
                 <div className="sticky-top">
+                  <div className="card">
+                    <div className="card-header">
+                      <h4 className="card-title mb-0">Search</h4>
+                    </div>
+                    <div className="card-body">
+                      <form className="d-flex">
+                        <input
+                          className="form-control me-2"
+                          type="search"
+                          placeholder="Search"
+                          aria-label="Search"
+                        />
+                      </form>
+                    </div>
+                  </div>
                   <LocationFilter />
 
                   <div className="card search-filter">
@@ -35,6 +50,56 @@ const Index = () => {
                     <div className="card-body">
                       <div className="filter-widget">
                         <h4>Gender</h4>
+                        <div className="row">
+                          <div className="col-12">
+                            <div className="form-check form-check-inline">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value="Male"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="inlineCheckbox1"
+                              >
+                                Male
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-12">
+                            <div className="form-check form-check-inline">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value="Female"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="inlineCheckbox1"
+                              >
+                                Female
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-12">
+                            <div className="form-check form-check-inline">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value="Others"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="inlineCheckbox1"
+                              >
+                                Others
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="filter-widget">
+                        <h4>Specialities</h4>
                         <div className="row">
                           {specialties?.map((items, index) => (
                             <div className="col-12" key={index}>

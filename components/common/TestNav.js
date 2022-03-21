@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useAuth } from "context";
-
+import Script from "next/script";
 const TestNav = () => {
   const { auth, logOut, profile } = useAuth();
 
   return (
     <>
+      <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></Script>
       <section className="upper-main-mrq bg-primary pt-2">
         <div className="container-fluid">
           <marquee direction="left" behavior="alternate">
