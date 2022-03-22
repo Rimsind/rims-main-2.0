@@ -1,5 +1,5 @@
 import { BreadCrums } from "components/common/index";
-
+import AuthLayout from "components/layout/AuthLayout";
 import Image from "next/image";
 import { useAuth } from "context";
 import { apiUrl } from "config/api";
@@ -348,3 +348,5 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+Dashboard.getLayout = (Dashboard) => <AuthLayout>{Dashboard}</AuthLayout>;

@@ -1,10 +1,4 @@
-import {
-  BreadCrums,
-  SearchFilter,
-  LocationFilter,
-  HorizontalDoctorCard,
-} from "components/common/index";
-
+import { BreadCrums, HorizontalDoctorCard } from "components/common/index";
 import useSWR from "swr";
 import { apiUrl, fetcher } from "config/api";
 import { ListingPageLoader } from "components/Loaders";
