@@ -1,10 +1,11 @@
-import { BreadCrums } from "components/common";
+import { AuthNav, BreadCrums } from "components/common";
 import UserNav from "components/UserComponents/UserNav";
 import { useAuth } from "context";
 import { apiUrl } from "config/api";
 import useSWR from "swr";
 import axios from "axios";
 import { DoctorSidebar } from "components/DoctorComponents";
+import AuthLayout from "components/layout/AuthLayout";
 const PrivacySettings = () => {
   const { auth } = useAuth();
 
@@ -23,6 +24,7 @@ const PrivacySettings = () => {
   return (
     <>
       <div className="main-wrapper">
+        <AuthNav />
         <BreadCrums
           title="Home / Doctor / Privacy-Settings"
           title1="Privacy-Settings"
@@ -74,3 +76,6 @@ const PrivacySettings = () => {
 };
 
 export default PrivacySettings;
+PrivacySettings.getLayout = (PrivacySettings) => (
+  <AuthLayout>{PrivacySettings}</AuthLayout>
+);

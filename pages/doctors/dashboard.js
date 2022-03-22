@@ -25,8 +25,8 @@ const Dashboard = () => {
 
   return (
     <>
-      <AuthNav />
       <div className="main-wrapper">
+        <AuthNav />
         <BreadCrums title="Home / Doctor / Dashboard" title1="Doctor" />
 
         <div className="content">

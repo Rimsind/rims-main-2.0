@@ -1,10 +1,11 @@
-import { BreadCrums } from "components/common";
+import { AuthNav, BreadCrums } from "components/common";
 import useSWR from "swr";
 import { apiUrl } from "config/api";
 import axios from "axios";
 import { useAuth } from "context";
 import { UserPageLoader } from "components/Loaders";
 import { AppointmentList, DoctorSidebar } from "components/DoctorComponents";
+import AuthLayout from "components/layout/AuthLayout";
 const Index = () => {
   const { auth } = useAuth();
   const { data: appointments } = useSWR(
@@ -35,6 +36,7 @@ const Index = () => {
   return (
     <>
       <div className="main-wrapper">
+        <AuthNav />
         <BreadCrums
           title="Home / Dashboard / My Appointments"
           title1="My Appointments"
@@ -99,3 +101,4 @@ const Index = () => {
 };
 
 export default Index;
+Index.getLayout = (Index) => <AuthLayout>{Index}</AuthLayout>;

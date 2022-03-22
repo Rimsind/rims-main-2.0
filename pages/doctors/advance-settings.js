@@ -1,10 +1,11 @@
-import { BreadCrums } from "components/common/index";
+import { AuthNav, BreadCrums } from "components/common/index";
 
 import { useAuth } from "context";
 import { apiUrl } from "config/api";
 import useSWR from "swr";
 import axios from "axios";
 import { DoctorSidebar } from "components/DoctorComponents";
+import AuthLayout from "components/layout/AuthLayout";
 
 const AdvanceSettings = () => {
   const { auth } = useAuth();
@@ -24,6 +25,7 @@ const AdvanceSettings = () => {
   return (
     <>
       <div className="main-wrapper">
+        <AuthNav />
         <BreadCrums
           title="Home / Doctor / Advance-Settings"
           title1="Advance-Settings"
@@ -54,3 +56,6 @@ const AdvanceSettings = () => {
   );
 };
 export default AdvanceSettings;
+AdvanceSettings.getLayout = (AdvanceSettings) => (
+  <AuthLayout>{AdvanceSettings}</AuthLayout>
+);

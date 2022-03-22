@@ -28,42 +28,37 @@ const AuthNav = () => {
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
               <ul className="navbar-nav mx-auto">
                 <li className="nav-item current active">
-                  <Link href="/dashboard">
+                  <Link href="/doctors/dashboard">
                     <a className="nav-link">
-                      <i className="fas fa-tachometer-alt me-1 "></i>
-                      <span>Dashboard</span>
+                      <span className="fs-6 text-dark">Dashboard</span>
                     </a>
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link href="/appointments">
+                  <Link href="/doctors/appointments">
                     <a className="nav-link">
-                      <i className="me-1 far fa-calendar-check"></i>
-                      <span>Appointments</span>
+                      <span className="fs-6 text-dark">Appointments</span>
+                    </a>
+                  </Link>
+                </li>
+                {/* <li className="nav-item">
+                  <Link href="/doctors/my-patients">
+                    <a className="nav-link">
+                      <span className="fs-6 text-dark">My Patients</span>
+                    </a>
+                  </Link>
+                </li> */}
+                <li className="nav-item">
+                  <Link href="/doctors/time-table">
+                    <a className="nav-link">
+                      <span className="fs-6 text-dark">Time Table</span>
                     </a>
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link href="/my-patients">
+                  <Link href="/doctors/profile-settings">
                     <a className="nav-link">
-                      <i className="me-1 far fa-user-alt"></i>
-                      <span>My Patients</span>
-                    </a>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link href="/time-table">
-                    <a className="nav-link">
-                      <i className="me-1 far fa-calendar-day"></i>
-                      <span>Time Table</span>
-                    </a>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link href="/profile-settings">
-                    <a className="nav-link">
-                      <i className="me-1 far fa-id-badge"></i>
-                      <span>Profile Settings</span>
+                      <span className="fs-6 text-dark">Profile Settings</span>
                     </a>
                   </Link>
                 </li>
