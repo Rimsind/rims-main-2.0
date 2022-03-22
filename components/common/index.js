@@ -18,6 +18,7 @@ import ListPagination from "./ListPagination";
 import HorizontalHospitalCard from "./HorizontalDoctorCard";
 import PolyclinicSideBar from "./PolyclinicSideBar";
 import NursingSideBar from "./NursingSideBar";
+import AuthNav from "./AuthNav";
 
 export {
   BreadCrums,
@@ -40,4 +41,5 @@ export {
   HorizontalHospitalCard,
   PolyclinicSideBar,
   NursingSideBar,
+  AuthNav,
 };
