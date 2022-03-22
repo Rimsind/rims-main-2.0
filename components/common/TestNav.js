@@ -84,7 +84,7 @@ const TestNav = () => {
                               profile?.image?.url ||
                               profile?.coverImage?.url ||
                               profile?.profile_image?.url ||
-                              "/assets/images/profile.png"
+                              "/assets/images/alternate/alt-user-2.png"
                             }
                             width="35"
                             height="35"
@@ -102,7 +102,7 @@ const TestNav = () => {
                                 profile?.image?.url ||
                                 profile?.coverImage?.url ||
                                 profile?.profile_image?.url ||
-                                "/assets/images/profile.png"
+                                "/assets/images/alternate/alt-user-2.png"
                               }
                               alt="User Image"
                               className="avatar-img rounded-circle"

@@ -7,24 +7,36 @@ const VerticalPolyclinicCard = ({ data, link }) => {
         <div className="our-doctors-card">
           <div className="doctors-header">
             <a href="#">
-              <Image
-                height={200}
-                width={300}
-                src={
-                  data?.coverImage?.url ||
-                  data?.profile_image?.url ||
-                  "/assests/images/polyclinic.jpg"
-                }
-                alt=""
-                className="img-fluid"
-              />
+              {link === "polyclinics" ? (
+                <Image
+                  height={200}
+                  width={300}
+                  src={
+                    data?.coverImage?.url ||
+                    "/assets/images/alternate/alt-polyclinic.png"
+                  }
+                  alt=""
+                  className="img-fluid"
+                />
+              ) : (
+                <Image
+                  height={200}
+                  width={300}
+                  src={
+                    data?.profile_image?.url ||
+                    "/assets/images/alternate/alt-hospital.png"
+                  }
+                  alt=""
+                  className="img-fluid"
+                />
+              )}
             </a>
           </div>
           <div className="doctors-body">
             <a href="doctor-profile.html">
               <h4>{data?.name}</h4>
             </a>
-            <p>Dental Filling, Whitning</p>
+
             <div className="location d-flex">
               <p>
                 <i className="fas fa-map-marker-alt"></i> {data?.city},{" "}

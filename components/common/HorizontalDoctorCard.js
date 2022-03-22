@@ -10,13 +10,29 @@ const HorizontalDoctorCard = ({ data }) => {
               <div className="doctor-img">
                 <Link href={`/doctors/${data?.id}`}>
                   <a>
-                    <Image
-                      height="150"
-                      width="150"
-                      src={data?.image?.url || "/assets/images/profile.png"}
-                      className="img-fluid"
-                      alt="User Image"
-                    />
+                    {data.gender === "Male" ? (
+                      <Image
+                        height="150"
+                        width="150"
+                        src={
+                          data?.image?.url ||
+                          "/assets/images/alternate/doctor-male.png"
+                        }
+                        className="img-fluid"
+                        alt="User Image"
+                      />
+                    ) : (
+                      <Image
+                        height="150"
+                        width="150"
+                        src={
+                          data?.image?.url ||
+                          "/assets/images/alternate/doctor-female.png"
+                        }
+                        className="img-fluid"
+                        alt="User Image"
+                      />
+                    )}
                   </a>
                 </Link>
               </div>

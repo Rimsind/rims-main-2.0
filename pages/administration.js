@@ -1,3 +1,4 @@
+import AuthLayout from "components/layout/AuthLayout";
 import Link from "next/link";
 const Administration = () => {
   return (
@@ -8,7 +9,7 @@ const Administration = () => {
           style={{
             background: "url(/user_assets/img/background.jpg)",
             backgroundSize: "cover",
-            height: "94vh",
+            height: "100vh",
           }}
         >
           <div className="container">
@@ -114,3 +115,7 @@ const Administration = () => {
 };
 
 export default Administration;
+
+Administration.getLayout = (Administration) => (
+  <AuthLayout>{Administration}</AuthLayout>
+);

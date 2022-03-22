@@ -1,25 +1,46 @@
 import Image from "next/image";
 import Link from "next/link";
 const VerticalDoctorCard = ({ data }) => {
+  console.log(data);
   return (
     <>
       <div className="profile-widget me-3">
         <div className="doc-img">
-          <a href="doctor-profile.html">
-            <Image
-              height={280}
-              width={320}
-              className="img-fluid"
-              alt="User Image"
-              src={data?.image?.url || "/assets/images/profile.png"}
-            />
-          </a>
+          <Link href={`/doctors/${data?.id}`}>
+            <a>
+              {data?.gender === "Male" ? (
+                <Image
+                  height={280}
+                  width={320}
+                  className="img-fluid"
+                  alt="User Image"
+                  src={
+                    data?.image?.url ||
+                    "/assets/images/alternate/doctor-male.png"
+                  }
+                />
+              ) : (
+                <Image
+                  height={280}
+                  width={320}
+                  className="img-fluid"
+                  alt="User Image"
+                  src={
+                    data?.image?.url ||
+                    "/assets/images/alternate/doctor-female.png"
+                  }
+                />
+              )}
+            </a>
+          </Link>
         </div>
         <div className="pro-content">
           <h3 className="title">
-            <a href="doctor-profile.html">
-              Dr. {data?.firstName} {data?.lastName}
-            </a>
+            <Link href={`/doctors/${data?.id}`}>
+              <a>
+                Dr. {data?.firstName} {data?.lastName}
+              </a>
+            </Link>
             <i className="fas fa-check-circle verified"></i>
           </h3>
           <p className="speciality">
@@ -36,7 +57,8 @@ const VerticalDoctorCard = ({ data }) => {
                 height="20"
                 width="20"
                 src={
-                  data?.specialty?.image?.url || "/assets/images/profile.png"
+                  data?.specialty?.image?.url ||
+                  "/assets/images/alternate/alt-specialty.png"
                 }
                 alt=""
               />{" "}

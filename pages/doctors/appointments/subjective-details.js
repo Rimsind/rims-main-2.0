@@ -23,7 +23,6 @@ import {
 
 const SubjectiveDetails = () => {
   const { id } = useRouter().query;
-
   const { auth } = useAuth();
 
   const { data: appointment } = useSWR(

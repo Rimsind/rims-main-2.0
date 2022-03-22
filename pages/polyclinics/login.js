@@ -263,12 +263,16 @@ const Login = () => {
                 USER LOGIN
               </p>
             </div>
-            <form style={{ width: "350px", margin: "auto" }}>
+            <form
+              style={{ width: "350px", margin: "auto" }}
+              onSubmit={handleSubmit(onSubmit)}
+            >
               <div className="mb-3">
                 <input
                   type="text"
                   className="form-control"
                   placeholder="Username"
+                  {...register("email")}
                 />
               </div>
               <div className="mb-3">
@@ -276,6 +280,7 @@ const Login = () => {
                   type="password"
                   className="form-control"
                   placeholder="Password"
+                  {...register("password")}
                 />
               </div>
               <div className="row align-items-center">

@@ -127,12 +127,12 @@ const AddressInfo = ({ data }) => {
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="806 Twin Willow Lane"
+                    placeholder="Enter Street Address"
                     {...register("street")}
                     defaultValue={
                       !!data?.address && !!data.address.street_address
                         ? data.address.street_address
-                        : "Enter Street Address"
+                        : ""
                     }
                   />
                 </div>
@@ -143,12 +143,12 @@ const AddressInfo = ({ data }) => {
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="Old Forge"
+                    placeholder="Enter City"
                     {...register("city")}
                     defaultValue={
                       !!data?.address && !!data.address.city
                         ? data.address.city
-                        : "Enter City"
+                        : ""
                     }
                   />
                 </div>

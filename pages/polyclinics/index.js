@@ -7,15 +7,10 @@ import {
 import { ListingPageLoader } from "components/Loaders";
 import { apiUrl, fetcher } from "config/api";
 import useSWR from "swr";
+import { useState } from "react";
 const Index = () => {
-  const { data, loading, error } = useSWR(`${apiUrl}/polyclinics`, fetcher);
-
-  // if (loading) {
-  //   return <loading />;
-  // }
-  // if (error) {
-  //   return <LoadingError />;
-  // }
+  const { data } = useSWR(`${apiUrl}/polyclinics`, fetcher);
+  const [search, setSearch] = useState("");
 
   return (
     <>
@@ -37,23 +32,35 @@ const Index = () => {
                           type="search"
                           placeholder="Search"
                           aria-label="Search"
+                          onChange={(e) => setSearch(e.target.value)}
                         />
                       </form>
                     </div>
                   </div>
-                  <LocationFilter />
                 </div>
               </div>
               <div className="col-md-12 col-lg-8 col-xl-9">
                 {data ? (
                   <>
-                    {data?.map((items, index) => (
-                      <HorizontalPolyclinicCard
-                        data={items}
-                        link="polyclinics"
-                        key={index}
-                      />
-                    ))}
+                    {data
+                      ?.filter((items) => {
+                        if (search === "") {
+                          return items;
+                        } else if (
+                          items.name
+                            .toLowerCase()
+                            .includes(search.toLowerCase())
+                        ) {
+                          return items;
+                        }
+                      })
+                      .map((items, index) => (
+                        <HorizontalPolyclinicCard
+                          data={items}
+                          link="polyclinics"
+                          key={index}
+                        />
+                      ))}
                   </>
                 ) : (
                   <>

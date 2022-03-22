@@ -18,7 +18,10 @@ const DoctorSidebar = (props) => {
                     <Image
                       height="145"
                       width="145"
-                      src={data?.image?.url || "/assets/images/profile.png"}
+                      src={
+                        data?.image?.url ||
+                        "/assets/images/alternate/alt-user-2.png"
+                      }
                       alt="User Image"
                     />
                   </a>
@@ -33,7 +36,7 @@ const DoctorSidebar = (props) => {
                           width="20"
                           src={
                             data?.specialty?.image?.url ||
-                            "/assets/images/profile.png"
+                            "/assets/images/alternate/alt-specialty.png"
                           }
                           alt="User Image"
                         />{" "}
