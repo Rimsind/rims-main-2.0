@@ -5,6 +5,8 @@ import axios from "axios";
 import { NursingSideBar } from "components/common";
 import { useState } from "react";
 import { toast, Slide } from "react-toastify";
+import Image from "next/image";
+import Link from "next/link";
 const ManageDoctors = () => {
   const { auth } = useAuth();
 
@@ -95,6 +97,59 @@ const ManageDoctors = () => {
                     <button className="btn btn-primary" onClick={addDoctor}>
                       Add Doctor
                     </button>
+                  </div>
+                </div>
+              </div>
+              <div className="card card-table mb-0">
+                <div className="card-body">
+                  <div className="table-responsive">
+                    <table className="table table-hover table-center mb-0">
+                      <thead>
+                        <tr>
+                          <th>Doctor ID</th>
+                          <th>Doctor Details</th>
+
+                          <th>Specialities</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>#doc001</td>
+                          <td>
+                            <h2 className="table-avatar">
+                              <a
+                                href="doctor-profile.html"
+                                className="avatar avatar-sm me-2"
+                              >
+                                <Image
+                                  height="145"
+                                  width="145"
+                                  className="avatar-img rounded-circle"
+                                  src={"/assets/images/profile.png"}
+                                  alt="User Image"
+                                />
+                              </a>
+
+                              <a>Dr. Samir Barman</a>
+                            </h2>
+                          </td>
+                          <td>
+                            <span>Rehabitation</span>
+                          </td>
+
+                          <td className="text-end">
+                            <div className="table-action">
+                              <Link href="#">
+                                <a className="btn btn-sm bg-danger-light">
+                                  <i className="far fa-trash-alt"></i> Delete
+                                </a>
+                              </Link>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
