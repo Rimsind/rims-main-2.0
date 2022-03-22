@@ -82,8 +82,6 @@ const TestNav = () => {
                             className="rounded-circle "
                             src={
                               profile?.image?.url ||
-                              profile?.coverImage?.url ||
-                              profile?.profile_image?.url ||
                               "/assets/images/alternate/alt-user-2.png"
                             }
                             width="35"
@@ -100,8 +98,6 @@ const TestNav = () => {
                               width="100"
                               src={
                                 profile?.image?.url ||
-                                profile?.coverImage?.url ||
-                                profile?.profile_image?.url ||
                                 "/assets/images/alternate/alt-user-2.png"
                               }
                               alt="User Image"

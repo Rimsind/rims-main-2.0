@@ -30,7 +30,7 @@ const NursingHomeId = () => {
                               height="130"
                               width="145"
                               src={
-                                data?.profile_image?.url ||
+                                data?.image?.url ||
                                 "/assets/images/alternate/alt-hospital.png"
                               }
                               className="img-fluid"

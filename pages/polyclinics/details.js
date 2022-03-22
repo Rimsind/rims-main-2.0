@@ -29,7 +29,7 @@ const PolyclinicId = () => {
                               height="130"
                               width="145"
                               src={
-                                data?.coverImage?.url ||
+                                data?.image?.url ||
                                 "/assets/images/alternate/alt-hospital.png"
                               }
                               className="img-fluid"

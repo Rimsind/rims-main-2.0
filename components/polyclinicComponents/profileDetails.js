@@ -1,23 +1,74 @@
+import { useAuth } from "context";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import { apiUrl } from "config/api";
+import { toast, Slide } from "react-toastify";
+import { useState } from "react";
 const ProfileDetails = ({ data }) => {
+  const { auth } = useAuth();
+  const [loading, setLoading] = useState(false);
+  if (auth?.user?.role?.id === 6) {
+    var role = "polyclinics";
+  }
+  if (auth?.user?.role?.id === 7) {
+    var role = "nursing-homes";
+  }
   const { register, handleSubmit } = useForm();
   const submit_polydetails = async (data, event) => {
+    setLoading(true);
     event.preventDefault();
-    const payload = {
-      name: data.name,
-      phone: data.phone,
-      workingHours: {
-        start: data.start,
-        end: data.end,
-      },
-    };
-    console.log(payload);
+    try {
+      const payload = {
+        name: data.name,
+        phone: data.phone,
+        workingHours: {
+          Start: data.start,
+          end: data.end,
+        },
+      };
+      const res = await axios.put(
+        `${apiUrl}/${role}/${auth.user?.profileId}`,
+        payload,
+        {
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+          },
+        }
+      );
+      const result = res.data;
+      toast.success("Profile Updated Succesfully", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+      return result, setLoading(false);
+    } catch (error) {
+      console.log(error);
+      toast.error("Something Went Wrong Try Again.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+      setLoading(false);
+    }
   };
   return (
     <>
       <div className="card">
         <div className="card-header">
-          <p className="fs-5 fw-bold text-center">Polyclinic Details</p>
+          <p className="fs-5 fw-bold text-center">Profile Details</p>
         </div>
         <div className="card-body">
           <form onSubmit={handleSubmit(submit_polydetails)}>
@@ -98,10 +149,12 @@ const ProfileDetails = ({ data }) => {
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Ex: 10:00 A.M."
+                        placeholder="eg: 10:00 A.M."
                         name="polyclinic_start_time"
                         {...register("start")}
-                        defaultValue={!!data?.start ? data.start : ""}
+                        defaultValue={
+                          !!data?.workingHours ? data?.workingHours?.Start : ""
+                        }
                       />
                     </div>
                   </div>
@@ -119,10 +172,12 @@ const ProfileDetails = ({ data }) => {
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Ex: 03:30 P.M."
+                        placeholder="eg: 03:30 P.M."
                         name="polyclinic_end_time"
                         {...register("end")}
-                        defaultValue={!!data?.end ? data.end : ""}
+                        defaultValue={
+                          !!data?.workingHours ? data?.workingHours?.end : ""
+                        }
                       />
                     </div>
                   </div>
@@ -130,9 +185,12 @@ const ProfileDetails = ({ data }) => {
               </div>
             </div>
             <div className="save-btn-poly mt-4 text-end">
-              <button className="btn btn-primary" type="submit">
-                Save Changes
-              </button>
+              <input
+                type="submit"
+                className="btn btn-primary submit-btn"
+                value={loading ? "Saving..." : "Save Changes"}
+                disabled={loading}
+              />
             </div>
           </form>
         </div>

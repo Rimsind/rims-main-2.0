@@ -17,8 +17,7 @@ const HorizontalPolyclinicCard = (props) => {
                       height="130"
                       width="150"
                       src={
-                        data?.coverImage?.url ||
-                        data?.profile_image?.url ||
+                        data?.image?.url ||
                         "/assets/images/alternate/alt-hospital.png"
                       }
                       className="img-fluid"

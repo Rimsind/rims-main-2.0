@@ -13,7 +13,7 @@ const PolyclinicSideBar = (props) => {
                   height="145"
                   width="145"
                   src={
-                    data?.coverImage?.url ||
+                    data?.image?.url ||
                     "/assets/images/alternate/alt-user-2.png"
                   }
                   alt="User Image"

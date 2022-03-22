@@ -11,8 +11,7 @@ const VerticalPolyclinicCard = ({ data, link }) => {
                 height={200}
                 width={300}
                 src={
-                  data?.coverImage?.url ||
-                  data?.profile_image?.url ||
+                  data?.image?.url ||
                   "/assets/images/alternate/alt-hospital.png"
                 }
                 alt=""

@@ -47,7 +47,7 @@ const ProfilePicture = ({ data }) => {
     setLoading(true);
     try {
       const image = await uploadImage(profileImage, auth.token);
-      console.log(image);
+
       const payload = {
         image,
       };
