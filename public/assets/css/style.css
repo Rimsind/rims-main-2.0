@@ -3721,3 +3721,44 @@ button.btn-custom-time-slot:visited {
   background-color: #230dec;
   color: white;
 }
+
+/* Custom Doctor Auth Navbar */
+.custom-dropdown-menu {
+  width: 228px;
+}
+.user-header {
+  background-color: #f9f9f9;
+  display: flex;
+  padding: 15px 10px;
+  width: 220px;
+}
+
+@media screen and (min-width: 300px) and (max-width: 360px) {
+  .user-header {
+    width: 335px;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 420px) {
+  .user-header {
+    width: 385px;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 850px) {
+  .user-header {
+    width: 777px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .custom-dropdown-menu {
+    margin-left: -128px;
+  }
+}
+
+.user-header .user-text {
+  margin-left: 10px;
+}
+.user-header .user-text h6 {
+  margin-bottom: 2px;
+}

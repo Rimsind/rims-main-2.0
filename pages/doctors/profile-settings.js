@@ -1,4 +1,4 @@
-import { BreadCrums } from "components/common";
+import { AuthNav, BreadCrums } from "components/common";
 import { apiUrl } from "config/api";
 import axios from "axios";
 import useSWR from "swr";
@@ -7,6 +7,7 @@ import { useAuth } from "context";
 import { UserPageLoader } from "components/Loaders";
 import { DoctorSidebar } from "components/DoctorComponents";
 import ProfileInfo from "components/DoctorComponents/ProfileInfo";
+import AuthLayout from "components/layout/AuthLayout";
 const ProfileSettings = () => {
   const { auth } = useAuth();
 
@@ -26,6 +27,7 @@ const ProfileSettings = () => {
     <>
       {" "}
       <div className="main-wrapper">
+        <AuthNav />
         <BreadCrums
           title="Home / Doctor / Profile-Settings"
           title1="Profile-Settings"
@@ -54,3 +56,6 @@ const ProfileSettings = () => {
 };
 
 export default ProfileSettings;
+ProfileSettings.getLayout = (ProfileSettings) => (
+  <AuthLayout>{ProfileSettings}</AuthLayout>
+);

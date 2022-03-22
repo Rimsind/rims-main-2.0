@@ -1,4 +1,4 @@
-import { BreadCrums } from "components/common/index";
+import { BreadCrums, AuthNav } from "components/common/index";
 import AuthLayout from "components/layout/AuthLayout";
 import Image from "next/image";
 import { useAuth } from "context";
@@ -26,6 +26,7 @@ const Dashboard = () => {
   return (
     <>
       <div className="main-wrapper">
+        <AuthNav />
         <BreadCrums title="Home / Doctor / Dashboard" title1="Doctor" />
 
         <div className="content">
