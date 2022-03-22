@@ -12,7 +12,10 @@ const NursingSideBar = (props) => {
                 <Image
                   height="145"
                   width="145"
-                  src={data?.profile_image?.url || "/assets/images/profile.png"}
+                  src={
+                    data?.profile_image?.url ||
+                    "/assets/images/alternate/alt-user-2.png"
+                  }
                   alt="User Image"
                 />
               </a>

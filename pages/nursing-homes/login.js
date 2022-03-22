@@ -159,7 +159,7 @@ const Login = () => {
                       className="form-check-input"
                       id="exampleCheck1"
                     />
-                    <label className="form-check-label" for="exampleCheck1">
+                    <label className="form-check-label" hemlFor="exampleCheck1">
                       Remember Me
                     </label>
                   </div>

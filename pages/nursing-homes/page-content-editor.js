@@ -4,6 +4,8 @@ import { apiUrl } from "config/api";
 import useSWR from "swr";
 import axios from "axios";
 import { NursingSideBar } from "components/common";
+import { useForm } from "react-hook-form";
+import { useState } from "react";
 
 const PageContentEditor = () => {
   const { auth } = useAuth();
@@ -20,6 +22,46 @@ const PageContentEditor = () => {
       return result;
     }
   );
+  const { register, handleSubmit } = useForm();
+  const submit_nursing_content = async (data, event) => {
+    event.preventDefault();
+    const payload = {
+      totalRegularBeds: data.totalRegularBeds,
+      availableRegularbeds: data.availableRegularbeds,
+      totalIcuBeds: data.totalIcuBeds,
+      availableIcuBeds: data.availableIcuBeds,
+      totalAmbulance: data.totalAmbulance,
+      availableAmbulance: data.availableAmbulance,
+      totalIcuAmbulance: data.totalIcuAmbulance,
+      availableIcuAmbulance: data.availableIcuAmbulance,
+      // totalOT: data.totalOT,
+      // availableOT:data.availableOT,
+      totalBurnUnits: data.totalBurnUnits,
+      availableBurnUnits: data.availableBurnUnits,
+    };
+    console.log(payload);
+  };
+
+  const [features, setFeatures] = useState();
+  const [allFeatures, setAllFeatures] = useState([]);
+
+  const addFeatures = () => {
+    setAllFeatures([
+      ...allFeatures,
+      {
+        name: features,
+      },
+    ]);
+  };
+
+  const submitFeatures = async () => {
+    const payload = {
+      features: {
+        name: allFeatures,
+      },
+    };
+  };
+
   return (
     <>
       <div className="content mb-3">
@@ -33,7 +75,7 @@ const PageContentEditor = () => {
                   <p className="fs-5 fw-bold text-center lh-1">Overview</p>
                 </div>
                 <div className="card-body">
-                  <form>
+                  <form onSubmit={handleSubmit(submit_nursing_content)}>
                     <div className="row align-items-center mb-3">
                       <div className="col-md-2">
                         <div className="nursing-form-input">
@@ -53,6 +95,13 @@ const PageContentEditor = () => {
                                 type="text"
                                 className="form-control"
                                 placeholder="Total Bed"
+                                name="totalRegularBeds"
+                                {...register("totalRegularBeds")}
+                                defaultValue={
+                                  !!data?.totalRegularBeds
+                                    ? data.totalRegularBeds
+                                    : ""
+                                }
                               />
                             </div>
                           </div>
@@ -71,6 +120,13 @@ const PageContentEditor = () => {
                                 type="text"
                                 className="form-control"
                                 placeholder="Available Bed"
+                                name="availableRegularbeds"
+                                {...register("availableRegularbeds")}
+                                defaultValue={
+                                  !!data?.availableRegularbeds
+                                    ? data.availableRegularbeds
+                                    : ""
+                                }
                               />
                             </div>
                           </div>
@@ -96,6 +152,11 @@ const PageContentEditor = () => {
                                 type="text"
                                 className="form-control"
                                 placeholder="Total Bed"
+                                name="totalIcuBeds"
+                                {...register("totalIcuBeds")}
+                                defaultValue={
+                                  !!data?.totalIcuBeds ? data.totalIcuBeds : ""
+                                }
                               />
                             </div>
                           </div>
@@ -114,6 +175,13 @@ const PageContentEditor = () => {
                                 type="text"
                                 className="form-control"
                                 placeholder="Available Bed"
+                                name="availableIcuBeds"
+                                {...register("availableIcuBeds")}
+                                defaultValue={
+                                  !!data?.availableIcuBeds
+                                    ? data.availableIcuBeds
+                                    : ""
+                                }
                               />
                             </div>
                           </div>
@@ -141,6 +209,13 @@ const PageContentEditor = () => {
                                 type="text"
                                 className="form-control"
                                 placeholder="Total Ambulance"
+                                name="totalAmbulance"
+                                {...register("totalAmbulance")}
+                                defaultValue={
+                                  !!data?.totalAmbulance
+                                    ? data.totalAmbulance
+                                    : ""
+                                }
                               />
                             </div>
                           </div>
@@ -159,6 +234,13 @@ const PageContentEditor = () => {
                                 type="text"
                                 className="form-control"
                                 placeholder="Available Ambulance"
+                                name="availableAmbulance"
+                                {...register("availableAmbulance")}
+                                defaultValue={
+                                  !!data?.availableAmbulance
+                                    ? data.availableAmbulance
+                                    : ""
+                                }
                               />
                             </div>
                           </div>
@@ -184,6 +266,13 @@ const PageContentEditor = () => {
                                 type="text"
                                 className="form-control"
                                 placeholder="Total Ambulance"
+                                name="totalIcuAmbulance"
+                                {...register("totalIcuAmbulance")}
+                                defaultValue={
+                                  !!data?.totalIcuAmbulance
+                                    ? data.totalIcuAmbulance
+                                    : ""
+                                }
                               />
                             </div>
                           </div>
@@ -202,6 +291,13 @@ const PageContentEditor = () => {
                                 type="text"
                                 className="form-control"
                                 placeholder="Available Ambulance"
+                                name="availableIcuAmbulance"
+                                {...register("availableIcuAmbulance")}
+                                defaultValue={
+                                  !!data?.availableIcuAmbulance
+                                    ? data.availableIcuAmbulance
+                                    : ""
+                                }
                               />
                             </div>
                           </div>
@@ -229,6 +325,11 @@ const PageContentEditor = () => {
                                 type="text"
                                 className="form-control"
                                 placeholder="Total OT"
+                                name="totalOT"
+                                {...register("totalOT")}
+                                defaultValue={
+                                  !!data?.totalOT ? data.totalOT : ""
+                                }
                               />
                             </div>
                           </div>
@@ -247,6 +348,11 @@ const PageContentEditor = () => {
                                 type="text"
                                 className="form-control"
                                 placeholder="Available OT"
+                                name="availableOT"
+                                {...register("availableOT")}
+                                defaultValue={
+                                  !!data?.availableOT ? data.availableOT : ""
+                                }
                               />
                             </div>
                           </div>
@@ -272,6 +378,13 @@ const PageContentEditor = () => {
                                 type="text"
                                 className="form-control"
                                 placeholder="Total Unit"
+                                name="totalBurnUnits"
+                                {...register("totalBurnUnits")}
+                                defaultValue={
+                                  !!data?.totalBurnUnits
+                                    ? data.totalBurnUnits
+                                    : ""
+                                }
                               />
                             </div>
                           </div>
@@ -290,10 +403,22 @@ const PageContentEditor = () => {
                                 type="text"
                                 className="form-control"
                                 placeholder="Available Unit"
+                                name="availableBurnUnits"
+                                {...register("availableBurnUnits")}
+                                defaultValue={
+                                  !!data?.availableBurnUnits
+                                    ? data.availableBurnUnits
+                                    : ""
+                                }
                               />
                             </div>
                           </div>
                         </div>
+                      </div>
+                      <div className="save-btn-poly mt-4 text-end">
+                        <button className="btn btn-primary" type="submit">
+                          Save Changes
+                        </button>
                       </div>
                     </div>
                   </form>
@@ -305,40 +430,71 @@ const PageContentEditor = () => {
                   <p className="fs-5 fw-bold text-center lh-1">Features</p>
                 </div>
                 <div className="card-body">
-                  <form>
-                    <div className="form-check form-check-inline">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        value="option1"
-                      />
-                      <label className="form-check-label">
-                        Dental Fillings
-                      </label>
+                  <div className="row align-items-end">
+                    <div className="col-6">
+                      <div className="features-add-sec mb-3">
+                        <div className="row align-items-center">
+                          <div className="col-4">
+                            <p className="fs-6 fw-bold">Add Features</p>
+                          </div>
+                          <div className="col-4">
+                            <select
+                              className="form-select"
+                              aria-label="Default select example"
+                              onChange={(e) => setFeatures(e.target.value)}
+                            >
+                              <option selected>Select Features</option>
+                              <option value="Pharmacy">Pharmacy</option>
+                              <option value="Patology">Patology</option>
+                              <option value="Ambulance">Ambulance</option>
+                              <option value="Radiology">Radiology</option>
+                            </select>
+                          </div>
+                          <div className="col-4">
+                            <div className="features-add-btn text-start">
+                              <button
+                                className="btn btn-secondary"
+                                onClick={addFeatures}
+                              >
+                                Add Features
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="form-check form-check-inline">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        value="option1"
-                      />
-                      <label className="form-check-label">Whitneing</label>
+                    <div className="col-6">
+                      <div className="features-pill-item mt-4">
+                        <div className="row align-items-center">
+                          {allFeatures?.map((items, index) => (
+                            <div className="col" key={index}>
+                              <p
+                                class="badge fs-6 fw-light py-2 px-4"
+                                style={{ backgroundColor: "#0001fbb8" }}
+                              >
+                                <a href="#">
+                                  <i className="fal fa-times me-2 text-light"></i>
+                                </a>
+                                {items?.name}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                     </div>
-                    <div className="form-check form-check-inline">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        value="option1"
-                      />
-                      <label className="form-check-label">Whitneing</label>
-                    </div>
-                    <div className="save-btn-poly mt-4 text-end">
-                      <button className="btn btn-primary">Save Changes</button>
-                    </div>
-                  </form>
+                  </div>
+
+                  <div className="save-btn-poly mt-4 text-end">
+                    <button
+                      className="btn btn-primary"
+                      onClick={submitFeatures}
+                    >
+                      Save Changes
+                    </button>
+                  </div>
                 </div>
               </div>
-              <p className="fs-5 fw-bold">Premium Page</p>
+              {/* <p className="fs-5 fw-bold">Premium Page</p>
 
               <div className="card">
                 <div className="card-body">
@@ -874,7 +1030,7 @@ const PageContentEditor = () => {
                     </div>
                   </form>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

@@ -321,7 +321,10 @@ const NursingHomeId = () => {
                         className="tab-pane fade show"
                       >
                         {data?.doctors?.map((items, index) => (
-                          <PolyclinicTimetableCard schedule={items} />
+                          <PolyclinicTimetableCard
+                            schedule={items}
+                            key={index}
+                          />
                         ))}
                       </div>
 
