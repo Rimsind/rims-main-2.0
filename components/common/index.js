@@ -19,6 +19,8 @@ import HorizontalHospitalCard from "./HorizontalDoctorCard";
 import PolyclinicSideBar from "./PolyclinicSideBar";
 import NursingSideBar from "./NursingSideBar";
 import AuthNav from "./AuthNav";
+import NavBar from "components/NavBar";
+import DeleteAccount from "./DeleteAccount";
 
 export {
   BreadCrums,
@@ -42,4 +44,6 @@ export {
   PolyclinicSideBar,
   NursingSideBar,
   AuthNav,
+  NavBar,
+  DeleteAccount,
 };

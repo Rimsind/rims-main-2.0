@@ -1,4 +1,4 @@
-import { AuthNav, BreadCrums } from "components/common";
+import { BreadCrums } from "components/common";
 import {
   CheifComplaints,
   FamilyHistory,
@@ -21,7 +21,6 @@ import {
   PatientDemographics,
   NotesCard,
 } from "components/DoctorComponents";
-import AuthLayout from "components/layout/AuthLayout";
 
 const SubjectiveDetails = () => {
   const { id } = useRouter().query;
@@ -43,7 +42,6 @@ const SubjectiveDetails = () => {
   return (
     <>
       <div className="page-wrapper">
-        <AuthNav />
         <BreadCrums
           title="Home / Dashboard / My Appointments"
           title1="Subjective Information"
@@ -311,6 +309,3 @@ const SubjectiveDetails = () => {
 };
 
 export default SubjectiveDetails;
-SubjectiveDetails.getLayout = (SubjectiveDetails) => (
-  <AuthLayout>{SubjectiveDetails}</AuthLayout>
-);
