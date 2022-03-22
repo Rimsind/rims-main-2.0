@@ -5,8 +5,7 @@ import axios from "axios";
 import { NursingSideBar } from "components/common";
 import { useState } from "react";
 import { toast, Slide } from "react-toastify";
-import Image from "next/image";
-import Link from "next/link";
+import MyDoctors from "components/polyclinicComponents/MyDoctors";
 const ManageDoctors = () => {
   const { auth } = useAuth();
 
@@ -114,40 +113,9 @@ const ManageDoctors = () => {
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>#doc001</td>
-                          <td>
-                            <h2 className="table-avatar">
-                              <a
-                                href="doctor-profile.html"
-                                className="avatar avatar-sm me-2"
-                              >
-                                <Image
-                                  height="145"
-                                  width="145"
-                                  className="avatar-img rounded-circle"
-                                  src={"/assets/images/profile.png"}
-                                  alt="User Image"
-                                />
-                              </a>
-
-                              <a>Dr. Samir Barman</a>
-                            </h2>
-                          </td>
-                          <td>
-                            <span>Rehabitation</span>
-                          </td>
-
-                          <td className="text-end">
-                            <div className="table-action">
-                              <Link href="#">
-                                <a className="btn btn-sm bg-danger-light">
-                                  <i className="far fa-trash-alt"></i> Delete
-                                </a>
-                              </Link>
-                            </div>
-                          </td>
-                        </tr>
+                        {data?.doctors?.map((items, index) => (
+                          <MyDoctors data={items} key={index} />
+                        ))}
                       </tbody>
                     </table>
                   </div>
