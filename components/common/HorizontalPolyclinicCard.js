@@ -15,11 +15,11 @@ const HorizontalPolyclinicCard = (props) => {
                   <a>
                     <Image
                       height="130"
-                      width="145"
+                      width="150"
                       src={
                         data?.coverImage?.url ||
                         data?.profile_image?.url ||
-                        "/assets/images/polyclinic.jpg"
+                        "/assets/images/alternate/alt-hospital.png"
                       }
                       className="img-fluid"
                       alt="User Image"

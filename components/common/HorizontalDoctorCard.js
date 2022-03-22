@@ -10,7 +10,7 @@ const HorizontalDoctorCard = ({ data }) => {
               <div className="doctor-img">
                 <Link href={`/doctors/${data?.id}`}>
                   <a>
-                    {data.gender === "Male" ? (
+                    {data.gender === "Male" && (
                       <Image
                         height="150"
                         width="150"
@@ -21,7 +21,8 @@ const HorizontalDoctorCard = ({ data }) => {
                         className="img-fluid"
                         alt="User Image"
                       />
-                    ) : (
+                    )}
+                    {data.gender === "Female" && (
                       <Image
                         height="150"
                         width="150"
@@ -33,6 +34,19 @@ const HorizontalDoctorCard = ({ data }) => {
                         alt="User Image"
                       />
                     )}
+                    {data.gender === "" ||
+                      (data.gender === null && (
+                        <Image
+                          height="150"
+                          width="150"
+                          src={
+                            data?.image?.url ||
+                            "/assets/images/alternate/alt-user.png"
+                          }
+                          className="img-fluid"
+                          alt="User Image"
+                        />
+                      ))}
                   </a>
                 </Link>
               </div>

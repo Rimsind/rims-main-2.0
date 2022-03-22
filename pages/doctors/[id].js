@@ -24,13 +24,43 @@ const DoctorId = () => {
                     <div className="doctor-widget">
                       <div className="doc-info-left">
                         <div className="doctor-img">
-                          <Image
-                            height="140"
-                            width="140"
-                            src={data?.image?.url || "/images/profile.png"}
-                            className="img-fluid"
-                            alt="User Image"
-                          />
+                          {data?.gender === "Male" && (
+                            <Image
+                              height="140"
+                              width="140"
+                              src={
+                                data?.image?.url ||
+                                "/assets/images/alternate/doctor-male.png"
+                              }
+                              className="img-fluid"
+                              alt="User Image"
+                            />
+                          )}
+                          {data?.gender === "Female" && (
+                            <Image
+                              height="140"
+                              width="140"
+                              src={
+                                data?.image?.url ||
+                                "/assets/images/alternate/doctor-female.png"
+                              }
+                              className="img-fluid"
+                              alt="User Image"
+                            />
+                          )}
+                          {data?.gender === "" ||
+                            (data.gender === null && (
+                              <Image
+                                height="140"
+                                width="140"
+                                src={
+                                  data?.image?.url ||
+                                  "/assets/images/alternate/alt-user.png"
+                                }
+                                className="img-fluid"
+                                alt="User Image"
+                              />
+                            ))}
                         </div>
                         <div className="doc-info-cont">
                           <h4 className="doc-name">

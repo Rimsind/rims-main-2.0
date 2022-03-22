@@ -7,29 +7,17 @@ const VerticalPolyclinicCard = ({ data, link }) => {
         <div className="our-doctors-card">
           <div className="doctors-header">
             <a href="#">
-              {link === "polyclinics" ? (
-                <Image
-                  height={200}
-                  width={300}
-                  src={
-                    data?.coverImage?.url ||
-                    "/assets/images/alternate/alt-polyclinic.png"
-                  }
-                  alt=""
-                  className="img-fluid"
-                />
-              ) : (
-                <Image
-                  height={200}
-                  width={300}
-                  src={
-                    data?.profile_image?.url ||
-                    "/assets/images/alternate/alt-hospital.png"
-                  }
-                  alt=""
-                  className="img-fluid"
-                />
-              )}
+              <Image
+                height={200}
+                width={300}
+                src={
+                  data?.coverImage?.url ||
+                  data?.profile_image?.url ||
+                  "/assets/images/alternate/alt-hospital.png"
+                }
+                alt=""
+                className="img-fluid"
+              />
             </a>
           </div>
           <div className="doctors-body">

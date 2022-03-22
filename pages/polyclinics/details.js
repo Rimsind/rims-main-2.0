@@ -30,7 +30,7 @@ const PolyclinicId = () => {
                               width="145"
                               src={
                                 data?.coverImage?.url ||
-                                "/assets/images/polyclinic.jpg"
+                                "/assets/images/alternate/alt-hospital.png"
                               }
                               className="img-fluid"
                               alt="User Image"

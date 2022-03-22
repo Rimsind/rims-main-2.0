@@ -7,6 +7,7 @@ import { DetailsPageLoader } from "components/Loaders";
 const NursingHomeId = () => {
   const { id } = useRouter().query;
   const { data } = useSWR(`${apiUrl}/nursing-homes/${id}`, fetcher);
+  console.log(data);
 
   return (
     <>
@@ -30,7 +31,7 @@ const NursingHomeId = () => {
                               width="145"
                               src={
                                 data?.profile_image?.url ||
-                                "/assets/images/polyclinic.jpg"
+                                "/assets/images/alternate/alt-hospital.png"
                               }
                               className="img-fluid"
                               alt="User Image"
@@ -319,7 +320,9 @@ const NursingHomeId = () => {
                         id="doc_doctor"
                         className="tab-pane fade show"
                       >
-                        <PolyclinicTimetableCard />
+                        {data?.doctors?.map((items, index) => (
+                          <PolyclinicTimetableCard schedule={items} />
+                        ))}
                       </div>
 
                       <div

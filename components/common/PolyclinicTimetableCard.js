@@ -1,7 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import useSWR from "swr";
+import { apiUrl, fetcher } from "config/api";
 const PolyclinicTimetableCard = ({ schedule }) => {
-  console.log(schedule);
+  const { data: specialty } = useSWR(
+    `${apiUrl}/specialties/${schedule?.specialty}`,
+    fetcher
+  );
   return (
     <>
       <div className="doctor-widget p-4 shadow-sm">
@@ -9,13 +14,29 @@ const PolyclinicTimetableCard = ({ schedule }) => {
           <div className="doctor-img">
             <Link href={`/doctors/${schedule?.id}`}>
               <a>
-                <Image
-                  height="150"
-                  width="150"
-                  src={schedule?.image?.url || "/assets/images/polyclinic.jpg"}
-                  className="img-fluid"
-                  alt="User Image"
-                />
+                {schedule?.gender === "Male" ? (
+                  <Image
+                    height="150"
+                    width="150"
+                    src={
+                      schedule?.image?.url ||
+                      "/assets/images/assets/doctor-male.png"
+                    }
+                    className="img-fluid"
+                    alt="User Image"
+                  />
+                ) : (
+                  <Image
+                    height="150"
+                    width="150"
+                    src={
+                      schedule?.image?.url ||
+                      "/assets/images/assets/doctor-female.png"
+                    }
+                    className="img-fluid"
+                    alt="User Image"
+                  />
+                )}
               </a>
             </Link>
           </div>
@@ -33,8 +54,17 @@ const PolyclinicTimetableCard = ({ schedule }) => {
               {schedule?.specialty}
             </p>
             <h5 className="doc-department">
-              <i className="fas fa-user-tag"></i>
-              {schedule?.specialty}
+              <Image
+                src={
+                  specialty?.image?.url ||
+                  "/assets/images/alternate/alt-specialty/png"
+                }
+                height="20"
+                width="20"
+                alt=""
+              />
+              {"  "}
+              {specialty?.name}
             </h5>
             <i className="far fa-envelope mb-3"></i> {schedule?.email}
             <div className="clinic-services">
