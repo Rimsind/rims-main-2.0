@@ -1,7 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
+import { useAuth } from "context";
 
 const AuthNav = () => {
+  const { auth, logOut, profile } = useAuth();
+
   return (
     <>
       <div className="header">
@@ -73,7 +76,10 @@ const AuthNav = () => {
                     <span className="user-img">
                       <Image
                         className="rounded-circle"
-                        src="/assets/images/profile.png"
+                        src={
+                          profile?.image?.url ||
+                          "/assets/images/alternate/alt-user-2.png"
+                        }
                         alt="profile Image"
                         height="50"
                         width="50"
@@ -84,7 +90,10 @@ const AuthNav = () => {
                     <div className="user-header">
                       <div className="avatar avatar-sm">
                         <Image
-                          src="/assets/images/profile.png"
+                          src={
+                            profile?.image?.url ||
+                            "/assets/images/alternate/alt-user-2.png"
+                          }
                           alt="profile Image"
                           className="avatar-img rounded-circle"
                           height="40"
@@ -92,8 +101,12 @@ const AuthNav = () => {
                         />
                       </div>
                       <div className="user-text">
-                        <h6>Dr. Samir Barman</h6>
-                        <p className="text-muted mb-0">MBBS</p>
+                        <h6>
+                          Dr. {profile?.firstName} {profile?.lastName}
+                        </h6>
+                        <p className="text-muted mb-0">
+                          {profile?.specialty?.name}
+                        </p>
                       </div>
                     </div>
                     <a
@@ -105,9 +118,9 @@ const AuthNav = () => {
                     <a className="dropdown-item" href="doc-time.html">
                       Time Table
                     </a>
-                    <a className="dropdown-item" href="index.html">
+                    <button className="dropdown-item" onClick={logOut}>
                       Logout
-                    </a>
+                    </button>
                   </div>
                 </li>
               </ul>
