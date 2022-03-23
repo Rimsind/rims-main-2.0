@@ -17,7 +17,7 @@ const Contact = () => {
 
     const res = await axios.post(`${apiUrl}/enquireys`);
     const result = res.data;
-
+    alert("success");
     return result;
   };
   return (
