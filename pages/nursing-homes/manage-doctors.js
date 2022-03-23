@@ -121,11 +121,6 @@ const ManageDoctors = () => {
                   </div>
                 </div>
               </div>
-              {/* <ul>
-                {data?.doctors?.map((items, index) => (
-                  <li key={index}>{items?.firstName}</li>
-                ))}
-              </ul> */}
             </div>
           </div>
         </div>
