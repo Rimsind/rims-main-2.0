@@ -21,6 +21,7 @@ const Prescription = ({ appointmentId }) => {
       return result;
     }
   );
+  console.log(appointmentDetails);
 
   const [precaution, setPrecaution] = useState();
   const [allPrecaution, setAllPrecaution] = useState([]);
@@ -353,7 +354,13 @@ const Prescription = ({ appointmentId }) => {
     "SMOKING IN HOME",
     "SOILED/UNHYGENIC LIVING CONDITIONS",
     "STANDARD PRECAUTIONS",
-    "UNIVERSAL PRECAUTIONS , INFECTION PRECAUTIONS , FALL PRECAUTIONS , CLERA PATHWAYS , MEDICATION PRECAUTIONS , SAFEETY PRECAUTIONS , EMERGENCY PLAN",
+    "UNIVERSAL PRECAUTIONS",
+    "INFECTION PRECAUTIONS",
+    "FALL PRECAUTIONS",
+    " CLERA PATHWAYS",
+    "MEDICATION PRECAUTIONS",
+    "SAFEETY PRECAUTIONS",
+    "EMERGENCY PLAN",
     "UNSAFE FLOORING",
     "CLUTTERED ENVIRONMENT",
     "CONTACT PRECAUTIONS",
@@ -417,7 +424,7 @@ const Prescription = ({ appointmentId }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    {appointmentDetails?.past_medication_history?.map(
+                    {appointmentDetails?.patient?.past_medication_history?.map(
                       (items, index) => (
                         <tr key={index}>
                           <td>{items?.medicineName}</td>
