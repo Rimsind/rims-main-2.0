@@ -8,6 +8,7 @@ import FamilyMadicalHistory from "./FamilyMadicalHistory";
 import AddressInfo from "./AddressInfo";
 import ProfileInfo from "./ProfileInfo";
 import ProfilePicture from "./ProfilePicture";
+import DoctorEducation from "./DoctorEducation";
 
 export {
   GeneralInformation,
@@ -20,4 +21,5 @@ export {
   AddressInfo,
   ProfileInfo,
   ProfilePicture,
+  DoctorEducation,
 };

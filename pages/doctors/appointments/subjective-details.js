@@ -52,12 +52,12 @@ const SubjectiveDetails = () => {
           style={{ padding: "1.875rem 1.875rem 0" }}
         >
           <div className="content container-fluid">
-            <div className="page-header">
+            <div className="page-header mb-2">
               <div className="row">
                 <div className="col-sm-12 col-md-7"></div>
                 <div className="col-md-5 col-sm-12">
                   <div className="patient-btn-group d-flex justify-content-end">
-                    <div className="btn-group-item me-2 shadow-sm">
+                    <div className="btn-group-item shadow-sm">
                       <button className="btn btn-success">
                         Print Clinical Report
                       </button>

@@ -4,10 +4,13 @@ const BreadCrums = (props) => {
       {" "}
       <div className="page_content">
         <div className="container-fluid">
-          <div className="row align-items-center">
+          <div className="breadcrumb-content">
+            <p className="fs-6">{props.title}</p>
+            <p className="fs-5 fw-bold">{props.title1}</p>
+          </div>
+          {/* <div className="row align-items-center">
             <div className="col-md-8">
-              <p className="fs-6">{props.title}</p>
-              <p className="fs-5 fw-bold">{props.title1}</p>
+              
             </div>
             <div className="col-md-4 col-12 d-md-block d-none">
               <div className="sort_by">
@@ -23,7 +26,7 @@ const BreadCrums = (props) => {
                 </span>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

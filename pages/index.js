@@ -45,18 +45,26 @@ const Index = () => {
   return (
     <>
       <main className="main">
-        <Slider {...settings}>
-          {banners?.map((items, index) => (
-            <div key={index}>
-              <section
-                className="section section-banner d-flex justify-content-center flex-column align-items-center"
-                style={{ backgroundImage: `url(${items.img.url})` }}
-              ></section>
-            </div>
-          ))}
-        </Slider>
+        {!!banners ? (
+          <Slider {...settings}>
+            {banners?.map((items, index) => (
+              <div key={index}>
+                <section
+                  className="section section-banner d-flex justify-content-center flex-column align-items-center"
+                  style={{ backgroundImage: `url(${items.img.url})` }}
+                ></section>
+              </div>
+            ))}
+          </Slider>
+        ) : (
+          <section
+            className="section section-banner d-flex justify-content-center flex-column align-items-center"
+            style={{ backgroundColor: "#f0f0f5" }}
+          >
+            <div className="loader-sec-center-big"></div>
+          </section>
+        )}
 
-        {/* Banner down categories section start here */}
         <section
           className="category-sec"
           style={{ marginTop: "-105px", background: "#f0f0f5" }}

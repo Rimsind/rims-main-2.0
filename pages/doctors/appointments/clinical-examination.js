@@ -63,10 +63,36 @@ const ClinicalExamination = () => {
           <div className="content container-fluid">
             <div className="page-header">
               <div className="row">
-                <div className="col-sm-12 col-md-7"></div>
-                <div className="col-md-5 col-sm-12">
+                <div className="col-sm-12 col-md-2"></div>
+                <div className="col-sm-12 col-md-6">
+                  <div className="row">
+                    <div className="col-6">
+                      <div className="row align-items-baseline">
+                        <div className="col-3">
+                          <p className="fs-6 fw-bold">Status -</p>
+                        </div>
+                        <div className="col-9">
+                          <div className="status-changer">
+                            <div className="switch-button">
+                              <input
+                                className="switch-button-checkbox"
+                                type="checkbox"
+                              />
+                              <label className="switch-button-label">
+                                <span className="switch-button-label-span">
+                                  Pending
+                                </span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-4 col-sm-12">
                   <div className="patient-btn-group d-flex justify-content-end">
-                    <div className="btn-group-item me-2 shadow-sm">
+                    <div className="btn-group-item shadow-sm">
                       <button className="btn btn-success">
                         Print Clinical Report
                       </button>

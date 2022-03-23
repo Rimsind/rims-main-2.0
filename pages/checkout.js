@@ -774,11 +774,17 @@ const Checkout = () => {
                       <h4 className="card-title mb-3 fs-5">Payment Method</h4>
 
                       <div className="payment-list">
-                        <label className="payment-radio credit-card-option">
+                        {/* <label className="payment-radio credit-card-option">
                           <input type="radio" name="radio" checked />
                           <span className="checkmark"></span>
                           Credit card
-                        </label>
+                        </label> */}
+                        <div className="form-check form-check-inline">
+                          <input className="form-check-input" type="radio" />
+                          <label className="form-check-label">
+                            Credit Card
+                          </label>
+                        </div>
                         <div className="row">
                           <div className="col-md-12">
                             <div className="form-group card-label">
@@ -837,11 +843,21 @@ const Checkout = () => {
                       </div>
 
                       <div className="payment-list mt-3">
-                        <label className="payment-radio cash-option">
+                        {/* <label className="payment-radio cash-option">
                           <input type="radio" name="radio" />
                           <span className="checkmark"></span>
                           Cash On Clinic
-                        </label>
+                        </label> */}
+                        <div className="form-check form-check-inline">
+                          <input
+                            className="form-check-input"
+                            type="radio"
+                            checked
+                          />
+                          <label className="form-check-label">
+                            Cash on Clinic
+                          </label>
+                        </div>
                       </div>
 
                       {/* <div className="terms-accept">

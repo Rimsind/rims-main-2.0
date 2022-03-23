@@ -1,8 +1,26 @@
 import { BreadCrums, DeleteAccount } from "components/common/index";
-import UserNav from "components/UserComponents/UserNav";
+import { useAuth } from "context";
+import { apiUrl } from "config/api";
+import useSWR from "swr";
+import axios from "axios";
+import { NursingSideBar } from "components/common";
 import { withAuth } from "helpers/withAuth";
 
-const AdvanceSettings = (data) => {
+const AdvanceSettings = () => {
+  const { auth } = useAuth();
+
+  const { data } = useSWR(
+    `${apiUrl}/nursing-homes/${auth.user?.profileId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
   return (
     <>
       <div className="main-wrapper">
@@ -13,7 +31,7 @@ const AdvanceSettings = (data) => {
         <div className="content">
           <div className="container-fluid">
             <div className="row">
-              <UserNav status7="active" patient={data} />
+              <NursingSideBar status1="active" data={data} />
 
               <div className="col-md-12 col-sm-12 col-lg-8 col-xl-9">
                 <DeleteAccount />
