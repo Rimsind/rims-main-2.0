@@ -121,25 +121,28 @@ const ProfilePicture = ({ data }) => {
                 </div>
 
                 <div className="upload-btn">
-                  {/* <input
-                    type="btn"
-                    className="btn btn-primary"
-                    value={loading ? "Uploading..." : "upload"}
-                    disabled={loading}
-                    onClick={uploadProfileImage}
-                  /> */}
-                  <div className="upload-btn-spin">
-                    <button className="btn btn-primary">
-                      <div className="d-flex align-items-center">
-                        <div
-                          className="spinner-border ms-auto me-3"
-                          role="status"
-                          aria-hidden="true"
-                        ></div>
-                        <strong>Uploading...</strong>
-                      </div>
-                    </button>
-                  </div>
+                  {loading ? (
+                    <div className="upload-btn-spin">
+                      <button className="btn btn-primary">
+                        <div className="d-flex align-items-center">
+                          <div
+                            className="spinner-border ms-auto me-3"
+                            role="status"
+                            aria-hidden="true"
+                          ></div>
+                          <strong>Uploading...</strong>
+                        </div>
+                      </button>
+                    </div>
+                  ) : (
+                    <input
+                      type="btn"
+                      className="btn btn-primary"
+                      value={loading ? "Uploading..." : "upload Image"}
+                      disabled={loading}
+                      onClick={uploadProfileImage}
+                    />
+                  )}
                 </div>
               </div>
             </div>
