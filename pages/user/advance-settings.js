@@ -1,8 +1,24 @@
 import { BreadCrums, DeleteAccount } from "components/common/index";
 import UserNav from "components/UserComponents/UserNav";
 import { withAuth } from "helpers/withAuth";
+import { useAuth } from "context";
+import { apiUrl } from "config/api";
+import useSWR from "swr";
 
-const AdvanceSettings = (data) => {
+const AdvanceSettings = () => {
+  const { auth } = useAuth();
+  const { data } = useSWR(
+    `${apiUrl}/patients/${auth.user?.profileId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
   return (
     <>
       <div className="main-wrapper">
