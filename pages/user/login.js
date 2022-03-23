@@ -6,7 +6,7 @@ import axios from "axios";
 import { setCookie } from "nookies";
 import Router from "next/router";
 import { useAuth } from "context";
-import { toast } from "react-toastify";
+import { toast, Slide } from "react-toastify";
 const Login = () => {
   const {
     register,
@@ -62,6 +62,7 @@ const Login = () => {
           draggable: true,
           progress: undefined,
           theme: "colored",
+          transition: Slide,
         });
         Router.push("/");
         // if (redirect) {
