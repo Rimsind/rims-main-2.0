@@ -365,9 +365,9 @@ const Index = () => {
               <div className="col-md col-lg-5"></div>
               <div className="col-md col-lg-2">
                 <div className="d-grid gap-2 read-more mt-sm-2 mt-md-2">
-                  <button className="btn btn-primary" type="button">
-                    View More
-                  </button>
+                  <Link href="/specialties">
+                    <a className="btn btn-primary">View More</a>
+                  </Link>
                 </div>
               </div>
               <div className="col-md col-lg-5"></div>
@@ -395,7 +395,7 @@ const Index = () => {
                     evolved over the years, sometimes
                   </p>
                   <Link href="/doctors">
-                    <a>Read More...</a>
+                    <a>View More...</a>
                   </Link>
                 </div>
               </div>
