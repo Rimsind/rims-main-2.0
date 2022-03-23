@@ -6,7 +6,7 @@ import axios from "axios";
 import { NursingSideBar } from "components/common";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-
+import { toast, Slide } from "react-toastify";
 const PageContentEditor = () => {
   const { auth } = useAuth();
 
@@ -22,25 +22,6 @@ const PageContentEditor = () => {
       return result;
     }
   );
-  const { register, handleSubmit } = useForm();
-  const submit_nursing_content = async (data, event) => {
-    event.preventDefault();
-    const payload = {
-      totalRegularBeds: data.totalRegularBeds,
-      availableRegularbeds: data.availableRegularbeds,
-      totalIcuBeds: data.totalIcuBeds,
-      availableIcuBeds: data.availableIcuBeds,
-      totalAmbulance: data.totalAmbulance,
-      availableAmbulance: data.availableAmbulance,
-      totalIcuAmbulance: data.totalIcuAmbulance,
-      availableIcuAmbulance: data.availableIcuAmbulance,
-      // totalOT: data.totalOT,
-      // availableOT:data.availableOT,
-      totalBurnUnits: data.totalBurnUnits,
-      availableBurnUnits: data.availableBurnUnits,
-    };
-    console.log(payload);
-  };
 
   const [features, setFeatures] = useState();
   const [allFeatures, setAllFeatures] = useState([]);
@@ -60,6 +41,52 @@ const PageContentEditor = () => {
         name: allFeatures,
       },
     };
+  };
+
+  const { register, handleSubmit } = useForm();
+  const submit_nursing_content = async (data, event) => {
+    event.preventDefault();
+    try {
+      const payload = {
+        totalRegularBeds: data.totalRegularBeds,
+        availableRegularbeds: data.availableRegularbeds,
+        totalIcuBeds: data.totalIcuBeds,
+        availableIcuBeds: data.availableIcuBeds,
+        totalAmbulance: data.totalAmbulance,
+        availableAmbulance: data.availableAmbulance,
+        totalIcuAmbulance: data.totalIcuAmbulance,
+        availableIcuAmbulance: data.availableIcuAmbulance,
+        totalOT: data.totalOT,
+        availableOT: data.availableOT,
+        totalBurnUnits: data.totalBurnUnits,
+        availableBurnUnits: data.availableBurnUnits,
+        totalDoctors: data.totalDoctors,
+      };
+      const res = await axios.put(
+        `${apiUrl}/nursing-homes/${auth?.user?.profileId}`,
+        payload,
+        {
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+          },
+        }
+      );
+      const result = res.data;
+      toast.success("Profile Updated Succesfully", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+      return result;
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -415,6 +442,37 @@ const PageContentEditor = () => {
                           </div>
                         </div>
                       </div>
+                    </div>
+                    <div className="row align-items-center mb-3">
+                      <div className="col-md-2">
+                        <div className="nursing-form-input">
+                          <label className="fs-6 fw-bold">Doctors</label>
+                        </div>
+                      </div>
+                      <div className="col-md-5">
+                        <div className="row align-items-center">
+                          <div className="col-md-4">
+                            <div className="nursing-form-input">
+                              <label>Total Doctors</label>
+                            </div>
+                          </div>
+                          <div className="col-md-8">
+                            <div className="nursing-form-input">
+                              <input
+                                type="text"
+                                className="form-control"
+                                placeholder="Total Unit"
+                                name="totalDoctors"
+                                {...register("totalDoctors")}
+                                defaultValue={
+                                  !!data?.totalDoctors ? data.totalDoctors : ""
+                                }
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-5"></div>
                       <div className="save-btn-poly mt-4 text-end">
                         <button className="btn btn-primary" type="submit">
                           Save Changes
@@ -443,7 +501,7 @@ const PageContentEditor = () => {
                               aria-label="Default select example"
                               onChange={(e) => setFeatures(e.target.value)}
                             >
-                              <option selected>Select Features</option>
+                              <option>Select Features</option>
                               <option value="Pharmacy">Pharmacy</option>
                               <option value="Patology">Patology</option>
                               <option value="Ambulance">Ambulance</option>
@@ -494,7 +552,7 @@ const PageContentEditor = () => {
                   </div>
                 </div>
               </div>
-              {/* <p className="fs-5 fw-bold">Premium Page</p>
+              {/* <p className="fs-5 fw-bold">Premium Page</p> 
 
               <div className="card">
                 <div className="card-body">
