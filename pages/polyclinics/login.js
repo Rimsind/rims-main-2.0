@@ -291,7 +291,7 @@ const Login = () => {
                       className="form-check-input"
                       id="exampleCheck1"
                     />
-                    <label className="form-check-label" for="exampleCheck1">
+                    <label className="form-check-label" htmlFor="exampleCheck1">
                       Remember Me
                     </label>
                   </div>

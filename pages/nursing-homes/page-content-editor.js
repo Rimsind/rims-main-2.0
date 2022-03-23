@@ -469,7 +469,7 @@ const PageContentEditor = () => {
                           {allFeatures?.map((items, index) => (
                             <div className="col" key={index}>
                               <p
-                                class="badge fs-6 fw-light py-2 px-4"
+                                className="badge fs-6 fw-light py-2 px-4"
                                 style={{ backgroundColor: "#0001fbb8" }}
                               >
                                 <a href="#">
