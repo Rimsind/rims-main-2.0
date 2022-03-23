@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useAuth } from "context";
 import Script from "next/script";
-const TestNav = () => {
+const MainHeader = () => {
   const { auth, logOut, profile } = useAuth();
 
   return (
@@ -274,4 +274,4 @@ const TestNav = () => {
   );
 };
 
-export default TestNav;
+export default MainHeader;

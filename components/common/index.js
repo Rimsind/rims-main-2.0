@@ -13,7 +13,7 @@ import PolyclinicTimetableCard from "./PolyclinicTimetableCard";
 import LocationCard from "./Locationcard";
 import SearchFilter from "./SearchFilter";
 import VerifyCard from "./VerifyCard";
-import TestNav from "./TestNav";
+import MainHeader from "./MainHeader";
 import ListPagination from "./ListPagination";
 import HorizontalHospitalCard from "./HorizontalDoctorCard";
 import PolyclinicSideBar from "./PolyclinicSideBar";
@@ -36,7 +36,7 @@ export {
   LocationFilter,
   SearchFilter,
   VerifyCard,
-  TestNav,
+  MainHeader,
   ListPagination,
   HorizontalHospitalCard,
   PolyclinicSideBar,
