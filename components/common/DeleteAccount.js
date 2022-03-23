@@ -1,25 +1,24 @@
 import { useAuth } from "context";
 import { apiUrl } from "config/api";
-import useSWR from "swr";
+
 import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-
+import { toast, Slide } from "react-toastify";
 const DeleteAccount = () => {
   const { auth } = useAuth();
-
-  const { data } = useSWR(
-    `${apiUrl}/patients/${auth.user?.profileId}`,
-    async (url) => {
-      const res = await axios.get(url, {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      });
-      const result = res.data;
-      return result;
-    }
-  );
+  if (auth?.user?.role?.id === 1) {
+    var role = "patients";
+  }
+  if (auth?.user?.role?.id === 3) {
+    var role = "doctors";
+  }
+  if (auth?.user?.role?.id === 6) {
+    var role = "polyclinics";
+  }
+  if (auth?.user?.role?.id === 7) {
+    var role = "nursing-homes";
+  }
 
   const [Delete, setDelete] = useState(false);
   const changeState = () => {
@@ -32,11 +31,43 @@ const DeleteAccount = () => {
   const { handleSubmit, register } = useForm();
   const submit_delete = async (data, event) => {
     event.preventDefault();
-    const payload = {
-      deleteReasonList: data.deleteReasonList,
-      describeDeleteReason: data.describeDeleteReason,
-    };
-    console.log(payload);
+    try {
+      const payload = {
+        patient: auth?.user?.profileId,
+        reason_for_delete: data.deleteReasonList,
+        description: data.describeDeleteReason,
+      };
+
+      const response = await axios.post(`${apiUrl}/delete-accounts`, payload, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = await response.data;
+      toast.success("Request Submitted Succesfully", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+      return result;
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    }
   };
   return (
     <>

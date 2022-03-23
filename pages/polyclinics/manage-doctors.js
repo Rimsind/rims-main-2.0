@@ -1,9 +1,11 @@
-import Image from "next/image";
+import { useState } from "react";
 import { useAuth } from "context";
-import { apiUrl } from "config/api";
+import { apiUrl, fetcher } from "config/api";
 import useSWR from "swr";
 import axios from "axios";
 import { PolyclinicSideBar } from "components/common";
+import { toast, Slide } from "react-toastify";
+import MyDoctors from "components/polyclinicComponents/MyDoctors";
 const ManageDoctors = () => {
   const { auth } = useAuth();
 
@@ -19,6 +21,40 @@ const ManageDoctors = () => {
       return result;
     }
   );
+
+  const { data: doctors } = useSWR(`${apiUrl}/doctors`, fetcher);
+  const [allDoctors, setAllDoctors] = useState([]);
+  const addNewDoctor = (e) => {
+    setAllDoctors([...data?.doctors, e.target.value]);
+  };
+  const addDoctor = async () => {
+    const payload = {
+      doctors: allDoctors,
+    };
+
+    const res = await axios.put(
+      `${apiUrl}/polyclinics/${auth?.user?.profileId}`,
+      payload,
+      {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      }
+    );
+    const result = res.data;
+    toast.success("Doctor Added Succesfully", {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Slide,
+    });
+    return result;
+  };
   return (
     <>
       {" "}
@@ -33,29 +69,54 @@ const ManageDoctors = () => {
                   <p className="fs-5 fw-bold text-center lh-1">Doctors</p>
                 </div>
                 <div className="card-body">
-                  <form>
-                    <div className="mb-3">
-                      <div className="row align-items-center mb-3">
-                        <div className="col-md-4">
-                          <label className="fs-6 fw-bold">Add Doctors</label>
-                        </div>
-                        <div className="col-md-8">
-                          <select
-                            className="form-select"
-                            aria-label="Default select example"
-                          >
-                            <option selected>Select Doctors</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                          </select>
-                        </div>
+                  <div className="mb-3">
+                    <div className="row align-items-center mb-3">
+                      <div className="col-md-4">
+                        <label className="fs-6 fw-bold">Add Doctors</label>
+                      </div>
+                      <div className="col-md-8">
+                        <select
+                          className="form-select"
+                          aria-label="Default select example"
+                          onChange={addNewDoctor}
+                        >
+                          <option>Select a Doctor</option>
+                          {doctors?.map((items, index) => (
+                            <option value={items?.id} key={index}>
+                              {items?.firstName} {items?.lastName}
+                            </option>
+                          ))}
+                        </select>
                       </div>
                     </div>
-                    <div className="save-btn-poly mt-4 text-end">
-                      <button className="btn btn-primary">Save Changes</button>
-                    </div>
-                  </form>
+                  </div>
+                  <div className="save-btn-poly mt-4 text-end">
+                    <button className="btn btn-primary" onClick={addDoctor}>
+                      Add Doctor
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="card card-table mb-0">
+                <div className="card-body">
+                  <div className="table-responsive">
+                    <table className="table table-hover table-center mb-0">
+                      <thead>
+                        <tr>
+                          <th>Doctor ID</th>
+                          <th>Doctor Details</th>
+
+                          <th>Specialities</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {data?.doctors?.map((items, index) => (
+                          <MyDoctors data={items} key={index} />
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
