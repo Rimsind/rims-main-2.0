@@ -13,6 +13,7 @@ const Contact = () => {
       subject: data.subject,
       message: data.message,
     };
+    console.log(payload);
 
     const res = await axios.post(`${apiUrl}/enquireys`);
     const result = res.data;

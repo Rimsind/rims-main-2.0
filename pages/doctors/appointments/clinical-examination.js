@@ -1,11 +1,10 @@
-import { AuthNav, BreadCrums } from "components/common";
+import { BreadCrums } from "components/common";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useAuth } from "context";
 import useSWR from "swr";
 import { apiUrl } from "config/api";
 import axios from "axios";
-import AuthLayout from "components/layout/AuthLayout";
 import {
   AllergyCard,
   PatientDemographics,
@@ -50,7 +49,6 @@ const ClinicalExamination = () => {
   return (
     <>
       <div className="page-wrapper">
-        <AuthNav />
         <BreadCrums
           title="Home / Dashboard / My Appointments"
           title1="Clinical Examination"
@@ -240,6 +238,3 @@ const ClinicalExamination = () => {
 };
 
 export default ClinicalExamination;
-ClinicalExamination.getLayout = (ClinicalExamination) => (
-  <AuthLayout>{ClinicalExamination}</AuthLayout>
-);
