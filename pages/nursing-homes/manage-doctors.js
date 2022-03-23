@@ -5,6 +5,7 @@ import axios from "axios";
 import { NursingSideBar } from "components/common";
 import { useState } from "react";
 import { toast, Slide } from "react-toastify";
+import MyDoctors from "components/polyclinicComponents/MyDoctors";
 const ManageDoctors = () => {
   const { auth } = useAuth();
 
@@ -95,6 +96,28 @@ const ManageDoctors = () => {
                     <button className="btn btn-primary" onClick={addDoctor}>
                       Add Doctor
                     </button>
+                  </div>
+                </div>
+              </div>
+              <div className="card card-table mb-0">
+                <div className="card-body">
+                  <div className="table-responsive">
+                    <table className="table table-hover table-center mb-0">
+                      <thead>
+                        <tr>
+                          <th>Doctor ID</th>
+                          <th>Doctor Details</th>
+
+                          <th>Specialities</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {data?.doctors?.map((items, index) => (
+                          <MyDoctors data={items} key={index} />
+                        ))}
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
