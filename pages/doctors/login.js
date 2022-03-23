@@ -84,7 +84,7 @@ const Index = () => {
   };
   return (
     <>
-      {/* <div className="login-form-main">
+      <div className="login-form-main">
         <div className="area">
           <ul className="circles">
             <li></li>
@@ -203,11 +203,9 @@ const Index = () => {
             </div>
             <div className="col-6 bg-background"></div>
           </div>
-
-         
         </div>
-      </div> */}
-      <div
+      </div>
+      {/* <div
         className="doctor-login-main-sec d-flex justify-content-center align-items-center shadow"
         style={{
           height: "100vh",
@@ -336,7 +334,7 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
