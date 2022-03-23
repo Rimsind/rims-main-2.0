@@ -2,16 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Router from "next/router";
 const DoctorTimetableCard = ({ schedule, doctor }) => {
-  // const authCheck = () => {
-  //   if (auth.token && auth.user) {
-  //     Router.push(
-  //       `/schedule?doctorId=${doctor}&&polyclinicId=${schedule?.polyclinic?.id}&&fee=${schedule?.fee}`
-  //     );
-  //   } else {
-  //     alert("Please Login to Continue");
-  //   }
-  // };
-
   return (
     <>
       <div className="card location_card shadow-sm">
@@ -24,8 +14,8 @@ const DoctorTimetableCard = ({ schedule, doctor }) => {
                     height="130"
                     width="145"
                     src={
-                      schedule.polyclinic?.coverImage?.url ||
-                      "/assets/images/polyclinic.jpg"
+                      schedule?.polyclinic?.image?.url ||
+                      "/assets/images/alternate/alt-hospital.png"
                     }
                     className="img-fluid"
                     alt="User Image"

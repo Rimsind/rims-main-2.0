@@ -1,19 +1,68 @@
+import { useAuth } from "context";
 import { useForm } from "react-hook-form";
-
+import axios from "axios";
+import { apiUrl } from "config/api";
+import { toast, Slide } from "react-toastify";
+import { useState } from "react";
 const AddressDetails = ({ data }) => {
-  console.log(data);
+  const { auth } = useAuth();
+  const [loading, setLoading] = useState(false);
+  if (auth?.user?.role?.id === 6) {
+    var role = "polyclinics";
+  }
+  if (auth?.user?.role?.id === 7) {
+    var role = "nursing-homes";
+  }
   const { register, handleSubmit } = useForm();
   const submit_polyaddress = async (data, event) => {
+    setLoading(true);
     event.preventDefault();
-    const payload = {
-      street_address: data.street_address,
-      state: data.state,
-      city: data.city,
-      country: data.country,
-      pincode: data.pincode,
-      google_map: data.google_map,
-    };
-    console.log(payload);
+    try {
+      const payload = {
+        street_address: data.street_address,
+        state: data.state,
+        city: data.city,
+        country: data.country,
+        pincode: data.pincode,
+        google_map: data.google_map,
+      };
+      const res = await axios.put(
+        `${apiUrl}/${role}/${auth.user?.profileId}`,
+        payload,
+        {
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+          },
+        }
+      );
+      const result = res.data;
+      toast.success("Address Updated", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+      return result, setLoading(false);
+    } catch (error) {
+      console.log(error);
+      toast.error("Something Went Wrong Try Again.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+      setLoading(false);
+    }
   };
   return (
     <>
@@ -24,57 +73,32 @@ const AddressDetails = ({ data }) => {
         <div className="card-body">
           <form onSubmit={handleSubmit(submit_polyaddress)}>
             <div className="row mb-3">
-              <div className="col-md-6">
+              <div className="col-md-7">
                 <div className="row align-items-center">
                   <div className="col-md-3">
                     <label>Street Address</label>
                   </div>
                   <div className="col-md-9">
-                    <div className="form-floating">
-                      <textarea
-                        className="form-control"
-                        placeholder="Enter address"
-                        rows="5"
-                        name="street_address"
-                        {...register("street_address")}
-                        defaultValue={
-                          !!data?.street_address ? data.street_address : ""
-                        }
-                      ></textarea>
-                      <label>Enter here</label>
-                    </div>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Street Address"
+                      {...register("street_address")}
+                      defaultValue={
+                        !!data?.street_address ? data.street_address : ""
+                      }
+                    />
                   </div>
                 </div>
               </div>
-              <div className="col-md-3">
+              <div className="col-md-5">
                 <div className="row align-items-center">
-                  <div className="col-md-6">
-                    <div className="nursing-form-input">
-                      <label>State</label>
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="nursing-form-input">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="State"
-                        name="state"
-                        {...register("state")}
-                        defaultValue={!!data?.state ? data.state : ""}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-3">
-                <div className="row align-items-center">
-                  <div className="col-md-6">
+                  <div className="col-md-2">
                     <div className="nursing-form-input">
                       <label>City</label>
                     </div>
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-md-10">
                     <div className="nursing-form-input">
                       <input
                         type="text"
@@ -92,12 +116,33 @@ const AddressDetails = ({ data }) => {
             <div className="row mb-3">
               <div className="col-md-4">
                 <div className="row align-items-center">
-                  <div className="col-md-6">
+                  <div className="col-md-3">
+                    <div className="nursing-form-input">
+                      <label>State</label>
+                    </div>
+                  </div>
+                  <div className="col-md-9">
+                    <div className="nursing-form-input">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="State"
+                        name="state"
+                        {...register("state")}
+                        defaultValue={!!data?.state ? data.state : ""}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div className="row align-items-center">
+                  <div className="col-md-3">
                     <div className="nursing-form-input">
                       <label>Country</label>
                     </div>
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-md-9">
                     <div className="nursing-form-input">
                       <input
                         type="text"
@@ -132,14 +177,16 @@ const AddressDetails = ({ data }) => {
                   </div>
                 </div>
               </div>
-              <div className="col-md-4">
+            </div>
+            <div className="row mb-3">
+              <div className="col-md-12">
                 <div className="row align-items-center">
-                  <div className="col-md-6">
+                  <div className="col-md-3">
                     <div className="nursing-form-input">
                       <label>Google Map Location</label>
                     </div>
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-md-9">
                     <div className="nursing-form-input">
                       <input
                         type="text"
@@ -156,9 +203,12 @@ const AddressDetails = ({ data }) => {
             </div>
 
             <div className="save-btn-poly mt-4 text-end">
-              <button className="btn btn-primary" type="submit">
-                Save Changes
-              </button>
+              <input
+                type="submit"
+                className="btn btn-primary submit-btn"
+                value={loading ? "Saving..." : "Save Changes"}
+                disabled={loading}
+              />
             </div>
           </form>
         </div>

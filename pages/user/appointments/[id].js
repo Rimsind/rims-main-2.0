@@ -169,8 +169,8 @@ const AppointmentId = () => {
                               height="50"
                               width="50"
                               src={
-                                appointments?.polyclinic?.coverImage?.url ||
-                                "/assets/images/polyclinic.jpg"
+                                appointments?.polyclinic?.image?.url ||
+                                "/assets/images/alternate/alt-hospital.png"
                               }
                               className="img-fluid rounded"
                               alt="User Image"
