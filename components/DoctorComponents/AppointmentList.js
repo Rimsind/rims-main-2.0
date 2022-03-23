@@ -8,7 +8,7 @@ const AppointmentList = ({ data }) => {
         <td>{data?.id}</td>
         <td>
           <h2 className="table-avatar">
-            <a href="doctor-profile.html" className="avatar avatar-sm me-2">
+            <a className="avatar avatar-sm me-2">
               <Image
                 height="145"
                 width="145"
@@ -17,13 +17,12 @@ const AppointmentList = ({ data }) => {
                 alt="User Image"
               />
             </a>
-            <Link href={`/user/appointments/${data?.id}`}>
-              <a>
-                {data?.patient?.title}. {data?.patient?.first_name}{" "}
-                {data?.patient?.last_name}
-                <span>{data?.patient?.gender}</span>
-              </a>
-            </Link>
+
+            <a>
+              {data?.patient?.title}. {data?.patient?.first_name}{" "}
+              {data?.patient?.last_name}
+              <span>{data?.patient?.gender}</span>
+            </a>
           </h2>
         </td>
         <td>{data?.patient?.age}</td>
@@ -43,17 +42,29 @@ const AppointmentList = ({ data }) => {
             </span>
           )}
         </td>
-        <td className="text-end">
-          <div className="table-action">
-            <Link
-              href={`/doctors/appointments/clinical-examination?id=${data?.id}`}
-            >
-              <a className="btn btn-sm bg-info-light">
-                <i className="far fa-eye"></i> View
-              </a>
-            </Link>
-          </div>
-        </td>
+        {!!data.appointment_status === false ? (
+          <td className="text-end">
+            <div className="table-action">
+              <Link
+                href={`/doctors/appointments/clinical-examination?id=${data?.id}`}
+              >
+                <a className="btn btn-sm bg-warning">
+                  <i className="far fa-pencil"></i> Edit
+                </a>
+              </Link>
+            </div>
+          </td>
+        ) : (
+          <td className="text-end">
+            <div className="table-action">
+              <Link href={`/doctors/appointments`}>
+                <a className="btn btn-sm bg-info-light">
+                  <i className="far fa-eye"></i> View
+                </a>
+              </Link>
+            </div>
+          </td>
+        )}
       </tr>
     </>
   );

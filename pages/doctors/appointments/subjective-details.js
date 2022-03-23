@@ -52,10 +52,51 @@ const SubjectiveDetails = () => {
           style={{ padding: "1.875rem 1.875rem 0" }}
         >
           <div className="content container-fluid">
-            <div className="page-header mb-2">
-              <div className="row">
-                <div className="col-sm-12 col-md-7"></div>
-                <div className="col-md-5 col-sm-12">
+            <div className="page-header">
+              <div className="row align-items-center">
+                <div className="col-sm-12 col-md-2"></div>
+                <div className="col-sm-12 col-md-6">
+                  <div className="row">
+                    <div className="col-6">
+                      <div className="status-sec">
+                        <div className="row align-items-center">
+                          <div className="col-2">
+                            <p
+                              className="fs-5 lh-1"
+                              style={{ marginBottom: "7px" }}
+                            >
+                              Status
+                            </p>
+                          </div>
+                          <div className="col-10">
+                            <div className="status-btn d-flex">
+                              <div className="left-off-btn">
+                                <button
+                                  className="btn btn-warning"
+                                  style={{ borderRadius: "2px 0 0 2px" }}
+                                >
+                                  Pending
+                                </button>
+                              </div>
+                              <div className="right-off-btn">
+                                <button
+                                  className="btn btn-light"
+                                  style={{
+                                    borderRadius: "0 2px 2px 0",
+                                    paddingRight: "17px",
+                                  }}
+                                >
+                                  Completed
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-4 col-sm-12">
                   <div className="patient-btn-group d-flex justify-content-end">
                     <div className="btn-group-item shadow-sm">
                       <button className="btn btn-success">
@@ -121,6 +162,15 @@ const SubjectiveDetails = () => {
                               className="nav-link active"
                             >
                               Chief Complaints
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a
+                              href="#tab-9"
+                              data-bs-toggle="tab"
+                              className="nav-link active"
+                            >
+                              Vital Signs
                             </a>
                           </li>
                           <li className="nav-item">
@@ -196,6 +246,13 @@ const SubjectiveDetails = () => {
                             className="tab-pane fade show active"
                           >
                             <CheifComplaints appointmentId={id} />
+                          </div>
+                          <div
+                            role="tabpanel"
+                            id="tab-9"
+                            className="tab-pane fade show active"
+                          >
+                            <VitalSigns appointmentId={id} />
                           </div>
                           <div
                             role="tabpanel"

@@ -1,5 +1,5 @@
 const VitalSigns = () => {
-  return <></>;
+  return <>vital signs</>;
 };
 
 export default VitalSigns;
