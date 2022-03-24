@@ -2,10 +2,10 @@ import { AuthNav, BreadCrums } from "components/common";
 import { apiUrl } from "config/api";
 import axios from "axios";
 import useSWR from "swr";
-import { ProfilePicture, AddressInfo, DoctorEducation } from "components/forms";
+import { ProfilePicture, AddressInfo } from "components/forms";
 import { useAuth } from "context";
 import { UserPageLoader } from "components/Loaders";
-import { DoctorSidebar } from "components/DoctorComponents";
+import { DoctorSidebar, EducationInfo } from "components/DoctorComponents";
 import ProfileInfo from "components/DoctorComponents/ProfileInfo";
 const ProfileSettings = () => {
   const { auth } = useAuth();
@@ -39,7 +39,7 @@ const ProfileSettings = () => {
                     <ProfilePicture data={data} />
                     <ProfileInfo data={data} />
                     <AddressInfo data={data} />
-                    <DoctorEducation data={data} />
+                    <EducationInfo data={data} />
                   </div>
                 </div>
               ) : (

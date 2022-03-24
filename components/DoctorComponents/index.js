@@ -9,6 +9,7 @@ import OrthoExamination from "./orthopedic/OrthoExamination";
 import NeuroExamination from "./neurology/NeuroExamination";
 import RehabExamination from "./rehab/RehabExamination";
 import MedicineExamination from "./medicine/MedicineExamination";
+import EducationInfo from "./EducationInfo";
 export {
   DoctorSidebar,
   DoctorNav,
@@ -21,4 +22,5 @@ export {
   NeuroExamination,
   RehabExamination,
   MedicineExamination,
+  EducationInfo,
 };
