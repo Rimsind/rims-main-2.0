@@ -1,6 +1,6 @@
 import { BreadCrums } from "components/common";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import router, { useRouter } from "next/router";
 import { useAuth } from "context";
 import useSWR from "swr";
 import { apiUrl } from "config/api";
@@ -17,6 +17,8 @@ import {
 import HistoryOfPresentIllness from "components/DoctorComponents/CommonForms/HistoryOfPresentIllness";
 import Assesment from "components/DoctorComponents/CommonForms/Assesment";
 import Prescription from "components/DoctorComponents/CommonForms/Prescription";
+import { toast, Slide } from "react-toastify";
+import { useState } from "react";
 
 const ClinicalExamination = () => {
   const { id } = useRouter().query;
@@ -46,6 +48,52 @@ const ClinicalExamination = () => {
       return result;
     }
   );
+
+  const [btn1Status, setBtn1Status] = useState("btn btn-warning");
+  const [btn2Status, setBtn2Status] = useState("btn btn-light");
+
+  const changeStatus = async () => {
+    setBtn1Status("btn btn-light");
+    setBtn2Status("btn btn-success");
+    const payload = {
+      appointment_status: true,
+    };
+    try {
+      const res = await axios.put(`${apiUrl}/appointments/${id}`, payload, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      toast.success("Appointment Completed", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+      router.push(`/doctors/appointments`);
+      return result;
+    } catch (error) {
+      console.log(error);
+      toast.error("Something Went Wrong Try Again.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+    }
+  };
+
   return (
     <>
       <div className="page-wrapper">
@@ -78,23 +126,10 @@ const ClinicalExamination = () => {
                             </p>
                           </div>
                           <div className="col-10">
-                            {/* <div className="status-changer">
-                            <div className="switch-button">
-                              <input
-                                className="switch-button-checkbox"
-                                type="checkbox"
-                              />
-                              <label className="switch-button-label">
-                                <span className="switch-button-label-span">
-                                  Pending
-                                </span>
-                              </label>
-                            </div>
-                          </div> */}
                             <div className="status-btn d-flex">
                               <div className="left-off-btn">
                                 <button
-                                  className="btn btn-warning"
+                                  className={btn1Status}
                                   style={{ borderRadius: "2px 0 0 2px" }}
                                 >
                                   Pending
@@ -102,11 +137,12 @@ const ClinicalExamination = () => {
                               </div>
                               <div className="right-off-btn">
                                 <button
-                                  className="btn btn-light"
+                                  className={btn2Status}
                                   style={{
                                     borderRadius: "0 2px 2px 0",
                                     paddingRight: "17px",
                                   }}
+                                  onClick={changeStatus}
                                 >
                                   Completed
                                 </button>

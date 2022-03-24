@@ -59,7 +59,7 @@ const Index = () => {
                               <th>Apointment Time</th>
                               <th>Fee</th>
                               <th>Status</th>
-                              <th></th>
+                              <th colSpan="2"></th>
                             </tr>
                           </thead>
                           <tbody>

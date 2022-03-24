@@ -104,8 +104,6 @@ const OrthoExamination = ({ appointmentId }) => {
         transition: Slide,
       });
     }
-
-    return result;
   };
   return (
     <>
