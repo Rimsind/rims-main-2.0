@@ -363,12 +363,10 @@ const Index = () => {
             </div>
             <div className="row">
               <div className="col-md col-lg-5"></div>
-              <div className="col-md col-lg-2">
-                <div className="d-grid gap-2 read-more mt-sm-2 mt-md-2">
-                  <Link href="/specialties">
-                    <a className="btn btn-primary">View More</a>
-                  </Link>
-                </div>
+              <div className="col-md col-lg-2 text-center">
+                <Link href="/specialties">
+                  <a className="btn btn-primary py-3 px-4">View More</a>
+                </Link>
               </div>
               <div className="col-md col-lg-5"></div>
             </div>
@@ -395,7 +393,7 @@ const Index = () => {
                     evolved over the years, sometimes
                   </p>
                   <Link href="/doctors">
-                    <a>View More...</a>
+                    <a className="btn btn-primary py-3 px-4">View More</a>
                   </Link>
                 </div>
               </div>
@@ -531,7 +529,11 @@ const Index = () => {
                   </p>
                 </div>
               </div>
-              <div className="col-md-6 text-end"></div>
+              <div className="col-md-6 text-end">
+                <Link href="/polyclinics">
+                  <a className="btn btn-primary py-3 px-4">View More</a>
+                </Link>
+              </div>
             </div>
             <div className="our-doctors">
               <div className="d-flex carousel-styling">
@@ -579,7 +581,11 @@ const Index = () => {
                   </p>
                 </div>
               </div>
-              <div className="col-md-6 text-end"></div>
+              <div className="col-md-6 text-end">
+                <Link href="/nursing-homes">
+                  <a className="btn btn-primary py-3 px-4">View More</a>
+                </Link>
+              </div>
             </div>
             <div className="our-doctors">
               <div className="d-flex carousel-styling">

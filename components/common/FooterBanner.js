@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 const FooterBanner = () => {
   return (
     <>
@@ -29,9 +30,14 @@ const FooterBanner = () => {
                   </p>
                 </div>
                 <div className="book">
-                  <button type="button" className="btn btn-primary">
-                    Book Now
-                  </button>
+                  <Link href="/doctors">
+                    <a
+                      className="btn text-light py-3 px-4"
+                      style={{ backgroundColor: "#0de0fe" }}
+                    >
+                      Book Now
+                    </a>
+                  </Link>
                 </div>
               </div>
               <div className="col-md-4">

@@ -117,8 +117,8 @@ const UserNav = (props) => {
                 </li>
                 <li>
                   <button className="btn" onClick={logout}>
-                    <i className="fas fa-sign-out-alt"></i>
-                    <span>Logout</span>
+                    <i className="fas fa-sign-out-alt ms-2 me-2 text-danger"></i>
+                    <span className="text-danger">Logout</span>
                   </button>
                 </li>
               </ul>
