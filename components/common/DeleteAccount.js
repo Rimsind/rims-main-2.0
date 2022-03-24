@@ -86,7 +86,7 @@ const DeleteAccount = () => {
           </button>
           {Delete === true ? (
             <div className="row">
-              <div className="col-6">
+              <div className="col-12 col-lg-6 col-xl-6 col-xxl-6">
                 <div className="delete-form mt-5">
                   <form onSubmit={handleSubmit(submit_delete)}>
                     <div className="mb-3">
@@ -136,7 +136,7 @@ const DeleteAccount = () => {
                   </form>
                 </div>
               </div>
-              <div className="col-6"></div>
+              <div className="col-lg-6 col-xl-6 col-xxl-6"></div>
             </div>
           ) : (
             <></>

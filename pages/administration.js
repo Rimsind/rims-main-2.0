@@ -9,7 +9,8 @@ const Administration = () => {
           style={{
             background: "url(/user_assets/img/background.jpg)",
             backgroundSize: "cover",
-            height: "100vh",
+
+            backgroundRepeat: "repeat",
           }}
         >
           <div className="container">
@@ -23,7 +24,7 @@ const Administration = () => {
             </div> */}
 
             <div className="card_list">
-              <div className="card-inner">
+              <div className="card-inner mb-2">
                 <Link href="/doctors/login">
                   <a className="anchr-main-inner-box">
                     <div
@@ -48,7 +49,7 @@ const Administration = () => {
                   </a>
                 </Link>
               </div>
-              <div className="card-inner">
+              <div className="card-inner mb-2">
                 <Link href="/polyclinics/login">
                   <a className="anchr-main-inner-box">
                     <div
@@ -73,7 +74,7 @@ const Administration = () => {
                   </a>
                 </Link>
               </div>
-              <div className="card-inner">
+              <div className="card-inner mb-2">
                 <Link href="/nursing-homes/login">
                   <a className="anchr-main-inner-box">
                     <div

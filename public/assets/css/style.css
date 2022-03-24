@@ -3884,3 +3884,17 @@ button.btn-custom-time-slot:visited {
 .browse-widget:hover .arrows i {
   color: #1c5b90;
 }
+
+/* New Responsive Stylesheet Start Here */
+@media screen and (min-width: 300px) and (max-width: 1200px) {
+  .set-category-flex {
+    display: flex;
+    flex-direction: column;
+  }
+  .img-holder {
+    margin-bottom: 20px;
+  }
+  .info-holder {
+    border: 0 !important;
+  }
+}

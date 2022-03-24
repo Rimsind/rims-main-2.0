@@ -72,7 +72,7 @@ const Index = () => {
           <div className="container">
             <div className="d-flex">
               <div className="set-category">
-                <div className="d-flex align-items-center">
+                <div className="d-flex align-items-center set-category-flex">
                   <div className="img-holder">
                     <a href="#">
                       <i
@@ -93,8 +93,8 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-              <div className="set-category light">
-                <div className="d-flex align-items-center">
+              <div className="set-category">
+                <div className="d-flex align-items-center set-category-flex">
                   <div className="img-holder">
                     <a href="#">
                       <i
@@ -115,8 +115,8 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-              <div className="set-category lighter">
-                <div className="d-flex align-items-center">
+              <div className="set-category">
+                <div className="d-flex align-items-center set-category-flex">
                   <div className="img-holder">
                     <a href="#">
                       <i
@@ -529,10 +529,12 @@ const Index = () => {
                   </p>
                 </div>
               </div>
-              <div className="col-md-6 text-end">
-                <Link href="/polyclinics">
-                  <a className="btn btn-primary py-3 px-4">View More</a>
-                </Link>
+              <div className="col-md-6">
+                <div className="poly-btn text-lg-end text-xl-end text-xxl-end text-center mb-3 mb-lg-3 mb-xl-3 mb-xxl-3">
+                  <Link href="/polyclinics">
+                    <a className="btn btn-primary py-3 px-4">View More</a>
+                  </Link>
+                </div>
               </div>
             </div>
             <div className="our-doctors">
@@ -582,9 +584,11 @@ const Index = () => {
                 </div>
               </div>
               <div className="col-md-6 text-end">
-                <Link href="/nursing-homes">
-                  <a className="btn btn-primary py-3 px-4">View More</a>
-                </Link>
+                <div className="poly-btn text-lg-end text-xl-end text-xxl-end text-center mb-3 mb-lg-3 mb-xl-3 mb-xxl-3">
+                  <Link href="/doctors">
+                    <a className="btn btn-primary py-3 px-4">View More</a>
+                  </Link>
+                </div>
               </div>
             </div>
             <div className="our-doctors">

@@ -56,7 +56,7 @@ const AppointmentId = () => {
               <div className="col-md-12 col-sm-12 col-lg-8 col-xl-9">
                 <div className="upper-section">
                   <div className="row align-items-baseline">
-                    <div className="col-3">
+                    <div className="col-12 col-lg-3 col-xl-3 col-xxl-3">
                       <div className="left-upper-content pt-3 ps-2 mb-3 rounded text-light">
                         <div className="row">
                           <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6">
@@ -64,7 +64,9 @@ const AppointmentId = () => {
                           </div>
                           <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                             <div className="end-items d-flex left-para-date">
-                              <p className="fs-6 me-2 lh-1">Date - </p>
+                              <p className="fs-6 me-2 lh-1 ms-3 ms-lg-0 ms-xl-0 ms-xxl-0">
+                                Date -{" "}
+                              </p>
                               <p className="fs-6 lh-1">
                                 {appointments?.eprescription?.followup?.date}
                               </p>
@@ -73,11 +75,11 @@ const AppointmentId = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-9">
+                    <div className="col-12 col-lg-9 col-xl-9 col-xxl-9">
                       <div className="right-upper-content">
                         <div className="row">
                           <div className="col-sm-4 col-md-4 col-lg-4 col-xl-4 text-end">
-                            <div className="d-grid gap-2">
+                            <div className="d-grid gap-2 mb-2 mb-lg-0 mb-xl-0 mb-xxl-0">
                               <Link
                                 href={`/reports/examination-report?id=${id}`}
                               >
@@ -91,7 +93,7 @@ const AppointmentId = () => {
                             </div>
                           </div>
                           <div className="col-sm-4 col-md-4 col-lg-4 col-xl-4 text-end">
-                            <div className="d-grid gap-2">
+                            <div className="d-grid gap-2 mb-2 mb-lg-0 mb-xl-0 mb-xxl-0">
                               <Link href={`/reports/assesment-report?id=${id}`}>
                                 <a
                                   className="btn btn-primary py-2"
@@ -103,7 +105,7 @@ const AppointmentId = () => {
                             </div>
                           </div>
                           <div className="col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                            <div className="d-grid gap-2">
+                            <div className="d-grid gap-2 mb-2 mb-lg-0 mb-xl-0 mb-xxl-0">
                               <Link href={`/reports/e-prescription?id=${id}`}>
                                 <a
                                   className="btn btn-danger py-2"
