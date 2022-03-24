@@ -62,17 +62,23 @@ const ClinicalExamination = () => {
         >
           <div className="content container-fluid">
             <div className="page-header">
-              <div className="row">
+              <div className="row align-items-center">
                 <div className="col-sm-12 col-md-2"></div>
                 <div className="col-sm-12 col-md-6">
                   <div className="row">
                     <div className="col-6">
-                      <div className="row align-items-baseline">
-                        <div className="col-3">
-                          <p className="fs-6 fw-bold">Status -</p>
-                        </div>
-                        <div className="col-9">
-                          <div className="status-changer">
+                      <div className="status-sec">
+                        <div className="row align-items-center">
+                          <div className="col-2">
+                            <p
+                              className="fs-5 lh-1"
+                              style={{ marginBottom: "7px" }}
+                            >
+                              Status
+                            </p>
+                          </div>
+                          <div className="col-10">
+                            {/* <div className="status-changer">
                             <div className="switch-button">
                               <input
                                 className="switch-button-checkbox"
@@ -83,6 +89,28 @@ const ClinicalExamination = () => {
                                   Pending
                                 </span>
                               </label>
+                            </div>
+                          </div> */}
+                            <div className="status-btn d-flex">
+                              <div className="left-off-btn">
+                                <button
+                                  className="btn btn-warning"
+                                  style={{ borderRadius: "2px 0 0 2px" }}
+                                >
+                                  Pending
+                                </button>
+                              </div>
+                              <div className="right-off-btn">
+                                <button
+                                  className="btn btn-light"
+                                  style={{
+                                    borderRadius: "0 2px 2px 0",
+                                    paddingRight: "17px",
+                                  }}
+                                >
+                                  Completed
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </div>

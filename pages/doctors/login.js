@@ -6,7 +6,7 @@ import axios from "axios";
 import { setCookie } from "nookies";
 import router from "next/router";
 import { useAuth } from "context";
-
+import { toast, Slide } from "react-toastify";
 const Index = () => {
   const { dispatchAuth } = useAuth();
   const { register, handleSubmit, reset } = useForm();
@@ -46,7 +46,18 @@ const Index = () => {
         });
 
         reset();
-        alert("login success");
+
+        toast.success("login success", {
+          position: "top-center",
+          autoClose: 4000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          transition: Slide,
+        });
         router.push("/doctors/dashboard");
       }
     } catch (error) {
@@ -57,7 +68,18 @@ const Index = () => {
           : "Something went wrong, try agin",
       });
       console.log(error.message);
-      alert("login failed");
+
+      toast.error("login failed", {
+        position: "top-center",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
     }
   };
   return (
