@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 const VerticalDoctorCard = ({ data }) => {
-  console.log(data);
   return (
     <>
       <div className="profile-widget me-3">
