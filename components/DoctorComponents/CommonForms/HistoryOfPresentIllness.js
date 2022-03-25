@@ -50,7 +50,7 @@ const HistoryOfPresentIllness = ({ appointmentId }) => {
       );
       const result = res.data;
 
-      toast.success("Employment Status Updated", {
+      toast.success("History Of Present Illness Updated", {
         position: "top-center",
         autoClose: 2000,
         hideProgressBar: false,

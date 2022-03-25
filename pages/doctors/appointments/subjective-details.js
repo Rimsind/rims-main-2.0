@@ -168,7 +168,7 @@ const SubjectiveDetails = () => {
                             <a
                               href="#tab-9"
                               data-bs-toggle="tab"
-                              className="nav-link active"
+                              className="nav-link "
                             >
                               Vital Signs
                             </a>
@@ -250,7 +250,7 @@ const SubjectiveDetails = () => {
                           <div
                             role="tabpanel"
                             id="tab-9"
-                            className="tab-pane fade show active"
+                            className="tab-pane fade"
                           >
                             <VitalSigns appointmentId={id} />
                           </div>

@@ -21,7 +21,6 @@ const Prescription = ({ appointmentId }) => {
       return result;
     }
   );
-  console.log(appointmentDetails);
 
   const [precaution, setPrecaution] = useState();
   const [allPrecaution, setAllPrecaution] = useState([]);
@@ -135,7 +134,7 @@ const Prescription = ({ appointmentId }) => {
       );
       const result = res.data;
 
-      toast.success("Form Submitted Succesfully", {
+      toast.success("E-Prescription Submitted ", {
         position: "top-center",
         autoClose: 2000,
         hideProgressBar: false,
@@ -948,15 +947,15 @@ const Prescription = ({ appointmentId }) => {
               <p className="fs-5 fw-bold">Set Follow Time Period</p>
               <div className="row align-items-end">
                 <div className="col-md-6">
-                  <label className="form-label">Date</label>
+                  <label className="form-label">Date : </label>
+                  <span>
+                    {appointmentDetails?.eprescription?.followUp_date}
+                  </span>
+
                   <input
                     type="date"
                     className="form-control"
                     name="days"
-                    value={
-                      !!appointmentDetails?.eprescription &&
-                      appointmentDetails?.eprescription?.followUp_date
-                    }
                     onChange={(e) => setRevisitDate(e.target.value)}
                   />
                 </div>

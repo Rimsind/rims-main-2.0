@@ -108,7 +108,8 @@ const MainHeader = () => {
                           <div className="user-text">
                             <h6>
                               {profile?.first_name} {profile?.last_name}
-                              {profile?.name}
+                              {profile?.name} {profile?.firstName}{" "}
+                              {profile?.lastName}
                             </h6>
                           </div>
                         </div>

@@ -125,8 +125,8 @@ const NeuroExamination = ({ appointmentId }) => {
         }
       );
       const result = res.data;
-      alert("Form Submitted Succesfully");
-      toast.success("Form Submitted Succesfully", {
+
+      toast.success("Clinical Examination Submitted", {
         position: "top-center",
         autoClose: 2000,
         hideProgressBar: false,
