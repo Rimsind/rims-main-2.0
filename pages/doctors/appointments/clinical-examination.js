@@ -172,14 +172,14 @@ const ClinicalExamination = () => {
             </div>
 
             <div className="row">
-              <div className="col-md-2 col-lg-2 col-xl-2">
+              <div className="col-md-12 col-lg-12 col-xl-2">
                 <PatientDemographics patientInfo={appointment?.patient} />
 
                 <AllergyCard />
 
                 <NotesCard />
               </div>
-              <div className="col-md-10 col-lg-10 col-xl-10">
+              <div className="col-md-12 col-lg-12 col-xl-10">
                 <div className="card">
                   <div className="card-header">
                     <div className="custom-tab row align-items-center">
