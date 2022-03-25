@@ -20,7 +20,6 @@ import {
 const RehabExamination = ({ appointmentId }) => {
   return (
     <>
-      {" "}
       <div className="clinical-assesment-tab-panel">
         <ul
           role="tablist"

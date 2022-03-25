@@ -47,6 +47,24 @@ const Index = () => {
               {appointments ? (
                 <div className="col-md-12 col-sm-12 col-lg-8 col-xl-9">
                   <div className="card card-table mb-0">
+                    <div className="card-header">
+                      <div className="row align-items-center">
+                        <div className="col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
+                          <select
+                            className="form-select"
+                            aria-label="Default select example"
+                          >
+                            <option selected>Search By Polyclinic</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div className="col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
+                          <input type="date" className="form-control" />
+                        </div>
+                      </div>
+                    </div>
                     <div className="card-body">
                       <div className="table-responsive">
                         <table className="table table-hover table-center mb-0">

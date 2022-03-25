@@ -390,53 +390,57 @@ const Prescription = ({ appointmentId }) => {
             <div className="col-6 border-end border-2">
               <p className="fs-5 fw-bold">Medical Diagnosis</p>
               <div className="rfa-gen-form-data-table mt-4 bg-white p-2 rounded-3">
-                <table className="table table-striped">
-                  <thead className="bg-info">
-                    <tr>
-                      <th>Details</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {appointmentDetails?.assesment?.diagnosis.map(
-                      (items, index) => (
-                        <tr key={index}>
-                          <th scope="col">{items?.description}</th>
-                        </tr>
-                      )
-                    )}
-                  </tbody>
-                </table>
+                <div className="table-responsive">
+                  <table className="table table-striped">
+                    <thead className="bg-info">
+                      <tr>
+                        <th>Details</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {appointmentDetails?.assesment?.diagnosis.map(
+                        (items, index) => (
+                          <tr key={index}>
+                            <th scope="col">{items?.description}</th>
+                          </tr>
+                        )
+                      )}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
             <div className="col-6">
               <p className="fs-5 fw-bold">Past Medicine Records</p>
               <div className="rfa-gen-form-data-table bg-white p-2 rounded-3 mt-4">
-                <table className="table table-striped">
-                  <thead className="bg-info">
-                    <tr>
-                      <th scope="col">Medicine Name</th>
-                      <th scope="col">MG</th>
-                      <th scope="col">Start Date</th>
-                      <th scope="col">Status</th>
-                      <th scope="col">Type</th>
-                      <th scope="col">Reason</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {appointmentDetails?.patient?.past_medication_history?.map(
-                      (items, index) => (
-                        <tr key={index}>
-                          <td>{items?.medicineName}</td>
-                          <td>{items?.dose}</td>
-                          <td>{items?.startDate}</td>
-                          <td>{items?.status}</td>
-                          <td>{items?.type}</td>
-                          <td>no api</td>
-                        </tr>
-                      )
-                    )}
-                  </tbody>
-                </table>
+                <div className="table-responsive">
+                  <table className="table table-striped">
+                    <thead className="bg-info">
+                      <tr>
+                        <th scope="col">Medicine Name</th>
+                        <th scope="col">MG</th>
+                        <th scope="col">Start Date</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Reason</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {appointmentDetails?.patient?.past_medication_history?.map(
+                        (items, index) => (
+                          <tr key={index}>
+                            <td>{items?.medicineName}</td>
+                            <td>{items?.dose}</td>
+                            <td>{items?.startDate}</td>
+                            <td>{items?.status}</td>
+                            <td>{items?.type}</td>
+                            <td>no api</td>
+                          </tr>
+                        )
+                      )}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
@@ -448,7 +452,7 @@ const Prescription = ({ appointmentId }) => {
             <div className="col-md-4">
               <label className="form-label">Medicine Name:</label>
               <select
-                className="form-select "
+                className="form-select"
                 aria-label="Default select example"
                 onChange={(e) => setMedicineName(e.target.value)}
               >
@@ -550,38 +554,23 @@ const Prescription = ({ appointmentId }) => {
           </div>
         </div>
         <div className="rfa-gen-form-data-table mt-4 bg-white p-2 rounded-3 border-bottom border-2 border-dark py-4">
-          <table className="table table-striped">
-            <thead className="bg-info">
-              <tr>
-                <th scope="col">Sl.</th>
-                <th scope="col">Medicine Name</th>
-                <th scope="col">MG</th>
-                <th scope="col">Route</th>
-                <th scope="col">Duration (Days)</th>
-                <th scope="col">Frequency</th>
-                <th scope="col">Reason</th>
-                <th scope="col">Instruction</th>
-                <th scope="col">Side Effects</th>
-              </tr>
-            </thead>
-            <tbody>
-              {medicineList?.map((item, index) => (
-                <tr key={index}>
-                  <th scope="row">
-                    <i className="ri-close-circle-line"></i>
-                  </th>
-                  <td>{item?.name}</td>
-                  <td>{item?.mg}</td>
-                  <td>{item?.route}</td>
-                  <td>{item?.duration}</td>
-                  <td>{item?.frequency}</td>
-                  <td>{item?.reasons}</td>
-                  <td>{item?.instruction}</td>
-                  <td>{item?.sideEffects} </td>
+          <div className="table-responsive">
+            <table className="table table-striped">
+              <thead className="bg-info">
+                <tr>
+                  <th scope="col">Sl.</th>
+                  <th scope="col">Medicine Name</th>
+                  <th scope="col">MG</th>
+                  <th scope="col">Route</th>
+                  <th scope="col">Duration (Days)</th>
+                  <th scope="col">Frequency</th>
+                  <th scope="col">Reason</th>
+                  <th scope="col">Instruction</th>
+                  <th scope="col">Side Effects</th>
                 </tr>
-              ))}
-              {appointmentDetails?.eprescription?.medicine.map(
-                (item, index) => (
+              </thead>
+              <tbody>
+                {medicineList?.map((item, index) => (
                   <tr key={index}>
                     <th scope="row">
                       <i className="ri-close-circle-line"></i>
@@ -595,10 +584,27 @@ const Prescription = ({ appointmentId }) => {
                     <td>{item?.instruction}</td>
                     <td>{item?.sideEffects} </td>
                   </tr>
-                )
-              )}
-            </tbody>
-          </table>
+                ))}
+                {appointmentDetails?.eprescription?.medicine.map(
+                  (item, index) => (
+                    <tr key={index}>
+                      <th scope="row">
+                        <i className="ri-close-circle-line"></i>
+                      </th>
+                      <td>{item?.name}</td>
+                      <td>{item?.mg}</td>
+                      <td>{item?.route}</td>
+                      <td>{item?.duration}</td>
+                      <td>{item?.frequency}</td>
+                      <td>{item?.reasons}</td>
+                      <td>{item?.instruction}</td>
+                      <td>{item?.sideEffects} </td>
+                    </tr>
+                  )
+                )}
+              </tbody>
+            </table>
+          </div>
         </div>
         <div className="gen-form mt-3 border-bottom border-2 border-dark py-4">
           <div className="row align-items-center mt-3">
@@ -607,7 +613,7 @@ const Prescription = ({ appointmentId }) => {
               <div className="row align-items-end">
                 <div className="col-4">
                   <div className="items">
-                    <label className="form-label">Test Name:</label>
+                    <label className="form-label">Test</label>
                     <select
                       className="form-select"
                       aria-label="Default select example"
@@ -646,26 +652,17 @@ const Prescription = ({ appointmentId }) => {
                 </div>
               </div>
               <div className="rfa-gen-form-data-table mt-4 bg-white p-2 rounded-3">
-                <table className="table table-striped">
-                  <thead className="bg-info">
-                    <tr>
-                      <th scope="col">Sl.</th>
-                      <th scope="col">Test Name</th>
-                      <th scope="col">Specification</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {testList?.map((item, index) => (
-                      <tr key={index}>
-                        <th scope="row">
-                          <i className="ri-close-circle-line"></i>
-                        </th>
-                        <td>{item?.name}</td>
-                        <td>{item?.specification}</td>
+                <div className="table-responsive">
+                  <table className="table table-striped">
+                    <thead className="bg-info">
+                      <tr>
+                        <th scope="col">Sl.</th>
+                        <th scope="col">Test Name</th>
+                        <th scope="col">Specification</th>
                       </tr>
-                    ))}
-                    {appointmentDetails?.eprescription?.test.map(
-                      (item, index) => (
+                    </thead>
+                    <tbody>
+                      {testList?.map((item, index) => (
                         <tr key={index}>
                           <th scope="row">
                             <i className="ri-close-circle-line"></i>
@@ -673,10 +670,21 @@ const Prescription = ({ appointmentId }) => {
                           <td>{item?.name}</td>
                           <td>{item?.specification}</td>
                         </tr>
-                      )
-                    )}
-                  </tbody>
-                </table>
+                      ))}
+                      {appointmentDetails?.eprescription?.test.map(
+                        (item, index) => (
+                          <tr key={index}>
+                            <th scope="row">
+                              <i className="ri-close-circle-line"></i>
+                            </th>
+                            <td>{item?.name}</td>
+                            <td>{item?.specification}</td>
+                          </tr>
+                        )
+                      )}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
             <div className="col-md-6">
@@ -684,6 +692,7 @@ const Prescription = ({ appointmentId }) => {
               <div className="row align-items-end">
                 <div className="col-4">
                   <div className="items">
+                    <label className="form-label">Options</label>
                     <select
                       className="form-select"
                       aria-label="Default select example"
@@ -700,6 +709,7 @@ const Prescription = ({ appointmentId }) => {
                 </div>
                 <div className="col-4">
                   <div className="items">
+                    <label className="form-label">Others</label>
                     <input
                       type="text"
                       className="form-control"
@@ -718,27 +728,29 @@ const Prescription = ({ appointmentId }) => {
                 </div>
               </div>
               <div className="rfa-gen-form-data-table mt-4 bg-white p-2 rounded-3">
-                <table className="table table-striped">
-                  <thead className="bg-info">
-                    <tr>
-                      <th scope="col">Sl.</th>
-                      <th scope="col">Precautions</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {allPrecaution.map((item, index) => (
-                      <tr key={index}>
-                        <th scope="row">
-                          <i className="ri-close-circle-line"></i>
-                        </th>
-                        <td>{item}</td>
+                <div className="table-responsive">
+                  <table className="table table-striped">
+                    <thead className="bg-info">
+                      <tr>
+                        <th scope="col">Sl.</th>
+                        <th scope="col">Precautions</th>
                       </tr>
-                    ))}
-                    <tr colSpan="2">
-                      {appointmentDetails?.eprescription?.safetyMeasures}
-                    </tr>
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      {allPrecaution.map((item, index) => (
+                        <tr key={index}>
+                          <th scope="row">
+                            <i className="ri-close-circle-line"></i>
+                          </th>
+                          <td>{item}</td>
+                        </tr>
+                      ))}
+                      <tr colSpan="2">
+                        {appointmentDetails?.eprescription?.safetyMeasures}
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
@@ -751,6 +763,7 @@ const Prescription = ({ appointmentId }) => {
               <div className="row align-items-end">
                 <div className="col-4">
                   <div className="items">
+                    <label className="form-label">Options</label>
                     <select
                       className="form-select"
                       aria-label="Default select example"
@@ -767,6 +780,7 @@ const Prescription = ({ appointmentId }) => {
                 </div>
                 <div className="col-4">
                   <div className="items">
+                    <label className="form-label">Others</label>
                     <input
                       type="text"
                       className="form-control"
@@ -788,27 +802,29 @@ const Prescription = ({ appointmentId }) => {
                 </div>
               </div>
               <div className="rfa-gen-form-data-table mt-4 bg-white p-2 rounded-3">
-                <table className="table table-striped">
-                  <thead className="bg-info">
-                    <tr>
-                      <th scope="col">Sl.</th>
-                      <th scope="col">Food & Fluid Restriction</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {patientRestrictionList.map((item, index) => (
-                      <tr key={index}>
-                        <th scope="row">
-                          <i className="ri-close-circle-line"></i>
-                        </th>
-                        <td>{item}</td>
+                <div className="table-responsive">
+                  <table className="table table-striped">
+                    <thead className="bg-info">
+                      <tr>
+                        <th scope="col">Sl.</th>
+                        <th scope="col">Food & Fluid Restriction</th>
                       </tr>
-                    ))}
-                    <tr colSpan="2">
-                      {appointmentDetails?.eprescription?.restrictions}
-                    </tr>
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      {patientRestrictionList.map((item, index) => (
+                        <tr key={index}>
+                          <th scope="row">
+                            <i className="ri-close-circle-line"></i>
+                          </th>
+                          <td>{item}</td>
+                        </tr>
+                      ))}
+                      <tr colSpan="2">
+                        {appointmentDetails?.eprescription?.restrictions}
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
             <div className="col-md-6">
@@ -816,6 +832,7 @@ const Prescription = ({ appointmentId }) => {
               <div className="row align-items-end">
                 <div className="col-4">
                   <div className="items">
+                    <label className="form-label">Options</label>
                     <select
                       className="form-select"
                       aria-label="Default select example"
@@ -832,6 +849,7 @@ const Prescription = ({ appointmentId }) => {
                 </div>
                 <div className="col-4">
                   <div className="items">
+                    <label className="form-label">Others</label>
                     <input
                       type="text"
                       className="form-control"
@@ -853,39 +871,42 @@ const Prescription = ({ appointmentId }) => {
                 </div>
               </div>
               <div className="rfa-gen-form-data-table mt-4 bg-white p-2 rounded-3">
-                <table className="table table-striped">
-                  <thead className="bg-info">
-                    <tr>
-                      <th scope="col">Sl.</th>
-                      <th scope="col">Patient Education</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {patientEducationList.map((item, index) => (
-                      <tr key={index}>
-                        <th scope="row">
-                          <i className="ri-close-circle-line"></i>
-                        </th>
-                        <td>{item}</td>
+                <div className="table-responsive">
+                  <table className="table table-striped">
+                    <thead className="bg-info">
+                      <tr>
+                        <th scope="col">Sl.</th>
+                        <th scope="col">Patient Education</th>
                       </tr>
-                    ))}
-                    <tr colSpan="2">
-                      {appointmentDetails?.eprescription?.patient_education}
-                    </tr>
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      {patientEducationList.map((item, index) => (
+                        <tr key={index}>
+                          <th scope="row">
+                            <i className="ri-close-circle-line"></i>
+                          </th>
+                          <td>{item}</td>
+                        </tr>
+                      ))}
+                      <tr colSpan="2">
+                        {appointmentDetails?.eprescription?.patient_education}
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         <div className="gen-form mt-3">
-          <div className="row align-items-center mt-3">
+          <div className="row align-items-start mt-3">
             <div className="col-md-6 border-end border-2">
               <p className="fs-5 fw-bold">Other Treatment Referral</p>
               <div className="row align-items-end">
                 <div className="col-4">
                   <div className="items">
+                    <label className="form-label">Options</label>
                     <select
                       className="form-select"
                       aria-label="Default select example"
@@ -902,6 +923,7 @@ const Prescription = ({ appointmentId }) => {
                 </div>
                 <div className="col-4">
                   <div className="items">
+                    <label className="form-label">Others</label>
                     <input
                       type="text"
                       className="form-control"
@@ -920,27 +942,29 @@ const Prescription = ({ appointmentId }) => {
                 </div>
               </div>
               <div className="rfa-gen-form-data-table mt-4 bg-white p-2 rounded-3">
-                <table className="table table-striped">
-                  <thead className="bg-info">
-                    <tr>
-                      <th scope="col">Sl.</th>
-                      <th scope="col">Treatment</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {allReferral.map((item, index) => (
-                      <tr key={index}>
-                        <th scope="row">
-                          <i className="ri-close-circle-line"></i>
-                        </th>
-                        <td>{item}</td>
+                <div className="table-responsive">
+                  <table className="table table-striped">
+                    <thead className="bg-info">
+                      <tr>
+                        <th scope="col">Sl.</th>
+                        <th scope="col">Treatment</th>
                       </tr>
-                    ))}{" "}
-                    <tr colSpan="2">
-                      {appointmentDetails?.eprescription?.treatmentreferral}
-                    </tr>
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      {allReferral.map((item, index) => (
+                        <tr key={index}>
+                          <th scope="row">
+                            <i className="ri-close-circle-line"></i>
+                          </th>
+                          <td>{item}</td>
+                        </tr>
+                      ))}{" "}
+                      <tr colSpan="2">
+                        {appointmentDetails?.eprescription?.treatmentreferral}
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
             <div className="col-md-6">

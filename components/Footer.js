@@ -109,7 +109,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-12 col-sm-12 col-md-3 col-lg-2 col-xl-2 col-xxl-2">
+            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-2 col-xxl-2">
               <div className="admn_btn">
                 <Link href="/administration">
                   <a className="btn btn-primary">Administrative</a>

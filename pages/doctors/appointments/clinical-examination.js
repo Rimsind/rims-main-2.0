@@ -67,9 +67,9 @@ const ClinicalExamination = () => {
           <div className="content container-fluid">
             <div className="page-header">
               <div className="row align-items-center">
-                <div className="col-sm-12 col-md-2"></div>
+                <div className="col-12 col-sm-12 col-md-0 col-lg-0 col-xl-2 col-xxl-2"></div>
                 <StatusChanger id={id} />
-                <div className="col-md-4 col-sm-12">
+                <div className="col-12 col-md-6 col-sm-12 col-lg-6 col-xl-4 col-xxl-4">
                   <div className="patient-btn-group d-flex justify-content-end">
                     <div className="btn-group-item shadow-sm">
                       <button className="btn btn-success">

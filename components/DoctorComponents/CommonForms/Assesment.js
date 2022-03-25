@@ -107,190 +107,195 @@ const Assesment = ({ appointmentId }) => {
                 <div className="gen-form-table px-2 py-3 bg-light">
                   {doctor?.specialty?.name === "Rehabilitation" ? (
                     <>
-                      <table className="table">
-                        <thead className="bg-info">
-                          <tr>
-                            <th scope="col">Title</th>
-                            <th scope="col">Description</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>
-                              Aerobic Capacity With Functional Mobility Skill
-                              Assessment
-                            </td>
-                            <td>
-                              {
-                                appointment?.rehab?.aerobicCapacity
-                                  ?.identified_problems
-                              }
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Anthropometric Assessment</td>
-                            <td>
-                              {
-                                appointment?.rehab?.abthropometric
-                                  ?.identified_problems
-                              }
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              Circulatory Assessment Includes Arterial / Venous
-                              / Lymphatic System
-                            </td>
-                            <td>
-                              {
-                                appointment?.rehab?.circulatory_assesment
-                                  ?.identified_problems
-                              }
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Arousal, Attention And Cognitive Assessment</td>
-                            <td>
-                              {
-                                appointment?.rehab?.arousal_assesment
-                                  ?.identified_problems
-                              }
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Cranial And Peripheral Nerve Assessment</td>
-                            <td>
-                              {
-                                appointment?.rehab?.cranial_peripheral_assesment
-                                  ?.identified_problems
-                              }
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Reflex And Sensory Assessment</td>
-                            <td>
-                              {
-                                appointment?.rehab?.reflex_sensory_assessment
-                                  ?.identified_problems
-                              }
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Postural Assessment</td>
-                            <td>
-                              {
-                                appointment?.rehab?.postural_assessment
-                                  ?.identified_problems
-                              }
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Gait Assessment</td>
-                            <td>
-                              {
-                                appointment?.rehab?.gait_assesment
-                                  ?.identified_problems
-                              }
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Postural Control Or Balance Assessment</td>
-                            <td>
-                              {
-                                appointment?.rehab?.postural_control_assesment
-                                  ?.identified_problems
-                              }
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              Motor Function Assessment Includes Motor Control
-                              And Motor Learning
-                            </td>
-                            <td>
-                              {
-                                appointment?.rehab?.motor_function_assesment
-                                  ?.identified_problems
-                              }
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              Manual Muscle Strength And Range Of Motion
-                              Assessment
-                            </td>
-                            <td>
-                              {
-                                appointment?.rehab?.manual_muscle_assesment
-                                  ?.identified_problems
-                              }
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Pain Assessment</td>
-                            <td>
-                              {
-                                appointment?.rehab?.pain_assessment
-                                  ?.identified_problems
-                              }
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              ENVIRONMENTAL BARRIER & HOME AND WORK BARRIER
-                              ASSESSMNET
-                            </td>
-                            <td>
-                              {
-                                appointment?.rehab
-                                  ?.environmental_barrier_assessmnet
-                                  ?.identified_problems
-                              }
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              ORTHOTIC / PROSTHETIC / ADAPTIVE EQUIPMENT / WHEEL
-                              CHAIR ASSESSMENT
-                            </td>
-                            <td>
-                              {
-                                appointment?.rehab?.wheel_chair_assessment
-                                  ?.identified_problems
-                              }
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>JOINT INTEGRETY AND MOBILITY ASSESSMNET</td>
-                            <td>
-                              {
-                                appointment?.rehab
-                                  ?.joint_integrety_mobility_assessmnet
-                                  ?.identified_problems
-                              }
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>VENTILATION,RESPIRATION AND GAS EXCHANGE</td>
-                            <td>
-                              {
-                                appointment?.rehab
-                                  ?.ventilation_respiration_gas_exchange
-                                  ?.identified_problems
-                              }
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>WOUND ASSESSMENT</td>
-                            <td>
-                              {
-                                appointment?.rehab?.wound_assessment
-                                  ?.identified_problems
-                              }
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
+                      <div className="table-responsive">
+                        <table className="table">
+                          <thead className="bg-info">
+                            <tr>
+                              <th scope="col">Title</th>
+                              <th scope="col">Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                Aerobic Capacity With Functional Mobility Skill
+                                Assessment
+                              </td>
+                              <td>
+                                {
+                                  appointment?.rehab?.aerobicCapacity
+                                    ?.identified_problems
+                                }
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Anthropometric Assessment</td>
+                              <td>
+                                {
+                                  appointment?.rehab?.abthropometric
+                                    ?.identified_problems
+                                }
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Circulatory Assessment Includes Arterial /
+                                Venous / Lymphatic System
+                              </td>
+                              <td>
+                                {
+                                  appointment?.rehab?.circulatory_assesment
+                                    ?.identified_problems
+                                }
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Arousal, Attention And Cognitive Assessment
+                              </td>
+                              <td>
+                                {
+                                  appointment?.rehab?.arousal_assesment
+                                    ?.identified_problems
+                                }
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Cranial And Peripheral Nerve Assessment</td>
+                              <td>
+                                {
+                                  appointment?.rehab
+                                    ?.cranial_peripheral_assesment
+                                    ?.identified_problems
+                                }
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Reflex And Sensory Assessment</td>
+                              <td>
+                                {
+                                  appointment?.rehab?.reflex_sensory_assessment
+                                    ?.identified_problems
+                                }
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Postural Assessment</td>
+                              <td>
+                                {
+                                  appointment?.rehab?.postural_assessment
+                                    ?.identified_problems
+                                }
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Gait Assessment</td>
+                              <td>
+                                {
+                                  appointment?.rehab?.gait_assesment
+                                    ?.identified_problems
+                                }
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Postural Control Or Balance Assessment</td>
+                              <td>
+                                {
+                                  appointment?.rehab?.postural_control_assesment
+                                    ?.identified_problems
+                                }
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Motor Function Assessment Includes Motor Control
+                                And Motor Learning
+                              </td>
+                              <td>
+                                {
+                                  appointment?.rehab?.motor_function_assesment
+                                    ?.identified_problems
+                                }
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Manual Muscle Strength And Range Of Motion
+                                Assessment
+                              </td>
+                              <td>
+                                {
+                                  appointment?.rehab?.manual_muscle_assesment
+                                    ?.identified_problems
+                                }
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Pain Assessment</td>
+                              <td>
+                                {
+                                  appointment?.rehab?.pain_assessment
+                                    ?.identified_problems
+                                }
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                ENVIRONMENTAL BARRIER & HOME AND WORK BARRIER
+                                ASSESSMNET
+                              </td>
+                              <td>
+                                {
+                                  appointment?.rehab
+                                    ?.environmental_barrier_assessmnet
+                                    ?.identified_problems
+                                }
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                ORTHOTIC / PROSTHETIC / ADAPTIVE EQUIPMENT /
+                                WHEEL CHAIR ASSESSMENT
+                              </td>
+                              <td>
+                                {
+                                  appointment?.rehab?.wheel_chair_assessment
+                                    ?.identified_problems
+                                }
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>JOINT INTEGRETY AND MOBILITY ASSESSMNET</td>
+                              <td>
+                                {
+                                  appointment?.rehab
+                                    ?.joint_integrety_mobility_assessmnet
+                                    ?.identified_problems
+                                }
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>VENTILATION,RESPIRATION AND GAS EXCHANGE</td>
+                              <td>
+                                {
+                                  appointment?.rehab
+                                    ?.ventilation_respiration_gas_exchange
+                                    ?.identified_problems
+                                }
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>WOUND ASSESSMENT</td>
+                              <td>
+                                {
+                                  appointment?.rehab?.wound_assessment
+                                    ?.identified_problems
+                                }
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </>
                   ) : (
                     <></>
@@ -363,28 +368,32 @@ const Assesment = ({ appointmentId }) => {
           <div className="row align-items-baseline">
             <div className="col-12">
               <div className="rfa-gen-form-data-table bg-white p-2 rounded-3 mt-4">
-                <table className="table table-striped">
-                  <thead className="bg-info">
-                    <tr>
-                      <th scope="col">Sl.</th>
-                      <th scope="col"> Medical Diagnosis List</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {allIcd.map((items, index) => (
-                      <tr key={index}>
-                        <th scope="row">X</th>
-                        <td>{items.description}</td>
+                <div className="table-responsive">
+                  <table className="table table-striped">
+                    <thead className="bg-info">
+                      <tr>
+                        <th scope="col">Sl.</th>
+                        <th scope="col"> Medical Diagnosis List</th>
                       </tr>
-                    ))}
-                    {appointment?.assesment?.diagnosis?.map((items, index) => (
-                      <tr key={index}>
-                        <th scope="row">*</th>
-                        <td>{items.description}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      {allIcd.map((items, index) => (
+                        <tr key={index}>
+                          <th scope="row">X</th>
+                          <td>{items.description}</td>
+                        </tr>
+                      ))}
+                      {appointment?.assesment?.diagnosis?.map(
+                        (items, index) => (
+                          <tr key={index}>
+                            <th scope="row">*</th>
+                            <td>{items.description}</td>
+                          </tr>
+                        )
+                      )}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
             <div className="col-12 mt-5">

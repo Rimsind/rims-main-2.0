@@ -84,7 +84,7 @@ const HistoryOfPresentIllness = ({ appointmentId }) => {
         <div className="gen-form">
           <div className="history-of-present-illness-content">
             <div className="row align-items-center">
-              <div className="col-3">
+              <div className="col-6 col-md-6 col-lg-5 col-xl-3 col-xxl-3">
                 <p>
                   <span className="fs-6 fw-bold">
                     {data?.patient?.title} {data?.patient?.first_name}{" "}
@@ -96,20 +96,20 @@ const HistoryOfPresentIllness = ({ appointmentId }) => {
                   <span className="fs-6 fw-bold">{data?.patient?.gender}</span>
                 </p>
               </div>
-              <div className="col-1">
+              <div className="col-3 col-md-3 col-lg-2 col-xl-1 col-xxl-1">
                 <p className="fs-6">came to the</p>
               </div>
-              <div className="col-3">
+              <div className="col-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
                 <input
                   type="text"
                   className="form-control"
                   onChange={(e) => setCameTo(e.target.value)}
                 />
               </div>
-              <div className="col-2">
+              <div className="col-3 col-md-4 col-lg-3 col-xl-2 col-xxl-2">
                 <p className="fs-6">with a problem of</p>
               </div>
-              <div className="col-3">
+              <div className="col-3 col-md-3 col-lg-3 col-xl-2 col-xxl-2">
                 <input
                   type="text"
                   className="form-control"
@@ -118,30 +118,30 @@ const HistoryOfPresentIllness = ({ appointmentId }) => {
               </div>
             </div>
             <div className="row align-items-center mt-2">
-              <div className="col">
+              <div className="col-3 col-md-3 col-lg-3 col-xl-2 col-xxl-2">
                 <p className="fs-6">Patient stated</p>
               </div>
-              <div className="col">
+              <div className="col-3 col-md-3 col-lg-3 col-xl-2 col-xxl-2">
                 <input
                   type="text"
                   className="form-control"
                   onChange={(e) => setStated(e.target.value)}
                 />
               </div>
-              <div className="col">
+              <div className="col-3 col-md-3 col-lg-3 col-xl-2 col-xxl-2">
                 <p className="fs-6">Patient was done</p>
               </div>
-              <div className="col">
+              <div className="col-3 col-md-3 col-lg-3 col-xl-2 col-xxl-2">
                 <input
                   type="text"
                   className="form-control"
                   onChange={(e) => setHasDone(e.target.value)}
                 />
               </div>
-              <div className="col">
+              <div className="col-6 col-md-6 col-lg-6 col-xl-2 col-xxl-2">
                 <p className="fs-6">Patient current medication</p>
               </div>
-              <div className="col">
+              <div className="col-6 col-md-6 col-lg-6 col-xl-2 col-xxl-2">
                 <input
                   type="text"
                   className="form-control"
@@ -150,8 +150,10 @@ const HistoryOfPresentIllness = ({ appointmentId }) => {
               </div>
             </div>
             <div className="row align-items-center mt-2">
-              <div className="col-md-2">Other relevant factors are</div>
-              <div className="col-md-10">
+              <div className="col-6 col-md-6 col-lg-6 col-xl-2 col-xxl-2">
+                Other relevant factors are
+              </div>
+              <div className="col-6 col-md-6 col-lg-6 col-xl-10 col-xxl-10">
                 <input
                   type="text"
                   className="form-control"

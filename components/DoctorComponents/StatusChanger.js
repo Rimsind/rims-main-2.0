@@ -52,17 +52,17 @@ const StatusChanger = ({ id }) => {
   };
   return (
     <>
-      <div className="col-sm-12 col-md-6">
+      <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
         <div className="row">
-          <div className="col-6">
+          <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
             <div className="status-sec">
               <div className="row align-items-center">
-                <div className="col-2">
+                <div className="col-2 col-md-4 col-lg-4 col-xl-2 col-xxl-2">
                   <p className="fs-5 lh-1" style={{ marginBottom: "7px" }}>
                     Status
                   </p>
                 </div>
-                <div className="col-10">
+                <div className="col-10 col-md-8 col-lg-8 col-xl-10 col-xxl-10">
                   <div className="status-btn d-flex">
                     <div className="left-off-btn">
                       <button

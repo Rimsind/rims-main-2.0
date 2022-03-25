@@ -166,34 +166,36 @@ const OrthoExamination = ({ appointmentId }) => {
               </div>
               <div className="col-md-12">
                 <div className="rfa-gen-form-data-table bg-white p-2 rounded-3">
-                  <table className="table table-striped">
-                    <thead className="bg-info">
-                      <tr>
-                        <th className="text-center" colSpan="2" scope="col">
-                          Categories
-                        </th>
-                        <th scope="col">Test</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {examination.map((item, index) => (
-                        <tr key={index}>
-                          <td>X</td>
-                          <td>{item.category}</td>
-                          <td>{item.test}</td>
+                  <div className="table-responsive">
+                    <table className="table table-striped">
+                      <thead className="bg-info">
+                        <tr>
+                          <th className="text-center" colSpan="2" scope="col">
+                            Categories
+                          </th>
+                          <th scope="col">Test</th>
                         </tr>
-                      ))}
-                      {appointment?.orthopedic?.examination.map(
-                        (item, index) => (
+                      </thead>
+                      <tbody>
+                        {examination.map((item, index) => (
                           <tr key={index}>
-                            <td>*</td>
+                            <td>X</td>
                             <td>{item.category}</td>
                             <td>{item.test}</td>
                           </tr>
-                        )
-                      )}
-                    </tbody>
-                  </table>
+                        ))}
+                        {appointment?.orthopedic?.examination.map(
+                          (item, index) => (
+                            <tr key={index}>
+                              <td>*</td>
+                              <td>{item.category}</td>
+                              <td>{item.test}</td>
+                            </tr>
+                          )
+                        )}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
