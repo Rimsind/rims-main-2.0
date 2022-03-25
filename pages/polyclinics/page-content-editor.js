@@ -94,7 +94,7 @@ const PageContentEditor = () => {
           <div className="row">
             <PolyclinicSideBar data={data} status1="active" />
 
-            <div className="col-md-7 col-lg-8 col-xl-9">
+            <div className="col-md-12 col-lg-8 col-xl-9 col-xxl-9">
               <div className="card">
                 <div className="card-header">
                   <p className="fs-5 fw-bold text-center lh-1">Overview</p>
@@ -102,12 +102,12 @@ const PageContentEditor = () => {
                 <div className="card-body">
                   <form onSubmit={handleSubmit(submit_nursing_content)}>
                     <div className="row align-items-center mb-3">
-                      <div className="col-md-2">
+                      <div className="col-12 col-md-12 col-lg-12 col-xl-2 col-xxl-2 mb-2 mb-md-2 mb-lg-2 mb-xl-0 mb-xxl-0">
                         <div className="nursing-form-input">
                           <label className="fs-6 fw-bold">Regular Bed</label>
                         </div>
                       </div>
-                      <div className="col-md-5">
+                      <div className="col-6 col-md-6 col-lg-6 col-xl-5 col-xxl-5">
                         <div className="row align-items-center">
                           <div className="col-md-4">
                             <div className="nursing-form-input">
@@ -132,7 +132,7 @@ const PageContentEditor = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-5">
+                      <div className="col-6 col-md-6 col-lg-6 col-xl-5 col-xxl-5">
                         <div className="row align-items-center">
                           <div className="col-md-4">
                             <div className="nursing-form-input">
@@ -159,12 +159,12 @@ const PageContentEditor = () => {
                       </div>
                     </div>
                     <div className="row align-items-center mb-3">
-                      <div className="col-md-2">
+                      <div className="col-12 col-md-12 col-lg-12 col-xl-2 col-xxl-2 mb-2 mb-md-2 mb-lg-2 mb-xl-0 mb-xxl-0">
                         <div className="nursing-form-input">
                           <label className="fs-6 fw-bold">ICU Bed</label>
                         </div>
                       </div>
-                      <div className="col-md-5">
+                      <div className="col-6 col-md-6 col-lg-6 col-xl-5 col-xxl-5">
                         <div className="row align-items-center">
                           <div className="col-md-4">
                             <div className="nursing-form-input">
@@ -187,7 +187,7 @@ const PageContentEditor = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-5">
+                      <div className="col-6 col-md-6 col-lg-6 col-xl-5 col-xxl-5">
                         <div className="row align-items-center">
                           <div className="col-md-4">
                             <div className="nursing-form-input">
@@ -214,14 +214,14 @@ const PageContentEditor = () => {
                       </div>
                     </div>
                     <div className="row align-items-center mb-3">
-                      <div className="col-md-2">
+                      <div className="col-12 col-md-12 col-lg-12 col-xl-2 col-xxl-2 mb-2 mb-md-2 mb-lg-2 mb-xl-0 mb-xxl-0">
                         <div className="nursing-form-input">
                           <label className="fs-6 fw-bold">
                             Regular Ambulance
                           </label>
                         </div>
                       </div>
-                      <div className="col-md-5">
+                      <div className="col-6 col-md-6 col-lg-6 col-xl-5 col-xxl-5">
                         <div className="row align-items-center">
                           <div className="col-md-4">
                             <div className="nursing-form-input">
@@ -246,7 +246,7 @@ const PageContentEditor = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-5">
+                      <div className="col-6 col-md-6 col-lg-6 col-xl-5 col-xxl-5">
                         <div className="row align-items-center">
                           <div className="col-md-4">
                             <div className="nursing-form-input">
@@ -273,12 +273,12 @@ const PageContentEditor = () => {
                       </div>
                     </div>
                     <div className="row align-items-center mb-3">
-                      <div className="col-md-2">
+                      <div className="col-12 col-md-12 col-lg-12 col-xl-2 col-xxl-2 mb-2 mb-md-2 mb-lg-2 mb-xl-0 mb-xxl-0">
                         <div className="nursing-form-input">
                           <label className="fs-6 fw-bold">ICU Ambulance</label>
                         </div>
                       </div>
-                      <div className="col-md-5">
+                      <div className="col-6 col-md-6 col-lg-6 col-xl-5 col-xxl-5">
                         <div className="row align-items-center">
                           <div className="col-md-4">
                             <div className="nursing-form-input">
@@ -303,7 +303,7 @@ const PageContentEditor = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-5">
+                      <div className="col-6 col-md-6 col-lg-6 col-xl-5 col-xxl-5">
                         <div className="row align-items-center">
                           <div className="col-md-4">
                             <div className="nursing-form-input">
@@ -330,14 +330,14 @@ const PageContentEditor = () => {
                       </div>
                     </div>
                     <div className="row align-items-center mb-3">
-                      <div className="col-md-2">
+                      <div className="col-12 col-md-12 col-lg-12 col-xl-2 col-xxl-2 mb-2 mb-md-2 mb-lg-2 mb-xl-0 mb-xxl-0">
                         <div className="nursing-form-input">
                           <label className="fs-6 fw-bold">
                             Operation Theater
                           </label>
                         </div>
                       </div>
-                      <div className="col-md-5">
+                      <div className="col-6 col-md-6 col-lg-6 col-xl-5 col-xxl-5">
                         <div className="row align-items-center">
                           <div className="col-md-4">
                             <div className="nursing-form-input">
@@ -360,7 +360,7 @@ const PageContentEditor = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-5">
+                      <div className="col-6 col-md-6 col-lg-6 col-xl-5 col-xxl-5">
                         <div className="row align-items-center">
                           <div className="col-md-4">
                             <div className="nursing-form-input">
@@ -385,12 +385,12 @@ const PageContentEditor = () => {
                       </div>
                     </div>
                     <div className="row align-items-center mb-3">
-                      <div className="col-md-2">
+                      <div className="col-12 col-md-12 col-lg-12 col-xl-2 col-xxl-2 mb-2 mb-md-2 mb-lg-2 mb-xl-0 mb-xxl-0">
                         <div className="nursing-form-input">
                           <label className="fs-6 fw-bold">Burn Care Unit</label>
                         </div>
                       </div>
-                      <div className="col-md-5">
+                      <div className="col-6 col-md-6 col-lg-6 col-xl-5 col-xxl-5">
                         <div className="row align-items-center">
                           <div className="col-md-4">
                             <div className="nursing-form-input">
@@ -415,7 +415,7 @@ const PageContentEditor = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-5">
+                      <div className="col-6 col-md-6 col-lg-6 col-xl-5 col-xxl-5">
                         <div className="row align-items-center">
                           <div className="col-md-4">
                             <div className="nursing-form-input">
@@ -456,7 +456,7 @@ const PageContentEditor = () => {
                 </div>
                 <div className="card-body">
                   <div className="row align-items-end">
-                    <div className="col-6">
+                    <div className="col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
                       <div className="features-add-sec mb-3">
                         <div className="row align-items-center">
                           <div className="col-4">
@@ -476,7 +476,7 @@ const PageContentEditor = () => {
                             </select>
                           </div>
                           <div className="col-4">
-                            <div className="features-add-btn text-start">
+                            <div className="features-add-btn text-end text-md-end text-lg-end text-xl-start text-xxl-start">
                               <button
                                 className="btn btn-secondary"
                                 onClick={addFeatures}
@@ -488,7 +488,7 @@ const PageContentEditor = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-6">
+                    <div className="col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
                       <div className="features-pill-item mt-4">
                         <div className="row align-items-center">
                           {allFeatures?.map((items, index) => (
@@ -519,9 +519,9 @@ const PageContentEditor = () => {
                   </div>
                 </div>
               </div>
-              <p className="fs-5 fw-bold">Premium Page</p>
+              {/* <p className="fs-5 fw-bold">Premium Page</p> */}
 
-              <div className="card">
+              {/* <div className="card">
                 <div className="card-body">
                   <div
                     className="form-group upload-profile d-flex justify-content-center"
@@ -963,7 +963,7 @@ const PageContentEditor = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

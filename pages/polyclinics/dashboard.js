@@ -27,7 +27,7 @@ const Dashboard = () => {
           <div className="row">
             <PolyclinicSideBar data={data} status1="active" />
 
-            <div className="col-md-7 col-lg-8 col-xl-9">
+            <div className="col-md-12 col-lg-8 col-xl-9 col-xxl-9">
               <div className="card">
                 <h1>Welcome To the Dashboard</h1>
               </div>

@@ -30,7 +30,7 @@ const ProfileSettings = () => {
           <div className="row">
             <PolyclinicSideBar data={data} status1="active" />
 
-            <div className="col-md-7 col-lg-8 col-xl-9">
+            <div className="col-md-12 col-lg-12 col-xl-9 col-xxl-9">
               <ProfilePicture data={data} />
 
               <ProfileDetails data={data} />

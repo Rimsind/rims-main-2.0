@@ -4,8 +4,8 @@ const PolyclinicSideBar = (props) => {
   const { data } = props;
   return (
     <>
-      <div className="col-md-5 col-lg-4 col-xl-3 sticky-top">
-        <div className="profile-sidebar sticky-top">
+      <div className="col-md-12 col-lg-4 col-xl-3 col-xxl-3 sticky-xl-top sticky-xxl-top">
+        <div className="profile-sidebar sticky-xl-top sticky-xxl-top">
           <div className="widget-profile pro-widget-content">
             <div className="profile-info-widget">
               <a href="#" className="booking-doc-img">
