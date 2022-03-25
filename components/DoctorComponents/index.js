@@ -10,6 +10,7 @@ import NeuroExamination from "./neurology/NeuroExamination";
 import RehabExamination from "./rehab/RehabExamination";
 import MedicineExamination from "./medicine/MedicineExamination";
 import EducationInfo from "./EducationInfo";
+import StatusChanger from "./StatusChanger";
 export {
   DoctorSidebar,
   DoctorNav,
@@ -23,4 +24,5 @@ export {
   RehabExamination,
   MedicineExamination,
   EducationInfo,
+  StatusChanger,
 };

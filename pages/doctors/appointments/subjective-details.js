@@ -20,6 +20,7 @@ import {
   AllergyCard,
   PatientDemographics,
   NotesCard,
+  StatusChanger,
 } from "components/DoctorComponents";
 
 const SubjectiveDetails = () => {
@@ -55,47 +56,7 @@ const SubjectiveDetails = () => {
             <div className="page-header">
               <div className="row align-items-center">
                 <div className="col-sm-12 col-md-2"></div>
-                <div className="col-sm-12 col-md-6">
-                  <div className="row">
-                    <div className="col-6">
-                      <div className="status-sec">
-                        <div className="row align-items-center">
-                          <div className="col-2">
-                            <p
-                              className="fs-5 lh-1"
-                              style={{ marginBottom: "7px" }}
-                            >
-                              Status
-                            </p>
-                          </div>
-                          <div className="col-10">
-                            <div className="status-btn d-flex">
-                              <div className="left-off-btn">
-                                <button
-                                  className="btn btn-warning"
-                                  style={{ borderRadius: "2px 0 0 2px" }}
-                                >
-                                  Pending
-                                </button>
-                              </div>
-                              <div className="right-off-btn">
-                                <button
-                                  className="btn btn-light"
-                                  style={{
-                                    borderRadius: "0 2px 2px 0",
-                                    paddingRight: "17px",
-                                  }}
-                                >
-                                  Completed
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <StatusChanger id={id} />
                 <div className="col-md-4 col-sm-12">
                   <div className="patient-btn-group d-flex justify-content-end">
                     <div className="btn-group-item shadow-sm">
