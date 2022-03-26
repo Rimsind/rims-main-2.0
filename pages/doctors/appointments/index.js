@@ -63,8 +63,11 @@ const Index = () => {
               {appointments ? (
                 <div className="col-md-12 col-sm-12 col-lg-8 col-xl-9">
                   <div className="card card-table mb-0">
-                    <div className="card-header">
-                      <div className="row align-items-center bg-info p-2 rounded-1">
+                    <div
+                      className="card-header"
+                      style={{ backgroundColor: "#7d2d69" }}
+                    >
+                      <div className="row align-items-end p-2 rounded-1">
                         <div className="col-12 col-md-12 col-lg-6 col-xl-4 col-xxl-4">
                           <lable className="text-light">
                             Filter By Polyuclinic:
@@ -115,7 +118,7 @@ const Index = () => {
                             className="btn btn-light"
                             onClick={resetState}
                           >
-                            Reset
+                            <i className="far fa-redo-alt me-2"></i>Reset
                           </button>
                         </div>
                       </div>
