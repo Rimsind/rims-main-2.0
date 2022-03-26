@@ -21,6 +21,7 @@ const Eprescription = () => {
       return result;
     }
   );
+  console.log(appointments);
 
   const { data: specialty } = useSWR(
     `${apiUrl}/specialties/${appointments?.doctor?.specialty}`,
@@ -92,7 +93,9 @@ const Eprescription = () => {
                     {appointments?.doctor?.qualification}
                   </p>
                   <p className="fs-6 lh-1">{specialty?.name}</p>
-                  <p className="fs-6 lh-1">Reg. No.-58905 (WBMC)</p>
+                  <p className="fs-6 lh-1">
+                    Reg. No.-{appointments?.doctor?.registration_no}
+                  </p>
                   <p className="fs-6 lh-1">
                     Mob: {appointments?.doctor?.phone}
                   </p>
@@ -253,7 +256,7 @@ const Eprescription = () => {
                     {appointments?.eprescription?.medicine.map(
                       (items, index) => (
                         <tr key={index}>
-                          <th scope="row">*</th>
+                          <th scope="row">{index + 1}</th>
                           <td>{items?.name}</td>
                           <td>{items?.mg}</td>
                           <td>{items?.route}</td>
@@ -281,7 +284,7 @@ const Eprescription = () => {
                   <tbody>
                     {appointments?.eprescription?.test?.map((items, index) => (
                       <tr key={index}>
-                        <th scope="row">*</th>
+                        <th scope="row">{index + 1}</th>
                         <td>{items?.name}</td>
                         <td>{items?.specification}</td>
                       </tr>
@@ -377,8 +380,8 @@ const Eprescription = () => {
                   <tbody>
                     <tr>
                       <td>*</td>
-                      <td>{appointments?.eprescription?.followup?.date}</td>
-                      <td>{appointments?.eprescription?.followup?.type}</td>
+                      <td>{appointments?.eprescription?.followUp_date}</td>
+                      <td>{appointments?.eprescription?.followUp_type}</td>
                     </tr>
                   </tbody>
                 </table>

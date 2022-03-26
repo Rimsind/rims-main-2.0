@@ -5,6 +5,7 @@ import axios from "axios";
 import { useAuth } from "context";
 import { UserPageLoader } from "components/Loaders";
 import { AppointmentList, DoctorSidebar } from "components/DoctorComponents";
+import { useState } from "react";
 const Index = () => {
   const { auth } = useAuth();
   const { data: appointments } = useSWR(
@@ -19,6 +20,7 @@ const Index = () => {
       return result;
     }
   );
+  console.log(appointments);
   const appointmentsLength = appointments?.length;
   const { data } = useSWR(
     `${apiUrl}/doctors/${auth.user?.profileId}`,
@@ -32,6 +34,9 @@ const Index = () => {
       return result;
     }
   );
+
+  const [filterDate, setFilterDate] = useState("");
+  const [filterPolyclinic, setFilterPolyclinic] = useState("");
   return (
     <>
       <div className="main-wrapper">
@@ -53,15 +58,27 @@ const Index = () => {
                           <select
                             className="form-select"
                             aria-label="Default select example"
+                            onChange={(e) =>
+                              setFilterPolyclinic(e.target.value)
+                            }
                           >
                             <option selected>Search By Polyclinic</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            {data?.timetable?.map((items, index) => (
+                              <option
+                                value={items?.polyclinic?.name}
+                                key={index}
+                              >
+                                {items?.polyclinic?.name}
+                              </option>
+                            ))}
                           </select>
                         </div>
                         <div className="col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
-                          <input type="date" className="form-control" />
+                          <input
+                            type="date"
+                            className="form-control"
+                            onChange={(e) => setFilterDate(e.target.value)}
+                          />
                         </div>
                       </div>
                     </div>
@@ -94,9 +111,34 @@ const Index = () => {
                               </>
                             ) : (
                               <>
-                                {appointments?.map((items, index) => (
+                                {/* {appointments?.map((items, index) => (
                                   <AppointmentList data={items} key={index} />
-                                ))}
+                                ))} */}
+
+                                {appointments
+                                  ?.filter((items) => {
+                                    if (
+                                      filterDate === "" &&
+                                      filterPolyclinic === ""
+                                    ) {
+                                      return items;
+                                    } else if (
+                                      items?.date.includes(filterDate) &&
+                                      filterPolyclinic === ""
+                                    ) {
+                                      return items;
+                                    } else if (
+                                      items?.polyclinic?.name.includes(
+                                        filterPolyclinic
+                                      ) &&
+                                      filterDate === ""
+                                    ) {
+                                      return items;
+                                    }
+                                  })
+                                  .map((items, index) => (
+                                    <AppointmentList data={items} key={index} />
+                                  ))}
                               </>
                             )}
                           </tbody>

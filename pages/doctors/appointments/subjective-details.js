@@ -60,14 +60,14 @@ const SubjectiveDetails = () => {
                 <div className="col-12 col-md-6 col-sm-12 col-lg-6 col-xl-4 col-xxl-4">
                   <div className="patient-btn-group d-flex justify-content-end">
                     <div className="btn-group-item shadow-sm">
-                      <button className="btn btn-success">
-                        Print Clinical Report
-                      </button>
+                      <Link href={`/reports/assesment-report?id=${id}`}>
+                        <a className="btn btn-success">Download Assessments</a>
+                      </Link>
                     </div>
                     <div className="btn-group-item ms-2 shadow-sm">
-                      <button className="btn btn-danger">
-                        Print E-Prescription
-                      </button>
+                      <Link href={`/reports/e-prescription?id=${id}`}>
+                        <a className="btn btn-danger">Print E-Prescription</a>
+                      </Link>
                     </div>
                   </div>
                 </div>

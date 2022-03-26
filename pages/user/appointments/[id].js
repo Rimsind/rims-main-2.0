@@ -2,7 +2,7 @@ import { BreadCrums } from "components/common";
 import UserNav from "components/UserComponents/UserNav";
 import Image from "next/image";
 import useSWR from "swr";
-import { apiUrl } from "config/api";
+import { apiUrl, fetcher } from "config/api";
 import axios from "axios";
 import { useAuth } from "context";
 import { UserPageLoader } from "components/Loaders";
@@ -40,6 +40,11 @@ const AppointmentId = () => {
       return result;
     }
   );
+
+  const { data: specialty } = useSWR(
+    `${apiUrl}/specialties/${appointments?.doctor?.specialty}`,
+    fetcher
+  );
   return (
     <>
       <div className="main-wrapper">
@@ -68,7 +73,7 @@ const AppointmentId = () => {
                                 Date -{" "}
                               </p>
                               <p className="fs-6 lh-1">
-                                {appointments?.eprescription?.followup?.date}
+                                {appointments?.eprescription?.followUp_date}
                               </p>
                             </div>
                           </div>
@@ -158,7 +163,7 @@ const AppointmentId = () => {
                               {appointments?.doctor?.lastName}
                             </p>
                             <p className="fs-6 fst-italic lh-1">
-                              {appointments?.doctor?.specialty}
+                              {specialty?.name}
                             </p>
                           </div>
                         </div>
