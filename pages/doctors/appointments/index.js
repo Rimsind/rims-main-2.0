@@ -6,6 +6,7 @@ import { useAuth } from "context";
 import { UserPageLoader } from "components/Loaders";
 import { AppointmentList, DoctorSidebar } from "components/DoctorComponents";
 import { useState } from "react";
+
 const Index = () => {
   const { auth } = useAuth();
   const { data: appointments } = useSWR(
@@ -39,10 +40,12 @@ const Index = () => {
   const [clinic, setClinic] = useState("");
   const [status, setStatus] = useState("");
 
-  const resetState = () => {
+  const resetState = (e) => {
     setDate("");
     setClinic("");
     setStatus("");
+    setStatus({ selected: "" });
+    setClinic({ selected: "" });
   };
 
   return (
@@ -69,6 +72,7 @@ const Index = () => {
                           <select
                             className="form-select"
                             aria-label="Default select example"
+                            value={clinic}
                             onChange={(e) => setClinic(e.target.value)}
                           >
                             <option selected>Select Polyclinic</option>
@@ -89,6 +93,7 @@ const Index = () => {
                           <select
                             className="form-select"
                             aria-label="Default select example"
+                            value={status}
                             onChange={(e) => setStatus(e.target.value)}
                           >
                             <option selected>Select status</option>
@@ -101,6 +106,7 @@ const Index = () => {
                           <input
                             type="date"
                             className="form-control"
+                            value={date}
                             onChange={(e) => setDate(e.target.value)}
                           />
                         </div>
