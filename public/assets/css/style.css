@@ -3898,3 +3898,10 @@ button.btn-custom-time-slot:visited {
     border: 0 !important;
   }
 }
+
+@media screen and (min-width: 300px) and (max-width: 900px) {
+  .doctor-admin-login-sec {
+    height: 100vh !important;
+    width: 100vw !important;
+  }
+}
