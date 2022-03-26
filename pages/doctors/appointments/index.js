@@ -35,8 +35,16 @@ const Index = () => {
     }
   );
 
-  const [filterDate, setFilterDate] = useState("");
-  const [filterPolyclinic, setFilterPolyclinic] = useState("");
+  const [date, setDate] = useState("");
+  const [clinic, setClinic] = useState("");
+  const [status, setStatus] = useState("");
+
+  const resetState = () => {
+    setDate("");
+    setClinic("");
+    setStatus("");
+  };
+
   return (
     <>
       <div className="main-wrapper">
@@ -53,16 +61,17 @@ const Index = () => {
                 <div className="col-md-12 col-sm-12 col-lg-8 col-xl-9">
                   <div className="card card-table mb-0">
                     <div className="card-header">
-                      <div className="row align-items-center">
-                        <div className="col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
+                      <div className="row align-items-center bg-info p-2 rounded-1">
+                        <div className="col-12 col-md-12 col-lg-6 col-xl-4 col-xxl-4">
+                          <lable className="text-light">
+                            Filter By Polyuclinic:
+                          </lable>
                           <select
                             className="form-select"
                             aria-label="Default select example"
-                            onChange={(e) =>
-                              setFilterPolyclinic(e.target.value)
-                            }
+                            onChange={(e) => setClinic(e.target.value)}
                           >
-                            <option selected>Search By Polyclinic</option>
+                            <option selected>Select Polyclinic</option>
                             {data?.timetable?.map((items, index) => (
                               <option
                                 value={items?.polyclinic?.name}
@@ -73,12 +82,35 @@ const Index = () => {
                             ))}
                           </select>
                         </div>
-                        <div className="col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
+                        <div className="col-12 col-md-12 col-lg-6 col-xl-3 col-xxl-3">
+                          <lable className="text-light">
+                            Filter By status:
+                          </lable>
+                          <select
+                            className="form-select"
+                            aria-label="Default select example"
+                            onChange={(e) => setStatus(e.target.value)}
+                          >
+                            <option selected>Select status</option>
+                            <option value="false">Pending</option>
+                            <option value="true">Completed</option>
+                          </select>
+                        </div>
+                        <div className="col-12 col-md-12 col-lg-6 col-xl-3 col-xxl-3">
+                          <lable className="text-light">Filter By Date:</lable>{" "}
                           <input
                             type="date"
                             className="form-control"
-                            onChange={(e) => setFilterDate(e.target.value)}
+                            onChange={(e) => setDate(e.target.value)}
                           />
+                        </div>
+                        <div className="col-12 col-md-12 col-lg-6 col-xl-2 col-xxl-2">
+                          <button
+                            className="btn btn-light"
+                            onClick={resetState}
+                          >
+                            Reset
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -118,20 +150,67 @@ const Index = () => {
                                 {appointments
                                   ?.filter((items) => {
                                     if (
-                                      filterDate === "" &&
-                                      filterPolyclinic === ""
+                                      date === "" &&
+                                      clinic === "" &&
+                                      status === ""
                                     ) {
                                       return items;
                                     } else if (
-                                      items?.date.includes(filterDate) &&
-                                      filterPolyclinic === ""
+                                      items?.date.includes(date) &&
+                                      clinic === "" &&
+                                      status === ""
                                     ) {
                                       return items;
                                     } else if (
                                       items?.polyclinic?.name.includes(
-                                        filterPolyclinic
+                                        clinic
                                       ) &&
-                                      filterDate === ""
+                                      date === "" &&
+                                      status === ""
+                                    ) {
+                                      return items;
+                                    } else if (
+                                      items?.appointment_status
+                                        .toString()
+                                        .includes(status) &&
+                                      date === "" &&
+                                      clinic === ""
+                                    ) {
+                                      return items;
+                                    } else if (
+                                      items?.date.includes(date) &&
+                                      items?.polyclinic?.name.includes(
+                                        clinic
+                                      ) &&
+                                      status === ""
+                                    ) {
+                                      return items;
+                                    } else if (
+                                      items?.date.includes(date) &&
+                                      items?.appointment_status
+                                        .toString()
+                                        .includes(status) &&
+                                      clinic === ""
+                                    ) {
+                                      return items;
+                                    } else if (
+                                      items?.polyclinic?.name.includes(
+                                        clinic
+                                      ) &&
+                                      items?.appointment_status
+                                        .toString()
+                                        .includes(status) &&
+                                      date === ""
+                                    ) {
+                                      return items;
+                                    } else if (
+                                      items?.date.includes(date) &&
+                                      items?.polyclinic?.name.includes(
+                                        clinic
+                                      ) &&
+                                      items?.appointment_status
+                                        .toString()
+                                        .includes(status)
                                     ) {
                                       return items;
                                     }
