@@ -122,7 +122,12 @@ const MedicalHistory = ({ patient }) => {
         transition: Slide,
       });
       return (
-        result, setMedicineName(""), setDose(""), setDate(""), setIfYes("")
+        result,
+        setMedicineName(""),
+        setDose(""),
+        setDate(""),
+        setIfYes(""),
+        setType()
       );
     } else {
       toast("Please enter all the fields ", {
@@ -794,7 +799,7 @@ const MedicalHistory = ({ patient }) => {
                     aria-label="Default select example"
                     onChange={(e) => setType(e.target.value)}
                   >
-                    <option>Select Types</option>
+                    <option selected>Select Types</option>
                     <option value="Prescribed">Prescribed</option>
                     <option value="Non-Prescribed">Non-Prescribed</option>
                   </select>

@@ -13,7 +13,7 @@ const UserNav = (props) => {
           <div className="widget-profile pro-widget-content">
             {patient ? (
               <>
-                <div className="profile-info-widget">
+                <div className="profile-info-widget py-3">
                   <a href="#" className="booking-doc-img">
                     <Image
                       height="145"

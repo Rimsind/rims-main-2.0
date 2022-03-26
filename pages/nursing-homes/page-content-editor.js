@@ -489,7 +489,7 @@ const PageContentEditor = () => {
                 </div>
                 <div className="card-body">
                   <div className="row align-items-end">
-                    <div className="col-6">
+                    <div className="col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
                       <div className="features-add-sec mb-3">
                         <div className="row align-items-center">
                           <div className="col-4">
@@ -521,7 +521,7 @@ const PageContentEditor = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-6">
+                    <div className="col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
                       <div className="features-pill-item mt-4">
                         <div className="row align-items-center">
                           {allFeatures?.map((items, index) => (

@@ -7,7 +7,7 @@ const PolyclinicSideBar = (props) => {
       <div className="col-md-12 col-lg-4 col-xl-3 col-xxl-3 sticky-xl-top sticky-xxl-top">
         <div className="profile-sidebar sticky-xl-top sticky-xxl-top">
           <div className="widget-profile pro-widget-content">
-            <div className="profile-info-widget">
+            <div className="profile-info-widget py-3">
               <a href="#" className="booking-doc-img">
                 <Image
                   height="145"

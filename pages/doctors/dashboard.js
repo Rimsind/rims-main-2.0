@@ -34,89 +34,136 @@ const Dashboard = () => {
               <DoctorSidebar status1="active" data={data} />
               {data ? (
                 <div className="col-sm-12 col-md-12 col-lg-8 col-xl-9">
+                  <div className="dashboard-welcome-text">
+                    <p className="fs-4 fw-bold">Welcome Dr. Jhon Doe</p>
+                  </div>
                   <div className="row">
                     <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
-                      <div
-                        className="card heart-rate"
-                        style={{ backgroundColor: "#ff000054" }}
-                      >
-                        <div className="card-body text-center">
-                          <div className="mb-3">
-                            <Image
-                              height="55"
-                              width="55"
-                              src="/user_assets/img/specialities/pic-1.png"
-                              alt=""
-                            />
+                      <div className="dashboard-card">
+                        <div className="row align-items-center">
+                          <div className="col-3">
+                            <div className="dashboard-card-icon">
+                              <i className="fas fa-user-injured"></i>
+                            </div>
                           </div>
-                          <h5>Total Patient</h5>
-                          <h6>100</h6>
+                          <div className="col-9">
+                            <div className="dashboard-card-title">
+                              <p>Total Patients</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="row align-items-center">
+                          <div className="col-6">
+                            <div className="dashboard-card-number text-start">
+                              <p>2,050</p>
+                            </div>
+                          </div>
+                          <div className="col-6">
+                            <div className="dashboard-card-number text-end">
+                              <span class="badge rounded-pill bg-success">
+                                35.1%
+                              </span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                     <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
-                      <div
-                        className="card body-temp"
-                        style={{ backgroundColor: "#006bff63" }}
-                      >
-                        <div className="card-body text-center">
-                          <div className="mb-3">
-                            <Image
-                              height="55"
-                              width="55"
-                              src="/user_assets/img/specialities/pic-2.png"
-                              alt=""
-                            />
+                      <div className="dashboard-card">
+                        <div className="row align-items-center">
+                          <div className="col-3">
+                            <div className="dashboard-card-icon">
+                              <i className="fas fa-calendar-edit"></i>
+                            </div>
                           </div>
-                          <h5>Patient Under Treatment</h5>
-                          <h6>50</h6>
+                          <div className="col-9">
+                            <div className="dashboard-card-title">
+                              <p>Total Appointments</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="row align-items-center">
+                          <div className="col-6">
+                            <div className="dashboard-card-number text-start">
+                              <p>2,050</p>
+                            </div>
+                          </div>
+                          <div className="col-6">
+                            <div className="dashboard-card-number text-end">
+                              <span class="badge rounded-pill bg-success">
+                                35.1%
+                              </span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                     <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
-                      <div
-                        className="card glucose-lvl "
-                        style={{ backgroundColor: "#e74e8473" }}
-                      >
-                        <div className="card-body text-center">
-                          <div className="mb-3">
-                            <Image
-                              height="55"
-                              width="55"
-                              src="/user_assets/img/specialities/pic-3.png"
-                              alt=""
-                            />
+                      <div className="dashboard-card">
+                        <div className="row align-items-center">
+                          <div className="col-3">
+                            <div className="dashboard-card-icon">
+                              <i className="fas fa-edit"></i>
+                            </div>
                           </div>
-                          <h5>Glucose Level</h5>
-                          <h6>
-                            {data?.vitalSigns?.glucose} <sub>mg/dl</sub>
-                          </h6>
+                          <div className="col-9">
+                            <div className="dashboard-card-title">
+                              <p>Today's Appointments</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="row align-items-center">
+                          <div className="col-6">
+                            <div className="dashboard-card-number text-start">
+                              <p>2,050</p>
+                            </div>
+                          </div>
+                          <div className="col-6">
+                            <div className="dashboard-card-number text-end">
+                              <span class="badge rounded-pill bg-success">
+                                35.1%
+                              </span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                     <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
-                      <div
-                        className="card blood-presr"
-                        style={{ backgroundColor: "#75ff7087" }}
-                      >
-                        <div className="card-body text-center">
-                          <div className="mb-3">
-                            <Image
-                              height="55"
-                              width="55"
-                              src="/user_assets/img/specialities/pic-4.png"
-                              alt=""
-                            />
+                      <div className="dashboard-card">
+                        <div className="row align-items-center">
+                          <div className="col-3">
+                            <div className="dashboard-card-icon">
+                              <i className="fas fa-users-medical"></i>
+                            </div>
                           </div>
-                          <h5>Blood Pressure</h5>
-                          <h6>
-                            {data?.vitalSigns?.bloodPressure} <sub>mmHg</sub>
-                          </h6>
+                          <div className="col-9">
+                            <div className="dashboard-card-title">
+                              <p>Patients Under Treatment</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="row align-items-center">
+                          <div className="col-6">
+                            <div className="dashboard-card-number text-start">
+                              <p>2,050</p>
+                            </div>
+                          </div>
+                          <div className="col-6">
+                            <div className="dashboard-card-number text-end">
+                              <span class="badge rounded-pill bg-success">
+                                35.1%
+                              </span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div className="row">
+                  {/* <div className="row">
                     <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
                       <div
                         className="card bmi"
@@ -198,7 +245,7 @@ const Dashboard = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
 
                   {/* <div className="card">
                     <div className="card-body pt-0">

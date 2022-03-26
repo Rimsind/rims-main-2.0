@@ -26,11 +26,139 @@ const Dashboard = () => {
         <div className="container-fluid">
           <div className="row">
             <NursingSideBar status1="active" data={data} />
+            <div className="col-md-12 col-lg-8 col-xl-9 col-xxl-9">
+              <div className="dashboard-welcome-text">
+                <p className="fs-4 fw-bold">Welcome Mediland Nursing Home</p>
+              </div>
+              <div className="row">
+                <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
+                  <div className="dashboard-card">
+                    <div className="row align-items-center">
+                      <div className="col-3">
+                        <div className="dashboard-card-icon">
+                          <i className="fas fa-user-injured"></i>
+                        </div>
+                      </div>
+                      <div className="col-9">
+                        <div className="dashboard-card-title">
+                          <p>Total Patients</p>
+                        </div>
+                      </div>
+                    </div>
 
-            <div className="col-md-7 col-lg-8 col-xl-9">
+                    <div className="row align-items-center">
+                      <div className="col-6">
+                        <div className="dashboard-card-number text-start">
+                          <p>2,050</p>
+                        </div>
+                      </div>
+                      <div className="col-6">
+                        <div className="dashboard-card-number text-end">
+                          <span class="badge rounded-pill bg-success">
+                            35.1%
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
+                  <div className="dashboard-card">
+                    <div className="row align-items-center">
+                      <div className="col-3">
+                        <div className="dashboard-card-icon">
+                          <i className="fas fa-calendar-edit"></i>
+                        </div>
+                      </div>
+                      <div className="col-9">
+                        <div className="dashboard-card-title">
+                          <p>Total Appointments</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="row align-items-center">
+                      <div className="col-6">
+                        <div className="dashboard-card-number text-start">
+                          <p>2,050</p>
+                        </div>
+                      </div>
+                      <div className="col-6">
+                        <div className="dashboard-card-number text-end">
+                          <span class="badge rounded-pill bg-success">
+                            35.1%
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
+                  <div className="dashboard-card">
+                    <div className="row align-items-center">
+                      <div className="col-3">
+                        <div className="dashboard-card-icon">
+                          <i className="fas fa-edit"></i>
+                        </div>
+                      </div>
+                      <div className="col-9">
+                        <div className="dashboard-card-title">
+                          <p>Today's Appointments</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="row align-items-center">
+                      <div className="col-6">
+                        <div className="dashboard-card-number text-start">
+                          <p>2,050</p>
+                        </div>
+                      </div>
+                      <div className="col-6">
+                        <div className="dashboard-card-number text-end">
+                          <span class="badge rounded-pill bg-success">
+                            35.1%
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
+                  <div className="dashboard-card">
+                    <div className="row align-items-center">
+                      <div className="col-3">
+                        <div className="dashboard-card-icon">
+                          <i className="fas fa-users-medical"></i>
+                        </div>
+                      </div>
+                      <div className="col-9">
+                        <div className="dashboard-card-title">
+                          <p>Patients Under Treatment</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="row align-items-center">
+                      <div className="col-6">
+                        <div className="dashboard-card-number text-start">
+                          <p>2,050</p>
+                        </div>
+                      </div>
+                      <div className="col-6">
+                        <div className="dashboard-card-number text-end">
+                          <span class="badge rounded-pill bg-success">
+                            35.1%
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div className="card">
                 <div className="card-body">
-                  <div className="form-group d-flex justify-content-between align-items-center upload-profile">
+                  <div className="form-group d-flex justify-content-between align-items-center upload-profile flex-column flex-lg-row flex-xl-row flex-xxl-row">
                     <div className="change-avatar">
                       <div className="profile-img">
                         <Image
@@ -668,9 +796,9 @@ const Dashboard = () => {
                   </form>
                 </div>
               </div>
-              <p className="fs-5 fw-bold">Premium Page</p>
+              {/* <p className="fs-5 fw-bold">Premium Page</p> */}
 
-              <div className="card">
+              {/* <div className="card">
                 <div className="card-header">
                   <p className="fs-5 fw-bold text-center">
                     Nursing Homes Details
@@ -1460,7 +1588,7 @@ const Dashboard = () => {
                     </div>
                   </form>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
