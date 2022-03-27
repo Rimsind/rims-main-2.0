@@ -103,7 +103,7 @@ const Dashboard = () => {
                       </div>
                       <div className="col-9">
                         <div className="dashboard-card-title">
-                          <p>Today's Appointments</p>
+                          <p>Today&apos;s Appointments</p>
                         </div>
                       </div>
                     </div>
