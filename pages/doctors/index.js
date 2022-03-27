@@ -7,7 +7,28 @@ import { useState } from "react";
 const Index = () => {
   const { data: doctors } = useSWR(`${apiUrl}/doctors`, fetcher);
   const { data: specialties } = useSWR(`${apiUrl}/specialties`, fetcher);
-  const [search, setSearch] = useState("");
+  const { data: locations } = useSWR(`${apiUrl}/locations`, fetcher);
+  const [name, setName] = useState("");
+  const [specialty, setSpecialty] = useState("");
+  const [gender, setGender] = useState("");
+  const [city, setCity] = useState("");
+  const [selectedState, setSelectedState] = useState("");
+
+  const filteredCity = locations?.filter((items) => {
+    if (selectedState === "") {
+      return items;
+    } else if (items?.state.includes(selectedState)) {
+      return items;
+    }
+  });
+  const resetState = () => {
+    setName("");
+    setSpecialty("");
+    setGender("");
+    setSpecialty("");
+    setSelectedState("");
+    setCity("");
+  };
 
   return (
     <>
@@ -29,128 +50,96 @@ const Index = () => {
                           type="search"
                           placeholder="Search"
                           aria-label="Search"
-                          onChange={(e) => setSearch(e.target.value)}
+                          onChange={(e) => setName(e.target.value)}
                         />
                       </form>
                     </div>
                   </div>
                   <div className="card search-filter">
                     <div className="card-header">
-                      <h4 className="card-title mb-0">Location Filter</h4>
+                      <h4 className="card-title mb-0">Filters</h4>
                     </div>
                     <div className="card-body">
+                      <h4>Filter By Location</h4>
                       <div className="filter-widget">
                         <select
                           className="form-select"
                           aria-label="Default select example"
+                          onChange={(e) => setSelectedState(e.target.value)}
                         >
-                          <option selected>Select State</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
+                          <option selected disabled>
+                            Select State
+                          </option>
+                          {locations?.map((items, index) => (
+                            <option value={items?.state} key={index}>
+                              {items?.state}
+                            </option>
+                          ))}
                         </select>
                       </div>
                       <div className="filter-widget">
                         <select
                           className="form-select"
                           aria-label="Default select example"
+                          onChange={(e) => setCity(e.target.value)}
                         >
-                          <option selected>Select City</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
+                          <option selected disabled>
+                            Select City
+                          </option>
+                          {filteredCity?.map((items) => (
+                            <>
+                              {items?.city?.map((val, index) => (
+                                <option value={val?.city_name} key={index}>
+                                  {val?.city_name}
+                                </option>
+                              ))}
+                            </>
+                          ))}
                         </select>
                       </div>
-                      <div className="btn-search">
-                        <button type="button" className="btn w-100">
-                          Search
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="card search-filter">
-                    <div className="card-header">
-                      <h4 className="card-title mb-0">Search Filter</h4>
-                    </div>
-                    <div className="card-body">
                       <div className="filter-widget">
                         <h4>Gender</h4>
                         <div className="row">
                           <div className="col-12">
-                            <div className="form-check form-check-inline">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="Male"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="inlineCheckbox1"
-                              >
-                                Male
-                              </label>
-                            </div>
-                          </div>
-                          <div className="col-12">
-                            <div className="form-check form-check-inline">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="Female"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="inlineCheckbox1"
-                              >
-                                Female
-                              </label>
-                            </div>
-                          </div>
-                          <div className="col-12">
-                            <div className="form-check form-check-inline">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                value="Others"
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="inlineCheckbox1"
-                              >
-                                Others
-                              </label>
-                            </div>
+                            <select
+                              className="form-select"
+                              aria-label="Default select example"
+                              value={gender}
+                              onChange={(e) => setGender(e.target.value)}
+                            >
+                              <option selected>Select Gender</option>
+                              <option value="Male">Male</option>
+                              <option value="Female">Female</option>
+                              <option value="Others">Others</option>
+                            </select>
                           </div>
                         </div>
                       </div>
                       <div className="filter-widget">
                         <h4>Specialities</h4>
                         <div className="row">
-                          {specialties?.map((items, index) => (
-                            <div className="col-12" key={index}>
-                              <div className="form-check form-check-inline">
-                                <input
-                                  className="form-check-input"
-                                  type="checkbox"
-                                  value={items?.id}
-                                />
-                                <label
-                                  className="form-check-label"
-                                  htmlFor="inlineCheckbox1"
-                                >
+                          <div className="col-12">
+                            <select
+                              className="form-select"
+                              aria-label="Default select example"
+                              value={specialty}
+                              onChange={(e) => setSpecialty(e.target.value)}
+                            >
+                              <option selected>Select Specialty</option>
+                              {specialties?.map((items, index) => (
+                                <option value={items?.name} key={index}>
                                   {items?.name}
-                                </label>
-                              </div>
-                            </div>
-                          ))}
+                                </option>
+                              ))}
+                            </select>
+                          </div>
                         </div>
                       </div>
-                      {/* <div className="btn-search">
-                        <button type="button" className="btn w-100">
-                          Search
+                      <div className="btn-search">
+                        <button onClick={resetState} className="btn w-100">
+                          Reset
                         </button>
-                      </div> */}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -160,18 +149,75 @@ const Index = () => {
                   <>
                     {doctors
                       ?.filter((items) => {
-                        if (search === "") {
-                          return items;
-                        } else if (
-                          items.firstName
-                            .toLowerCase()
-                            .includes(search.toLowerCase())
+                        if (
+                          name === "" &&
+                          gender === "" &&
+                          specialty === "" &&
+                          city === ""
                         ) {
                           return items;
                         } else if (
-                          items.lastName
+                          items?.lastName
+                            ?.toLowerCase()
+                            ?.includes(name.toLowerCase()) &&
+                          city === "" &&
+                          gender === "" &&
+                          specialty === ""
+                        ) {
+                          return items;
+                        } else if (
+                          items?.gender?.includes(gender) &&
+                          name === "" &&
+                          specialty === "" &&
+                          city === ""
+                        ) {
+                          return items;
+                        } else if (
+                          items?.specialty?.name
                             .toLowerCase()
-                            .includes(search.toLowerCase())
+                            .includes(specialty) &&
+                          name === "" &&
+                          gender === "" &&
+                          city === ""
+                        ) {
+                          return items;
+                        } else if (
+                          items?.address?.city
+                            ?.toLowerCase()
+                            .includes(city.toLowerCase()) &&
+                          name === "" &&
+                          gender === "" &&
+                          specialty === ""
+                        ) {
+                          return items;
+                        } else if (
+                          items?.specialty?.name.includes(specialty) &&
+                          items?.gender.includes(gender) &&
+                          city === ""
+                        ) {
+                          return items;
+                        } else if (
+                          items?.address?.city
+                            .toLowerCase()
+                            .includes(city.toLowerCase()) &&
+                          items?.specialty?.name.includes(specialty) &&
+                          gender === ""
+                        ) {
+                          return items;
+                        } else if (
+                          items?.gender.includes(gender) &&
+                          items?.address?.city
+                            .toLowerCase()
+                            .includes(city.toLowerCase()) &&
+                          specialty === ""
+                        ) {
+                          return items;
+                        } else if (
+                          items?.gender.includes(gender) &&
+                          items?.address?.city
+                            .toLowerCase()
+                            .includes(city.toLowerCase()) &&
+                          items?.specialty?.name.includes(specialty)
                         ) {
                           return items;
                         }

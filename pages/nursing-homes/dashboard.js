@@ -54,7 +54,7 @@ const Dashboard = () => {
                       </div>
                       <div className="col-6">
                         <div className="dashboard-card-number text-end">
-                          <span class="badge rounded-pill bg-success">
+                          <span className="badge rounded-pill bg-success">
                             35.1%
                           </span>
                         </div>
@@ -85,7 +85,7 @@ const Dashboard = () => {
                       </div>
                       <div className="col-6">
                         <div className="dashboard-card-number text-end">
-                          <span class="badge rounded-pill bg-success">
+                          <span className="badge rounded-pill bg-success">
                             35.1%
                           </span>
                         </div>
@@ -116,7 +116,7 @@ const Dashboard = () => {
                       </div>
                       <div className="col-6">
                         <div className="dashboard-card-number text-end">
-                          <span class="badge rounded-pill bg-success">
+                          <span className="badge rounded-pill bg-success">
                             35.1%
                           </span>
                         </div>
@@ -147,7 +147,7 @@ const Dashboard = () => {
                       </div>
                       <div className="col-6">
                         <div className="dashboard-card-number text-end">
-                          <span class="badge rounded-pill bg-success">
+                          <span className="badge rounded-pill bg-success">
                             35.1%
                           </span>
                         </div>
