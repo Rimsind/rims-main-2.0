@@ -31,6 +31,15 @@ const Prescription = ({ appointmentId }) => {
     setPrecaution("");
   };
 
+  const deletePrecaution = (index) => {
+    const id = index;
+    setAllPrecaution((oldPrecaution) => {
+      return oldPrecaution.filter((curElem, index) => {
+        return index !== id;
+      });
+    });
+  };
+
   const [referral, setReferral] = useState();
   const [allReferral, setAllReferral] = useState([]);
   const addReferral = () => {
@@ -38,6 +47,14 @@ const Prescription = ({ appointmentId }) => {
       return [...oldItems, referral];
     });
     setReferral("");
+  };
+  const deleteReferral = (index) => {
+    const id = index;
+    setAllReferral((oldReferral) => {
+      return oldReferral.filter((curElem, index) => {
+        return index !== id;
+      });
+    });
   };
 
   const [patientEducation, setPatientEducation] = useState();
@@ -49,6 +66,15 @@ const Prescription = ({ appointmentId }) => {
     setPatientEducation("");
   };
 
+  const deleteEducation = (index) => {
+    const id = index;
+    setPatientEducationList((oldEducation) => {
+      return oldEducation.filter((curElem, index) => {
+        return index !== id;
+      });
+    });
+  };
+
   const [patientRestriction, setPatientRestriction] = useState();
   const [patientRestrictionList, setPatientRestrictionList] = useState([]);
 
@@ -57,6 +83,14 @@ const Prescription = ({ appointmentId }) => {
       return [...oldItems, patientRestriction];
     });
     setPatientRestriction("");
+  };
+  const deleteRestriction = (index) => {
+    const id = index;
+    setPatientRestrictionList((oldRestriction) => {
+      return oldRestriction.filter((curElem, index) => {
+        return index !== id;
+      });
+    });
   };
 
   const [testName, setTestName] = useState();
@@ -73,6 +107,15 @@ const Prescription = ({ appointmentId }) => {
     ]);
   };
 
+  const deleteTest = (index) => {
+    const id = index;
+    setTestList((oldMedicine) => {
+      return oldMedicine.filter((curElem, index) => {
+        return index !== id;
+      });
+    });
+  };
+
   const [medicineName, setMedicineName] = useState();
   const [mg, setMg] = useState();
   const [route, setRoute] = useState();
@@ -84,25 +127,36 @@ const Prescription = ({ appointmentId }) => {
   const [medicineList, setMedicineList] = useState([]);
 
   const addMedicine = () => {
-    setMedicineList([
-      ...medicineList,
-      {
-        name: medicineName,
-        mg: mg,
-        route: route,
-        duration: duration,
-        frequency: frequency,
-        reasons: reasons,
-        instruction: instructions,
-        sideEffects: sideEffects,
-      },
-    ]);
+    setMedicineList((oldMedicine) => {
+      return [
+        ...oldMedicine,
+        {
+          name: medicineName,
+          mg: mg,
+          route: route,
+          duration: duration,
+          frequency: frequency,
+          reasons: reasons,
+          instruction: instructions,
+          sideEffects: sideEffects,
+        },
+      ];
+    });
 
     setSideEffects("");
     setInstructions("");
     setReasons("");
     setMg("");
     setDuration("");
+  };
+
+  const deleteMedicine = (index) => {
+    const id = index;
+    setMedicineList((oldMedicine) => {
+      return oldMedicine.filter((curElem, index) => {
+        return index !== id;
+      });
+    });
   };
 
   const [revisitDate, setRevisitDate] = useState();
@@ -394,6 +448,7 @@ const Prescription = ({ appointmentId }) => {
                   <table className="table table-striped">
                     <thead className="bg-info">
                       <tr>
+                        <th>Sl</th>
                         <th>Details</th>
                       </tr>
                     </thead>
@@ -401,6 +456,7 @@ const Prescription = ({ appointmentId }) => {
                       {appointmentDetails?.assesment?.diagnosis.map(
                         (items, index) => (
                           <tr key={index}>
+                            <th>{index + 1}</th>
                             <th scope="col">{items?.description}</th>
                           </tr>
                         )
@@ -417,6 +473,7 @@ const Prescription = ({ appointmentId }) => {
                   <table className="table table-striped">
                     <thead className="bg-info">
                       <tr>
+                        <th>Sl</th>
                         <th scope="col">Medicine Name</th>
                         <th scope="col">MG</th>
                         <th scope="col">Start Date</th>
@@ -429,6 +486,7 @@ const Prescription = ({ appointmentId }) => {
                       {appointmentDetails?.patient?.past_medication_history?.map(
                         (items, index) => (
                           <tr key={index}>
+                            <td>{index + 1}</td>
                             <td>{items?.medicineName}</td>
                             <td>{items?.dose}</td>
                             <td>{items?.startDate}</td>
@@ -558,7 +616,7 @@ const Prescription = ({ appointmentId }) => {
             <table className="table table-striped">
               <thead className="bg-info">
                 <tr>
-                  <th scope="col">Sl.</th>
+                  <th scope="col"></th>
                   <th scope="col">Medicine Name</th>
                   <th scope="col">MG</th>
                   <th scope="col">Route</th>
@@ -572,9 +630,14 @@ const Prescription = ({ appointmentId }) => {
               <tbody>
                 {medicineList?.map((item, index) => (
                   <tr key={index}>
-                    <th scope="row">
-                      <i className="ri-close-circle-line"></i>
-                    </th>
+                    <td scope="row">
+                      <i
+                        class="fas fa-times-circle text-danger"
+                        onClick={() => {
+                          deleteMedicine(index);
+                        }}
+                      ></i>
+                    </td>
                     <td>{item?.name}</td>
                     <td>{item?.mg}</td>
                     <td>{item?.route}</td>
@@ -588,9 +651,9 @@ const Prescription = ({ appointmentId }) => {
                 {appointmentDetails?.eprescription?.medicine.map(
                   (item, index) => (
                     <tr key={index}>
-                      <th scope="row">
-                        <i className="ri-close-circle-line"></i>
-                      </th>
+                      <td scope="row">
+                        <i class="fas fa-trash text-danger"></i>
+                      </td>
                       <td>{item?.name}</td>
                       <td>{item?.mg}</td>
                       <td>{item?.route}</td>
@@ -656,7 +719,7 @@ const Prescription = ({ appointmentId }) => {
                   <table className="table table-striped">
                     <thead className="bg-info">
                       <tr>
-                        <th scope="col">Sl.</th>
+                        <th scope="col"></th>
                         <th scope="col">Test Name</th>
                         <th scope="col">Specification</th>
                       </tr>
@@ -664,9 +727,14 @@ const Prescription = ({ appointmentId }) => {
                     <tbody>
                       {testList?.map((item, index) => (
                         <tr key={index}>
-                          <th scope="row">
-                            <i className="ri-close-circle-line"></i>
-                          </th>
+                          <td scope="row">
+                            <i
+                              class="fas fa-times-circle text-danger"
+                              onClick={() => {
+                                deleteTest(index);
+                              }}
+                            ></i>
+                          </td>
                           <td>{item?.name}</td>
                           <td>{item?.specification}</td>
                         </tr>
@@ -675,7 +743,7 @@ const Prescription = ({ appointmentId }) => {
                         (item, index) => (
                           <tr key={index}>
                             <th scope="row">
-                              <i className="ri-close-circle-line"></i>
+                              <i class="fas fa-trash text-danger"></i>
                             </th>
                             <td>{item?.name}</td>
                             <td>{item?.specification}</td>
@@ -732,21 +800,31 @@ const Prescription = ({ appointmentId }) => {
                   <table className="table table-striped">
                     <thead className="bg-info">
                       <tr>
-                        <th scope="col">Sl.</th>
+                        <th scope="col"></th>
                         <th scope="col">Precautions</th>
                       </tr>
                     </thead>
                     <tbody>
                       {allPrecaution.map((item, index) => (
                         <tr key={index}>
-                          <th scope="row">
-                            <i className="ri-close-circle-line"></i>
-                          </th>
+                          <td scope="row">
+                            <i
+                              class="fas fa-times-circle text-danger"
+                              onClick={() => {
+                                deletePrecaution(index);
+                              }}
+                            ></i>
+                          </td>
                           <td>{item}</td>
                         </tr>
                       ))}
-                      <tr colSpan="2">
-                        {appointmentDetails?.eprescription?.safetyMeasures}
+                      <tr>
+                        <td>
+                          <i class="fas fa-trash text-danger"></i>
+                        </td>
+                        <td>
+                          {appointmentDetails?.eprescription?.safetyMeasures}
+                        </td>{" "}
                       </tr>
                     </tbody>
                   </table>
@@ -806,21 +884,32 @@ const Prescription = ({ appointmentId }) => {
                   <table className="table table-striped">
                     <thead className="bg-info">
                       <tr>
-                        <th scope="col">Sl.</th>
+                        <th scope="col"></th>
                         <th scope="col">Food & Fluid Restriction</th>
                       </tr>
                     </thead>
                     <tbody>
                       {patientRestrictionList.map((item, index) => (
                         <tr key={index}>
-                          <th scope="row">
-                            <i className="ri-close-circle-line"></i>
-                          </th>
+                          <td scope="row">
+                            <i
+                              class="fas fa-times-circle text-danger"
+                              onClick={() => {
+                                deleteRestriction(index);
+                              }}
+                            ></i>
+                          </td>
                           <td>{item}</td>
                         </tr>
                       ))}
-                      <tr colSpan="2">
-                        {appointmentDetails?.eprescription?.restrictions}
+                      <tr>
+                        <td>
+                          <i class="fas fa-trash text-danger"></i>
+                        </td>
+
+                        <td>
+                          {appointmentDetails?.eprescription?.restrictions}
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -875,21 +964,31 @@ const Prescription = ({ appointmentId }) => {
                   <table className="table table-striped">
                     <thead className="bg-info">
                       <tr>
-                        <th scope="col">Sl.</th>
+                        <th scope="col"></th>
                         <th scope="col">Patient Education</th>
                       </tr>
                     </thead>
                     <tbody>
                       {patientEducationList.map((item, index) => (
                         <tr key={index}>
-                          <th scope="row">
-                            <i className="ri-close-circle-line"></i>
-                          </th>
+                          <td scope="row">
+                            <i
+                              class="fas fa-times-circle text-danger"
+                              onClick={() => {
+                                deleteEducation(index);
+                              }}
+                            ></i>
+                          </td>
                           <td>{item}</td>
                         </tr>
                       ))}
-                      <tr colSpan="2">
-                        {appointmentDetails?.eprescription?.patient_education}
+                      <tr>
+                        <td>
+                          <i class="fas fa-trash text-danger"></i>
+                        </td>
+                        <td>
+                          {appointmentDetails?.eprescription?.patient_education}
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -946,21 +1045,32 @@ const Prescription = ({ appointmentId }) => {
                   <table className="table table-striped">
                     <thead className="bg-info">
                       <tr>
-                        <th scope="col">Sl.</th>
+                        <th scope="col"></th>
                         <th scope="col">Treatment</th>
                       </tr>
                     </thead>
                     <tbody>
                       {allReferral.map((item, index) => (
                         <tr key={index}>
-                          <th scope="row">
-                            <i className="ri-close-circle-line"></i>
-                          </th>
+                          <td scope="row">
+                            <i
+                              class="fas fa-times-circle text-danger"
+                              onClick={() => {
+                                deleteReferral(index);
+                              }}
+                            ></i>
+                          </td>
                           <td>{item}</td>
                         </tr>
                       ))}{" "}
-                      <tr colSpan="2">
-                        {appointmentDetails?.eprescription?.treatmentreferral}
+                      <tr>
+                        <td>
+                          {" "}
+                          <i class="fas fa-trash text-danger"></i>
+                        </td>
+                        <td>
+                          {appointmentDetails?.eprescription?.treatmentreferral}
+                        </td>
                       </tr>
                     </tbody>
                   </table>

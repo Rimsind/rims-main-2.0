@@ -10,7 +10,7 @@ const Assesment = ({ appointmentId }) => {
   const [investigation, setInvestigation] = useState();
   const [treatmentPlan, setTreatmentPlan] = useState();
   const [icd, setIcd] = useState();
-  const [allIcd, setAllIcd] = useState([]);
+
   const { data: appointment } = useSWR(
     `${apiUrl}/appointments/${appointmentId}`,
     async (url) => {
@@ -36,15 +36,27 @@ const Assesment = ({ appointmentId }) => {
     }
   );
   const { data } = useSWR(`/api/icdCode?s=${icd}&desc=short&r=json`, fetcher);
+  const [allIcd, setAllIcd] = useState([]);
 
   const addIcd = (event) => {
-    setAllIcd([
-      ...allIcd,
-      {
-        description: event.target.value,
-      },
-    ]);
+    setAllIcd((oldItems) => {
+      return [
+        ...oldItems,
+        {
+          description: event.target.value,
+        },
+      ];
+    });
     setIcd("");
+  };
+
+  const deleteIcd = (index) => {
+    const id = index;
+    setAllIcd((oldItems) => {
+      return oldItems.filter((curElem, index) => {
+        return index !== id;
+      });
+    });
   };
 
   const submitAssesment = async (event) => {
@@ -377,9 +389,16 @@ const Assesment = ({ appointmentId }) => {
                       </tr>
                     </thead>
                     <tbody>
-                      {allIcd.map((items, index) => (
+                      {allIcd?.map((items, index) => (
                         <tr key={index}>
-                          <th scope="row">X</th>
+                          <th scope="row">
+                            <i
+                              className="fas fa-times-circle text-danger"
+                              onClick={() => {
+                                deleteIcd(index);
+                              }}
+                            ></i>
+                          </th>
                           <td>{items.description}</td>
                         </tr>
                       ))}
