@@ -632,7 +632,7 @@ const Prescription = ({ appointmentId }) => {
                   <tr key={index}>
                     <td scope="row">
                       <i
-                        class="fas fa-times-circle text-danger"
+                        className="fas fa-times-circle text-danger"
                         onClick={() => {
                           deleteMedicine(index);
                         }}
@@ -652,7 +652,7 @@ const Prescription = ({ appointmentId }) => {
                   (item, index) => (
                     <tr key={index}>
                       <td scope="row">
-                        <i class="fas fa-trash text-danger"></i>
+                        <i className="fas fa-trash text-danger"></i>
                       </td>
                       <td>{item?.name}</td>
                       <td>{item?.mg}</td>
@@ -729,7 +729,7 @@ const Prescription = ({ appointmentId }) => {
                         <tr key={index}>
                           <td scope="row">
                             <i
-                              class="fas fa-times-circle text-danger"
+                              className="fas fa-times-circle text-danger"
                               onClick={() => {
                                 deleteTest(index);
                               }}
@@ -743,7 +743,7 @@ const Prescription = ({ appointmentId }) => {
                         (item, index) => (
                           <tr key={index}>
                             <th scope="row">
-                              <i class="fas fa-trash text-danger"></i>
+                              <i className="fas fa-trash text-danger"></i>
                             </th>
                             <td>{item?.name}</td>
                             <td>{item?.specification}</td>
@@ -809,7 +809,7 @@ const Prescription = ({ appointmentId }) => {
                         <tr key={index}>
                           <td scope="row">
                             <i
-                              class="fas fa-times-circle text-danger"
+                              className="fas fa-times-circle text-danger"
                               onClick={() => {
                                 deletePrecaution(index);
                               }}
@@ -820,7 +820,7 @@ const Prescription = ({ appointmentId }) => {
                       ))}
                       <tr>
                         <td>
-                          <i class="fas fa-trash text-danger"></i>
+                          <i className="fas fa-trash text-danger"></i>
                         </td>
                         <td>
                           {appointmentDetails?.eprescription?.safetyMeasures}
@@ -893,7 +893,7 @@ const Prescription = ({ appointmentId }) => {
                         <tr key={index}>
                           <td scope="row">
                             <i
-                              class="fas fa-times-circle text-danger"
+                              className="fas fa-times-circle text-danger"
                               onClick={() => {
                                 deleteRestriction(index);
                               }}
@@ -904,7 +904,7 @@ const Prescription = ({ appointmentId }) => {
                       ))}
                       <tr>
                         <td>
-                          <i class="fas fa-trash text-danger"></i>
+                          <i className="fas fa-trash text-danger"></i>
                         </td>
 
                         <td>
@@ -973,7 +973,7 @@ const Prescription = ({ appointmentId }) => {
                         <tr key={index}>
                           <td scope="row">
                             <i
-                              class="fas fa-times-circle text-danger"
+                              className="fas fa-times-circle text-danger"
                               onClick={() => {
                                 deleteEducation(index);
                               }}
@@ -984,7 +984,7 @@ const Prescription = ({ appointmentId }) => {
                       ))}
                       <tr>
                         <td>
-                          <i class="fas fa-trash text-danger"></i>
+                          <i className="fas fa-trash text-danger"></i>
                         </td>
                         <td>
                           {appointmentDetails?.eprescription?.patient_education}
@@ -1054,7 +1054,7 @@ const Prescription = ({ appointmentId }) => {
                         <tr key={index}>
                           <td scope="row">
                             <i
-                              class="fas fa-times-circle text-danger"
+                              className="fas fa-times-circle text-danger"
                               onClick={() => {
                                 deleteReferral(index);
                               }}
@@ -1066,7 +1066,7 @@ const Prescription = ({ appointmentId }) => {
                       <tr>
                         <td>
                           {" "}
-                          <i class="fas fa-trash text-danger"></i>
+                          <i className="fas fa-trash text-danger"></i>
                         </td>
                         <td>
                           {appointmentDetails?.eprescription?.treatmentreferral}
