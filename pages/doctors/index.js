@@ -16,7 +16,7 @@ const Index = () => {
 
   const filteredCity = locations?.filter((items) => {
     if (selectedState === "") {
-      return items;
+      return "";
     } else if (items?.state.includes(selectedState)) {
       return items;
     }
@@ -83,9 +83,7 @@ const Index = () => {
                           aria-label="Default select example"
                           onChange={(e) => setCity(e.target.value)}
                         >
-                          <option selected disabled>
-                            Select City
-                          </option>
+                          <option selected>Select City</option>
                           {filteredCity?.map((items) => (
                             <>
                               {items?.city?.map((val, index) => (
