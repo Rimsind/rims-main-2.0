@@ -132,6 +132,12 @@ const Form1 = ({ appointmentId }) => {
               <form onSubmit={handleSubmit(submit_form1)}>
                 <div>
                   <div className="gen-form mb-3">
+                    <div className="doctor-assessments-form-title text-center py-3 rounded my-4 shadow">
+                      <p className="fs-4 text-light lh-1 pt-2">
+                        Aerobic Capacity with Functional Mobility Skill
+                        Assessment
+                      </p>
+                    </div>
                     <div className="row align-items-start mb-3">
                       <div className="col-md-9">
                         <h3 className="fs-6 fw-bold">

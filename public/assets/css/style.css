@@ -3956,6 +3956,25 @@ button.btn-custom-time-slot:visited {
   font-size: 35px;
 }
 
+.dashboard-card-main-title p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
 .dashboard-card-title p {
   font-size: 18px;
+}
+
+.dashboard-card-inner-number p {
+  font-size: 15px;
+}
+
+.dashboard-lower-content {
+  margin-top: 20px;
+  border-top: 2px solid #dee2e6;
+  padding-top: 12px;
+}
+
+.doctor-assessments-form-title {
+  background-color: #15558d;
 }

@@ -93,6 +93,11 @@ const Form4 = ({ appointmentId }) => {
           <div className="space-y-5 border-2 p-10 rounded">
             <div className="space-y-2 pb-5">
               <form onSubmit={handleSubmit(submit_form4)}>
+                <div className="doctor-assessments-form-title text-center py-3 rounded my-4 shadow">
+                  <p className="fs-4 text-light lh-1 pt-2">
+                    Arousel, Attention & Cognitive Assessment
+                  </p>
+                </div>
                 <div className="gen-form mb-3">
                   <div className="row justify-content-between align-items-start">
                     <div className="col-md-9">

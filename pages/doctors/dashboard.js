@@ -38,11 +38,11 @@ const Dashboard = () => {
                     <p className="fs-4 fw-bold">Welcome Dr. Jhon Doe</p>
                   </div>
                   <div className="row">
-                    <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
+                    <div className="col-12 col-md-6 col-lg-6 col-xl-3 patient-dashboard-top">
                       <div className="dashboard-card">
                         <div className="row align-items-center">
                           <div className="col-3">
-                            <div className="dashboard-card-icon">
+                            <div className="dashboard-card-icon shadow">
                               <i className="fas fa-user-injured"></i>
                             </div>
                           </div>
@@ -69,11 +69,11 @@ const Dashboard = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
+                    <div className="col-12 col-md-6 col-lg-6 col-xl-3 patient-dashboard-top">
                       <div className="dashboard-card">
                         <div className="row align-items-center">
                           <div className="col-3">
-                            <div className="dashboard-card-icon">
+                            <div className="dashboard-card-icon shadow">
                               <i className="fas fa-calendar-edit"></i>
                             </div>
                           </div>
@@ -100,11 +100,11 @@ const Dashboard = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
+                    <div className="col-12 col-md-6 col-lg-6 col-xl-3 patient-dashboard-top">
                       <div className="dashboard-card">
                         <div className="row align-items-center">
                           <div className="col-3">
-                            <div className="dashboard-card-icon">
+                            <div className="dashboard-card-icon shadow">
                               <i className="fas fa-edit"></i>
                             </div>
                           </div>
@@ -131,11 +131,11 @@ const Dashboard = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
+                    <div className="col-12 col-md-6 col-lg-6 col-xl-3 patient-dashboard-top">
                       <div className="dashboard-card">
                         <div className="row align-items-center">
                           <div className="col-3">
-                            <div className="dashboard-card-icon">
+                            <div className="dashboard-card-icon shadow">
                               <i className="fas fa-users-medical"></i>
                             </div>
                           </div>

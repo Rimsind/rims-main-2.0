@@ -138,6 +138,11 @@ const Form7 = ({ appointmentId }) => {
             <div className="space-y-2 pb-5">
               <form onSubmit={handleSubmit(submit_form7)}>
                 <div className="gen-form mb-3">
+                  <div className="doctor-assessments-form-title text-center py-3 rounded my-4 shadow">
+                    <p className="fs-4 text-light lh-1 pt-2">
+                      Postural Assessment
+                    </p>
+                  </div>
                   <p className="fs-5 fw-bold mt-4 mb-4">Segmental Alignment:</p>
                   <div className="row align-items-center">
                     <div className="col-md-4">

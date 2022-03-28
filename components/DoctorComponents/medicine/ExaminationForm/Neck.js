@@ -60,7 +60,9 @@ const Neck = ({ data, appointmentId }) => {
     <>
       <div className="section-content pb-3 border-bottom">
         <div className="section-item mt-3">
-          <p className="fs-6 fw-bold">Neck</p>
+          <div className="doctor-assessments-form-title text-center py-3 rounded my-4 shadow">
+            <p className="fs-4 text-light lh-1 pt-2">Neck</p>
+          </div>
           <div className="row align-items-center mb-3">
             <div className="col-5">
               <select

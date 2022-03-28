@@ -91,6 +91,11 @@ const Form2 = ({ appointmentId }) => {
             <div className="space-y-2 pb-5">
               <form onSubmit={handleSubmit(submit_form2)}>
                 <div className="gen-form mb-3">
+                  <div className="doctor-assessments-form-title text-center py-3 rounded my-4 shadow">
+                    <p className="fs-4 text-light lh-1 pt-2">
+                      Anthropometric Assessment
+                    </p>
+                  </div>
                   <h3 className="fs-6 fw-bold">
                     Body composition assessment includes
                   </h3>

@@ -102,6 +102,9 @@ const Form8 = ({ appointmentId }) => {
             <div className="space-y-2 pb-5">
               <form onSubmit={handleSubmit(submit_form8)}>
                 <div className="gen-form-table mt-4 mb-3">
+                  <div className="doctor-assessments-form-title text-center py-3 rounded my-4 shadow">
+                    <p className="fs-4 text-light lh-1 pt-2">Gait Assessment</p>
+                  </div>
                   <table className="table table-bordered border-dark">
                     <tr className="text-center">
                       <th></th>

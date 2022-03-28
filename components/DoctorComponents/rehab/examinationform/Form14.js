@@ -121,6 +121,11 @@ const Form14 = ({ appointmentId }) => {
             <div className="space-y-2 pb-5">
               <form onSubmit={handleSubmit(submit_form14)}>
                 <div className="gen-form mb-3">
+                  <div className="doctor-assessments-form-title text-center py-3 rounded my-4 shadow">
+                    <p className="fs-4 text-light lh-1 pt-2">
+                      Orthotic And Prosthetic Assessment
+                    </p>
+                  </div>
                   <h3 className="fs-6 fw-bold py-2">ORTHOTIC ASSESSMENT</h3>
 
                   <div className="row justify-content-between align-items-start">
