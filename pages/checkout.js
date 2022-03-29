@@ -8,6 +8,16 @@ import Image from "next/image";
 import { useAuth } from "context";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import {
+  generalProblems,
+  rehumatologic,
+  neurologicProblems,
+  heartRelatedProblems,
+  bloodRelatedProblems,
+  stomachAdbdominalProblems,
+  mentalProblems,
+  genetialProblem,
+} from "./api/chiefComplaintesData";
 const Checkout = () => {
   const { doctorId, polyclinicId, fee, date, time } = useRouter().query;
 
@@ -16,10 +26,6 @@ const Checkout = () => {
     `${apiUrl}/polyclinics/${polyclinicId}`,
     fetcher
   );
-
-  // if (!doctorId || !polyclinicId || !fee || !date || !time) {
-  //   return <ForbidenPage />;
-  // }
 
   const [description, setDescription] = useState();
   const [duration, setDuration] = useState();
@@ -38,11 +44,6 @@ const Checkout = () => {
   };
 
   const { auth } = useAuth();
-
-  // if (!auth.token && !auth.user) {
-  //   Router.push("/login");
-  // }
-  // Router.push(`/user/login?redirect=doctor/${doctorId}`);
 
   const { register, handleSubmit } = useForm();
   const checkout = async (data, event) => {
@@ -79,85 +80,6 @@ const Checkout = () => {
     return result;
   };
 
-  const generalProblems = [
-    "Fever",
-    "Chills",
-    "Sweating",
-    "Excessive weight loss",
-    "Excessive weight gain",
-    "Appetite loss",
-    "Vomiting",
-    "Felling of vomit",
-    "High Blood pressure",
-    "Low Blood pressure",
-    "High temperature",
-    "Weakness",
-    "Sleeping problems",
-    "Tiredness & lack of energy",
-  ];
-
-  const rehumatologic = [
-    " Joint swelling",
-    "Muscle pain",
-    "Muscle Weakness",
-    "Skin Rashes",
-    "Reaction to sunlight",
-    "Nail color change",
-  ];
-  const neurologicProblems = [
-    "Headaches",
-    "Pain spreading from one place to another",
-    "Visibility problems",
-    "Dizziness",
-    "Numbness or burnings feedings",
-  ];
-
-  const heartRelatedProblems = [
-    "Chest pain",
-    "Fast heart beat",
-    "Heavy cough",
-    "Claudication (leg pain cramps)",
-    "Shortness of breath",
-    "Difficulty in walking",
-    "Feeling of tiredness easily",
-    "Snoring a lot & Sweating a lot",
-    "Coughing a lot ",
-    "Swollen leg ankle and feet",
-    "Heart is beating fast ",
-  ];
-
-  const bloodRelatedProblems = [
-    "Skin color change",
-    "Nail bed change",
-    "Nose bleeding",
-    "Gums bleeding",
-    "Headache",
-    "Irritability",
-  ];
-
-  const stomachAdbdominalProblems = [
-    "Abdominal pain",
-    "Vomiting",
-    "Difficulty in swallowing",
-    "Diarrhea",
-    "Heart burn",
-  ];
-
-  const mentalProblems = [
-    "High Stress Level",
-    "Sleeping problems",
-    "Depression",
-    "Confusion",
-    "Anxiety",
-    "Appetite change",
-  ];
-
-  const genetialProblem = [
-    "Changein urine color",
-    "Testicular pain or swelling",
-    "Difficulty in controlling urination",
-    "Pain or difficulty in urination",
-  ];
   return (
     <>
       <main className="main">
@@ -852,7 +774,7 @@ const Checkout = () => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            checked
+                            defaultChecked
                           />
                           <label className="form-check-label">
                             Cash on Clinic

@@ -38,10 +38,6 @@ const Index = () => {
     pauseOnHover: true,
   };
 
-  // <Script>
-  //   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-  // </Script>;
-
   return (
     <>
       <main className="main">
