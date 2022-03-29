@@ -24,10 +24,6 @@ const ProfileSettings = () => {
     { refreshInterval: 1000 }
   );
 
-  // if (!data) {
-  //   return <LoadingError />;
-  // }
-
   return (
     <>
       <div className="main-wrapper">

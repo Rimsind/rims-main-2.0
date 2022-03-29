@@ -4,46 +4,7 @@ import axios from "axios";
 import { useAuth } from "context";
 import { useState } from "react";
 import { toast, Slide } from "react-toastify";
-
-const StatesList = [
-  "Andaman and Nicobar Islands",
-  "Andhra Pradesh",
-  "Arunachal Pradesh",
-  "Assam",
-  "Bihar",
-  "Chandigarh",
-  "Chhattisgarh",
-  "Dadra and Nagar Haveli",
-  "Daman and Diu",
-  "Delhi",
-  "Goa",
-  "Gujarat",
-  "Haryana",
-  "Himachal Pradesh",
-  "Jammu and Kashmir",
-  "Jharkhand",
-  "Karnataka",
-  "Kerala",
-  "Ladakh",
-  "Lakshadweep",
-  "Madhya Pradesh",
-  "Maharashtra",
-  "Manipur",
-  "Meghalaya",
-  "Mizoram",
-  "Nagaland",
-  "Odisha",
-  "Puducherry",
-  "Punjab",
-  "Rajasthan",
-  "Sikkim",
-  "Tamil Nadu",
-  "Telangana",
-  "Tripura",
-  "Uttar Pradesh",
-  "Uttarakhand",
-  "West Bengal",
-];
+import { stateList } from "pages/api/stateListData";
 
 const AddressInfo = ({ data }) => {
   const { auth } = useAuth();
@@ -171,7 +132,7 @@ const AddressInfo = ({ data }) => {
                         ? data.address.state
                         : "Select State"}
                     </option>
-                    {StatesList.map((items, index) => (
+                    {stateList.map((items, index) => (
                       <option key={index}>{items}</option>
                     ))}
                   </select>

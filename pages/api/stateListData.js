@@ -1,4 +1,4 @@
-const StatesList = [
+export const stateList = [
   "Andaman and Nicobar Islands",
   "Andhra Pradesh",
   "Arunachal Pradesh",
