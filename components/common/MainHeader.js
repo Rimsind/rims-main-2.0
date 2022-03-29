@@ -11,7 +11,7 @@ const MainHeader = () => {
     <>
       <section className="upper-main-mrq bg-primary pt-2">
         <div className="container-fluid">
-          <marquee direction="left" behavior="alternate">
+          <marquee behavior="self">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget
             magna pulvinar
           </marquee>
