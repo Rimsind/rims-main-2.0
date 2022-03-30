@@ -3,6 +3,7 @@ import axios from "axios";
 import { apiUrl } from "config/api";
 import { useAuth } from "context";
 import { Slide, toast } from "react-toastify";
+import { throat } from "pages/api/medicineExaminationData";
 const Throat = ({ data, appointmentId }) => {
   const { auth } = useAuth();
 
@@ -66,7 +67,7 @@ const Throat = ({ data, appointmentId }) => {
       });
     }
   };
-  const throat = ["Checkbox"];
+
   return (
     <>
       <div className="doctor-assessments-form-title text-center py-3 rounded my-4 shadow">

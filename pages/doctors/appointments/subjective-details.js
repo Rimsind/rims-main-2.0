@@ -1,14 +1,7 @@
 import { BreadCrums } from "components/common";
 import {
   CheifComplaints,
-  FamilyHistory,
-  FunctionalStatus,
-  GeneralInfo,
-  EmploymentStatus,
   VitalSigns,
-  MedicalHistory,
-  SocialHistory,
-  MedicalRecords,
 } from "components/DoctorComponents/subjectiveForm";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -22,6 +15,16 @@ import {
   NotesCard,
   StatusChanger,
 } from "components/DoctorComponents";
+
+import {
+  GeneralInformation,
+  EmploymentStatus,
+  FamilyMadicalHistory,
+  UploadMedicalRecord,
+  SocialHistory,
+  MedicalHistory,
+  FunctionalStatus,
+} from "components/forms";
 
 const SubjectiveDetails = () => {
   const { id } = useRouter().query;
@@ -220,7 +223,7 @@ const SubjectiveDetails = () => {
                             id="tab-1"
                             className="tab-pane fade  "
                           >
-                            <GeneralInfo
+                            <GeneralInformation
                               patientId={appointment?.patient?.id}
                               generalInformation={
                                 appointment?.patient?.generalInformation
@@ -291,7 +294,7 @@ const SubjectiveDetails = () => {
                             id="tab-6"
                             className="tab-pane fade"
                           >
-                            <FamilyHistory
+                            <FamilyMadicalHistory
                               patientId={appointment?.patient?.id}
                               familyHistory={
                                 appointment?.patient?.familyHistory
@@ -304,7 +307,7 @@ const SubjectiveDetails = () => {
                             id="tab-7"
                             className="tab-pane fade"
                           >
-                            <MedicalRecords
+                            <UploadMedicalRecord
                               patientId={appointment?.patient?.id}
                               updated_at={appointment?.updated_at}
                               upload_medical_record={

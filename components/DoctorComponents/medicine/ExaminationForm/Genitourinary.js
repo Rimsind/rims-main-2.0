@@ -3,6 +3,7 @@ import axios from "axios";
 import { apiUrl } from "config/api";
 import { useAuth } from "context";
 import { Slide, toast } from "react-toastify";
+import { genitourinary } from "pages/api/medicineExaminationData";
 const Genitourinary = ({ data, appointmentId }) => {
   const { auth } = useAuth();
 
@@ -56,22 +57,6 @@ const Genitourinary = ({ data, appointmentId }) => {
     }
   };
 
-  const genitourinary = [
-    "And poor relaxation",
-    "Mild cystocele at introitus on straining",
-    "Cervix pink",
-    "And without dischandarge",
-    "Midline",
-    "Not enlarged",
-    "Pap smear taken",
-    "No cervical or adnexal tendernesExternal genitalia without lesions",
-    "Vaginal mucosa pink",
-    "Parous",
-    "Uterus anterior",
-    "Smooth",
-    "Adnexa not palpated due to obesity as",
-    "Rectovaginal wall intact",
-  ];
   return (
     <>
       <div className="section-content pb-3 border-bottom">

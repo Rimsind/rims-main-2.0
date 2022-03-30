@@ -3,6 +3,7 @@ import axios from "axios";
 import { apiUrl } from "config/api";
 import { useAuth } from "context";
 import { Slide, toast } from "react-toastify";
+import { respiratory_thorax_lungs } from "pages/api/medicineExaminationData";
 const Respiratory = ({ data, appointmentId }) => {
   const { auth } = useAuth();
 
@@ -66,16 +67,7 @@ const Respiratory = ({ data, appointmentId }) => {
       });
     }
   };
-  const respiratory_thorax_lungs = [
-    "No cough",
-    "Shortness of breath",
-    "Thorax symmetric with good excursion",
-    "Breath sounds vesicular with no added sounds",
-    "Wheezing",
-    "Last chest x-ray, 1986, St. Mary's Hospital; unremarkable",
-    "Lungs resonant",
-    "Diaphragms descend 4 cm bilaterally",
-  ];
+
   return (
     <>
       <div className="section-content pb-3 border-bottom">

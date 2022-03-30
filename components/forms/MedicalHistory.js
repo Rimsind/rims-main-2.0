@@ -5,15 +5,14 @@ import { useAuth } from "context";
 import { useState } from "react";
 import { Slide, toast } from "react-toastify";
 
-const MedicalHistory = ({ patient }) => {
-  const {
-    medicalHistory,
-    updated_at,
-    gender,
-    past_surgical_history,
-    past_medication_history,
-  } = patient;
-  console.log(patient);
+const MedicalHistory = ({
+  medicalHistory,
+  patientId,
+  updated_at,
+  gender,
+  past_medication_history,
+  past_surgical_history,
+}) => {
   const surgicalDataLength = past_surgical_history?.length;
   const medicineDataLength = past_medication_history?.length;
 
@@ -33,15 +32,11 @@ const MedicalHistory = ({ patient }) => {
           },
         ],
       };
-      const res = await axios.put(
-        `${apiUrl}/patients/${auth.user?.profileId}`,
-        payload,
-        {
-          headers: {
-            Authorization: `Bearer ${auth.token}`,
-          },
-        }
-      );
+      const res = await axios.put(`${apiUrl}/patients/${patientId}`, payload, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
       const result = res.data;
 
       toast.success("Surgical History Updated", {
@@ -99,15 +94,11 @@ const MedicalHistory = ({ patient }) => {
         ],
       };
 
-      const res = await axios.put(
-        `${apiUrl}/patients/${auth.user?.profileId}`,
-        payload,
-        {
-          headers: {
-            Authorization: `Bearer ${auth.token}`,
-          },
-        }
-      );
+      const res = await axios.put(`${apiUrl}/patients/${patientId}`, payload, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
       const result = res.data;
 
       toast.success("Medication History Updated", {
@@ -167,15 +158,11 @@ const MedicalHistory = ({ patient }) => {
         },
       };
 
-      const res = await axios.put(
-        `${apiUrl}/patients/${auth.user?.profileId}`,
-        payload,
-        {
-          headers: {
-            Authorization: `Bearer ${auth.token}`,
-          },
-        }
-      );
+      const res = await axios.put(`${apiUrl}/patients/${patientId}`, payload, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
       const result = res.data;
       toast.success("Medical History Updated", {
         position: "top-center",

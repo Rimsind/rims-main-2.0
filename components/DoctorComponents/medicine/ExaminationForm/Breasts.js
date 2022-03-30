@@ -3,6 +3,7 @@ import axios from "axios";
 import { apiUrl } from "config/api";
 import { useAuth } from "context";
 import { Slide, toast } from "react-toastify";
+import { breast } from "pages/api/medicineExaminationData";
 const Breasts = ({ data, appointmentId }) => {
   const { auth } = useAuth();
 
@@ -56,12 +57,6 @@ const Breasts = ({ data, appointmentId }) => {
     }
   };
 
-  const breast = [
-    "No lumps",
-    "Discharge",
-    "Pain",
-    "Does self-breast exam sporadically",
-  ];
   return (
     <>
       {" "}

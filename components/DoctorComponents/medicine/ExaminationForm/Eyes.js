@@ -3,6 +3,7 @@ import axios from "axios";
 import { apiUrl } from "config/api";
 import { useAuth } from "context";
 import { Slide, toast } from "react-toastify";
+import { eyesList } from "pages/api/medicineExaminationData";
 const Eyes = ({ data, appointmentId }) => {
   const { auth } = useAuth();
 
@@ -56,7 +57,6 @@ const Eyes = ({ data, appointmentId }) => {
     }
   };
 
-  const List = ["Checkbox"];
   return (
     <>
       <div className="doctor-assessments-form-title text-center py-3 rounded my-4 shadow">
@@ -70,7 +70,7 @@ const Eyes = ({ data, appointmentId }) => {
             onChange={(e) => setOption(e.target.value)}
           >
             <option selected>Select any one</option>
-            {List.map((items, index) => (
+            {eyesList.map((items, index) => (
               <option value={items} key={index}>
                 {items}
               </option>

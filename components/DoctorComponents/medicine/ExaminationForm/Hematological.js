@@ -3,6 +3,7 @@ import axios from "axios";
 import { apiUrl } from "config/api";
 import { useAuth } from "context";
 import { Slide, toast } from "react-toastify";
+import { hematological } from "pages/api/medicineExaminationData";
 const Hematological = ({ data, appointmentId }) => {
   const { auth } = useAuth();
 
@@ -55,7 +56,7 @@ const Hematological = ({ data, appointmentId }) => {
       console.log(error);
     }
   };
-  const hematological = ["No easy bleeding", "No anemia"];
+
   return (
     <>
       <div className="section-content pb-3 border-bottom">

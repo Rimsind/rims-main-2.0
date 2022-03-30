@@ -4,9 +4,7 @@ import axios from "axios";
 import { useAuth } from "context";
 import { useState } from "react";
 import { Slide, toast } from "react-toastify";
-const FunctionalStatus = ({ patient }) => {
-  const { functionalStatus, updated_at } = patient;
-
+const FunctionalStatus = ({ patientId, functionalStatus, updated_at }) => {
   const { auth } = useAuth();
   const [loading, setLoading] = useState(false);
   const { register, handleSubmit } = useForm();
@@ -39,15 +37,11 @@ const FunctionalStatus = ({ patient }) => {
         },
       };
 
-      const res = await axios.put(
-        `${apiUrl}/patients/${auth.user?.profileId}`,
-        payload,
-        {
-          headers: {
-            Authorization: `Bearer ${auth.token}`,
-          },
-        }
-      );
+      const res = await axios.put(`${apiUrl}/patients/${patientId}`, payload, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
       const result = res.data;
       toast.success("Current Functional Status Updated", {
         position: "top-center",

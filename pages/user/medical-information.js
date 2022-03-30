@@ -169,7 +169,11 @@ const MedicalInformation = () => {
                               className="tab-pane fade show active"
                             >
                               <div className="row">
-                                <GeneralInformation patient={data} />
+                                <GeneralInformation
+                                  patientId={auth?.user.profileId}
+                                  generalInformation={data?.generalInformation}
+                                  updated_at={data?.updated_at}
+                                />
                               </div>
                             </div>
                             <div
@@ -178,7 +182,10 @@ const MedicalInformation = () => {
                               className="tab-pane fade"
                             >
                               <div className="row">
-                                <SocialHistory patient={data} />
+                                <SocialHistory
+                                  patientId={auth?.user.profileId}
+                                  socialHistory={data?.socialHistory}
+                                />
                               </div>
                             </div>
                             <div
@@ -187,7 +194,11 @@ const MedicalInformation = () => {
                               className="tab-pane fade"
                             >
                               <div className="row">
-                                <EmploymentStatus patient={data} />
+                                <EmploymentStatus
+                                  patientId={auth?.user.profileId}
+                                  employmentStatus={data?.employmentStatus}
+                                  updated_at={data?.updated_at}
+                                />
                               </div>
                             </div>
                             <div
@@ -196,7 +207,18 @@ const MedicalInformation = () => {
                               className="tab-pane fade"
                             >
                               <div className="row">
-                                <MedicalHistory patient={data} />
+                                <MedicalHistory
+                                  patientId={auth?.user.profileId}
+                                  medicalHistory={data?.medicalHistory}
+                                  past_sugrical_history={
+                                    data?.past_sugrical_history
+                                  }
+                                  past_medication_history={
+                                    data?.past_medication_history
+                                  }
+                                  updated_at={data?.updated_at}
+                                  gender={data?.gender}
+                                />
                               </div>
                             </div>
                             <div
@@ -205,7 +227,11 @@ const MedicalInformation = () => {
                               className="tab-pane fade"
                             >
                               <div className="row">
-                                <FunctionalStatus patient={data} />
+                                <FunctionalStatus
+                                  patientId={auth?.user.profileId}
+                                  functionalStatus={data?.functionalStatus}
+                                  updated_at={data?.updated_at}
+                                />
                               </div>
                             </div>
                             <div
@@ -214,7 +240,11 @@ const MedicalInformation = () => {
                               className="tab-pane fade"
                             >
                               <div className="row">
-                                <FamilyMadicalHistory patient={data} />
+                                <FamilyMadicalHistory
+                                  patientId={auth?.user.profileId}
+                                  familyHistory={data?.familyHistory}
+                                  updated_at={data?.updated_at}
+                                />
                               </div>
                             </div>
                             <div
@@ -223,7 +253,13 @@ const MedicalInformation = () => {
                               className="tab-pane fade"
                             >
                               <div className="row">
-                                <UploadMedicalRecord patient={data} />
+                                <UploadMedicalRecord
+                                  patientId={auth?.user.profileId}
+                                  updated_at={data?.updated_at}
+                                  upload_medical_record={
+                                    data?.upload_medical_record
+                                  }
+                                />
                               </div>
                             </div>
                           </div>

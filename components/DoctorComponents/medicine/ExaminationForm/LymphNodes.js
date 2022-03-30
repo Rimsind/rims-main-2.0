@@ -3,6 +3,8 @@ import axios from "axios";
 import { apiUrl } from "config/api";
 import { useAuth } from "context";
 import { Slide, toast } from "react-toastify";
+import { lymph_nodes } from "pages/api/medicineExaminationData";
+
 const LymphNodes = ({ data, appointmentId }) => {
   const { auth } = useAuth();
 
@@ -55,15 +57,7 @@ const LymphNodes = ({ data, appointmentId }) => {
       console.log(error);
     }
   };
-  const lymph_nodes = [
-    "Small (less than 1 cm)",
-    "Nontender",
-    "Ns bilato axillary or epitrochlear nodes",
-    "Soft and nontender",
-    "Soft",
-    "And mobile tonsillar and posterior cervical nodeerally",
-    "Several small inguinal nodes bilateral",
-  ];
+
   return (
     <>
       <div className="section-content pb-3 border-bottom">

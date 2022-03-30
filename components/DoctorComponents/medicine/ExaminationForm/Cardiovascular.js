@@ -3,6 +3,7 @@ import axios from "axios";
 import { apiUrl } from "config/api";
 import { useAuth } from "context";
 import { Slide, toast } from "react-toastify";
+import { cardiovascular } from "pages/api/medicineExaminationData";
 const Cardiovascular = ({ data, appointmentId }) => {
   const { auth } = useAuth();
 
@@ -55,22 +56,7 @@ const Cardiovascular = ({ data, appointmentId }) => {
       console.log(error);
     }
   };
-  const cardiovascular = [
-    "No Known heart disease or high blood pressure",
-    "No dyspnea",
-    "Chest pain palpitation",
-    "Jugular venous pressure 1 cm above the sternal angle",
-    "Carotid upstrokes brisks",
-    "Apical impulse discrete and tapping",
-    "A II/VI medium-pitched midsystolic murmur at the 2nd right interspace",
-    "Has never had an electrocardiogram (ECG)",
-    "With head of examining table raised to 30 degree",
-    "Without bruits",
-    "Barely palpable in the 5th left interspace",
-    "Good S1, S2; no S3 or S4",
-    "Does not radiate to the neck",
-    "Last blood pressure taken in 1998",
-  ];
+
   return (
     <>
       <div className="section-content pb-3 border-bottom">

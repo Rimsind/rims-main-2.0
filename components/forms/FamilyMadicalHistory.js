@@ -4,8 +4,7 @@ import axios from "axios";
 import { useAuth } from "context";
 import { useState } from "react";
 import { Slide, toast } from "react-toastify";
-const FamilyMadicalHistory = ({ patient }) => {
-  const { familyHistory, updated_at } = patient;
+const FamilyMadicalHistory = ({ familyHistory, patientId, updated_at }) => {
   const dataLength = familyHistory?.length;
   const { auth } = useAuth();
   const [loading, setLoading] = useState(false);
@@ -27,15 +26,11 @@ const FamilyMadicalHistory = ({ patient }) => {
         ],
       };
 
-      const res = await axios.put(
-        `${apiUrl}/patients/${auth.user?.profileId}`,
-        payload,
-        {
-          headers: {
-            Authorization: `Bearer ${auth.token}`,
-          },
-        }
-      );
+      const res = await axios.put(`${apiUrl}/patients/${patientId}`, payload, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
       const result = res.data;
       reset();
       toast.success("FamilyMedical History Updated", {
@@ -230,7 +225,7 @@ const FamilyMadicalHistory = ({ patient }) => {
           <table className="table table-striped">
             <thead>
               <tr>
-                <th scope="col"></th>
+                <th scope="col">Sl</th>
                 <th scope="col">Relation</th>
                 <th scope="col">Age (if living)</th>
                 <th scope="col">Age (if death)</th>
@@ -242,14 +237,14 @@ const FamilyMadicalHistory = ({ patient }) => {
               {dataLength === 0 ? (
                 <>
                   <tr>
-                    <td colSpan="5" className="text-danger text-center">
+                    <td colSpan="6" className="text-danger text-center">
                       No Previous Data Found !!
                     </td>
                   </tr>
                 </>
               ) : (
                 <>
-                  {familyHistory.map((item, index) => (
+                  {familyHistory?.map((item, index) => (
                     <tr key={index}>
                       <td>
                         <div className="delete-table-icon">

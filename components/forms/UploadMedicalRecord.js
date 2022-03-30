@@ -5,8 +5,11 @@ import Link from "next/link";
 import { useAuth } from "context";
 import { uploadImage } from "utils/uploadImage";
 import { Slide, toast } from "react-toastify";
-const UploadMedicalRecord = ({ patient }) => {
-  const { upload_medical_record, updated_at } = patient;
+const UploadMedicalRecord = ({
+  upload_medical_record,
+  updated_at,
+  patientId,
+}) => {
   const dataLenght = upload_medical_record?.length;
 
   const { auth } = useAuth();
@@ -29,7 +32,7 @@ const UploadMedicalRecord = ({ patient }) => {
     };
     try {
       const response = await axios.put(
-        `${apiUrl}/patients/${auth.user.profileId}`,
+        `${apiUrl}/patients/${patientId}`,
         payload,
         {
           headers: {

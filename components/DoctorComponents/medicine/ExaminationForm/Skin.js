@@ -3,12 +3,7 @@ import axios from "axios";
 import { apiUrl } from "config/api";
 import { useAuth } from "context";
 import { Slide, toast } from "react-toastify";
-const skin = [
-  "No rashes or other changes",
-  "No cyanosis",
-  "No clubbing finger",
-  "No bruises",
-];
+import { skin } from "pages/api/medicineExaminationData";
 
 const Skin = ({ data, appointmentId }) => {
   const { auth } = useAuth();

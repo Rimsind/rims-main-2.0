@@ -3,6 +3,7 @@ import axios from "axios";
 import { apiUrl } from "config/api";
 import { useAuth } from "context";
 import { Slide, toast } from "react-toastify";
+import { peripheral_vascular } from "pages/api/medicineExaminationData";
 const PeripheralVascular = ({ data, appointmentId }) => {
   const { auth } = useAuth();
 
@@ -66,12 +67,7 @@ const PeripheralVascular = ({ data, appointmentId }) => {
       });
     }
   };
-  const peripheral_vascular = [
-    "Trace edema at both ankels",
-    "No stasis pigmentation or ulcer",
-    "Moderate varicosities of saphenous veins both lower extremities",
-    "Pulses (2+= brisks, or nornal)",
-  ];
+
   return (
     <>
       <div className="section-content pb-3 border-bottom">

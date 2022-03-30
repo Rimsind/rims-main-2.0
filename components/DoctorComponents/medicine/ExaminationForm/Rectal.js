@@ -3,6 +3,7 @@ import axios from "axios";
 import { apiUrl } from "config/api";
 import { useAuth } from "context";
 import { Slide, toast } from "react-toastify";
+import { rectal } from "pages/api/medicineExaminationData";
 const Rectal = ({ data, appointmentId }) => {
   const { auth } = useAuth();
 
@@ -66,11 +67,7 @@ const Rectal = ({ data, appointmentId }) => {
       });
     }
   };
-  const rectal = [
-    "Rectal vault without masses",
-    "Negative for occult blood",
-    "Stool Brown",
-  ];
+
   return (
     <>
       <div className="section-content pb-3 border-bottom">

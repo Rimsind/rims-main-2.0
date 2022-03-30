@@ -1,4 +1,3 @@
-import router from "next/router";
 import { useState } from "react";
 import { useAuth } from "context";
 import { useForm } from "react-hook-form";
@@ -6,30 +5,7 @@ import axios from "axios";
 import { apiUrl } from "config/api";
 import useSWR from "swr";
 import { Slide, toast } from "react-toastify";
-const categoryList = [
-  "Cerical Region",
-  "Upper Thoracic",
-  "Lower Thoracic",
-  "Lumber",
-  "Sacral Region",
-  "Shoulder Elbow",
-  "Wrist",
-  "Hand",
-  "Pelvis",
-  "Hip",
-  "Knee",
-  "Ankle",
-  "Foot",
-];
-
-const testList = [
-  "Inspection",
-  "Palpation",
-  "Measurments",
-  "Movements",
-  "Special Test",
-  "Complications",
-];
+import { categoryList, testList } from "pages/api/orthoData";
 const OrthoExamination = ({ appointmentId }) => {
   const { auth } = useAuth();
   const [category, setCategory] = useState();

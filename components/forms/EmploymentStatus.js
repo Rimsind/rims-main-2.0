@@ -4,9 +4,7 @@ import axios from "axios";
 import { useAuth } from "context";
 import { useState } from "react";
 import { Slide, toast } from "react-toastify";
-const EmploymentStatus = ({ patient }) => {
-  const { employmentStatus, updated_at } = patient;
-
+const EmploymentStatus = ({ employmentStatus, patientId, updated_at }) => {
   const { auth } = useAuth();
   const [loading, setLoading] = useState(false);
   const { register, handleSubmit } = useForm();
@@ -22,15 +20,11 @@ const EmploymentStatus = ({ patient }) => {
         },
       };
 
-      const res = await axios.put(
-        `${apiUrl}/patients/${auth.user?.profileId}`,
-        payload,
-        {
-          headers: {
-            Authorization: `Bearer ${auth.token}`,
-          },
-        }
-      );
+      const res = await axios.put(`${apiUrl}/patients/${patientId}`, payload, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
       const result = res.data;
       toast.success("Employment Status Updated", {
         position: "top-center",

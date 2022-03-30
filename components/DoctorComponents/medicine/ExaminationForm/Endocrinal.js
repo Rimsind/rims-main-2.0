@@ -3,6 +3,7 @@ import axios from "axios";
 import { apiUrl } from "config/api";
 import { useAuth } from "context";
 import { Slide, toast } from "react-toastify";
+import { endocrinal } from "pages/api/medicineExaminationData";
 const Endocrinal = ({ data, appointmentId }) => {
   const { auth } = useAuth();
 
@@ -56,10 +57,6 @@ const Endocrinal = ({ data, appointmentId }) => {
     }
   };
 
-  const endocrinal = [
-    "No known thyroid problem or temperature intolerance",
-    "No symptoms or history of diabetes",
-  ];
   return (
     <>
       <div className="section-content pb-3 border-bottom">

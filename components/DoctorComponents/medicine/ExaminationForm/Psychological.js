@@ -3,6 +3,7 @@ import axios from "axios";
 import { apiUrl } from "config/api";
 import { useAuth } from "context";
 import { Slide, toast } from "react-toastify";
+import { psychological_psychiatric_illness } from "pages/api/medicineExaminationData";
 const Psychological = ({ data, appointmentId }) => {
   const { auth } = useAuth();
 
@@ -66,9 +67,7 @@ const Psychological = ({ data, appointmentId }) => {
       });
     }
   };
-  const psychological_psychiatric_illness = [
-    "No history of depression or treatment for psychiatric disorders",
-  ];
+
   return (
     <>
       <div className="section-content pb-3 border-bottom">

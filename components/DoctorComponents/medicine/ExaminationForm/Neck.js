@@ -3,6 +3,7 @@ import axios from "axios";
 import { apiUrl } from "config/api";
 import { useAuth } from "context";
 import { Slide, toast } from "react-toastify";
+import { neck } from "pages/api/medicineExaminationData";
 const Neck = ({ data, appointmentId }) => {
   const { auth } = useAuth();
 
@@ -55,7 +56,7 @@ const Neck = ({ data, appointmentId }) => {
       console.log(error);
     }
   };
-  const neck = ["No lumps", "Goiter", "Pain", "No swollen glands"];
+
   return (
     <>
       <div className="section-content pb-3 border-bottom">

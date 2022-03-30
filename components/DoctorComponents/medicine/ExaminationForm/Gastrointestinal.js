@@ -3,6 +3,7 @@ import axios from "axios";
 import { apiUrl } from "config/api";
 import { useAuth } from "context";
 import { Slide, toast } from "react-toastify";
+import { gastrointestinal } from "pages/api/medicineExaminationData";
 const Gastrointestinal = ({ data, appointmentId }) => {
   const { auth } = useAuth();
 
@@ -56,18 +57,6 @@ const Gastrointestinal = ({ data, appointmentId }) => {
     }
   };
 
-  const gastrointestinal = [
-    "Appetite good",
-    "Vomiting",
-    "Bowel movement about once dial",
-    "No diarrhea or bleeding",
-    "Jaundice",
-    "No nausea",
-    "Indigestion",
-    "Though sometimes has hard stools for 2 to 3 days when especially tense",
-    "No pain",
-    "Gallbladder or liver problems",
-  ];
   return (
     <>
       {" "}

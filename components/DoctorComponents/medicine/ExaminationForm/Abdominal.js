@@ -3,6 +3,7 @@ import axios from "axios";
 import { apiUrl } from "config/api";
 import { useAuth } from "context";
 import { Slide, toast } from "react-toastify";
+import { abdominal } from "pages/api/medicineExaminationData";
 
 const Abdominal = ({ data, appointmentId }) => {
   const { auth } = useAuth();
@@ -68,18 +69,6 @@ const Abdominal = ({ data, appointmentId }) => {
     }
   };
 
-  const abdominal = [
-    "Obese",
-    "Right lower quadrant",
-    "No tenderness or masses Liver span 7 cm in right midclavicular line",
-    "Palpable 1 cm below right costal margin (RCM)",
-    "No costovertebral angle tenderness (CVAT)",
-    "Well-healed scar",
-    "Bowel sounds active",
-    "Edge smooth",
-    "Spleen and kidneys not felts",
-    "No hernia",
-  ];
   return (
     <>
       <div className="section-content pb-3 border-bottom">

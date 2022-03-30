@@ -3,6 +3,7 @@ import axios from "axios";
 import { apiUrl } from "config/api";
 import { useAuth } from "context";
 import { Slide, toast } from "react-toastify";
+import { neurogenical } from "pages/api/medicineExaminationData";
 const Neurological = ({ data, appointmentId }) => {
   const { auth } = useAuth();
 
@@ -41,38 +42,7 @@ const Neurological = ({ data, appointmentId }) => {
     alert("Form Submitted Succesfully");
     return result;
   };
-  const neurogenical = [
-    "Mental status",
-    "Thoughts coherent",
-    "Place",
-    "Cranial Nerves",
-    "Motor",
-    "Strength 5/5 throughout(see p.574 grading system)",
-    "Rapid alternating movements (RAMs)",
-    "Gait",
-    "Pinprick",
-    "Position sense",
-    "And stereognosis intact",
-    "Reflexes",
-    "Depending upon personal preference",
-    "As shown below and at right",
-    "See p",
-    "Tense but alrt and cooperative",
-    "Oriented to person",
-    "And time",
-    "II-XII intact",
-    "Good muscle bulk and tone",
-    "Cerebellar",
-    "Point-to-point movemstableents intact",
-    "Fluid Sensory",
-    "Light touch",
-    "Vibration",
-    "Romberg negativeg",
-    "Two methods of recording may be used",
-    "A tabular from or a stick picture diagram",
-    "2+= brisk or normal",
-    "587 for grading system",
-  ];
+
   return (
     <>
       <div className="section-content pb-3 border-bottom">
