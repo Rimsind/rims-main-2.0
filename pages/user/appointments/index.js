@@ -61,47 +61,59 @@ const Index = () => {
               <UserNav status2="active" patient={patient} />
               {appointments ? (
                 <div className="col-md-12 col-sm-12 col-lg-8 col-xl-9">
-                  <div className="card card-table mb-0">
-                    <div
-                      className="card-header"
-                      style={{ backgroundColor: "#7d2d69" }}
-                    >
-                      <div className="row align-items-end p-2 rounded-1">
-                        <div className="col-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5">
-                          <lable className="text-light">
-                            Filter By status:
-                          </lable>
-                          <select
-                            className="form-select"
-                            aria-label="Default select example"
-                            value={status}
-                            onChange={(e) => setStatus(e.target.value)}
-                          >
-                            <option selected>Select status</option>
-                            <option value="false">Pending</option>
-                            <option value="true">Completed</option>
-                          </select>
-                        </div>
-                        <div className="col-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5">
-                          <lable className="text-light">Filter By Date:</lable>
-                          <input
-                            type="date"
-                            className="form-control"
-                            value={date}
-                            onChange={(e) => setDate(e.target.value)}
-                          />
-                        </div>
-                        <div className="col-12 col-md-12 col-lg-6 col-xl-2 col-xxl-2">
-                          <button
-                            className="btn btn-light"
-                            onClick={resetState}
-                          >
-                            <i className="far fa-redo-alt me-2"></i>
-                            Reset
-                          </button>
+                  <div
+                    className="card-filter rounded-pill p-4 mb-2"
+                    style={{ backgroundColor: "#372c7ee6" }}
+                  >
+                    <div className="row align-items-end p-2 rounded-1">
+                      <div className="col-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5">
+                        <div className="row align-items-center">
+                          <div className="col-4">
+                            <lable className="text-light">
+                              Filter By status:
+                            </lable>
+                          </div>
+                          <div className="col-8">
+                            <select
+                              className="form-select"
+                              aria-label="Default select example"
+                              value={status}
+                              onChange={(e) => setStatus(e.target.value)}
+                            >
+                              <option selected>Select status</option>
+                              <option value="false">Pending</option>
+                              <option value="true">Completed</option>
+                            </select>
+                          </div>
                         </div>
                       </div>
+                      <div className="col-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5">
+                        <div className="row align-items-center">
+                          <div className="col-4">
+                            {" "}
+                            <lable className="text-light">
+                              Filter By Date:
+                            </lable>
+                          </div>
+                          <div className="col-8">
+                            <input
+                              type="date"
+                              className="form-control"
+                              value={date}
+                              onChange={(e) => setDate(e.target.value)}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-12 col-md-12 col-lg-6 col-xl-2 col-xxl-2 text-end">
+                        <button className="btn btn-light" onClick={resetState}>
+                          <i className="far fa-redo-alt me-2"></i>
+                          Reset
+                        </button>
+                      </div>
                     </div>
+                  </div>
+                  <div className="card card-table mb-0">
                     <div className="card-body">
                       <div className="table-responsive">
                         <table className="table table-hover table-center mb-0">

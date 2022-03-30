@@ -4,7 +4,6 @@ import Link from "next/link";
 const PremiumPolyclinic = () => {
   return (
     <>
-      {" "}
       <div className="polyclinic_details_nav sticky-top">
         <div className="bg-custom-poly-nav text-light">
           <ul className="list-unstyled d-flex justify-content-center align-items-center pt-4 pb-4 mb-0">
@@ -55,11 +54,9 @@ const PremiumPolyclinic = () => {
           flexDirection: "column",
         }}
       >
-        <p className="polyclinic-details-main-name">
-          Kathi Super-Specialist Polyclinic
-        </p>
+        <p className="polyclinic-details-main-name">xyz </p>
         <p className="polyclinic-details-main-sub-name border-bottom border-3 border-warning">
-          Kathi, West Bengal
+          Haldia, west Bengal
         </p>
       </div>
       <div
