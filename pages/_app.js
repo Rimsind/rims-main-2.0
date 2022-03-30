@@ -19,7 +19,17 @@ export default function MyApp({ Component, pageProps }) {
       <GlobalProvider>
         <Layout>
           {page}
-          <ToastContainer />
+          <ToastContainer
+            position="top-center"
+            autoClose={2000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
         </Layout>
       </GlobalProvider>
     ));
@@ -27,7 +37,17 @@ export default function MyApp({ Component, pageProps }) {
   return getLayout(
     <GlobalProvider>
       <Component {...pageProps} />
-      <ToastContainer />
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </GlobalProvider>
   );
 }

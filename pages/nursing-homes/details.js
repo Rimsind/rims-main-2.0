@@ -72,10 +72,7 @@ const NursingHomeId = () => {
                           </ul>
                         </div>
                         <div className="doctor-action">
-                          <a
-                            href="#"
-                            className="btn btn-white fav-btn disabled"
-                          >
+                          <a className="btn btn-white fav-btn disabled">
                             <i className="far fa-bookmark"></i>
                           </a>
                           <a
@@ -85,7 +82,6 @@ const NursingHomeId = () => {
                             <i className="far fa-comment-alt"></i>
                           </a>
                           <a
-                            href="#"
                             className="btn btn-white call-btn disabled"
                             data-bs-toggle="modal"
                             data-bs-target="#voice_call"
@@ -93,7 +89,6 @@ const NursingHomeId = () => {
                             <i className="fas fa-phone"></i>
                           </a>
                           <a
-                            href="#"
                             className="btn btn-white call-btn disabled"
                             data-bs-toggle="modal"
                             data-bs-target="#video_call"
@@ -169,13 +164,13 @@ const NursingHomeId = () => {
                                 </div>
                                 <div className="row row-sm special-footer">
                                   <div className="col-6 text-start">
-                                    <a href="#" className="doc-count">
-                                      {data?.totlaRegularBeds}
+                                    <a className="doc-count">
+                                      {data?.totalRegularBeds}
                                       <span>Total</span>
                                     </a>
                                   </div>
                                   <div className="col-6 text-end">
-                                    <a href="#" className="clin-count">
+                                    <a className="clin-count">
                                       {data?.availableRegularbeds}{" "}
                                       <span>Available</span>
                                     </a>
@@ -196,12 +191,12 @@ const NursingHomeId = () => {
                                 </div>
                                 <div className="row row-sm special-footer">
                                   <div className="col-6 text-start">
-                                    <a href="#" className="doc-count">
-                                      {data?.TotalIcuBeds} <span>Total</span>
+                                    <a className="doc-count">
+                                      {data?.totalIcuBeds} <span>Total</span>
                                     </a>
                                   </div>
                                   <div className="col-6 text-end">
-                                    <a href="#" className="clin-count">
+                                    <a className="clin-count">
                                       {data?.availableIcuBeds}{" "}
                                       <span>Available</span>
                                     </a>
@@ -222,12 +217,12 @@ const NursingHomeId = () => {
                                 </div>
                                 <div className="row row-sm special-footer">
                                   <div className="col-6 text-start">
-                                    <a href="#" className="doc-count">
-                                      {data?.no_of_ambulance} <span>Total</span>
+                                    <a className="doc-count">
+                                      {data?.totalAmbulance} <span>Total</span>
                                     </a>
                                   </div>
                                   <div className="col-6 text-end">
-                                    <a href="#" className="clin-count">
+                                    <a className="clin-count">
                                       {data?.availableAmbulance}{" "}
                                       <span>Available</span>
                                     </a>
@@ -248,13 +243,13 @@ const NursingHomeId = () => {
                                 </div>
                                 <div className="row row-sm special-footer">
                                   <div className="col-6 text-start">
-                                    <a href="#" className="doc-count">
-                                      {data?.no_of_icu_ambulance}{" "}
+                                    <a className="doc-count">
+                                      {data?.totalIcuAmbulance}{" "}
                                       <span>Total</span>
                                     </a>
                                   </div>
                                   <div className="col-6 text-end">
-                                    <a href="#" className="clin-count">
+                                    <a className="clin-count">
                                       {data?.availableIcuAmbulance}{" "}
                                       <span>Available</span>
                                     </a>
@@ -276,12 +271,12 @@ const NursingHomeId = () => {
                                 </div>
                                 <div className="row row-sm special-footer">
                                   <div className="col-6 text-start">
-                                    <a href="#" className="doc-count">
+                                    <a className="doc-count">
                                       {data?.totalBurnUnits} <span>Total</span>
                                     </a>
                                   </div>
                                   <div className="col-6 text-end">
-                                    <a href="#" className="clin-count">
+                                    <a className="clin-count">
                                       {data?.availableBurnUnits}{" "}
                                       <span>Available</span>
                                     </a>
@@ -301,9 +296,9 @@ const NursingHomeId = () => {
                                   <h4>Doctors</h4>
                                 </div>
                                 <div className="row row-sm special-footer">
-                                  <div className="col-6 text-start">
-                                    <a href="#" className="doc-count">
-                                      {data?.TotalDoctors} <span>Total</span>
+                                  <div className="col-6 text-center">
+                                    <a className="doc-count">
+                                      {data?.totalDoctors} <span>Total</span>
                                     </a>
                                   </div>
                                   <div className="col-6 text-end"></div>

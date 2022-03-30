@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useAuth } from "context";
 const UserNav = (props) => {
-  const { logout } = useAuth();
+  const { logOut } = useAuth();
 
   const { patient } = props;
 
@@ -115,12 +115,12 @@ const UserNav = (props) => {
                     </a>
                   </Link>
                 </li>
-                <li>
-                  <button className="btn" onClick={logout}>
+                {/* <li>
+                  <button className="btn" onClick={logOut}>
                     <i className="fas fa-sign-out-alt ms-2 me-2 text-danger"></i>
                     <span className="text-danger">Logout</span>
                   </button>
-                </li>
+                </li> */}
               </ul>
             </nav>
           </div>

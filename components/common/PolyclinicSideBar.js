@@ -1,6 +1,8 @@
+import { useAuth } from "context";
 import Image from "next/image";
 import Link from "next/link";
 const PolyclinicSideBar = (props) => {
+  const { logOut } = useAuth();
   const { data } = props;
   return (
     <>
@@ -41,7 +43,14 @@ const PolyclinicSideBar = (props) => {
                     </a>
                   </Link>
                 </li>
-
+                <li className={props.status7}>
+                  <Link href="/polyclinics/appointments">
+                    <a>
+                      <i className="fas fa-bookmark"></i>
+                      <span>Appointments</span>
+                    </a>
+                  </Link>
+                </li>
                 <li className={props.status2}>
                   <Link href="/polyclinics/manage-doctors">
                     <a>
@@ -51,14 +60,14 @@ const PolyclinicSideBar = (props) => {
                   </Link>
                 </li>
 
-                <li className={props.status3}>
+                {/* <li className={props.status3}>
                   <Link href="/polyclinics/page-content-editor">
                     <a>
                       <i className="fas fa-list-alt"></i>
                       <span>Page Content Editor</span>
                     </a>
                   </Link>
-                </li>
+                </li> */}
 
                 <li className={props.status4}>
                   <Link href="/polyclinics/profile-settings">
@@ -87,12 +96,12 @@ const PolyclinicSideBar = (props) => {
                   </Link>
                 </li>
 
-                <li>
-                  <a>
-                    <i className="fas fa-sign-out-alt"></i>
-                    <span>Logout</span>
-                  </a>
-                </li>
+                {/* <li>
+                  <button className="btn" onClick={logOut}>
+                    <i className="fas fa-sign-out-alt ms-2 me-2 text-danger"></i>
+                    <span className="text-danger">Logout</span>
+                  </button>
+                </li> */}
               </ul>
             </nav>
           </div>

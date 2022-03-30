@@ -87,12 +87,12 @@ const NursingSideBar = (props) => {
                   </Link>
                 </li>
 
-                <li>
+                {/* <li>
                   <a className="text-danger">
                     <i className="fas fa-sign-out-alt"></i>
                     <span>Logout</span>
                   </a>
-                </li>
+                </li> */}
               </ul>
             </nav>
           </div>

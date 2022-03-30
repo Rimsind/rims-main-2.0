@@ -35,7 +35,7 @@ const MyAppointments = ({ data }) => {
         </td>
 
         <td>₹{data?.fee}</td>
-        <td>{data?.eprescription?.followup?.date}</td>
+        <td>{data?.eprescription?.followUp_date}</td>
         <td>
           {!!data.appointment_status === false ? (
             <span className="badge rounded-pill bg-warning-light">Pending</span>
