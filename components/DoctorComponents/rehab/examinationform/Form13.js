@@ -4,6 +4,7 @@ import axios from "axios";
 import { useAuth } from "context/index";
 import { apiUrl } from "config/api";
 import { Slide, toast } from "react-toastify";
+import { workBarrierList } from "pages/api/rehabData";
 const Form13 = ({ appointmentId }) => {
   const { auth } = useAuth();
   const { data: appointment } = useSWR(
@@ -82,34 +83,6 @@ const Form13 = ({ appointmentId }) => {
       });
     }
   };
-
-  const workBarrierList = [
-    "NONE",
-    "STAIRS WITH HANDRAILS",
-    "STAIRS WITHOUT HANDRAILS",
-    "NO GRAB BARS IN BATHROOM",
-    "NARROW DOORWAYS OR ACCESS POINTS",
-    "INADEQUATE LIGHTING",
-    "CROWDED/CLUTTERED ENVIRONMENT",
-    "POOR FLOORING",
-    "LACK OF RAMPS",
-    "UNSAFE STRUCTURAL ENVIRONMENT",
-    "NO ELECTRICITY",
-    "NO RUNNING WATER",
-    "CONTAMINATES WATER",
-    "NO TOILETING FACILITY",
-    "INADEQUATE SEWAGE DISPOSAL",
-    "INADEQUATE/IMPROPER FOOD STORAGE",
-    "INADEQUATE/NO FOOD REFRIGRATION",
-    "NO COOKING FACILITY",
-    "INSECTS/RODENTS",
-    "NARROW OR OBSTRUCTED DOORWAYS",
-    "STAIRS LEADING FROM INSIDE HOUSE TO OUTSIDE",
-    "STAIRS INSIDE HOUSE WHICH MUST BE USED",
-    "STAIRS INSIDE HOUSE WHICH ARE USED OPTIONALLY",
-    "CLUTTERED SOILED LIVING AREA",
-    "OTHERS",
-  ];
 
   const makeArrfromString = (str) => {
     if (str) {

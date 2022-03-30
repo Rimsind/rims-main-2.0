@@ -5,6 +5,7 @@ import { useAuth } from "context/index";
 import { apiUrl } from "config/api";
 import { useState } from "react";
 import { Slide, toast } from "react-toastify";
+import { involuntoryList } from "pages/api/rehabData";
 const Form10 = ({ appointmentId }) => {
   const { auth } = useAuth();
   const { data: appointment } = useSWR(
@@ -79,12 +80,6 @@ const Form10 = ({ appointmentId }) => {
       });
     }
   };
-
-  const involuntoryList = [
-    "Dystonia",
-    "Termor",
-    "Choreiform And Antheoid Movement",
-  ];
 
   const makeArrfromString = (str) => {
     if (str) {

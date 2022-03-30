@@ -4,6 +4,7 @@ import axios from "axios";
 import { useAuth } from "context/index";
 import { apiUrl } from "config/api";
 import { Slide, toast } from "react-toastify";
+import { retrainingList } from "pages/api/rehabData";
 const Form1 = ({ appointmentId }) => {
   const { auth } = useAuth();
   const { data: appointment } = useSWR(
@@ -102,17 +103,6 @@ const Form1 = ({ appointmentId }) => {
       });
     }
   };
-
-  const retrainingList = [
-    "Bed Mobility Task",
-    "Transfer Task",
-    "ADL Task",
-    "IADL Task",
-    "Ambulation Task",
-    "Treadmill Task",
-    "Step Test Task",
-    "Wheelchair Mobility Task",
-  ];
 
   const makeArrfromString = (str) => {
     if (str) {

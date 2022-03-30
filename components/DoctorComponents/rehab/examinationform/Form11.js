@@ -4,6 +4,7 @@ import axios from "axios";
 import { useAuth } from "context/index";
 import { apiUrl } from "config/api";
 import { Slide, toast } from "react-toastify";
+import { scoreList } from "pages/api/rehabData";
 const Form11 = ({ appointmentId }) => {
   const { auth } = useAuth();
   const { data: appointment } = useSWR(
@@ -161,21 +162,6 @@ const Form11 = ({ appointmentId }) => {
     }
   };
 
-  const scoreList = [
-    "0",
-    "1",
-    "1+",
-    "2-",
-    "2",
-    "2+",
-    "3-",
-    "3",
-    "3+",
-    "4-",
-    "4",
-    "4+",
-    "5",
-  ];
   return (
     <>
       <div className="general-information-form relative p-6 flex-auto mt-3">

@@ -4,6 +4,18 @@ import axios from "axios";
 import { useAuth } from "context/index";
 import { apiUrl } from "config/api";
 import { Slide, toast } from "react-toastify";
+import {
+  feetList,
+  kneeList,
+  pelvisList,
+  lowBackList,
+  upperBackList,
+  thoraxList,
+  spineList,
+  abdomenList,
+  shoulderList,
+  headList,
+} from "pages/api/rehabData";
 const Form7 = ({ appointmentId }) => {
   const { auth } = useAuth();
   const { data: appointment } = useSWR(
@@ -82,44 +94,6 @@ const Form7 = ({ appointmentId }) => {
       });
     }
   };
-  const feetList = [
-    "Hammer toes",
-    "Hallux valgus",
-    "Low ant arch",
-    "Ant foot varus",
-    "Pronated",
-    "Supinated",
-    "Flat Long arch",
-    "Pigeon toes",
-    "Medial Rotation",
-    "Lat rotation",
-    "Knock Knees",
-  ];
-  const kneeList = ["Hyperextension", "Flexion", "Bowlegs", "Tibial torsion"];
-  const pelvisList = [
-    "Leg in postural adduction",
-    "Rotation",
-    "Tilt",
-    "Deviation",
-  ];
-
-  const lowBackList = ["Lordosis", "Flat Back", "Kyphosis", "Operation"];
-  const upperBackList = [
-    "Kyphosis",
-    "Flat UP back",
-    "Scaulae abducted",
-    "Scalulae Elevated",
-  ];
-  const thoraxList = [
-    "Depressed chest",
-    "Elevated chest",
-    "Rotation",
-    "Deviation",
-  ];
-  const spineList = ["Total Curved", "Lumbar", "Thoracic", "Cervical"];
-  const abdomenList = ["Protruding", "Scars"];
-  const shoulderList = ["Low", "High", "Forward", "Med Rotated"];
-  const headList = ["Forward", "Torticollis", "Tilt", "Rotation"];
 
   const makeArrfromString = (str) => {
     if (str) {
