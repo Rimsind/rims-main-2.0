@@ -2,6 +2,7 @@ import Footer from "components/Footer";
 import Head from "next/head";
 import Script from "next/script";
 import { MainHeader } from "components/common";
+import BackToTop from "components/common/BackToTop";
 
 const Layout = ({ children }) => {
   return (
@@ -11,6 +12,7 @@ const Layout = ({ children }) => {
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossOrigin="anonymous"
       ></Script>
+      {/* <Script src="/assets/js/back-to-top.js"></Script> */}
       <Head>
         <title>RIMS IND</title>
         <meta charSet="UTF-8" />
@@ -28,7 +30,9 @@ const Layout = ({ children }) => {
       </Head>
 
       <MainHeader />
+
       <main>{children}</main>
+      <BackToTop />
       <Footer />
     </>
   );

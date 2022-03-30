@@ -63,7 +63,7 @@ const Index = () => {
 
         <section
           className="category-sec"
-          style={{ marginTop: "-105px", background: "#f0f0f5" }}
+          style={{ marginTop: "-64px", background: "#fff" }}
         >
           <div className="container">
             <div className="d-flex">
@@ -138,7 +138,7 @@ const Index = () => {
         </section>
         {/* Banner down categories section end here */}
 
-        <section className="section section-about-filter">
+        {/* <section className="section section-about-filter">
           <div className="container">
             <div className="row align-items-center">
               <div className="col-12 col-md-12 col-lg-8 col-xl-8 col-xxl-8">
@@ -322,7 +322,7 @@ const Index = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
         <section className="section section-specialities">
           <div className="container-fluid">
             <div className="section-header text-center">
@@ -417,7 +417,7 @@ const Index = () => {
             </div>
           </div>
         </section>
-        <section className="section section-features">
+        {/* <section className="section section-features">
           <div className="container-fluid">
             <div className="row">
               <div className="col-md-5 features-img text-sm-center">
@@ -475,6 +475,50 @@ const Index = () => {
               </div>
             </div>
           </div>
+        </section> */}
+        <section className="our-doctors-section">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-6">
+                <div className="section-heading">
+                  <h2>Your Best Rated Polyclinics</h2>
+                  <p>
+                    Access to expert physicians and surgeons, technologies and
+                    top-quality surgery facilities right here.
+                  </p>
+                </div>
+              </div>
+              <div className="col-md-6">
+                <div className="poly-btn text-lg-end text-xl-end text-xxl-end text-center mb-3 mb-lg-3 mb-xl-3 mb-xxl-3">
+                  <Link href="/polyclinics">
+                    <a className="btn btn-primary py-3 px-4">View More</a>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="our-doctors">
+              <div className="d-flex carousel-styling">
+                {polyclinics ? (
+                  <Carousel breakPoints={breakPoints}>
+                    {polyclinics?.map((items, index) => (
+                      <VerticalPolyclinicCard
+                        data={items}
+                        key={index}
+                        link="polyclinics"
+                      />
+                    ))}
+                  </Carousel>
+                ) : (
+                  <Carousel breakPoints={breakPoints}>
+                    <SliderCardLoader />
+                    <SliderCardLoader />
+                    <SliderCardLoader />
+                    <SliderCardLoader />
+                  </Carousel>
+                )}
+              </div>
+            </div>
+          </div>
         </section>
         <section className="clinic-features-section">
           <div className="container">
@@ -517,7 +561,7 @@ const Index = () => {
             <div className="row">
               <div className="col-md-6">
                 <div className="section-heading">
-                  <h2>Your Best Rated Polyclinics</h2>
+                  <h2>Your Best Rated Hospitals</h2>
                   <p>
                     Access to expert physicians and surgeons, technologies and
                     top-quality surgery facilities right here.
@@ -526,7 +570,7 @@ const Index = () => {
               </div>
               <div className="col-md-6">
                 <div className="poly-btn text-lg-end text-xl-end text-xxl-end text-center mb-3 mb-lg-3 mb-xl-3 mb-xxl-3">
-                  <Link href="/polyclinics">
+                  <Link href="/hospitals">
                     <a className="btn btn-primary py-3 px-4">View More</a>
                   </Link>
                 </div>

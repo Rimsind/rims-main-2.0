@@ -28,7 +28,7 @@ const Dashboard = () => {
             <NursingSideBar status1="active" data={data} />
             <div className="col-md-12 col-lg-8 col-xl-9 col-xxl-9">
               <div className="dashboard-welcome-text">
-                <p className="fs-4 fw-bold">Welcome Mediland Nursing Home</p>
+                <p className="fs-4 fw-bold">Welcome Mediland Nursing Home👋</p>
               </div>
               <div className="row">
                 <div className="col-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4 patient-dashboard-top">
@@ -114,7 +114,7 @@ const Dashboard = () => {
                     <div className="row align-items-end">
                       <div className="col-3">
                         <div className="dashboard-card-icon">
-                          <i className="fas fa-bed"></i>
+                          <i className="fas fa-ambulance"></i>
                         </div>
                       </div>
                       <div className="col-9">
@@ -153,7 +153,7 @@ const Dashboard = () => {
                     <div className="row align-items-end">
                       <div className="col-3">
                         <div className="dashboard-card-icon">
-                          <i className="fas fa-bed"></i>
+                          <i className="fas fa-ambulance"></i>
                         </div>
                       </div>
                       <div className="col-9">
@@ -192,7 +192,7 @@ const Dashboard = () => {
                     <div className="row align-items-end">
                       <div className="col-3">
                         <div className="dashboard-card-icon">
-                          <i className="fas fa-bed"></i>
+                          <i class="fas fa-person-booth"></i>
                         </div>
                       </div>
                       <div className="col-9">
@@ -231,7 +231,7 @@ const Dashboard = () => {
                     <div className="row align-items-end">
                       <div className="col-3">
                         <div className="dashboard-card-icon">
-                          <i className="fas fa-bed"></i>
+                          <i class="fas fa-burn"></i>
                         </div>
                       </div>
                       <div className="col-9">

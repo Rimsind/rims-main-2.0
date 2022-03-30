@@ -5,7 +5,7 @@ import Script from "next/script";
 import NavBar from "./NavBar";
 
 const MainHeader = () => {
-  const { auth, logOut, profile } = useAuth();
+  // const { auth, logOut, profile } = useAuth();
 
   return (
     <>
@@ -69,7 +69,7 @@ const MainHeader = () => {
                   <span className="small-screen">Sample</span>
                 </a>
               </div>
-              <div className="topbar-items">
+              {/* <div className="topbar-items">
                 {!!auth?.token && !!auth?.user ? (
                   <>
                     <li className="nav-item dropdown has-arrow logged-item">
@@ -183,6 +183,40 @@ const MainHeader = () => {
                     </li>
                   </>
                 )}
+              </div> */}
+              <div className="profile-hover-dropdown">
+                <button className="profile-hover-dropbtn">
+                  <Image
+                    className="rounded-circle "
+                    src={"/assets/images/alternate/alt-user-2.png"}
+                    width="35"
+                    height="35"
+                    alt="Darren Elder"
+                  />
+                </button>
+                <div className="profile-hover-dropdown-content">
+                  <div className="user-header align-items-center">
+                    <div className="avatar avatar-sm">
+                      <Image
+                        height="100"
+                        width="100"
+                        src={"/assets/images/alternate/alt-user-2.png"}
+                        alt="User Image"
+                        className="avatar-img rounded-circle"
+                      />
+                    </div>
+                    <div className="user-text">
+                      {/* <h6>
+                              {profile?.first_name} {profile?.last_name}
+                              {profile?.name} {profile?.firstName}{" "}
+                              {profile?.lastName}
+                            </h6> */}
+                      <h6>Dr. Samir Barman</h6>
+                    </div>
+                  </div>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                </div>
               </div>
             </div>
           </div>

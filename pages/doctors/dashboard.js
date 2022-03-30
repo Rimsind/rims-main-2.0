@@ -35,7 +35,9 @@ const Dashboard = () => {
               {data ? (
                 <div className="col-sm-12 col-md-12 col-lg-8 col-xl-9">
                   <div className="dashboard-welcome-text">
-                    <p className="fs-4 fw-bold">Welcome Dr. Jhon Doe</p>
+                    <p className="fs-4 fw-bold">
+                      Welcome Dr. {data?.firstName} {data?.lastName}👋👨‍⚕️👩‍⚕️
+                    </p>
                   </div>
                   <div className="row">
                     <div className="col-12 col-md-6 col-lg-6 col-xl-3 patient-dashboard-top">

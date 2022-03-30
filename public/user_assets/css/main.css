@@ -211,8 +211,10 @@ ul {
 }
 
 .footer {
-  background-color: #15558d;
-  padding: 1rem 0;
+  background-color: #2f71ab;
+  padding: 4rem 0;
+  background-blend-mode: multiply;
+  background-size: cover;
 }
 
 .footer .footer_logo img {

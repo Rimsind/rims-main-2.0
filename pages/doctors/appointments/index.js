@@ -70,7 +70,7 @@ const Index = () => {
                       <div className="row align-items-end p-2 rounded-1">
                         <div className="col-12 col-md-12 col-lg-6 col-xl-4 col-xxl-4">
                           <lable className="text-light">
-                            Filter By Polyuclinic:
+                            Filter By Polyclinic:
                           </lable>
                           <select
                             className="form-select"
