@@ -26,8 +26,8 @@ const DoctorSidebar = (props) => {
                     />
                   </a>
                   <div className="profile-det-info">
-                    <h3>
-                      {data?.first_name} {data?.last_name}
+                    <h3 className="fs-5 mb-2">
+                      Dr. {data?.firstName} {data?.lastName}
                     </h3>
                     <div className="data-details">
                       <h5>

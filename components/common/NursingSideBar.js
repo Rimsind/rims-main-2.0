@@ -20,7 +20,8 @@ const NursingSideBar = (props) => {
                 />
               </a>
               <div className="profile-det-info">
-                <h3>{data?.name}</h3>
+                {/* <h3>{data?.name}</h3> */}
+                <h3 className="fs-5">Mediland Nursing Home</h3>
                 <div className="patient-details">
                   <h5 className="mb-0">
                     <i className="fas fa-map-marker-alt"></i> {data?.city},{" "}

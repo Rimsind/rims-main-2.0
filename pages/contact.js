@@ -46,7 +46,7 @@ const Contact = () => {
                   </div>
                   <div className="infor-details text-center">
                     <label>Phone Number</label>
-                    <p>+152 534-468-854</p>
+                    <p>+91 8597-3944-14</p>
                   </div>
                 </div>
               </div>
@@ -59,7 +59,7 @@ const Contact = () => {
                   </div>
                   <div className="infor-details text-center">
                     <label>Email</label>
-                    <p>demo.rimsind@gmail.com</p>
+                    <p>rimsind@gmail.com</p>
                   </div>
                 </div>
               </div>
@@ -72,7 +72,10 @@ const Contact = () => {
                   </div>
                   <div className="infor-details text-center">
                     <label>Location</label>
-                    <p>C/54 Northwest Freeway, Suite 558, Houston, USA 485</p>
+                    <p>
+                      Module-208, Webel IT Park, City Center, Haldia West
+                      Bengal, 721657
+                    </p>
                   </div>
                 </div>
               </div>
@@ -159,7 +162,7 @@ const Contact = () => {
         </section>
         <section className="contact-map d-flex">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3459.716346058072!2d-95.5565430855612!3d29.872453233633234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640cfe4516785ed%3A0x774974592a609121!2s54%20Northwest%20Fwy%20%23558%2C%20Houston%2C%20TX%2077040%2C%20USA!5e0!3m2!1sen!2sin!4v1631855334452!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3697.656727869912!2d88.07755181541287!3d22.06272295705107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02f0c7d1cdc935%3A0xdc5e28eac9b1b75b!2sWebel%20IT%20Park!5e0!3m2!1sen!2sin!4v1648626968245!5m2!1sen!2sin"
             allowFullScreen=""
             loading="lazy"
           ></iframe>
