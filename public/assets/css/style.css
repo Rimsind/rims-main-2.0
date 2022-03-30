@@ -4036,3 +4036,11 @@ button.btn-custom-time-slot:visited {
 .back-to-top:hover {
   background: #1860ca;
 }
+
+/* Custom-topbar Style */
+.topbar-login-title a {
+  color: #fff;
+}
+.topbar-login-title a:hover {
+  color: #0de0fe;
+}

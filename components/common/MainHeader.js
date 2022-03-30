@@ -8,31 +8,74 @@ const MainHeader = () => {
 
   return (
     <>
-      <section className="upper-main-mrq bg-primary pt-2">
+      <section
+        className="upper-main-mrq bg-primary"
+        style={{
+          background: "linear-gradient(223deg, #73042b 60%, #15558d 50%)",
+          height: "45px",
+          paddingTop: "9px",
+        }}
+      >
         <div className="container-fluid">
-          <div className="row">
-            <div className="col-8">
-              <div className="row">
-                <div className="col-4">
-                  <div className="doctor-login d-flex align-items-baseline">
-                    <div className="doctor-login-icon">
+          <div className="row align-items-center">
+            <div className="col-6">
+              <div className="left-topbar-number">
+                <a href="tel:+180030000123" className="fs-6">
+                  Emergency - 1800-30000-123
+                </a>
+              </div>
+            </div>
+            <div className="col-6">
+              <div className="row align-items-center justify-content-center">
+                <div className="col-3 border-end border-1 border-light">
+                  <div className="topbar-login d-flex align-items-baseline text-light">
+                    <div className="topbar-login-icon me-2">
                       <i className="fas fa-lock"></i>
                     </div>
-                    <div className="doctor-login-title">
-                      <p className="fs-6">Doctor Login</p>
+                    <div className="topbar-login-title">
+                      <a href="/doctors/login" className="fs-6">
+                        Doctor Login
+                      </a>
                     </div>
                   </div>
                 </div>
-                <div className="col-4">
-                  <p>Doctor Login</p>
+                <div className="col-3 border-end border-1 border-light">
+                  <div className="topbar-login d-flex align-items-baseline text-light">
+                    <div className="topbar-login-icon me-2">
+                      <i className="fas fa-lock"></i>
+                    </div>
+                    <div className="topbar-login-title">
+                      <a href="/polyclinics/login" className="fs-6">
+                        Polyclinic Login
+                      </a>
+                    </div>
+                  </div>
                 </div>
-                <div className="col-4">
-                  <p>Doctor Login</p>
+                <div className="col-3 border-end border-1 border-light">
+                  <div className="topbar-login d-flex align-items-baseline text-light">
+                    <div className="topbar-login-icon me-2">
+                      <i className="fas fa-lock"></i>
+                    </div>
+                    <div className="topbar-login-title">
+                      <a href="/nursing-homes/login" className="fs-6">
+                        Nursing Home Login
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-3">
+                  <div className="topbar-login d-flex align-items-baseline text-light">
+                    <div className="topbar-login-icon me-2">
+                      <i className="fas fa-lock"></i>
+                    </div>
+                    <div className="topbar-login-title">
+                      <a href="#" className="fs-6">
+                        Hospital Login
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-4">
-              <p>Social Icon</p>
             </div>
           </div>
         </div>
