@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useAuth } from "context";
-import Script from "next/script";
 import NavBar from "./NavBar";
 
 const MainHeader = () => {
-  // const { auth, logOut, profile } = useAuth();
+  const { auth, logOut, profile } = useAuth();
 
   return (
     <>
@@ -205,40 +204,130 @@ const MainHeader = () => {
                   </>
                 )}
               </div> */}
-              <div className="profile-hover-dropdown">
-                <button className="profile-hover-dropbtn">
-                  <Image
-                    className="rounded-circle "
-                    src={"/assets/images/alternate/alt-user-2.png"}
-                    width="35"
-                    height="35"
-                    alt="Darren Elder"
-                  />
-                </button>
-                <div className="profile-hover-dropdown-content">
-                  <div className="user-header align-items-center">
-                    <div className="avatar avatar-sm">
-                      <Image
-                        height="100"
-                        width="100"
-                        src={"/assets/images/alternate/alt-user-2.png"}
-                        alt="User Image"
-                        className="avatar-img rounded-circle"
-                      />
+
+              {!!auth?.token && !!auth?.user ? (
+                <div className="profile-hover-dropdown">
+                  <button className="profile-hover-dropbtn">
+                    <Image
+                      className="rounded-circle "
+                      src={
+                        profile?.image?.url ||
+                        "/assets/images/alternate/alt-user-2.png"
+                      }
+                      width="35"
+                      height="35"
+                      alt="Darren Elder"
+                    />
+                  </button>
+                  <div className="profile-hover-dropdown-content">
+                    <div className="user-header align-items-center">
+                      <div className="avatar avatar-sm">
+                        <Image
+                          height="100"
+                          width="100"
+                          src={
+                            profile?.image?.url ||
+                            "/assets/images/alternate/alt-user-2.png"
+                          }
+                          alt="User Image"
+                          className="avatar-img rounded-circle"
+                        />
+                      </div>
+                      <div className="user-text">
+                        {auth?.user?.role?.id === 1 ? (
+                          <h6>
+                            {profile?.title}.{profile?.first_name}
+                            {profile?.last_name}
+                          </h6>
+                        ) : (
+                          <></>
+                        )}{" "}
+                        {auth?.user?.role?.id === 3 ? (
+                          <h6>
+                            Dr.{profile?.firstName} {profile?.lastName}
+                          </h6>
+                        ) : (
+                          <></>
+                        )}{" "}
+                        {auth?.user?.role?.id === 6 ? (
+                          <h6>{profile?.name}</h6>
+                        ) : (
+                          <></>
+                        )}{" "}
+                        {auth?.user?.role?.id === 7 ? (
+                          <h6>{profile?.name}</h6>
+                        ) : (
+                          <></>
+                        )}
+                      </div>
                     </div>
-                    <div className="user-text">
-                      {/* <h6>
-                              {profile?.first_name} {profile?.last_name}
-                              {profile?.name} {profile?.firstName}{" "}
-                              {profile?.lastName}
-                            </h6> */}
-                      <h6>Dr. Samir Barman</h6>
-                    </div>
+                    {auth?.user?.role?.id === 1 ? (
+                      <>
+                        <Link href="/user/">
+                          <a className="dropdown-item">Dashboard</a>
+                        </Link>
+                        <Link href="/user/profile-settings">
+                          <a className="dropdown-item">Profile Settings</a>
+                        </Link>
+                        <button className="dropdown-item" onClick={logOut}>
+                          Logout
+                        </button>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                    {auth?.user?.role?.id === 6 ? (
+                      <>
+                        <Link href="/polyclinics/dashboard">
+                          <a className="dropdown-item">Dashboard</a>
+                        </Link>
+
+                        <button className="dropdown-item" onClick={logOut}>
+                          Logout
+                        </button>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                    {auth?.user?.role?.id === 7 ? (
+                      <>
+                        <Link href="/nursing-homes/dashboard">
+                          <a className="dropdown-item">Dashboard</a>
+                        </Link>
+
+                        <button className="dropdown-item" onClick={logOut}>
+                          Logout
+                        </button>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                    {auth?.user?.role?.id === 3 ? (
+                      <>
+                        <Link href="/doctors/dashboard">
+                          <a className="dropdown-item">Dashboard</a>
+                        </Link>
+                        <Link href="/doctors/profile-settings">
+                          <a className="dropdown-item">Profile Settings</a>
+                        </Link>
+                        <button className="dropdown-item" onClick={logOut}>
+                          Logout
+                        </button>
+                      </>
+                    ) : (
+                      <></>
+                    )}
                   </div>
-                  <a href="#">Link 2</a>
-                  <a href="#">Link 3</a>
                 </div>
-              </div>
+              ) : (
+                <li className="nav-item ms-2">
+                  <Link href="/user/login">
+                    <button className="nav-link login_font btn bg-custom-login text-light">
+                      LOGIN / SIGNUP
+                    </button>
+                  </Link>
+                </li>
+              )}
             </div>
           </div>
         </div>
