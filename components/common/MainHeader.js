@@ -11,10 +11,31 @@ const MainHeader = () => {
     <>
       <section className="upper-main-mrq bg-primary pt-2">
         <div className="container-fluid">
-          <marquee behavior="self">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget
-            magna pulvinar
-          </marquee>
+          <div className="row">
+            <div className="col-8">
+              <div className="row">
+                <div className="col-4">
+                  <div className="doctor-login d-flex align-items-baseline">
+                    <div className="doctor-login-icon">
+                      <i className="fas fa-lock"></i>
+                    </div>
+                    <div className="doctor-login-title">
+                      <p className="fs-6">Doctor Login</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-4">
+                  <p>Doctor Login</p>
+                </div>
+                <div className="col-4">
+                  <p>Doctor Login</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-4">
+              <p>Social Icon</p>
+            </div>
+          </div>
         </div>
       </section>
       <section className="main-nav pt-2">
