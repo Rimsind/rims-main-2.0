@@ -149,8 +149,14 @@ const Login = () => {
                     <div className="forgot-password-sec my-4">
                       <p className="fs-6">Forgot Your Password</p>
                     </div>
-                    <div className="welcome-heading mt-5 mb-4">
-                      <p className="fs-1 text-capitalize text-light">Welcome</p>
+                    <div className="social-login">
+                      <div className="row align-items-center">
+                        <div className="col-6">
+                          <div className="social-login-inner">
+                            <i className="fab fa-google"></i>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                     <div className="dont-account">
                       <p>Don&apos;t You Have Account?</p>
