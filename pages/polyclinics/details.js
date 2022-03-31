@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 import { apiUrl, fetcher } from "config/api";
 import { DetailsPageLoader } from "components/Loaders";
+
 const PolyclinicId = () => {
   const { id } = useRouter().query;
   const { data } = useSWR(`${apiUrl}/polyclinics/${id}`, fetcher);
