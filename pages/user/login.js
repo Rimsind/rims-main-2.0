@@ -114,6 +114,23 @@ const Login = () => {
                 }}
               >
                 <form onSubmit={handleSubmit(onSubmit)}>
+                  <div
+                    className="back-home-btn text-start"
+                    style={{
+                      backgroundColor: "aliceblue",
+                      paddingLeft: "10px",
+                      borderRadius: "100px 30px 30px 100px",
+                    }}
+                  >
+                    <div className="back-to-home-button mb-4">
+                      <Link href="/">
+                        <a className="fs-6" style={{ color: "#00008b" }}>
+                          <i className="fas fa-arrow-circle-left me-2 fs-6"></i>
+                          Back To Home
+                        </a>
+                      </Link>
+                    </div>
+                  </div>
                   <Image
                     src="/assets/images/logo-white.png"
                     width="150px"
@@ -176,7 +193,7 @@ const Login = () => {
                                   border: "1px solid #1877f2",
                                 }}
                               >
-                                <i className="fab fa-facebook fs-5 text-dark"></i>
+                                <i className="fab fa-facebook fs-5 text-light"></i>
                               </a>
                             </Link>
                           </div>
