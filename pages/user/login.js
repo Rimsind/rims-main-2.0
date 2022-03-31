@@ -161,7 +161,7 @@ const Login = () => {
                           <div className="social-login-inner mb-4">
                             <Link href="#">
                               <a className="border border-1 border-light p-3 bg-light rounded">
-                                <i className="fab fa-google fs-5"></i>
+                                <i className="fab fa-google fs-5 text-danger"></i>
                               </a>
                             </Link>
                           </div>
@@ -176,7 +176,7 @@ const Login = () => {
                                   border: "1px solid #1877f2",
                                 }}
                               >
-                                <i className="fab fa-facebook fs-5"></i>
+                                <i className="fab fa-facebook fs-5 text-dark"></i>
                               </a>
                             </Link>
                           </div>
