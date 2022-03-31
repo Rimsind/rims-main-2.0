@@ -115,16 +115,14 @@ const Login = () => {
               >
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <div
-                    className="back-home-btn text-start"
+                    className="back-home-btn text-center"
                     style={{
-                      backgroundColor: "aliceblue",
-                      paddingLeft: "10px",
                       borderRadius: "100px 30px 30px 100px",
                     }}
                   >
                     <div className="back-to-home-button mb-4">
                       <Link href="/">
-                        <a className="fs-6" style={{ color: "#00008b" }}>
+                        <a className="fs-6 text-warning">
                           <i className="fas fa-arrow-circle-left me-2 fs-6"></i>
                           Back To Home
                         </a>
