@@ -101,6 +101,7 @@ const ClinicalExamination = () => {
                       <div className="col-6 col-sm-12 col-md-6 col-lg-6 col-xl-6 appt-tab-btn">
                         <Link
                           href={`/doctors/appointments/subjective-details?id=${id}`}
+                          passHref
                         >
                           <div
                             className="tablinks diag-inner-content bg-light pt-4 pb-1 text-center border border-dark "

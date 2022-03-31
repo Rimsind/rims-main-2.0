@@ -15,6 +15,7 @@ const AuthNav = () => {
                 src="/assets/images/logo-dark.png"
                 width="80px"
                 height="60px"
+                alt=""
               />
             </a>
             <button
