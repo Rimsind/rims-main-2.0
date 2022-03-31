@@ -20,7 +20,7 @@ const MainHeader = () => {
           <div className="row align-items-center">
             <div className="col-6">
               <div className="left-topbar-number">
-                <a href="tel:+180030000123" className="fs-6">
+                <a href="tel:+180030000123" className="fs-6 text-light">
                   Emergency - 1800-30000-123
                 </a>
               </div>
@@ -33,9 +33,9 @@ const MainHeader = () => {
                       <i className="fas fa-lock"></i>
                     </div>
                     <div className="topbar-login-title">
-                      <a href="/doctors/login" className="fs-6">
-                        Doctor Login
-                      </a>
+                      <Link href="/doctors/login">
+                        <a className="fs-6">Doctor Login</a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -45,9 +45,9 @@ const MainHeader = () => {
                       <i className="fas fa-lock"></i>
                     </div>
                     <div className="topbar-login-title">
-                      <a href="/polyclinics/login" className="fs-6">
-                        Polyclinic Login
-                      </a>
+                      <Link href="/polyclinics/login">
+                        <a className="fs-6">Polyclinic Login</a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -57,9 +57,9 @@ const MainHeader = () => {
                       <i className="fas fa-lock"></i>
                     </div>
                     <div className="topbar-login-title">
-                      <a href="/nursing-homes/login" className="fs-6">
-                        Nursing Home Login
-                      </a>
+                      <Link href="/nursing-homes/login">
+                        <a className="fs-6">Nursing Home Login</a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -69,9 +69,9 @@ const MainHeader = () => {
                       <i className="fas fa-lock"></i>
                     </div>
                     <div className="topbar-login-title">
-                      <a href="#" className="fs-6">
-                        Hospital Login
-                      </a>
+                      <Link href="#">
+                        <a className="fs-6">Hospital Login</a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -132,121 +132,6 @@ const MainHeader = () => {
                   <span className="small-screen">Sample</span>
                 </a>
               </div>
-              {/* <div className="topbar-items">
-                {!!auth?.token && !!auth?.user ? (
-                  <>
-                    <li className="nav-item dropdown has-arrow logged-item">
-                      <a
-                        href="#"
-                        className="dropdown-toggle nav-link"
-                        data-bs-toggle="dropdown"
-                      >
-                        <span className="user-img">
-                          <Image
-                            className="rounded-circle "
-                            src={
-                              profile?.image?.url ||
-                              "/assets/images/alternate/alt-user-2.png"
-                            }
-                            width="35"
-                            height="35"
-                            alt="Darren Elder"
-                          />
-                        </span>
-                      </a>
-                      <div className="dropdown-menu dropdown-menu-end">
-                        <div className="user-header">
-                          <div className="avatar avatar-sm">
-                            <Image
-                              height="100"
-                              width="100"
-                              src={
-                                profile?.image?.url ||
-                                "/assets/images/alternate/alt-user-2.png"
-                              }
-                              alt="User Image"
-                              className="avatar-img rounded-circle"
-                            />
-                          </div>
-                          <div className="user-text">
-                            <h6>
-                              {profile?.first_name} {profile?.last_name}
-                              {profile?.name} {profile?.firstName}{" "}
-                              {profile?.lastName}
-                            </h6>
-                          </div>
-                        </div>
-                        {auth?.user?.role?.id === 6 ? (
-                          <>
-                            <Link href="/polyclinics/dashboard">
-                              <a className="dropdown-item">Dashboard</a>
-                            </Link>
-
-                            <button className="dropdown-item" onClick={logOut}>
-                              Logout
-                            </button>
-                          </>
-                        ) : (
-                          <></>
-                        )}
-                        {auth?.user?.role?.id === 7 ? (
-                          <>
-                            <Link href="/nursing-homes/dashboard">
-                              <a className="dropdown-item">Dashboard</a>
-                            </Link>
-
-                            <button className="dropdown-item" onClick={logOut}>
-                              Logout
-                            </button>
-                          </>
-                        ) : (
-                          <></>
-                        )}
-                        {auth?.user?.role?.id === 3 ? (
-                          <>
-                            <Link href="/doctors/dashboard">
-                              <a className="dropdown-item">Dashboard</a>
-                            </Link>
-                            <Link href="/doctors/profile-settings">
-                              <a className="dropdown-item">Profile Settings</a>
-                            </Link>
-                            <button className="dropdown-item" onClick={logOut}>
-                              Logout
-                            </button>
-                          </>
-                        ) : (
-                          <></>
-                        )}
-                        {auth?.user?.role?.id === 1 ? (
-                          <>
-                            <Link href="/user/">
-                              <a className="dropdown-item">Dashboard</a>
-                            </Link>
-                            <Link href="/user/profile-settings">
-                              <a className="dropdown-item">Profile Settings</a>
-                            </Link>
-                            <button className="dropdown-item" onClick={logOut}>
-                              Logout
-                            </button>
-                          </>
-                        ) : (
-                          <></>
-                        )}
-                      </div>
-                    </li>
-                  </>
-                ) : (
-                  <>
-                    <li className="nav-item ms-2">
-                      <Link href="/user/login">
-                        <button className="nav-link login_font btn bg-custom-login text-light">
-                          LOGIN / SIGNUP
-                        </button>
-                      </Link>
-                    </li>
-                  </>
-                )}
-              </div> */}
 
               {!!auth?.token && !!auth?.user ? (
                 <div className="profile-hover-dropdown">

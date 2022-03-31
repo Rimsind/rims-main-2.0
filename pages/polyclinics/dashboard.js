@@ -192,7 +192,7 @@ const Dashboard = () => {
                     <div className="row align-items-end">
                       <div className="col-3">
                         <div className="dashboard-card-icon">
-                          <i class="fas fa-person-booth"></i>
+                          <i className="fas fa-person-booth"></i>
                         </div>
                       </div>
                       <div className="col-9">
@@ -231,7 +231,7 @@ const Dashboard = () => {
                     <div className="row align-items-end">
                       <div className="col-3">
                         <div className="dashboard-card-icon">
-                          <i class="fas fa-burn"></i>
+                          <i className="fas fa-burn"></i>
                         </div>
                       </div>
                       <div className="col-9">
