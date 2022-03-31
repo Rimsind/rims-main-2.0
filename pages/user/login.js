@@ -146,14 +146,39 @@ const Login = () => {
                     >
                       Login
                     </button>
-                    <div className="forgot-password-sec my-4">
+                    <div className="forgot-password-sec mt-4 mb-1">
                       <p className="fs-6">Forgot Your Password</p>
                     </div>
-                    <div className="social-login">
+                    <div className="mb-4">
+                      <p>
+                        ------------------------------ OR
+                        ------------------------------
+                      </p>
+                    </div>
+                    <div className="social-login mb-3">
                       <div className="row align-items-center">
-                        <div className="col-6">
-                          <div className="social-login-inner">
-                            <i className="fab fa-google"></i>
+                        <div className="col-6 text-end">
+                          <div className="social-login-inner mb-4">
+                            <Link href="#">
+                              <a className="border border-1 border-light p-3 bg-light rounded">
+                                <i className="fab fa-google fs-5"></i>
+                              </a>
+                            </Link>
+                          </div>
+                        </div>
+                        <div className="col-6 text-start">
+                          <div className="social-login-inner mb-4">
+                            <Link href="#">
+                              <a
+                                className="p-3 rounded"
+                                style={{
+                                  backgroundColor: "#1877f2",
+                                  border: "1px solid #1877f2",
+                                }}
+                              >
+                                <i className="fab fa-facebook fs-5"></i>
+                              </a>
+                            </Link>
                           </div>
                         </div>
                       </div>
