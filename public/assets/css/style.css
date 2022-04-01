@@ -4044,3 +4044,60 @@ button.btn-custom-time-slot:visited {
 .topbar-login-title a:hover {
   color: #0de0fe;
 }
+
+/* Custom About Page Stylesheet Start Here */
+.section-about {
+  margin: 25px 25px 35px 25px;
+}
+p.about-title {
+  font-size: 80px;
+  font-weight: 700;
+  color: #fff;
+  font-family: Poppins;
+}
+span.about-title-span {
+  color: #02c9b8;
+}
+p.about-sub-title {
+  font-style: italic;
+}
+p.about-sub-title {
+  color: #fff;
+  font-style: italic;
+  font-size: 25px;
+}
+.section-about-feature {
+  background-color: #ebe9e9;
+  margin: 25px 25px 35px 25px;
+}
+.card-inner-icon i {
+  font-size: 60px;
+  color: #02c9b8;
+  margin-bottom: 15px;
+}
+p.card-inner-para {
+  font-size: 16px;
+  font-weight: 600;
+  color: #002c5d;
+}
+.section-about-comapny {
+  padding: 30px 0;
+}
+p.about-company-heading {
+  font-size: 50px;
+  font-weight: 600;
+  color: #002c5d;
+}
+p.about-company-sub-heading {
+  color: #002c5d;
+  font-style: italic;
+  font-size: 25px;
+  font-family: poppins;
+}
+p.about-company-first-para {
+  font-size: 15px;
+}
+span.first-para {
+  font-style: italic;
+}
+/* Custom About Page Stylesheet End Here */

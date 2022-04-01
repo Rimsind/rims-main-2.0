@@ -45,7 +45,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="col-6 col-sm-3 col-md-3 col-lg-2 col-xl-2 col-xxl-2 mt-3 mt-sm-3 mt-md-3 mt-lg-0 mt-xl-0 mt-xxl-0">
+            <div className="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 mt-3 mt-sm-3 mt-md-3 mt-lg-0 mt-xl-0 mt-xxl-0">
               <div className="patient_sec">
                 <p>For Patients</p>
                 <ul>
@@ -67,7 +67,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className=" col-6 col-sm-3 col-md-3 col-lg-2 col-xl-2 col-xxl-2 mt-3 mt-sm-3 mt-md-3 mt-lg-0 mt-xl-0 mt-xxl-0">
+            <div className=" col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 mt-3 mt-sm-3 mt-md-3 mt-lg-0 mt-xl-0 mt-xxl-0">
               <div className="doctor_sec">
                 <p>For Doctors</p>
                 <ul>
@@ -115,13 +115,13 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-2 col-xxl-2">
+            {/* <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-2 col-xxl-2">
               <div className="admn_btn">
                 <Link href="/administration">
                   <a className="btn btn-primary">Administrative</a>
                 </Link>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </footer>
