@@ -4100,4 +4100,40 @@ p.about-company-first-para {
 span.first-para {
   font-style: italic;
 }
+p.about-mission-vision-heading {
+  font-size: 35px;
+  font-weight: 600;
+  color: #002c5d;
+  line-height: 45px;
+}
+p.about-mission-vision-sub-heading {
+  font-size: 18px;
+  color: #02c9b8;
+  font-weight: 600;
+}
+.about-mission-vision-icon i {
+  color: #02c9b8;
+}
+p.about-mission-vision-icon-title {
+  color: #000;
+  font-weight: 600;
+}
+p.about-banner-content-heading-title {
+  color: white;
+  font-size: 60px;
+  font-weight: 600;
+  font-family: poppins;
+  line-height: 70px;
+}
+p.about-banner-content-sub-heading-title {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: poppins;
+}
+p.about-banner-content-para-content {
+  width: 500px;
+  color: white;
+  font-size: 16px;
+}
 /* Custom About Page Stylesheet End Here */
