@@ -38,7 +38,7 @@ const PolyclinicSideBar = (props) => {
                 <li className={props.status1}>
                   <Link href="/polyclinics/dashboard">
                     <a>
-                      <i className="fas fa-columns"></i>
+                      <i className="fas fa-tachometer"></i>
                       <span>Dashboard</span>
                     </a>
                   </Link>
@@ -46,7 +46,7 @@ const PolyclinicSideBar = (props) => {
                 <li className={props.status7}>
                   <Link href="/polyclinics/appointments">
                     <a>
-                      <i className="fas fa-bookmark"></i>
+                      <i className="fas fa-calendar-check"></i>
                       <span>Appointments</span>
                     </a>
                   </Link>
@@ -54,7 +54,7 @@ const PolyclinicSideBar = (props) => {
                 <li className={props.status2}>
                   <Link href="/polyclinics/manage-doctors">
                     <a>
-                      <i className="fas fa-bookmark"></i>
+                      <i className="fas fa-tasks-alt"></i>
                       <span>Manage Doctors</span>
                     </a>
                   </Link>
@@ -81,7 +81,7 @@ const PolyclinicSideBar = (props) => {
                 <li className={props.status5}>
                   <Link href="/polyclinics/privacy-settings">
                     <a>
-                      <i className="fas fa-lock"></i>
+                      <i className="fas fa-key"></i>
                       <span>Change Password</span>
                     </a>
                   </Link>
@@ -90,7 +90,7 @@ const PolyclinicSideBar = (props) => {
                 <li className={props.status6}>
                   <Link href="/polyclinics/advance-settings">
                     <a>
-                      <i className="fas fa-user-cog"></i>
+                      <i className="fas fa-cogs"></i>
                       <span>Advance Settings</span>
                     </a>
                   </Link>

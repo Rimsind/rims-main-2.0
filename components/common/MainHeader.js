@@ -101,7 +101,7 @@ const MainHeader = () => {
               <div className="topbar-items item-none">
                 <a className="items-icon me-3 fs-6" href="#">
                   <i className="fad fa-phone fs-5 fw-bold text-danger me-2"></i>
-                  <span className="large-screen">987-564-231</span>
+                  <span className="large-screen">8597-3944-14</span>
                   <span className="small-screen">Call</span>
                 </a>
               </div>

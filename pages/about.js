@@ -294,7 +294,7 @@ const About = () => {
           background: "url(/assets/images/background_image_03.jpg)",
           height: "500px",
           backgroundSize: "cover",
-          margin: "25px 25px 35px 35px",
+          margin: "25px 25px 35px 25px",
         }}
       >
         <div className="container">
