@@ -9,25 +9,23 @@ const MainHeader = () => {
   return (
     <>
       <section
-        className="upper-main-mrq bg-primary"
+        className="upper-main-mrq h-100 py-3"
         style={{
           background: "linear-gradient(223deg, #73042b 60%, #15558d 50%)",
-          height: "45px",
-          paddingTop: "9px",
         }}
       >
         <div className="container-fluid">
           <div className="row align-items-center">
-            <div className="col-6">
+            <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-5 col-xxl-5 mb-3 mb-sm-3 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0">
               <div className="left-topbar-number">
                 <a href="tel:+180030000123" className="fs-6 text-light">
                   Emergency - 1800-30000-123
                 </a>
               </div>
             </div>
-            <div className="col-6">
+            <div className="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-7 col-xxl-7 mb-2 mb-sm-2 mb-md-2 mb-lg-0 mb-xl-0 mb-xxl-0">
               <div className="row align-items-center justify-content-center">
-                <div className="col-3 border-end border-1 border-light">
+                <div className="col-5 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 col-xxl-3 border-end border-1 border-light mb-2 mb-sm-2 mb-md-2 mb-lg-0 mb-xl-0 mb-xxl-0">
                   <div className="topbar-login d-flex align-items-baseline text-light">
                     <div className="topbar-login-icon me-2">
                       <i className="fas fa-lock"></i>
@@ -39,7 +37,7 @@ const MainHeader = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-3 border-end border-1 border-light">
+                <div className="col-7 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 border-end border-1 border-light mb-2 mb-sm-2 mb-md-2 mb-lg-0 mb-xl-0 mb-xxl-0">
                   <div className="topbar-login d-flex align-items-baseline text-light">
                     <div className="topbar-login-icon me-2">
                       <i className="fas fa-lock"></i>
@@ -51,7 +49,7 @@ const MainHeader = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-3 border-end border-1 border-light">
+                <div className="col-7 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 border-end border-1 border-light">
                   <div className="topbar-login d-flex align-items-baseline text-light">
                     <div className="topbar-login-icon me-2">
                       <i className="fas fa-lock"></i>
@@ -63,7 +61,7 @@ const MainHeader = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-3">
+                <div className="col-5 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3">
                   <div className="topbar-login d-flex align-items-baseline text-light">
                     <div className="topbar-login-icon me-2">
                       <i className="fas fa-lock"></i>

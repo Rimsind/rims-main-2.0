@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Copyright from "./Copyright";
 const Footer = () => {
   return (
     <>
@@ -10,9 +11,9 @@ const Footer = () => {
           backgroundColor: "#15558d",
         }}
       >
-        <div className="container-fluid">
+        <div className="container">
           <div className="row align-items-end">
-            <div className="col-sm-12 col-md-12 col-lg-2 col-xl-2 col-xxl-2 ">
+            <div className="col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3 ">
               <div className="text-center">
                 <div className="footer_logo">
                   <Image
@@ -45,300 +46,142 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-10 col-xl-10 col-xxl-10">
+            <div className="col-lg-9 col-xl-9 col-xxl-9">
               <div className="row g-0">
-                <div className="col-6 col-sm-3 col-md-3 col-lg-1 col-xl-1 col-xxl-1 ">
+                <div className="col-6 col-sm-3 col-md-3 col-lg-2 col-xl-2 col-xxl-2 ">
                   <div className="patient_sec">
                     <p>About</p>
                     <ul style={{ marginLeft: "-35px" }}>
                       <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Contact Us
-                        </a>
+                        <Link href="/contact">
+                          <a style={{ fontSize: "14px" }}>Contact Us</a>
+                        </Link>
                       </li>
                       <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          About Us
-                        </a>
+                        <Link href="/about">
+                          <a style={{ fontSize: "14px" }}>About Us</a>
+                        </Link>
                       </li>
                       <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Career
-                        </a>
+                        <Link href="/">
+                          <a style={{ fontSize: "14px" }}>Career</a>
+                        </Link>
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div className="col-6 col-sm-3 col-md-3 col-lg-1 col-xl-1 col-xxl-1">
+                <div className="col-6 col-sm-3 col-md-3 col-lg-2 col-xl-2 col-xxl-2">
                   <div className="patient_sec">
                     <p>Help</p>
                     <ul style={{ marginLeft: "-35px" }}>
                       <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Payment
-                        </a>
+                        <Link href="/">
+                          <a style={{ fontSize: "14px" }}>Payment</a>
+                        </Link>
+                      </li>
+
+                      <li>
+                        <Link href="/">
+                          <a style={{ fontSize: "14px" }}>Cancellation</a>
+                        </Link>
                       </li>
                       <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Shipping
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Return
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Cancellation
-                        </a>
+                        <Link href="/">
+                          <a style={{ fontSize: "14px" }}>Complains</a>
+                        </Link>
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div className="col-6 col-sm-3 col-md-3 col-lg-1 col-xl-1 col-xxl-1">
+                <div className="col-6 col-sm-3 col-md-3 col-lg-2 col-xl-2 col-xxl-2">
                   <div className="patient_sec">
                     <p>Policy</p>
                     <ul style={{ marginLeft: "-35px" }}>
                       <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Terms Condition
-                        </a>
+                        <Link href="/terms-condition">
+                          <a style={{ fontSize: "14px" }}>Terms & Conditions</a>
+                        </Link>
                       </li>
 
                       <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Privacy Policy
-                        </a>
+                        <Link href="/privacy-policy">
+                          <a style={{ fontSize: "14px" }}>Privacy Policy</a>
+                        </Link>
                       </li>
                       <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Disclaimer
-                        </a>
+                        <Link href="/">
+                          <a style={{ fontSize: "14px" }}>Refund</a>
+                        </Link>
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div className="col-6 col-sm-3 col-md-3 col-lg-1 col-xl-1 col-xxl-1 ">
+                <div className="col-6 col-sm-3 col-md-3 col-lg-2 col-xl-2 col-xxl-2 ">
                   <div className="patient_sec">
-                    <p>Social</p>
+                    <p>Quick Links</p>
                     <ul style={{ marginLeft: "-35px" }}>
                       <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Facebook
-                        </a>
+                        <Link href="/doctors/login">
+                          <a style={{ fontSize: "14px" }}>Doctor Login</a>
+                        </Link>
                       </li>
                       <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Twitter
-                        </a>
+                        <Link href="/polyclinics/login">
+                          <a style={{ fontSize: "14px" }}>Polyclinic Login</a>
+                        </Link>
                       </li>
                       <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          YouTube
-                        </a>
+                        <Link href="/nursing-homes/login">
+                          <a style={{ fontSize: "14px" }}>Nursing Home Login</a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/">
+                          <a style={{ fontSize: "14px" }}>Hospital Login</a>
+                        </Link>
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div className=" col-6 col-sm-3 col-md-3 col-lg-1 col-xl-1 col-xxl-1">
+                <div className=" col-6 col-sm-3 col-md-3 col-lg-4 col-xl-4 col-xxl-4">
                   <div className="doctor_sec">
-                    <p>For Patients</p>
+                    <p>Registered Office</p>
                     <ul style={{ marginLeft: "-35px" }}>
-                      <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Search Doctors
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Login
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Register
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Booking
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Account
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className=" col-6 col-sm-3 col-md-3 col-lg-1 col-xl-1 col-xxl-1">
-                  <div className="doctor_sec">
-                    <p>For Doctors</p>
-                    <ul style={{ marginLeft: "-35px" }}>
-                      <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Login
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Register
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Account
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className=" col-6 col-sm-3 col-md-3 col-lg-1 col-xl-1 col-xxl-1">
-                  <div className="doctor_sec">
-                    <p>Polyclinic</p>
-                    <ul style={{ marginLeft: "-35px" }}>
-                      <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Login
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Register
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Account
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className=" col-6 col-sm-3 col-md-3 col-lg-1 col-xl-1 col-xxl-1">
-                  <div className="doctor_sec">
-                    <p>Nursing Home</p>
-                    <ul style={{ marginLeft: "-35px" }}>
-                      <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Login
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Register
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Account
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className=" col-6 col-sm-3 col-md-3 col-lg-1 col-xl-1 col-xxl-1">
-                  <div className="doctor_sec">
-                    <p>Hospital</p>
-                    <ul style={{ marginLeft: "-35px" }}>
-                      <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Login
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Register
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Account
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className=" col-6 col-sm-3 col-md-3 col-lg-1 col-xl-1 col-xxl-1">
-                  <div className="doctor_sec">
-                    <p>Pharmacy</p>
-                    <ul style={{ marginLeft: "-35px" }}>
-                      <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Order
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Wishlist
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" style={{ fontSize: "14px" }}>
-                          Account
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className=" col-6 col-sm-3 col-md-3 col-lg-2 col-xl-2 col-xxl-2">
-                  <div className="doctor_sec">
-                    <p>Contact Us</p>
-                    <ul>
                       <li>
                         <i className="fas fa-map-marker-alt topbar_lft_icn pe-2"></i>
-                        <a href="#" className="topbar_links">
+                        <a
+                          className="topbar_links"
+                          style={{ fontSize: "14px" }}
+                        >
                           Module-208, Webel IT Park, City Center, Haldia West
                           Bengal, 721657
                         </a>
                       </li>
                       <li>
                         <i className="fas fa-mobile topbar_lft_icn pe-2"></i>
-                        <a href="#" className="topbar_links">
-                          +91 8597-3944-14
-                        </a>
+                        <Link href="tel:+918597394414">
+                          <a
+                            className="topbar_links"
+                            style={{ fontSize: "14px" }}
+                          >
+                            +91 8597-3944-14
+                          </a>
+                        </Link>
                       </li>
                       <li>
                         <i className="far fa-envelope topbar_lft_icn pe-2"></i>
-                        <a href="#" className="topbar_links">
-                          rimsind@gmail.com
-                        </a>
+                        <Link href="mailto:rimsind@gmail.com">
+                          <a
+                            className="topbar_links"
+                            style={{ fontSize: "14px" }}
+                          >
+                            rimsind@gmail.com
+                          </a>
+                        </Link>
                       </li>
                     </ul>
                   </div>
                 </div>
-                {/* <div className=" col-6 col-sm-3 col-md-3 col-lg-2 col-xl-2 col-xxl-2">
-                  <div className="doctor_sec">
-                    <p>Contact Us</p>
-                    <ul>
-                      <li>
-                        <i className="fas fa-map-marker-alt topbar_lft_icn pe-2"></i>
-                        <a href="#" className="topbar_links">
-                          Module-208, Webel IT Park, City Center, Haldia West
-                          Bengal, 721657
-                        </a>
-                      </li>
-                      <li>
-                        <i className="fas fa-mobile topbar_lft_icn pe-2"></i>
-                        <a href="#" className="topbar_links">
-                          +91 8597-3944-14
-                        </a>
-                      </li>
-                      <li>
-                        <i className="far fa-envelope topbar_lft_icn pe-2"></i>
-                        <a href="#" className="topbar_links">
-                          rimsind@gmail.com
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div> */}
               </div>
             </div>
             {/* <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-2 col-xxl-2">
@@ -351,6 +194,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
+      <Copyright />
     </>
   );
 };

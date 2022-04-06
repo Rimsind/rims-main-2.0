@@ -239,13 +239,13 @@ ul {
   padding: 0 5px;
 }
 
-.footer .patient_sec p,
+/* .footer .patient_sec p,
 .footer .doctor_sec p,
 .footer .contact_info p {
   color: #fff;
   font-family: "Poppins", sans-serif;
   font-size: 15px;
-}
+} */
 
 .footer .patient_sec ul,
 .footer .doctor_sec ul,

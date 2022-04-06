@@ -414,9 +414,9 @@ html::-webkit-scrollbar-thumb:active {
 .footer .patient_sec p,
 .footer .doctor_sec p,
 .footer .contact_info p {
-  color: #fff;
+  color: #b7b7b7;
   font-family: "Poppins", sans-serif;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .footer .patient_sec ul,
@@ -4135,5 +4135,9 @@ p.about-banner-content-para-content {
   width: 500px;
   color: white;
   font-size: 16px;
+}
+/* Slider Arrow Display None */
+button.slick-arrow {
+  display: none !important;
 }
 /* Custom About Page Stylesheet End Here */
