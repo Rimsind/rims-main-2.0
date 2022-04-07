@@ -11,13 +11,13 @@ const BookingSuccess = (props) => {
             <div className="success_content text-center mt-3">
               <p className="fs-4">Appointment Booked Successfully!</p>
               <p className="fs-6 lh-sm">
-                Appointment booked with{" "}
+                Appointment booked with
                 <b>
                   Dr. {props.doctorFirstName} {props.doctorLastName}
-                </b>{" "}
+                </b>
               </p>
               <p className="fs-6 lh-sm">
-                On{" "}
+                On
                 <b>
                   {props.date} Time : {props.timeSlot}
                 </b>
