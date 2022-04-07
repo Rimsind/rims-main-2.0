@@ -175,7 +175,7 @@ const Footer = () => {
                             className="topbar_links"
                             style={{ fontSize: "14px" }}
                           >
-                            rimsind@gmail.com
+                            rimsind21@gmail.com
                           </a>
                         </Link>
                       </li>
