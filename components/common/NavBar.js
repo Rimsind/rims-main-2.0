@@ -85,9 +85,11 @@ const NavBar = () => {
         <section className="main-header">
           <nav className="navbar navbar-expand-lg navbar-light custom-bg">
             <div className="container-fluid">
-              <a className="nav-link navbar-link find-doctor fs-6 text-white">
-                Find Doctor
-              </a>
+              <Link href="/doctors">
+                <a className="nav-link navbar-link find-doctor fs-6 text-white">
+                  Find Doctor
+                </a>
+              </Link>
               <button
                 className="navbar-toggler"
                 type="button"
@@ -158,17 +160,32 @@ const NavBar = () => {
                     </Link>
                   </li>
                 </ul>
-                <form className="d-flex">
-                  <input
-                    className="form-control me-2"
-                    type="search"
-                    placeholder="Search"
-                    aria-label="Search"
-                  />
-                  <button className="btn btn-outline-success" type="submit">
-                    Search
-                  </button>
-                </form>
+                <div className="filter-widget mb-0">
+                  <select
+                    className="form-select"
+                    aria-label="Default select example"
+                    // onChange={(e) => setSelectedState(e.target.value)}
+                  >
+                    <option selected disabled>
+                      Select Location
+                    </option>
+                    <optgroup label="Locate Yourself">
+                      <option value="useLocation" style={{ color: "blue" }}>
+                        Use my location
+                      </option>
+                      <option value="entireCity" style={{ color: "blue" }}>
+                        Search in entire Haldia
+                      </option>
+                    </optgroup>
+                    <optgroup label="Popular Cities">
+                      <option value="Haldia">Haldia</option>
+                      <option value="Township">Township</option>
+                      <option value="Durgachak">Durgachak</option>
+                      <option value="Tamluk">Tamluk</option>
+                      <option value="Kathi">Kathi</option>
+                    </optgroup>
+                  </select>
+                </div>
               </div>
             </div>
           </nav>
