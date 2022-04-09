@@ -35,7 +35,7 @@ const About = () => {
       <section className="section-about-feature pt-4">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-3">
+            <div className="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
               <div className="card">
                 <div className="card-body">
                   <div className="card-inner-icon">
@@ -50,7 +50,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="col-3">
+            <div className="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
               <div className="card">
                 <div className="card-body">
                   <div className="card-inner-icon">
@@ -65,7 +65,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="col-3">
+            <div className="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
               <div className="card">
                 <div className="card-body">
                   <div className="card-inner-icon">
@@ -80,7 +80,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="col-3">
+            <div className="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
               <div className="card">
                 <div className="card-body">
                   <div className="card-inner-icon">
@@ -102,7 +102,7 @@ const About = () => {
         <div className="container">
           <div className="about-company">
             <div className="row align-items-center">
-              <div className="col-7">
+              <div className="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 col-xxl-7">
                 <div className="about-company-inner-left-content">
                   <p className="about-company-heading">
                     Comprehensive range of <br />
@@ -143,7 +143,7 @@ const About = () => {
                 </div>
               </div>
 
-              <div className="col-5">
+              <div className="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5 col-xxl-5">
                 <div className="about-company-inner-right-content">
                   <Image
                     src="/assets/images/about-company-inner-image.jpg"
@@ -164,7 +164,7 @@ const About = () => {
               the customer or patient. There is much other innovative design in
               place in this software where we have tried to ensure that and
               provider and the customer get their maximum benefit from it such
-              as patient does not have to call the doctor’s office for the
+              as patient does not have to call the doctor's office for the
               appointment, medical supplies, doctor,s does not have to wait for
               the patient, patient or a family member does not have to wait in
               pharmacy for medicine so there are many benefits we have put
@@ -177,7 +177,7 @@ const About = () => {
         <div className="container">
           <div className="about-mission-vision">
             <div className="row align-items-center">
-              <div className="col-5">
+              <div className="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5 col-xxl-5">
                 <div className="about-company-inner-right-content">
                   <Image
                     src="/assets/images/hero_image_02.jpg"
@@ -187,7 +187,7 @@ const About = () => {
                   />
                 </div>
               </div>
-              <div className="col-7">
+              <div className="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 col-xxl-7">
                 <div className="about-mission-vision-inner-left-content mb-5">
                   <p className="about-mission-vision-sub-heading">
                     We care for the whole person
@@ -199,7 +199,7 @@ const About = () => {
                   </p>
                 </div>
                 <div className="row">
-                  <div className="col-6">
+                  <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                     <div className="about-mission-vision-icon mb-3">
                       <i className="far fa-crosshairs fs-2"></i>
                     </div>
@@ -214,7 +214,7 @@ const About = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="col-6">
+                  <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                     <div className="about-mission-vision-icon mb-3">
                       <i className="far fa-eye fs-2"></i>
                     </div>
@@ -324,7 +324,7 @@ const About = () => {
       <section className="section-about-faq-service mb-5">
         <div className="container">
           <div className="row">
-            <div className="col-6">
+            <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
               <div className="about-faq">
                 <div className="accordion" id="accordionExample">
                   <div className="accordion-item">
@@ -548,10 +548,10 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="col-6">
+            <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
               <div className="company-services mb-4">
                 <div className="row align-items-start">
-                  <div className="col-2">
+                  <div className="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                     <div className="company-service-icon">
                       <i
                         className="fas fa-ambulance py-4 px-4 rounded fs-3 text-light"
@@ -559,7 +559,7 @@ const About = () => {
                       ></i>
                     </div>
                   </div>
-                  <div className="col-10">
+                  <div className="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
                     <p className="company-service-title fs-5 fw-bold">
                       24/7 Ambulance Service
                     </p>
@@ -575,7 +575,7 @@ const About = () => {
               </div>
               <div className="company-services mb-4">
                 <div className="row align-items-start">
-                  <div className="col-2">
+                  <div className="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                     <div className="company-service-icon">
                       <i
                         className="fab fa-medrt py-4 px-4 rounded fs-3 text-light"
@@ -583,7 +583,7 @@ const About = () => {
                       ></i>
                     </div>
                   </div>
-                  <div className="col-10">
+                  <div className="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
                     <p className="company-service-title fs-5 fw-bold">
                       Latest Technology
                     </p>
@@ -599,7 +599,7 @@ const About = () => {
               </div>
               <div className="company-services mb-4">
                 <div className="row align-items-start">
-                  <div className="col-2">
+                  <div className="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                     <div className="company-service-icon">
                       <i
                         className="fas fa-laptop-medical py-4 px-4 rounded fs-3 text-light"
@@ -607,7 +607,7 @@ const About = () => {
                       ></i>
                     </div>
                   </div>
-                  <div className="col-10">
+                  <div className="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
                     <p className="company-service-title fs-5 fw-bold">
                       Online Doctor Treatments
                     </p>
