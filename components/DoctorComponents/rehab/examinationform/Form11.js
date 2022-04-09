@@ -202,9 +202,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>0-120</td>
                       <td>0-120</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -218,7 +218,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("hip_flexion_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -252,9 +252,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>0-20</td>
                       <td>0-20</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -268,7 +268,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("hip_extension_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -302,9 +302,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>0-45</td>
                       <td>0-45</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -318,7 +318,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("hip_abduction_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -353,9 +353,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>0-45</td>
                       <td>0-45</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -369,7 +369,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("hip_externalRotation_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -404,9 +404,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>0-30</td>
                       <td>0-30</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -420,7 +420,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("hip_internalRotation_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -463,9 +463,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>0-145</td>
                       <td>0-145</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -479,7 +479,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("knee_flexion_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -513,9 +513,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>145-0</td>
                       <td>145-0</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -529,7 +529,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("knee_extension_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -563,9 +563,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>0-90</td>
                       <td>0-90</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -579,7 +579,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("knee_straightLegRaise_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -622,9 +622,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>0-20</td>
                       <td>0-20</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -638,7 +638,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("ankle_dorsiflexion_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -673,9 +673,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>0-50</td>
                       <td>0-50</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -689,7 +689,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("ankle_planterflexion_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -723,9 +723,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>0-15</td>
                       <td>0-15</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -739,7 +739,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("ankle_inversion_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -773,9 +773,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>0-20</td>
                       <td>0-20</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -789,7 +789,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("ankle_eversion_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -831,9 +831,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>40-70</td>
                       <td>40-70</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -847,7 +847,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("cervical_flexion_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -882,9 +882,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>60-80</td>
                       <td>60-80</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -898,7 +898,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("cervical_extension_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -932,9 +932,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>40-50</td>
                       <td>40-50</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -948,7 +948,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("cervical_sideflexion_left_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -982,9 +982,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>40-50</td>
                       <td>40-50</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -998,7 +998,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("cervical_sideflexion_rigth_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1032,9 +1032,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>70-90</td>
                       <td>70-90</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -1048,7 +1048,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("cervical_rotation_left_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1082,9 +1082,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>70-90</td>
                       <td>70-90</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -1098,7 +1098,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("cervical_rotation_rigth_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1140,9 +1140,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>20-30</td>
                       <td>20-30</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -1156,7 +1156,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("thoracic_flexion_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1191,9 +1191,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>25-35</td>
                       <td>25-35</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -1207,7 +1207,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("thoracic_extension_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1241,9 +1241,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>20-25</td>
                       <td>20-25</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -1257,7 +1257,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("thoracic_sideFlexion_left_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1291,9 +1291,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>20-25</td>
                       <td>20-25</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -1307,7 +1307,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("thoracic_sideFlexion_right_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1341,9 +1341,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>5-10</td>
                       <td>5-10</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -1357,7 +1357,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("thoracic_rotation_left_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1391,9 +1391,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>5-10</td>
                       <td>5-10</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -1407,7 +1407,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("thoracic_rotation_right_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1441,9 +1441,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>30-40</td>
                       <td>30-40</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -1457,7 +1457,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("thoracic_kyposis_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1499,9 +1499,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>15-30</td>
                       <td>15-30</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -1515,7 +1515,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("lumbar_sacralinclination_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1550,9 +1550,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>25-40</td>
                       <td>25-40</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -1566,7 +1566,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("lumbar_standinglordosis_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1601,9 +1601,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>45-65</td>
                       <td>45-65</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -1617,7 +1617,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("lumbar_standinghipflexion_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1651,9 +1651,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>40-75</td>
                       <td>40-75</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -1667,7 +1667,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("lumbar_flexionAMA_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1701,9 +1701,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>20-35</td>
                       <td>20-35</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -1717,7 +1717,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("lumbar_extensionAMA_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1751,9 +1751,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>0-20</td>
                       <td>0-20</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -1767,7 +1767,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("lumbar_flexion_curveangle_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1801,9 +1801,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>60-75</td>
                       <td>60-75</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -1817,7 +1817,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("lumbar_extention_curveangle_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1851,9 +1851,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>15-35</td>
                       <td>15-35</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -1867,7 +1867,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("lumbar_sideflexion_left_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1901,9 +1901,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>15-35</td>
                       <td>15-35</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -1917,7 +1917,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("lumbar_sideflexion_right_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1951,9 +1951,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>10-20</td>
                       <td>10-20</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -1967,7 +1967,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("lumbar_rotation_left_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -2001,9 +2001,9 @@ const Form11 = ({ appointmentId }) => {
                       </td>
                       <td>10-20</td>
                       <td>10-20</td>
-                      <td>
+                      <td className="px-3">
                         <input
-                          className="form-control"
+                          className="form-control border-1 border-dark"
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
@@ -2017,7 +2017,7 @@ const Form11 = ({ appointmentId }) => {
                           {...register("lumbar_rotation_right_score")}
                         />
                       </td>
-                      <td>
+                      <td className="px-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
