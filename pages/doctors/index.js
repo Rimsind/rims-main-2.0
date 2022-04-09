@@ -8,11 +8,11 @@ const Index = () => {
   const { data: doctors } = useSWR(`${apiUrl}/doctors`, fetcher);
   const { data: specialties } = useSWR(`${apiUrl}/specialties`, fetcher);
   const { data: locations } = useSWR(`${apiUrl}/locations`, fetcher);
-  const [name, setName] = useState("");
-  const [specialty, setSpecialty] = useState("");
-  const [gender, setGender] = useState("");
-  const [city, setCity] = useState("");
-  const [selectedState, setSelectedState] = useState("");
+  const [name, setName] = useState;
+  const [specialty, setSpecialty] = useState;
+  const [gender, setGender] = useState;
+  const [city, setCity] = useState;
+  const [selectedState, setSelectedState] = useState;
 
   const filteredCity = locations?.filter((items) => {
     if (selectedState === "") {
@@ -22,12 +22,12 @@ const Index = () => {
     }
   });
   const resetState = () => {
-    setName("");
-    setSpecialty("");
-    setGender("");
-    setSpecialty("");
-    setSelectedState("");
-    setCity("");
+    setName;
+    setSpecialty;
+    setGender;
+    setSpecialty;
+    setSelectedState;
+    setCity;
   };
 
   return (

@@ -160,7 +160,7 @@ const NavBar = () => {
                     </Link>
                   </li>
                 </ul>
-                <div className="filter-widget mb-0">
+                {/* <div className="filter-widget mb-0">
                   <select
                     className="form-select"
                     aria-label="Default select example"
@@ -185,7 +185,7 @@ const NavBar = () => {
                       <option value="Kathi">Kathi</option>
                     </optgroup>
                   </select>
-                </div>
+                </div> */}
               </div>
             </div>
           </nav>
