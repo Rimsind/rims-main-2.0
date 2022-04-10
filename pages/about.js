@@ -164,7 +164,7 @@ const About = () => {
               the customer or patient. There is much other innovative design in
               place in this software where we have tried to ensure that and
               provider and the customer get their maximum benefit from it such
-              as patient does not have to call the doctor's office for the
+              as patient does not have to call the doctor&apos;s office for the
               appointment, medical supplies, doctor,s does not have to wait for
               the patient, patient or a family member does not have to wait in
               pharmacy for medicine so there are many benefits we have put
