@@ -37,7 +37,7 @@ const NursingSideBar = (props) => {
                 <li className={props.status1}>
                   <Link href="/nursing-homes/dashboard">
                     <a>
-                      <i className="fas fa-columns"></i>
+                      <i className="fas fa-tachometer"></i>
                       <span>Dashboard</span>
                     </a>
                   </Link>
@@ -46,7 +46,7 @@ const NursingSideBar = (props) => {
                 <li className={props.status2}>
                   <Link href="/nursing-homes/manage-doctors">
                     <a>
-                      <i className="fas fa-bookmark"></i>
+                      <i className="fas fa-tasks-alt"></i>
                       <span>Manage Doctors</span>
                     </a>
                   </Link>
@@ -55,7 +55,7 @@ const NursingSideBar = (props) => {
                 <li className={props.status3}>
                   <Link href="/nursing-homes/page-content-editor">
                     <a>
-                      <i className="fas fa-list-alt"></i>
+                      <i className="fas fa-pencil-alt"></i>
                       <span>Page Content Editor</span>
                     </a>
                   </Link>
@@ -73,7 +73,7 @@ const NursingSideBar = (props) => {
                 <li className={props.status5}>
                   <Link href="/nursing-homes/privacy-settings">
                     <a>
-                      <i className="fas fa-lock"></i>
+                      <i className="fas fa-key"></i>
                       <span>Change Password</span>
                     </a>
                   </Link>
@@ -82,7 +82,7 @@ const NursingSideBar = (props) => {
                 <li className={props.status6}>
                   <Link href="/nursing-homes/advance-settings">
                     <a>
-                      <i className="fas fa-user-cog"></i>
+                      <i className="fas fa-cogs"></i>
                       <span>Advance Settings</span>
                     </a>
                   </Link>

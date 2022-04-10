@@ -60,7 +60,7 @@ const UserNav = (props) => {
                 <li className={props.status1}>
                   <Link href="/user/">
                     <a>
-                      <i className="fas fa-columns"></i>
+                      <i className="fas fa-tachometer"></i>
                       <span>Dashboard</span>
                     </a>
                   </Link>
@@ -68,7 +68,7 @@ const UserNav = (props) => {
                 <li className={props.status2}>
                   <Link href="/user/appointments">
                     <a>
-                      <i className="fas fa-bookmark"></i>
+                      <i className="fas fa-calendar-check"></i>
                       <span>My Appointments</span>
                     </a>
                   </Link>
@@ -93,7 +93,7 @@ const UserNav = (props) => {
                 <li className={props.status5}>
                   <Link href="/user/medical-information">
                     <a href="medical-info.html">
-                      <i className="fas fa-user-cog"></i>
+                      <i className="fas fa-notes-medical"></i>
                       <span>Medical Information</span>
                     </a>
                   </Link>
@@ -102,7 +102,7 @@ const UserNav = (props) => {
                 <li className={props.status6}>
                   <Link href="/user/privacy-settings">
                     <a>
-                      <i className="fas fa-lock"></i>
+                      <i className="fas fa-key"></i>
                       <span>Change Password</span>
                     </a>
                   </Link>
@@ -110,7 +110,7 @@ const UserNav = (props) => {
                 <li className={props.status7}>
                   <Link href="/user/advance-settings">
                     <a>
-                      <i className="fas fa-user-cog"></i>
+                      <i className="fas fa-cogs"></i>
                       <span>Advance Settings</span>
                     </a>
                   </Link>

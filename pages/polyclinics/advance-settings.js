@@ -1,5 +1,4 @@
 import { BreadCrums, DeleteAccount } from "components/common/index";
-
 import { withAuth } from "helpers/withAuth";
 import { useAuth } from "context";
 import { apiUrl } from "config/api";
@@ -11,7 +10,6 @@ import { toast, Slide } from "react-toastify";
 import { PolyclinicSideBar } from "components/common";
 const AdvanceSettings = () => {
   const { auth } = useAuth();
-
   const { data } = useSWR(
     `${apiUrl}/polyclinics/${auth?.user?.profileId}`,
     async (url) => {
@@ -102,7 +100,6 @@ const AdvanceSettings = () => {
           <div className="container-fluid">
             <div className="row">
               <PolyclinicSideBar data={data} status6="active" />
-
               <div className="col-md-12 col-sm-12 col-lg-8 col-xl-9">
                 {dataLenght === 0 || !dataLenght ? (
                   <div className="card">

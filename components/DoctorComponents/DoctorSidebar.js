@@ -71,7 +71,7 @@ const DoctorSidebar = (props) => {
                 <li className={props.status1}>
                   <Link href="/doctors/dashboard">
                     <a>
-                      <i className="fas fa-columns"></i>
+                      <i className="fas fa-tachometer"></i>
                       <span>Dashboard</span>
                     </a>
                   </Link>
@@ -79,7 +79,7 @@ const DoctorSidebar = (props) => {
                 <li className={props.status2}>
                   <Link href="/doctors/appointments/">
                     <a>
-                      <i className="fas fa-bookmark"></i>
+                      <i className="fas fa-calendar-check"></i>
                       <span>My Appointments</span>
                     </a>
                   </Link>
@@ -105,7 +105,7 @@ const DoctorSidebar = (props) => {
                 <li className={props.status6}>
                   <Link href="/doctors/privacy-settings">
                     <a>
-                      <i className="fas fa-lock"></i>
+                      <i className="fas fa-key"></i>
                       <span>Change Password</span>
                     </a>
                   </Link>
@@ -113,17 +113,17 @@ const DoctorSidebar = (props) => {
                 <li className={props.status7}>
                   <Link href="/doctors/advance-settings">
                     <a>
-                      <i className="fas fa-user-cog"></i>
+                      <i className="fas fa-cogs"></i>
                       <span>Advance Settings</span>
                     </a>
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <button className="btn" onClick={logOut}>
                     <i className="fas fa-sign-out-alt ms-2 me-2 text-danger"></i>
                     <span className="text-danger">Logout</span>
                   </button>
-                </li>
+                </li> */}
               </ul>
             </nav>
           </div>
