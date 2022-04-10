@@ -21,7 +21,8 @@ const Index = () => {
   const { data: doctors } = useSWR(`${apiUrl}/doctors`, fetcher);
   const { data: polyclinics } = useSWR(`${apiUrl}/polyclinics`, fetcher);
   const { data: nursingHomes } = useSWR(`${apiUrl}/nursing-homes`, fetcher);
-
+  const { data: hospitals } = useSWR(`${apiUrl}/hospitals`, fetcher);
+  console.log(hospitals);
   const breakPoints = [
     { width: 1, itemsToShow: 1 },
     { width: 550, itemsToShow: 3, itemsToScroll: 1 },
@@ -136,193 +137,7 @@ const Index = () => {
             </div>
           </div>
         </section>
-        {/* Banner down categories section end here */}
 
-        {/* <section className="section section-about-filter">
-          <div className="container">
-            <div className="row align-items-center">
-              <div className="col-12 col-md-12 col-lg-8 col-xl-8 col-xxl-8">
-                <div className="left-about">
-                  <div className="row">
-                    <div className="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mt-3 mt-md-3 mt-lg-0 mt-xl-0 mt-xxl-0">
-                      <p className="fs-2">
-                        Safety of your data is our
-                        <br />
-                        <span className="fw-bold">top priority.</span>
-                      </p>
-                      <ul className="fa-ul">
-                        <li className="lh-lg">
-                          <span className="fa-li">
-                            <i className="fas fa-check text-primary"></i>
-                          </span>
-                          Multi-level security checks
-                        </li>
-                        <li className="lh-lg">
-                          <span className="fa-li">
-                            <i className="fas fa-check text-primary"></i>
-                          </span>
-                          Multiple data backups
-                        </li>
-                        <li className="lh-lg">
-                          <span className="fa-li">
-                            <i className="fas fa-check text-primary"></i>
-                          </span>
-                          Stringent data privacy policies
-                        </li>
-                      </ul>
-                      <div className="about-btn-new mb-3">
-                        <button className="btn btn-primary" type="button">
-                          Read More
-                        </button>
-                      </div>
-                      <div className="secure-batch mt-5">
-                        <div className="row align-items-center">
-                          <div className="col-3">
-                            <div className="secure-batch-items text-center">
-                              <Image
-                                className="img-fluid"
-                                src="/user_assets/img/security_2.png"
-                                height={50}
-                                width={50}
-                                alt="img"
-                              />
-                              <p>
-                                256-bit
-                                <br />
-                                encryption
-                              </p>
-                            </div>
-                          </div>
-                          <div className="col-3">
-                            <div className="secure-batch-items text-center">
-                              <Image
-                                className="img-fluid"
-                                src="/user_assets/img/security_3.png"
-                                height={50}
-                                width={50}
-                                alt="img"
-                              />
-                              <p>
-                                ISO 27001
-                                <br />
-                                certified
-                              </p>
-                            </div>
-                          </div>
-                          <div className="col-3">
-                            <div className="secure-batch-items text-center">
-                              <Image
-                                className="img-fluid"
-                                src="/user_assets/img/security_4.png"
-                                height={50}
-                                width={50}
-                                alt="img"
-                              />
-                              <p>
-                                HIPAA
-                                <br />
-                                data centers
-                              </p>
-                            </div>
-                          </div>
-                          <div className="col-3">
-                            <div className="secure-batch-items text-center">
-                              <Image
-                                className="img-fluid"
-                                src="/user_assets/img/security_5.png"
-                                height={50}
-                                width={50}
-                                alt="img"
-                              />
-                              <p>
-                                DSCI
-                                <br />
-                                member
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mt-3 mt-md-3 mt-lg-3 mt-xl-3 mt-xxl-5">
-                      <div className="secure-batch-items text-center">
-                        <Image
-                          className="img-fluid"
-                          src="/user_assets/img/security-seal.png"
-                          height={300}
-                          width={300}
-                          alt="img"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 mt-3 mt-md-3 mt-lg-0 mt-xl-0 mt-xxl-0">
-                <div className="right-about py-4">
-                  <div className="about-filter">
-                    <div className="search-doctor">
-                      <div className="search-area">
-                        <h2 className="text-center fs-5 mb-3">
-                          Search Doctor, Make an Appointment
-                        </h2>
-                        <form className="search-input">
-                          <div className="row">
-                            <div className="col-12 col-md-12 mb-3">
-                              <div className="form-group">
-                                <select className="form-select form-control">
-                                  <option>Select State</option>
-                                  <option>West Bengal</option>
-                                  <option>Delhi</option>
-                                </select>
-                              </div>
-                            </div>
-                            <div className="col-12 col-md-12 mb-3">
-                              <div className="form-group">
-                                <select className="form-select form-control">
-                                  <option>Select City</option>
-                                  <option>Haldia</option>
-                                  <option>Tamluk</option>
-                                </select>
-                              </div>
-                            </div>
-                            <div className="col-12 col-md-12 mb-3">
-                              <div className="form-group">
-                                <select className="form-select form-control">
-                                  <option>Select Speciality</option>
-                                  <option>Heart</option>
-                                  <option>Eye</option>
-                                </select>
-                              </div>
-                            </div>
-
-                            <div className="col-12 col-md-12">
-                              <div className="form-group">
-                                <select className="form-select form-control">
-                                  <option>Select Doctor</option>
-                                  <option>Dr. Samir Barman</option>
-                                  <option>Dr. Bappa Kamila</option>
-                                </select>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="submit-section text-end">
-                            <button
-                              type="submit"
-                              className="btn btn-primary submit-btn"
-                            >
-                              Search
-                            </button>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> */}
         <section className="section section-specialities">
           <div className="container-fluid">
             <div className="section-header text-center">
@@ -417,65 +232,7 @@ const Index = () => {
             </div>
           </div>
         </section>
-        {/* <section className="section section-features">
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-md-5 features-img text-sm-center">
-                <Image
-                  height="500"
-                  width="500"
-                  src="/user_assets/img/gif/left-image.gif"
-                  className="img-fluid"
-                  alt="Feature"
-                />
-              </div>
-              <div className="col-md-7">
-                <div className="section-header">
-                  <h2 className="mt-2">Your Top Rated Services & Facilities</h2>
-                  <p>
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout.
-                  </p>
-                </div>
-                <div className="features-slider slider">
-                  <div className="row carousel-styling">
-                    <Carousel breakPoints={breakPoints}>
-                      <FeatureIcon
-                        title="Operation"
-                        img="/assets/images/features/feature-01.jpg"
-                      />
-                      <FeatureIcon
-                        title="Medical"
-                        img="/assets/images/features/feature-02.jpg"
-                      />
-                      <FeatureIcon
-                        title="Patient Ward"
-                        img="/assets/images/features/feature-03.jpg"
-                      />
-                      <FeatureIcon
-                        title="Test Room"
-                        img="/assets/images/features/feature-04.jpg"
-                      />
-                      <FeatureIcon
-                        title="ICU"
-                        img="/assets/images/features/feature-05.jpg"
-                      />
-                      <FeatureIcon
-                        title="Laboartory"
-                        img="/assets/images/features/feature-06.jpg"
-                      />
-                      <FeatureIcon
-                        title="Operation"
-                        img="/assets/images/features/feature-07.jpg"
-                      />
-                    </Carousel>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> */}
+
         <section className="our-doctors-section">
           <div className="container">
             <div className="row">
@@ -578,9 +335,9 @@ const Index = () => {
             </div>
             <div className="our-doctors">
               <div className="d-flex carousel-styling">
-                {polyclinics ? (
+                {hospitals ? (
                   <Carousel breakPoints={breakPoints}>
-                    {polyclinics?.map((items, index) => (
+                    {hospitals?.map((items, index) => (
                       <VerticalPolyclinicCard
                         data={items}
                         key={index}
