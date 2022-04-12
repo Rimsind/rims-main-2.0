@@ -37,7 +37,12 @@ const Dashboard = () => {
                     <div className="row align-items-end">
                       <div className="col-3">
                         <div className="dashboard-card-icon">
-                          <i className="fas fa-bed"></i>
+                          <Image
+                            src="/assets/images/Regular-Bed.png"
+                            height="50px"
+                            width="50px"
+                            alt="Regular Bed"
+                          />
                         </div>
                       </div>
                       <div className="col-9">
@@ -80,7 +85,12 @@ const Dashboard = () => {
                     <div className="row align-items-end">
                       <div className="col-3">
                         <div className="dashboard-card-icon">
-                          <i className="fas fa-bed"></i>
+                          <Image
+                            src="/assets/images/Icu-Bed.png"
+                            height="50px"
+                            width="50px"
+                            alt="ICU Bed"
+                          />
                         </div>
                       </div>
                       <div className="col-9">
@@ -123,7 +133,12 @@ const Dashboard = () => {
                     <div className="row align-items-end">
                       <div className="col-3">
                         <div className="dashboard-card-icon">
-                          <i className="fas fa-ambulance"></i>
+                          <Image
+                            src="/assets/images/Ambulance.png"
+                            height="50px"
+                            width="50px"
+                            alt="Ambulance"
+                          />
                         </div>
                       </div>
                       <div className="col-9">
@@ -166,7 +181,12 @@ const Dashboard = () => {
                     <div className="row align-items-end">
                       <div className="col-3">
                         <div className="dashboard-card-icon">
-                          <i className="fas fa-ambulance"></i>
+                          <Image
+                            src="/assets/images/Icu-Ambulance.png"
+                            height="50px"
+                            width="50px"
+                            alt="Icu Ambulance"
+                          />
                         </div>
                       </div>
                       <div className="col-9">
@@ -209,7 +229,12 @@ const Dashboard = () => {
                     <div className="row align-items-end">
                       <div className="col-3">
                         <div className="dashboard-card-icon">
-                          <i className="fas fa-person-booth"></i>
+                          <Image
+                            src="/assets/images/OT.png"
+                            height="50px"
+                            width="50px"
+                            alt="Doctors"
+                          />
                         </div>
                       </div>
                       <div className="col-9">
@@ -248,7 +273,12 @@ const Dashboard = () => {
                     <div className="row align-items-end">
                       <div className="col-3">
                         <div className="dashboard-card-icon">
-                          <i className="fas fa-burn"></i>
+                          <Image
+                            src="/assets/images/Burn-Units.png"
+                            height="50px"
+                            width="50px"
+                            alt="Burn Units"
+                          />
                         </div>
                       </div>
                       <div className="col-9">
@@ -291,7 +321,12 @@ const Dashboard = () => {
                     <div className="row align-items-end">
                       <div className="col-3">
                         <div className="dashboard-card-icon">
-                          <i className="fas fa-bed"></i>
+                          <Image
+                            src="/assets/images/Doctors.png"
+                            height="50px"
+                            width="50px"
+                            alt="Doctors"
+                          />
                         </div>
                       </div>
                       <div className="col-9">

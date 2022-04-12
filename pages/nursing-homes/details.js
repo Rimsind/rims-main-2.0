@@ -155,10 +155,10 @@ const NursingHomeId = () => {
                               <div className="special-box text-center">
                                 <div className="special-body">
                                   <Image
-                                    height="45"
-                                    width="45"
-                                    src="/assets/images/shapes/spec.png"
-                                    alt=""
+                                    src="/assets/images/Regular-Bed.png"
+                                    height="50px"
+                                    width="50px"
+                                    alt="Regular Bed"
                                   />
                                   <h4>Regular Bed</h4>
                                 </div>
@@ -182,10 +182,10 @@ const NursingHomeId = () => {
                               <div className="special-box text-center">
                                 <div className="special-body">
                                   <Image
-                                    height="45"
-                                    width="45"
-                                    src="/assets/images/shapes/spec-01.png"
-                                    alt=""
+                                    src="/assets/images/Icu-Bed.png"
+                                    height="50px"
+                                    width="50px"
+                                    alt="ICU Bed"
                                   />
                                   <h4>ICU Bed</h4>
                                 </div>
@@ -208,10 +208,10 @@ const NursingHomeId = () => {
                               <div className="special-box text-center">
                                 <div className="special-body">
                                   <Image
-                                    height="45"
-                                    width="45"
-                                    src="/assets/images/shapes/spec-02.png"
-                                    alt=""
+                                    src="/assets/images/Ambulance.png"
+                                    height="50px"
+                                    width="50px"
+                                    alt="Ambulance"
                                   />
                                   <h4>Ambulance</h4>
                                 </div>
@@ -234,10 +234,10 @@ const NursingHomeId = () => {
                               <div className="special-box text-center">
                                 <div className="special-body">
                                   <Image
-                                    height="45"
-                                    width="45"
-                                    src="/assets/images/shapes/spec-04.png"
-                                    alt=""
+                                    src="/assets/images/Icu-Ambulance.png"
+                                    height="50px"
+                                    width="50px"
+                                    alt="Icu Ambulance"
                                   />
                                   <h4>Icu Ambulance</h4>
                                 </div>
@@ -257,17 +257,16 @@ const NursingHomeId = () => {
                                 </div>
                               </div>
                             </div>
-                            <div className="col-lg-3 col-md-4"></div>
                             <div className="col-lg-3 col-md-4">
                               <div className="special-box text-center">
                                 <div className="special-body">
                                   <Image
-                                    height="45"
-                                    width="45"
-                                    src="/assets/images/shapes/spec-04.png"
-                                    alt=""
+                                    src="/assets/images/OT.png"
+                                    height="50px"
+                                    width="50px"
+                                    alt="Doctors"
                                   />
-                                  <h4>Burn Units</h4>
+                                  <h4>Operation Theater</h4>
                                 </div>
                                 <div className="row row-sm special-footer">
                                   <div className="col-6 text-start">
@@ -288,12 +287,38 @@ const NursingHomeId = () => {
                               <div className="special-box text-center">
                                 <div className="special-body">
                                   <Image
-                                    height="45"
-                                    width="45"
-                                    src="/assets/images/shapes/spec-04.png"
-                                    alt=""
+                                    src="/assets/images/Burn-Units.png"
+                                    height="50px"
+                                    width="50px"
+                                    alt="Burn Units"
                                   />
-                                  <h4>Doctors</h4>
+                                  <h4>Burn Care Units</h4>
+                                </div>
+                                <div className="row row-sm special-footer">
+                                  <div className="col-6 text-start">
+                                    <a className="doc-count">
+                                      {data?.totalBurnUnits} <span>Total</span>
+                                    </a>
+                                  </div>
+                                  <div className="col-6 text-end">
+                                    <a className="clin-count">
+                                      {data?.availableBurnUnits}{" "}
+                                      <span>Available</span>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4">
+                              <div className="special-box text-center">
+                                <div className="special-body">
+                                  <Image
+                                    src="/assets/images/Doctors.png"
+                                    height="50px"
+                                    width="50px"
+                                    alt="Doctors"
+                                  />
+                                  <h4>Doctors & Nurse</h4>
                                 </div>
                                 <div className="row row-sm special-footer">
                                   <div className="col-6 text-center">
