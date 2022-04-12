@@ -68,12 +68,12 @@ const Index = () => {
                     <div className="row align-items-end p-2 rounded-1">
                       <div className="col-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5">
                         <div className="row align-items-center">
-                          <div className="col-4">
+                          <div className="col-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 mb-1">
                             <lable className="text-light">
                               Filter By status:
                             </lable>
                           </div>
-                          <div className="col-8">
+                          <div className="col-12 col-md-12 col-lg-8 col-xl-8 col-xxl-8 mb-1">
                             <select
                               className="form-select"
                               aria-label="Default select example"
@@ -89,13 +89,12 @@ const Index = () => {
                       </div>
                       <div className="col-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5">
                         <div className="row align-items-center">
-                          <div className="col-4">
-                            {" "}
+                          <div className="col-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 mb-1">
                             <lable className="text-light">
                               Filter By Date:
                             </lable>
                           </div>
-                          <div className="col-8">
+                          <div className="col-12 col-md-12 col-lg-8 col-xl-8 col-xxl-8 mb-1">
                             <input
                               type="date"
                               className="form-control"
@@ -105,7 +104,7 @@ const Index = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-12 col-md-12 col-lg-6 col-xl-2 col-xxl-2 text-end">
+                      <div className="col-12 col-md-12 col-lg-6 col-xl-2 col-xxl-2 text-center text-md-end text-lg-end text-xl-end text-xxl-end">
                         <button className="btn btn-light" onClick={resetState}>
                           <i className="far fa-redo-alt me-2"></i>
                           Reset

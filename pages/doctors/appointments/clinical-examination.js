@@ -60,9 +60,9 @@ const ClinicalExamination = () => {
         <div
           className="page-wrapper-inner"
           id="page-wrapper"
-          style={{
-            padding: "1.875rem 1.875rem 0",
-          }}
+          // style={{
+          //   padding: "1.875rem 1.875rem 0",
+          // }}
         >
           <div className="content container-fluid">
             <div className="page-header">
