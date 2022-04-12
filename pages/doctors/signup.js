@@ -1,9 +1,7 @@
-import AuthLayout from "components/layout/AuthLayout";
 import Image from "next/image";
 import Link from "next/link";
 import axios from "axios";
 import { useForm } from "react-hook-form";
-
 import router from "next/router";
 const Signup = () => {
   //react-hook-form
@@ -210,14 +208,14 @@ const Signup = () => {
       </div> */}
       <section className="doctor-signup-section">
         <div className="container">
-          <div class="card-body">
-            <ul class="nav nav-tabs nav-tabs-bottom nav-justified">
-              <li class="nav-item">
+          <div className="card-body">
+            <ul className="nav nav-tabs nav-tabs-bottom nav-justified">
+              <li className="nav-item">
                 <Link href="/doctors/login">
-                  <a class="nav-link">Login</a>
+                  <a className="nav-link">Login</a>
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <a
                   className="nav-link active"
                   href="#bottom-justified-tab2"
@@ -227,8 +225,8 @@ const Signup = () => {
                 </a>
               </li>
             </ul>
-            <div class="tab-content">
-              {/* <div class="tab-pane show active" id="bottom-justified-tab1">
+            <div className="tab-content">
+              {/* <div className="tab-pane show active" id="bottom-justified-tab1">
                 <div className="row align-items-center">
                   <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
                     <Image
@@ -325,7 +323,7 @@ const Signup = () => {
                   </div>
                 </div>
               </div> */}
-              <div class="tab-pane show active" id="bottom-justified-tab2">
+              <div className="tab-pane show active" id="bottom-justified-tab2">
                 <div className="row align-items-center">
                   <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
                     <Image
@@ -427,5 +425,3 @@ const Signup = () => {
 };
 
 export default Signup;
-
-Signup.getLayout = (Signup) => <AuthLayout>{Signup}</AuthLayout>;

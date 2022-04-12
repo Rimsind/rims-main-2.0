@@ -1,4 +1,3 @@
-import AuthLayout from "components/layout/AuthLayout";
 import Image from "next/image";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
@@ -193,25 +192,25 @@ const Index = () => {
       </section> */}
       <section className="doctor-login-section">
         <div className="container">
-          <div class="card-body">
-            <ul class="nav nav-tabs nav-tabs-bottom nav-justified">
-              <li class="nav-item">
+          <div className="card-body">
+            <ul className="nav nav-tabs nav-tabs-bottom nav-justified">
+              <li className="nav-item">
                 <a
-                  class="nav-link active"
+                  className="nav-link active"
                   href="#bottom-justified-tab1"
                   data-bs-toggle="tab"
                 >
                   Login
                 </a>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link href="/doctors/signup">
-                  <a class="nav-link">Register</a>
+                  <a className="nav-link">Register</a>
                 </Link>
               </li>
             </ul>
-            <div class="tab-content">
-              <div class="tab-pane show active" id="bottom-justified-tab1">
+            <div className="tab-content">
+              <div className="tab-pane show active" id="bottom-justified-tab1">
                 <div className="row align-items-center">
                   <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
                     <Image
@@ -295,7 +294,7 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-              {/* <div class="tab-pane" id="bottom-justified-tab2">
+              {/* <div className="tab-pane" id="bottom-justified-tab2">
                 <div className="row align-items-center">
                   <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
                     <Image
@@ -401,5 +400,3 @@ const Index = () => {
 };
 
 export default Index;
-
-Index.getLayout = (Index) => <AuthLayout>{Index}</AuthLayout>;
