@@ -98,10 +98,31 @@ const Dashboard = () => {
               <DoctorSidebar status1="active" data={data} />
               {data ? (
                 <div className="col-sm-12 col-md-12 col-lg-8 col-xl-9">
-                  <div className="dashboard-welcome-text">
-                    <p className="fs-4 fw-bold">
-                      Welcome Dr. {data?.firstName} {data?.lastName}🙏
-                    </p>
+                  <div
+                    className="dashboard-welcome-text rounded"
+                    style={{
+                      background: "url(/assets/images/stethoscope.jpg)",
+                      height: "154px",
+                      display: "flex",
+                      justifyContent: "center",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <div className="banner-title ms-5">
+                      <h6 className="fs-3 text-light fst-italic">
+                        Hello Dr. {data?.firstName} {data?.lastName}
+                      </h6>
+                    </div>
+                    <div className="banner-sub-title ms-5">
+                      <p
+                        className="text-light fst-italic"
+                        style={{ fontSize: "15px" }}
+                      >
+                        Welcome to RIMS Dashboard.
+                        <br />
+                        Here are your important tasks and reports.
+                      </p>
+                    </div>
                   </div>
                   <div className="row">
                     <div className="col-12 col-md-6 col-lg-6 col-xl-3 patient-dashboard-top">
@@ -127,9 +148,15 @@ const Dashboard = () => {
                           </div>
                           <div className="col-6">
                             <div className="dashboard-card-number text-end">
-                              <span className="badge rounded-pill bg-danger">
-                                Live
-                              </span>
+                              <div className="left-para-date">
+                                <span
+                                  className="badge rounded-pill bg-primary fw-normal shadow"
+                                  style={{ fontSize: "15px" }}
+                                >
+                                  <i class="fas fa-circle text-light me-1"></i>
+                                  Live
+                                </span>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -158,9 +185,15 @@ const Dashboard = () => {
                           </div>
                           <div className="col-6">
                             <div className="dashboard-card-number text-end">
-                              <span className="badge rounded-pill bg-danger">
-                                Live
-                              </span>
+                              <div className="left-para-date">
+                                <span
+                                  className="badge rounded-pill bg-primary fw-normal shadow"
+                                  style={{ fontSize: "15px" }}
+                                >
+                                  <i class="fas fa-circle text-light me-1"></i>
+                                  Live
+                                </span>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -187,11 +220,50 @@ const Dashboard = () => {
                               <p>{yesterdayAppointment?.length}</p>
                             </div>
                           </div>
+                          {/* <div className="col-6">
+                            <div className="dashboard-card-number text-end">
+                              <div className="left-para-date">
+                                <span className="badge rounded-pill bg-warning fs-6">
+                                  Pending
+                                </span>
+                              </div>
+                            </div>
+                          </div> */}
+                        </div>
+                      </div>
+                    </div>{" "}
+                    <div className="col-12 col-md-6 col-lg-6 col-xl-3 patient-dashboard-top">
+                      <div className="dashboard-card">
+                        <div className="row align-items-center">
+                          <div className="col-3">
+                            <div className="dashboard-card-icon shadow">
+                              <i className="fas fa-users-medical"></i>
+                            </div>
+                          </div>
+                          <div className="col-9">
+                            <div className="dashboard-card-title">
+                              <p>Tommorow&apos;s Appointments </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="row align-items-center">
+                          <div className="col-6">
+                            <div className="dashboard-card-number text-start">
+                              <p>{tommorowAppointment?.length}</p>
+                            </div>
+                          </div>
                           <div className="col-6">
                             <div className="dashboard-card-number text-end">
-                              <span className="badge rounded-pill bg-warning">
-                                Pending
-                              </span>
+                              <div className="left-para-date">
+                                <span
+                                  className="badge rounded-pill bg-primary fw-normal shadow"
+                                  style={{ fontSize: "15px" }}
+                                >
+                                  <i class="fas fa-circle text-light me-1"></i>
+                                  Live
+                                </span>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -220,9 +292,15 @@ const Dashboard = () => {
                           </div>
                           <div className="col-6">
                             <div className="dashboard-card-number text-end">
-                              <span className="badge rounded-pill bg-primary">
-                                Live
-                              </span>
+                              <div className="left-para-date">
+                                <span
+                                  className="badge rounded-pill bg-info fs-6 fw-normal shadow"
+                                  style={{ fontSize: "15px" }}
+                                >
+                                  <i class="fas fa-layer-group me-1"></i>
+                                  Total
+                                </span>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -251,9 +329,15 @@ const Dashboard = () => {
                           </div>
                           <div className="col-6">
                             <div className="dashboard-card-number text-end">
-                              <span className="badge rounded-pill bg-success">
-                                Completed
-                              </span>
+                              <div className="left-para-date">
+                                <span
+                                  className="badge rounded-pill bg-success fw-normal shadow"
+                                  style={{ fontSize: "15px" }}
+                                >
+                                  <i class="fas fa-check-circle me-1"></i>
+                                  Completed
+                                </span>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -282,15 +366,23 @@ const Dashboard = () => {
                           </div>
                           <div className="col-6">
                             <div className="dashboard-card-number text-end">
-                              <span className="badge rounded-pill bg-warning">
-                                Pending
-                              </span>
+                              <div className="left-para-date">
+                                <span
+                                  className="badge rounded-pill fw-normal shadow"
+                                  style={{
+                                    background: "#ff7600",
+                                    fontSize: "15px",
+                                  }}
+                                >
+                                  <i class="fas fa-hourglass-start me-1"></i>
+                                  Pending
+                                </span>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-
                     <div className="col-12 col-md-6 col-lg-6 col-xl-3 patient-dashboard-top">
                       <div className="dashboard-card">
                         <div className="row align-items-center">
@@ -301,7 +393,7 @@ const Dashboard = () => {
                           </div>
                           <div className="col-9">
                             <div className="dashboard-card-title">
-                              <p>Tommorow&apos;s Appointments </p>
+                              <p>Today&apos;s Appointments </p>
                             </div>
                           </div>
                         </div>
@@ -314,9 +406,15 @@ const Dashboard = () => {
                           </div>
                           <div className="col-6">
                             <div className="dashboard-card-number text-end">
-                              <span className="badge rounded-pill bg-warning">
-                                Pending
-                              </span>
+                              <div className="left-para-date">
+                                <span
+                                  className="badge rounded-pill bg-danger fw-normal shadow"
+                                  style={{ fontSize: "15px" }}
+                                >
+                                  <i class="fas fa-times-circle text-light me-1"></i>
+                                  Cancelled
+                                </span>
+                              </div>
                             </div>
                           </div>
                         </div>
