@@ -4055,6 +4055,15 @@ p.about-title {
   color: #fff;
   font-family: Poppins;
 }
+@media screen and (min-width: 300px) and (max-width: 900px) {
+  p.about-title {
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+    font-family: Poppins;
+  }
+}
+
 span.about-title-span {
   color: #02c9b8;
 }
@@ -4125,6 +4134,15 @@ p.about-banner-content-heading-title {
   font-family: poppins;
   line-height: 70px;
 }
+@media screen and (min-width: 300px) and (max-width: 900px) {
+  p.about-banner-content-heading-title {
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: poppins;
+    line-height: 70px;
+  }
+}
 p.about-banner-content-sub-heading-title {
   color: white;
   font-size: 20px;
@@ -4136,6 +4154,7 @@ p.about-banner-content-para-content {
   color: white;
   font-size: 16px;
 }
+
 /* Slider Arrow Display None */
 button.slick-arrow {
   display: none !important;
