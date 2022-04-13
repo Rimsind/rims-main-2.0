@@ -16,7 +16,7 @@ const DoctorId = () => {
       <main className="main">
         <BreadCrums title="Home / Doctor Details" title1="Doctor Details" />
         <div className="content">
-          <div className="container">
+          <div className="container-fluid">
             {data ? (
               <>
                 <div className="card">
@@ -182,7 +182,7 @@ const DoctorId = () => {
                         <div className="location-list">
                           {data?.timetable?.map((items, index) => (
                             <DoctorTimetableCard
-                              schedule={items}
+                              data={items}
                               key={index}
                               doctor={id}
                               auth={auth}

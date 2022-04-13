@@ -4178,3 +4178,8 @@ table.rehab-com-table {
   border-color: #4b4b4b;
   padding: 17px 10px 0 10px;
 }
+
+.location-list {
+  height: 500px;
+  overflow-y: scroll;
+}
