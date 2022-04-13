@@ -31,6 +31,7 @@ const MedicalInformation = () => {
       return result;
     }
   );
+  console.log(data);
 
   return (
     <>
@@ -210,8 +211,8 @@ const MedicalInformation = () => {
                                 <MedicalHistory
                                   patientId={auth?.user.profileId}
                                   medicalHistory={data?.medicalHistory}
-                                  past_sugrical_history={
-                                    data?.past_sugrical_history
+                                  past_surgical_history={
+                                    data?.past_surgical_history
                                   }
                                   past_medication_history={
                                     data?.past_medication_history

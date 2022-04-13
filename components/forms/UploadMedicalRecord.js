@@ -41,7 +41,7 @@ const UploadMedicalRecord = ({
         }
       );
       const result = await response.data;
-      alert("Image uploaded succesfully");
+
       toast.success("Medical Records Updated", {
         position: "top-center",
         autoClose: 2000,
@@ -110,15 +110,28 @@ const UploadMedicalRecord = ({
           className="right-button"
           style={{ textAlign: "right", marginTop: "10px" }}
         >
-          <input
-            type="submit"
-            id="submit"
-            name="send"
-            className="btn btn-primary"
-            value={loading ? "loading..." : "upload"}
-            disabled={loading}
-            onClick={uploadProfileImage}
-          />
+          {loading ? (
+            <div className="upload-btn-spin">
+              <button className="btn btn-primary">
+                <div className="d-flex align-items-center">
+                  <div
+                    className="spinner-border ms-auto me-3"
+                    role="status"
+                    aria-hidden="true"
+                  ></div>
+                  <strong>Uploading...</strong>
+                </div>
+              </button>
+            </div>
+          ) : (
+            <input
+              type="btn"
+              className="btn btn-primary"
+              value={loading ? "Uploading..." : "upload Image"}
+              disabled={loading}
+              onClick={uploadProfileImage}
+            />
+          )}
         </div>
       </div>
       <div

@@ -4,6 +4,11 @@ import axios from "axios";
 import { useAuth } from "context";
 import { useState } from "react";
 import { Slide, toast } from "react-toastify";
+import {
+  pastMedicalHistory,
+  diagnostic_tests,
+  frequencyList,
+} from "pages/api/pastMedicalHistoryData";
 
 const MedicalHistory = ({
   medicalHistory,
@@ -20,6 +25,22 @@ const MedicalHistory = ({
   const [surgery, setSurgery] = useState();
   const [surgeryDate, setSurgeryDate] = useState();
   const [loading, setLoading] = useState(false);
+
+  var today = new Date();
+  var maxDay = today.getDate();
+  var maxMonth = today.getMonth() + 1;
+  var maxYear = today.getFullYear();
+  if (maxDay < 10) {
+    var newMaxDay = "0" + maxDay;
+  } else {
+    var newMaxDay = maxDay;
+  }
+  if (maxMonth < 10) {
+    var newMaxMonth = "0" + maxMonth;
+  } else {
+    var newMaxMonth = maxMonth;
+  }
+  const maxDate = maxYear + "-" + newMaxMonth + "-" + newMaxDay;
 
   const submitSurgery = async () => {
     if (!!surgery && !!surgeryDate) {
@@ -202,110 +223,6 @@ const MedicalHistory = ({
       str = "";
     }
   };
-
-  const pastMedicalHistory = [
-    "No past medical history",
-    "Diabetes",
-    "Genetic Disease",
-    "Pacemaker",
-    "AIDS",
-    "Anemia",
-    "Emphysema",
-    "Kidney Disease",
-    "Parkinson’s Disease",
-    "Asthma",
-    "Epilepsy/Seizures",
-    "Fractures",
-    "Liver Disease",
-    "Prostate Disease",
-    "Arthritis",
-    "Glaucoma",
-    "Low Blood Pressure",
-    "Skin Disorder",
-    "Blood Disorder",
-    "Heart Attack",
-    "Lung Disorder",
-    "CVA/Stroke",
-    "Broken Bones",
-    "Heart Disease",
-    "Lyme’s Disease",
-    "Thyroid Disorder",
-    "Circulation Problems",
-    "Hepatitis",
-    "Macular Degeneration",
-    "Ulcers (Stomach)",
-    "Cancer",
-    "Head Injury",
-    "Multiple Sclerosis",
-    "Repeated Infections",
-    "Cystic Fibrosis",
-    "High Blood Pressure",
-    "Osteoporosis",
-    "Depression",
-    "High Cholesterol",
-    "Muscular Dystrophy",
-    "Restless Leg Syndrome",
-    "Fibromyalgia",
-    "Migraine",
-    "Others",
-  ];
-
-  const diagnostic_tests = [
-    "No Diagnostic Testing",
-    "Bronchoscopy",
-    "EMG/Nerve Conduction",
-    "Stool Test",
-    "Angiogram",
-    "CT scan",
-    "Mammogram",
-    "Stress Test",
-    "Arthroscopy",
-    "Ultrasound",
-    "MRI",
-    "Urine Test",
-    "Biopsy",
-    "Echocardiogram",
-    "Pap smear",
-    "X - Ray",
-    "Blood Test",
-    "EEG",
-    "Pulmonary function Test",
-    "Bone Scan",
-    "EKG",
-    "Spinal Tap",
-    "Others",
-  ];
-
-  const frequencyList = [
-    "Select",
-    "DAILY",
-    " 2 TIMES A WEEK",
-    "2 TIMES DAILY",
-    "3 TIMES A WEEK",
-    "3 TIMES DAILY",
-    "4 TIMES A WEEK",
-    "4 TIMES DAILY",
-    "AS DIRECTED",
-    "AS NEEDED",
-    "BED TIME",
-    "EVERY 12 HOURS",
-    "EVERY 2 HOURS",
-    "EVERY 4 HOURS",
-    "EVERY 6 HOURS",
-    "EVERY 72 HOURS",
-    "EVERY 8 HOURS",
-    "EVERY AM",
-    "EVERY OTHER DAY",
-    "EVERY OTHER WEEK",
-    "EVERY PM",
-    "HOURLY",
-    "ENTERMITTENT",
-    "MONTHLY",
-    "WEEKLY",
-    "O2- CONTINUOUS",
-    "O2- NIGHTLY",
-    "O2- PRN",
-  ];
 
   return (
     <>
@@ -674,6 +591,7 @@ const MedicalHistory = ({
                       type="date"
                       className="form-control"
                       name="surgeryDate"
+                      max={maxDate}
                       value={surgeryDate}
                       onChange={(e) => setSurgeryDate(e.target.value)}
                     />
@@ -835,6 +753,7 @@ const MedicalHistory = ({
                     type="date"
                     className="form-control"
                     name="MedicineName"
+                    max={maxDate}
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
                   />

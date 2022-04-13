@@ -53,7 +53,7 @@ const ProfileInfo = ({ data }) => {
       return result, setLoading(false);
     } catch (error) {
       console.log(error.message);
-      toast.error("Address Update Error", {
+      toast.error("Something went wrong.", {
         position: "top-center",
         autoClose: 2000,
         hideProgressBar: false,

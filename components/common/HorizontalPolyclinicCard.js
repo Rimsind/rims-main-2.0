@@ -40,9 +40,9 @@ const HorizontalPolyclinicCard = (props) => {
                 <i className="far fa-envelope"></i> {data?.email}
                 <div className="clinic-details"></div>
                 <div className="clinic-services">
-                  <span>Dental Fillings</span>
-                  <span> Whitneing</span>
-                  <span> Whitneing</span>
+                  {data?.features?.map((items, index) => (
+                    <span key={index}>{items?.feature_name}</span>
+                  ))}
                 </div>
               </div>
             </div>

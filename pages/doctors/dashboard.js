@@ -22,6 +22,70 @@ const Dashboard = () => {
       return result;
     }
   );
+  const { data: appointments } = useSWR(
+    `${apiUrl}/appointments?doctor=${auth.user?.profileId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
+  var today = new Date();
+  var day = today.getDate();
+  var month = today.getMonth() + 1;
+  var year = today.getFullYear();
+
+  if (day < 10) {
+    var newDay = "0" + day;
+  } else {
+    var newDay = day;
+  }
+  if (month < 10) {
+    var newMonth = "0" + month;
+  } else {
+    var newMonth = month;
+  }
+  const previousDay = newDay - 1;
+  const nextDay = newDay + 1;
+  const currentDate = year + "-" + newMonth + "-" + newDay;
+  const previousDate = year + "-" + newMonth + "-" + previousDay;
+  const nextDate = year + "-" + newMonth + "-" + nextDay;
+
+  const todaysAppointment = appointments?.filter((items) => {
+    if (items?.date.includes(currentDate)) {
+      return items;
+    }
+  });
+  const yesterdayAppointment = appointments?.filter((items) => {
+    if (items?.date.includes(previousDate)) {
+      return items;
+    }
+  });
+  const tommorowAppointment = appointments?.filter((items) => {
+    if (items?.date.includes(nextDate)) {
+      return items;
+    }
+  });
+  const appointmentCompleted = appointments?.filter((items) => {
+    if (
+      items?.date.includes(currentDate) &&
+      items?.appointment_status?.toString().includes("true")
+    ) {
+      return items;
+    }
+  });
+  const appointmentPending = appointments?.filter((items) => {
+    if (
+      items?.date.includes(currentDate) &&
+      items?.appointment_status?.toString().includes("false")
+    ) {
+      return items;
+    }
+  });
 
   return (
     <>
@@ -36,7 +100,7 @@ const Dashboard = () => {
                 <div className="col-sm-12 col-md-12 col-lg-8 col-xl-9">
                   <div className="dashboard-welcome-text">
                     <p className="fs-4 fw-bold">
-                      Welcome Dr. {data?.firstName} {data?.lastName}👋
+                      Welcome Dr. {data?.firstName} {data?.lastName}🙏
                     </p>
                   </div>
                   <div className="row">
@@ -50,7 +114,7 @@ const Dashboard = () => {
                           </div>
                           <div className="col-9">
                             <div className="dashboard-card-title">
-                              <p>Total Patients</p>
+                              <p>My Patients</p>
                             </div>
                           </div>
                         </div>
@@ -58,13 +122,13 @@ const Dashboard = () => {
                         <div className="row align-items-center">
                           <div className="col-6">
                             <div className="dashboard-card-number text-start">
-                              <p>2,050</p>
+                              <p>{appointments?.length}</p>
                             </div>
                           </div>
                           <div className="col-6">
                             <div className="dashboard-card-number text-end">
-                              <span className="badge rounded-pill bg-success">
-                                35.1%
+                              <span className="badge rounded-pill bg-danger">
+                                Live
                               </span>
                             </div>
                           </div>
@@ -81,7 +145,7 @@ const Dashboard = () => {
                           </div>
                           <div className="col-9">
                             <div className="dashboard-card-title">
-                              <p>Total Appointments</p>
+                              <p>My Clinics</p>
                             </div>
                           </div>
                         </div>
@@ -89,13 +153,44 @@ const Dashboard = () => {
                         <div className="row align-items-center">
                           <div className="col-6">
                             <div className="dashboard-card-number text-start">
-                              <p>2,050</p>
+                              <p>{data?.polyclinics?.length}</p>
                             </div>
                           </div>
                           <div className="col-6">
                             <div className="dashboard-card-number text-end">
-                              <span className="badge rounded-pill bg-success">
-                                35.1%
+                              <span className="badge rounded-pill bg-danger">
+                                Live
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-12 col-md-6 col-lg-6 col-xl-3 patient-dashboard-top">
+                      <div className="dashboard-card">
+                        <div className="row align-items-center">
+                          <div className="col-3">
+                            <div className="dashboard-card-icon shadow">
+                              <i className="fas fa-users-medical"></i>
+                            </div>
+                          </div>
+                          <div className="col-9">
+                            <div className="dashboard-card-title">
+                              <p>Yesterday&apos;s Appointments </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="row align-items-center">
+                          <div className="col-6">
+                            <div className="dashboard-card-number text-start">
+                              <p>{yesterdayAppointment?.length}</p>
+                            </div>
+                          </div>
+                          <div className="col-6">
+                            <div className="dashboard-card-number text-end">
+                              <span className="badge rounded-pill bg-warning">
+                                Pending
                               </span>
                             </div>
                           </div>
@@ -120,13 +215,13 @@ const Dashboard = () => {
                         <div className="row align-items-center">
                           <div className="col-6">
                             <div className="dashboard-card-number text-start">
-                              <p>2,050</p>
+                              <p>{todaysAppointment?.length}</p>
                             </div>
                           </div>
                           <div className="col-6">
                             <div className="dashboard-card-number text-end">
-                              <span className="badge rounded-pill bg-success">
-                                35.1%
+                              <span className="badge rounded-pill bg-primary">
+                                Live
                               </span>
                             </div>
                           </div>
@@ -143,7 +238,7 @@ const Dashboard = () => {
                           </div>
                           <div className="col-9">
                             <div className="dashboard-card-title">
-                              <p>Patients Under Treatment</p>
+                              <p>Today&apos;s Appointments </p>
                             </div>
                           </div>
                         </div>
@@ -151,13 +246,76 @@ const Dashboard = () => {
                         <div className="row align-items-center">
                           <div className="col-6">
                             <div className="dashboard-card-number text-start">
-                              <p>2,050</p>
+                              <p>{appointmentCompleted?.length}</p>
                             </div>
                           </div>
                           <div className="col-6">
                             <div className="dashboard-card-number text-end">
                               <span className="badge rounded-pill bg-success">
-                                35.1%
+                                Completed
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-12 col-md-6 col-lg-6 col-xl-3 patient-dashboard-top">
+                      <div className="dashboard-card">
+                        <div className="row align-items-center">
+                          <div className="col-3">
+                            <div className="dashboard-card-icon shadow">
+                              <i className="fas fa-users-medical"></i>
+                            </div>
+                          </div>
+                          <div className="col-9">
+                            <div className="dashboard-card-title">
+                              <p>Today&apos;s Appointments </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="row align-items-center">
+                          <div className="col-6">
+                            <div className="dashboard-card-number text-start">
+                              <p>{appointmentPending?.length}</p>
+                            </div>
+                          </div>
+                          <div className="col-6">
+                            <div className="dashboard-card-number text-end">
+                              <span className="badge rounded-pill bg-warning">
+                                Pending
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="col-12 col-md-6 col-lg-6 col-xl-3 patient-dashboard-top">
+                      <div className="dashboard-card">
+                        <div className="row align-items-center">
+                          <div className="col-3">
+                            <div className="dashboard-card-icon shadow">
+                              <i className="fas fa-users-medical"></i>
+                            </div>
+                          </div>
+                          <div className="col-9">
+                            <div className="dashboard-card-title">
+                              <p>Tommorow&apos;s Appointments </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="row align-items-center">
+                          <div className="col-6">
+                            <div className="dashboard-card-number text-start">
+                              <p>{tommorowAppointment?.length}</p>
+                            </div>
+                          </div>
+                          <div className="col-6">
+                            <div className="dashboard-card-number text-end">
+                              <span className="badge rounded-pill bg-warning">
+                                Pending
                               </span>
                             </div>
                           </div>
@@ -165,225 +323,15 @@ const Dashboard = () => {
                       </div>
                     </div>
                   </div>
-                  {/* <div className="row">
-                    <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
-                      <div
-                        className="card bmi"
-                        style={{ backgroundColor: "#fff7d9" }}
-                      >
-                        <div className="card-body text-center">
-                          <div className="mb-3">
-                            <Image
-                              height="55"
-                              width="55"
-                              src="/user_assets/img/specialities/pic-6.png"
-                              alt=""
-                            />
-                          </div>
-                          <h5>BMI</h5>
-                          <h6>{data?.vitalSigns?.bmi}</h6>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
-                      <div
-                        className="card oxygen-lvl"
-                        style={{ backgroundColor: "#80ffd4" }}
-                      >
-                        <div className="card-body text-center">
-                          <div className="mb-3">
-                            <Image
-                              height="55"
-                              width="55"
-                              src="/user_assets/img/specialities/pic-8.png"
-                              alt=""
-                            />
-                          </div>
-                          <h5>Oxygen Level</h5>
-                          <h6>{data?.vitalSigns?.oxygen}%</h6>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
-                      <div
-                        className="card dimension"
-                        style={{ backgroundColor: "#fff599" }}
-                      >
-                        <div className="card-body text-center">
-                          <div className="mb-3">
-                            <Image
-                              height="55"
-                              width="55"
-                              src="/user_assets/img/specialities/pic-5.png"
-                              alt=""
-                            />
-                          </div>
-                          <h5>Dimensions</h5>
-                          <h6>
-                            {data?.vitalSigns?.height} <sub>Cm</sub> -{" "}
-                            {data?.vitalSigns?.weight} <sub>Kg</sub>
-                          </h6>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
-                      <div
-                        className="card resp-rate"
-                        style={{ backgroundColor: "#83ffff75" }}
-                      >
-                        <div className="card-body text-center">
-                          <div className="mb-3">
-                            <Image
-                              height="55"
-                              width="55"
-                              src="/user_assets/img/specialities/pic-13.png"
-                              alt=""
-                            />
-                          </div>
-                          <h5>Respiratory rate</h5>
-                          <h6>
-                            {data?.vitalSigns?.respiration} <sub>BPM</sub>
-                          </h6>
-                        </div>
-                      </div>
-                    </div>
-                  </div> */}
 
-                  {/* <div className="card">
-                    <div className="card-body pt-0">
-                      <nav className="user-tabs mb-4">
-                        <ul className="nav nav-tabs nav-tabs-bottom nav-justified">
-                          <li className="nav-item">
-                            <a
-                              className="nav-link active"
-                              href="#pat_appointments"
-                              data-bs-toggle="tab"
-                            >
-                              Appointments
-                            </a>
-                          </li>
-                          <li className="nav-item">
-                            <a
-                              className="nav-link"
-                              href="#pat_prescriptions"
-                              data-bs-toggle="tab"
-                            >
-                              Prescriptions
-                            </a>
-                          </li>
-                          <li className="nav-item">
-                            <a
-                              className="nav-link"
-                              href="#pat_medical_records"
-                              data-bs-toggle="tab"
-                            >
-                              <span className="med-records">
-                                Medical Records
-                              </span>
-                            </a>
-                          </li>
-                          <li className="nav-item">
-                            <a
-                              className="nav-link"
-                              href="#pat_billing"
-                              data-bs-toggle="tab"
-                            >
-                              Billing
-                            </a>
-                          </li>
-                        </ul>
-                      </nav>
-
-                      <div className="tab-content pt-0">
-                        <div
-                          id="pat_appointments"
-                          className="tab-pane fade show active"
-                        >
-                          <div className="card card-table mb-0">
-                            <div className="card-body">
-                              <div className="table-responsive">
-                                <table className="table table-hover table-center mb-0">
-                                  <thead>
-                                    <tr>
-                                      <th>Doctor</th>
-                                      <th>Appt Date</th>
-                                      <th>Booking Date</th>
-                                      <th>Amount</th>
-                                      <th>Follow Up</th>
-                                      <th>Status</th>
-                                      <th></th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <td>
-                                        <h2 className="table-avatar">
-                                          <a
-                                            href="doctor-profile.html"
-                                            className="avatar avatar-sm me-2"
-                                          >
-                                            <Image
-                                              height="50"
-                                              width="50"
-                                              className="avatar-img rounded-circle"
-                                              src="/user_assets/img/doctors/doctor-thumb-01.jpg"
-                                              alt="User Image"
-                                            />
-                                          </a>
-                                          <a href="doctor-profile.html">
-                                            Dr. Ruby Perrin <span>Dental</span>
-                                          </a>
-                                        </h2>
-                                      </td>
-                                      <td>
-                                        14 Nov 2019
-                                        <span className="d-block text-info">
-                                          10.00 AM
-                                        </span>
-                                      </td>
-                                      <td>12 Nov 2019</td>
-                                      <td>$160</td>
-                                      <td>16 Nov 2019</td>
-                                      <td>
-                                        <span className="badge rounded-pill bg-success-light">
-                                          Confirm
-                                        </span>
-                                      </td>
-                                      <td className="text-end">
-                                        <div className="table-action">
-                                          <a
-                                            href="javascript:void(0);"
-                                            className="btn btn-sm bg-primary-light"
-                                          >
-                                            <i className="fas fa-print"></i>{" "}
-                                            Print
-                                          </a>
-                                          <a
-                                            href="javascript:void(0);"
-                                            className="btn btn-sm bg-info-light"
-                                          >
-                                            <i className="far fa-eye"></i> View
-                                          </a>
-                                        </div>
-                                      </td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div> */}
-                  <div className="user_dash_banner">
+                  {/* <div className="user_dash_banner">
                     <Image
                       height="500"
                       width="2000"
                       src="/user_assets/img/slide1.jpg"
                       alt=""
                     />
-                  </div>
+                  </div> */}
                 </div>
               ) : (
                 <UserPageLoader />

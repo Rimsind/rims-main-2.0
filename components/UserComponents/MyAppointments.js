@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import useSWR from "swr";
 import { apiUrl, fetcher } from "config/api";
-const MyAppointments = ({ data }) => {
+const MyAppointments = ({ data, sl }) => {
   const { data: specialty } = useSWR(
     `${apiUrl}/specialties/${data?.doctor?.specialty}`,
     fetcher
@@ -11,6 +11,8 @@ const MyAppointments = ({ data }) => {
   return (
     <>
       <tr>
+        <td>#{sl}</td>
+        <td>{data?.id}</td>
         <td>
           <h2 className="table-avatar">
             <a href="doctor-profile.html" className="avatar avatar-sm me-2">

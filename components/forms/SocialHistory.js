@@ -27,6 +27,7 @@ const SocialHistory = ({ patientId, socialHistory, updated_at }) => {
           live_with: data.live_with.toString(),
           home_haves: data.home_haves.toString(),
           do_uses: data.do_uses.toString(),
+          any_obstacles: data.any_obstacles,
         },
       };
 
@@ -260,10 +261,7 @@ const SocialHistory = ({ patientId, socialHistory, updated_at }) => {
                         value="value9"
                       />
                     </div>
-                    <div
-                      className="col-md-11 col-sm-11"
-                      {...register("homeHaveText")}
-                    >
+                    <div className="col-md-11 col-sm-11">
                       <div className="row justify-centent-between align-items-center">
                         <div className="col-md-5 col-sm-5">
                           <p className="space-x-4">Any Obstacles (List):</p>
@@ -272,8 +270,14 @@ const SocialHistory = ({ patientId, socialHistory, updated_at }) => {
                           <input
                             type="text"
                             className="form-control"
-                            name="homeHaveText"
+                            name="any_obstacles"
                             placeholder=""
+                            {...register("any_obstacles")}
+                            defaultValue={
+                              !!socialHistory && !!socialHistory.any_obstacles
+                                ? socialHistory.any_obstacles
+                                : ""
+                            }
                           />
                         </div>
                       </div>
