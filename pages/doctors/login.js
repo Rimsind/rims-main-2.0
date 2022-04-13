@@ -190,7 +190,10 @@ const Index = () => {
           </div>
         </div>
       </section> */}
-      <section className="doctor-login-section">
+      <section
+        className="doctor-login-section"
+        style={{ background: "url(/assets/images/login-bg.jpg)" }}
+      >
         <div className="container">
           <div className="card-body">
             <ul className="nav nav-tabs nav-tabs-bottom nav-justified">
