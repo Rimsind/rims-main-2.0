@@ -153,7 +153,7 @@ const Dashboard = () => {
                                   className="badge rounded-pill bg-primary fw-normal shadow"
                                   style={{ fontSize: "15px" }}
                                 >
-                                  <i class="fas fa-circle text-light me-1"></i>
+                                  <i className="fas fa-circle text-light me-1"></i>
                                   Live
                                 </span>
                               </div>
@@ -190,7 +190,7 @@ const Dashboard = () => {
                                   className="badge rounded-pill bg-primary fw-normal shadow"
                                   style={{ fontSize: "15px" }}
                                 >
-                                  <i class="fas fa-circle text-light me-1"></i>
+                                  <i className="fas fa-circle text-light me-1"></i>
                                   Live
                                 </span>
                               </div>
@@ -260,7 +260,7 @@ const Dashboard = () => {
                                   className="badge rounded-pill bg-primary fw-normal shadow"
                                   style={{ fontSize: "15px" }}
                                 >
-                                  <i class="fas fa-circle text-light me-1"></i>
+                                  <i className="fas fa-circle text-light me-1"></i>
                                   Live
                                 </span>
                               </div>
@@ -297,7 +297,7 @@ const Dashboard = () => {
                                   className="badge rounded-pill bg-info fs-6 fw-normal shadow"
                                   style={{ fontSize: "15px" }}
                                 >
-                                  <i class="fas fa-layer-group me-1"></i>
+                                  <i className="fas fa-layer-group me-1"></i>
                                   Total
                                 </span>
                               </div>
@@ -334,7 +334,7 @@ const Dashboard = () => {
                                   className="badge rounded-pill bg-success fw-normal shadow"
                                   style={{ fontSize: "15px" }}
                                 >
-                                  <i class="fas fa-check-circle me-1"></i>
+                                  <i className="fas fa-check-circle me-1"></i>
                                   Completed
                                 </span>
                               </div>
@@ -374,7 +374,7 @@ const Dashboard = () => {
                                     fontSize: "15px",
                                   }}
                                 >
-                                  <i class="fas fa-hourglass-start me-1"></i>
+                                  <i className="fas fa-hourglass-start me-1"></i>
                                   Pending
                                 </span>
                               </div>
@@ -411,7 +411,7 @@ const Dashboard = () => {
                                   className="badge rounded-pill bg-danger fw-normal shadow"
                                   style={{ fontSize: "15px" }}
                                 >
-                                  <i class="fas fa-times-circle text-light me-1"></i>
+                                  <i className="fas fa-times-circle text-light me-1"></i>
                                   Cancelled
                                 </span>
                               </div>
@@ -421,15 +421,6 @@ const Dashboard = () => {
                       </div>
                     </div>
                   </div>
-
-                  {/* <div className="user_dash_banner">
-                    <Image
-                      height="500"
-                      width="2000"
-                      src="/user_assets/img/slide1.jpg"
-                      alt=""
-                    />
-                  </div> */}
                 </div>
               ) : (
                 <UserPageLoader />
