@@ -90,114 +90,110 @@ const Signup = () => {
   };
   return (
     <>
-      <div className="login-form-main">
-        <div className="area">
-          <ul className="circles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </div>
+      <section className="nursing-signup-section">
         <div className="container">
-          <div className="row form-box">
-            <div className="col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 px-5 py-4">
-              <div className="login-logo mt-3">
-                <Image
-                  height="60"
-                  width="90"
-                  src="/assets/images/logo-dark.png"
-                  alt="login Banner"
-                />
-              </div>
-              <div className="login-con mt-4">
-                <p className="fs-5 text-secondary">
-                  Get started with a free account <br />
-                  consult with doctor, appointment and many more!
-                </p>
-              </div>
-              <div className="login-btn-option mt-4 d-flex align-items-center justify-content-between">
-                <button type="button" className="btn btn-primary px-5 disabled">
-                  <i className="fab fa-facebook-f me-2"></i> Signup with
-                  Facebook
-                </button>
-                <button type="button" className="btn btn-danger px-5 disabled">
-                  <i className="fab fa-google me-2"></i> Signup with Google
-                </button>
-              </div>
-              <div className="text-center mt-4">
-                <p className="fs-6 fw-lighter fst-italic">-OR-</p>
-              </div>
-              <div className="login-form">
-                <form onSubmit={handleSubmit(onSubmit)}>
-                  <div className="row">
-                    <div className="col-12">
-                      <div className="mb-3">
-                        <label htmlForm="" className="form-label">
-                          Institution Name
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id=""
-                          placeholder="Enter Institution name"
-                          {...register("name")}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">Email address</label>
-                    <input
-                      type="email"
-                      className="form-control"
-                      placeholder="Enter email id"
-                      {...register("email")}
-                    />
-                    <div id="emailHelp" className="form-text">
-                      We&apos;ll never share your email with anyone else.
-                    </div>
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">Password</label>
-                    <input
-                      type="password"
-                      className="form-control"
-                      {...register("password")}
+          <div className="card-body">
+            <ul className="nav nav-tabs nav-tabs-bottom nav-justified">
+              <li className="nav-item">
+                <Link href="/nursing-homes/login">
+                  <a className="nav-link">Login</a>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <a
+                  className="nav-link active"
+                  href="#bottom-justified-tab2"
+                  data-bs-toogle="tab"
+                >
+                  Register
+                </a>
+              </li>
+            </ul>
+            <div className="tab-content">
+              <div className="tab-pane show active" id="bottom-justified-tab2">
+                <div className="row align-items-center">
+                  <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+                    <Image
+                      src="/assets/images/doctor-login.png"
+                      height="500px"
+                      width="500px"
                     />
                   </div>
-                  <div className="mb-3 form-check">
-                    <div className="row">
-                      <div className="col-12 text-center">
-                        <p>
-                          Already a member?
-                          <Link href="/nursing-homes/login">
-                            <a className="text-dark fw-bold ms-2">Login</a>
-                          </Link>
-                        </p>
-                      </div>
+                  <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+                    <div className="nursing-signup-form p-5 border border-1 rounded">
+                      <form onSubmit={handleSubmit(onSubmit)}>
+                        <div className="row">
+                          <div className="col-12">
+                            <div className="mb-3">
+                              <label htmlForm="" className="form-label">
+                                Institution Name
+                              </label>
+                              <input
+                                type="text"
+                                className="form-control"
+                                id=""
+                                placeholder="Enter Institution name"
+                                {...register("name")}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div className="mb-3">
+                          <label className="form-label">Email address</label>
+                          <input
+                            type="email"
+                            className="form-control"
+                            placeholder="Enter email id"
+                            {...register("email")}
+                          />
+                          <div id="emailHelp" className="form-text">
+                            We&apos;ll never share your email with anyone else.
+                          </div>
+                        </div>
+                        <div className="mb-3">
+                          <label className="form-label">Password</label>
+                          <input
+                            type="password"
+                            className="form-control"
+                            {...register("password")}
+                          />
+                        </div>
+                        <div className="mb-3">
+                          <label className="form-label">
+                            Confirmed Password
+                          </label>
+                          <input
+                            type="password"
+                            className="form-control"
+                            // {...register("password")}
+                          />
+                        </div>
+                        <div className="row mt-5">
+                          <div className="col-12 text-center">
+                            <button
+                              type="submit"
+                              className="btn btn-custom-login"
+                            >
+                              Signup
+                            </button>
+                          </div>
+                        </div>
+                        <div className="warning-text">
+                          <p className="fs-6 fw-lighter mt-2">
+                            By signing up, you agree to Rims&apos;s
+                            <a href="#">Terms & Condition</a> &
+                            <a href="#">Privacy Policy</a>
+                          </p>
+                        </div>
+                      </form>
                     </div>
                   </div>
-                  <div className="row mt-3">
-                    <div className="col-12 text-center">
-                      <button type="submit" className="btn btn-custom-login">
-                        Signup
-                      </button>
-                    </div>
-                  </div>
-                </form>
+                </div>
               </div>
             </div>
-            <div className="col-6 bg-background"></div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

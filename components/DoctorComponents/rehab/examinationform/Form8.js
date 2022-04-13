@@ -105,7 +105,7 @@ const Form8 = ({ appointmentId }) => {
                   <div className="doctor-assessments-form-title text-center py-3 rounded my-4 shadow">
                     <p className="fs-4 text-light lh-1 pt-2">Gait Assessment</p>
                   </div>
-                  <table className="table table-bordered border-dark">
+                  <table className="rehab-com-table">
                     <tr className="text-center">
                       <th></th>
                       <th className="py-3">Ankle</th>
@@ -113,8 +113,10 @@ const Form8 = ({ appointmentId }) => {
                       <th className="py-3">Hip</th>
                       <th className="py-3">Trunk</th>
                     </tr>
-                    <tr>
-                      <td rowSpan="3">Heel Strike To Foot Flat</td>
+                    <tr style={{ backgroundColor: "#b4dcffa6" }}>
+                      <td rowSpan="3" className="text-center fw-bold">
+                        Heel Strike To Foot Flat
+                      </td>
                       <td>
                         <div className="row">
                           <div className="col-md-2">
@@ -204,7 +206,7 @@ const Form8 = ({ appointmentId }) => {
                         </div>
                       </td>
                     </tr>
-                    <tr>
+                    <tr style={{ backgroundColor: "#b4dcffa6" }}>
                       <td>
                         <div className="row">
                           <div className="col-md-2">
@@ -273,7 +275,7 @@ const Form8 = ({ appointmentId }) => {
                         </div>
                       </td>
                     </tr>
-                    <tr>
+                    <tr style={{ backgroundColor: "#b4dcffa6" }}>
                       <td>
                         <div className="row">
                           <div className="col-md-2">
@@ -321,8 +323,10 @@ const Form8 = ({ appointmentId }) => {
                         </div>
                       </td>
                     </tr>
-                    <tr>
-                      <td rowSpan="5">Foot Flat To Mid Stance</td>
+                    <tr style={{ backgroundColor: "#c1c7f3ab" }}>
+                      <td rowSpan="5" className="text-center fw-bold">
+                        Foot Flat To Mid Stance
+                      </td>
                       <td>
                         <div className="row">
                           <div className="col-md-2">
@@ -391,7 +395,7 @@ const Form8 = ({ appointmentId }) => {
                       </td>
                       <td></td>
                     </tr>
-                    <tr>
+                    <tr style={{ backgroundColor: "#c1c7f3ab" }}>
                       <td>
                         <div className="row">
                           <div className="col-md-2">
@@ -439,7 +443,7 @@ const Form8 = ({ appointmentId }) => {
                         </div>
                       </td>
                     </tr>
-                    <tr>
+                    <tr style={{ backgroundColor: "#c1c7f3ab" }}>
                       <td>
                         <div className="row">
                           <div className="col-md-2">
@@ -488,7 +492,7 @@ const Form8 = ({ appointmentId }) => {
                       </td>
                       <td></td>
                     </tr>
-                    <tr>
+                    <tr style={{ backgroundColor: "#c1c7f3ab" }}>
                       <td>
                         <div className="row">
                           <div className="col-md-2">
@@ -537,7 +541,7 @@ const Form8 = ({ appointmentId }) => {
                       </td>
                       <td></td>
                     </tr>
-                    <tr>
+                    <tr style={{ backgroundColor: "#c1c7f3ab" }}>
                       <td>
                         <div className="row">
                           <div className="col-md-2">
@@ -586,8 +590,10 @@ const Form8 = ({ appointmentId }) => {
                       </td>
                       <td></td>
                     </tr>
-                    <tr>
-                      <td rowSpan="3">Heel Off To Toe Off</td>
+                    <tr style={{ backgroundColor: "#b4dcffa6" }}>
+                      <td rowSpan="3" className="text-center fw-bold">
+                        Heel Off To Toe Off
+                      </td>
                       <td>
                         <div className="row">
                           <div className="col-md-2">
@@ -614,7 +620,7 @@ const Form8 = ({ appointmentId }) => {
                       <td></td>
                       <td></td>
                     </tr>
-                    <tr>
+                    <tr style={{ backgroundColor: "#b4dcffa6" }}>
                       <td>
                         <div className="row">
                           <div className="col-md-2">
@@ -646,7 +652,7 @@ const Form8 = ({ appointmentId }) => {
                       <td></td>
                       <td></td>
                     </tr>
-                    <tr>
+                    <tr style={{ backgroundColor: "#b4dcffa6" }}>
                       <td>
                         <div className="row">
                           <div className="col-md-2">
@@ -676,8 +682,10 @@ const Form8 = ({ appointmentId }) => {
                       <td></td>
                       <td></td>
                     </tr>
-                    <tr>
-                      <td rowSpan="3">Acceleration To Mid Swing</td>
+                    <tr style={{ backgroundColor: "#c1c7f3ab" }}>
+                      <td rowSpan="3" className="text-center fw-bold">
+                        Acceleration To Mid Swing
+                      </td>
                       <td>
                         <div className="row">
                           <div className="col-md-2">
@@ -725,7 +733,7 @@ const Form8 = ({ appointmentId }) => {
                       </td>
                       <td></td>
                     </tr>
-                    <tr>
+                    <tr style={{ backgroundColor: "#c1c7f3ab" }}>
                       <td>
                         <div className="row">
                           <div className="col-md-2">
@@ -794,7 +802,7 @@ const Form8 = ({ appointmentId }) => {
                       </td>
                       <td></td>
                     </tr>
-                    <tr>
+                    <tr style={{ backgroundColor: "#c1c7f3ab" }}>
                       <td></td>
                       <td>
                         <div className="row">

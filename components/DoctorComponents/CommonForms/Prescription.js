@@ -245,7 +245,7 @@ const Prescription = ({ appointmentId }) => {
                       {appointmentDetails?.assesment?.diagnosis.map(
                         (items, index) => (
                           <tr key={index}>
-                            <th>{index + 1}</th>
+                            <th>#{index + 1}</th>
                             <th scope="col">{items?.description}</th>
                           </tr>
                         )
@@ -268,20 +268,18 @@ const Prescription = ({ appointmentId }) => {
                         <th scope="col">Start Date</th>
                         <th scope="col">Status</th>
                         <th scope="col">Type</th>
-                        <th scope="col">Reason</th>
                       </tr>
                     </thead>
                     <tbody>
                       {appointmentDetails?.patient?.past_medication_history?.map(
                         (items, index) => (
                           <tr key={index}>
-                            <td>{index + 1}</td>
+                            <td>#{index + 1}</td>
                             <td>{items?.medicineName}</td>
                             <td>{items?.dose}</td>
                             <td>{items?.startDate}</td>
                             <td>{items?.status}</td>
                             <td>{items?.type}</td>
-                            <td>no api</td>
                           </tr>
                         )
                       )}

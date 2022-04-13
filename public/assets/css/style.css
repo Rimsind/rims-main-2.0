@@ -4161,3 +4161,20 @@ button.slick-arrow {
 }
 
 /* Custom About Page Stylesheet End Here */
+
+@media screen and (min-width: 300px) and (max-width: 900px) {
+  .responsive-view {
+    padding: 0px !important;
+  }
+}
+
+table.rehab-com-table {
+  width: 100%;
+}
+
+.rehab-com-table th,
+.rehab-com-table td {
+  border: 1px solid;
+  border-color: #4b4b4b;
+  padding: 17px 10px 0 10px;
+}

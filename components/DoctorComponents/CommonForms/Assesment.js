@@ -349,7 +349,7 @@ const Assesment = ({ appointmentId }) => {
               type="text"
               className="form-control"
               id=""
-              placeholder=""
+              placeholder="Enter ICD-10 Code"
               value={icd}
               onChange={(e) => setIcd(e.target.value)}
             />

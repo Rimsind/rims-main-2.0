@@ -58,11 +58,11 @@ const ClinicalExamination = () => {
           title1="Clinical Examination"
         />
         <div
-          className="page-wrapper-inner"
+          className="page-wrapper-inner responsive-view"
           id="page-wrapper"
-          // style={{
-          //   padding: "1.875rem 1.875rem 0",
-          // }}
+          style={{
+            padding: "1.875rem 1.875rem 0",
+          }}
         >
           <div className="content container-fluid">
             <div className="page-header">

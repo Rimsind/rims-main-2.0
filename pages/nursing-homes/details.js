@@ -182,7 +182,7 @@ const NursingHomeId = () => {
                               <div className="special-box text-center">
                                 <div className="special-body">
                                   <Image
-                                    src="/assets/images/Icu-Bed.png"
+                                    src="/assets/images/ICU-Bed.png"
                                     height="50px"
                                     width="50px"
                                     alt="ICU Bed"

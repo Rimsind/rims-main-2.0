@@ -92,6 +92,19 @@ const DoctorTimetableCard = ({ schedule, doctor }) => {
           </div>
         </div>
       </div>
+      <section className="doctor-location">
+        <div className="card shadow">
+          <div className="card-body">
+            <div className="row align-items-center">
+              <div className="col-3">
+                <div className="doctor-location-items">
+                  <p>Polyclinic name</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
