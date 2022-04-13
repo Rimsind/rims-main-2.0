@@ -1,4 +1,5 @@
 import AuthLayout from "components/layout/AuthLayout";
+import Image from "next/image";
 import Link from "next/link";
 import axios from "axios";
 import { useForm } from "react-hook-form";
@@ -90,7 +91,7 @@ const Signup = () => {
   };
   return (
     <>
-      <div className="login-form-main">
+      {/* <div className="login-form-main">
         <div className="area">
           <ul className="circles">
             <li></li>
@@ -206,7 +207,221 @@ const Signup = () => {
             <div className="col-6 bg-background"></div>
           </div>
         </div>
-      </div>
+      </div> */}
+      <section className="doctor-signup-section">
+        <div className="container">
+          <div class="card-body">
+            <ul class="nav nav-tabs nav-tabs-bottom nav-justified">
+              <li class="nav-item">
+                <Link href="/doctors/login">
+                  <a class="nav-link">Login</a>
+                </Link>
+              </li>
+              <li class="nav-item">
+                <a
+                  className="nav-link active"
+                  href="#bottom-justified-tab2"
+                  data-bs-toogle="tab"
+                >
+                  Register
+                </a>
+              </li>
+            </ul>
+            <div class="tab-content">
+              {/* <div class="tab-pane show active" id="bottom-justified-tab1">
+                <div className="row align-items-center">
+                  <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+                    <Image
+                      src="/assets/images/doctor-login.png"
+                      height="500px"
+                      width="500px"
+                    />
+                  </div>
+                  <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+                    <div className="doctor-login-form p-5 border border-1 rounded ">
+                      <form onSubmit={handleSubmit(onSubmit)}>
+                        <div className="mb-3">
+                          <label
+                            htmlFor="exampleInputEmail1"
+                            className="form-label"
+                          >
+                            Email address
+                          </label>
+                          <input
+                            type="email"
+                            className="form-control"
+                            id="exampleInputEmail1"
+                            aria-describedby="emailHelp"
+                            {...register("email")}
+                          />
+                          <div id="emailHelp" className="form-text">
+                            We&apos;ll never share your email with anyone else.
+                          </div>
+                        </div>
+                        <div className="mb-3">
+                          <label
+                            htmlFor="exampleInputPassword1"
+                            className="form-label"
+                          >
+                            Password
+                          </label>
+                          <input
+                            type="password"
+                            className="form-control"
+                            id="exampleInputPassword1"
+                            {...register("password")}
+                          />
+                        </div>
+                        <div className="mb-3 form-check">
+                          <div className="row">
+                            <div className="col-6">
+                              <input
+                                type="checkbox"
+                                className="form-check-input"
+                                id="exampleCheck1"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="exampleCheck1"
+                              >
+                                Show Password
+                              </label>
+                            </div>
+                            <div className="col-6 text-end">
+                              <a
+                                href="#"
+                                className="text-dark fw-bold text-decoration-none"
+                              >
+                                Forgot Password
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="row mt-5">
+                          <div className="col-12 text-center">
+                            <button
+                              type="submit"
+                              className="btn btn-custom-login"
+                            >
+                              Login
+                            </button>
+                            <p className="mt-2">
+                              Don&apos;t have an account?
+                              <Link href="/doctors/signup">
+                                <a className="text-dark fw-bold">Register </a>
+                              </Link>
+                            </p>
+                          </div>
+                        </div>
+                        <div className="warning-text text-center">
+                          <p className="fs-6 fw-lighter mt-2">
+                            By signing up, you agree to Rims&apos;s
+                            <a href="#">Terms & Condition</a> &
+                            <a href="#">Privacy Policy</a>
+                          </p>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div> */}
+              <div class="tab-pane show active" id="bottom-justified-tab2">
+                <div className="row align-items-center">
+                  <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+                    <Image
+                      src="/assets/images/doctor-login.png"
+                      height="500px"
+                      width="500px"
+                    />
+                  </div>
+                  <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+                    <div className="doctor-signup-form p-5 border border-1 rounded ">
+                      <form onSubmit={handleSubmit(onSubmit)}>
+                        <div className="row">
+                          <div className="col-6">
+                            <div className="mb-3">
+                              <label htmlFor="" className="form-label">
+                                First Name
+                              </label>
+                              <input
+                                type="text"
+                                className="form-control"
+                                id=""
+                                placeholder="Enter first name"
+                                {...register("firstName")}
+                              />
+                            </div>
+                          </div>
+                          <div className="col-6">
+                            <div className="mb-3">
+                              <label htmlFor="" className="form-label">
+                                Last Name
+                              </label>
+                              <input
+                                type="text"
+                                className="form-control"
+                                id=""
+                                placeholder="Enter last name"
+                                {...register("lastName")}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div className="mb-3">
+                          <label className="form-label">Email address</label>
+                          <input
+                            type="email"
+                            className="form-control"
+                            placeholder="Enter email id"
+                            {...register("email")}
+                          />
+                          <div id="emailHelp" className="form-text">
+                            We&apos;ll never share your email with anyone else.
+                          </div>
+                        </div>
+                        <div className="mb-3">
+                          <label className="form-label">Password</label>
+                          <input
+                            type="password"
+                            className="form-control"
+                            {...register("password")}
+                          />
+                        </div>
+                        <div className="mb-3">
+                          <label className="form-label">Confirm Password</label>
+                          <input
+                            type="password"
+                            className="form-control"
+                            // {...register("password")}
+                          />
+                        </div>
+
+                        <div className="row mt-5">
+                          <div className="col-12 text-center">
+                            <button
+                              type="submit"
+                              className="btn btn-custom-login"
+                            >
+                              Signup
+                            </button>
+                          </div>
+                        </div>
+                        <div className="warning-text text-center">
+                          <p className="fs-6 fw-lighter mt-2">
+                            By signing up, you agree to Rims&apos;s
+                            <a href="#">Terms & Condition</a> &
+                            <a href="#">Privacy Policy</a>
+                          </p>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };

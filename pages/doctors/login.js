@@ -84,21 +84,7 @@ const Index = () => {
   };
   return (
     <>
-      <div className="login-form-main">
-        <div className="area">
-          <ul className="circles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </div>
+      {/* <section className="login-section">
         <div className="container">
           <div className="row form-box">
             <div className="col-6 px-5 py-4">
@@ -204,137 +190,212 @@ const Index = () => {
             <div className="col-6 bg-background"></div>
           </div>
         </div>
-      </div>
-      {/* <div
-        className="doctor-login-main-sec d-flex justify-content-center align-items-center shadow"
-        style={{
-          height: "100vh",
-          background: "url(/user_assets/img/background.jpg)",
-          backgroundSize: "cover",
-        }}
-      >
-        <div
-          className="doctor-admin-login-sec"
-          style={{
-            background: "url(/user_assets/img/doctor-login/doctor.jpg)",
-            backgroundSize: "cover",
-            backgroundPosition: "no-repeat",
-            height: "70vh",
-            width: "22vw",
-          }}
-        >
-          <div
-            className="doctor-admin-login-title"
-            style={{
-              height: "48%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexDirection: "column",
-            }}
-          >
-            <Image
-              src="/user_assets/img/logo-dark.png"
-              height="100px"
-              width="100px"
-              alt="Rims Logo"
-            />
-            <p
-              className="text-center"
-              style={{
-                fontSize: "50px",
-                fontWeight: "600",
-                textShadow: "3px 5px 2px #022856c7",
-                color: "#fff",
-              }}
-            >
-              Doctor Login
-            </p>
-          </div>
-          <div
-            className="doctor-admin-login"
-            style={{
-              height: "52%",
-              backgroundColor: "#71a5d1a3",
-              paddingTop: "10px",
-              paddingBottom: "10px",
-            }}
-          >
-            <div className="user-title my-2">
-              <p
-                className="text-center"
-                style={{ letterSpacing: "5px", fontSize: "20px" }}
-              >
-                USER LOGIN
-              </p>
-            </div>
-            <form
-              style={{ width: "350px", margin: "auto" }}
-              onSubmit={handleSubmit(onSubmit)}
-            >
-              <div className="mb-3">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Username"
-                  {...register("email")}
-                />
-              </div>
-              <div className="mb-3">
-                <input
-                  type="password"
-                  className="form-control"
-                  placeholder="Password"
-                  {...register("password")}
-                />
-              </div>
-              <div className="row align-items-center">
-                <div className="col-6">
-                  <div className="mb-3 form-check">
-                    <input
-                      type="checkbox"
-                      className="form-check-input"
-                      id="exampleCheck1"
-                    />
-                    <label className="form-check-label" htmlFor="exampleCheck1">
-                      Remember Me
-                    </label>
-                  </div>
-                </div>
-                <div className="col-6">
-                  <div className="mb-3">
-                    <a className="fs-6" style={{ color: "#3f51b5" }}>
-                      Forgot Password?
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="login-btn text-center my-3">
-                <button
-                  type="submit"
-                  className="btn btn-dark"
-                  style={{
-                    backgroundColor: "#ffffff",
-                    padding: "10px 40px",
-                    color: "#022856c7",
-                    fontSize: "18px",
-                    fontWeight: "600",
-                    borderColor: "#022856c7",
-                    boxShadow: "4px 4px 10px 0px #022856c7",
-                  }}
+      </section> */}
+      <section className="doctor-login-section">
+        <div className="container">
+          <div class="card-body">
+            <ul class="nav nav-tabs nav-tabs-bottom nav-justified">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  href="#bottom-justified-tab1"
+                  data-bs-toggle="tab"
                 >
-                  LOGIN
-                </button>
+                  Login
+                </a>
+              </li>
+              <li class="nav-item">
+                <Link href="/doctors/signup">
+                  <a class="nav-link">Register</a>
+                </Link>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane show active" id="bottom-justified-tab1">
+                <div className="row align-items-center">
+                  <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+                    <Image
+                      src="/assets/images/doctor-login.png"
+                      height="500px"
+                      width="500px"
+                    />
+                  </div>
+                  <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+                    <div className="doctor-login-form p-5 border border-1 rounded ">
+                      <form onSubmit={handleSubmit(onSubmit)}>
+                        <div className="mb-3">
+                          <label
+                            htmlFor="exampleInputEmail1"
+                            className="form-label"
+                          >
+                            Email address
+                          </label>
+                          <input
+                            type="email"
+                            className="form-control"
+                            id="exampleInputEmail1"
+                            aria-describedby="emailHelp"
+                            {...register("email")}
+                          />
+                          <div id="emailHelp" className="form-text">
+                            We&apos;ll never share your email with anyone else.
+                          </div>
+                        </div>
+                        <div className="mb-3">
+                          <label
+                            htmlFor="exampleInputPassword1"
+                            className="form-label"
+                          >
+                            Password
+                          </label>
+                          <input
+                            type="password"
+                            className="form-control"
+                            id="exampleInputPassword1"
+                            {...register("password")}
+                          />
+                        </div>
+                        <div className="mb-3 form-check">
+                          <div className="row">
+                            <div className="col-6">
+                              <input
+                                type="checkbox"
+                                className="form-check-input"
+                                id="exampleCheck1"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="exampleCheck1"
+                              >
+                                Show Password
+                              </label>
+                            </div>
+                            <div className="col-6 text-end">
+                              <a
+                                href="#"
+                                className="text-dark text-decoration-none"
+                              >
+                                Forgot Password?
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="row mt-5">
+                          <div className="col-12 text-center">
+                            <button
+                              type="submit"
+                              className="btn btn-custom-login"
+                            >
+                              Login
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </form>
-            <div className="create-account-link text-center my-3">
-              <p style={{ letterSpacing: "5px", fontSize: "20px" }}>
-                CREATE ACCOUNT
-              </p>
+              {/* <div class="tab-pane" id="bottom-justified-tab2">
+                <div className="row align-items-center">
+                  <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+                    <Image
+                      src="/assets/images/doctor-login.png"
+                      height="600px"
+                      width="400px"
+                    />
+                  </div>
+                  <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+                    <div className="doctor-login-form p-5 border border-1 rounded ">
+                      <form onSubmit={handleSubmit(onSubmit)}>
+                        <div className="mb-3">
+                          <label
+                            htmlFor="exampleInputEmail1"
+                            className="form-label"
+                          >
+                            Email address
+                          </label>
+                          <input
+                            type="email"
+                            className="form-control"
+                            id="exampleInputEmail1"
+                            aria-describedby="emailHelp"
+                            {...register("email")}
+                          />
+                          <div id="emailHelp" className="form-text">
+                            We&apos;ll never share your email with anyone else.
+                          </div>
+                        </div>
+                        <div className="mb-3">
+                          <label
+                            htmlFor="exampleInputPassword1"
+                            className="form-label"
+                          >
+                            Password
+                          </label>
+                          <input
+                            type="password"
+                            className="form-control"
+                            id="exampleInputPassword1"
+                            {...register("password")}
+                          />
+                        </div>
+                        <div className="mb-3 form-check">
+                          <div className="row">
+                            <div className="col-6">
+                              <input
+                                type="checkbox"
+                                className="form-check-input"
+                                id="exampleCheck1"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="exampleCheck1"
+                              >
+                                Show Password
+                              </label>
+                            </div>
+                            <div className="col-6 text-end">
+                              <a
+                                href="#"
+                                className="text-dark fw-bold text-decoration-none"
+                              >
+                                Forgot Password
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="row mt-5">
+                          <div className="col-12 text-center">
+                            <button
+                              type="submit"
+                              className="btn btn-custom-login"
+                            >
+                              Login
+                            </button>
+                            <p className="mt-2">
+                              Don&apos;t have an account?
+                              <Link href="/doctors/signup">
+                                <a className="text-dark fw-bold">Register </a>
+                              </Link>
+                            </p>
+                          </div>
+                        </div>
+                        <div className="warning-text text-center">
+                          <p className="fs-6 fw-lighter mt-2">
+                            By signing up, you agree to Rims&apos;s
+                            <a href="#">Terms & Condition</a> &
+                            <a href="#">Privacy Policy</a>
+                          </p>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div> */}
             </div>
           </div>
         </div>
-      </div> */}
+      </section>
     </>
   );
 };

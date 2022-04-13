@@ -67,12 +67,12 @@ const Index = () => {
                     <div className="row align-items-end p-2 rounded-1">
                       <div className="col-12 col-md-12 col-lg-6 col-xl-4 col-xxl-4">
                         <div className="row align-items-center">
-                          <div className="col-5">
+                          <div className="col-12 col-md-12 col-lg-5 col-xl-5 col-xxl-5 mb-1">
                             <lable className="text-light">
                               Filter By Polyclinic:
                             </lable>
                           </div>
-                          <div className="col-7">
+                          <div className="col-12 col-md-12 col-lg-7 col-xl-7 col-xxl-7 mb-1">
                             <select
                               className="form-select"
                               aria-label="Default select example"
@@ -94,14 +94,12 @@ const Index = () => {
                       </div>
                       <div className="col-12 col-md-12 col-lg-6 col-xl-3 col-xxl-3">
                         <div className="row align-items-center">
-                          <div className="col-5">
-                            {" "}
+                          <div className="col-12 col-md-12 col-lg-5 col-xl-5 col-xxl-5 mb-1">
                             <lable className="text-light">
                               Filter By status:
                             </lable>
                           </div>
-                          <div className="col-7">
-                            {" "}
+                          <div className="col-12 col-md-12 col-lg-7 col-xl-7 col-xxl-7 mb-1">
                             <select
                               className="form-select"
                               aria-label="Default select example"
@@ -117,12 +115,12 @@ const Index = () => {
                       </div>
                       <div className="col-12 col-md-12 col-lg-6 col-xl-3 col-xxl-3">
                         <div className="row align-items-center">
-                          <div className="col-5">
+                          <div className="col-12 col-md-12 col-lg-5 col-xl-5 col-xxl-5 mb-1">
                             <lable className="text-light">
                               Filter By Date:
                             </lable>
                           </div>
-                          <div className="col-7">
+                          <div className="col-12 col-md-12 col-lg-7 col-xl-7 col-xxl-7 mb-1">
                             <input
                               type="date"
                               className="form-control"
@@ -132,7 +130,7 @@ const Index = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-12 col-md-12 col-lg-6 col-xl-2 col-xxl-2 text-end">
+                      <div className="col-12 col-md-12 col-lg-6 col-xl-2 col-xxl-2 text-center text-md-end text-lg-end text-xl-end text-xxl-end">
                         <button className="btn btn-light" onClick={resetState}>
                           <i className="far fa-redo-alt me-2"></i>Reset
                         </button>

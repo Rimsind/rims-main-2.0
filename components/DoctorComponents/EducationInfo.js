@@ -65,7 +65,7 @@ const EducationInfo = ({ data }) => {
         <div className="card-body">
           <div className="doc-education mb-4">
             <div className="row align-items-center">
-              <div className="col-3">
+              <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3">
                 <label className="mb-2">Degree or Award</label>
                 <div className="mb-3">
                   <input
@@ -76,7 +76,7 @@ const EducationInfo = ({ data }) => {
                   />
                 </div>
               </div>
-              <div className="col-3">
+              <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3">
                 <label className="mb-2">Institution Name</label>
                 <div className="mb-3">
                   <input
@@ -87,7 +87,7 @@ const EducationInfo = ({ data }) => {
                   />
                 </div>
               </div>
-              <div className="col-3">
+              <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3">
                 <label className="mb-2">Receiving Year</label>
                 <div className="mb-3">
                   <input
@@ -98,7 +98,7 @@ const EducationInfo = ({ data }) => {
                   />
                 </div>
               </div>
-              <div className="col-3">
+              <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3">
                 <button className="btn btn-primary" onClick={addEducation}>
                   Add Education
                 </button>
@@ -106,36 +106,38 @@ const EducationInfo = ({ data }) => {
             </div>
           </div>
           <div className="card-table mt-5">
-            <table className="table">
-              <thead>
-                <tr>
-                  <th scope="col">Sl No.</th>
-                  <th scope="col">Degree or Award</th>
-                  <th scope="col">Institution Name</th>
-                  <th scope="col">Receiving Year</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                {data?.educationAndAwards?.map((items, index) => (
-                  <tr key={index}>
-                    <td scope="row">{index + 1}</td>
-                    <td>{items?.degreeOrAward}</td>
-                    <td>{items?.institution}</td>
-                    <td>{items?.receivingYear}</td>
-                    <td className="text-end">
-                      <div className="table-action">
-                        <Link href="#">
-                          <a className="btn btn-sm bg-danger-light">
-                            <i className="far fa-trash-alt"></i> Delete
-                          </a>
-                        </Link>
-                      </div>
-                    </td>
+            <div className="table-responsive">
+              <table className="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Sl No.</th>
+                    <th scope="col">Degree or Award</th>
+                    <th scope="col">Institution Name</th>
+                    <th scope="col">Receiving Year</th>
+                    <th></th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {data?.educationAndAwards?.map((items, index) => (
+                    <tr key={index}>
+                      <td scope="row">{index + 1}</td>
+                      <td>{items?.degreeOrAward}</td>
+                      <td>{items?.institution}</td>
+                      <td>{items?.receivingYear}</td>
+                      <td className="text-end">
+                        <div className="table-action">
+                          <Link href="#">
+                            <a className="btn btn-sm bg-danger-light">
+                              <i className="far fa-trash-alt"></i> Delete
+                            </a>
+                          </Link>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
