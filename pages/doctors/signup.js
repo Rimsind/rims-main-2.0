@@ -3,6 +3,7 @@ import Link from "next/link";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import router from "next/router";
+import { toast, Slide } from "react-toastify";
 const Signup = () => {
   //react-hook-form
   const {
@@ -48,8 +49,18 @@ const Signup = () => {
   const onSubmit = async (data, e) => {
     e.preventDefault();
 
-    if (!data.firstName || !data.lastName || !data.email || !data.password) {
-      alert("please fill all data");
+    if (data.password != data.confirmPassword) {
+      toast.error("Passwords do not match", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
       return;
     }
 
@@ -81,10 +92,31 @@ const Signup = () => {
         );
       }
       reset();
-      alert("Registration Succesful");
+      toast.success("Registration Succesful", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
       router.push("/doctors/login");
     } catch (err) {
       console.log(err.message);
+      toast.error("Registration Failed", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
     }
   };
   return (
@@ -133,6 +165,7 @@ const Signup = () => {
                                 id=""
                                 placeholder="Enter first name"
                                 {...register("firstName")}
+                                required
                               />
                             </div>
                           </div>
@@ -147,6 +180,7 @@ const Signup = () => {
                                 id=""
                                 placeholder="Enter last name"
                                 {...register("lastName")}
+                                required
                               />
                             </div>
                           </div>
@@ -158,6 +192,7 @@ const Signup = () => {
                             className="form-control"
                             placeholder="Enter email id"
                             {...register("email")}
+                            required
                           />
                           <div id="emailHelp" className="form-text">
                             We&apos;ll never share your email with anyone else.
@@ -169,6 +204,7 @@ const Signup = () => {
                             type="password"
                             className="form-control"
                             {...register("password")}
+                            required
                           />
                         </div>
                         <div className="mb-3">
@@ -176,7 +212,8 @@ const Signup = () => {
                           <input
                             type="password"
                             className="form-control"
-                            // {...register("password")}
+                            {...register("confirmPassword")}
+                            required
                           />
                         </div>
 

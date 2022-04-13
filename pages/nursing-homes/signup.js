@@ -1,9 +1,9 @@
 import Link from "next/link";
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import AuthLayout from "components/layout/AuthLayout";
 import Router from "next/router";
 import Image from "next/image";
+import { toast, Slide } from "react-toastify";
 const Signup = () => {
   //react-hook-form
   const {
@@ -49,11 +49,20 @@ const Signup = () => {
   const onSubmit = async (data, e) => {
     e.preventDefault();
 
-    if (!data.name || !data.email || !data.password) {
-      alert("please fill all data");
+    if (data.password != data.confirmPassword) {
+      toast.error("Passwords do not match", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
       return;
     }
-
     try {
       const payload = {
         username: data.email,
@@ -82,10 +91,31 @@ const Signup = () => {
         );
       }
       reset();
-      alert("Registration Succesful");
+      toast.success("Registration Succesful", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
       Router.push("/nursing-homes/login");
     } catch (err) {
       console.log(err.message);
+      toast.error("Registration Failed", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
     }
   };
   return (
@@ -134,6 +164,7 @@ const Signup = () => {
                                 id=""
                                 placeholder="Enter Institution name"
                                 {...register("name")}
+                                required
                               />
                             </div>
                           </div>
@@ -145,6 +176,7 @@ const Signup = () => {
                             className="form-control"
                             placeholder="Enter email id"
                             {...register("email")}
+                            required
                           />
                           <div id="emailHelp" className="form-text">
                             We&apos;ll never share your email with anyone else.
@@ -156,6 +188,7 @@ const Signup = () => {
                             type="password"
                             className="form-control"
                             {...register("password")}
+                            required
                           />
                         </div>
                         <div className="mb-3">
@@ -165,7 +198,8 @@ const Signup = () => {
                           <input
                             type="password"
                             className="form-control"
-                            // {...register("password")}
+                            required
+                            {...register("confirmPassword")}
                           />
                         </div>
                         <div className="row mt-5">
@@ -199,5 +233,3 @@ const Signup = () => {
 };
 
 export default Signup;
-
-Signup.getLayout = (Signup) => <AuthLayout>{Signup}</AuthLayout>;
