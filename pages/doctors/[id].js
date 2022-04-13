@@ -16,7 +16,7 @@ const DoctorId = () => {
       <main className="main">
         <BreadCrums title="Home / Doctor Details" title1="Doctor Details" />
         <div className="content">
-          <div className="container-fluid">
+          <div className="container">
             {data ? (
               <>
                 <div className="card">
