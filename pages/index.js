@@ -22,7 +22,6 @@ const Index = () => {
   const { data: polyclinics } = useSWR(`${apiUrl}/polyclinics`, fetcher);
   const { data: nursingHomes } = useSWR(`${apiUrl}/nursing-homes`, fetcher);
   const { data: hospitals } = useSWR(`${apiUrl}/hospitals`, fetcher);
-  console.log(hospitals);
   const breakPoints = [
     { width: 1, itemsToShow: 1 },
     { width: 550, itemsToShow: 3, itemsToScroll: 1 },

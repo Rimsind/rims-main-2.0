@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const AppointmentList = ({ data }) => {
+const AppointmentList = ({ data, sl }) => {
   return (
     <>
       <tr>
+        <td>#{sl}</td>
         <td>{data?.id}</td>
         <td>
           <h2 className="table-avatar">
@@ -45,9 +46,7 @@ const AppointmentList = ({ data }) => {
         {!!data.appointment_status === false ? (
           <td className="text-end">
             <div className="table-action">
-              <Link
-                href={`/doctors/appointments/clinical-examination?id=${data?.id}`}
-              >
+              <Link href={`/doctors/appointments/examination?id=${data?.id}`}>
                 <a className="btn btn-sm bg-warning">
                   <i className="far fa-pencil"></i> Edit
                 </a>

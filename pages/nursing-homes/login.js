@@ -5,8 +5,7 @@ import { setCookie } from "nookies";
 import router from "next/router";
 import { useAuth } from "context/index";
 import Image from "next/image";
-import AuthLayout from "components/layout/AuthLayout";
-
+import { toast, Slide } from "react-toastify";
 const Login = () => {
   const { dispatchAuth } = useAuth();
   const {
@@ -52,7 +51,17 @@ const Login = () => {
         });
 
         reset();
-        alert("login success");
+        toast.success("login success", {
+          position: "top-center",
+          autoClose: 4000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          transition: Slide,
+        });
         router.push("/nursing-homes/dashboard");
       }
     } catch (error) {
@@ -63,7 +72,16 @@ const Login = () => {
           : "Something went wrong, try agin",
       });
       console.log(error.message);
-      alert("login failed");
+      toast.error("Email Or Password does not exist", {
+        position: "top-center",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     }
   };
   return (
@@ -181,5 +199,3 @@ const Login = () => {
 };
 
 export default Login;
-
-Login.getLayout = (Login) => <AuthLayout>{Login}</AuthLayout>;

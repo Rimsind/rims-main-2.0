@@ -4,7 +4,7 @@ import Link from "next/link";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
-import { toast } from "react-toastify";
+import { toast, Slide } from "react-toastify";
 const Signup = () => {
   const router = useRouter();
   const {
@@ -60,6 +60,7 @@ const Signup = () => {
         draggable: true,
         progress: undefined,
         theme: "colored",
+        transition: Slide,
       });
       return;
     }
@@ -99,6 +100,7 @@ const Signup = () => {
         draggable: true,
         progress: undefined,
         theme: "colored",
+        transition: Slide,
       });
       reset();
       router.push("/user/login");
@@ -112,6 +114,7 @@ const Signup = () => {
         draggable: true,
         progress: undefined,
         theme: "colored",
+        transition: Slide,
       });
     }
   };

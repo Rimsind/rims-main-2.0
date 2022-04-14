@@ -100,7 +100,7 @@ const AdvanceSettings = () => {
         <div className="content">
           <div className="container-fluid">
             <div className="row">
-              <DoctorSidebar status7="active" patient={data} />
+              <DoctorSidebar status7="active" data={data} />
 
               <div className="col-md-12 col-sm-12 col-lg-8 col-xl-9">
                 {dataLenght === 0 || !dataLenght ? (

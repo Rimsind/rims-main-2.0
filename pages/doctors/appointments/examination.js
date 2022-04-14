@@ -1,8 +1,4 @@
 import { BreadCrums } from "components/common";
-import {
-  CheifComplaints,
-  VitalSigns,
-} from "components/DoctorComponents/subjectiveForm";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useAuth } from "context";
@@ -12,9 +8,16 @@ import axios from "axios";
 import {
   AllergyCard,
   PatientDemographics,
-  NotesCard,
+  VactionCard,
+  NeuroExamination,
+  OrthoExamination,
+  RehabExamination,
+  MedicineExamination,
   StatusChanger,
 } from "components/DoctorComponents";
+import HistoryOfPresentIllness from "components/DoctorComponents/CommonForms/HistoryOfPresentIllness";
+import Assesment from "components/DoctorComponents/CommonForms/Assesment";
+import Prescription from "components/DoctorComponents/CommonForms/Prescription";
 
 import {
   GeneralInformation,
@@ -25,11 +28,14 @@ import {
   MedicalHistory,
   FunctionalStatus,
 } from "components/forms";
-
-const SubjectiveDetails = () => {
+import {
+  CheifComplaints,
+  VitalSigns,
+} from "components/DoctorComponents/subjectiveForm";
+import { useState } from "react";
+const ClinicalExamination = () => {
   const { id } = useRouter().query;
   const { auth } = useAuth();
-
   const { data: appointment } = useSWR(
     `${apiUrl}/appointments/${id}`,
     async (url) => {
@@ -43,17 +49,59 @@ const SubjectiveDetails = () => {
     }
   );
 
+  const { data: doctor } = useSWR(
+    `${apiUrl}/doctors/${auth.user?.profileId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
+
+  const [subjectiveButton, setSubjectiveButton] = useState(
+    "btn btn-primary text-center py-4 fs-5 fw-bold"
+  );
+  const [clinicalButton, setClinicalButton] = useState(
+    "btn bg-light text-center border border-dark py-4 fs-5 fw-bold"
+  );
+  const [subjectiveCard, setSubjectiveCard] = useState("card-body d-block");
+  const [clinicalCard, setClinicalCard] = useState("card-body d-none");
+
+  const subjectiveEvent = (e) => {
+    setSubjectiveButton("btn btn-primary text-center py-4 fs-5 fw-bold");
+    setClinicalButton(
+      "btn bg-light text-center border border-dark py-4 fs-5 fw-bold"
+    );
+    setSubjectiveCard("card-body d-block");
+    setClinicalCard("card-body d-none");
+  };
+
+  const clinicalEvent = () => {
+    setSubjectiveButton(
+      "btn bg-light text-center border border-dark py-4 fs-5 fw-bold"
+    );
+    setClinicalButton("btn btn-primary text-center py-4 fs-5 fw-bold");
+    setSubjectiveCard("card-body d-none");
+    setClinicalCard("card-body d-block");
+  };
+
   return (
     <>
       <div className="page-wrapper">
         <BreadCrums
           title="Home / Dashboard / My Appointments"
-          title1="Subjective Information"
+          title1="Clinical Examination"
         />
         <div
-          className="page-wrapper-inner"
+          className="page-wrapper-inner responsive-view"
           id="page-wrapper"
-          style={{ padding: "1.875rem 1.875rem 0" }}
+          style={{
+            padding: "1.875rem 1.875rem 0",
+          }}
         >
           <div className="content container-fluid">
             <div className="page-header">
@@ -78,42 +126,155 @@ const SubjectiveDetails = () => {
             </div>
 
             <div className="row">
-              <div className="col-md-12 col-lg-12 col-xl-2 col-xxl-2">
+              <div className="col-md-12 col-lg-12 col-xl-2">
                 <PatientDemographics patientInfo={appointment?.patient} />
 
-                <AllergyCard />
+                <AllergyCard
+                  medicalHistory={appointment?.patient?.medicalHistory}
+                />
 
-                <NotesCard />
+                <VactionCard
+                  medicalHistory={appointment?.patient?.medicalHistory}
+                />
               </div>
-              <div className="col-md-12 col-lg-12 col-xl-10 col-xxl-10">
+              <div className="col-md-12 col-lg-12 col-xl-10">
                 <div className="card">
                   <div className="card-header">
                     <div className="custom-tab row align-items-center">
                       <div className="col-6 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <div
-                          className="tablinks diag-inner-content  pt-4 pb-1 text-center active"
-                          id="defaultOpen"
-                        >
-                          <p className="fs-5 fw-bold text-light">
+                        <div class="d-grid gap-2">
+                          <button
+                            className={subjectiveButton}
+                            onClick={subjectiveEvent}
+                          >
                             Subjective Informtion
-                          </p>
+                          </button>
                         </div>
                       </div>
                       <div className="col-6 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <Link
-                          href={`/doctors/appointments/clinical-examination?id=${id}`}
-                          passHref
-                        >
-                          <div className="tablinks diag-inner-content bg-light pt-4 pb-1 text-center border border-dark">
-                            <p className="fs-5 fw-bold text-dark">
-                              Clinical Assesment
-                            </p>
-                          </div>
-                        </Link>
+                        <div class="d-grid gap-2">
+                          <button
+                            className={clinicalButton}
+                            onClick={clinicalEvent}
+                          >
+                            Clinical Assesment
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div className="card-body">
+                  <div className={clinicalCard}>
+                    <div className="tabcontent" id="assesment">
+                      <div className="card shadow-sm">
+                        <div className="card flex-fill">
+                          <div className="card-header">
+                            <ul
+                              role="tablist"
+                              className="nav nav-tabs card-header-tabs"
+                            >
+                              <li className="nav-item">
+                                <a
+                                  href="#tab-11"
+                                  data-bs-toggle="tab"
+                                  className="nav-link active"
+                                >
+                                  History Of Present Illness
+                                </a>
+                              </li>
+                              <li className="nav-item">
+                                <a
+                                  href="#tab-12"
+                                  data-bs-toggle="tab"
+                                  className="nav-link"
+                                >
+                                  Clinical Examination
+                                </a>
+                              </li>
+                              <li className="nav-item">
+                                <a
+                                  href="#tab-13"
+                                  data-bs-toggle="tab"
+                                  className="nav-link"
+                                >
+                                  Assesment
+                                </a>
+                              </li>
+                              <li className="nav-item">
+                                <a
+                                  href="#tab-14"
+                                  data-bs-toggle="tab"
+                                  className="nav-link"
+                                >
+                                  E- Prescription
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div className="card-body">
+                            <div className="tab-content pt-0">
+                              <div
+                                role="tabpanel"
+                                id="tab-11"
+                                className="tab-pane fade show active"
+                              >
+                                <HistoryOfPresentIllness appointmentId={id} />
+                              </div>
+                              <div
+                                role="tabpanel"
+                                id="tab-12"
+                                className="tab-pane fade"
+                              >
+                                {doctor?.specialty?.name === "Neurologist" ? (
+                                  <>
+                                    <NeuroExamination appointmentId={id} />
+                                  </>
+                                ) : (
+                                  <></>
+                                )}
+                                {doctor?.specialty?.name === "Orthopedic" ? (
+                                  <>
+                                    <OrthoExamination appointmentId={id} />
+                                  </>
+                                ) : (
+                                  <></>
+                                )}
+                                {doctor?.specialty?.name ===
+                                "Rehabilitation" ? (
+                                  <>
+                                    <RehabExamination appointmentId={id} />
+                                  </>
+                                ) : (
+                                  <></>
+                                )}
+                                {doctor?.specialty?.name === "Medicine" ? (
+                                  <>
+                                    <MedicineExamination appointmentId={id} />
+                                  </>
+                                ) : (
+                                  <></>
+                                )}
+                              </div>
+                              <div
+                                role="tabpanel"
+                                id="tab-13"
+                                className="tab-pane fade"
+                              >
+                                <Assesment appointmentId={id} />
+                              </div>
+                              <div
+                                role="tabpanel"
+                                id="tab-14"
+                                className="tab-pane fade"
+                              >
+                                <Prescription appointmentId={id} />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className={subjectiveCard}>
                     <div className="tabcontent" id="subjective">
                       <div className="card-header border-bottom">
                         <ul
@@ -330,4 +491,4 @@ const SubjectiveDetails = () => {
   );
 };
 
-export default SubjectiveDetails;
+export default ClinicalExamination;

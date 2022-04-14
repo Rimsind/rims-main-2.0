@@ -143,7 +143,8 @@ const Index = () => {
                         <table className="table table-hover table-center mb-0">
                           <thead>
                             <tr>
-                              <th>#Id</th>
+                              <th>Sl No.</th>
+                              <th>#App-Id</th>
                               <th> Patient Name</th>
 
                               <th>Age</th>
@@ -240,7 +241,11 @@ const Index = () => {
                                     }
                                   })
                                   .map((items, index) => (
-                                    <AppointmentList data={items} key={index} />
+                                    <AppointmentList
+                                      data={items}
+                                      key={index}
+                                      sl={index + 1}
+                                    />
                                   ))}
                               </>
                             )}
