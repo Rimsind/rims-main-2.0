@@ -142,7 +142,7 @@ const ClinicalExamination = () => {
                   <div className="card-header">
                     <div className="custom-tab row align-items-center">
                       <div className="col-6 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <div class="d-grid gap-2">
+                        <div className="d-grid gap-2">
                           <button
                             className={subjectiveButton}
                             onClick={subjectiveEvent}
@@ -152,7 +152,7 @@ const ClinicalExamination = () => {
                         </div>
                       </div>
                       <div className="col-6 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <div class="d-grid gap-2">
+                        <div className="d-grid gap-2">
                           <button
                             className={clinicalButton}
                             onClick={clinicalEvent}
