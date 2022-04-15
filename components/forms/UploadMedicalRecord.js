@@ -127,6 +127,7 @@ const UploadMedicalRecord = ({
             <input
               type="btn"
               className="btn btn-primary"
+              readOnly
               value={loading ? "Uploading..." : "upload Image"}
               disabled={loading}
               onClick={uploadProfileImage}

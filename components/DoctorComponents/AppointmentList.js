@@ -46,7 +46,9 @@ const AppointmentList = ({ data, sl }) => {
         {!!data.appointment_status === false ? (
           <td className="text-end">
             <div className="table-action">
-              <Link href={`/doctors/appointments/examination?id=${data?.id}`}>
+              <Link
+                href={`/doctors/appointments/clinical-examination?id=${data?.id}`}
+              >
                 <a className="btn btn-sm bg-warning">
                   <i className="far fa-pencil"></i> Edit
                 </a>
@@ -56,7 +58,7 @@ const AppointmentList = ({ data, sl }) => {
         ) : (
           <td className="text-end">
             <div className="table-action">
-              <Link href={`/doctors/appointments`}>
+              <Link href={`/doctors/appointments/view?id=${data?.id}`}>
                 <a className="btn btn-sm bg-info-light">
                   <i className="far fa-eye"></i> View
                 </a>

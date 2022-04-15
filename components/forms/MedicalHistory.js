@@ -18,6 +18,7 @@ const MedicalHistory = ({
   past_medication_history,
   past_surgical_history,
 }) => {
+  console.log(past_surgical_history);
   const surgicalDataLength = past_surgical_history?.length;
   const medicineDataLength = past_medication_history?.length;
 
@@ -88,7 +89,7 @@ const MedicalHistory = ({
 
   const [medicineName, setMedicineName] = useState();
   const [dose, setDose] = useState();
-  const [date, setDate] = useState();
+  const [startDate, setStartDate] = useState();
   const [status, setStatus] = useState();
   const [type, setType] = useState();
   const [route, setRoute] = useState();
@@ -104,7 +105,7 @@ const MedicalHistory = ({
           {
             medicineName: medicineName,
             dose: dose,
-            startData: date,
+            startDate: startDate,
             status: status,
             type: type,
             route: route,
@@ -137,7 +138,7 @@ const MedicalHistory = ({
         result,
         setMedicineName(""),
         setDose(""),
-        setDate(""),
+        setStartDate(""),
         setIfYes(""),
         setType()
       );
@@ -609,15 +610,16 @@ const MedicalHistory = ({
             <table className="table table-striped">
               <thead>
                 <tr>
-                  <th scope="col"></th>
+                  <th scope="col">Sl No.</th>
                   <th scope="col">Title</th>
                   <th scope="col">Date</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
                 {surgicalDataLength === 0 ? (
                   <tr>
-                    <td colSpan="3" className="text-danger text-center">
+                    <td colSpan="4" className="text-danger text-center">
                       No Previous Records Found !!
                     </td>
                   </tr>
@@ -625,15 +627,16 @@ const MedicalHistory = ({
                   <>
                     {past_surgical_history?.map((item, index) => (
                       <tr key={index}>
+                        <td>#{index + 1}</td>
+                        <td>{item.name}</td>
+                        <td>{item.date}</td>
                         <td>
                           <div className="delete-table-icon">
-                            <button className="btn rounded-circle">
+                            <button className="btn">
                               <i className="fad fa-trash"></i>
                             </button>
                           </div>
                         </td>
-                        <td>{item.name}</td>
-                        <td>{item.date}</td>
                       </tr>
                     ))}
                   </>
@@ -754,8 +757,8 @@ const MedicalHistory = ({
                     className="form-control"
                     name="MedicineName"
                     max={maxDate}
-                    value={date}
-                    onChange={(e) => setDate(e.target.value)}
+                    value={startDate}
+                    onChange={(e) => setStartDate(e.target.value)}
                   />
                 </div>
               </div>

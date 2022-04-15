@@ -22,7 +22,7 @@ const PatientDemographics = ({ patientInfo }) => {
               </p>
               <div className="patient-details">
                 <p className="text-success fs-6 fw-bold">
-                  ID- #{patientInfo?.id}
+                  Patient ID- #{patientInfo?.id}
                 </p>
               </div>
             </div>

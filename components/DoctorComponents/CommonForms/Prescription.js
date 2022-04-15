@@ -224,6 +224,24 @@ const Prescription = ({ appointmentId }) => {
     }
   };
 
+  var today = new Date();
+
+  var day = today.getDate() + 1;
+  var month = today.getMonth() + 1;
+  var year = today.getFullYear();
+
+  if (day < 10) {
+    var newDay = "0" + day;
+  } else {
+    var newDay = day;
+  }
+  if (month < 10) {
+    var newMonth = "0" + month;
+  } else {
+    var newMonth = month;
+  }
+  const minDate = year + "-" + newMonth + "-" + newDay;
+
   const treatmentList = ["option 1", "option 2", "option 3", "option 4"];
   return (
     <>
@@ -877,6 +895,7 @@ const Prescription = ({ appointmentId }) => {
                     type="date"
                     className="form-control"
                     name="days"
+                    min={minDate}
                     onChange={(e) => setRevisitDate(e.target.value)}
                   />
                 </div>

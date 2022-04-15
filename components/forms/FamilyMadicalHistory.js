@@ -225,12 +225,13 @@ const FamilyMadicalHistory = ({ familyHistory, patientId, updated_at }) => {
           <table className="table table-striped">
             <thead>
               <tr>
-                <th scope="col">Sl</th>
+                <th scope="col">Sl No.</th>
                 <th scope="col">Relation</th>
                 <th scope="col">Age (if living)</th>
                 <th scope="col">Age (if death)</th>
                 <th scope="col">Cause of death</th>
                 <th>Problems</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -246,18 +247,19 @@ const FamilyMadicalHistory = ({ familyHistory, patientId, updated_at }) => {
                 <>
                   {familyHistory?.map((item, index) => (
                     <tr key={index}>
-                      <td>
-                        <div className="delete-table-icon">
-                          <button className="btn rounded-circle">
-                            <i className="fad fa-trash"></i>
-                          </button>
-                        </div>
-                      </td>
+                      <td className="fw-bold">#{index + 1}</td>
                       <td>{item.relation}</td>
                       <td>{item.age_if_living}</td>
                       <td>{item.age_if_death}</td>
                       <td>{item.cause_of_death}</td>
                       <td>{item.diseases}</td>
+                      <td>
+                        <div className="delete-table-icon">
+                          <button className="btn rounded-circle">
+                            <i className="fad fa-trash "></i>
+                          </button>
+                        </div>
+                      </td>
                     </tr>
                   ))}
                 </>
