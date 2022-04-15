@@ -18,7 +18,6 @@ const MedicalHistory = ({
   past_medication_history,
   past_surgical_history,
 }) => {
-  console.log(past_surgical_history);
   const surgicalDataLength = past_surgical_history?.length;
   const medicineDataLength = past_medication_history?.length;
 

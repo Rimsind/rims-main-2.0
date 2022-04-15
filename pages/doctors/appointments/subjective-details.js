@@ -42,6 +42,8 @@ const SubjectiveDetails = () => {
     }
   );
 
+  console.log(appointment);
+
   return (
     <>
       <div className="page-wrapper">
@@ -220,7 +222,11 @@ const SubjectiveDetails = () => {
                             id="tab-9"
                             className="tab-pane fade"
                           >
-                            <VitalSigns appointmentId={id} />
+                            <VitalSigns
+                              patientId={appointment?.patient?.id}
+                              vitalSigns={appointment?.patient?.vitalSigns}
+                              updated_at={appointment?.updated_at}
+                            />
                           </div>
                           <div
                             role="tabpanel"
