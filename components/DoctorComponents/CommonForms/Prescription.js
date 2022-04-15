@@ -563,7 +563,7 @@ const Prescription = ({ appointmentId }) => {
             <div className="col-md-6">
               <p className="fs-5 fw-bold">Precaution & Safety Measures</p>
               <div className="row align-items-end">
-                <div className="col-4">
+                <div className="col-5">
                   <div className="items">
                     <label className="form-label">Options</label>
                     <select
@@ -580,7 +580,7 @@ const Prescription = ({ appointmentId }) => {
                     </select>
                   </div>
                 </div>
-                <div className="col-4">
+                <div className="col-5">
                   <div className="items">
                     <label className="form-label">Others</label>
                     <input
@@ -592,7 +592,7 @@ const Prescription = ({ appointmentId }) => {
                     />
                   </div>
                 </div>
-                <div className="col-4">
+                <div className="col-2">
                   <div className="prescription-add-btn text-end">
                     <span className="btn btn-primary" onClick={addPrecaution}>
                       Add

@@ -5,17 +5,10 @@ import { apiUrl } from "config/api";
 import { useState } from "react";
 import { Slide, toast } from "react-toastify";
 import { involuntoryList } from "pages/api/rehabData";
-import { useEffect } from "react";
 const Form10 = ({ appointmentId, rehabData }) => {
   const { auth } = useAuth();
 
   const [status, setStatus] = useState(false);
-
-  useEffect(() => {
-    if (rehabData?.motor_function_assesment?.muscle_tone === "Impaired") {
-      setStatus(true);
-    }
-  }, []);
 
   const { register, handleSubmit } = useForm();
   const submit_form10 = async (data, event) => {
