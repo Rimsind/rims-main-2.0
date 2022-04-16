@@ -7,13 +7,12 @@ import { Slide, toast } from "react-toastify";
 import { involuntoryList } from "pages/api/rehabData";
 import { useEffect } from "react";
 const Form10 = ({ appointmentId, rehabData }) => {
-  console.log(rehabData.motor_function_assesment);
   const { auth } = useAuth();
 
   const [status, setStatus] = useState(false);
 
   useEffect(() => {
-    if (rehabData.motor_function_assesment.muscle_tone === "Impaired") {
+    if (rehabData?.motor_function_assesment?.muscle_tone === "Impaired") {
       setStatus(true);
     }
   }, []);
