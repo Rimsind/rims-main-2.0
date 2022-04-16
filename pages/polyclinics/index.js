@@ -9,7 +9,22 @@ import { apiUrl, fetcher } from "config/api";
 import useSWR from "swr";
 import { useState } from "react";
 const Index = () => {
-  const { data } = useSWR(`${apiUrl}/polyclinics`, fetcher);
+  const { data } = useSWR(`${apiUrl}/polyclinics?_sort=id:desc`, fetcher);
+  const [startValue, setStartValue] = useState(0);
+  const [endValue, setEndValue] = useState(5);
+  const nextData = () => {
+    if (data?.length - endValue >= 0) {
+      setStartValue(startValue + 5);
+      setEndValue(endValue + 5);
+    }
+  };
+
+  const previousValue = () => {
+    if (startValue >= 5) {
+      setStartValue(startValue - 5);
+      setEndValue(endValue - 5);
+    }
+  };
   const { data: locations } = useSWR(`${apiUrl}/locations`, fetcher);
 
   const [search, setSearch] = useState("");
@@ -132,6 +147,7 @@ const Index = () => {
                           return items;
                         }
                       })
+                      .slice(`${startValue}`, `${endValue}`)
                       .map((items, index) => (
                         <HorizontalPolyclinicCard
                           data={items}
@@ -150,7 +166,47 @@ const Index = () => {
                 )}
 
                 <div className="user-main-pagination mb-4">
-                  <ListPagination />
+                  <div className="list-pagination">
+                    <div className="row">
+                      <div className="col-lg-10"></div>
+                      <div className="col-2">
+                        <div className="row">
+                          <div className="col-6 ">
+                            {startValue >= 5 ? (
+                              <button
+                                className="btn btn-primary"
+                                onClick={previousValue}
+                              >
+                                <i className="fal fa-long-arrow-left me-2"></i>
+                                Prev
+                              </button>
+                            ) : (
+                              <button className="btn btn-primary" disabled>
+                                <i className="fal fa-long-arrow-left me-2"></i>
+                                Prev
+                              </button>
+                            )}
+                          </div>
+                          <div className="col-6">
+                            {data?.length - endValue >= 0 ? (
+                              <button
+                                className="btn btn-primary"
+                                onClick={nextData}
+                              >
+                                Next
+                                <i className="fal fa-long-arrow-right ms-2"></i>
+                              </button>
+                            ) : (
+                              <button className="btn btn-primary" disabled>
+                                Next
+                                <i className="fal fa-long-arrow-right ms-2"></i>
+                              </button>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

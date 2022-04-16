@@ -5,7 +5,23 @@ import { ListingPageLoader } from "components/Loaders";
 import { useState } from "react";
 
 const Index = () => {
-  const { data: doctors } = useSWR(`${apiUrl}/doctors`, fetcher);
+  const { data: doctors } = useSWR(`${apiUrl}/doctors?_sort=id:desc`, fetcher);
+  const [startValue, setStartValue] = useState(0);
+  const [endValue, setEndValue] = useState(5);
+  const nextData = () => {
+    if (doctors?.length - endValue >= 0) {
+      setStartValue(startValue + 5);
+      setEndValue(endValue + 5);
+    }
+  };
+
+  const previousValue = () => {
+    if (startValue >= 5) {
+      setStartValue(startValue - 5);
+      setEndValue(endValue - 5);
+    }
+  };
+
   const { data: specialties } = useSWR(`${apiUrl}/specialties`, fetcher);
   const { data: locations } = useSWR(`${apiUrl}/locations`, fetcher);
   const [name, setName] = useState("");
@@ -220,6 +236,7 @@ const Index = () => {
                           return items;
                         }
                       })
+                      .slice(`${startValue}`, `${endValue}`)
                       .map((item, index) => (
                         <HorizontalDoctorCard data={item} key={index} />
                       ))}
@@ -240,16 +257,36 @@ const Index = () => {
                       <div className="col-2">
                         <div className="row">
                           <div className="col-6 ">
-                            <button className="btn btn-primary">
-                              <i className="fal fa-long-arrow-left me-2"></i>
-                              Prev
-                            </button>
+                            {startValue >= 5 ? (
+                              <button
+                                className="btn btn-primary"
+                                onClick={previousValue}
+                              >
+                                <i className="fal fa-long-arrow-left me-2"></i>
+                                Prev
+                              </button>
+                            ) : (
+                              <button className="btn btn-primary" disabled>
+                                <i className="fal fa-long-arrow-left me-2"></i>
+                                Prev
+                              </button>
+                            )}
                           </div>
                           <div className="col-6">
-                            <button className="btn btn-primary">
-                              Next
-                              <i className="fal fa-long-arrow-right ms-2"></i>
-                            </button>
+                            {doctors?.length - endValue >= 0 ? (
+                              <button
+                                className="btn btn-primary"
+                                onClick={nextData}
+                              >
+                                Next
+                                <i className="fal fa-long-arrow-right ms-2"></i>
+                              </button>
+                            ) : (
+                              <button className="btn btn-primary" disabled>
+                                Next
+                                <i className="fal fa-long-arrow-right ms-2"></i>
+                              </button>
+                            )}
                           </div>
                         </div>
                       </div>
