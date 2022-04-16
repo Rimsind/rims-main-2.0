@@ -5,66 +5,55 @@ import { useAuth } from "context/index";
 import { apiUrl } from "config/api";
 import { Slide, toast } from "react-toastify";
 import { retrainingList } from "pages/api/rehabData";
-const Form1 = ({ appointmentId }) => {
+const Form1 = ({ appointmentId, rehabData }) => {
   const { auth } = useAuth();
-  const { data: appointment } = useSWR(
-    `${apiUrl}/appointments/${appointmentId}`,
-    async (url) => {
-      const res = await axios.get(url, {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      });
-      const result = res.data;
-      return result;
-    }
-  );
 
   const { register, handleSubmit } = useForm();
   const submit_form1 = async (data, event) => {
     event.preventDefault();
-    const payload = {
-      rehab: {
-        ...appointment.rehab,
-        aerobicCapacity: {
-          angina: data.angina,
-          oximetry: data.oximetry,
-          describe_short_term_goals: data.describe_short_term_goals,
-          sounds: data.sounds,
-          shortTerm_transfer_task: data.shortTerm_transfer_task,
-          during_bed_mobility: data.during_bed_mobility,
-          gas_exchange: data.gas_exchange,
-          shortTerm_ambulation_task: data.shortTerm_ambulation_task,
-          blood_pressure: data.blood_pressure,
-          respiratory_rhythm: data.respiratory_rhythm,
-          shortTerm_standarized_test: data.shortTerm_standarized_test,
-          shortTerm_at_rpe: data.shortTerm_at_rpe,
-          breath_voice_sounds: data.breath_voice_sounds,
-          cyanosis: data.cyanosis,
-          claudication: data.claudication,
-          respiratory_rate: data.respiratory_rate,
-          rhythm: data.rhythm,
-          identified_problems: data.identified_problems,
-          during_standarized_test: data.during_standarized_test,
-          heart_rate: data.heart_rate,
-          respiratory_pattern: data.respiratory_pattern,
-          during_transfer_task: data.during_transfer_task,
-          at_rpe: data.at_rpe,
-          shortTerm_bed_mobility: data.shortTerm_bed_mobility,
-          during_ambulation_task: data.during_ambulation_task,
-          longTerm_bed_mobility: data.longTerm_bed_mobility,
-          longTerm_transfer_task: data.longTerm_transfer_task,
-          longTerm_Ambulation_task: data.longTerm_Ambulation_task,
-          longTerm_Standarized_test: data.longTerm_Standarized_test,
-          longTerm_at_rpe: data.longTerm_at_rpe,
-          longTerm_description: data.longTerm_description,
-          aerobic_capacity_retraining:
-            data.aerobic_capacity_retraining.toString(),
-          treatment_plan: data.treatment_plan,
-        },
-      },
-    };
     try {
+      const payload = {
+        rehab: {
+          ...rehabData,
+          aerobicCapacity: {
+            angina: data.angina,
+            oximetry: data.oximetry,
+            describe_short_term_goals: data.describe_short_term_goals,
+            sounds: data.sounds,
+            shortTerm_transfer_task: data.shortTerm_transfer_task,
+            during_bed_mobility: data.during_bed_mobility,
+            gas_exchange: data.gas_exchange,
+            shortTerm_ambulation_task: data.shortTerm_ambulation_task,
+            blood_pressure: data.blood_pressure,
+            respiratory_rhythm: data.respiratory_rhythm,
+            shortTerm_standarized_test: data.shortTerm_standarized_test,
+            shortTerm_at_rpe: data.shortTerm_at_rpe,
+            breath_voice_sounds: data.breath_voice_sounds,
+            cyanosis: data.cyanosis,
+            claudication: data.claudication,
+            respiratory_rate: data.respiratory_rate,
+            rhythm: data.rhythm,
+            identified_problems: data.identified_problems,
+            during_standarized_test: data.during_standarized_test,
+            heart_rate: data.heart_rate,
+            respiratory_pattern: data.respiratory_pattern,
+            during_transfer_task: data.during_transfer_task,
+            at_rpe: data.at_rpe,
+            shortTerm_bed_mobility: data.shortTerm_bed_mobility,
+            during_ambulation_task: data.during_ambulation_task,
+            longTerm_bed_mobility: data.longTerm_bed_mobility,
+            longTerm_transfer_task: data.longTerm_transfer_task,
+            longTerm_Ambulation_task: data.longTerm_Ambulation_task,
+            longTerm_Standarized_test: data.longTerm_Standarized_test,
+            longTerm_at_rpe: data.longTerm_at_rpe,
+            longTerm_description: data.longTerm_description,
+            aerobic_capacity_retraining:
+              data.aerobic_capacity_retraining.toString(),
+            treatment_plan: data.treatment_plan,
+          },
+        },
+      };
+
       const res = await axios.put(
         `${apiUrl}/appointments/${appointmentId}`,
         payload,
@@ -144,16 +133,13 @@ const Form1 = ({ appointmentId }) => {
                           <option
                             name="language"
                             defaultValue={
-                              !!appointment?.rehab?.aerobicCapacity &&
-                              appointment?.rehab?.aerobicCapacity
-                                .during_bed_mobility
+                              !!rehabData?.aerobicCapacity &&
+                              rehabData?.aerobicCapacity.during_bed_mobility
                             }
                           >
-                            {!!appointment?.rehab?.aerobicCapacity &&
-                            appointment?.rehab?.aerobicCapacity
-                              .during_bed_mobility
-                              ? appointment?.rehab?.aerobicCapacity
-                                  .during_bed_mobility
+                            {!!rehabData?.aerobicCapacity &&
+                            rehabData?.aerobicCapacity.during_bed_mobility
+                              ? rehabData?.aerobicCapacity.during_bed_mobility
                               : "Select"}
                           </option>
                           <option value="0 - Nothing at all">
@@ -195,16 +181,13 @@ const Form1 = ({ appointmentId }) => {
                           <option
                             name="language"
                             defaultValue={
-                              !!appointment?.rehab?.aerobicCapacity &&
-                              appointment?.rehab?.aerobicCapacity
-                                .during_transfer_task
+                              !!rehabData?.aerobicCapacity &&
+                              rehabData?.aerobicCapacity.during_transfer_task
                             }
                           >
-                            {!!appointment?.rehab?.aerobicCapacity &&
-                            appointment?.rehab?.aerobicCapacity
-                              .during_transfer_task
-                              ? appointment?.rehab?.aerobicCapacity
-                                  .during_transfer_task
+                            {!!rehabData?.aerobicCapacity &&
+                            rehabData?.aerobicCapacity.during_transfer_task
+                              ? rehabData?.aerobicCapacity.during_transfer_task
                               : "Select"}
                           </option>
                           <option value="0 - Nothing at all">
@@ -246,15 +229,13 @@ const Form1 = ({ appointmentId }) => {
                           <option
                             name="language"
                             defaultValue={
-                              !!appointment?.rehab?.aerobicCapacity &&
-                              appointment?.rehab?.aerobicCapacity
-                                .during_ambulation_task
+                              !!rehabData?.aerobicCapacity &&
+                              rehabData?.aerobicCapacity.during_ambulation_task
                             }
                           >
-                            {!!appointment?.rehab?.aerobicCapacity &&
-                            appointment?.rehab?.aerobicCapacity
-                              .during_ambulation_task
-                              ? appointment?.rehab?.aerobicCapacity
+                            {!!rehabData?.aerobicCapacity &&
+                            rehabData?.aerobicCapacity.during_ambulation_task
+                              ? rehabData?.aerobicCapacity
                                   .during_ambulation_task
                               : "Select"}
                           </option>
@@ -298,15 +279,13 @@ const Form1 = ({ appointmentId }) => {
                           <option
                             name="language"
                             defaultValue={
-                              !!appointment?.rehab?.aerobicCapacity &&
-                              appointment?.rehab?.aerobicCapacity
-                                .during_standarized_test
+                              !!rehabData?.aerobicCapacity &&
+                              rehabData?.aerobicCapacity.during_standarized_test
                             }
                           >
-                            {!!appointment?.rehab?.aerobicCapacity &&
-                            appointment?.rehab?.aerobicCapacity
-                              .during_standarized_test
-                              ? appointment?.rehab?.aerobicCapacity
+                            {!!rehabData?.aerobicCapacity &&
+                            rehabData?.aerobicCapacity.during_standarized_test
+                              ? rehabData?.aerobicCapacity
                                   .during_standarized_test
                               : "Select"}
                           </option>
@@ -341,13 +320,13 @@ const Form1 = ({ appointmentId }) => {
                           <option
                             name="language"
                             defaultValue={
-                              !!appointment?.rehab?.aerobicCapacity &&
-                              appointment?.rehab?.aerobicCapacity.at_rpe
+                              !!rehabData?.aerobicCapacity &&
+                              rehabData?.aerobicCapacity.at_rpe
                             }
                           >
-                            {!!appointment?.rehab?.aerobicCapacity &&
-                            appointment?.rehab?.aerobicCapacity.at_rpe
-                              ? appointment?.rehab?.aerobicCapacity.at_rpe
+                            {!!rehabData?.aerobicCapacity &&
+                            rehabData?.aerobicCapacity.at_rpe
+                              ? rehabData?.aerobicCapacity.at_rpe
                               : "Select"}
                           </option>
                           <option value="0 - Nothing at all">
@@ -404,11 +383,9 @@ const Form1 = ({ appointmentId }) => {
                                 name="blood_pressure"
                                 {...register("blood_pressure")}
                                 defaultValue={
-                                  !!appointment?.rehab?.aerobicCapacity &&
-                                  !!appointment?.rehab?.aerobicCapacity
-                                    .blood_pressure
-                                    ? appointment?.rehab?.aerobicCapacity
-                                        .blood_pressure
+                                  !!rehabData?.aerobicCapacity &&
+                                  !!rehabData?.aerobicCapacity.blood_pressure
+                                    ? rehabData?.aerobicCapacity.blood_pressure
                                     : ""
                                 }
                               />
@@ -435,15 +412,14 @@ const Form1 = ({ appointmentId }) => {
                                 <option
                                   name="language"
                                   defaultValue={
-                                    !!appointment?.rehab?.aerobicCapacity &&
-                                    appointment?.rehab?.aerobicCapacity
+                                    !!rehabData?.aerobicCapacity &&
+                                    rehabData?.aerobicCapacity
                                       .breath_voice_sounds
                                   }
                                 >
-                                  {!!appointment?.rehab?.aerobicCapacity &&
-                                  appointment?.rehab?.aerobicCapacity
-                                    .breath_voice_sounds
-                                    ? appointment?.rehab?.aerobicCapacity
+                                  {!!rehabData?.aerobicCapacity &&
+                                  rehabData?.aerobicCapacity.breath_voice_sounds
+                                    ? rehabData?.aerobicCapacity
                                         .breath_voice_sounds
                                     : "Select"}
                                 </option>
@@ -470,11 +446,9 @@ const Form1 = ({ appointmentId }) => {
                                 name="heart_rate"
                                 {...register("heart_rate")}
                                 defaultValue={
-                                  !!appointment?.rehab?.aerobicCapacity &&
-                                  !!appointment?.rehab?.aerobicCapacity
-                                    .heart_rate
-                                    ? appointment?.rehab?.aerobicCapacity
-                                        .heart_rate
+                                  !!rehabData?.aerobicCapacity &&
+                                  !!rehabData?.aerobicCapacity.heart_rate
+                                    ? rehabData?.aerobicCapacity.heart_rate
                                     : ""
                                 }
                               />
@@ -499,14 +473,13 @@ const Form1 = ({ appointmentId }) => {
                                 <option
                                   name="language"
                                   defaultValue={
-                                    !!appointment?.rehab?.aerobicCapacity &&
-                                    appointment?.rehab?.aerobicCapacity.cyanosis
+                                    !!rehabData?.aerobicCapacity &&
+                                    rehabData?.aerobicCapacity.cyanosis
                                   }
                                 >
-                                  {!!appointment?.rehab?.aerobicCapacity &&
-                                  appointment?.rehab?.aerobicCapacity.cyanosis
-                                    ? appointment?.rehab?.aerobicCapacity
-                                        .cyanosis
+                                  {!!rehabData?.aerobicCapacity &&
+                                  rehabData?.aerobicCapacity.cyanosis
+                                    ? rehabData?.aerobicCapacity.cyanosis
                                     : "Select"}
                                 </option>
                                 <option value="Central Cyanosis">
@@ -540,13 +513,13 @@ const Form1 = ({ appointmentId }) => {
                                 <option
                                   name="language"
                                   defaultValue={
-                                    !!appointment?.rehab?.aerobicCapacity &&
-                                    appointment?.rehab?.aerobicCapacity.rhythm
+                                    !!rehabData?.aerobicCapacity &&
+                                    rehabData?.aerobicCapacity.rhythm
                                   }
                                 >
-                                  {!!appointment?.rehab?.aerobicCapacity &&
-                                  appointment?.rehab?.aerobicCapacity.rhythm
-                                    ? appointment?.rehab?.aerobicCapacity.rhythm
+                                  {!!rehabData?.aerobicCapacity &&
+                                  rehabData?.aerobicCapacity.rhythm
+                                    ? rehabData?.aerobicCapacity.rhythm
                                     : "Select"}
                                 </option>
                                 <option value="Normal">Normal</option>
@@ -573,16 +546,13 @@ const Form1 = ({ appointmentId }) => {
                                 <option
                                   name="language"
                                   defaultValue={
-                                    !!appointment?.rehab?.aerobicCapacity &&
-                                    appointment?.rehab?.aerobicCapacity
-                                      .gas_exchange
+                                    !!rehabData?.aerobicCapacity &&
+                                    rehabData?.aerobicCapacity.gas_exchange
                                   }
                                 >
-                                  {!!appointment?.rehab?.aerobicCapacity &&
-                                  appointment?.rehab?.aerobicCapacity
-                                    .gas_exchange
-                                    ? appointment?.rehab?.aerobicCapacity
-                                        .gas_exchange
+                                  {!!rehabData?.aerobicCapacity &&
+                                  rehabData?.aerobicCapacity.gas_exchange
+                                    ? rehabData?.aerobicCapacity.gas_exchange
                                     : "Select"}
                                 </option>
                                 <option value="Normal">Normal</option>
@@ -609,13 +579,13 @@ const Form1 = ({ appointmentId }) => {
                                 <option
                                   name="language"
                                   defaultValue={
-                                    !!appointment?.rehab?.aerobicCapacity &&
-                                    appointment?.rehab?.aerobicCapacity.sounds
+                                    !!rehabData?.aerobicCapacity &&
+                                    rehabData?.aerobicCapacity.sounds
                                   }
                                 >
-                                  {!!appointment?.rehab?.aerobicCapacity &&
-                                  appointment?.rehab?.aerobicCapacity.sounds
-                                    ? appointment?.rehab?.aerobicCapacity.sounds
+                                  {!!rehabData?.aerobicCapacity &&
+                                  rehabData?.aerobicCapacity.sounds
+                                    ? rehabData?.aerobicCapacity.sounds
                                     : "Select"}
                                 </option>
                                 <option value="Normal">Normal</option>
@@ -644,15 +614,14 @@ const Form1 = ({ appointmentId }) => {
                                 <option
                                   name="language"
                                   defaultValue={
-                                    !!appointment?.rehab?.aerobicCapacity &&
-                                    appointment?.rehab?.aerobicCapacity
+                                    !!rehabData?.aerobicCapacity &&
+                                    rehabData?.aerobicCapacity
                                       .respiratory_pattern
                                   }
                                 >
-                                  {!!appointment?.rehab?.aerobicCapacity &&
-                                  appointment?.rehab?.aerobicCapacity
-                                    .respiratory_pattern
-                                    ? appointment?.rehab?.aerobicCapacity
+                                  {!!rehabData?.aerobicCapacity &&
+                                  rehabData?.aerobicCapacity.respiratory_pattern
+                                    ? rehabData?.aerobicCapacity
                                         .respiratory_pattern
                                     : "Select"}
                                 </option>
@@ -707,13 +676,13 @@ const Form1 = ({ appointmentId }) => {
                                 <option
                                   name="language"
                                   defaultValue={
-                                    !!appointment?.rehab?.aerobicCapacity &&
-                                    appointment?.rehab?.aerobicCapacity.angina
+                                    !!rehabData?.aerobicCapacity &&
+                                    rehabData?.aerobicCapacity.angina
                                   }
                                 >
-                                  {!!appointment?.rehab?.aerobicCapacity &&
-                                  appointment?.rehab?.aerobicCapacity.angina
-                                    ? appointment?.rehab?.aerobicCapacity.angina
+                                  {!!rehabData?.aerobicCapacity &&
+                                  rehabData?.aerobicCapacity.angina
+                                    ? rehabData?.aerobicCapacity.angina
                                     : "Select"}
                                 </option>
                                 <option value="Yes">Yes</option>
@@ -739,10 +708,9 @@ const Form1 = ({ appointmentId }) => {
                                 name="respiratory_rate"
                                 {...register("respiratory_rate")}
                                 defaultValue={
-                                  !!appointment?.rehab?.aerobicCapacity &&
-                                  !!appointment?.rehab?.aerobicCapacity
-                                    .respiratory_rate
-                                    ? appointment?.rehab?.aerobicCapacity
+                                  !!rehabData?.aerobicCapacity &&
+                                  !!rehabData?.aerobicCapacity.respiratory_rate
+                                    ? rehabData?.aerobicCapacity
                                         .respiratory_rate
                                     : ""
                                 }
@@ -768,16 +736,13 @@ const Form1 = ({ appointmentId }) => {
                                 <option
                                   name="language"
                                   defaultValue={
-                                    !!appointment?.rehab?.aerobicCapacity &&
-                                    appointment?.rehab?.aerobicCapacity
-                                      .claudication
+                                    !!rehabData?.aerobicCapacity &&
+                                    rehabData?.aerobicCapacity.claudication
                                   }
                                 >
-                                  {!!appointment?.rehab?.aerobicCapacity &&
-                                  appointment?.rehab?.aerobicCapacity
-                                    .claudication
-                                    ? appointment?.rehab?.aerobicCapacity
-                                        .claudication
+                                  {!!rehabData?.aerobicCapacity &&
+                                  rehabData?.aerobicCapacity.claudication
+                                    ? rehabData?.aerobicCapacity.claudication
                                     : "Select"}
                                 </option>
                                 <option value="Yes">Yes</option>
@@ -806,15 +771,14 @@ const Form1 = ({ appointmentId }) => {
                                 <option
                                   name="language"
                                   defaultValue={
-                                    !!appointment?.rehab?.aerobicCapacity &&
-                                    appointment?.rehab?.aerobicCapacity
+                                    !!rehabData?.aerobicCapacity &&
+                                    rehabData?.aerobicCapacity
                                       .respiratory_rhythm
                                   }
                                 >
-                                  {!!appointment?.rehab?.aerobicCapacity &&
-                                  appointment?.rehab?.aerobicCapacity
-                                    .respiratory_rhythm
-                                    ? appointment?.rehab?.aerobicCapacity
+                                  {!!rehabData?.aerobicCapacity &&
+                                  rehabData?.aerobicCapacity.respiratory_rhythm
+                                    ? rehabData?.aerobicCapacity
                                         .respiratory_rhythm
                                     : "Select"}
                                 </option>
@@ -842,10 +806,9 @@ const Form1 = ({ appointmentId }) => {
                                 name="oximetry"
                                 {...register("oximetry")}
                                 defaultValue={
-                                  !!appointment?.rehab?.aerobicCapacity &&
-                                  !!appointment?.rehab?.aerobicCapacity.oximetry
-                                    ? appointment?.rehab?.aerobicCapacity
-                                        .oximetry
+                                  !!rehabData?.aerobicCapacity &&
+                                  !!rehabData?.aerobicCapacity.oximetry
+                                    ? rehabData?.aerobicCapacity.oximetry
                                     : ""
                                 }
                               />
@@ -869,11 +832,9 @@ const Form1 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
                         defaultValue={
-                          !!appointment?.rehab?.aerobicCapacity &&
-                          !!appointment?.rehab?.aerobicCapacity
-                            .identified_problems
-                            ? appointment?.rehab?.aerobicCapacity
-                                .identified_problems
+                          !!rehabData?.aerobicCapacity &&
+                          !!rehabData?.aerobicCapacity.identified_problems
+                            ? rehabData?.aerobicCapacity.identified_problems
                             : ""
                         }
                       ></textarea>
@@ -902,15 +863,14 @@ const Form1 = ({ appointmentId }) => {
                             <option
                               name="language"
                               defaultValue={
-                                !!appointment?.rehab?.aerobicCapacity &&
-                                appointment?.rehab?.aerobicCapacity
+                                !!rehabData?.aerobicCapacity &&
+                                rehabData?.aerobicCapacity
                                   .shortTerm_bed_mobility
                               }
                             >
-                              {!!appointment?.rehab?.aerobicCapacity &&
-                              appointment?.rehab?.aerobicCapacity
-                                .shortTerm_bed_mobility
-                                ? appointment?.rehab?.aerobicCapacity
+                              {!!rehabData?.aerobicCapacity &&
+                              rehabData?.aerobicCapacity.shortTerm_bed_mobility
+                                ? rehabData?.aerobicCapacity
                                     .shortTerm_bed_mobility
                                 : "Select"}
                             </option>
@@ -957,15 +917,14 @@ const Form1 = ({ appointmentId }) => {
                             <option
                               name="language"
                               defaultValue={
-                                !!appointment?.rehab?.aerobicCapacity &&
-                                appointment?.rehab?.aerobicCapacity
+                                !!rehabData?.aerobicCapacity &&
+                                rehabData?.aerobicCapacity
                                   .shortTerm_transfer_task
                               }
                             >
-                              {!!appointment?.rehab?.aerobicCapacity &&
-                              appointment?.rehab?.aerobicCapacity
-                                .shortTerm_transfer_task
-                                ? appointment?.rehab?.aerobicCapacity
+                              {!!rehabData?.aerobicCapacity &&
+                              rehabData?.aerobicCapacity.shortTerm_transfer_task
+                                ? rehabData?.aerobicCapacity
                                     .shortTerm_transfer_task
                                 : "Select"}
                             </option>
@@ -1012,15 +971,15 @@ const Form1 = ({ appointmentId }) => {
                             <option
                               name="language"
                               defaultValue={
-                                !!appointment?.rehab?.aerobicCapacity &&
-                                appointment?.rehab?.aerobicCapacity
+                                !!rehabData?.aerobicCapacity &&
+                                rehabData?.aerobicCapacity
                                   .shortTerm_ambulation_task
                               }
                             >
-                              {!!appointment?.rehab?.aerobicCapacity &&
-                              appointment?.rehab?.aerobicCapacity
+                              {!!rehabData?.aerobicCapacity &&
+                              rehabData?.aerobicCapacity
                                 .shortTerm_ambulation_task
-                                ? appointment?.rehab?.aerobicCapacity
+                                ? rehabData?.aerobicCapacity
                                     .shortTerm_ambulation_task
                                 : "Select"}
                             </option>
@@ -1066,15 +1025,15 @@ const Form1 = ({ appointmentId }) => {
                             <option
                               name="language"
                               defaultValue={
-                                !!appointment?.rehab?.aerobicCapacity &&
-                                appointment?.rehab?.aerobicCapacity
+                                !!rehabData?.aerobicCapacity &&
+                                rehabData?.aerobicCapacity
                                   .shortTerm_standarized_test
                               }
                             >
-                              {!!appointment?.rehab?.aerobicCapacity &&
-                              appointment?.rehab?.aerobicCapacity
+                              {!!rehabData?.aerobicCapacity &&
+                              rehabData?.aerobicCapacity
                                 .shortTerm_standarized_test
-                                ? appointment?.rehab?.aerobicCapacity
+                                ? rehabData?.aerobicCapacity
                                     .shortTerm_standarized_test
                                 : "Select"}
                             </option>
@@ -1111,16 +1070,13 @@ const Form1 = ({ appointmentId }) => {
                             <option
                               name="language"
                               defaultValue={
-                                !!appointment?.rehab?.aerobicCapacity &&
-                                appointment?.rehab?.aerobicCapacity
-                                  .shortTerm_at_rpe
+                                !!rehabData?.aerobicCapacity &&
+                                rehabData?.aerobicCapacity.shortTerm_at_rpe
                               }
                             >
-                              {!!appointment?.rehab?.aerobicCapacity &&
-                              appointment?.rehab?.aerobicCapacity
-                                .shortTerm_at_rpe
-                                ? appointment?.rehab?.aerobicCapacity
-                                    .shortTerm_at_rpe
+                              {!!rehabData?.aerobicCapacity &&
+                              rehabData?.aerobicCapacity.shortTerm_at_rpe
+                                ? rehabData?.aerobicCapacity.shortTerm_at_rpe
                                 : "Select"}
                             </option>
                             <option value="0 - Nothing at all">
@@ -1155,10 +1111,9 @@ const Form1 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("describe_short_term_goals")}
                         defaultValue={
-                          !!appointment?.rehab?.aerobicCapacity &&
-                          !!appointment?.rehab?.aerobicCapacity
-                            .describe_short_term_goals
-                            ? appointment?.rehab?.aerobicCapacity
+                          !!rehabData?.aerobicCapacity &&
+                          !!rehabData?.aerobicCapacity.describe_short_term_goals
+                            ? rehabData?.aerobicCapacity
                                 .describe_short_term_goals
                             : ""
                         }
@@ -1188,15 +1143,13 @@ const Form1 = ({ appointmentId }) => {
                             <option
                               name="language"
                               defaultValue={
-                                !!appointment?.rehab?.aerobicCapacity &&
-                                appointment?.rehab?.aerobicCapacity
-                                  .longTerm_bed_mobility
+                                !!rehabData?.aerobicCapacity &&
+                                rehabData?.aerobicCapacity.longTerm_bed_mobility
                               }
                             >
-                              {!!appointment?.rehab?.aerobicCapacity &&
-                              appointment?.rehab?.aerobicCapacity
-                                .longTerm_bed_mobility
-                                ? appointment?.rehab?.aerobicCapacity
+                              {!!rehabData?.aerobicCapacity &&
+                              rehabData?.aerobicCapacity.longTerm_bed_mobility
+                                ? rehabData?.aerobicCapacity
                                     .longTerm_bed_mobility
                                 : "Select"}
                             </option>
@@ -1243,15 +1196,14 @@ const Form1 = ({ appointmentId }) => {
                             <option
                               name="language"
                               defaultValue={
-                                !!appointment?.rehab?.aerobicCapacity &&
-                                appointment?.rehab?.aerobicCapacity
+                                !!rehabData?.aerobicCapacity &&
+                                rehabData?.aerobicCapacity
                                   .longTerm_transfer_task
                               }
                             >
-                              {!!appointment?.rehab?.aerobicCapacity &&
-                              appointment?.rehab?.aerobicCapacity
-                                .longTerm_transfer_task
-                                ? appointment?.rehab?.aerobicCapacity
+                              {!!rehabData?.aerobicCapacity &&
+                              rehabData?.aerobicCapacity.longTerm_transfer_task
+                                ? rehabData?.aerobicCapacity
                                     .longTerm_transfer_task
                                 : "Select"}
                             </option>
@@ -1298,15 +1250,15 @@ const Form1 = ({ appointmentId }) => {
                             <option
                               name="language"
                               defaultValue={
-                                !!appointment?.rehab?.aerobicCapacity &&
-                                appointment?.rehab?.aerobicCapacity
+                                !!rehabData?.aerobicCapacity &&
+                                rehabData?.aerobicCapacity
                                   .longTerm_Ambulation_task
                               }
                             >
-                              {!!appointment?.rehab?.aerobicCapacity &&
-                              appointment?.rehab?.aerobicCapacity
+                              {!!rehabData?.aerobicCapacity &&
+                              rehabData?.aerobicCapacity
                                 .longTerm_Ambulation_task
-                                ? appointment?.rehab?.aerobicCapacity
+                                ? rehabData?.aerobicCapacity
                                     .longTerm_Ambulation_task
                                 : "Select"}
                             </option>
@@ -1352,15 +1304,15 @@ const Form1 = ({ appointmentId }) => {
                             <option
                               name="language"
                               defaultValue={
-                                !!appointment?.rehab?.aerobicCapacity &&
-                                appointment?.rehab?.aerobicCapacity
+                                !!rehabData?.aerobicCapacity &&
+                                rehabData?.aerobicCapacity
                                   .longTerm_Standarized_test
                               }
                             >
-                              {!!appointment?.rehab?.aerobicCapacity &&
-                              appointment?.rehab?.aerobicCapacity
+                              {!!rehabData?.aerobicCapacity &&
+                              rehabData?.aerobicCapacity
                                 .longTerm_Standarized_test
-                                ? appointment?.rehab?.aerobicCapacity
+                                ? rehabData?.aerobicCapacity
                                     .longTerm_Standarized_test
                                 : "Select"}
                             </option>
@@ -1397,16 +1349,13 @@ const Form1 = ({ appointmentId }) => {
                             <option
                               name="language"
                               defaultValue={
-                                !!appointment?.rehab?.aerobicCapacity &&
-                                appointment?.rehab?.aerobicCapacity
-                                  .longTerm_at_rpe
+                                !!rehabData?.aerobicCapacity &&
+                                rehabData?.aerobicCapacity.longTerm_at_rpe
                               }
                             >
-                              {!!appointment?.rehab?.aerobicCapacity &&
-                              appointment?.rehab?.aerobicCapacity
-                                .longTerm_at_rpe
-                                ? appointment?.rehab?.aerobicCapacity
-                                    .longTerm_at_rpe
+                              {!!rehabData?.aerobicCapacity &&
+                              rehabData?.aerobicCapacity.longTerm_at_rpe
+                                ? rehabData?.aerobicCapacity.longTerm_at_rpe
                                 : "Select"}
                             </option>
                             <option value="0 - Nothing at all">
@@ -1441,11 +1390,9 @@ const Form1 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("longTerm_description")}
                         defaultValue={
-                          !!appointment?.rehab?.aerobicCapacity &&
-                          !!appointment?.rehab?.aerobicCapacity
-                            .longTerm_description
-                            ? appointment?.rehab?.aerobicCapacity
-                                .longTerm_description
+                          !!rehabData?.aerobicCapacity &&
+                          !!rehabData?.aerobicCapacity.longTerm_description
+                            ? rehabData?.aerobicCapacity.longTerm_description
                             : ""
                         }
                       ></textarea>
@@ -1474,9 +1421,9 @@ const Form1 = ({ appointmentId }) => {
                                     className="form-check-input"
                                     value={items}
                                     defaultChecked={
-                                      !!appointment?.rehab?.aerobicCapacity &&
+                                      !!rehabData?.aerobicCapacity &&
                                       makeArrfromString(
-                                        appointment?.rehab?.aerobicCapacity
+                                        rehabData?.aerobicCapacity
                                           .aerobic_capacity_retraining
                                       )?.includes(items)
                                     }
@@ -1495,9 +1442,9 @@ const Form1 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
                         defaultValue={
-                          !!appointment?.rehab?.aerobicCapacity &&
-                          !!appointment?.rehab?.aerobicCapacity.treatment_plan
-                            ? appointment?.rehab?.aerobicCapacity.treatment_plan
+                          !!rehabData?.aerobicCapacity &&
+                          !!rehabData?.aerobicCapacity.treatment_plan
+                            ? rehabData?.aerobicCapacity.treatment_plan
                             : ""
                         }
                       ></textarea>

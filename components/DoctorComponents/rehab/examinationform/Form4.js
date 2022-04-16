@@ -1,53 +1,41 @@
 import { useForm } from "react-hook-form";
-import useSWR from "swr";
 import axios from "axios";
 import { useAuth } from "context/index";
 import { apiUrl } from "config/api";
 import { Slide, toast } from "react-toastify";
-const Form4 = ({ appointmentId }) => {
+const Form4 = ({ appointmentId, rehabData }) => {
   const { auth } = useAuth();
-  const { data: appointment } = useSWR(
-    `${apiUrl}/appointments/${appointmentId}`,
-    async (url) => {
-      const res = await axios.get(url, {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      });
-      const result = res.data;
-      return result;
-    }
-  );
 
   const { register, handleSubmit } = useForm();
   const submit_form4 = async (data, event) => {
     event.preventDefault();
-    const payload = {
-      rehab: {
-        ...appointment.rehab,
-        arousal_assesment: {
-          mini_mental_test: data.mini_mental_test,
-          sustained: data.sustained,
-          motivation_to_participate: data.motivation_to_participate,
-          ability_to_recognise: data.ability_to_recognise,
-          consciousness: data.consciousness,
-          orientation: data.orientation,
-          short_term_goals: data.short_term_goals,
-          treatment_plan: data.treatment_plan,
-          long_term_goals: data.long_term_goals,
-          judgement: data.judgement,
-          communication: data.communication,
-          preparation: data.preparation,
-          alternating: data.alternating,
-          identified_problems: data.identified_problems,
-          production: data.production,
-          focussed: data.focussed,
-          selective: data.selective,
-          attention: data.attention,
-        },
-      },
-    };
     try {
+      const payload = {
+        rehab: {
+          ...rehabData,
+          arousal_assesment: {
+            mini_mental_test: data.mini_mental_test,
+            sustained: data.sustained,
+            motivation_to_participate: data.motivation_to_participate,
+            ability_to_recognise: data.ability_to_recognise,
+            consciousness: data.consciousness,
+            orientation: data.orientation,
+            short_term_goals: data.short_term_goals,
+            treatment_plan: data.treatment_plan,
+            long_term_goals: data.long_term_goals,
+            judgement: data.judgement,
+            communication: data.communication,
+            preparation: data.preparation,
+            alternating: data.alternating,
+            identified_problems: data.identified_problems,
+            production: data.production,
+            focussed: data.focussed,
+            selective: data.selective,
+            attention: data.attention,
+          },
+        },
+      };
+
       const res = await axios.put(
         `${apiUrl}/appointments/${appointmentId}`,
         payload,
@@ -114,9 +102,9 @@ const Form4 = ({ appointmentId }) => {
                                 value="Normal"
                                 {...register("attention")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
-                                    .attention === "Normal"
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment.attention ===
+                                    "Normal"
                                 }
                               />
                             </div>
@@ -134,9 +122,9 @@ const Form4 = ({ appointmentId }) => {
                                 value="Impared"
                                 {...register("attention")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
-                                    .attention === "Impared"
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment.attention ===
+                                    "Impared"
                                 }
                               />
                             </div>
@@ -165,9 +153,9 @@ const Form4 = ({ appointmentId }) => {
                                 value="Normal"
                                 {...register("focussed")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
-                                    .focussed === "Normal"
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment.focussed ===
+                                    "Normal"
                                 }
                               />
                             </div>
@@ -185,9 +173,9 @@ const Form4 = ({ appointmentId }) => {
                                 value="Impared"
                                 {...register("focussed")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
-                                    .focussed === "Impared"
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment.focussed ===
+                                    "Impared"
                                 }
                               />
                             </div>
@@ -216,9 +204,9 @@ const Form4 = ({ appointmentId }) => {
                                 value="Normal"
                                 {...register("sustained")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
-                                    .sustained === "Normal"
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment.sustained ===
+                                    "Normal"
                                 }
                               />
                             </div>
@@ -236,9 +224,9 @@ const Form4 = ({ appointmentId }) => {
                                 value="Impared"
                                 {...register("sustained")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
-                                    .sustained === "Impared"
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment.sustained ===
+                                    "Impared"
                                 }
                               />
                             </div>
@@ -267,9 +255,9 @@ const Form4 = ({ appointmentId }) => {
                                 value="Normal"
                                 {...register("selective")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
-                                    .selective === "Normal"
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment.selective ===
+                                    "Normal"
                                 }
                               />
                             </div>
@@ -287,9 +275,9 @@ const Form4 = ({ appointmentId }) => {
                                 value="Impared"
                                 {...register("selective")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
-                                    .selective === "Impared"
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment.selective ===
+                                    "Impared"
                                 }
                               />
                             </div>
@@ -318,9 +306,9 @@ const Form4 = ({ appointmentId }) => {
                                 value="Normal"
                                 {...register("alternating")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
-                                    .alternating === "Normal"
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment.alternating ===
+                                    "Normal"
                                 }
                               />
                             </div>
@@ -338,9 +326,9 @@ const Form4 = ({ appointmentId }) => {
                                 value="Impared"
                                 {...register("alternating")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
-                                    .alternating === "Impared"
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment.alternating ===
+                                    "Impared"
                                 }
                               />
                             </div>
@@ -369,9 +357,9 @@ const Form4 = ({ appointmentId }) => {
                                 value="Normal"
                                 {...register("orientation")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
-                                    .orientation === "Normal"
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment.orientation ===
+                                    "Normal"
                                 }
                               />
                             </div>
@@ -389,9 +377,9 @@ const Form4 = ({ appointmentId }) => {
                                 value="Impared"
                                 {...register("orientation")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
-                                    .orientation === "Impared"
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment.orientation ===
+                                    "Impared"
                                 }
                               />
                             </div>
@@ -422,8 +410,8 @@ const Form4 = ({ appointmentId }) => {
                                 value="Normal"
                                 {...register("ability_to_recognise")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment
                                     .ability_to_recognise === "Normal"
                                 }
                               />
@@ -442,8 +430,8 @@ const Form4 = ({ appointmentId }) => {
                                 value="Impared"
                                 {...register("ability_to_recognise")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment
                                     .ability_to_recognise === "Impared"
                                 }
                               />
@@ -473,9 +461,9 @@ const Form4 = ({ appointmentId }) => {
                                 value="coma"
                                 {...register("consciousness")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
-                                    .consciousness === "coma"
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment.consciousness ===
+                                    "coma"
                                 }
                               />
                             </div>
@@ -493,9 +481,9 @@ const Form4 = ({ appointmentId }) => {
                                 value="Normal"
                                 {...register("consciousness")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
-                                    .consciousness === "Normal"
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment.consciousness ===
+                                    "Normal"
                                 }
                               />
                             </div>
@@ -513,9 +501,9 @@ const Form4 = ({ appointmentId }) => {
                                 value="Impared"
                                 {...register("consciousness")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
-                                    .consciousness === "Impared"
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment.consciousness ===
+                                    "Impared"
                                 }
                               />
                             </div>
@@ -544,8 +532,8 @@ const Form4 = ({ appointmentId }) => {
                                 value="Normal"
                                 {...register("motivation_to_participate")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment
                                     .motivation_to_participate === "Normal"
                                 }
                               />
@@ -564,8 +552,8 @@ const Form4 = ({ appointmentId }) => {
                                 value="Impared"
                                 {...register("motivation_to_participate")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment
                                     .motivation_to_participate === "Impared"
                                 }
                               />
@@ -595,9 +583,9 @@ const Form4 = ({ appointmentId }) => {
                                 value="Normal"
                                 {...register("communication")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
-                                    .communication === "Normal"
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment.communication ===
+                                    "Normal"
                                 }
                               />
                             </div>
@@ -615,9 +603,9 @@ const Form4 = ({ appointmentId }) => {
                                 value="Impared"
                                 {...register("communication")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
-                                    .communication === "Impared"
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment.communication ===
+                                    "Impared"
                                 }
                               />
                             </div>
@@ -647,9 +635,9 @@ const Form4 = ({ appointmentId }) => {
                                 value="Normal"
                                 {...register("preparation")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
-                                    .preparation === "Normal"
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment.preparation ===
+                                    "Normal"
                                 }
                               />
                             </div>
@@ -667,9 +655,9 @@ const Form4 = ({ appointmentId }) => {
                                 value="Impared"
                                 {...register("preparation")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
-                                    .preparation === "Impared"
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment.preparation ===
+                                    "Impared"
                                 }
                               />
                             </div>
@@ -698,9 +686,9 @@ const Form4 = ({ appointmentId }) => {
                                 value="Normal"
                                 {...register("production")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
-                                    .production === "Normal"
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment.production ===
+                                    "Normal"
                                 }
                               />
                             </div>
@@ -718,9 +706,9 @@ const Form4 = ({ appointmentId }) => {
                                 value="Impared"
                                 {...register("production")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
-                                    .production === "Impared"
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment.production ===
+                                    "Impared"
                                 }
                               />
                             </div>
@@ -749,9 +737,9 @@ const Form4 = ({ appointmentId }) => {
                                 value="Normal"
                                 {...register("judgement")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
-                                    .judgement === "Normal"
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment.judgement ===
+                                    "Normal"
                                 }
                               />
                             </div>
@@ -769,9 +757,9 @@ const Form4 = ({ appointmentId }) => {
                                 value="Impared"
                                 {...register("judgement")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
-                                    .judgement === "Impared"
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment.judgement ===
+                                    "Impared"
                                 }
                               />
                             </div>
@@ -801,8 +789,8 @@ const Form4 = ({ appointmentId }) => {
                                 value="Normal"
                                 {...register("mini_mental_test")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment
                                     .mini_mental_test === "Normal"
                                 }
                               />
@@ -821,8 +809,8 @@ const Form4 = ({ appointmentId }) => {
                                 value="Impared"
                                 {...register("mini_mental_test")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.arousal_assesment &&
-                                  appointment?.rehab?.arousal_assesment
+                                  !!rehabData?.arousal_assesment &&
+                                  rehabData?.arousal_assesment
                                     .mini_mental_test === "Impared"
                                 }
                               />
@@ -848,11 +836,9 @@ const Form4 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
                         defaultValue={
-                          !!appointment?.rehab?.arousal_assesment &&
-                          !!appointment?.rehab?.arousal_assesment
-                            .identified_problems
-                            ? appointment?.rehab?.arousal_assesment
-                                .identified_problems
+                          !!rehabData?.arousal_assesment &&
+                          !!rehabData?.arousal_assesment.identified_problems
+                            ? rehabData?.arousal_assesment.identified_problems
                             : ""
                         }
                       ></textarea>
@@ -870,11 +856,9 @@ const Form4 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
                         defaultValue={
-                          !!appointment?.rehab?.arousal_assesment &&
-                          !!appointment?.rehab?.arousal_assesment
-                            .short_term_goals
-                            ? appointment?.rehab?.arousal_assesment
-                                .short_term_goals
+                          !!rehabData?.arousal_assesment &&
+                          !!rehabData?.arousal_assesment.short_term_goals
+                            ? rehabData?.arousal_assesment.short_term_goals
                             : ""
                         }
                       ></textarea>
@@ -892,11 +876,9 @@ const Form4 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
                         defaultValue={
-                          !!appointment?.rehab?.arousal_assesment &&
-                          !!appointment?.rehab?.arousal_assesment
-                            .long_term_goals
-                            ? appointment?.rehab?.arousal_assesment
-                                .long_term_goals
+                          !!rehabData?.arousal_assesment &&
+                          !!rehabData?.arousal_assesment.long_term_goals
+                            ? rehabData?.arousal_assesment.long_term_goals
                             : ""
                         }
                       ></textarea>
@@ -915,10 +897,9 @@ const Form4 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
                         defaultValue={
-                          !!appointment?.rehab?.arousal_assesment &&
-                          !!appointment?.rehab?.arousal_assesment.treatment_plan
-                            ? appointment?.rehab?.arousal_assesment
-                                .treatment_plan
+                          !!rehabData?.arousal_assesment &&
+                          !!rehabData?.arousal_assesment.treatment_plan
+                            ? rehabData?.arousal_assesment.treatment_plan
                             : ""
                         }
                       ></textarea>

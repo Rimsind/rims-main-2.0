@@ -1,30 +1,17 @@
 import { useForm } from "react-hook-form";
-import useSWR from "swr";
 import axios from "axios";
 import { useAuth } from "context/index";
 import { apiUrl } from "config/api";
 import { Slide, toast } from "react-toastify";
-const Form17 = ({ appointmentId }) => {
+const Form17 = ({ appointmentId, rehabData }) => {
   const { auth } = useAuth();
-  const { data: appointment } = useSWR(
-    `${apiUrl}/appointments/${appointmentId}`,
-    async (url) => {
-      const res = await axios.get(url, {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      });
-      const result = res.data;
-      return result;
-    }
-  );
 
   const { register, handleSubmit } = useForm();
   const submit_form17 = async (data, event) => {
     event.preventDefault();
     const payload = {
       rehab: {
-        ...appointment.rehab,
+        ...rehabData,
         wound_assessment: {
           slough: data.slough,
           size: data.size,
@@ -121,9 +108,9 @@ const Form17 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("location")}
                             defaultValue={
-                              !!appointment?.rehab?.wound_assessment &&
-                              !!appointment?.rehab?.wound_assessment.location
-                                ? appointment?.rehab?.wound_assessment.location
+                              !!rehabData?.wound_assessment &&
+                              !!rehabData?.wound_assessment.location
+                                ? rehabData?.wound_assessment.location
                                 : ""
                             }
                           />
@@ -171,9 +158,9 @@ const Form17 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("stage")}
                             defaultValue={
-                              !!appointment?.rehab?.wound_assessment &&
-                              !!appointment?.rehab?.wound_assessment.stage
-                                ? appointment?.rehab?.wound_assessment.stage
+                              !!rehabData?.wound_assessment &&
+                              !!rehabData?.wound_assessment.stage
+                                ? rehabData?.wound_assessment.stage
                                 : ""
                             }
                           />
@@ -192,11 +179,9 @@ const Form17 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("thickness_of_ulcer")}
                             defaultValue={
-                              !!appointment?.rehab?.wound_assessment &&
-                              !!appointment?.rehab?.wound_assessment
-                                .thickness_of_ulcer
-                                ? appointment?.rehab?.wound_assessment
-                                    .thickness_of_ulcer
+                              !!rehabData?.wound_assessment &&
+                              !!rehabData?.wound_assessment.thickness_of_ulcer
+                                ? rehabData?.wound_assessment.thickness_of_ulcer
                                 : ""
                             }
                           />
@@ -219,9 +204,9 @@ const Form17 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("size")}
                             defaultValue={
-                              !!appointment?.rehab?.wound_assessment &&
-                              !!appointment?.rehab?.wound_assessment.size
-                                ? appointment?.rehab?.wound_assessment.size
+                              !!rehabData?.wound_assessment &&
+                              !!rehabData?.wound_assessment.size
+                                ? rehabData?.wound_assessment.size
                                 : ""
                             }
                           />
@@ -240,9 +225,9 @@ const Form17 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("depth")}
                             defaultValue={
-                              !!appointment?.rehab?.wound_assessment &&
-                              !!appointment?.rehab?.wound_assessment.depth
-                                ? appointment?.rehab?.wound_assessment.depth
+                              !!rehabData?.wound_assessment &&
+                              !!rehabData?.wound_assessment.depth
+                                ? rehabData?.wound_assessment.depth
                                 : ""
                             }
                           />
@@ -261,10 +246,9 @@ const Form17 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("tunnelling")}
                             defaultValue={
-                              !!appointment?.rehab?.wound_assessment &&
-                              !!appointment?.rehab?.wound_assessment.tunnelling
-                                ? appointment?.rehab?.wound_assessment
-                                    .tunnelling
+                              !!rehabData?.wound_assessment &&
+                              !!rehabData?.wound_assessment.tunnelling
+                                ? rehabData?.wound_assessment.tunnelling
                                 : ""
                             }
                           />
@@ -283,10 +267,9 @@ const Form17 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("undermining")}
                             defaultValue={
-                              !!appointment?.rehab?.wound_assessment &&
-                              !!appointment?.rehab?.wound_assessment.undermining
-                                ? appointment?.rehab?.wound_assessment
-                                    .undermining
+                              !!rehabData?.wound_assessment &&
+                              !!rehabData?.wound_assessment.undermining
+                                ? rehabData?.wound_assessment.undermining
                                 : ""
                             }
                           />
@@ -309,11 +292,9 @@ const Form17 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("necrotic_tissue")}
                             defaultValue={
-                              !!appointment?.rehab?.wound_assessment &&
-                              !!appointment?.rehab?.wound_assessment
-                                .necrotic_tissue
-                                ? appointment?.rehab?.wound_assessment
-                                    .necrotic_tissue
+                              !!rehabData?.wound_assessment &&
+                              !!rehabData?.wound_assessment.necrotic_tissue
+                                ? rehabData?.wound_assessment.necrotic_tissue
                                 : ""
                             }
                           />
@@ -332,9 +313,9 @@ const Form17 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("slough")}
                             defaultValue={
-                              !!appointment?.rehab?.wound_assessment &&
-                              !!appointment?.rehab?.wound_assessment.slough
-                                ? appointment?.rehab?.wound_assessment.slough
+                              !!rehabData?.wound_assessment &&
+                              !!rehabData?.wound_assessment.slough
+                                ? rehabData?.wound_assessment.slough
                                 : ""
                             }
                           />
@@ -353,11 +334,9 @@ const Form17 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("granulation_tissue")}
                             defaultValue={
-                              !!appointment?.rehab?.wound_assessment &&
-                              !!appointment?.rehab?.wound_assessment
-                                .granulation_tissue
-                                ? appointment?.rehab?.wound_assessment
-                                    .granulation_tissue
+                              !!rehabData?.wound_assessment &&
+                              !!rehabData?.wound_assessment.granulation_tissue
+                                ? rehabData?.wound_assessment.granulation_tissue
                                 : ""
                             }
                           />
@@ -376,10 +355,10 @@ const Form17 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("epitheliazation_in_process")}
                             defaultValue={
-                              !!appointment?.rehab?.wound_assessment &&
-                              !!appointment?.rehab?.wound_assessment
+                              !!rehabData?.wound_assessment &&
+                              !!rehabData?.wound_assessment
                                 .epitheliazation_in_process
-                                ? appointment?.rehab?.wound_assessment
+                                ? rehabData?.wound_assessment
                                     .epitheliazation_in_process
                                 : ""
                             }
@@ -404,9 +383,9 @@ const Form17 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("amount")}
                             defaultValue={
-                              !!appointment?.rehab?.wound_assessment &&
-                              !!appointment?.rehab?.wound_assessment.amount
-                                ? appointment?.rehab?.wound_assessment.amount
+                              !!rehabData?.wound_assessment &&
+                              !!rehabData?.wound_assessment.amount
+                                ? rehabData?.wound_assessment.amount
                                 : ""
                             }
                           />
@@ -425,9 +404,9 @@ const Form17 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("color")}
                             defaultValue={
-                              !!appointment?.rehab?.wound_assessment &&
-                              !!appointment?.rehab?.wound_assessment.color
-                                ? appointment?.rehab?.wound_assessment.color
+                              !!rehabData?.wound_assessment &&
+                              !!rehabData?.wound_assessment.color
+                                ? rehabData?.wound_assessment.color
                                 : ""
                             }
                           />
@@ -446,9 +425,9 @@ const Form17 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("odor")}
                             defaultValue={
-                              !!appointment?.rehab?.wound_assessment &&
-                              !!appointment?.rehab?.wound_assessment.odor
-                                ? appointment?.rehab?.wound_assessment.odor
+                              !!rehabData?.wound_assessment &&
+                              !!rehabData?.wound_assessment.odor
+                                ? rehabData?.wound_assessment.odor
                                 : ""
                             }
                           />
@@ -469,8 +448,8 @@ const Form17 = ({ appointmentId }) => {
                             value="In Wound site?"
                             {...register("pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.wound_assessment &&
-                              appointment?.rehab?.wound_assessment.pain ===
+                              !!rehabData?.wound_assessment &&
+                              rehabData?.wound_assessment.pain ===
                                 "In Wound site?"
                             }
                           />
@@ -489,8 +468,8 @@ const Form17 = ({ appointmentId }) => {
                             value="In Surrounding Tissue?"
                             {...register("pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.wound_assessment &&
-                              appointment?.rehab?.wound_assessment.pain ===
+                              !!rehabData?.wound_assessment &&
+                              rehabData?.wound_assessment.pain ===
                                 "In Surrounding Tissue?"
                             }
                           />
@@ -510,10 +489,10 @@ const Form17 = ({ appointmentId }) => {
                         placeholder="Text Area"
                         {...register("describe_surrounding_tissue")}
                         defaultValue={
-                          !!appointment?.rehab?.wound_assessment &&
-                          !!appointment?.rehab?.wound_assessment
+                          !!rehabData?.wound_assessment &&
+                          !!rehabData?.wound_assessment
                             .describe_surrounding_tissue
-                            ? appointment?.rehab?.wound_assessment
+                            ? rehabData?.wound_assessment
                                 .describe_surrounding_tissue
                             : ""
                         }
@@ -533,9 +512,9 @@ const Form17 = ({ appointmentId }) => {
                             value="Erythema"
                             {...register("signs_of_infection")}
                             defaultChecked={
-                              !!appointment?.rehab?.wound_assessment &&
-                              appointment?.rehab?.wound_assessment
-                                .signs_of_infection === "Erythema"
+                              !!rehabData?.wound_assessment &&
+                              rehabData?.wound_assessment.signs_of_infection ===
+                                "Erythema"
                             }
                           />
                         </div>
@@ -553,9 +532,9 @@ const Form17 = ({ appointmentId }) => {
                             value="Induration"
                             {...register("signs_of_infection")}
                             defaultChecked={
-                              !!appointment?.rehab?.wound_assessment &&
-                              appointment?.rehab?.wound_assessment
-                                .signs_of_infection === "Induration"
+                              !!rehabData?.wound_assessment &&
+                              rehabData?.wound_assessment.signs_of_infection ===
+                                "Induration"
                             }
                           />
                         </div>
@@ -573,9 +552,9 @@ const Form17 = ({ appointmentId }) => {
                             value="Cellulitis"
                             {...register("signs_of_infection")}
                             defaultChecked={
-                              !!appointment?.rehab?.wound_assessment &&
-                              appointment?.rehab?.wound_assessment
-                                .signs_of_infection === "Cellulitis"
+                              !!rehabData?.wound_assessment &&
+                              rehabData?.wound_assessment.signs_of_infection ===
+                                "Cellulitis"
                             }
                           />
                         </div>
@@ -593,9 +572,9 @@ const Form17 = ({ appointmentId }) => {
                             value="Tenderness"
                             {...register("signs_of_infection")}
                             defaultChecked={
-                              !!appointment?.rehab?.wound_assessment &&
-                              appointment?.rehab?.wound_assessment
-                                .signs_of_infection === "Tenderness"
+                              !!rehabData?.wound_assessment &&
+                              rehabData?.wound_assessment.signs_of_infection ===
+                                "Tenderness"
                             }
                           />
                         </div>
@@ -615,9 +594,9 @@ const Form17 = ({ appointmentId }) => {
                             value="Uncharacteristic odor"
                             {...register("signs_of_infection")}
                             defaultChecked={
-                              !!appointment?.rehab?.wound_assessment &&
-                              appointment?.rehab?.wound_assessment
-                                .signs_of_infection === "Uncharacteristic odor"
+                              !!rehabData?.wound_assessment &&
+                              rehabData?.wound_assessment.signs_of_infection ===
+                                "Uncharacteristic odor"
                             }
                           />
                         </div>
@@ -635,9 +614,9 @@ const Form17 = ({ appointmentId }) => {
                             value="Increased Exudate"
                             {...register("signs_of_infection")}
                             defaultChecked={
-                              !!appointment?.rehab?.wound_assessment &&
-                              appointment?.rehab?.wound_assessment
-                                .signs_of_infection === "Increased Exudate"
+                              !!rehabData?.wound_assessment &&
+                              rehabData?.wound_assessment.signs_of_infection ===
+                                "Increased Exudate"
                             }
                           />
                         </div>
@@ -655,9 +634,9 @@ const Form17 = ({ appointmentId }) => {
                             value="Edema"
                             {...register("signs_of_infection")}
                             defaultChecked={
-                              !!appointment?.rehab?.wound_assessment &&
-                              appointment?.rehab?.wound_assessment
-                                .signs_of_infection === "Edema"
+                              !!rehabData?.wound_assessment &&
+                              rehabData?.wound_assessment.signs_of_infection ===
+                                "Edema"
                             }
                           />
                         </div>
@@ -675,9 +654,9 @@ const Form17 = ({ appointmentId }) => {
                             value="Increased Heart Rate"
                             {...register("signs_of_infection")}
                             defaultChecked={
-                              !!appointment?.rehab?.wound_assessment &&
-                              appointment?.rehab?.wound_assessment
-                                .signs_of_infection === "Increased Heart Rate"
+                              !!rehabData?.wound_assessment &&
+                              rehabData?.wound_assessment.signs_of_infection ===
+                                "Increased Heart Rate"
                             }
                           />
                         </div>
@@ -697,9 +676,9 @@ const Form17 = ({ appointmentId }) => {
                             value="Bpm"
                             {...register("signs_of_infection")}
                             defaultChecked={
-                              !!appointment?.rehab?.wound_assessment &&
-                              appointment?.rehab?.wound_assessment
-                                .signs_of_infection === "Bpm"
+                              !!rehabData?.wound_assessment &&
+                              rehabData?.wound_assessment.signs_of_infection ===
+                                "Bpm"
                             }
                           />
                         </div>
@@ -717,9 +696,9 @@ const Form17 = ({ appointmentId }) => {
                             value="High blood pressure"
                             {...register("signs_of_infection")}
                             defaultChecked={
-                              !!appointment?.rehab?.wound_assessment &&
-                              appointment?.rehab?.wound_assessment
-                                .signs_of_infection === "High blood pressure"
+                              !!rehabData?.wound_assessment &&
+                              rehabData?.wound_assessment.signs_of_infection ===
+                                "High blood pressure"
                             }
                           />
                         </div>
@@ -737,9 +716,9 @@ const Form17 = ({ appointmentId }) => {
                             value="Other"
                             {...register("signs_of_infection")}
                             defaultChecked={
-                              !!appointment?.rehab?.wound_assessment &&
-                              appointment?.rehab?.wound_assessment
-                                .signs_of_infection === "Other"
+                              !!rehabData?.wound_assessment &&
+                              rehabData?.wound_assessment.signs_of_infection ===
+                                "Other"
                             }
                           />
                         </div>
@@ -765,8 +744,8 @@ const Form17 = ({ appointmentId }) => {
                             value="Bed"
                             {...register("recucing_relieving_devices")}
                             defaultChecked={
-                              !!appointment?.rehab?.wound_assessment &&
-                              appointment?.rehab?.wound_assessment
+                              !!rehabData?.wound_assessment &&
+                              rehabData?.wound_assessment
                                 .recucing_relieving_devices === "Bed"
                             }
                           />
@@ -785,8 +764,8 @@ const Form17 = ({ appointmentId }) => {
                             value="Wheelchair"
                             {...register("recucing_relieving_devices")}
                             defaultChecked={
-                              !!appointment?.rehab?.wound_assessment &&
-                              appointment?.rehab?.wound_assessment
+                              !!rehabData?.wound_assessment &&
+                              rehabData?.wound_assessment
                                 .recucing_relieving_devices === "Wheelchair"
                             }
                           />
@@ -805,8 +784,8 @@ const Form17 = ({ appointmentId }) => {
                             value="Other"
                             {...register("recucing_relieving_devices")}
                             defaultChecked={
-                              !!appointment?.rehab?.wound_assessment &&
-                              appointment?.rehab?.wound_assessment
+                              !!rehabData?.wound_assessment &&
+                              rehabData?.wound_assessment
                                 .recucing_relieving_devices === "Other"
                             }
                           />
@@ -826,10 +805,9 @@ const Form17 = ({ appointmentId }) => {
                         placeholder="Text Area"
                         {...register("describe_device")}
                         defaultValue={
-                          !!appointment?.rehab?.wound_assessment &&
-                          !!appointment?.rehab?.wound_assessment.describe_device
-                            ? appointment?.rehab?.wound_assessment
-                                .describe_device
+                          !!rehabData?.wound_assessment &&
+                          !!rehabData?.wound_assessment.describe_device
+                            ? rehabData?.wound_assessment.describe_device
                             : ""
                         }
                       />
@@ -846,11 +824,9 @@ const Form17 = ({ appointmentId }) => {
                         placeholder="Text Area"
                         {...register("positioning_concerns")}
                         defaultValue={
-                          !!appointment?.rehab?.wound_assessment &&
-                          !!appointment?.rehab?.wound_assessment
-                            .positioning_concerns
-                            ? appointment?.rehab?.wound_assessment
-                                .positioning_concerns
+                          !!rehabData?.wound_assessment &&
+                          !!rehabData?.wound_assessment.positioning_concerns
+                            ? rehabData?.wound_assessment.positioning_concerns
                             : ""
                         }
                       />
@@ -867,11 +843,9 @@ const Form17 = ({ appointmentId }) => {
                         placeholder="Text Area"
                         {...register("dressing_tobe_used")}
                         defaultValue={
-                          !!appointment?.rehab?.wound_assessment &&
-                          !!appointment?.rehab?.wound_assessment
-                            .dressing_tobe_used
-                            ? appointment?.rehab?.wound_assessment
-                                .dressing_tobe_used
+                          !!rehabData?.wound_assessment &&
+                          !!rehabData?.wound_assessment.dressing_tobe_used
+                            ? rehabData?.wound_assessment.dressing_tobe_used
                             : ""
                         }
                       />
@@ -888,11 +862,9 @@ const Form17 = ({ appointmentId }) => {
                         placeholder="Text Area"
                         {...register("barriers_to_progress")}
                         defaultValue={
-                          !!appointment?.rehab?.wound_assessment &&
-                          !!appointment?.rehab?.wound_assessment
-                            .barriers_to_progress
-                            ? appointment?.rehab?.wound_assessment
-                                .barriers_to_progress
+                          !!rehabData?.wound_assessment &&
+                          !!rehabData?.wound_assessment.barriers_to_progress
+                            ? rehabData?.wound_assessment.barriers_to_progress
                             : ""
                         }
                       />
@@ -912,11 +884,9 @@ const Form17 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
                         defaultValue={
-                          !!appointment?.rehab?.wound_assessment &&
-                          !!appointment?.rehab?.wound_assessment
-                            .identified_problems
-                            ? appointment?.rehab?.wound_assessment
-                                .identified_problems
+                          !!rehabData?.wound_assessment &&
+                          !!rehabData?.wound_assessment.identified_problems
+                            ? rehabData?.wound_assessment.identified_problems
                             : ""
                         }
                       ></textarea>
@@ -934,11 +904,9 @@ const Form17 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
                         defaultValue={
-                          !!appointment?.rehab?.wound_assessment &&
-                          !!appointment?.rehab?.wound_assessment
-                            .short_term_goals
-                            ? appointment?.rehab?.wound_assessment
-                                .short_term_goals
+                          !!rehabData?.wound_assessment &&
+                          !!rehabData?.wound_assessment.short_term_goals
+                            ? rehabData?.wound_assessment.short_term_goals
                             : ""
                         }
                       ></textarea>
@@ -956,10 +924,9 @@ const Form17 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
                         defaultValue={
-                          !!appointment?.rehab?.wound_assessment &&
-                          !!appointment?.rehab?.wound_assessment.long_term_goals
-                            ? appointment?.rehab?.wound_assessment
-                                .long_term_goals
+                          !!rehabData?.wound_assessment &&
+                          !!rehabData?.wound_assessment.long_term_goals
+                            ? rehabData?.wound_assessment.long_term_goals
                             : ""
                         }
                       ></textarea>
@@ -978,10 +945,9 @@ const Form17 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
                         defaultValue={
-                          !!appointment?.rehab?.wound_assessment &&
-                          !!appointment?.rehab?.wound_assessment.treatment_plan
-                            ? appointment?.rehab?.wound_assessment
-                                .treatment_plan
+                          !!rehabData?.wound_assessment &&
+                          !!rehabData?.wound_assessment.treatment_plan
+                            ? rehabData?.wound_assessment.treatment_plan
                             : ""
                         }
                       ></textarea>

@@ -1,30 +1,17 @@
 import { useForm } from "react-hook-form";
-import useSWR from "swr";
 import axios from "axios";
 import { useAuth } from "context/index";
 import { apiUrl } from "config/api";
 import { Slide, toast } from "react-toastify";
-const Form8 = ({ appointmentId }) => {
+const Form8 = ({ appointmentId, rehabData }) => {
   const { auth } = useAuth();
-  const { data: appointment } = useSWR(
-    `${apiUrl}/appointments/${appointmentId}`,
-    async (url) => {
-      const res = await axios.get(url, {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      });
-      const result = res.data;
-      return result;
-    }
-  );
 
   const { register, handleSubmit } = useForm();
   const submit_form8 = async (data, event) => {
     event.preventDefault();
     const payload = {
       rehab: {
-        ...appointment.rehab,
+        ...rehabData,
         gait_assesment: {
           foot_flat_ankle: data.foot_flat_ankle.toString(),
           heel_strike_trunk: data.heel_strike_trunk.toString(),
@@ -126,10 +113,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Foot Slap"
                               {...register("heel_strike_ankle")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .heel_strike_ankle
+                                  rehabData?.gait_assesment?.heel_strike_ankle
                                 )?.includes("Foot Slap")
                               }
                             />
@@ -148,10 +134,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Knee Hyperextension"
                               {...register("heel_strike_knee")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .heel_strike_knee
+                                  rehabData?.gait_assesment?.heel_strike_knee
                                 )?.includes("Knee Hyperextension")
                               }
                             />
@@ -170,10 +155,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Excessive Flexion"
                               {...register("heel_strike_hip")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .heel_strike_hip
+                                  rehabData?.gait_assesment?.heel_strike_hip
                                 )?.includes("Excessive Flexion")
                               }
                             />
@@ -192,10 +176,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Lateral Trunk Lean"
                               {...register("heel_strike_trunk")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .heel_strike_trunk
+                                  rehabData?.gait_assesment.heel_strike_trunk
                                 )?.includes("Lateral Trunk Lean")
                               }
                             />
@@ -216,10 +199,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Toes First"
                               {...register("heel_strike_ankle")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .heel_strike_ankle
+                                  rehabData?.gait_assesment.heel_strike_ankle
                                 )?.includes("Toes First")
                               }
                             />
@@ -239,10 +221,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Limited Flexion"
                               {...register("heel_strike_hip")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .heel_strike_hip
+                                  rehabData?.gait_assesment.heel_strike_hip
                                 )?.includes("Limited Flexion")
                               }
                             />
@@ -261,10 +242,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Backward Trunk Lean"
                               {...register("heel_strike_trunk")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .heel_strike_trunk
+                                  rehabData?.gait_assesment.heel_strike_trunk
                                 )?.includes("Backward Trunk Lean")
                               }
                             />
@@ -285,10 +265,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Foot Flat"
                               {...register("heel_strike_ankle")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .heel_strike_ankle
+                                  rehabData?.gait_assesment.heel_strike_ankle
                                 )?.includes("Foot Flat")
                               }
                             />
@@ -309,10 +288,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Forward Trunk Lean"
                               {...register("heel_strike_trunk")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .heel_strike_trunk
+                                  rehabData?.gait_assesment.heel_strike_trunk
                                 )?.includes("Forward Trunk Lean")
                               }
                             />
@@ -336,10 +314,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Excessive Positional"
                               {...register("foot_flat_ankle")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .foot_flat_ankle
+                                  rehabData?.gait_assesment.foot_flat_ankle
                                 )?.includes("Excessive Positional")
                               }
                             />
@@ -358,10 +335,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Knee Hyper Extension"
                               {...register("foot_flat_knee")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .foot_flat_knee
+                                  rehabData?.gait_assesment.foot_flat_knee
                                 )?.includes("Knee Hyper Extension")
                               }
                             />
@@ -380,10 +356,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Limited Hip Extension"
                               {...register("foot_flat_hip")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .foot_flat_hip
+                                  rehabData?.gait_assesment.foot_flat_hip
                                 )?.includes("Limited Hip Extension")
                               }
                             />
@@ -405,10 +380,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Palnter Flexion"
                               {...register("foot_flat_ankle")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .foot_flat_ankle
+                                  rehabData?.gait_assesment.foot_flat_ankle
                                 )?.includes("Palnter Flexion")
                               }
                             />
@@ -429,10 +403,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Internal Rotation"
                               {...register("foot_flat_trunk")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .foot_flat_trunk
+                                  rehabData?.gait_assesment.foot_flat_trunk
                                 )?.includes("Internal Rotation")
                               }
                             />
@@ -453,10 +426,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Heel Lift in Mid Stance"
                               {...register("foot_flat_ankle")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .foot_flat_ankle
+                                  rehabData?.gait_assesment.foot_flat_ankle
                                 )?.includes("Heel Lift in Mid Stance")
                               }
                             />
@@ -477,10 +449,9 @@ const Form8 = ({ appointmentId }) => {
                               value="External Rotation"
                               {...register("foot_flat_hip")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .foot_flat_hip
+                                  rehabData?.gait_assesment.foot_flat_hip
                                 )?.includes("External Rotation")
                               }
                             />
@@ -502,10 +473,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Excessive Dorsiflexion"
                               {...register("foot_flat_ankle")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .foot_flat_ankle
+                                  rehabData?.gait_assesment.foot_flat_ankle
                                 )?.includes("Excessive Dorsiflexion")
                               }
                             />
@@ -526,10 +496,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Abduction"
                               {...register("foot_flat_hip")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .foot_flat_hip
+                                  rehabData?.gait_assesment.foot_flat_hip
                                 )?.includes("Abduction")
                               }
                             />
@@ -551,10 +520,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Toe Clawing"
                               {...register("foot_flat_ankle")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .heel_strike_knee
+                                  rehabData?.gait_assesment.heel_strike_knee
                                 )?.includes("Knee Hyperextension")
                               }
                             />
@@ -575,10 +543,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Adduction"
                               {...register("foot_flat_hip")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .foot_flat_hip
+                                  rehabData?.gait_assesment.foot_flat_hip
                                 )?.includes("Adduction")
                               }
                             />
@@ -603,10 +570,9 @@ const Form8 = ({ appointmentId }) => {
                               value="No Roll Off"
                               {...register("heel_of_ankle")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .heel_of_ankle
+                                  rehabData?.gait_assesment.heel_of_ankle
                                 )?.includes("No Roll Off")
                               }
                             />
@@ -630,10 +596,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Insufficient Transfer of Excessive Knee Flexion"
                               {...register("heel_of_ankle")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .heel_of_ankle
+                                  rehabData?.gait_assesment.heel_of_ankle
                                 )?.includes(
                                   "Insufficient Transfer of Excessive Knee Flexion"
                                 )
@@ -662,10 +627,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Weight From Lateral Heel to Medial Forefoot"
                               {...register("heel_of_ankle")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .heel_of_ankle
+                                  rehabData?.gait_assesment.heel_of_ankle
                                 )?.includes(
                                   "Weight From Lateral Heel to Medial Forefoot"
                                 )
@@ -695,10 +659,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Toe Drag Excessive Knee Flexion"
                               {...register("acceleration_ankle")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .acceleration_ankle
+                                  rehabData?.gait_assesment.acceleration_ankle
                                 )?.includes("Toe Drag Excessive Knee Flexion")
                               }
                             />
@@ -718,10 +681,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Circumduction"
                               {...register("acceleration_hip")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .acceleration_hip
+                                  rehabData?.gait_assesment.acceleration_hip
                                 )?.includes("Circumduction")
                               }
                             />
@@ -743,10 +705,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Varus"
                               {...register("acceleration_ankle")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .heel_strike_knee
+                                  rehabData?.gait_assesment.heel_strike_knee
                                 )?.includes("Knee Hyperextension")
                               }
                             />
@@ -765,10 +726,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Limited Knee Flexion"
                               {...register("acceleration_knee")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .heel_strike_knee
+                                  rehabData?.gait_assesment.heel_strike_knee
                                 )?.includes("Knee Hyperextension")
                               }
                             />
@@ -787,10 +747,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Hip Hiking"
                               {...register("acceleration_hip")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .heel_strike_knee
+                                  rehabData?.gait_assesment.heel_strike_knee
                                 )?.includes("Knee Hyperextension")
                               }
                             />
@@ -813,10 +772,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Limited Knee Flexion"
                               {...register("acceleration_knee")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .heel_strike_knee
+                                  rehabData?.gait_assesment.heel_strike_knee
                                 )?.includes("Knee Hyperextension")
                               }
                             />
@@ -835,10 +793,9 @@ const Form8 = ({ appointmentId }) => {
                               value="Excessive Hip Flexion"
                               {...register("acceleration_hip")}
                               defaultChecked={
-                                !!appointment?.rehab?.gait_assesment &&
+                                !!rehabData?.gait_assesment &&
                                 makeArrfromString(
-                                  appointment?.rehab?.gait_assesment
-                                    .heel_strike_knee
+                                  rehabData?.gait_assesment.heel_strike_knee
                                 )?.includes("Knee Hyperextension")
                               }
                             />
@@ -864,11 +821,9 @@ const Form8 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
                         defaultValue={
-                          !!appointment?.rehab?.gait_assesment &&
-                          !!appointment?.rehab?.gait_assesment
-                            .identified_problems
-                            ? appointment?.rehab?.gait_assesment
-                                .identified_problems
+                          !!rehabData?.gait_assesment &&
+                          !!rehabData?.gait_assesment.identified_problems
+                            ? rehabData?.gait_assesment.identified_problems
                             : ""
                         }
                       ></textarea>
@@ -886,10 +841,9 @@ const Form8 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
                         defaultValue={
-                          !!appointment?.rehab?.gait_assesment &&
-                          !!appointment?.rehab?.gait_assesment.short_term_goals
-                            ? appointment?.rehab?.gait_assesment
-                                .short_term_goals
+                          !!rehabData?.gait_assesment &&
+                          !!rehabData?.gait_assesment.short_term_goals
+                            ? rehabData?.gait_assesment.short_term_goals
                             : ""
                         }
                       ></textarea>
@@ -907,9 +861,9 @@ const Form8 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
                         defaultValue={
-                          !!appointment?.rehab?.gait_assesment &&
-                          !!appointment?.rehab?.gait_assesment.long_term_goals
-                            ? appointment?.rehab?.gait_assesment.long_term_goals
+                          !!rehabData?.gait_assesment &&
+                          !!rehabData?.gait_assesment.long_term_goals
+                            ? rehabData?.gait_assesment.long_term_goals
                             : ""
                         }
                       ></textarea>
@@ -928,9 +882,9 @@ const Form8 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
                         defaultValue={
-                          !!appointment?.rehab?.gait_assesment &&
-                          !!appointment?.rehab?.gait_assesment.treatment_plan
-                            ? appointment?.rehab?.gait_assesment.treatment_plan
+                          !!rehabData?.gait_assesment &&
+                          !!rehabData?.gait_assesment.treatment_plan
+                            ? rehabData?.gait_assesment.treatment_plan
                             : ""
                         }
                       ></textarea>

@@ -1,30 +1,17 @@
 import { useForm } from "react-hook-form";
-import useSWR from "swr";
 import axios from "axios";
 import { useAuth } from "context/index";
 import { apiUrl } from "config/api";
 import { Slide, toast } from "react-toastify";
-const Form16 = ({ appointmentId }) => {
+const Form16 = ({ appointmentId, rehabData }) => {
   const { auth } = useAuth();
-  const { data: appointment } = useSWR(
-    `${apiUrl}/appointments/${appointmentId}`,
-    async (url) => {
-      const res = await axios.get(url, {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      });
-      const result = res.data;
-      return result;
-    }
-  );
 
   const { register, handleSubmit } = useForm();
   const submit_form16 = async (data, event) => {
     event.preventDefault();
     const payload = {
       rehab: {
-        ...appointment.rehab,
+        ...rehabData,
         ventilation_respiration_gas_exchange: {
           identified_problems: data.identified_problems,
           short_term_goals: data.short_term_goals,
@@ -124,12 +111,10 @@ const Form16 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("chest_wall_text")}
                             defaultValue={
-                              !!appointment?.rehab
-                                ?.ventilation_respiration_gas_exchange &&
-                              !!appointment?.rehab
-                                ?.ventilation_respiration_gas_exchange
+                              !!rehabData?.ventilation_respiration_gas_exchange &&
+                              !!rehabData?.ventilation_respiration_gas_exchange
                                 .chest_wall_text
-                                ? appointment?.rehab
+                                ? rehabData
                                     ?.ventilation_respiration_gas_exchange
                                     .chest_wall_text
                                 : ""
@@ -144,10 +129,8 @@ const Form16 = ({ appointmentId }) => {
                           value="WNL"
                           {...register("chest_wall_value")}
                           defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
+                            !!rehabData?.ventilation_respiration_gas_exchange &&
+                            rehabData?.ventilation_respiration_gas_exchange
                               .chest_wall_value === "WNL"
                           }
                         />
@@ -159,10 +142,8 @@ const Form16 = ({ appointmentId }) => {
                           value="NA"
                           {...register("chest_wall_value")}
                           defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
+                            !!rehabData?.ventilation_respiration_gas_exchange &&
+                            rehabData?.ventilation_respiration_gas_exchange
                               .chest_wall_value === "NA"
                           }
                         />
@@ -179,12 +160,10 @@ const Form16 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("phonation_text")}
                             defaultValue={
-                              !!appointment?.rehab
-                                ?.ventilation_respiration_gas_exchange &&
-                              !!appointment?.rehab
-                                ?.ventilation_respiration_gas_exchange
+                              !!rehabData?.ventilation_respiration_gas_exchange &&
+                              !!rehabData?.ventilation_respiration_gas_exchange
                                 .phonation_text
-                                ? appointment?.rehab
+                                ? rehabData
                                     ?.ventilation_respiration_gas_exchange
                                     .phonation_text
                                 : ""
@@ -200,10 +179,8 @@ const Form16 = ({ appointmentId }) => {
                           value="WNL"
                           {...register("phonation_value")}
                           defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
+                            !!rehabData?.ventilation_respiration_gas_exchange &&
+                            rehabData?.ventilation_respiration_gas_exchange
                               .phonation_value === "WNL"
                           }
                         />
@@ -215,10 +192,8 @@ const Form16 = ({ appointmentId }) => {
                           value="NA"
                           {...register("phonation_value")}
                           defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
+                            !!rehabData?.ventilation_respiration_gas_exchange &&
+                            rehabData?.ventilation_respiration_gas_exchange
                               .phonation_value === "NA"
                           }
                         />
@@ -235,12 +210,10 @@ const Form16 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("pulmonary_related_text")}
                             defaultValue={
-                              !!appointment?.rehab
-                                ?.ventilation_respiration_gas_exchange &&
-                              !!appointment?.rehab
-                                ?.ventilation_respiration_gas_exchange
+                              !!rehabData?.ventilation_respiration_gas_exchange &&
+                              !!rehabData?.ventilation_respiration_gas_exchange
                                 .pulmonary_related_text
-                                ? appointment?.rehab
+                                ? rehabData
                                     ?.ventilation_respiration_gas_exchange
                                     .pulmonary_related_text
                                 : ""
@@ -256,10 +229,8 @@ const Form16 = ({ appointmentId }) => {
                           value="WNL"
                           {...register("pulmonary_related_value")}
                           defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
+                            !!rehabData?.ventilation_respiration_gas_exchange &&
+                            rehabData?.ventilation_respiration_gas_exchange
                               .pulmonary_related_value === "WNL"
                           }
                         />
@@ -271,10 +242,8 @@ const Form16 = ({ appointmentId }) => {
                           value="NA"
                           {...register("pulmonary_related_value")}
                           defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
+                            !!rehabData?.ventilation_respiration_gas_exchange &&
+                            rehabData?.ventilation_respiration_gas_exchange
                               .pulmonary_related_value === "NA"
                           }
                         />
@@ -291,12 +260,10 @@ const Form16 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("pulmonary_vital_text")}
                             defaultValue={
-                              !!appointment?.rehab
-                                ?.ventilation_respiration_gas_exchange &&
-                              !!appointment?.rehab
-                                ?.ventilation_respiration_gas_exchange
+                              !!rehabData?.ventilation_respiration_gas_exchange &&
+                              !!rehabData?.ventilation_respiration_gas_exchange
                                 .pulmonary_vital_text
-                                ? appointment?.rehab
+                                ? rehabData
                                     ?.ventilation_respiration_gas_exchange
                                     .pulmonary_vital_text
                                 : ""
@@ -312,10 +279,8 @@ const Form16 = ({ appointmentId }) => {
                           value="WNL"
                           {...register("pulmonary_vital_value")}
                           defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
+                            !!rehabData?.ventilation_respiration_gas_exchange &&
+                            rehabData?.ventilation_respiration_gas_exchange
                               .pulmonary_vital_value === "WNL"
                           }
                         />
@@ -327,10 +292,8 @@ const Form16 = ({ appointmentId }) => {
                           value="NA"
                           {...register("pulmonary_vital_value")}
                           defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
+                            !!rehabData?.ventilation_respiration_gas_exchange &&
+                            rehabData?.ventilation_respiration_gas_exchange
                               .pulmonary_vital_value === "NA"
                           }
                         />
@@ -347,12 +310,10 @@ const Form16 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("thoracoabdominal_text")}
                             defaultValue={
-                              !!appointment?.rehab
-                                ?.ventilation_respiration_gas_exchange &&
-                              !!appointment?.rehab
-                                ?.ventilation_respiration_gas_exchange
+                              !!rehabData?.ventilation_respiration_gas_exchange &&
+                              !!rehabData?.ventilation_respiration_gas_exchange
                                 .thoracoabdominal_text
-                                ? appointment?.rehab
+                                ? rehabData
                                     ?.ventilation_respiration_gas_exchange
                                     .thoracoabdominal_text
                                 : ""
@@ -368,10 +329,8 @@ const Form16 = ({ appointmentId }) => {
                           value="WNL"
                           {...register("thoracoabdominal_value")}
                           defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
+                            !!rehabData?.ventilation_respiration_gas_exchange &&
+                            rehabData?.ventilation_respiration_gas_exchange
                               .thoracoabdominal_value === "WNL"
                           }
                         />
@@ -383,10 +342,8 @@ const Form16 = ({ appointmentId }) => {
                           value="NA"
                           {...register("thoracoabdominal_value")}
                           defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
+                            !!rehabData?.ventilation_respiration_gas_exchange &&
+                            rehabData?.ventilation_respiration_gas_exchange
                               .thoracoabdominal_value === "NA"
                           }
                         />
@@ -403,12 +360,10 @@ const Form16 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("presence_level_text")}
                             defaultValue={
-                              !!appointment?.rehab
-                                ?.ventilation_respiration_gas_exchange &&
-                              !!appointment?.rehab
-                                ?.ventilation_respiration_gas_exchange
+                              !!rehabData?.ventilation_respiration_gas_exchange &&
+                              !!rehabData?.ventilation_respiration_gas_exchange
                                 .presence_level_text
-                                ? appointment?.rehab
+                                ? rehabData
                                     ?.ventilation_respiration_gas_exchange
                                     .presence_level_text
                                 : ""
@@ -424,10 +379,8 @@ const Form16 = ({ appointmentId }) => {
                           value="WNL"
                           {...register("presence_level_value")}
                           defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
+                            !!rehabData?.ventilation_respiration_gas_exchange &&
+                            rehabData?.ventilation_respiration_gas_exchange
                               .presence_level_value === "WNL"
                           }
                         />
@@ -439,10 +392,8 @@ const Form16 = ({ appointmentId }) => {
                           value="NA"
                           {...register("presence_level_value")}
                           defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
+                            !!rehabData?.ventilation_respiration_gas_exchange &&
+                            rehabData?.ventilation_respiration_gas_exchange
                               .presence_level_value === "NA"
                           }
                         />
@@ -459,12 +410,10 @@ const Form16 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("protect_airways_text")}
                             defaultValue={
-                              !!appointment?.rehab
-                                ?.ventilation_respiration_gas_exchange &&
-                              !!appointment?.rehab
-                                ?.ventilation_respiration_gas_exchange
+                              !!rehabData?.ventilation_respiration_gas_exchange &&
+                              !!rehabData?.ventilation_respiration_gas_exchange
                                 .protect_airways_text
-                                ? appointment?.rehab
+                                ? rehabData
                                     ?.ventilation_respiration_gas_exchange
                                     .protect_airways_text
                                 : ""
@@ -480,10 +429,8 @@ const Form16 = ({ appointmentId }) => {
                           value="WNL"
                           {...register("protect_airways_value")}
                           defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
+                            !!rehabData?.ventilation_respiration_gas_exchange &&
+                            rehabData?.ventilation_respiration_gas_exchange
                               .protect_airways_value === "WNL"
                           }
                         />
@@ -495,10 +442,8 @@ const Form16 = ({ appointmentId }) => {
                           value="NA"
                           {...register("protect_airways_value")}
                           defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
+                            !!rehabData?.ventilation_respiration_gas_exchange &&
+                            rehabData?.ventilation_respiration_gas_exchange
                               .protect_airways_value === "NA"
                           }
                         />
@@ -515,12 +460,10 @@ const Form16 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("gas_exchange_text")}
                             defaultValue={
-                              !!appointment?.rehab
-                                ?.ventilation_respiration_gas_exchange &&
-                              !!appointment?.rehab
-                                ?.ventilation_respiration_gas_exchange
+                              !!rehabData?.ventilation_respiration_gas_exchange &&
+                              !!rehabData?.ventilation_respiration_gas_exchange
                                 .gas_exchange_text
-                                ? appointment?.rehab
+                                ? rehabData
                                     ?.ventilation_respiration_gas_exchange
                                     .gas_exchange_text
                                 : ""
@@ -536,10 +479,8 @@ const Form16 = ({ appointmentId }) => {
                           value="WNL"
                           {...register("gas_exchange_value")}
                           defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
+                            !!rehabData?.ventilation_respiration_gas_exchange &&
+                            rehabData?.ventilation_respiration_gas_exchange
                               .gas_exchange_value === "WNL"
                           }
                         />
@@ -551,10 +492,8 @@ const Form16 = ({ appointmentId }) => {
                           value="NA"
                           {...register("gas_exchange_value")}
                           defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
+                            !!rehabData?.ventilation_respiration_gas_exchange &&
+                            rehabData?.ventilation_respiration_gas_exchange
                               .gas_exchange_value === "NA"
                           }
                         />
@@ -571,12 +510,10 @@ const Form16 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("ventilatory_mechanism_text")}
                             defaultValue={
-                              !!appointment?.rehab
-                                ?.ventilation_respiration_gas_exchange &&
-                              !!appointment?.rehab
-                                ?.ventilation_respiration_gas_exchange
+                              !!rehabData?.ventilation_respiration_gas_exchange &&
+                              !!rehabData?.ventilation_respiration_gas_exchange
                                 .ventilatory_mechanism_text
-                                ? appointment?.rehab
+                                ? rehabData
                                     ?.ventilation_respiration_gas_exchange
                                     .ventilatory_mechanism_text
                                 : ""
@@ -592,10 +529,8 @@ const Form16 = ({ appointmentId }) => {
                           value="WNL"
                           {...register("ventilatory_mechanism_value")}
                           defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
+                            !!rehabData?.ventilation_respiration_gas_exchange &&
+                            rehabData?.ventilation_respiration_gas_exchange
                               .ventilatory_mechanism_value === "WNL"
                           }
                         />
@@ -607,10 +542,8 @@ const Form16 = ({ appointmentId }) => {
                           value="NA"
                           {...register("ventilatory_mechanism_value")}
                           defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
+                            !!rehabData?.ventilation_respiration_gas_exchange &&
+                            rehabData?.ventilation_respiration_gas_exchange
                               .ventilatory_mechanism_value === "NA"
                           }
                         />
@@ -627,12 +560,10 @@ const Form16 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("breath_voice_text")}
                             defaultValue={
-                              !!appointment?.rehab
-                                ?.ventilation_respiration_gas_exchange &&
-                              !!appointment?.rehab
-                                ?.ventilation_respiration_gas_exchange
+                              !!rehabData?.ventilation_respiration_gas_exchange &&
+                              !!rehabData?.ventilation_respiration_gas_exchange
                                 .breath_voice_text
-                                ? appointment?.rehab
+                                ? rehabData
                                     ?.ventilation_respiration_gas_exchange
                                     .breath_voice_text
                                 : ""
@@ -648,10 +579,8 @@ const Form16 = ({ appointmentId }) => {
                           value="WNL"
                           {...register("breath_voice_value")}
                           defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
+                            !!rehabData?.ventilation_respiration_gas_exchange &&
+                            rehabData?.ventilation_respiration_gas_exchange
                               .breath_voice_value === "WNL"
                           }
                         />
@@ -663,10 +592,8 @@ const Form16 = ({ appointmentId }) => {
                           value="NA"
                           {...register("breath_voice_value")}
                           defaultChecked={
-                            !!appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange &&
-                            appointment?.rehab
-                              ?.ventilation_respiration_gas_exchange
+                            !!rehabData?.ventilation_respiration_gas_exchange &&
+                            rehabData?.ventilation_respiration_gas_exchange
                               .breath_voice_value === "NA"
                           }
                         />
@@ -687,13 +614,10 @@ const Form16 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
                         defaultValue={
-                          !!appointment?.rehab
-                            ?.ventilation_respiration_gas_exchange &&
-                          !!appointment?.rehab
-                            ?.ventilation_respiration_gas_exchange
+                          !!rehabData?.ventilation_respiration_gas_exchange &&
+                          !!rehabData?.ventilation_respiration_gas_exchange
                             .identified_problems
-                            ? appointment?.rehab
-                                ?.ventilation_respiration_gas_exchange
+                            ? rehabData?.ventilation_respiration_gas_exchange
                                 .identified_problems
                             : ""
                         }
@@ -712,13 +636,10 @@ const Form16 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
                         defaultValue={
-                          !!appointment?.rehab
-                            ?.ventilation_respiration_gas_exchange &&
-                          !!appointment?.rehab
-                            ?.ventilation_respiration_gas_exchange
+                          !!rehabData?.ventilation_respiration_gas_exchange &&
+                          !!rehabData?.ventilation_respiration_gas_exchange
                             .short_term_goals
-                            ? appointment?.rehab
-                                ?.ventilation_respiration_gas_exchange
+                            ? rehabData?.ventilation_respiration_gas_exchange
                                 .short_term_goals
                             : ""
                         }
@@ -737,13 +658,10 @@ const Form16 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
                         defaultValue={
-                          !!appointment?.rehab
-                            ?.ventilation_respiration_gas_exchange &&
-                          !!appointment?.rehab
-                            ?.ventilation_respiration_gas_exchange
+                          !!rehabData?.ventilation_respiration_gas_exchange &&
+                          !!rehabData?.ventilation_respiration_gas_exchange
                             .long_term_goals
-                            ? appointment?.rehab
-                                ?.ventilation_respiration_gas_exchange
+                            ? rehabData?.ventilation_respiration_gas_exchange
                                 .long_term_goals
                             : ""
                         }
@@ -763,13 +681,10 @@ const Form16 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
                         defaultValue={
-                          !!appointment?.rehab
-                            ?.ventilation_respiration_gas_exchange &&
-                          !!appointment?.rehab
-                            ?.ventilation_respiration_gas_exchange
+                          !!rehabData?.ventilation_respiration_gas_exchange &&
+                          !!rehabData?.ventilation_respiration_gas_exchange
                             .treatment_plan
-                            ? appointment?.rehab
-                                ?.ventilation_respiration_gas_exchange
+                            ? rehabData?.ventilation_respiration_gas_exchange
                                 .treatment_plan
                             : ""
                         }

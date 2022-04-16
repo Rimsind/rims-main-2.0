@@ -17,7 +17,8 @@ import {
   Form16,
   Form17,
 } from "components/DoctorComponents/rehab/examinationform";
-const RehabExamination = ({ appointmentId }) => {
+
+const RehabExamination = ({ appointmentId, appointment }) => {
   return (
     <>
       <div className="clinical-assesment-tab-panel">
@@ -267,55 +268,106 @@ const RehabExamination = ({ appointmentId }) => {
             id="tab-101"
             className="tab-pane fade show active"
           >
-            <Form1 appointmentId={appointmentId} />
+            <Form1
+              appointmentId={appointmentId}
+              rehabData={appointment?.rehab}
+            />
           </div>
           <div role="tabpanel" id="tab-102" className="tab-pane fade">
-            <Form2 appointmentId={appointmentId} />
+            <Form2
+              appointmentId={appointmentId}
+              rehabData={appointment?.rehab}
+            />
           </div>
           <div role="tabpanel" id="tab-103" className="tab-pane fade">
-            <Form3 appointmentId={appointmentId} />
+            <Form3
+              appointmentId={appointmentId}
+              rehabData={appointment?.rehab}
+            />
           </div>
           <div role="tabpanel" id="tab-104" className="tab-pane fade">
-            <Form4 appointmentId={appointmentId} />
+            <Form4
+              appointmentId={appointmentId}
+              rehabData={appointment?.rehab}
+            />
           </div>
           <div role="tabpanel" id="tab-105" className="tab-pane fade">
-            <Form5 appointmentId={appointmentId} />
+            <Form5
+              appointmentId={appointmentId}
+              rehabData={appointment?.rehab}
+            />
           </div>
           <div role="tabpanel" id="tab-106" className="tab-pane fade">
-            <Form6 appointmentId={appointmentId} />
+            <Form6
+              appointmentId={appointmentId}
+              rehabData={appointment?.rehab}
+            />
           </div>
           <div role="tabpanel" id="tab-107" className="tab-pane fade">
-            <Form7 appointmentId={appointmentId} />
+            <Form7
+              appointmentId={appointmentId}
+              rehabData={appointment?.rehab}
+            />
           </div>
           <div role="tabpanel" id="tab-108" className="tab-pane fade">
-            <Form8 appointmentId={appointmentId} />
+            <Form8
+              appointmentId={appointmentId}
+              rehabData={appointment?.rehab}
+            />
           </div>
           <div role="tabpanel" id="tab-109" className="tab-pane fade">
-            <Form9 appointmentId={appointmentId} />
+            <Form9
+              appointmentId={appointmentId}
+              rehabData={appointment?.rehab}
+            />
           </div>
           <div role="tabpanel" id="tab-110" className="tab-pane fade">
-            <Form10 appointmentId={appointmentId} />
+            <Form10
+              appointmentId={appointmentId}
+              rehabData={appointment?.rehab}
+            />
           </div>
           <div role="tabpanel" id="tab-111" className="tab-pane fade">
-            <Form11 appointmentId={appointmentId} />
+            <Form11
+              appointmentId={appointmentId}
+              rehabData={appointment?.rehab}
+            />
           </div>
           <div role="tabpanel" id="tab-112" className="tab-pane fade">
-            <Form12 appointmentId={appointmentId} />
+            <Form12
+              appointmentId={appointmentId}
+              rehabData={appointment?.rehab}
+            />
           </div>
           <div role="tabpanel" id="tab-113" className="tab-pane fade">
-            <Form13 appointmentId={appointmentId} />
+            <Form13
+              appointmentId={appointmentId}
+              rehabData={appointment?.rehab}
+            />
           </div>
           <div role="tabpanel" id="tab-114" className="tab-pane fade">
-            <Form14 appointmentId={appointmentId} />
+            <Form14
+              appointmentId={appointmentId}
+              rehabData={appointment?.rehab}
+            />
           </div>
           <div role="tabpanel" id="tab-115" className="tab-pane fade">
-            <Form15 appointmentId={appointmentId} />
+            <Form15
+              appointmentId={appointmentId}
+              rehabData={appointment?.rehab}
+            />
           </div>
           <div role="tabpanel" id="tab-116" className="tab-pane fade">
-            <Form16 appointmentId={appointmentId} />
+            <Form16
+              appointmentId={appointmentId}
+              rehabData={appointment?.rehab}
+            />
           </div>
           <div role="tabpanel" id="tab-117" className="tab-pane fade">
-            <Form17 appointmentId={appointmentId} />
+            <Form17
+              appointmentId={appointmentId}
+              rehabData={appointment?.rehab}
+            />
           </div>
         </div>
       </div>

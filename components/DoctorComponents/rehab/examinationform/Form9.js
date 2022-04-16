@@ -1,30 +1,17 @@
 import { useForm } from "react-hook-form";
-import useSWR from "swr";
 import axios from "axios";
 import { useAuth } from "context/index";
 import { apiUrl } from "config/api";
 import { Slide, toast } from "react-toastify";
-const Form9 = ({ appointmentId }) => {
+const Form9 = ({ appointmentId, rehabData }) => {
   const { auth } = useAuth();
-  const { data: appointment } = useSWR(
-    `${apiUrl}/appointments/${appointmentId}`,
-    async (url) => {
-      const res = await axios.get(url, {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      });
-      const result = res.data;
-      return result;
-    }
-  );
 
   const { register, handleSubmit } = useForm();
   const submit_form9 = async (data, event) => {
     event.preventDefault();
     const payload = {
       rehab: {
-        ...appointment.rehab,
+        ...rehabData,
         postural_control_assesment: {
           cognitive_impairment: data.cognitive_impairment,
           neuromuscular_mpairment: data.neuromuscular_mpairment,
@@ -117,10 +104,10 @@ const Form9 = ({ appointmentId }) => {
                         placeholder="Score"
                         {...register("functional_performance_score")}
                         defaultValue={
-                          !!appointment?.rehab?.postural_control_assesment &&
-                          !!appointment?.rehab?.postural_control_assesment
+                          !!rehabData?.postural_control_assesment &&
+                          !!rehabData?.postural_control_assesment
                             .functional_performance_score
-                            ? appointment?.rehab?.postural_control_assesment
+                            ? rehabData?.postural_control_assesment
                                 .functional_performance_score
                             : ""
                         }
@@ -143,11 +130,10 @@ const Form9 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("getup_go_test")}
                             defaultValue={
-                              !!appointment?.rehab
-                                ?.postural_control_assesment &&
-                              !!appointment?.rehab?.postural_control_assesment
+                              !!rehabData?.postural_control_assesment &&
+                              !!rehabData?.postural_control_assesment
                                 .getup_go_test
-                                ? appointment?.rehab?.postural_control_assesment
+                                ? rehabData?.postural_control_assesment
                                     .getup_go_test
                                 : ""
                             }
@@ -172,11 +158,10 @@ const Form9 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("functional_reach_test")}
                             defaultValue={
-                              !!appointment?.rehab
-                                ?.postural_control_assesment &&
-                              !!appointment?.rehab?.postural_control_assesment
+                              !!rehabData?.postural_control_assesment &&
+                              !!rehabData?.postural_control_assesment
                                 .functional_reach_test
-                                ? appointment?.rehab?.postural_control_assesment
+                                ? rehabData?.postural_control_assesment
                                     .functional_reach_test
                                 : ""
                             }
@@ -201,11 +186,10 @@ const Form9 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("tinetti_test")}
                             defaultValue={
-                              !!appointment?.rehab
-                                ?.postural_control_assesment &&
-                              !!appointment?.rehab?.postural_control_assesment
+                              !!rehabData?.postural_control_assesment &&
+                              !!rehabData?.postural_control_assesment
                                 .tinetti_test
-                                ? appointment?.rehab?.postural_control_assesment
+                                ? rehabData?.postural_control_assesment
                                     .tinetti_test
                                 : ""
                             }
@@ -230,11 +214,10 @@ const Form9 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("berge_balance_test")}
                             defaultValue={
-                              !!appointment?.rehab
-                                ?.postural_control_assesment &&
-                              !!appointment?.rehab?.postural_control_assesment
+                              !!rehabData?.postural_control_assesment &&
+                              !!rehabData?.postural_control_assesment
                                 .berge_balance_test
-                                ? appointment?.rehab?.postural_control_assesment
+                                ? rehabData?.postural_control_assesment
                                     .berge_balance_test
                                 : ""
                             }
@@ -258,10 +241,10 @@ const Form9 = ({ appointmentId }) => {
                         placeholder="Score"
                         {...register("motor_strategy_score")}
                         defaultValue={
-                          !!appointment?.rehab?.postural_control_assesment &&
-                          !!appointment?.rehab?.postural_control_assesment
+                          !!rehabData?.postural_control_assesment &&
+                          !!rehabData?.postural_control_assesment
                             .motor_strategy_score
-                            ? appointment?.rehab?.postural_control_assesment
+                            ? rehabData?.postural_control_assesment
                                 .motor_strategy_score
                             : ""
                         }
@@ -284,11 +267,10 @@ const Form9 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("alignment_sitting_standing")}
                             defaultValue={
-                              !!appointment?.rehab
-                                ?.postural_control_assesment &&
-                              !!appointment?.rehab?.postural_control_assesment
+                              !!rehabData?.postural_control_assesment &&
+                              !!rehabData?.postural_control_assesment
                                 .alignment_sitting_standing
-                                ? appointment?.rehab?.postural_control_assesment
+                                ? rehabData?.postural_control_assesment
                                     .alignment_sitting_standing
                                 : ""
                             }
@@ -313,11 +295,10 @@ const Form9 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("movement_sitting_standing")}
                             defaultValue={
-                              !!appointment?.rehab
-                                ?.postural_control_assesment &&
-                              !!appointment?.rehab?.postural_control_assesment
+                              !!rehabData?.postural_control_assesment &&
+                              !!rehabData?.postural_control_assesment
                                 .movement_sitting_standing
-                                ? appointment?.rehab?.postural_control_assesment
+                                ? rehabData?.postural_control_assesment
                                     .movement_sitting_standing
                                 : ""
                             }
@@ -362,12 +343,9 @@ const Form9 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("ctsib")}
                             defaultValue={
-                              !!appointment?.rehab
-                                ?.postural_control_assesment &&
-                              !!appointment?.rehab?.postural_control_assesment
-                                .ctsib
-                                ? appointment?.rehab?.postural_control_assesment
-                                    .ctsib
+                              !!rehabData?.postural_control_assesment &&
+                              !!rehabData?.postural_control_assesment.ctsib
+                                ? rehabData?.postural_control_assesment.ctsib
                                 : ""
                             }
                           />
@@ -390,10 +368,10 @@ const Form9 = ({ appointmentId }) => {
                         placeholder="Score"
                         {...register("factors_impacted_score")}
                         defaultValue={
-                          !!appointment?.rehab?.postural_control_assesment &&
-                          !!appointment?.rehab?.postural_control_assesment
+                          !!rehabData?.postural_control_assesment &&
+                          !!rehabData?.postural_control_assesment
                             .factors_impacted_score
-                            ? appointment?.rehab?.postural_control_assesment
+                            ? rehabData?.postural_control_assesment
                                 .factors_impacted_score
                             : ""
                         }
@@ -416,11 +394,10 @@ const Form9 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("cognitive_impairment")}
                             defaultValue={
-                              !!appointment?.rehab
-                                ?.postural_control_assesment &&
-                              !!appointment?.rehab?.postural_control_assesment
+                              !!rehabData?.postural_control_assesment &&
+                              !!rehabData?.postural_control_assesment
                                 .cognitive_impairment
-                                ? appointment?.rehab?.postural_control_assesment
+                                ? rehabData?.postural_control_assesment
                                     .cognitive_impairment
                                 : ""
                             }
@@ -445,11 +422,10 @@ const Form9 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("musculoskeletal_impairment")}
                             defaultValue={
-                              !!appointment?.rehab
-                                ?.postural_control_assesment &&
-                              !!appointment?.rehab?.postural_control_assesment
+                              !!rehabData?.postural_control_assesment &&
+                              !!rehabData?.postural_control_assesment
                                 .musculoskeletal_impairment
-                                ? appointment?.rehab?.postural_control_assesment
+                                ? rehabData?.postural_control_assesment
                                     .musculoskeletal_impairment
                                 : ""
                             }
@@ -474,11 +450,10 @@ const Form9 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("neuromuscular_mpairment")}
                             defaultValue={
-                              !!appointment?.rehab
-                                ?.postural_control_assesment &&
-                              !!appointment?.rehab?.postural_control_assesment
+                              !!rehabData?.postural_control_assesment &&
+                              !!rehabData?.postural_control_assesment
                                 .neuromuscular_mpairment
-                                ? appointment?.rehab?.postural_control_assesment
+                                ? rehabData?.postural_control_assesment
                                     .neuromuscular_mpairment
                                 : ""
                             }
@@ -503,11 +478,10 @@ const Form9 = ({ appointmentId }) => {
                             placeholder="Text Area"
                             {...register("perceptual_impairment")}
                             defaultValue={
-                              !!appointment?.rehab
-                                ?.postural_control_assesment &&
-                              !!appointment?.rehab?.postural_control_assesment
+                              !!rehabData?.postural_control_assesment &&
+                              !!rehabData?.postural_control_assesment
                                 .perceptual_impairment
-                                ? appointment?.rehab?.postural_control_assesment
+                                ? rehabData?.postural_control_assesment
                                     .perceptual_impairment
                                 : ""
                             }
@@ -539,10 +513,8 @@ const Form9 = ({ appointmentId }) => {
                                       value="Normal"
                                       {...register("sitting_small_movement")}
                                       defaultChecked={
-                                        !!appointment?.rehab
-                                          ?.postural_control_assesment &&
-                                        appointment?.rehab
-                                          ?.postural_control_assesment
+                                        !!rehabData?.postural_control_assesment &&
+                                        rehabData?.postural_control_assesment
                                           .sitting_small_movement === "Normal"
                                       }
                                     />
@@ -561,10 +533,8 @@ const Form9 = ({ appointmentId }) => {
                                       value="Impared"
                                       {...register("sitting_small_movement")}
                                       defaultChecked={
-                                        !!appointment?.rehab
-                                          ?.postural_control_assesment &&
-                                        appointment?.rehab
-                                          ?.postural_control_assesment
+                                        !!rehabData?.postural_control_assesment &&
+                                        rehabData?.postural_control_assesment
                                           .sitting_small_movement === "Impared"
                                       }
                                     />
@@ -590,10 +560,8 @@ const Form9 = ({ appointmentId }) => {
                                       value="Normal"
                                       {...register("sitting_large_movement")}
                                       defaultChecked={
-                                        !!appointment?.rehab
-                                          ?.postural_control_assesment &&
-                                        appointment?.rehab
-                                          ?.postural_control_assesment
+                                        !!rehabData?.postural_control_assesment &&
+                                        rehabData?.postural_control_assesment
                                           .sitting_large_movement === "Normal"
                                       }
                                     />
@@ -612,10 +580,8 @@ const Form9 = ({ appointmentId }) => {
                                       value="Impared"
                                       {...register("sitting_large_movement")}
                                       defaultChecked={
-                                        !!appointment?.rehab
-                                          ?.postural_control_assesment &&
-                                        appointment?.rehab
-                                          ?.postural_control_assesment
+                                        !!rehabData?.postural_control_assesment &&
+                                        rehabData?.postural_control_assesment
                                           .sitting_large_movement === "Impared"
                                       }
                                     />
@@ -650,10 +616,8 @@ const Form9 = ({ appointmentId }) => {
                                       value="Normal"
                                       {...register("standing_ankle_strategy")}
                                       defaultChecked={
-                                        !!appointment?.rehab
-                                          ?.postural_control_assesment &&
-                                        appointment?.rehab
-                                          ?.postural_control_assesment
+                                        !!rehabData?.postural_control_assesment &&
+                                        rehabData?.postural_control_assesment
                                           .standing_ankle_strategy === "Normal"
                                       }
                                     />
@@ -672,10 +636,8 @@ const Form9 = ({ appointmentId }) => {
                                       value="Impared"
                                       {...register("standing_ankle_strategy")}
                                       defaultChecked={
-                                        !!appointment?.rehab
-                                          ?.postural_control_assesment &&
-                                        appointment?.rehab
-                                          ?.postural_control_assesment
+                                        !!rehabData?.postural_control_assesment &&
+                                        rehabData?.postural_control_assesment
                                           .standing_ankle_strategy === "Impared"
                                       }
                                     />
@@ -701,10 +663,8 @@ const Form9 = ({ appointmentId }) => {
                                       value="Normal"
                                       {...register("standing_hip_strategy")}
                                       defaultChecked={
-                                        !!appointment?.rehab
-                                          ?.postural_control_assesment &&
-                                        appointment?.rehab
-                                          ?.postural_control_assesment
+                                        !!rehabData?.postural_control_assesment &&
+                                        rehabData?.postural_control_assesment
                                           .standing_hip_strategy === "Normal"
                                       }
                                     />
@@ -723,10 +683,8 @@ const Form9 = ({ appointmentId }) => {
                                       value="Impared"
                                       {...register("standing_hip_strategy")}
                                       defaultChecked={
-                                        !!appointment?.rehab
-                                          ?.postural_control_assesment &&
-                                        appointment?.rehab
-                                          ?.postural_control_assesment
+                                        !!rehabData?.postural_control_assesment &&
+                                        rehabData?.postural_control_assesment
                                           .standing_hip_strategy === "Impared"
                                       }
                                     />
@@ -752,10 +710,8 @@ const Form9 = ({ appointmentId }) => {
                                       value="Normal"
                                       {...register("stepping_strategy")}
                                       defaultChecked={
-                                        !!appointment?.rehab
-                                          ?.postural_control_assesment &&
-                                        appointment?.rehab
-                                          ?.postural_control_assesment
+                                        !!rehabData?.postural_control_assesment &&
+                                        rehabData?.postural_control_assesment
                                           .stepping_strategy === "Normal"
                                       }
                                     />
@@ -774,10 +730,8 @@ const Form9 = ({ appointmentId }) => {
                                       value="Impared"
                                       {...register("stepping_strategy")}
                                       defaultChecked={
-                                        !!appointment?.rehab
-                                          ?.postural_control_assesment &&
-                                        appointment?.rehab
-                                          ?.postural_control_assesment
+                                        !!rehabData?.postural_control_assesment &&
+                                        rehabData?.postural_control_assesment
                                           .stepping_strategy === "Impared"
                                       }
                                     />
@@ -806,10 +760,10 @@ const Form9 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
                         defaultValue={
-                          !!appointment?.rehab?.postural_control_assesment &&
-                          !!appointment?.rehab?.postural_control_assesment
+                          !!rehabData?.postural_control_assesment &&
+                          !!rehabData?.postural_control_assesment
                             .identified_problems
-                            ? appointment?.rehab?.postural_control_assesment
+                            ? rehabData?.postural_control_assesment
                                 .identified_problems
                             : ""
                         }
@@ -828,10 +782,10 @@ const Form9 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
                         defaultValue={
-                          !!appointment?.rehab?.postural_control_assesment &&
-                          !!appointment?.rehab?.postural_control_assesment
+                          !!rehabData?.postural_control_assesment &&
+                          !!rehabData?.postural_control_assesment
                             .short_term_goals
-                            ? appointment?.rehab?.postural_control_assesment
+                            ? rehabData?.postural_control_assesment
                                 .short_term_goals
                             : ""
                         }
@@ -850,10 +804,10 @@ const Form9 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
                         defaultValue={
-                          !!appointment?.rehab?.postural_control_assesment &&
-                          !!appointment?.rehab?.postural_control_assesment
+                          !!rehabData?.postural_control_assesment &&
+                          !!rehabData?.postural_control_assesment
                             .long_term_goals
-                            ? appointment?.rehab?.postural_control_assesment
+                            ? rehabData?.postural_control_assesment
                                 .long_term_goals
                             : ""
                         }
@@ -873,10 +827,9 @@ const Form9 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
                         defaultValue={
-                          !!appointment?.rehab?.postural_control_assesment &&
-                          !!appointment?.rehab?.postural_control_assesment
-                            .treatment_plan
-                            ? appointment?.rehab?.postural_control_assesment
+                          !!rehabData?.postural_control_assesment &&
+                          !!rehabData?.postural_control_assesment.treatment_plan
+                            ? rehabData?.postural_control_assesment
                                 .treatment_plan
                             : ""
                         }

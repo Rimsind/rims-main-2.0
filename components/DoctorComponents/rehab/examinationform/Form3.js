@@ -1,42 +1,29 @@
 import { useForm } from "react-hook-form";
-import useSWR from "swr";
 import axios from "axios";
 import { useAuth } from "context/index";
 import { apiUrl } from "config/api";
 import { Slide, toast } from "react-toastify";
-const Form3 = ({ appointmentId }) => {
+const Form3 = ({ appointmentId, rehabData }) => {
   const { auth } = useAuth();
-  const { data: appointment } = useSWR(
-    `${apiUrl}/appointments/${appointmentId}`,
-    async (url) => {
-      const res = await axios.get(url, {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      });
-      const result = res.data;
-      return result;
-    }
-  );
-
   const { register, handleSubmit } = useForm();
   const submit_form3 = async (data, event) => {
     event.preventDefault();
-    const payload = {
-      rehab: {
-        ...appointment.rehab,
-        circulatory_assesment: {
-          physiological_response: data.physiological_response,
-          peripheral_venous: data.peripheral_venous,
-          presence_of_bruits: data.presence_of_bruits,
-          identified_problems: data.identified_problems,
-          short_term_goals: data.short_term_goals,
-          traetment_plan: data.traetment_plan,
-          long_term_goals: data.long_term_goals,
-        },
-      },
-    };
     try {
+      const payload = {
+        rehab: {
+          ...rehabData,
+          circulatory_assesment: {
+            physiological_response: data.physiological_response,
+            peripheral_venous: data.peripheral_venous,
+            presence_of_bruits: data.presence_of_bruits,
+            identified_problems: data.identified_problems,
+            short_term_goals: data.short_term_goals,
+            traetment_plan: data.traetment_plan,
+            long_term_goals: data.long_term_goals,
+          },
+        },
+      };
+
       const res = await axios.put(
         `${apiUrl}/appointments/${appointmentId}`,
         payload,
@@ -102,10 +89,10 @@ const Form3 = ({ appointmentId }) => {
                         placeholder="Text Area"
                         {...register("physiological_response")}
                         defaultValue={
-                          !!appointment?.rehab?.circulatory_assesment &&
-                          !!appointment?.rehab?.circulatory_assesment
+                          !!rehabData?.circulatory_assesment &&
+                          !!rehabData?.circulatory_assesment
                             .physiological_response
-                            ? appointment?.rehab?.circulatory_assesment
+                            ? rehabData?.circulatory_assesment
                                 .physiological_response
                             : ""
                         }
@@ -128,11 +115,9 @@ const Form3 = ({ appointmentId }) => {
                         placeholder="Text Area"
                         {...register("peripheral_venous")}
                         defaultValue={
-                          !!appointment?.rehab?.circulatory_assesment &&
-                          !!appointment?.rehab?.circulatory_assesment
-                            .peripheral_venous
-                            ? appointment?.rehab?.circulatory_assesment
-                                .peripheral_venous
+                          !!rehabData?.circulatory_assesment &&
+                          !!rehabData?.circulatory_assesment.peripheral_venous
+                            ? rehabData?.circulatory_assesment.peripheral_venous
                             : ""
                         }
                       />
@@ -155,10 +140,9 @@ const Form3 = ({ appointmentId }) => {
                         placeholder="Text Area"
                         {...register("presence_of_bruits")}
                         defaultValue={
-                          !!appointment?.rehab?.circulatory_assesment &&
-                          !!appointment?.rehab?.circulatory_assesment
-                            .presence_of_bruits
-                            ? appointment?.rehab?.circulatory_assesment
+                          !!rehabData?.circulatory_assesment &&
+                          !!rehabData?.circulatory_assesment.presence_of_bruits
+                            ? rehabData?.circulatory_assesment
                                 .presence_of_bruits
                             : ""
                         }
@@ -178,10 +162,9 @@ const Form3 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
                         defaultValue={
-                          !!appointment?.rehab?.circulatory_assesment &&
-                          !!appointment?.rehab?.circulatory_assesment
-                            .identified_problems
-                            ? appointment?.rehab?.circulatory_assesment
+                          !!rehabData?.circulatory_assesment &&
+                          !!rehabData?.circulatory_assesment.identified_problems
+                            ? rehabData?.circulatory_assesment
                                 .identified_problems
                             : ""
                         }
@@ -200,11 +183,9 @@ const Form3 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
                         defaultValue={
-                          !!appointment?.rehab?.circulatory_assesment &&
-                          !!appointment?.rehab?.circulatory_assesment
-                            .short_term_goals
-                            ? appointment?.rehab?.circulatory_assesment
-                                .short_term_goals
+                          !!rehabData?.circulatory_assesment &&
+                          !!rehabData?.circulatory_assesment.short_term_goals
+                            ? rehabData?.circulatory_assesment.short_term_goals
                             : ""
                         }
                       ></textarea>
@@ -222,11 +203,9 @@ const Form3 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
                         defaultValue={
-                          !!appointment?.rehab?.circulatory_assesment &&
-                          !!appointment?.rehab?.circulatory_assesment
-                            .long_term_goals
-                            ? appointment?.rehab?.circulatory_assesment
-                                .long_term_goals
+                          !!rehabData?.circulatory_assesment &&
+                          !!rehabData?.circulatory_assesment.long_term_goals
+                            ? rehabData?.circulatory_assesment.long_term_goals
                             : ""
                         }
                       ></textarea>
@@ -245,11 +224,9 @@ const Form3 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("traetment_plan")}
                         defaultValue={
-                          !!appointment?.rehab?.circulatory_assesment &&
-                          !!appointment?.rehab?.circulatory_assesment
-                            .traetment_plan
-                            ? appointment?.rehab?.circulatory_assesment
-                                .traetment_plan
+                          !!rehabData?.circulatory_assesment &&
+                          !!rehabData?.circulatory_assesment.traetment_plan
+                            ? rehabData?.circulatory_assesment.traetment_plan
                             : ""
                         }
                       ></textarea>

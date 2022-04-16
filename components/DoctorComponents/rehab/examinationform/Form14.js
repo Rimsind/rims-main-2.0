@@ -1,30 +1,17 @@
 import { useForm } from "react-hook-form";
-import useSWR from "swr";
 import axios from "axios";
 import { useAuth } from "context/index";
 import { apiUrl } from "config/api";
 import { Slide, toast } from "react-toastify";
-const Form14 = ({ appointmentId }) => {
+const Form14 = ({ appointmentId, rehabData }) => {
   const { auth } = useAuth();
-  const { data: appointment } = useSWR(
-    `${apiUrl}/appointments/${appointmentId}`,
-    async (url) => {
-      const res = await axios.get(url, {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      });
-      const result = res.data;
-      return result;
-    }
-  );
 
   const { register, handleSubmit } = useForm();
   const submit_form14 = async (data, event) => {
     event.preventDefault();
     const payload = {
       rehab: {
-        ...appointment.rehab,
+        ...rehabData,
         orthotic_assessment: {
           type_of_device: data.orthotic_type_of_device,
           alignment_fitting: data.orthotic_alignment_fitting,
@@ -142,11 +129,9 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("orthotic_type_of_device")}
                             defaultValue={
-                              !!appointment?.rehab?.orthotic_assessment &&
-                              !!appointment?.rehab?.orthotic_assessment
-                                .type_of_device
-                                ? appointment?.rehab?.orthotic_assessment
-                                    .type_of_device
+                              !!rehabData?.orthotic_assessment &&
+                              !!rehabData?.orthotic_assessment.type_of_device
+                                ? rehabData?.orthotic_assessment.type_of_device
                                 : ""
                             }
                           />
@@ -173,10 +158,9 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("orthotic_alignment_fitting")}
                             defaultValue={
-                              !!appointment?.rehab?.orthotic_assessment &&
-                              !!appointment?.rehab?.orthotic_assessment
-                                .alignment_fitting
-                                ? appointment?.rehab?.orthotic_assessment
+                              !!rehabData?.orthotic_assessment &&
+                              !!rehabData?.orthotic_assessment.alignment_fitting
+                                ? rehabData?.orthotic_assessment
                                     .alignment_fitting
                                 : ""
                             }
@@ -197,10 +181,9 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("orthotic_movement_analysis")}
                             defaultValue={
-                              !!appointment?.rehab?.orthotic_assessment &&
-                              !!appointment?.rehab?.orthotic_assessment
-                                .movement_analysis
-                                ? appointment?.rehab?.orthotic_assessment
+                              !!rehabData?.orthotic_assessment &&
+                              !!rehabData?.orthotic_assessment.movement_analysis
+                                ? rehabData?.orthotic_assessment
                                     .movement_analysis
                                 : ""
                             }
@@ -221,11 +204,9 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("orthotic_patinet_ability")}
                             defaultValue={
-                              !!appointment?.rehab?.orthotic_assessment &&
-                              !!appointment?.rehab?.orthotic_assessment
-                                .patinet_ability
-                                ? appointment?.rehab?.orthotic_assessment
-                                    .patinet_ability
+                              !!rehabData?.orthotic_assessment &&
+                              !!rehabData?.orthotic_assessment.patinet_ability
+                                ? rehabData?.orthotic_assessment.patinet_ability
                                 : ""
                             }
                           />
@@ -247,10 +228,9 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("orthotic_functional_effect")}
                             defaultValue={
-                              !!appointment?.rehab?.orthotic_assessment &&
-                              !!appointment?.rehab?.orthotic_assessment
-                                .functional_effect
-                                ? appointment?.rehab?.orthotic_assessment
+                              !!rehabData?.orthotic_assessment &&
+                              !!rehabData?.orthotic_assessment.functional_effect
+                                ? rehabData?.orthotic_assessment
                                     .functional_effect
                                 : ""
                             }
@@ -271,11 +251,9 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("orthotic_level_of_safety")}
                             defaultValue={
-                              !!appointment?.rehab?.orthotic_assessment &&
-                              !!appointment?.rehab?.orthotic_assessment
-                                .level_of_safety
-                                ? appointment?.rehab?.orthotic_assessment
-                                    .level_of_safety
+                              !!rehabData?.orthotic_assessment &&
+                              !!rehabData?.orthotic_assessment.level_of_safety
+                                ? rehabData?.orthotic_assessment.level_of_safety
                                 : ""
                             }
                           />
@@ -311,10 +289,9 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("prosthetic_type_of_device")}
                             defaultValue={
-                              !!appointment?.rehab?.prosthetic_assessment &&
-                              !!appointment?.rehab?.prosthetic_assessment
-                                .type_of_device
-                                ? appointment?.rehab?.prosthetic_assessment
+                              !!rehabData?.prosthetic_assessment &&
+                              !!rehabData?.prosthetic_assessment.type_of_device
+                                ? rehabData?.prosthetic_assessment
                                     .type_of_device
                                 : ""
                             }
@@ -342,10 +319,10 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("prosthetic_alignment_fitting")}
                             defaultValue={
-                              !!appointment?.rehab?.prosthetic_assessment &&
-                              !!appointment?.rehab?.prosthetic_assessment
+                              !!rehabData?.prosthetic_assessment &&
+                              !!rehabData?.prosthetic_assessment
                                 .alignment_fitting
-                                ? appointment?.rehab?.prosthetic_assessment
+                                ? rehabData?.prosthetic_assessment
                                     .alignment_fitting
                                 : ""
                             }
@@ -366,10 +343,10 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("prosthetic_movement_analysis")}
                             defaultValue={
-                              !!appointment?.rehab?.prosthetic_assessment &&
-                              !!appointment?.rehab?.prosthetic_assessment
+                              !!rehabData?.prosthetic_assessment &&
+                              !!rehabData?.prosthetic_assessment
                                 .movement_analysis
-                                ? appointment?.rehab?.prosthetic_assessment
+                                ? rehabData?.prosthetic_assessment
                                     .movement_analysis
                                 : ""
                             }
@@ -390,10 +367,9 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("prosthetic_patinet_ability")}
                             defaultValue={
-                              !!appointment?.rehab?.prosthetic_assessment &&
-                              !!appointment?.rehab?.prosthetic_assessment
-                                .patinet_ability
-                                ? appointment?.rehab?.prosthetic_assessment
+                              !!rehabData?.prosthetic_assessment &&
+                              !!rehabData?.prosthetic_assessment.patinet_ability
+                                ? rehabData?.prosthetic_assessment
                                     .patinet_ability
                                 : ""
                             }
@@ -416,10 +392,10 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("prosthetic_functional_effect")}
                             defaultValue={
-                              !!appointment?.rehab?.prosthetic_assessment &&
-                              !!appointment?.rehab?.prosthetic_assessment
+                              !!rehabData?.prosthetic_assessment &&
+                              !!rehabData?.prosthetic_assessment
                                 .functional_effect
-                                ? appointment?.rehab?.prosthetic_assessment
+                                ? rehabData?.prosthetic_assessment
                                     .functional_effect
                                 : ""
                             }
@@ -440,10 +416,9 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("prosthetic_level_of_safety")}
                             defaultValue={
-                              !!appointment?.rehab?.prosthetic_assessment &&
-                              !!appointment?.rehab?.prosthetic_assessment
-                                .level_of_safety
-                                ? appointment?.rehab?.prosthetic_assessment
+                              !!rehabData?.prosthetic_assessment &&
+                              !!rehabData?.prosthetic_assessment.level_of_safety
+                                ? rehabData?.prosthetic_assessment
                                     .level_of_safety
                                 : ""
                             }
@@ -480,12 +455,10 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("adaptive_type_of_device")}
                             defaultValue={
-                              !!appointment?.rehab
-                                ?.adaptive_equipment_assessment &&
-                              !!appointment?.rehab
-                                ?.adaptive_equipment_assessment.type_of_device
-                                ? appointment?.rehab
-                                    ?.adaptive_equipment_assessment
+                              !!rehabData?.adaptive_equipment_assessment &&
+                              !!rehabData?.adaptive_equipment_assessment
+                                .type_of_device
+                                ? rehabData?.adaptive_equipment_assessment
                                     .type_of_device
                                 : ""
                             }
@@ -513,13 +486,10 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("adaptive_alignment_fitting")}
                             defaultValue={
-                              !!appointment?.rehab
-                                ?.adaptive_equipment_assessment &&
-                              !!appointment?.rehab
-                                ?.adaptive_equipment_assessment
+                              !!rehabData?.adaptive_equipment_assessment &&
+                              !!rehabData?.adaptive_equipment_assessment
                                 .alignment_fitting
-                                ? appointment?.rehab
-                                    ?.adaptive_equipment_assessment
+                                ? rehabData?.adaptive_equipment_assessment
                                     .alignment_fitting
                                 : ""
                             }
@@ -540,13 +510,10 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("adaptive_movement_analysis")}
                             defaultValue={
-                              !!appointment?.rehab
-                                ?.adaptive_equipment_assessment &&
-                              !!appointment?.rehab
-                                ?.adaptive_equipment_assessment
+                              !!rehabData?.adaptive_equipment_assessment &&
+                              !!rehabData?.adaptive_equipment_assessment
                                 .movement_analysis
-                                ? appointment?.rehab
-                                    ?.adaptive_equipment_assessment
+                                ? rehabData?.adaptive_equipment_assessment
                                     .movement_analysis
                                 : ""
                             }
@@ -567,12 +534,10 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("adaptive_patinet_ability")}
                             defaultValue={
-                              !!appointment?.rehab
-                                ?.adaptive_equipment_assessment &&
-                              !!appointment?.rehab
-                                ?.adaptive_equipment_assessment.patinet_ability
-                                ? appointment?.rehab
-                                    ?.adaptive_equipment_assessment
+                              !!rehabData?.adaptive_equipment_assessment &&
+                              !!rehabData?.adaptive_equipment_assessment
+                                .patinet_ability
+                                ? rehabData?.adaptive_equipment_assessment
                                     .patinet_ability
                                 : ""
                             }
@@ -595,13 +560,10 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("adaptive_functional_effect")}
                             defaultValue={
-                              !!appointment?.rehab
-                                ?.adaptive_equipment_assessment &&
-                              !!appointment?.rehab
-                                ?.adaptive_equipment_assessment
+                              !!rehabData?.adaptive_equipment_assessment &&
+                              !!rehabData?.adaptive_equipment_assessment
                                 .functional_effect
-                                ? appointment?.rehab
-                                    ?.adaptive_equipment_assessment
+                                ? rehabData?.adaptive_equipment_assessment
                                     .functional_effect
                                 : ""
                             }
@@ -622,12 +584,10 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("adaptive_level_of_safety")}
                             defaultValue={
-                              !!appointment?.rehab
-                                ?.adaptive_equipment_assessment &&
-                              !!appointment?.rehab
-                                ?.adaptive_equipment_assessment.level_of_safety
-                                ? appointment?.rehab
-                                    ?.adaptive_equipment_assessment
+                              !!rehabData?.adaptive_equipment_assessment &&
+                              !!rehabData?.adaptive_equipment_assessment
+                                .level_of_safety
+                                ? rehabData?.adaptive_equipment_assessment
                                     .level_of_safety
                                 : ""
                             }
@@ -660,9 +620,9 @@ const Form14 = ({ appointmentId }) => {
                             value="Manual"
                             {...register("type")}
                             defaultChecked={
-                              !!appointment?.rehab?.wheel_chair_assessment &&
-                              appointment?.rehab?.wheel_chair_assessment
-                                .type === "Manual"
+                              !!rehabData?.wheel_chair_assessment &&
+                              rehabData?.wheel_chair_assessment.type ===
+                                "Manual"
                             }
                           />
                         </div>
@@ -680,9 +640,9 @@ const Form14 = ({ appointmentId }) => {
                             value="MOTORIZED"
                             {...register("type")}
                             defaultChecked={
-                              !!appointment?.rehab?.wheel_chair_assessment &&
-                              appointment?.rehab?.wheel_chair_assessment
-                                .type === "MOTORIZED"
+                              !!rehabData?.wheel_chair_assessment &&
+                              rehabData?.wheel_chair_assessment.type ===
+                                "MOTORIZED"
                             }
                           />
                         </div>
@@ -700,9 +660,8 @@ const Form14 = ({ appointmentId }) => {
                             value="None"
                             {...register("type")}
                             defaultChecked={
-                              !!appointment?.rehab?.wheel_chair_assessment &&
-                              appointment?.rehab?.wheel_chair_assessment
-                                .type === "None"
+                              !!rehabData?.wheel_chair_assessment &&
+                              rehabData?.wheel_chair_assessment.type === "None"
                             }
                           />
                         </div>
@@ -723,9 +682,9 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("A")}
                             defaultValue={
-                              !!appointment?.rehab?.wheel_chair_assessment &&
-                              !!appointment?.rehab?.wheel_chair_assessment.A
-                                ? appointment?.rehab?.wheel_chair_assessment.A
+                              !!rehabData?.wheel_chair_assessment &&
+                              !!rehabData?.wheel_chair_assessment.A
+                                ? rehabData?.wheel_chair_assessment.A
                                 : ""
                             }
                           />
@@ -744,9 +703,9 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("B")}
                             defaultValue={
-                              !!appointment?.rehab?.wheel_chair_assessment &&
-                              !!appointment?.rehab?.wheel_chair_assessment.B
-                                ? appointment?.rehab?.wheel_chair_assessment.B
+                              !!rehabData?.wheel_chair_assessment &&
+                              !!rehabData?.wheel_chair_assessment.B
+                                ? rehabData?.wheel_chair_assessment.B
                                 : ""
                             }
                           />
@@ -765,9 +724,9 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("C")}
                             defaultValue={
-                              !!appointment?.rehab?.wheel_chair_assessment &&
-                              !!appointment?.rehab?.wheel_chair_assessment.C
-                                ? appointment?.rehab?.wheel_chair_assessment.C
+                              !!rehabData?.wheel_chair_assessment &&
+                              !!rehabData?.wheel_chair_assessment.C
+                                ? rehabData?.wheel_chair_assessment.C
                                 : ""
                             }
                           />
@@ -786,9 +745,9 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("D1")}
                             defaultValue={
-                              !!appointment?.rehab?.wheel_chair_assessment &&
-                              !!appointment?.rehab?.wheel_chair_assessment.D1
-                                ? appointment?.rehab?.wheel_chair_assessment.D1
+                              !!rehabData?.wheel_chair_assessment &&
+                              !!rehabData?.wheel_chair_assessment.D1
+                                ? rehabData?.wheel_chair_assessment.D1
                                 : ""
                             }
                           />
@@ -807,9 +766,9 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("D2")}
                             defaultValue={
-                              !!appointment?.rehab?.wheel_chair_assessment &&
-                              !!appointment?.rehab?.wheel_chair_assessment.D2
-                                ? appointment?.rehab?.wheel_chair_assessment.D2
+                              !!rehabData?.wheel_chair_assessment &&
+                              !!rehabData?.wheel_chair_assessment.D2
+                                ? rehabData?.wheel_chair_assessment.D2
                                 : ""
                             }
                           />
@@ -828,9 +787,9 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("E")}
                             defaultValue={
-                              !!appointment?.rehab?.wheel_chair_assessment &&
-                              !!appointment?.rehab?.wheel_chair_assessment.E
-                                ? appointment?.rehab?.wheel_chair_assessment.E
+                              !!rehabData?.wheel_chair_assessment &&
+                              !!rehabData?.wheel_chair_assessment.E
+                                ? rehabData?.wheel_chair_assessment.E
                                 : ""
                             }
                           />
@@ -849,9 +808,9 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("F")}
                             defaultValue={
-                              !!appointment?.rehab?.wheel_chair_assessment &&
-                              !!appointment?.rehab?.wheel_chair_assessment.F
-                                ? appointment?.rehab?.wheel_chair_assessment.F
+                              !!rehabData?.wheel_chair_assessment &&
+                              !!rehabData?.wheel_chair_assessment.F
+                                ? rehabData?.wheel_chair_assessment.F
                                 : ""
                             }
                           />
@@ -870,9 +829,9 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("G")}
                             defaultValue={
-                              !!appointment?.rehab?.wheel_chair_assessment &&
-                              !!appointment?.rehab?.wheel_chair_assessment.G
-                                ? appointment?.rehab?.wheel_chair_assessment.G
+                              !!rehabData?.wheel_chair_assessment &&
+                              !!rehabData?.wheel_chair_assessment.G
+                                ? rehabData?.wheel_chair_assessment.G
                                 : ""
                             }
                           />
@@ -891,9 +850,9 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("H")}
                             defaultValue={
-                              !!appointment?.rehab?.wheel_chair_assessment &&
-                              !!appointment?.rehab?.wheel_chair_assessment.H
-                                ? appointment?.rehab?.wheel_chair_assessment.H
+                              !!rehabData?.wheel_chair_assessment &&
+                              !!rehabData?.wheel_chair_assessment.H
+                                ? rehabData?.wheel_chair_assessment.H
                                 : ""
                             }
                           />
@@ -912,9 +871,9 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("I")}
                             defaultValue={
-                              !!appointment?.rehab?.wheel_chair_assessment &&
-                              !!appointment?.rehab?.wheel_chair_assessment.I
-                                ? appointment?.rehab?.wheel_chair_assessment.I
+                              !!rehabData?.wheel_chair_assessment &&
+                              !!rehabData?.wheel_chair_assessment.I
+                                ? rehabData?.wheel_chair_assessment.I
                                 : ""
                             }
                           />
@@ -933,9 +892,9 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("J")}
                             defaultValue={
-                              !!appointment?.rehab?.wheel_chair_assessment &&
-                              !!appointment?.rehab?.wheel_chair_assessment.J
-                                ? appointment?.rehab?.wheel_chair_assessment.J
+                              !!rehabData?.wheel_chair_assessment &&
+                              !!rehabData?.wheel_chair_assessment.J
+                                ? rehabData?.wheel_chair_assessment.J
                                 : ""
                             }
                           />
@@ -954,9 +913,9 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("K")}
                             defaultValue={
-                              !!appointment?.rehab?.wheel_chair_assessment &&
-                              !!appointment?.rehab?.wheel_chair_assessment.K
-                                ? appointment?.rehab?.wheel_chair_assessment.K
+                              !!rehabData?.wheel_chair_assessment &&
+                              !!rehabData?.wheel_chair_assessment.K
+                                ? rehabData?.wheel_chair_assessment.K
                                 : ""
                             }
                           />
@@ -975,9 +934,9 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("L")}
                             defaultValue={
-                              !!appointment?.rehab?.wheel_chair_assessment &&
-                              !!appointment?.rehab?.wheel_chair_assessment.L
-                                ? appointment?.rehab?.wheel_chair_assessment.L
+                              !!rehabData?.wheel_chair_assessment &&
+                              !!rehabData?.wheel_chair_assessment.L
+                                ? rehabData?.wheel_chair_assessment.L
                                 : ""
                             }
                           />
@@ -996,9 +955,9 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("M")}
                             defaultValue={
-                              !!appointment?.rehab?.wheel_chair_assessment &&
-                              !!appointment?.rehab?.wheel_chair_assessment.M
-                                ? appointment?.rehab?.wheel_chair_assessment.M
+                              !!rehabData?.wheel_chair_assessment &&
+                              !!rehabData?.wheel_chair_assessment.M
+                                ? rehabData?.wheel_chair_assessment.M
                                 : ""
                             }
                           />
@@ -1017,9 +976,9 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("N")}
                             defaultValue={
-                              !!appointment?.rehab?.wheel_chair_assessment &&
-                              !!appointment?.rehab?.wheel_chair_assessment.N
-                                ? appointment?.rehab?.wheel_chair_assessment.N
+                              !!rehabData?.wheel_chair_assessment &&
+                              !!rehabData?.wheel_chair_assessment.N
+                                ? rehabData?.wheel_chair_assessment.N
                                 : ""
                             }
                           />
@@ -1038,9 +997,9 @@ const Form14 = ({ appointmentId }) => {
                             placeholder="Text box"
                             {...register("O")}
                             defaultValue={
-                              !!appointment?.rehab?.wheel_chair_assessment &&
-                              !!appointment?.rehab?.wheel_chair_assessment.O
-                                ? appointment?.rehab?.wheel_chair_assessment.O
+                              !!rehabData?.wheel_chair_assessment &&
+                              !!rehabData?.wheel_chair_assessment.O
+                                ? rehabData?.wheel_chair_assessment.O
                                 : ""
                             }
                           />
@@ -1062,10 +1021,10 @@ const Form14 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
                         defaultValue={
-                          !!appointment?.rehab?.wheel_chair_assessment &&
-                          !!appointment?.rehab?.wheel_chair_assessment
+                          !!rehabData?.wheel_chair_assessment &&
+                          !!rehabData?.wheel_chair_assessment
                             .identified_problems
-                            ? appointment?.rehab?.wheel_chair_assessment
+                            ? rehabData?.wheel_chair_assessment
                                 .identified_problems
                             : ""
                         }
@@ -1084,11 +1043,9 @@ const Form14 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
                         defaultValue={
-                          !!appointment?.rehab?.wheel_chair_assessment &&
-                          !!appointment?.rehab?.wheel_chair_assessment
-                            .long_term_goals
-                            ? appointment?.rehab?.wheel_chair_assessment
-                                .long_term_goals
+                          !!rehabData?.wheel_chair_assessment &&
+                          !!rehabData?.wheel_chair_assessment.long_term_goals
+                            ? rehabData?.wheel_chair_assessment.long_term_goals
                             : ""
                         }
                       ></textarea>
@@ -1106,11 +1063,9 @@ const Form14 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
                         defaultValue={
-                          !!appointment?.rehab?.wheel_chair_assessment &&
-                          !!appointment?.rehab?.wheel_chair_assessment
-                            .long_term_goals
-                            ? appointment?.rehab?.wheel_chair_assessment
-                                .long_term_goals
+                          !!rehabData?.wheel_chair_assessment &&
+                          !!rehabData?.wheel_chair_assessment.long_term_goals
+                            ? rehabData?.wheel_chair_assessment.long_term_goals
                             : ""
                         }
                       ></textarea>
@@ -1129,11 +1084,9 @@ const Form14 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
                         defaultValue={
-                          !!appointment?.rehab?.wheel_chair_assessment &&
-                          !!appointment?.rehab?.wheel_chair_assessment
-                            .treatment_plan
-                            ? appointment?.rehab?.wheel_chair_assessment
-                                .treatment_plan
+                          !!rehabData?.wheel_chair_assessment &&
+                          !!rehabData?.wheel_chair_assessment.treatment_plan
+                            ? rehabData?.wheel_chair_assessment.treatment_plan
                             : ""
                         }
                       ></textarea>

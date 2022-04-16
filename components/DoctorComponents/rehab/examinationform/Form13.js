@@ -1,50 +1,38 @@
 import { useForm } from "react-hook-form";
-import useSWR from "swr";
 import axios from "axios";
 import { useAuth } from "context/index";
 import { apiUrl } from "config/api";
 import { Slide, toast } from "react-toastify";
 import { workBarrierList } from "pages/api/rehabData";
-const Form13 = ({ appointmentId }) => {
+const Form13 = ({ appointmentId, rehabData }) => {
   const { auth } = useAuth();
-  const { data: appointment } = useSWR(
-    `${apiUrl}/appointments/${appointmentId}`,
-    async (url) => {
-      const res = await axios.get(url, {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      });
-      const result = res.data;
-      return result;
-    }
-  );
 
   const { register, handleSubmit } = useForm();
   const submit_form13 = async (data, event) => {
     event.preventDefault();
-    const payload = {
-      rehab: {
-        ...appointment.rehab,
-        environmental_barrier_assessmnet: {
-          personal_care_provider: data.personal_care_provider,
-          social_norms: data.social_norms,
-          societal_attitudes: data.societal_attitudes,
-          health_professionals: data.health_professionals,
-          facilitators_assessmnet: data.facilitators_assessmnet,
-          personal_assistants: data.personal_assistants,
-          friends: data.friends,
-          environmental_barriers: data.environmental_barriers,
-          family_members: data.family_members,
-          home_work_barrier: data.home_work_barrier.toString(),
-          identified_problems: data.identified_problems,
-          short_term_goals: data.short_term_goals,
-          long_term_goals: data.long_term_goals,
-          treatment_plans: data.treatment_plans,
-        },
-      },
-    };
     try {
+      const payload = {
+        rehab: {
+          ...rehabData,
+          environmental_barrier_assessmnet: {
+            personal_care_provider: data.personal_care_provider,
+            social_norms: data.social_norms,
+            societal_attitudes: data.societal_attitudes,
+            health_professionals: data.health_professionals,
+            facilitators_assessmnet: data.facilitators_assessmnet,
+            personal_assistants: data.personal_assistants,
+            friends: data.friends,
+            environmental_barriers: data.environmental_barriers,
+            family_members: data.family_members,
+            home_work_barrier: data.home_work_barrier.toString(),
+            identified_problems: data.identified_problems,
+            short_term_goals: data.short_term_goals,
+            long_term_goals: data.long_term_goals,
+            treatment_plans: data.treatment_plans,
+          },
+        },
+      };
+
       const res = await axios.put(
         `${apiUrl}/appointments/${appointmentId}`,
         payload,
@@ -119,18 +107,15 @@ const Form13 = ({ appointmentId }) => {
                         <option
                           name="language"
                           defaultValue={
-                            !!appointment?.rehab
-                              ?.environmental_barrier_assessmnet &&
-                            appointment?.rehab?.environmental_barrier_assessmnet
+                            !!rehabData?.environmental_barrier_assessmnet &&
+                            rehabData?.environmental_barrier_assessmnet
                               .environmental_barriers
                           }
                         >
-                          {!!appointment?.rehab
-                            ?.environmental_barrier_assessmnet &&
-                          appointment?.rehab?.environmental_barrier_assessmnet
+                          {!!rehabData?.environmental_barrier_assessmnet &&
+                          rehabData?.environmental_barrier_assessmnet
                             .environmental_barriers
-                            ? appointment?.rehab
-                                ?.environmental_barrier_assessmnet
+                            ? rehabData?.environmental_barrier_assessmnet
                                 .environmental_barriers
                             : "Select"}
                         </option>
@@ -159,18 +144,15 @@ const Form13 = ({ appointmentId }) => {
                         <option
                           name="language"
                           defaultValue={
-                            !!appointment?.rehab
-                              ?.environmental_barrier_assessmnet &&
-                            appointment?.rehab?.environmental_barrier_assessmnet
+                            !!rehabData?.environmental_barrier_assessmnet &&
+                            rehabData?.environmental_barrier_assessmnet
                               .facilitators_assessmnet
                           }
                         >
-                          {!!appointment?.rehab
-                            ?.environmental_barrier_assessmnet &&
-                          appointment?.rehab?.environmental_barrier_assessmnet
+                          {!!rehabData?.environmental_barrier_assessmnet &&
+                          rehabData?.environmental_barrier_assessmnet
                             .facilitators_assessmnet
-                            ? appointment?.rehab
-                                ?.environmental_barrier_assessmnet
+                            ? rehabData?.environmental_barrier_assessmnet
                                 .facilitators_assessmnet
                             : "Select"}
                         </option>
@@ -208,12 +190,10 @@ const Form13 = ({ appointmentId }) => {
                         placeholder="Text Area"
                         {...register("family_members")}
                         defaultValue={
-                          !!appointment?.rehab
-                            ?.environmental_barrier_assessmnet &&
-                          !!appointment?.rehab?.environmental_barrier_assessmnet
+                          !!rehabData?.environmental_barrier_assessmnet &&
+                          !!rehabData?.environmental_barrier_assessmnet
                             .family_members
-                            ? appointment?.rehab
-                                ?.environmental_barrier_assessmnet
+                            ? rehabData?.environmental_barrier_assessmnet
                                 .family_members
                             : ""
                         }
@@ -234,12 +214,10 @@ const Form13 = ({ appointmentId }) => {
                         placeholder="Text Area"
                         {...register("friends")}
                         defaultValue={
-                          !!appointment?.rehab
-                            ?.environmental_barrier_assessmnet &&
-                          !!appointment?.rehab?.environmental_barrier_assessmnet
-                            .friends
-                            ? appointment?.rehab
-                                ?.environmental_barrier_assessmnet.friends
+                          !!rehabData?.environmental_barrier_assessmnet &&
+                          !!rehabData?.environmental_barrier_assessmnet.friends
+                            ? rehabData?.environmental_barrier_assessmnet
+                                .friends
                             : ""
                         }
                       />
@@ -261,12 +239,10 @@ const Form13 = ({ appointmentId }) => {
                         placeholder="Text Area"
                         {...register("personal_care_provider")}
                         defaultValue={
-                          !!appointment?.rehab
-                            ?.environmental_barrier_assessmnet &&
-                          !!appointment?.rehab?.environmental_barrier_assessmnet
+                          !!rehabData?.environmental_barrier_assessmnet &&
+                          !!rehabData?.environmental_barrier_assessmnet
                             .personal_care_provider
-                            ? appointment?.rehab
-                                ?.environmental_barrier_assessmnet
+                            ? rehabData?.environmental_barrier_assessmnet
                                 .personal_care_provider
                             : ""
                         }
@@ -287,12 +263,10 @@ const Form13 = ({ appointmentId }) => {
                         placeholder="Text Area"
                         {...register("personal_assistants")}
                         defaultValue={
-                          !!appointment?.rehab
-                            ?.environmental_barrier_assessmnet &&
-                          !!appointment?.rehab?.environmental_barrier_assessmnet
+                          !!rehabData?.environmental_barrier_assessmnet &&
+                          !!rehabData?.environmental_barrier_assessmnet
                             .personal_assistants
-                            ? appointment?.rehab
-                                ?.environmental_barrier_assessmnet
+                            ? rehabData?.environmental_barrier_assessmnet
                                 .personal_assistants
                             : ""
                         }
@@ -315,12 +289,10 @@ const Form13 = ({ appointmentId }) => {
                         placeholder="Text Area"
                         {...register("health_professionals")}
                         defaultValue={
-                          !!appointment?.rehab
-                            ?.environmental_barrier_assessmnet &&
-                          !!appointment?.rehab?.environmental_barrier_assessmnet
+                          !!rehabData?.environmental_barrier_assessmnet &&
+                          !!rehabData?.environmental_barrier_assessmnet
                             .health_professionals
-                            ? appointment?.rehab
-                                ?.environmental_barrier_assessmnet
+                            ? rehabData?.environmental_barrier_assessmnet
                                 .health_professionals
                             : ""
                         }
@@ -341,12 +313,10 @@ const Form13 = ({ appointmentId }) => {
                         placeholder="Text Area"
                         {...register("societal_attitudes")}
                         defaultValue={
-                          !!appointment?.rehab
-                            ?.environmental_barrier_assessmnet &&
-                          !!appointment?.rehab?.environmental_barrier_assessmnet
+                          !!rehabData?.environmental_barrier_assessmnet &&
+                          !!rehabData?.environmental_barrier_assessmnet
                             .societal_attitudes
-                            ? appointment?.rehab
-                                ?.environmental_barrier_assessmnet
+                            ? rehabData?.environmental_barrier_assessmnet
                                 .societal_attitudes
                             : ""
                         }
@@ -369,12 +339,11 @@ const Form13 = ({ appointmentId }) => {
                         placeholder="Text Area"
                         {...register("social_norms")}
                         defaultValue={
-                          !!appointment?.rehab
-                            ?.environmental_barrier_assessmnet &&
-                          !!appointment?.rehab?.environmental_barrier_assessmnet
+                          !!rehabData?.environmental_barrier_assessmnet &&
+                          !!rehabData?.environmental_barrier_assessmnet
                             .social_norms
-                            ? appointment?.rehab
-                                ?.environmental_barrier_assessmnet.social_norms
+                            ? rehabData?.environmental_barrier_assessmnet
+                                .social_norms
                             : ""
                         }
                       />
@@ -400,11 +369,9 @@ const Form13 = ({ appointmentId }) => {
                               value={items}
                               {...register("home_work_barrier")}
                               defaultChecked={
-                                !!appointment?.rehab
-                                  ?.environmental_barrier_assessmnet &&
+                                !!rehabData?.environmental_barrier_assessmnet &&
                                 makeArrfromString(
-                                  appointment?.rehab
-                                    ?.environmental_barrier_assessmnet
+                                  rehabData?.environmental_barrier_assessmnet
                                     .home_work_barrier
                                 )?.includes(items)
                               }
@@ -431,12 +398,10 @@ const Form13 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
                         defaultValue={
-                          !!appointment?.rehab
-                            ?.environmental_barrier_assessmnet &&
-                          !!appointment?.rehab?.environmental_barrier_assessmnet
+                          !!rehabData?.environmental_barrier_assessmnet &&
+                          !!rehabData?.environmental_barrier_assessmnet
                             .identified_problems
-                            ? appointment?.rehab
-                                ?.environmental_barrier_assessmnet
+                            ? rehabData?.environmental_barrier_assessmnet
                                 .identified_problems
                             : ""
                         }
@@ -455,12 +420,10 @@ const Form13 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
                         defaultValue={
-                          !!appointment?.rehab
-                            ?.environmental_barrier_assessmnet &&
-                          !!appointment?.rehab?.environmental_barrier_assessmnet
+                          !!rehabData?.environmental_barrier_assessmnet &&
+                          !!rehabData?.environmental_barrier_assessmnet
                             .short_term_goals
-                            ? appointment?.rehab
-                                ?.environmental_barrier_assessmnet
+                            ? rehabData?.environmental_barrier_assessmnet
                                 .short_term_goals
                             : ""
                         }
@@ -479,12 +442,10 @@ const Form13 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
                         defaultValue={
-                          !!appointment?.rehab
-                            ?.environmental_barrier_assessmnet &&
-                          !!appointment?.rehab?.environmental_barrier_assessmnet
+                          !!rehabData?.environmental_barrier_assessmnet &&
+                          !!rehabData?.environmental_barrier_assessmnet
                             .long_term_goals
-                            ? appointment?.rehab
-                                ?.environmental_barrier_assessmnet
+                            ? rehabData?.environmental_barrier_assessmnet
                                 .long_term_goals
                             : ""
                         }
@@ -504,12 +465,10 @@ const Form13 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("treatment_plans")}
                         defaultValue={
-                          !!appointment?.rehab
-                            ?.environmental_barrier_assessmnet &&
-                          !!appointment?.rehab?.environmental_barrier_assessmnet
+                          !!rehabData?.environmental_barrier_assessmnet &&
+                          !!rehabData?.environmental_barrier_assessmnet
                             .treatment_plans
-                            ? appointment?.rehab
-                                ?.environmental_barrier_assessmnet
+                            ? rehabData?.environmental_barrier_assessmnet
                                 .treatment_plans
                             : ""
                         }

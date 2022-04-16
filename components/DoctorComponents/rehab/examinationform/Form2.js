@@ -1,50 +1,38 @@
 import { useForm } from "react-hook-form";
-import useSWR from "swr";
 import axios from "axios";
 import { useAuth } from "context/index";
 import { apiUrl } from "config/api";
 import { Slide, toast } from "react-toastify";
-const Form2 = ({ appointmentId }) => {
+const Form2 = ({ appointmentId, rehabData }) => {
   const { auth } = useAuth();
-  const { data: appointment } = useSWR(
-    `${apiUrl}/appointments/${appointmentId}`,
-    async (url) => {
-      const res = await axios.get(url, {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      });
-      const result = res.data;
-      return result;
-    }
-  );
 
   const { register, handleSubmit } = useForm();
   const submit_form2 = async (data, event) => {
     event.preventDefault();
-    const payload = {
-      rehab: {
-        ...appointment.rehab,
-        abthropometric: {
-          skin_fold: data.skin_fold,
-          height: data.height,
-          edema_grith: data.edema_grith,
-          edema_scales: data.edema_scales,
-          short_term_goals: data.short_term_goals,
-          treatment_plan: data.treatment_plan,
-          long_term_goals: data.long_term_goals,
-          impedence: data.impedence,
-          identified_problems: data.identified_problems,
-          weight: data.weight,
-          edema_palpation: data.edema_palpation,
-          body_dimension_length: data.body_dimension_length,
-          body_dimension_grith: data.body_dimension_grith,
-          bmi: data.bmi,
-          edema_volume: data.edema_volume,
-        },
-      },
-    };
     try {
+      const payload = {
+        rehab: {
+          ...rehabData,
+          abthropometric: {
+            skin_fold: data.skin_fold,
+            height: data.height,
+            edema_grith: data.edema_grith,
+            edema_scales: data.edema_scales,
+            short_term_goals: data.short_term_goals,
+            treatment_plan: data.treatment_plan,
+            long_term_goals: data.long_term_goals,
+            impedence: data.impedence,
+            identified_problems: data.identified_problems,
+            weight: data.weight,
+            edema_palpation: data.edema_palpation,
+            body_dimension_length: data.body_dimension_length,
+            body_dimension_grith: data.body_dimension_grith,
+            bmi: data.bmi,
+            edema_volume: data.edema_volume,
+          },
+        },
+      };
+
       const res = await axios.put(
         `${apiUrl}/appointments/${appointmentId}`,
         payload,
@@ -115,9 +103,9 @@ const Form2 = ({ appointmentId }) => {
                                 placeholder="cm"
                                 {...register("height")}
                                 defaultValue={
-                                  !!appointment?.rehab?.abthropometric &&
-                                  !!appointment?.rehab?.abthropometric.height
-                                    ? appointment?.rehab?.abthropometric.height
+                                  !!rehabData?.abthropometric &&
+                                  !!rehabData?.abthropometric.height
+                                    ? rehabData?.abthropometric.height
                                     : ""
                                 }
                                 // onChange={(e) => setHeight(e.target.value)}
@@ -135,9 +123,9 @@ const Form2 = ({ appointmentId }) => {
                                 placeholder="kg"
                                 {...register("weight")}
                                 defaultValue={
-                                  !!appointment?.rehab?.abthropometric &&
-                                  !!appointment?.rehab?.abthropometric.weight
-                                    ? appointment?.rehab?.abthropometric.weight
+                                  !!rehabData?.abthropometric &&
+                                  !!rehabData?.abthropometric.weight
+                                    ? rehabData?.abthropometric.weight
                                     : ""
                                 }
                                 // onChange={(e) => setWeight(e.target.value)}
@@ -156,9 +144,9 @@ const Form2 = ({ appointmentId }) => {
                                 contentEditable="false"
                                 {...register("bmi")}
                                 defaultValue={
-                                  !!appointment?.rehab?.abthropometric &&
-                                  !!appointment?.rehab?.abthropometric.bmi
-                                    ? appointment?.rehab?.abthropometric.bmi
+                                  !!rehabData?.abthropometric &&
+                                  !!rehabData?.abthropometric.bmi
+                                    ? rehabData?.abthropometric.bmi
                                     : ""
                                 }
                               />
@@ -179,9 +167,9 @@ const Form2 = ({ appointmentId }) => {
                         placeholder="Text Area"
                         {...register("impedence")}
                         defaultValue={
-                          !!appointment?.rehab?.abthropometric &&
-                          !!appointment?.rehab?.abthropometric.impedence
-                            ? appointment?.rehab?.abthropometric.impedence
+                          !!rehabData?.abthropometric &&
+                          !!rehabData?.abthropometric.impedence
+                            ? rehabData?.abthropometric.impedence
                             : ""
                         }
                       />
@@ -200,9 +188,9 @@ const Form2 = ({ appointmentId }) => {
                         placeholder="Text Area"
                         {...register("skin_fold")}
                         defaultValue={
-                          !!appointment?.rehab?.abthropometric &&
-                          !!appointment?.rehab?.abthropometric.skin_fold
-                            ? appointment?.rehab?.abthropometric.skin_fold
+                          !!rehabData?.abthropometric &&
+                          !!rehabData?.abthropometric.skin_fold
+                            ? rehabData?.abthropometric.skin_fold
                             : ""
                         }
                       />
@@ -223,11 +211,9 @@ const Form2 = ({ appointmentId }) => {
                         placeholder="Text Area"
                         {...register("body_dimension_grith")}
                         defaultValue={
-                          !!appointment?.rehab?.abthropometric &&
-                          !!appointment?.rehab?.abthropometric
-                            .body_dimension_grith
-                            ? appointment?.rehab?.abthropometric
-                                .body_dimension_grith
+                          !!rehabData?.abthropometric &&
+                          !!rehabData?.abthropometric.body_dimension_grith
+                            ? rehabData?.abthropometric.body_dimension_grith
                             : ""
                         }
                       />
@@ -244,11 +230,9 @@ const Form2 = ({ appointmentId }) => {
                         placeholder="Text Area"
                         {...register("body_dimension_length")}
                         defaultValue={
-                          !!appointment?.rehab?.abthropometric &&
-                          !!appointment?.rehab?.abthropometric
-                            .body_dimension_length
-                            ? appointment?.rehab?.abthropometric
-                                .body_dimension_length
+                          !!rehabData?.abthropometric &&
+                          !!rehabData?.abthropometric.body_dimension_length
+                            ? rehabData?.abthropometric.body_dimension_length
                             : ""
                         }
                       />
@@ -276,10 +260,9 @@ const Form2 = ({ appointmentId }) => {
                               placeholder="Text Area"
                               {...register("edema_grith")}
                               defaultValue={
-                                !!appointment?.rehab?.abthropometric &&
-                                !!appointment?.rehab?.abthropometric.edema_grith
-                                  ? appointment?.rehab?.abthropometric
-                                      .edema_grith
+                                !!rehabData?.abthropometric &&
+                                !!rehabData?.abthropometric.edema_grith
+                                  ? rehabData?.abthropometric.edema_grith
                                   : ""
                               }
                             />
@@ -296,11 +279,9 @@ const Form2 = ({ appointmentId }) => {
                               placeholder="Text Area"
                               {...register("edema_palpation")}
                               defaultValue={
-                                !!appointment?.rehab?.abthropometric &&
-                                !!appointment?.rehab?.abthropometric
-                                  .edema_palpation
-                                  ? appointment?.rehab?.abthropometric
-                                      .edema_palpation
+                                !!rehabData?.abthropometric &&
+                                !!rehabData?.abthropometric.edema_palpation
+                                  ? rehabData?.abthropometric.edema_palpation
                                   : ""
                               }
                             />
@@ -317,11 +298,9 @@ const Form2 = ({ appointmentId }) => {
                               placeholder="Text Area"
                               {...register("edema_scales")}
                               defaultValue={
-                                !!appointment?.rehab?.abthropometric &&
-                                !!appointment?.rehab?.abthropometric
-                                  .edema_scales
-                                  ? appointment?.rehab?.abthropometric
-                                      .edema_scales
+                                !!rehabData?.abthropometric &&
+                                !!rehabData?.abthropometric.edema_scales
+                                  ? rehabData?.abthropometric.edema_scales
                                   : ""
                               }
                             />
@@ -338,11 +317,9 @@ const Form2 = ({ appointmentId }) => {
                               placeholder="Text Area"
                               {...register("edema_volume")}
                               defaultValue={
-                                !!appointment?.rehab?.abthropometric &&
-                                !!appointment?.rehab?.abthropometric
-                                  .edema_volume
-                                  ? appointment?.rehab?.abthropometric
-                                      .edema_volume
+                                !!rehabData?.abthropometric &&
+                                !!rehabData?.abthropometric.edema_volume
+                                  ? rehabData?.abthropometric.edema_volume
                                   : ""
                               }
                             />
@@ -364,11 +341,9 @@ const Form2 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
                         defaultValue={
-                          !!appointment?.rehab?.abthropometric &&
-                          !!appointment?.rehab?.abthropometric
-                            .identified_problems
-                            ? appointment?.rehab?.abthropometric
-                                .identified_problems
+                          !!rehabData?.abthropometric &&
+                          !!rehabData?.abthropometric.identified_problems
+                            ? rehabData?.abthropometric.identified_problems
                             : ""
                         }
                       ></textarea>
@@ -386,10 +361,9 @@ const Form2 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
                         defaultValue={
-                          !!appointment?.rehab?.abthropometric &&
-                          !!appointment?.rehab?.abthropometric.short_term_goals
-                            ? appointment?.rehab?.abthropometric
-                                .short_term_goals
+                          !!rehabData?.abthropometric &&
+                          !!rehabData?.abthropometric.short_term_goals
+                            ? rehabData?.abthropometric.short_term_goals
                             : ""
                         }
                       ></textarea>
@@ -407,9 +381,9 @@ const Form2 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
                         defaultValue={
-                          !!appointment?.rehab?.abthropometric &&
-                          !!appointment?.rehab?.abthropometric.long_term_goals
-                            ? appointment?.rehab?.abthropometric.long_term_goals
+                          !!rehabData?.abthropometric &&
+                          !!rehabData?.abthropometric.long_term_goals
+                            ? rehabData?.abthropometric.long_term_goals
                             : ""
                         }
                       ></textarea>
@@ -428,9 +402,9 @@ const Form2 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
                         defaultValue={
-                          !!appointment?.rehab?.abthropometric &&
-                          !!appointment?.rehab?.abthropometric.treatment_plan
-                            ? appointment?.rehab?.abthropometric.treatment_plan
+                          !!rehabData?.abthropometric &&
+                          !!rehabData?.abthropometric.treatment_plan
+                            ? rehabData?.abthropometric.treatment_plan
                             : ""
                         }
                       ></textarea>

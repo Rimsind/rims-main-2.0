@@ -1,30 +1,16 @@
 import { useForm } from "react-hook-form";
-import useSWR from "swr";
 import axios from "axios";
 import { useAuth } from "context/index";
 import { apiUrl } from "config/api";
 import { Slide, toast } from "react-toastify";
-const Form12 = ({ appointmentId }) => {
+const Form12 = ({ appointmentId, rehabData }) => {
   const { auth } = useAuth();
-  const { data: appointment } = useSWR(
-    `${apiUrl}/appointments/${appointmentId}`,
-    async (url) => {
-      const res = await axios.get(url, {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      });
-      const result = res.data;
-      return result;
-    }
-  );
-
   const { register, handleSubmit } = useForm();
   const submit_form12 = async (data, event) => {
     event.preventDefault();
     const payload = {
       rehab: {
-        ...appointment.rehab,
+        ...rehabData,
         pain_assessment: {
           related_signs: data.related_signs.toString(),
           onset_of_pain: data.onset_of_pain,
@@ -126,9 +112,9 @@ const Form12 = ({ appointmentId }) => {
                             value="Gradual"
                             {...register("onset_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .onset_of_pain === "Gradual"
+                              !!rehabData?.pain_assessment &&
+                              rehabData?.pain_assessment.onset_of_pain ===
+                                "Gradual"
                             }
                           />
                         </div>
@@ -147,9 +133,9 @@ const Form12 = ({ appointmentId }) => {
                             value="Sudden"
                             {...register("onset_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .onset_of_pain === "Sudden"
+                              !!rehabData?.pain_assessment &&
+                              rehabData?.pain_assessment.onset_of_pain ===
+                                "Sudden"
                             }
                           />
                         </div>
@@ -172,10 +158,9 @@ const Form12 = ({ appointmentId }) => {
                         placeholder="Text Box"
                         {...register("location_of_pain")}
                         defaultValue={
-                          !!appointment?.rehab?.pain_assessment &&
-                          !!appointment?.rehab?.pain_assessment.location_of_pain
-                            ? appointment?.rehab?.pain_assessment
-                                .location_of_pain
+                          !!rehabData?.pain_assessment &&
+                          !!rehabData?.pain_assessment.location_of_pain
+                            ? rehabData?.pain_assessment.location_of_pain
                             : ""
                         }
                       />
@@ -199,9 +184,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Throbbing"
                                 {...register("vascular")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment.vascular
+                                    rehabData?.pain_assessment.vascular
                                   )?.includes("Throbbing")
                                 }
                               />
@@ -220,9 +205,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Pounding"
                                 {...register("vascular")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment.vascular
+                                    rehabData?.pain_assessment.vascular
                                   )?.includes("Pounding")
                                 }
                               />
@@ -241,9 +226,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Pulsing"
                                 {...register("vascular")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment.vascular
+                                    rehabData?.pain_assessment.vascular
                                   )?.includes("Pulsing")
                                 }
                               />
@@ -262,9 +247,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Beating"
                                 {...register("vascular")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment.vascular
+                                    rehabData?.pain_assessment.vascular
                                   )?.includes("Beating")
                                 }
                               />
@@ -295,10 +280,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Stabbing"
                                 {...register("neurogenic")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .neurogenic
+                                    rehabData?.pain_assessment.neurogenic
                                   )?.includes("Stabbing")
                                 }
                               />
@@ -317,10 +301,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Crushing"
                                 {...register("neurogenic")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .neurogenic
+                                    rehabData?.pain_assessment.neurogenic
                                   )?.includes("Crushing")
                                 }
                               />
@@ -339,10 +322,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Pinching"
                                 {...register("neurogenic")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .neurogenic
+                                    rehabData?.pain_assessment.neurogenic
                                   )?.includes("Pinching")
                                 }
                               />
@@ -361,10 +343,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Hot"
                                 {...register("neurogenic")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .neurogenic
+                                    rehabData?.pain_assessment.neurogenic
                                   )?.includes("Hot")
                                 }
                               />
@@ -383,10 +364,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Searing"
                                 {...register("neurogenic")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .neurogenic
+                                    rehabData?.pain_assessment.neurogenic
                                   )?.includes("Searing")
                                 }
                               />
@@ -405,10 +385,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Itchy"
                                 {...register("neurogenic")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .neurogenic
+                                    rehabData?.pain_assessment.neurogenic
                                   )?.includes("Itchy")
                                 }
                               />
@@ -427,10 +406,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Stinging"
                                 {...register("neurogenic")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .neurogenic
+                                    rehabData?.pain_assessment.neurogenic
                                   )?.includes("Stinging")
                                 }
                               />
@@ -449,10 +427,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Pulling"
                                 {...register("neurogenic")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .neurogenic
+                                    rehabData?.pain_assessment.neurogenic
                                   )?.includes("Pulling")
                                 }
                               />
@@ -471,10 +448,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Jumping"
                                 {...register("neurogenic")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .neurogenic
+                                    rehabData?.pain_assessment.neurogenic
                                   )?.includes("Jumping")
                                 }
                               />
@@ -493,10 +469,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Shooting"
                                 {...register("neurogenic")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .neurogenic
+                                    rehabData?.pain_assessment.neurogenic
                                   )?.includes("Shooting")
                                 }
                               />
@@ -515,10 +490,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Pricking"
                                 {...register("neurogenic")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .neurogenic
+                                    rehabData?.pain_assessment.neurogenic
                                   )?.includes("Pricking")
                                 }
                               />
@@ -537,10 +511,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Gnawing"
                                 {...register("neurogenic")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .neurogenic
+                                    rehabData?.pain_assessment.neurogenic
                                   )?.includes("Gnawing")
                                 }
                               />
@@ -571,10 +544,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Aching"
                                 {...register("musculoskeletal")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .musculoskeletal
+                                    rehabData?.pain_assessment.musculoskeletal
                                   )?.includes("Aching")
                                 }
                               />
@@ -593,10 +565,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Sore"
                                 {...register("musculoskeletal")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .musculoskeletal
+                                    rehabData?.pain_assessment.musculoskeletal
                                   )?.includes("Sore")
                                 }
                               />
@@ -615,10 +586,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Heavy"
                                 {...register("musculoskeletal")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .musculoskeletal
+                                    rehabData?.pain_assessment.musculoskeletal
                                   )?.includes("Heavy")
                                 }
                               />
@@ -637,10 +607,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Hurting"
                                 {...register("musculoskeletal")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .musculoskeletal
+                                    rehabData?.pain_assessment.musculoskeletal
                                   )?.includes("Hurting")
                                 }
                               />
@@ -660,10 +629,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Dull"
                                 {...register("musculoskeletal")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .musculoskeletal
+                                    rehabData?.pain_assessment.musculoskeletal
                                   )?.includes("Dull")
                                 }
                               />
@@ -694,10 +662,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Tiring"
                                 {...register("emotional")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .emotional
+                                    rehabData?.pain_assessment.emotional
                                   )?.includes("Tiring")
                                 }
                               />
@@ -716,10 +683,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Miserable"
                                 {...register("emotional")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .emotional
+                                    rehabData?.pain_assessment.emotional
                                   )?.includes("Miserable")
                                 }
                               />
@@ -738,10 +704,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Vicious"
                                 {...register("emotional")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .emotional
+                                    rehabData?.pain_assessment.emotional
                                   )?.includes("Vicious")
                                 }
                               />
@@ -760,10 +725,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Agonizing"
                                 {...register("emotional")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .emotional
+                                    rehabData?.pain_assessment.emotional
                                   )?.includes("Agonizing")
                                 }
                               />
@@ -782,10 +746,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Nauseating"
                                 {...register("emotional")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .emotional
+                                    rehabData?.pain_assessment.emotional
                                   )?.includes("Nauseating")
                                 }
                               />
@@ -804,10 +767,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Frightful"
                                 {...register("emotional")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .emotional
+                                    rehabData?.pain_assessment.emotional
                                   )?.includes("Frightful")
                                 }
                               />
@@ -826,10 +788,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Piercing"
                                 {...register("emotional")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .emotional
+                                    rehabData?.pain_assessment.emotional
                                   )?.includes("Piercing")
                                 }
                               />
@@ -848,10 +809,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Dreadful"
                                 {...register("emotional")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .emotional
+                                    rehabData?.pain_assessment.emotional
                                   )?.includes("Dreadful")
                                 }
                               />
@@ -870,10 +830,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Punishing"
                                 {...register("emotional")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .emotional
+                                    rehabData?.pain_assessment.emotional
                                   )?.includes("Punishing")
                                 }
                               />
@@ -892,10 +851,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Torturing"
                                 {...register("emotional")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .emotional
+                                    rehabData?.pain_assessment.emotional
                                   )?.includes("Torturing")
                                 }
                               />
@@ -914,10 +872,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Killing"
                                 {...register("emotional")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .emotional
+                                    rehabData?.pain_assessment.emotional
                                   )?.includes("Killing")
                                 }
                               />
@@ -936,10 +893,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Unbearable"
                                 {...register("emotional")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .emotional
+                                    rehabData?.pain_assessment.emotional
                                   )?.includes("Unbearable")
                                 }
                               />
@@ -958,10 +914,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="Annoying"
                                 {...register("emotional")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
+                                  !!rehabData?.pain_assessment &&
                                   makeArrfromString(
-                                    appointment?.rehab?.pain_assessment
-                                      .emotional
+                                    rehabData?.pain_assessment.emotional
                                   )?.includes("Annoying")
                                 }
                               />
@@ -991,9 +946,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="RADIATING"
                                 {...register("type_of_pain")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
-                                  appointment?.rehab?.pain_assessment
-                                    .type_of_pain === "RADIATING"
+                                  !!rehabData?.pain_assessment &&
+                                  rehabData?.pain_assessment.type_of_pain ===
+                                    "RADIATING"
                                 }
                               />
                             </div>
@@ -1011,9 +966,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="LOCALIZED"
                                 {...register("type_of_pain")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
-                                  appointment?.rehab?.pain_assessment
-                                    .type_of_pain === "LOCALIZED"
+                                  !!rehabData?.pain_assessment &&
+                                  rehabData?.pain_assessment.type_of_pain ===
+                                    "LOCALIZED"
                                 }
                               />
                             </div>
@@ -1031,9 +986,9 @@ const Form12 = ({ appointmentId }) => {
                                 value="DIFFUSE"
                                 {...register("type_of_pain")}
                                 defaultChecked={
-                                  !!appointment?.rehab?.pain_assessment &&
-                                  appointment?.rehab?.pain_assessment
-                                    .type_of_pain === "DIFFUSE"
+                                  !!rehabData?.pain_assessment &&
+                                  rehabData?.pain_assessment.type_of_pain ===
+                                    "DIFFUSE"
                                 }
                               />
                             </div>
@@ -1060,8 +1015,8 @@ const Form12 = ({ appointmentId }) => {
                             value="VISUAL ANALOG SCALE"
                             {...register("severity_of_pain_value")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
+                              !!rehabData?.pain_assessment &&
+                              rehabData?.pain_assessment
                                 .severity_of_pain_value ===
                                 "VISUAL ANALOG SCALE"
                             }
@@ -1081,8 +1036,8 @@ const Form12 = ({ appointmentId }) => {
                             value="FACIAL EXPRESSION"
                             {...register("severity_of_pain_value")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
+                              !!rehabData?.pain_assessment &&
+                              rehabData?.pain_assessment
                                 .severity_of_pain_value === "FACIAL EXPRESSION"
                             }
                           />
@@ -1101,16 +1056,13 @@ const Form12 = ({ appointmentId }) => {
                         <option
                           name="language"
                           defaultValue={
-                            !!appointment?.rehab?.pain_assessment &&
-                            appointment?.rehab?.pain_assessment
-                              .severity_of_pain_scale
+                            !!rehabData?.pain_assessment &&
+                            rehabData?.pain_assessment.severity_of_pain_scale
                           }
                         >
-                          {!!appointment?.rehab?.pain_assessment &&
-                          appointment?.rehab?.pain_assessment
-                            .severity_of_pain_scale
-                            ? appointment?.rehab?.pain_assessment
-                                .severity_of_pain_scale
+                          {!!rehabData?.pain_assessment &&
+                          rehabData?.pain_assessment.severity_of_pain_scale
+                            ? rehabData?.pain_assessment.severity_of_pain_scale
                             : ""}
                         </option>
                         <option value="0 : No pain">0 : No pain</option>
@@ -1136,9 +1088,9 @@ const Form12 = ({ appointmentId }) => {
                             value="Day Time"
                             {...register("frequency_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .frequency_of_pain === "Day Time"
+                              !!rehabData?.pain_assessment &&
+                              rehabData?.pain_assessment.frequency_of_pain ===
+                                "Day Time"
                             }
                           />
                         </div>
@@ -1156,9 +1108,9 @@ const Form12 = ({ appointmentId }) => {
                             value="Night Time"
                             {...register("frequency_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .frequency_of_pain === "Night Time"
+                              !!rehabData?.pain_assessment &&
+                              rehabData?.pain_assessment.frequency_of_pain ===
+                                "Night Time"
                             }
                           />
                         </div>
@@ -1176,9 +1128,9 @@ const Form12 = ({ appointmentId }) => {
                             value="All Time"
                             {...register("frequency_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .frequency_of_pain === "All Time"
+                              !!rehabData?.pain_assessment &&
+                              rehabData?.pain_assessment.frequency_of_pain ===
+                                "All Time"
                             }
                           />
                         </div>
@@ -1196,9 +1148,9 @@ const Form12 = ({ appointmentId }) => {
                             value="During Activity"
                             {...register("frequency_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .frequency_of_pain === "During Activity"
+                              !!rehabData?.pain_assessment &&
+                              rehabData?.pain_assessment.frequency_of_pain ===
+                                "During Activity"
                             }
                           />
                         </div>
@@ -1223,10 +1175,9 @@ const Form12 = ({ appointmentId }) => {
                         max="24"
                         {...register("duration_of_pain")}
                         defaultValue={
-                          !!appointment?.rehab?.pain_assessment &&
-                          !!appointment?.rehab?.pain_assessment.duration_of_pain
-                            ? appointment?.rehab?.pain_assessment
-                                .duration_of_pain
+                          !!rehabData?.pain_assessment &&
+                          !!rehabData?.pain_assessment.duration_of_pain
+                            ? rehabData?.pain_assessment.duration_of_pain
                             : ""
                         }
                       />
@@ -1246,10 +1197,10 @@ const Form12 = ({ appointmentId }) => {
                         placeholder="Text Area"
                         {...register("aggravating_factor_of_pain")}
                         defaultValue={
-                          !!appointment?.rehab?.pain_assessment &&
-                          !!appointment?.rehab?.pain_assessment
+                          !!rehabData?.pain_assessment &&
+                          !!rehabData?.pain_assessment
                             .aggravating_factor_of_pain
-                            ? appointment?.rehab?.pain_assessment
+                            ? rehabData?.pain_assessment
                                 .aggravating_factor_of_pain
                             : ""
                         }
@@ -1271,9 +1222,11 @@ const Form12 = ({ appointmentId }) => {
                             value="Liquor"
                             {...register("releiving_factor_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .releiving_factor_of_pain === "Liquor"
+                              !!rehabData?.pain_assessment &&
+                              makeArrfromString(
+                                rehabData?.pain_assessment
+                                  .releiving_factor_of_pain
+                              )?.includes("Liquor")
                             }
                           />
                         </div>
@@ -1291,9 +1244,11 @@ const Form12 = ({ appointmentId }) => {
                             value="Sleep/rest"
                             {...register("releiving_factor_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .releiving_factor_of_pain === "Sleep/rest"
+                              !!rehabData?.pain_assessment &&
+                              makeArrfromString(
+                                rehabData?.pain_assessment
+                                  .releiving_factor_of_pain
+                              )?.includes("Sleep/rest")
                             }
                           />
                         </div>
@@ -1311,10 +1266,11 @@ const Form12 = ({ appointmentId }) => {
                             value="Stumilants (e.g caffine)"
                             {...register("releiving_factor_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .releiving_factor_of_pain ===
-                                "Stumilants (e.g caffine)"
+                              !!rehabData?.pain_assessment &&
+                              makeArrfromString(
+                                rehabData?.pain_assessment
+                                  .releiving_factor_of_pain
+                              )?.includes("Stumilants (e.g caffine)")
                             }
                           />
                         </div>
@@ -1332,9 +1288,11 @@ const Form12 = ({ appointmentId }) => {
                             value="Eating"
                             {...register("releiving_factor_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .releiving_factor_of_pain === "Eating"
+                              !!rehabData?.pain_assessment &&
+                              makeArrfromString(
+                                rehabData?.pain_assessment
+                                  .releiving_factor_of_pain
+                              )?.includes("Eating")
                             }
                           />
                         </div>
@@ -1353,9 +1311,11 @@ const Form12 = ({ appointmentId }) => {
                             value="Heat"
                             {...register("releiving_factor_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .releiving_factor_of_pain === "Heat"
+                              !!rehabData?.pain_assessment &&
+                              makeArrfromString(
+                                rehabData?.pain_assessment
+                                  .releiving_factor_of_pain
+                              )?.includes("Heat")
                             }
                           />
                         </div>
@@ -1373,9 +1333,11 @@ const Form12 = ({ appointmentId }) => {
                             value="Cold"
                             {...register("releiving_factor_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .releiving_factor_of_pain === "Cold"
+                              !!rehabData?.pain_assessment &&
+                              makeArrfromString(
+                                rehabData?.pain_assessment
+                                  .releiving_factor_of_pain
+                              )?.includes("Cold")
                             }
                           />
                         </div>
@@ -1393,9 +1355,11 @@ const Form12 = ({ appointmentId }) => {
                             value="Weather changes"
                             {...register("releiving_factor_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .releiving_factor_of_pain === "Weather changes"
+                              !!rehabData?.pain_assessment &&
+                              makeArrfromString(
+                                rehabData?.pain_assessment
+                                  .releiving_factor_of_pain
+                              )?.includes("Weather changes")
                             }
                           />
                         </div>
@@ -1413,9 +1377,11 @@ const Form12 = ({ appointmentId }) => {
                             value="Massage"
                             {...register("releiving_factor_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .releiving_factor_of_pain === "Massage"
+                              !!rehabData?.pain_assessment &&
+                              makeArrfromString(
+                                rehabData?.pain_assessment
+                                  .releiving_factor_of_pain
+                              )?.includes("Massage")
                             }
                           />
                         </div>
@@ -1434,9 +1400,11 @@ const Form12 = ({ appointmentId }) => {
                             value="Pressure"
                             {...register("releiving_factor_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .releiving_factor_of_pain === "Pressure"
+                              !!rehabData?.pain_assessment &&
+                              makeArrfromString(
+                                rehabData?.pain_assessment
+                                  .releiving_factor_of_pain
+                              )?.includes("Pressure")
                             }
                           />
                         </div>
@@ -1454,9 +1422,11 @@ const Form12 = ({ appointmentId }) => {
                             value="No movement"
                             {...register("releiving_factor_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .releiving_factor_of_pain === "No movement"
+                              !!rehabData?.pain_assessment &&
+                              makeArrfromString(
+                                rehabData?.pain_assessment
+                                  .releiving_factor_of_pain
+                              )?.includes("No movement")
                             }
                           />
                         </div>
@@ -1474,9 +1444,11 @@ const Form12 = ({ appointmentId }) => {
                             value="Movement"
                             {...register("releiving_factor_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .releiving_factor_of_pain === "Movement"
+                              !!rehabData?.pain_assessment &&
+                              makeArrfromString(
+                                rehabData?.pain_assessment
+                                  .releiving_factor_of_pain
+                              )?.includes("Movement")
                             }
                           />
                         </div>
@@ -1494,9 +1466,11 @@ const Form12 = ({ appointmentId }) => {
                             value="Sitting"
                             {...register("releiving_factor_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .releiving_factor_of_pain === "Sitting"
+                              !!rehabData?.pain_assessment &&
+                              makeArrfromString(
+                                rehabData?.pain_assessment
+                                  .releiving_factor_of_pain
+                              )?.includes("Sitting")
                             }
                           />
                         </div>
@@ -1515,9 +1489,11 @@ const Form12 = ({ appointmentId }) => {
                             value="Lying down"
                             {...register("releiving_factor_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .releiving_factor_of_pain === "Lying down"
+                              !!rehabData?.pain_assessment &&
+                              makeArrfromString(
+                                rehabData?.pain_assessment
+                                  .releiving_factor_of_pain
+                              )?.includes("Lying down")
                             }
                           />
                         </div>
@@ -1535,10 +1511,11 @@ const Form12 = ({ appointmentId }) => {
                             value="Distraction (e.g. television)"
                             {...register("releiving_factor_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .releiving_factor_of_pain ===
-                                "Distraction (e.g. television)"
+                              !!rehabData?.pain_assessment &&
+                              makeArrfromString(
+                                rehabData?.pain_assessment
+                                  .releiving_factor_of_pain
+                              )?.includes("Distraction (e.g. television)")
                             }
                           />
                         </div>
@@ -1558,10 +1535,11 @@ const Form12 = ({ appointmentId }) => {
                             value="Urination / Defecation"
                             {...register("releiving_factor_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .releiving_factor_of_pain ===
-                                "Urination / Defecation"
+                              !!rehabData?.pain_assessment &&
+                              makeArrfromString(
+                                rehabData?.pain_assessment
+                                  .releiving_factor_of_pain
+                              )?.includes("Urination / Defecation")
                             }
                           />
                         </div>
@@ -1579,9 +1557,11 @@ const Form12 = ({ appointmentId }) => {
                             value="Mild exercise"
                             {...register("releiving_factor_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .releiving_factor_of_pain === "Mild exercise"
+                              !!rehabData?.pain_assessment &&
+                              makeArrfromString(
+                                rehabData?.pain_assessment
+                                  .releiving_factor_of_pain
+                              )?.includes("Mild exercise")
                             }
                           />
                         </div>
@@ -1600,9 +1580,11 @@ const Form12 = ({ appointmentId }) => {
                             value="Loude Noise"
                             {...register("releiving_factor_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .releiving_factor_of_pain === "Loude Noise"
+                              !!rehabData?.pain_assessment &&
+                              makeArrfromString(
+                                rehabData?.pain_assessment
+                                  .releiving_factor_of_pain
+                              )?.includes("Loude Noise")
                             }
                           />
                         </div>
@@ -1620,9 +1602,11 @@ const Form12 = ({ appointmentId }) => {
                             value="Standing"
                             {...register("releiving_factor_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .releiving_factor_of_pain === "Standing"
+                              !!rehabData?.pain_assessment &&
+                              makeArrfromString(
+                                rehabData?.pain_assessment
+                                  .releiving_factor_of_pain
+                              )?.includes("Standing")
                             }
                           />
                         </div>
@@ -1640,9 +1624,11 @@ const Form12 = ({ appointmentId }) => {
                             value="Medication"
                             {...register("releiving_factor_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .releiving_factor_of_pain === "Medication"
+                              !!rehabData?.pain_assessment &&
+                              makeArrfromString(
+                                rehabData?.pain_assessment
+                                  .releiving_factor_of_pain
+                              )?.includes("Medication")
                             }
                           />
                         </div>
@@ -1669,10 +1655,9 @@ const Form12 = ({ appointmentId }) => {
                         placeholder="Text Area"
                         {...register("releiving_pain_medication")}
                         defaultValue={
-                          !!appointment?.rehab?.pain_assessment &&
-                          !!appointment?.rehab?.pain_assessment
-                            .releiving_pain_medication
-                            ? appointment?.rehab?.pain_assessment
+                          !!rehabData?.pain_assessment &&
+                          !!rehabData?.pain_assessment.releiving_pain_medication
+                            ? rehabData?.pain_assessment
                                 .releiving_pain_medication
                             : ""
                         }
@@ -1694,9 +1679,9 @@ const Form12 = ({ appointmentId }) => {
                             value="One joint"
                             {...register("pattern_of_joint_involvement")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
+                              !!rehabData?.pain_assessment &&
                               makeArrfromString(
-                                appointment?.rehab?.pain_assessment
+                                rehabData?.pain_assessment
                                   .pattern_of_joint_involvement
                               )?.includes("One joint")
                             }
@@ -1716,9 +1701,9 @@ const Form12 = ({ appointmentId }) => {
                             value="Multiple joint"
                             {...register("pattern_of_joint_involvement")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
+                              !!rehabData?.pain_assessment &&
                               makeArrfromString(
-                                appointment?.rehab?.pain_assessment
+                                rehabData?.pain_assessment
                                   .pattern_of_joint_involvement
                               )?.includes("Multiple joint")
                             }
@@ -1738,9 +1723,9 @@ const Form12 = ({ appointmentId }) => {
                             value="Assymetrical"
                             {...register("pattern_of_joint_involvement")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
+                              !!rehabData?.pain_assessment &&
                               makeArrfromString(
-                                appointment?.rehab?.pain_assessment
+                                rehabData?.pain_assessment
                                   .pattern_of_joint_involvement
                               )?.includes("Assymetrical")
                             }
@@ -1760,9 +1745,9 @@ const Form12 = ({ appointmentId }) => {
                             value="Symmetrical"
                             {...register("pattern_of_joint_involvement")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
+                              !!rehabData?.pain_assessment &&
                               makeArrfromString(
-                                appointment?.rehab?.pain_assessment
+                                rehabData?.pain_assessment
                                   .pattern_of_joint_involvement
                               )?.includes("Symmetrical")
                             }
@@ -1789,9 +1774,9 @@ const Form12 = ({ appointmentId }) => {
                             value="Mild"
                             {...register("joint_irritability")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .joint_irritability === "Mild"
+                              !!rehabData?.pain_assessment &&
+                              rehabData?.pain_assessment.joint_irritability ===
+                                "Mild"
                             }
                           />
                         </div>
@@ -1809,9 +1794,9 @@ const Form12 = ({ appointmentId }) => {
                             value="moderate"
                             {...register("joint_irritability")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .joint_irritability === "moderate"
+                              !!rehabData?.pain_assessment &&
+                              rehabData?.pain_assessment.joint_irritability ===
+                                "moderate"
                             }
                           />
                         </div>
@@ -1829,9 +1814,9 @@ const Form12 = ({ appointmentId }) => {
                             value="Seveir"
                             {...register("joint_irritability")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .joint_irritability === "Seveir"
+                              !!rehabData?.pain_assessment &&
+                              rehabData?.pain_assessment.joint_irritability ===
+                                "Seveir"
                             }
                           />
                         </div>
@@ -1856,9 +1841,9 @@ const Form12 = ({ appointmentId }) => {
                             value="Intermittently present"
                             {...register("progress_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .progress_of_pain === "Intermittently present"
+                              !!rehabData?.pain_assessment &&
+                              rehabData?.pain_assessment.progress_of_pain ===
+                                "Intermittently present"
                             }
                           />
                         </div>
@@ -1876,9 +1861,9 @@ const Form12 = ({ appointmentId }) => {
                             value="Constantly present"
                             {...register("progress_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .progress_of_pain === "Constantly present"
+                              !!rehabData?.pain_assessment &&
+                              rehabData?.pain_assessment.progress_of_pain ===
+                                "Constantly present"
                             }
                           />
                         </div>
@@ -1896,9 +1881,8 @@ const Form12 = ({ appointmentId }) => {
                             value="Present in recurrent attacks"
                             {...register("progress_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .progress_of_pain ===
+                              !!rehabData?.pain_assessment &&
+                              rehabData?.pain_assessment.progress_of_pain ===
                                 "Present in recurrent attacks"
                             }
                           />
@@ -1919,9 +1903,9 @@ const Form12 = ({ appointmentId }) => {
                             value="Progressively worse"
                             {...register("progress_of_pain")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .progress_of_pain === "Progressively worse"
+                              !!rehabData?.pain_assessment &&
+                              rehabData?.pain_assessment.progress_of_pain ===
+                                "Progressively worse"
                             }
                           />
                         </div>
@@ -1947,9 +1931,9 @@ const Form12 = ({ appointmentId }) => {
                             value="Mild"
                             {...register("worse_problem")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .worse_problem === "Mild"
+                              !!rehabData?.pain_assessment &&
+                              rehabData?.pain_assessment.worse_problem ===
+                                "Mild"
                             }
                           />
                         </div>
@@ -1967,9 +1951,9 @@ const Form12 = ({ appointmentId }) => {
                             value="moderate"
                             {...register("worse_problem")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .worse_problem === "moderate"
+                              !!rehabData?.pain_assessment &&
+                              rehabData?.pain_assessment.worse_problem ===
+                                "moderate"
                             }
                           />
                         </div>
@@ -1987,9 +1971,9 @@ const Form12 = ({ appointmentId }) => {
                             value="Seveir"
                             {...register("worse_problem")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
-                              appointment?.rehab?.pain_assessment
-                                .worse_problem === "Seveir"
+                              !!rehabData?.pain_assessment &&
+                              rehabData?.pain_assessment.worse_problem ===
+                                "Seveir"
                             }
                           />
                         </div>
@@ -2014,10 +1998,9 @@ const Form12 = ({ appointmentId }) => {
                             value="Stiffness"
                             {...register("related_signs")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
+                              !!rehabData?.pain_assessment &&
                               makeArrfromString(
-                                appointment?.rehab?.pain_assessment
-                                  .related_signs
+                                rehabData?.pain_assessment.related_signs
                               )?.includes("Stiffness")
                             }
                           />
@@ -2036,10 +2019,9 @@ const Form12 = ({ appointmentId }) => {
                             value="Swelling"
                             {...register("related_signs")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
+                              !!rehabData?.pain_assessment &&
                               makeArrfromString(
-                                appointment?.rehab?.pain_assessment
-                                  .related_signs
+                                rehabData?.pain_assessment.related_signs
                               )?.includes("Swelling")
                             }
                           />
@@ -2058,10 +2040,9 @@ const Form12 = ({ appointmentId }) => {
                             value="Crepitus"
                             {...register("related_signs")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
+                              !!rehabData?.pain_assessment &&
                               makeArrfromString(
-                                appointment?.rehab?.pain_assessment
-                                  .related_signs
+                                rehabData?.pain_assessment.related_signs
                               )?.includes("Crepitus")
                             }
                           />
@@ -2080,10 +2061,9 @@ const Form12 = ({ appointmentId }) => {
                             value="Locking"
                             {...register("related_signs")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
+                              !!rehabData?.pain_assessment &&
                               makeArrfromString(
-                                appointment?.rehab?.pain_assessment
-                                  .related_signs
+                                rehabData?.pain_assessment.related_signs
                               )?.includes("Locking")
                             }
                           />
@@ -2103,10 +2083,9 @@ const Form12 = ({ appointmentId }) => {
                             value="Instability"
                             {...register("related_signs")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
+                              !!rehabData?.pain_assessment &&
                               makeArrfromString(
-                                appointment?.rehab?.pain_assessment
-                                  .related_signs
+                                rehabData?.pain_assessment.related_signs
                               )?.includes("Instability")
                             }
                           />
@@ -2125,10 +2104,9 @@ const Form12 = ({ appointmentId }) => {
                             value="Weakness"
                             {...register("related_signs")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
+                              !!rehabData?.pain_assessment &&
                               makeArrfromString(
-                                appointment?.rehab?.pain_assessment
-                                  .related_signs
+                                rehabData?.pain_assessment.related_signs
                               )?.includes("Weakness")
                             }
                           />
@@ -2147,10 +2125,9 @@ const Form12 = ({ appointmentId }) => {
                             value="Muscle spasm"
                             {...register("related_signs")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
+                              !!rehabData?.pain_assessment &&
                               makeArrfromString(
-                                appointment?.rehab?.pain_assessment
-                                  .related_signs
+                                rehabData?.pain_assessment.related_signs
                               )?.includes("Muscle spasm")
                             }
                           />
@@ -2169,10 +2146,9 @@ const Form12 = ({ appointmentId }) => {
                             value="Neurological symptoms"
                             {...register("related_signs")}
                             defaultChecked={
-                              !!appointment?.rehab?.pain_assessment &&
+                              !!rehabData?.pain_assessment &&
                               makeArrfromString(
-                                appointment?.rehab?.pain_assessment
-                                  .related_signs
+                                rehabData?.pain_assessment.related_signs
                               )?.includes("Neurological symptoms")
                             }
                           />
@@ -2197,11 +2173,9 @@ const Form12 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
                         defaultValue={
-                          !!appointment?.rehab?.pain_assessment &&
-                          !!appointment?.rehab?.pain_assessment
-                            .identified_problems
-                            ? appointment?.rehab?.pain_assessment
-                                .identified_problems
+                          !!rehabData?.pain_assessment &&
+                          !!rehabData?.pain_assessment.identified_problems
+                            ? rehabData?.pain_assessment.identified_problems
                             : ""
                         }
                       ></textarea>
@@ -2219,10 +2193,9 @@ const Form12 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
                         defaultValue={
-                          !!appointment?.rehab?.pain_assessment &&
-                          !!appointment?.rehab?.pain_assessment.short_term_goals
-                            ? appointment?.rehab?.pain_assessment
-                                .short_term_goals
+                          !!rehabData?.pain_assessment &&
+                          !!rehabData?.pain_assessment.short_term_goals
+                            ? rehabData?.pain_assessment.short_term_goals
                             : ""
                         }
                       ></textarea>
@@ -2240,10 +2213,9 @@ const Form12 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
                         defaultValue={
-                          !!appointment?.rehab?.pain_assessment &&
-                          !!appointment?.rehab?.pain_assessment.long_term_goals
-                            ? appointment?.rehab?.pain_assessment
-                                .long_term_goals
+                          !!rehabData?.pain_assessment &&
+                          !!rehabData?.pain_assessment.long_term_goals
+                            ? rehabData?.pain_assessment.long_term_goals
                             : ""
                         }
                       ></textarea>
@@ -2262,9 +2234,9 @@ const Form12 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
                         defaultValue={
-                          !!appointment?.rehab?.pain_assessment &&
-                          !!appointment?.rehab?.pain_assessment.treatment_plan
-                            ? appointment?.rehab?.pain_assessment.treatment_plan
+                          !!rehabData?.pain_assessment &&
+                          !!rehabData?.pain_assessment.treatment_plan
+                            ? rehabData?.pain_assessment.treatment_plan
                             : ""
                         }
                       ></textarea>

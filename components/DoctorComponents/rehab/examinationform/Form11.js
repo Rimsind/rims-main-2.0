@@ -1,31 +1,19 @@
 import { useForm } from "react-hook-form";
-import useSWR from "swr";
+
 import axios from "axios";
 import { useAuth } from "context/index";
 import { apiUrl } from "config/api";
 import { Slide, toast } from "react-toastify";
 import { scoreList } from "pages/api/rehabData";
-const Form11 = ({ appointmentId }) => {
+const Form11 = ({ appointmentId, rehabData }) => {
   const { auth } = useAuth();
-  const { data: appointment } = useSWR(
-    `${apiUrl}/appointments/${appointmentId}`,
-    async (url) => {
-      const res = await axios.get(url, {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      });
-      const result = res.data;
-      return result;
-    }
-  );
 
   const { register, handleSubmit } = useForm();
   const submit_form11 = async (data, event) => {
     event.preventDefault();
     const payload = {
       rehab: {
-        ...appointment.rehab,
+        ...rehabData,
         manual_muscle_assesment: {
           hip_flexion_score: data.hip_flexion_score,
           hip_flexion_strength: data.hip_flexion_strength,
@@ -208,10 +196,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .hip_flexion_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .hip_flexion_score
                               : ""
                           }
@@ -226,15 +214,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .hip_flexion_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .hip_flexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .hip_flexion_strength
                               : ""}
                           </option>
@@ -258,10 +246,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .hip_extension_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .hip_extension_score
                               : ""
                           }
@@ -276,15 +264,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .hip_extension_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .hip_extension_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .hip_extension_strength
                               : ""}
                           </option>
@@ -308,10 +296,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .hip_abduction_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .hip_abduction_score
                               : ""
                           }
@@ -326,15 +314,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .hip_abduction_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .hip_abduction_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .hip_abduction_strength
                               : ""}
                           </option>
@@ -359,10 +347,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .hip_externalRotation_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .hip_externalRotation_score
                               : ""
                           }
@@ -377,15 +365,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .hip_externalRotation_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .hip_externalRotation_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .hip_externalRotation_strength
                               : ""}
                           </option>
@@ -410,10 +398,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .hip_internalRotation_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .hip_internalRotation_score
                               : ""
                           }
@@ -428,15 +416,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .hip_internalRotation_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .hip_internalRotation_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .hip_internalRotation_strength
                               : ""}
                           </option>
@@ -469,10 +457,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .knee_flexion_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .knee_flexion_score
                               : ""
                           }
@@ -487,15 +475,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .knee_flexion_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .knee_flexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .knee_flexion_strength
                               : ""}
                           </option>
@@ -519,10 +507,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .knee_extension_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .knee_extension_score
                               : ""
                           }
@@ -537,15 +525,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .knee_extension_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .knee_extension_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .knee_extension_strength
                               : ""}
                           </option>
@@ -569,10 +557,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .knee_straightLegRaise_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .knee_straightLegRaise_score
                               : ""
                           }
@@ -587,15 +575,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .knee_straightLegRaise_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .knee_straightLegRaise_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .knee_straightLegRaise_strength
                               : ""}
                           </option>
@@ -628,10 +616,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .ankle_dorsiflexion_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .ankle_dorsiflexion_score
                               : ""
                           }
@@ -646,15 +634,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .ankle_dorsiflexion_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .ankle_dorsiflexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .ankle_dorsiflexion_strength
                               : ""}
                           </option>
@@ -679,10 +667,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .ankle_planterflexion_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .ankle_planterflexion_score
                               : ""
                           }
@@ -697,15 +685,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .ankle_planterflexion_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .ankle_planterflexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .ankle_planterflexion_strength
                               : ""}
                           </option>
@@ -729,10 +717,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .ankle_inversion_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .ankle_inversion_score
                               : ""
                           }
@@ -747,15 +735,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .ankle_inversion_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .ankle_inversion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .ankle_inversion_strength
                               : ""}
                           </option>
@@ -779,10 +767,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .ankle_eversion_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .ankle_eversion_score
                               : ""
                           }
@@ -797,15 +785,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .ankle_eversion_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .ankle_eversion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .ankle_eversion_strength
                               : ""}
                           </option>
@@ -837,10 +825,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .cervical_flexion_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .cervical_flexion_score
                               : ""
                           }
@@ -855,15 +843,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .cervical_flexion_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .cervical_flexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .cervical_flexion_strength
                               : ""}
                           </option>
@@ -888,10 +876,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .cervical_extension_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .cervical_extension_score
                               : ""
                           }
@@ -906,15 +894,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .cervical_extension_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .cervical_extension_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .cervical_extension_strength
                               : ""}
                           </option>
@@ -938,10 +926,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .cervical_sideflexion_left_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .cervical_sideflexion_left_score
                               : ""
                           }
@@ -956,15 +944,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .cervical_sideflexion_left_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .cervical_sideflexion_left_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .cervical_sideflexion_left_strength
                               : ""}
                           </option>
@@ -988,10 +976,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .cervical_sideflexion_rigth_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .cervical_sideflexion_rigth_score
                               : ""
                           }
@@ -1006,15 +994,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .cervical_sideflexion_rigth_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .cervical_sideflexion_rigth_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .cervical_sideflexion_rigth_strength
                               : ""}
                           </option>
@@ -1038,11 +1026,11 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .cervical_rotation_left_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .cervical_rotation_left_strength
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
+                              .cervical_rotation_left_score
+                              ? rehabData?.manual_muscle_assesment
+                                  .cervical_rotation_left_score
                               : ""
                           }
                           {...register("cervical_rotation_left_score")}
@@ -1056,15 +1044,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .cervical_rotation_left_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .cervical_rotation_left_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .cervical_rotation_left_strength
                               : ""}
                           </option>
@@ -1088,10 +1076,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .cervical_rotation_rigth_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .cervical_rotation_rigth_score
                               : ""
                           }
@@ -1106,15 +1094,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .cervical_rotation_rigth_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .cervical_rotation_rigth_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .cervical_rotation_rigth_strength
                               : ""}
                           </option>
@@ -1146,10 +1134,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .thoracic_flexion_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .thoracic_flexion_score
                               : ""
                           }
@@ -1164,15 +1152,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .thoracic_flexion_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .thoracic_flexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .thoracic_flexion_strength
                               : ""}
                           </option>
@@ -1197,10 +1185,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .thoracic_extension_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .thoracic_extension_score
                               : ""
                           }
@@ -1215,15 +1203,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .thoracic_extension_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .thoracic_extension_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .thoracic_extension_strength
                               : ""}
                           </option>
@@ -1247,10 +1235,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .thoracic_sideFlexion_left_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .thoracic_sideFlexion_left_score
                               : ""
                           }
@@ -1265,15 +1253,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .thoracic_sideFlexion_left_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .thoracic_sideFlexion_left_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .thoracic_sideFlexion_left_strength
                               : ""}
                           </option>
@@ -1297,11 +1285,11 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .thoracic_sideFlexion_right_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .thoracic_sideFlexion_right_strength
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
+                              .thoracic_sideFlexion_right_score
+                              ? rehabData?.manual_muscle_assesment
+                                  .thoracic_sideFlexion_right_score
                               : ""
                           }
                           {...register("thoracic_sideFlexion_right_score")}
@@ -1315,15 +1303,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .thoracic_sideFlexion_right_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .thoracic_sideFlexion_right_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .thoracic_sideFlexion_right_strength
                               : ""}
                           </option>
@@ -1347,10 +1335,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .thoracic_rotation_left_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .thoracic_rotation_left_score
                               : ""
                           }
@@ -1365,15 +1353,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .thoracic_rotation_left_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .thoracic_rotation_left_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .thoracic_rotation_left_strength
                               : ""}
                           </option>
@@ -1397,10 +1385,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .thoracic_rotation_right_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .thoracic_rotation_right_score
                               : ""
                           }
@@ -1415,15 +1403,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .thoracic_rotation_rigth_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .thoracic_rotation_rigth_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .thoracic_rotation_rigth_strength
                               : ""}
                           </option>
@@ -1447,10 +1435,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .thoracic_kyposis_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .thoracic_kyposis_score
                               : ""
                           }
@@ -1465,15 +1453,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .thoracic_kyposis_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .thoracic_kyposis_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .thoracic_kyposis_strength
                               : ""}
                           </option>
@@ -1505,10 +1493,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .lumbar_sacralinclination_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .lumbar_sacralinclination_score
                               : ""
                           }
@@ -1523,15 +1511,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .lumbar_sacralinclination_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .lumbar_sacralinclination_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .lumbar_sacralinclination_strength
                               : ""}
                           </option>
@@ -1556,10 +1544,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .lumbar_standinglordosis_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .lumbar_standinglordosis_score
                               : ""
                           }
@@ -1574,15 +1562,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .lumbar_standinglordosis_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .lumbar_standinglordosis_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .lumbar_standinglordosis_strength
                               : ""}
                           </option>
@@ -1607,10 +1595,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .lumbar_standinghipflexion_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .lumbar_standinghipflexion_score
                               : ""
                           }
@@ -1625,15 +1613,15 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
                                 .hip_flexion_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
                               .lumbar_standinghipflexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .lumbar_standinghipflexion_strength
                               : ""}
                           </option>
@@ -1657,10 +1645,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .lumbar_flexionAMA_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .lumbar_flexionAMA_score
                               : ""
                           }
@@ -1675,16 +1663,16 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
-                                .hip_flexion_strength
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
+                                .lumbar_flexionAMA_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .hip_flexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .hip_flexion_strength
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
+                              .lumbar_flexionAMA_strength
+                              ? rehabData?.manual_muscle_assesment
+                                  .lumbar_flexionAMA_strength
                               : ""}
                           </option>
                           {scoreList.map((items, index) => (
@@ -1707,10 +1695,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .lumbar_extensionAMA_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .lumbar_extensionAMA_score
                               : ""
                           }
@@ -1725,16 +1713,16 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
-                                .hip_flexion_strength
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
+                                .lumbar_extensionAMA_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .hip_flexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .hip_flexion_strength
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
+                              .lumbar_extensionAMA_strength
+                              ? rehabData?.manual_muscle_assesment
+                                  .lumbar_extensionAMA_strength
                               : ""}
                           </option>
                           {scoreList.map((items, index) => (
@@ -1757,10 +1745,10 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
                               .lumbar_flexion_curveangle_score
-                              ? appointment?.rehab?.manual_muscle_assesment
+                              ? rehabData?.manual_muscle_assesment
                                   .lumbar_flexion_curveangle_score
                               : ""
                           }
@@ -1775,16 +1763,16 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
-                                .hip_flexion_strength
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
+                                .lumbar_flexion_curveangle_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .hip_flexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .hip_flexion_strength
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
+                              .lumbar_flexion_curveangle_strength
+                              ? rehabData?.manual_muscle_assesment
+                                  .lumbar_flexion_curveangle_strength
                               : ""}
                           </option>
                           {scoreList.map((items, index) => (
@@ -1807,11 +1795,11 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .identified_problems
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .identified_problems
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
+                              .lumbar_extention_curveangle_score
+                              ? rehabData?.manual_muscle_assesment
+                                  .lumbar_extention_curveangle_score
                               : ""
                           }
                           {...register("lumbar_extention_curveangle_score")}
@@ -1825,16 +1813,16 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
-                                .hip_flexion_strength
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
+                                .lumbar_extention_curveangle_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .hip_flexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .hip_flexion_strength
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
+                              .lumbar_extention_curveangle_strength
+                              ? rehabData?.manual_muscle_assesment
+                                  .lumbar_extention_curveangle_strength
                               : ""}
                           </option>
                           {scoreList.map((items, index) => (
@@ -1857,11 +1845,11 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .identified_problems
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .identified_problems
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
+                              .lumbar_sideflexion_left_score
+                              ? rehabData?.manual_muscle_assesment
+                                  .lumbar_sideflexion_left_score
                               : ""
                           }
                           {...register("lumbar_sideflexion_left_score")}
@@ -1875,16 +1863,16 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
-                                .hip_flexion_strength
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
+                                .lumbar_sideflexion_left_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .hip_flexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .hip_flexion_strength
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
+                              .lumbar_sideflexion_left_strength
+                              ? rehabData?.manual_muscle_assesment
+                                  .lumbar_sideflexion_left_strength
                               : ""}
                           </option>
                           {scoreList.map((items, index) => (
@@ -1907,11 +1895,11 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .identified_problems
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .identified_problems
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
+                              .lumbar_sideflexion_right_score
+                              ? rehabData?.manual_muscle_assesment
+                                  .lumbar_sideflexion_right_score
                               : ""
                           }
                           {...register("lumbar_sideflexion_right_score")}
@@ -1925,16 +1913,16 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
-                                .hip_flexion_strength
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
+                                .lumbar_sideflexion_right_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .hip_flexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .hip_flexion_strength
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
+                              .lumbar_sideflexion_right_strength
+                              ? rehabData?.manual_muscle_assesment
+                                  .lumbar_sideflexion_right_strength
                               : ""}
                           </option>
                           {scoreList.map((items, index) => (
@@ -1957,11 +1945,11 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .identified_problems
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .identified_problems
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
+                              .lumbar_rotation_left_score
+                              ? rehabData?.manual_muscle_assesment
+                                  .lumbar_rotation_left_score
                               : ""
                           }
                           {...register("lumbar_rotation_left_score")}
@@ -1975,16 +1963,16 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
-                                .hip_flexion_strength
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
+                                .lumbar_rotation_left_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .hip_flexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .hip_flexion_strength
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
+                              .lumbar_rotation_left_strength
+                              ? rehabData?.manual_muscle_assesment
+                                  .lumbar_rotation_left_strength
                               : ""}
                           </option>
                           {scoreList.map((items, index) => (
@@ -2007,11 +1995,11 @@ const Form11 = ({ appointmentId }) => {
                           type="text"
                           placeholder="Text Box"
                           defaultValue={
-                            !!appointment?.rehab?.manual_muscle_assesment &&
-                            !!appointment?.rehab?.manual_muscle_assesment
-                              .identified_problems
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .identified_problems
+                            !!rehabData?.manual_muscle_assesment &&
+                            !!rehabData?.manual_muscle_assesment
+                              .lumbar_rotation_right_score
+                              ? rehabData?.manual_muscle_assesment
+                                  .lumbar_rotation_right_score
                               : ""
                           }
                           {...register("lumbar_rotation_right_score")}
@@ -2025,16 +2013,16 @@ const Form11 = ({ appointmentId }) => {
                         >
                           <option
                             defaultValue={
-                              !!appointment?.rehab?.manual_muscle_assesment &&
-                              appointment?.rehab?.manual_muscle_assesment
-                                .hip_flexion_strength
+                              !!rehabData?.manual_muscle_assesment &&
+                              rehabData?.manual_muscle_assesment
+                                .lumbar_rotation_right_strength
                             }
                           >
-                            {!!appointment?.rehab?.manual_muscle_assesment &&
-                            appointment?.rehab?.manual_muscle_assesment
-                              .hip_flexion_strength
-                              ? appointment?.rehab?.manual_muscle_assesment
-                                  .hip_flexion_strength
+                            {!!rehabData?.manual_muscle_assesment &&
+                            rehabData?.manual_muscle_assesment
+                              .lumbar_rotation_right_strength
+                              ? rehabData?.manual_muscle_assesment
+                                  .lumbar_rotation_right_strength
                               : ""}
                           </option>
                           {scoreList.map((items, index) => (
@@ -2059,10 +2047,10 @@ const Form11 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("identified_problems")}
                         defaultValue={
-                          !!appointment?.rehab?.manual_muscle_assesment &&
-                          !!appointment?.rehab?.manual_muscle_assesment
+                          !!rehabData?.manual_muscle_assesment &&
+                          !!rehabData?.manual_muscle_assesment
                             .identified_problems
-                            ? appointment?.rehab?.manual_muscle_assesment
+                            ? rehabData?.manual_muscle_assesment
                                 .identified_problems
                             : ""
                         }
@@ -2081,10 +2069,9 @@ const Form11 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("short_term_goals")}
                         defaultValue={
-                          !!appointment?.rehab?.manual_muscle_assesment &&
-                          !!appointment?.rehab?.manual_muscle_assesment
-                            .short_term_goals
-                            ? appointment?.rehab?.manual_muscle_assesment
+                          !!rehabData?.manual_muscle_assesment &&
+                          !!rehabData?.manual_muscle_assesment.short_term_goals
+                            ? rehabData?.manual_muscle_assesment
                                 .short_term_goals
                             : ""
                         }
@@ -2103,11 +2090,9 @@ const Form11 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("long_term_goals")}
                         defaultValue={
-                          !!appointment?.rehab?.manual_muscle_assesment &&
-                          !!appointment?.rehab?.manual_muscle_assesment
-                            .long_term_goals
-                            ? appointment?.rehab?.manual_muscle_assesment
-                                .long_term_goals
+                          !!rehabData?.manual_muscle_assesment &&
+                          !!rehabData?.manual_muscle_assesment.long_term_goals
+                            ? rehabData?.manual_muscle_assesment.long_term_goals
                             : ""
                         }
                       ></textarea>
@@ -2126,11 +2111,9 @@ const Form11 = ({ appointmentId }) => {
                         placeholder="Describe your problems here"
                         {...register("treatment_plan")}
                         defaultValue={
-                          !!appointment?.rehab?.manual_muscle_assesment &&
-                          !!appointment?.rehab?.manual_muscle_assesment
-                            .treatment_plan
-                            ? appointment?.rehab?.manual_muscle_assesment
-                                .treatment_plan
+                          !!rehabData?.manual_muscle_assesment &&
+                          !!rehabData?.manual_muscle_assesment.treatment_plan
+                            ? rehabData?.manual_muscle_assesment.treatment_plan
                             : ""
                         }
                       ></textarea>

@@ -178,7 +178,10 @@ const ClinicalExaminations = () => {
                                 id="tab-11"
                                 className="tab-pane fade show active"
                               >
-                                <HistoryOfPresentIllness appointmentId={id} />
+                                <HistoryOfPresentIllness
+                                  appointmentId={id}
+                                  appointment={appointment}
+                                />
                               </div>
                               <div
                                 role="tabpanel"
@@ -187,14 +190,20 @@ const ClinicalExaminations = () => {
                               >
                                 {doctor?.specialty?.name === "Neurologist" ? (
                                   <>
-                                    <NeuroExamination appointmentId={id} />
+                                    <NeuroExamination
+                                      appointmentId={id}
+                                      appointment={appointment}
+                                    />
                                   </>
                                 ) : (
                                   <></>
                                 )}
                                 {doctor?.specialty?.name === "Orthopedic" ? (
                                   <>
-                                    <OrthoExamination appointmentId={id} />
+                                    <OrthoExamination
+                                      appointmentId={id}
+                                      appointment={appointment}
+                                    />
                                   </>
                                 ) : (
                                   <></>
@@ -202,14 +211,20 @@ const ClinicalExaminations = () => {
                                 {doctor?.specialty?.name ===
                                 "Rehabilitation" ? (
                                   <>
-                                    <RehabExamination appointmentId={id} />
+                                    <RehabExamination
+                                      appointmentId={id}
+                                      appointment={appointment}
+                                    />
                                   </>
                                 ) : (
                                   <></>
                                 )}
                                 {doctor?.specialty?.name === "Medicine" ? (
                                   <>
-                                    <MedicineExamination appointmentId={id} />
+                                    <MedicineExamination
+                                      appointmentId={id}
+                                      appointment={appointment}
+                                    />
                                   </>
                                 ) : (
                                   <></>
@@ -220,14 +235,20 @@ const ClinicalExaminations = () => {
                                 id="tab-13"
                                 className="tab-pane fade"
                               >
-                                <Assesment appointmentId={id} />
+                                <Assesment
+                                  appointmentId={id}
+                                  appointment={appointment}
+                                />
                               </div>
                               <div
                                 role="tabpanel"
                                 id="tab-14"
                                 className="tab-pane fade"
                               >
-                                <Prescription appointmentId={id} />
+                                <Prescription
+                                  appointmentId={id}
+                                  appointment={appointment}
+                                />
                               </div>
                             </div>
                           </div>
