@@ -247,7 +247,9 @@ const ClinicalExaminations = () => {
                               >
                                 <Prescription
                                   appointmentId={id}
-                                  appointment={appointment}
+                                  eprescription={appointment?.eprescription}
+                                  assesment={appointment?.assesment}
+                                  patient={appointment?.patient}
                                 />
                               </div>
                             </div>

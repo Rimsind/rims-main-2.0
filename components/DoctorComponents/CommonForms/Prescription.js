@@ -1,4 +1,3 @@
-import router, { useRouter } from "next/router";
 import { useState } from "react";
 import { useAuth } from "context";
 import {
@@ -12,24 +11,9 @@ import {
 } from "pages/api/prescriptionData";
 import axios from "axios";
 import { apiUrl } from "config/api";
-import useSWR from "swr";
 import { Slide, toast } from "react-toastify";
-const Prescription = ({ appointmentId }) => {
+const Prescription = ({ appointmentId, eprescription, assesment, patient }) => {
   const { auth } = useAuth();
-
-  const { data: appointmentDetails } = useSWR(
-    `${apiUrl}/appointments/${appointmentId}`,
-    async (url) => {
-      const res = await axios.get(url, {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      });
-      const result = res.data;
-      return result;
-    }
-  );
-
   const [precaution, setPrecaution] = useState();
   const [allPrecaution, setAllPrecaution] = useState([]);
   const addPrecaution = () => {
@@ -172,7 +156,7 @@ const Prescription = ({ appointmentId }) => {
   const submitPrescription = async () => {
     const payload = {
       eprescription: {
-        ...appointmentDetails.eprescription,
+        ...eprescription,
         medicine: medicineList,
         patient_education: patientEducationList.toString(),
         restrictions: patientRestrictionList.toString(),
@@ -243,6 +227,7 @@ const Prescription = ({ appointmentId }) => {
   const minDate = year + "-" + newMonth + "-" + newDay;
 
   const treatmentList = ["option 1", "option 2", "option 3", "option 4"];
+
   return (
     <>
       <div className="general-information-form">
@@ -260,13 +245,24 @@ const Prescription = ({ appointmentId }) => {
                       </tr>
                     </thead>
                     <tbody>
-                      {appointmentDetails?.assesment?.diagnosis.map(
-                        (items, index) => (
-                          <tr key={index}>
-                            <th>#{index + 1}</th>
-                            <th scope="col">{items?.description}</th>
+                      {assesment?.diagnosis ? (
+                        <>
+                          {" "}
+                          {assesment?.diagnosis.map((items, index) => (
+                            <tr key={index}>
+                              <th>#{index + 1}</th>
+                              <th scope="col">{items?.description}</th>
+                            </tr>
+                          ))}
+                        </>
+                      ) : (
+                        <>
+                          <tr>
+                            <td colSpan={2} className="text-center text-danger">
+                              No reconds found!!
+                            </td>
                           </tr>
-                        )
+                        </>
                       )}
                     </tbody>
                   </table>
@@ -289,17 +285,29 @@ const Prescription = ({ appointmentId }) => {
                       </tr>
                     </thead>
                     <tbody>
-                      {appointmentDetails?.patient?.past_medication_history?.map(
-                        (items, index) => (
-                          <tr key={index}>
-                            <td>#{index + 1}</td>
-                            <td>{items?.medicineName}</td>
-                            <td>{items?.dose}</td>
-                            <td>{items?.startDate}</td>
-                            <td>{items?.status}</td>
-                            <td>{items?.type}</td>
+                      {patient?.past_medication_history.length != 0 ? (
+                        <>
+                          {patient?.past_medication_history?.map(
+                            (items, index) => (
+                              <tr key={index}>
+                                <td className="fw-bold">#{index + 1}</td>
+                                <td>{items?.medicineName}</td>
+                                <td>{items?.dose}</td>
+                                <td>{items?.startDate}</td>
+                                <td>{items?.status}</td>
+                                <td>{items?.type}</td>
+                              </tr>
+                            )
+                          )}
+                        </>
+                      ) : (
+                        <>
+                          <tr>
+                            <td colSpan={6} className="text-center text-danger">
+                              No records found!!
+                            </td>
                           </tr>
-                        )
+                        </>
                       )}
                     </tbody>
                   </table>
@@ -319,6 +327,7 @@ const Prescription = ({ appointmentId }) => {
                 aria-label="Default select example"
                 onChange={(e) => setMedicineName(e.target.value)}
               >
+                <option selected>Select a medicine</option>
                 {medicineNameList?.map((item, index) => (
                   <option value={item} key={index}>
                     {item}
@@ -453,22 +462,35 @@ const Prescription = ({ appointmentId }) => {
                     <td>{item?.sideEffects} </td>
                   </tr>
                 ))}
-                {appointmentDetails?.eprescription?.medicine.map(
-                  (item, index) => (
-                    <tr key={index}>
-                      <td scope="row">
-                        <i className="fas fa-trash text-danger"></i>
+                {!!eprescription?.medicine ||
+                eprescription?.medicine === 0 ||
+                medicineList.length === 0 ? (
+                  <>
+                    <tr>
+                      <td colSpan={9} className="text-center text-danger">
+                        No records found!!
                       </td>
-                      <td>{item?.name}</td>
-                      <td>{item?.mg}</td>
-                      <td>{item?.route}</td>
-                      <td>{item?.duration}</td>
-                      <td>{item?.frequency}</td>
-                      <td>{item?.reasons}</td>
-                      <td>{item?.instruction}</td>
-                      <td>{item?.sideEffects} </td>
                     </tr>
-                  )
+                  </>
+                ) : (
+                  <>
+                    {" "}
+                    {eprescription?.medicine.map((item, index) => (
+                      <tr key={index}>
+                        <td scope="row">
+                          <i className="fas fa-trash text-danger"></i>
+                        </td>
+                        <td>{item?.name}</td>
+                        <td>{item?.mg}</td>
+                        <td>{item?.route}</td>
+                        <td>{item?.duration}</td>
+                        <td>{item?.frequency}</td>
+                        <td>{item?.reasons}</td>
+                        <td>{item?.instruction}</td>
+                        <td>{item?.sideEffects} </td>
+                      </tr>
+                    ))}
+                  </>
                 )}
               </tbody>
             </table>
@@ -544,16 +566,24 @@ const Prescription = ({ appointmentId }) => {
                           <td>{item?.specification}</td>
                         </tr>
                       ))}
-                      {appointmentDetails?.eprescription?.test.map(
-                        (item, index) => (
-                          <tr key={index}>
-                            <th scope="row">
-                              <i className="fas fa-trash text-danger"></i>
-                            </th>
-                            <td>{item?.name}</td>
-                            <td>{item?.specification}</td>
-                          </tr>
-                        )
+                      {testList.length != 0 ? (
+                        <>
+                          {eprescription?.test.map((item, index) => (
+                            <tr key={index}>
+                              <th scope="row">
+                                <i className="fas fa-trash text-danger"></i>
+                              </th>
+                              <td>{item?.name}</td>
+                              <td>{item?.specification}</td>
+                            </tr>
+                          ))}
+                        </>
+                      ) : (
+                        <tr>
+                          <td colSpan={3} className="text-center text-danger">
+                            *No previous records found!!
+                          </td>
+                        </tr>
                       )}
                     </tbody>
                   </table>
@@ -623,14 +653,22 @@ const Prescription = ({ appointmentId }) => {
                           <td>{item}</td>
                         </tr>
                       ))}
-                      <tr>
-                        <td>
-                          <i className="fas fa-trash text-danger"></i>
-                        </td>
-                        <td>
-                          {appointmentDetails?.eprescription?.safetyMeasures}
-                        </td>{" "}
-                      </tr>
+                      {eprescription?.safetyMeasures ? (
+                        <tr>
+                          <td>
+                            <i className="fas fa-trash text-danger"></i>
+                          </td>
+                          <td>{eprescription?.safetyMeasures}</td>
+                        </tr>
+                      ) : (
+                        <>
+                          <tr>
+                            <td colSpan={2} className="text-center text-danger">
+                              *No previous records found!!
+                            </td>
+                          </tr>
+                        </>
+                      )}
                     </tbody>
                   </table>
                 </div>
@@ -707,15 +745,20 @@ const Prescription = ({ appointmentId }) => {
                           <td>{item}</td>
                         </tr>
                       ))}
-                      <tr>
-                        <td>
-                          <i className="fas fa-trash text-danger"></i>
-                        </td>
-
-                        <td>
-                          {appointmentDetails?.eprescription?.restrictions}
-                        </td>
-                      </tr>
+                      {eprescription?.restrictions ? (
+                        <tr>
+                          <td>
+                            <i className="fas fa-trash text-danger"></i>
+                          </td>
+                          <td>{eprescription?.restrictions}</td>
+                        </tr>
+                      ) : (
+                        <tr>
+                          <td colSpan={2} className="text-center text-danger">
+                            *No previous records found!!
+                          </td>
+                        </tr>
+                      )}
                     </tbody>
                   </table>
                 </div>
@@ -787,14 +830,20 @@ const Prescription = ({ appointmentId }) => {
                           <td>{item}</td>
                         </tr>
                       ))}
-                      <tr>
-                        <td>
-                          <i className="fas fa-trash text-danger"></i>
-                        </td>
-                        <td>
-                          {appointmentDetails?.eprescription?.patient_education}
-                        </td>
-                      </tr>
+                      {eprescription?.patient_education ? (
+                        <tr>
+                          <td>
+                            <i className="fas fa-trash text-danger"></i>
+                          </td>
+                          <td>{eprescription?.patient_education}</td>
+                        </tr>
+                      ) : (
+                        <tr>
+                          <td colSpan={2} className="text-center text-danger">
+                            *No previous records found!!
+                          </td>
+                        </tr>
+                      )}
                     </tbody>
                   </table>
                 </div>
@@ -867,16 +916,21 @@ const Prescription = ({ appointmentId }) => {
                           </td>
                           <td>{item}</td>
                         </tr>
-                      ))}{" "}
-                      <tr>
-                        <td>
-                          {" "}
-                          <i className="fas fa-trash text-danger"></i>
-                        </td>
-                        <td>
-                          {appointmentDetails?.eprescription?.treatmentreferral}
-                        </td>
-                      </tr>
+                      ))}
+                      {eprescription?.treatmentreferral ? (
+                        <tr>
+                          <td>
+                            <i className="fas fa-trash text-danger"></i>
+                          </td>
+                          <td>{eprescription?.treatmentreferral}</td>
+                        </tr>
+                      ) : (
+                        <tr>
+                          <td colSpan={2} className="text-center text-danger">
+                            *No previous records found!!
+                          </td>
+                        </tr>
+                      )}
                     </tbody>
                   </table>
                 </div>
@@ -887,9 +941,16 @@ const Prescription = ({ appointmentId }) => {
               <div className="row align-items-end">
                 <div className="col-md-6">
                   <label className="form-label">Date : </label>
-                  <span>
-                    {appointmentDetails?.eprescription?.followUp_date}
-                  </span>
+                  {eprescription?.followUp_date ? (
+                    <span>{eprescription?.followUp_date}</span>
+                  ) : (
+                    <span
+                      className="text-danger"
+                      style={{ fontSize: "13px", marginLeft: "5px" }}
+                    >
+                      No date selected!!
+                    </span>
+                  )}
 
                   <input
                     type="date"
@@ -909,13 +970,11 @@ const Prescription = ({ appointmentId }) => {
                     <option
                       name="language"
                       defaultValue={
-                        !!appointmentDetails?.eprescription &&
-                        appointmentDetails?.eprescription?.followUp_type
+                        !!eprescription && eprescription?.followUp_type
                       }
                     >
-                      {!!appointmentDetails?.eprescription &&
-                      appointmentDetails?.eprescription?.followUp_type
-                        ? appointmentDetails?.eprescription?.followUp_type
+                      {!!eprescription && eprescription?.followUp_type
+                        ? eprescription?.followUp_type
                         : "Select"}
                     </option>
                     <option value="Regular Visit">Regular Visit</option>

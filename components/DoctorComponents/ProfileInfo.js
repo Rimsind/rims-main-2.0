@@ -6,6 +6,7 @@ import { useState } from "react";
 import useSWR from "swr";
 import { Slide, toast } from "react-toastify";
 const ProfileInfo = ({ data }) => {
+  console.log(data);
   const { auth } = useAuth();
   const [loading, setLoading] = useState(false);
   const { data: specialties } = useSWR(`${apiUrl}/specialties`, fetcher);
@@ -23,6 +24,7 @@ const ProfileInfo = ({ data }) => {
         experienceInYrs: data.experienceInYear,
         bio: data.bio,
         skype_id: data.skype_id,
+        registration_number: data.registration_number,
         specialty: {
           id: data.specialty,
         },
@@ -65,6 +67,7 @@ const ProfileInfo = ({ data }) => {
         theme: "colored",
         transition: Slide,
       });
+      setLoading(false);
     }
   };
 
@@ -96,7 +99,7 @@ const ProfileInfo = ({ data }) => {
                   />
                 </div>
               </div>
-              <div className="col-12 col-md-6">
+              <div className="col-12 col-md-4">
                 <div className="form-group">
                   <label>Email ID</label>
                   <input
@@ -107,7 +110,7 @@ const ProfileInfo = ({ data }) => {
                   />
                 </div>
               </div>
-              <div className="col-12 col-md-6">
+              <div className="col-12 col-md-4">
                 <div className="form-group">
                   <label>Mobile</label>
                   <input
@@ -116,6 +119,22 @@ const ProfileInfo = ({ data }) => {
                     className="form-control"
                     {...register("phone")}
                     defaultValue={!!data?.phone ? data.phone : ""}
+                  />
+                </div>
+              </div>
+              <div className="col-12 col-md-4">
+                <div className="form-group">
+                  <label>Registration No</label>
+                  <input
+                    type="text"
+                    placeholder="+1 202-555-0125"
+                    className="form-control"
+                    {...register("registration_number")}
+                    defaultValue={
+                      !!data?.registration_number
+                        ? data.registration_number
+                        : ""
+                    }
                   />
                 </div>
               </div>
