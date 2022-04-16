@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import Router from "next/router";
 import Image from "next/image";
 import { toast, Slide } from "react-toastify";
+import { apiUrl } from "config/api";
 const Signup = () => {
   //react-hook-form
   const {
@@ -15,10 +16,7 @@ const Signup = () => {
   } = useForm();
 
   const registerUser = async (payload) => {
-    const res = await axios.post(
-      "https://manage.riimstechnology.com/auth/local/register",
-      payload
-    );
+    const res = await axios.post(`${apiUrl}/auth/local/register`, payload);
     const result = await res.data;
     return result;
   };
@@ -31,15 +29,11 @@ const Signup = () => {
     };
 
     //post function for the user profile
-    const res = await axios.post(
-      "https://manage.riimstechnology.com/polyclinics",
-      profilePayload,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    const res = await axios.post(`${apiUrl}/polyclinics`, profilePayload, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
     const result = res.data;
     return result;
   };
@@ -51,7 +45,7 @@ const Signup = () => {
     if (data.password != data.confirmPassword) {
       toast.error("Passwords do not match", {
         position: "top-center",
-        autoClose: 5000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
@@ -78,10 +72,10 @@ const Signup = () => {
         const profile = await createUserProfile(data, result.jwt);
 
         await axios.put(
-          `https://manage.riimstechnology.com/users/${result.user.id}`,
+          `${apiUrl}/users/${result.user.id}`,
           {
             profileId: profile.id,
-            role: 6,
+            role: 4,
           },
           {
             headers: {
@@ -93,7 +87,7 @@ const Signup = () => {
       reset();
       toast.success("Registration Succesful", {
         position: "top-center",
-        autoClose: 5000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
@@ -108,7 +102,7 @@ const Signup = () => {
       console.log(err.message);
       toast.error("Registration Failed", {
         position: "top-center",
-        autoClose: 5000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,

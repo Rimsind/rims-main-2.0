@@ -29,7 +29,7 @@ const Dashboard = () => {
             <NursingSideBar status1="active" data={data} />
             <div className="col-md-12 col-lg-8 col-xl-9 col-xxl-9">
               <div className="dashboard-welcome-text">
-                <p className="fs-4 fw-bold">Welcome Mediland Nursing Home👋</p>
+                <p className="fs-4 fw-bold">Welcome {data?.name}👋</p>
               </div>
               <div className="row">
                 <div className="col-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4 patient-dashboard-top">

@@ -1,4 +1,4 @@
-export const apiUrl = "https://manage.riimstechnology.com";
+export const apiUrl = "https://manage.rimsind.in";
 
 export const fetcher = async (url) => {
   const res = await fetch(url);

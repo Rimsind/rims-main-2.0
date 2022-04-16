@@ -68,7 +68,7 @@ const ProfileInfo = ({ data }) => {
     }
   };
 
-  const titleList = ["Mr", "Mrs", "Ms", "Miss"];
+  const titleList = ["Mr.", "Mrs.", "Ms.", "Miss."];
 
   return (
     <>

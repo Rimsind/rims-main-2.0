@@ -6,6 +6,7 @@ import router from "next/router";
 import { useAuth } from "context/index";
 import Image from "next/image";
 import { toast, Slide } from "react-toastify";
+import { apiUrl } from "config/api";
 const Login = () => {
   const { dispatchAuth } = useAuth();
   const {
@@ -29,13 +30,10 @@ const Login = () => {
         identifier: data.email,
         password: data.password,
       };
-      const res = await axios.post(
-        "https://manage.riimstechnology.com/auth/local",
-        payload
-      );
+      const res = await axios.post(`${apiUrl}/auth/local`, payload);
       const result = res.data;
 
-      if (result.jwt && result.user.role.id === 7) {
+      if (result.jwt && result.user.role.id === 5) {
         setCookie(null, "token", result.jwt, {
           maxAge: 30 * 24 * 60 * 60,
           path: "/",

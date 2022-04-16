@@ -162,7 +162,8 @@ const MainHeader = () => {
                       <div className="user-text">
                         {auth?.user?.role?.id === 1 ? (
                           <h6>
-                            {profile?.title}.{profile?.first_name}
+                            {profile?.title}
+                            {profile?.first_name}
                             {profile?.last_name}
                           </h6>
                         ) : (
@@ -175,12 +176,12 @@ const MainHeader = () => {
                         ) : (
                           <></>
                         )}{" "}
-                        {auth?.user?.role?.id === 6 ? (
+                        {auth?.user?.role?.id === 4 ? (
                           <h6>{profile?.name}</h6>
                         ) : (
                           <></>
                         )}{" "}
-                        {auth?.user?.role?.id === 7 ? (
+                        {auth?.user?.role?.id === 5 ? (
                           <h6>{profile?.name}</h6>
                         ) : (
                           <></>
@@ -202,7 +203,7 @@ const MainHeader = () => {
                     ) : (
                       <></>
                     )}
-                    {auth?.user?.role?.id === 6 ? (
+                    {auth?.user?.role?.id === 4 ? (
                       <>
                         <Link href="/polyclinics/dashboard">
                           <a className="dropdown-item">Dashboard</a>
@@ -215,7 +216,7 @@ const MainHeader = () => {
                     ) : (
                       <></>
                     )}
-                    {auth?.user?.role?.id === 7 ? (
+                    {auth?.user?.role?.id === 5 ? (
                       <>
                         <Link href="/nursing-homes/dashboard">
                           <a className="dropdown-item">Dashboard</a>

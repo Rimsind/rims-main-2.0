@@ -16,10 +16,10 @@ const ProfilePicture = ({ data }) => {
   if (auth?.user?.role?.id === 3) {
     var role = "doctors";
   }
-  if (auth?.user?.role?.id === 6) {
+  if (auth?.user?.role?.id === 4) {
     var role = "polyclinics";
   }
-  if (auth?.user?.role?.id === 7) {
+  if (auth?.user?.role?.id === 5) {
     var role = "nursing-homes";
   }
 

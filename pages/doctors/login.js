@@ -6,6 +6,7 @@ import { setCookie } from "nookies";
 import router from "next/router";
 import { useAuth } from "context";
 import { toast, Slide } from "react-toastify";
+import { apiUrl } from "config/api";
 const Index = () => {
   const { dispatchAuth } = useAuth();
   const { register, handleSubmit, reset } = useForm();
@@ -23,10 +24,7 @@ const Index = () => {
         identifier: data.email,
         password: data.password,
       };
-      const res = await axios.post(
-        "https://manage.riimstechnology.com/auth/local",
-        payload
-      );
+      const res = await axios.post(`${apiUrl}/auth/local`, payload);
       const result = res.data;
 
       if (result.jwt && result.user.role.id === 3) {

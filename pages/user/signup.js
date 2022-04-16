@@ -5,6 +5,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { toast, Slide } from "react-toastify";
+import { apiUrl } from "config/api";
 const Signup = () => {
   const router = useRouter();
   const {
@@ -16,10 +17,7 @@ const Signup = () => {
   } = useForm();
 
   const registerUser = async (payload) => {
-    const res = await axios.post(
-      "https://manage.riimstechnology.com/auth/local/register",
-      payload
-    );
+    const res = await axios.post(`${apiUrl}/auth/local/register`, payload);
     const result = await res.data;
     return result;
   };
@@ -33,15 +31,11 @@ const Signup = () => {
     };
 
     //post function for the user profile
-    const res = await axios.post(
-      "https://manage.riimstechnology.com/patients",
-      profilePayload,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    const res = await axios.post(`${apiUrl}/patients`, profilePayload, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
     const result = res.data;
     return result;
   };
@@ -80,7 +74,7 @@ const Signup = () => {
         const profile = await createUserProfile(data, result.jwt);
 
         await axios.put(
-          `https://manage.riimstechnology.com/users/${result.user.id}`,
+          `${apiUrl}/users/${result.user.id}`,
           {
             profileId: profile.id,
           },
