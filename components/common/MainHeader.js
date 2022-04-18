@@ -56,7 +56,7 @@ const MainHeader = () => {
                     </div>
                     <div className="topbar-login-title">
                       <Link href="/nursing-homes/login">
-                        <a className="fs-6">Nursing Home Login</a>
+                        <a className="fs-6">Nursing Login</a>
                       </Link>
                     </div>
                   </div>

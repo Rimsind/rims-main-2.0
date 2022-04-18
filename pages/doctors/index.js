@@ -1,5 +1,7 @@
 import { BreadCrums, HorizontalDoctorCard } from "components/common/index";
 import useSWR from "swr";
+import Link from "next/link";
+import Image from "next/image";
 import { apiUrl, fetcher } from "config/api";
 import { ListingPageLoader } from "components/Loaders";
 import { useState } from "react";
@@ -54,7 +56,7 @@ const Index = () => {
         <div className="content">
           <div className="container-fluid">
             <div className="row">
-              <div className="col-md-12 col-lg-4 col-xl-3">
+              <div className="col-md-12 col-lg-4 col-xl-3 mb-3">
                 <div className="sticky-top">
                   <div className="card">
                     <div className="card-header">
@@ -160,96 +162,1025 @@ const Index = () => {
                 </div>
               </div>
               <div className="col-md-12 col-lg-8 col-xl-9">
-                {doctors ? (
-                  <>
-                    {doctors
-                      ?.filter((items) => {
-                        if (
-                          name === "" &&
-                          gender === "" &&
-                          specialty === "" &&
-                          city === ""
-                        ) {
-                          return items;
-                        } else if (
-                          items?.lastName
-                            ?.toLowerCase()
-                            ?.includes(name.toLowerCase()) &&
-                          city === "" &&
-                          gender === "" &&
-                          specialty === ""
-                        ) {
-                          return items;
-                        } else if (
-                          items?.gender?.includes(gender) &&
-                          name === "" &&
-                          specialty === "" &&
-                          city === ""
-                        ) {
-                          return items;
-                        } else if (
-                          items?.specialty?.name
-                            .toLowerCase()
-                            .includes(specialty) &&
-                          name === "" &&
-                          gender === "" &&
-                          city === ""
-                        ) {
-                          return items;
-                        } else if (
-                          items?.address?.city
-                            ?.toLowerCase()
-                            .includes(city.toLowerCase()) &&
-                          name === "" &&
-                          gender === "" &&
-                          specialty === ""
-                        ) {
-                          return items;
-                        } else if (
-                          items?.specialty?.name.includes(specialty) &&
-                          items?.gender.includes(gender) &&
-                          city === ""
-                        ) {
-                          return items;
-                        } else if (
-                          items?.address?.city
-                            .toLowerCase()
-                            .includes(city.toLowerCase()) &&
-                          items?.specialty?.name.includes(specialty) &&
-                          gender === ""
-                        ) {
-                          return items;
-                        } else if (
-                          items?.gender.includes(gender) &&
-                          items?.address?.city
-                            .toLowerCase()
-                            .includes(city.toLowerCase()) &&
-                          specialty === ""
-                        ) {
-                          return items;
-                        } else if (
-                          items?.gender.includes(gender) &&
-                          items?.address?.city
-                            .toLowerCase()
-                            .includes(city.toLowerCase()) &&
-                          items?.specialty?.name.includes(specialty)
-                        ) {
-                          return items;
-                        }
-                      })
-                      .slice(`${startValue}`, `${endValue}`)
-                      .map((item, index) => (
-                        <HorizontalDoctorCard data={item} key={index} />
-                      ))}
-                  </>
-                ) : (
-                  <>
-                    <ListingPageLoader />
-                    <ListingPageLoader />
-                    <ListingPageLoader />
-                    <ListingPageLoader />
-                  </>
-                )}
+                {/* <div className="row">
+                  {doctors ? (
+                    <>
+                      {doctors
+                        ?.filter((items) => {
+                          if (
+                            name === "" &&
+                            gender === "" &&
+                            specialty === "" &&
+                            city === ""
+                          ) {
+                            return items;
+                          } else if (
+                            items?.lastName
+                              ?.toLowerCase()
+                              ?.includes(name.toLowerCase()) &&
+                            city === "" &&
+                            gender === "" &&
+                            specialty === ""
+                          ) {
+                            return items;
+                          } else if (
+                            items?.gender?.includes(gender) &&
+                            name === "" &&
+                            specialty === "" &&
+                            city === ""
+                          ) {
+                            return items;
+                          } else if (
+                            items?.specialty?.name
+                              .toLowerCase()
+                              .includes(specialty) &&
+                            name === "" &&
+                            gender === "" &&
+                            city === ""
+                          ) {
+                            return items;
+                          } else if (
+                            items?.address?.city
+                              ?.toLowerCase()
+                              .includes(city.toLowerCase()) &&
+                            name === "" &&
+                            gender === "" &&
+                            specialty === ""
+                          ) {
+                            return items;
+                          } else if (
+                            items?.specialty?.name.includes(specialty) &&
+                            items?.gender.includes(gender) &&
+                            city === ""
+                          ) {
+                            return items;
+                          } else if (
+                            items?.address?.city
+                              .toLowerCase()
+                              .includes(city.toLowerCase()) &&
+                            items?.specialty?.name.includes(specialty) &&
+                            gender === ""
+                          ) {
+                            return items;
+                          } else if (
+                            items?.gender.includes(gender) &&
+                            items?.address?.city
+                              .toLowerCase()
+                              .includes(city.toLowerCase()) &&
+                            specialty === ""
+                          ) {
+                            return items;
+                          } else if (
+                            items?.gender.includes(gender) &&
+                            items?.address?.city
+                              .toLowerCase()
+                              .includes(city.toLowerCase()) &&
+                            items?.specialty?.name.includes(specialty)
+                          ) {
+                            return items;
+                          }
+                        })
+                        .slice(`${startValue}`, `${endValue}`)
+                        .map((item, index) => (
+                          <div
+                            className="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-2 col-xxl-2"
+                            key={index}
+                          >
+                            <div className="profile-widget me-3">
+                              <div className="doc-img">
+                                <Link href="#">
+                                  <a>
+                                    <Image
+                                      height={200}
+                                      width={200}
+                                      className="img-fluid"
+                                      alt="User Image"
+                                      src={
+                                        item?.image?.url ||
+                                        "/assets/images/alternate/doctor-male.png"
+                                      }
+                                    />
+                                  </a>
+                                </Link>
+                              </div>
+                              <div className="pro-content">
+                                <h3 className="title">
+                                  <Link href="#">
+                                    <a>
+                                      Dr. {item?.firstName} {item?.lastName}
+                                    </a>
+                                  </Link>
+                                  <i className="fas fa-check-circle verified"></i>
+                                </h3>
+                                <p className="speciality">
+                                  {item?.experienceInYrs} years experience,
+                                </p>
+
+                                <ul className="available-info">
+                                  <li>
+                                    <i className="fas fa-certificate "></i>{" "}
+                                    Medicine
+                                  </li>
+                                  <li>
+                                    <Image
+                                      height="20"
+                                      width="20"
+                                      src={
+                                        item?.specialty?.image?.url ||
+                                        "/assets/images/alternate/alt-specialty.png"
+                                      }
+                                      alt=""
+                                    />{" "}
+                                    {item?.specialty?.name}
+                                    Medicine
+                                  </li>
+                                  <li>
+                                    <i className="far fa-money-bill-alt text-primary"></i>{" "}
+                                    ₹ 200 - ₹500
+                                    <i
+                                      className="fas fa-info-circle"
+                                      data-bs-toggle="tooltip"
+                                      title="Lorem Ipsum"
+                                    ></i>
+                                  </li>
+                                </ul>
+                                <div className="row row-sm">
+                                  <div className="col-12">
+                                    <Link href={`/doctors/${item?.id}`}>
+                                      <a className="btn book-btn">
+                                        View Profile
+                                      </a>
+                                    </Link>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                    </>
+                  ) : (
+                    <>
+                      <ListingPageLoader />
+                      <ListingPageLoader />
+                      <ListingPageLoader />
+                      <ListingPageLoader />
+                    </>
+                  )}
+                </div> */}
+                <div className="row">
+                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                    <div className="profile-widget me-3">
+                      <div className="doc-img">
+                        <Link href="#">
+                          <a>
+                            <Image
+                              height={280}
+                              width={300}
+                              className="img-fluid"
+                              alt="User Image"
+                              src={"/assets/images/alternate/doctor-male.png"}
+                            />
+                          </a>
+                        </Link>
+                      </div>
+                      <div className="pro-content">
+                        <h3 className="title">
+                          <Link href="#">
+                            <a>Dr. Demo Name</a>
+                          </Link>
+                          <i className="fas fa-check-circle verified"></i>
+                        </h3>
+                        {/* <p className="speciality">10 years experience,</p> */}
+
+                        <ul className="available-info">
+                          <li>
+                            <i className="fas fa-certificate "></i> MBBS
+                          </li>
+                          <li>
+                            <div className="row align-items-center">
+                              <div className="col-6">
+                                <Image
+                                  height="20"
+                                  width="20"
+                                  src={
+                                    "/assets/images/alternate/alt-specialty.png"
+                                  }
+                                  alt=""
+                                />{" "}
+                                Medicine
+                              </div>
+                              <div className="col-6">
+                                <p>
+                                  <span className="fw-bold me-1 text-info">
+                                    Experience:
+                                  </span>
+                                  <span>10 Yrs.</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
+                            ₹ 200 - ₹500
+                            <i
+                              className="fas fa-info-circle"
+                              data-bs-toggle="tooltip"
+                              title="Lorem Ipsum"
+                            ></i>
+                          </li>
+                        </ul>
+                        <div className="row row-sm">
+                          <div className="col-12">
+                            <Link href="#">
+                              <a className="btn book-btn">View Profile</a>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                    <div className="profile-widget me-3">
+                      <div className="doc-img">
+                        <Link href="#">
+                          <a>
+                            <Image
+                              height={280}
+                              width={300}
+                              className="img-fluid"
+                              alt="User Image"
+                              src={"/assets/images/alternate/doctor-male.png"}
+                            />
+                          </a>
+                        </Link>
+                      </div>
+                      <div className="pro-content">
+                        <h3 className="title">
+                          <Link href="#">
+                            <a>Dr. Demo Name</a>
+                          </Link>
+                          <i className="fas fa-check-circle verified"></i>
+                        </h3>
+                        {/* <p className="speciality">10 years experience,</p> */}
+
+                        <ul className="available-info">
+                          <li>
+                            <i className="fas fa-certificate "></i> MBBS
+                          </li>
+                          <li>
+                            <div className="row align-items-center">
+                              <div className="col-6">
+                                <Image
+                                  height="20"
+                                  width="20"
+                                  src={
+                                    "/assets/images/alternate/alt-specialty.png"
+                                  }
+                                  alt=""
+                                />{" "}
+                                Medicine
+                              </div>
+                              <div className="col-6">
+                                <p>
+                                  <span className="fw-bold me-1 text-info">
+                                    Experience:
+                                  </span>
+                                  <span>10 Yrs.</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
+                            ₹ 200 - ₹500
+                            <i
+                              className="fas fa-info-circle"
+                              data-bs-toggle="tooltip"
+                              title="Lorem Ipsum"
+                            ></i>
+                          </li>
+                        </ul>
+                        <div className="row row-sm">
+                          <div className="col-12">
+                            <Link href="#">
+                              <a className="btn book-btn">View Profile</a>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                    <div className="profile-widget me-3">
+                      <div className="doc-img">
+                        <Link href="#">
+                          <a>
+                            <Image
+                              height={280}
+                              width={300}
+                              className="img-fluid"
+                              alt="User Image"
+                              src={"/assets/images/alternate/doctor-male.png"}
+                            />
+                          </a>
+                        </Link>
+                      </div>
+                      <div className="pro-content">
+                        <h3 className="title">
+                          <Link href="#">
+                            <a>Dr. Demo Name</a>
+                          </Link>
+                          <i className="fas fa-check-circle verified"></i>
+                        </h3>
+                        {/* <p className="speciality">10 years experience,</p> */}
+
+                        <ul className="available-info">
+                          <li>
+                            <i className="fas fa-certificate "></i> MBBS
+                          </li>
+                          <li>
+                            <div className="row align-items-center">
+                              <div className="col-6">
+                                <Image
+                                  height="20"
+                                  width="20"
+                                  src={
+                                    "/assets/images/alternate/alt-specialty.png"
+                                  }
+                                  alt=""
+                                />{" "}
+                                Medicine
+                              </div>
+                              <div className="col-6">
+                                <p>
+                                  <span className="fw-bold me-1 text-info">
+                                    Experience:
+                                  </span>
+                                  <span>10 Yrs.</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
+                            ₹ 200 - ₹500
+                            <i
+                              className="fas fa-info-circle"
+                              data-bs-toggle="tooltip"
+                              title="Lorem Ipsum"
+                            ></i>
+                          </li>
+                        </ul>
+                        <div className="row row-sm">
+                          <div className="col-12">
+                            <Link href="#">
+                              <a className="btn book-btn">View Profile</a>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                    <div className="profile-widget me-3">
+                      <div className="doc-img">
+                        <Link href="#">
+                          <a>
+                            <Image
+                              height={280}
+                              width={300}
+                              className="img-fluid"
+                              alt="User Image"
+                              src={"/assets/images/alternate/doctor-male.png"}
+                            />
+                          </a>
+                        </Link>
+                      </div>
+                      <div className="pro-content">
+                        <h3 className="title">
+                          <Link href="#">
+                            <a>Dr. Demo Name</a>
+                          </Link>
+                          <i className="fas fa-check-circle verified"></i>
+                        </h3>
+                        {/* <p className="speciality">10 years experience,</p> */}
+
+                        <ul className="available-info">
+                          <li>
+                            <i className="fas fa-certificate "></i> MBBS
+                          </li>
+                          <li>
+                            <div className="row align-items-center">
+                              <div className="col-6">
+                                <Image
+                                  height="20"
+                                  width="20"
+                                  src={
+                                    "/assets/images/alternate/alt-specialty.png"
+                                  }
+                                  alt=""
+                                />{" "}
+                                Medicine
+                              </div>
+                              <div className="col-6">
+                                <p>
+                                  <span className="fw-bold me-1 text-info">
+                                    Experience:
+                                  </span>
+                                  <span>10 Yrs.</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
+                            ₹ 200 - ₹500
+                            <i
+                              className="fas fa-info-circle"
+                              data-bs-toggle="tooltip"
+                              title="Lorem Ipsum"
+                            ></i>
+                          </li>
+                        </ul>
+                        <div className="row row-sm">
+                          <div className="col-12">
+                            <Link href="#">
+                              <a className="btn book-btn">View Profile</a>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                    <div className="profile-widget me-3">
+                      <div className="doc-img">
+                        <Link href="#">
+                          <a>
+                            <Image
+                              height={280}
+                              width={300}
+                              className="img-fluid"
+                              alt="User Image"
+                              src={"/assets/images/alternate/doctor-male.png"}
+                            />
+                          </a>
+                        </Link>
+                      </div>
+                      <div className="pro-content">
+                        <h3 className="title">
+                          <Link href="#">
+                            <a>Dr. Demo Name</a>
+                          </Link>
+                          <i className="fas fa-check-circle verified"></i>
+                        </h3>
+                        {/* <p className="speciality">10 years experience,</p> */}
+
+                        <ul className="available-info">
+                          <li>
+                            <i className="fas fa-certificate "></i> MBBS
+                          </li>
+                          <li>
+                            <div className="row align-items-center">
+                              <div className="col-6">
+                                <Image
+                                  height="20"
+                                  width="20"
+                                  src={
+                                    "/assets/images/alternate/alt-specialty.png"
+                                  }
+                                  alt=""
+                                />{" "}
+                                Medicine
+                              </div>
+                              <div className="col-6">
+                                <p>
+                                  <span className="fw-bold me-1 text-info">
+                                    Experience:
+                                  </span>
+                                  <span>10 Yrs.</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
+                            ₹ 200 - ₹500
+                            <i
+                              className="fas fa-info-circle"
+                              data-bs-toggle="tooltip"
+                              title="Lorem Ipsum"
+                            ></i>
+                          </li>
+                        </ul>
+                        <div className="row row-sm">
+                          <div className="col-12">
+                            <Link href="#">
+                              <a className="btn book-btn">View Profile</a>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                    <div className="profile-widget me-3">
+                      <div className="doc-img">
+                        <Link href="#">
+                          <a>
+                            <Image
+                              height={280}
+                              width={300}
+                              className="img-fluid"
+                              alt="User Image"
+                              src={"/assets/images/alternate/doctor-male.png"}
+                            />
+                          </a>
+                        </Link>
+                      </div>
+                      <div className="pro-content">
+                        <h3 className="title">
+                          <Link href="#">
+                            <a>Dr. Demo Name</a>
+                          </Link>
+                          <i className="fas fa-check-circle verified"></i>
+                        </h3>
+                        {/* <p className="speciality">10 years experience,</p> */}
+
+                        <ul className="available-info">
+                          <li>
+                            <i className="fas fa-certificate "></i> MBBS
+                          </li>
+                          <li>
+                            <div className="row align-items-center">
+                              <div className="col-6">
+                                <Image
+                                  height="20"
+                                  width="20"
+                                  src={
+                                    "/assets/images/alternate/alt-specialty.png"
+                                  }
+                                  alt=""
+                                />{" "}
+                                Medicine
+                              </div>
+                              <div className="col-6">
+                                <p>
+                                  <span className="fw-bold me-1 text-info">
+                                    Experience:
+                                  </span>
+                                  <span>10 Yrs.</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
+                            ₹ 200 - ₹500
+                            <i
+                              className="fas fa-info-circle"
+                              data-bs-toggle="tooltip"
+                              title="Lorem Ipsum"
+                            ></i>
+                          </li>
+                        </ul>
+                        <div className="row row-sm">
+                          <div className="col-12">
+                            <Link href="#">
+                              <a className="btn book-btn">View Profile</a>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                    <div className="profile-widget me-3">
+                      <div className="doc-img">
+                        <Link href="#">
+                          <a>
+                            <Image
+                              height={280}
+                              width={300}
+                              className="img-fluid"
+                              alt="User Image"
+                              src={"/assets/images/alternate/doctor-male.png"}
+                            />
+                          </a>
+                        </Link>
+                      </div>
+                      <div className="pro-content">
+                        <h3 className="title">
+                          <Link href="#">
+                            <a>Dr. Demo Name</a>
+                          </Link>
+                          <i className="fas fa-check-circle verified"></i>
+                        </h3>
+                        {/* <p className="speciality">10 years experience,</p> */}
+
+                        <ul className="available-info">
+                          <li>
+                            <i className="fas fa-certificate "></i> MBBS
+                          </li>
+                          <li>
+                            <div className="row align-items-center">
+                              <div className="col-6">
+                                <Image
+                                  height="20"
+                                  width="20"
+                                  src={
+                                    "/assets/images/alternate/alt-specialty.png"
+                                  }
+                                  alt=""
+                                />{" "}
+                                Medicine
+                              </div>
+                              <div className="col-6">
+                                <p>
+                                  <span className="fw-bold me-1 text-info">
+                                    Experience:
+                                  </span>
+                                  <span>10 Yrs.</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
+                            ₹ 200 - ₹500
+                            <i
+                              className="fas fa-info-circle"
+                              data-bs-toggle="tooltip"
+                              title="Lorem Ipsum"
+                            ></i>
+                          </li>
+                        </ul>
+                        <div className="row row-sm">
+                          <div className="col-12">
+                            <Link href="#">
+                              <a className="btn book-btn">View Profile</a>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                    <div className="profile-widget me-3">
+                      <div className="doc-img">
+                        <Link href="#">
+                          <a>
+                            <Image
+                              height={280}
+                              width={300}
+                              className="img-fluid"
+                              alt="User Image"
+                              src={"/assets/images/alternate/doctor-male.png"}
+                            />
+                          </a>
+                        </Link>
+                      </div>
+                      <div className="pro-content">
+                        <h3 className="title">
+                          <Link href="#">
+                            <a>Dr. Demo Name</a>
+                          </Link>
+                          <i className="fas fa-check-circle verified"></i>
+                        </h3>
+                        {/* <p className="speciality">10 years experience,</p> */}
+
+                        <ul className="available-info">
+                          <li>
+                            <i className="fas fa-certificate "></i> MBBS
+                          </li>
+                          <li>
+                            <div className="row align-items-center">
+                              <div className="col-6">
+                                <Image
+                                  height="20"
+                                  width="20"
+                                  src={
+                                    "/assets/images/alternate/alt-specialty.png"
+                                  }
+                                  alt=""
+                                />{" "}
+                                Medicine
+                              </div>
+                              <div className="col-6">
+                                <p>
+                                  <span className="fw-bold me-1 text-info">
+                                    Experience:
+                                  </span>
+                                  <span>10 Yrs.</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
+                            ₹ 200 - ₹500
+                            <i
+                              className="fas fa-info-circle"
+                              data-bs-toggle="tooltip"
+                              title="Lorem Ipsum"
+                            ></i>
+                          </li>
+                        </ul>
+                        <div className="row row-sm">
+                          <div className="col-12">
+                            <Link href="#">
+                              <a className="btn book-btn">View Profile</a>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                    <div className="profile-widget me-3">
+                      <div className="doc-img">
+                        <Link href="#">
+                          <a>
+                            <Image
+                              height={280}
+                              width={300}
+                              className="img-fluid"
+                              alt="User Image"
+                              src={"/assets/images/alternate/doctor-male.png"}
+                            />
+                          </a>
+                        </Link>
+                      </div>
+                      <div className="pro-content">
+                        <h3 className="title">
+                          <Link href="#">
+                            <a>Dr. Demo Name</a>
+                          </Link>
+                          <i className="fas fa-check-circle verified"></i>
+                        </h3>
+                        {/* <p className="speciality">10 years experience,</p> */}
+
+                        <ul className="available-info">
+                          <li>
+                            <i className="fas fa-certificate "></i> MBBS
+                          </li>
+                          <li>
+                            <div className="row align-items-center">
+                              <div className="col-6">
+                                <Image
+                                  height="20"
+                                  width="20"
+                                  src={
+                                    "/assets/images/alternate/alt-specialty.png"
+                                  }
+                                  alt=""
+                                />{" "}
+                                Medicine
+                              </div>
+                              <div className="col-6">
+                                <p>
+                                  <span className="fw-bold me-1 text-info">
+                                    Experience:
+                                  </span>
+                                  <span>10 Yrs.</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
+                            ₹ 200 - ₹500
+                            <i
+                              className="fas fa-info-circle"
+                              data-bs-toggle="tooltip"
+                              title="Lorem Ipsum"
+                            ></i>
+                          </li>
+                        </ul>
+                        <div className="row row-sm">
+                          <div className="col-12">
+                            <Link href="#">
+                              <a className="btn book-btn">View Profile</a>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                    <div className="profile-widget me-3">
+                      <div className="doc-img">
+                        <Link href="#">
+                          <a>
+                            <Image
+                              height={280}
+                              width={300}
+                              className="img-fluid"
+                              alt="User Image"
+                              src={"/assets/images/alternate/doctor-male.png"}
+                            />
+                          </a>
+                        </Link>
+                      </div>
+                      <div className="pro-content">
+                        <h3 className="title">
+                          <Link href="#">
+                            <a>Dr. Demo Name</a>
+                          </Link>
+                          <i className="fas fa-check-circle verified"></i>
+                        </h3>
+                        {/* <p className="speciality">10 years experience,</p> */}
+
+                        <ul className="available-info">
+                          <li>
+                            <i className="fas fa-certificate "></i> MBBS
+                          </li>
+                          <li>
+                            <div className="row align-items-center">
+                              <div className="col-6">
+                                <Image
+                                  height="20"
+                                  width="20"
+                                  src={
+                                    "/assets/images/alternate/alt-specialty.png"
+                                  }
+                                  alt=""
+                                />{" "}
+                                Medicine
+                              </div>
+                              <div className="col-6">
+                                <p>
+                                  <span className="fw-bold me-1 text-info">
+                                    Experience:
+                                  </span>
+                                  <span>10 Yrs.</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
+                            ₹ 200 - ₹500
+                            <i
+                              className="fas fa-info-circle"
+                              data-bs-toggle="tooltip"
+                              title="Lorem Ipsum"
+                            ></i>
+                          </li>
+                        </ul>
+                        <div className="row row-sm">
+                          <div className="col-12">
+                            <Link href="#">
+                              <a className="btn book-btn">View Profile</a>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                    <div className="profile-widget me-3">
+                      <div className="doc-img">
+                        <Link href="#">
+                          <a>
+                            <Image
+                              height={280}
+                              width={300}
+                              className="img-fluid"
+                              alt="User Image"
+                              src={"/assets/images/alternate/doctor-male.png"}
+                            />
+                          </a>
+                        </Link>
+                      </div>
+                      <div className="pro-content">
+                        <h3 className="title">
+                          <Link href="#">
+                            <a>Dr. Demo Name</a>
+                          </Link>
+                          <i className="fas fa-check-circle verified"></i>
+                        </h3>
+                        {/* <p className="speciality">10 years experience,</p> */}
+
+                        <ul className="available-info">
+                          <li>
+                            <i className="fas fa-certificate "></i> MBBS
+                          </li>
+                          <li>
+                            <div className="row align-items-center">
+                              <div className="col-6">
+                                <Image
+                                  height="20"
+                                  width="20"
+                                  src={
+                                    "/assets/images/alternate/alt-specialty.png"
+                                  }
+                                  alt=""
+                                />{" "}
+                                Medicine
+                              </div>
+                              <div className="col-6">
+                                <p>
+                                  <span className="fw-bold me-1 text-info">
+                                    Experience:
+                                  </span>
+                                  <span>10 Yrs.</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
+                            ₹ 200 - ₹500
+                            <i
+                              className="fas fa-info-circle"
+                              data-bs-toggle="tooltip"
+                              title="Lorem Ipsum"
+                            ></i>
+                          </li>
+                        </ul>
+                        <div className="row row-sm">
+                          <div className="col-12">
+                            <Link href="#">
+                              <a className="btn book-btn">View Profile</a>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                    <div className="profile-widget me-3">
+                      <div className="doc-img">
+                        <Link href="#">
+                          <a>
+                            <Image
+                              height={280}
+                              width={300}
+                              className="img-fluid"
+                              alt="User Image"
+                              src={"/assets/images/alternate/doctor-male.png"}
+                            />
+                          </a>
+                        </Link>
+                      </div>
+                      <div className="pro-content">
+                        <h3 className="title">
+                          <Link href="#">
+                            <a>Dr. Demo Name</a>
+                          </Link>
+                          <i className="fas fa-check-circle verified"></i>
+                        </h3>
+                        {/* <p className="speciality">10 years experience,</p> */}
+
+                        <ul className="available-info">
+                          <li>
+                            <i className="fas fa-certificate "></i> MBBS
+                          </li>
+                          <li>
+                            <div className="row align-items-center">
+                              <div className="col-6">
+                                <Image
+                                  height="20"
+                                  width="20"
+                                  src={
+                                    "/assets/images/alternate/alt-specialty.png"
+                                  }
+                                  alt=""
+                                />{" "}
+                                Medicine
+                              </div>
+                              <div className="col-6">
+                                <p>
+                                  <span className="fw-bold me-1 text-info">
+                                    Experience:
+                                  </span>
+                                  <span>10 Yrs.</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
+                            ₹ 200 - ₹500
+                            <i
+                              className="fas fa-info-circle"
+                              data-bs-toggle="tooltip"
+                              title="Lorem Ipsum"
+                            ></i>
+                          </li>
+                        </ul>
+                        <div className="row row-sm">
+                          <div className="col-12">
+                            <Link href="#">
+                              <a className="btn book-btn">View Profile</a>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 <div className="user-main-pagination mb-4">
                   <div className="list-pagination">
