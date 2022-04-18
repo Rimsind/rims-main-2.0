@@ -6,6 +6,7 @@ import { useState } from "react";
 
 const Index = () => {
   const { data: doctors } = useSWR(`${apiUrl}/doctors?_sort=id:desc`, fetcher);
+
   const [startValue, setStartValue] = useState(0);
   const [endValue, setEndValue] = useState(5);
   const nextData = () => {

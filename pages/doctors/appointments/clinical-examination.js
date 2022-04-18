@@ -18,6 +18,7 @@ import {
 import HistoryOfPresentIllness from "components/DoctorComponents/CommonForms/HistoryOfPresentIllness";
 import Assesment from "components/DoctorComponents/CommonForms/Assesment";
 import Prescription from "components/DoctorComponents/CommonForms/Prescription";
+import EPrescription from "components/DoctorComponents/CommonForms/ePrescription";
 
 const ClinicalExaminations = () => {
   const { id } = useRouter().query;
@@ -169,6 +170,15 @@ const ClinicalExaminations = () => {
                                   E- Prescription
                                 </a>
                               </li>
+                              <li className="nav-item">
+                                <a
+                                  href="#tab-15"
+                                  data-bs-toggle="tab"
+                                  className="nav-link"
+                                >
+                                  E-- Prescription
+                                </a>
+                              </li>
                             </ul>
                           </div>
                           <div className="card-body">
@@ -251,6 +261,19 @@ const ClinicalExaminations = () => {
                                   assesment={appointment?.assesment}
                                   patient={appointment?.patient}
                                 />
+                              </div>
+                              <div
+                                role="tabpanel"
+                                id="tab-15"
+                                className="tab-pane fade"
+                              >
+                                {/* <Prescription
+                                  appointmentId={id}
+                                  eprescription={appointment?.eprescription}
+                                  assesment={appointment?.assesment}
+                                  patient={appointment?.patient}
+                                /> */}
+                                <EPrescription />
                               </div>
                             </div>
                           </div>
