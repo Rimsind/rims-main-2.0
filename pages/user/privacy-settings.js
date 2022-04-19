@@ -25,7 +25,7 @@ const PrivacySettings = () => {
       <div className="main-wrapper">
         <BreadCrums
           title="Home / Dashboard / Privacy-Settings"
-          title1="Medical-Information"
+          title1="Privacy Settings"
         />
 
         <div className="content">

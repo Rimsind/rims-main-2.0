@@ -4030,6 +4030,7 @@ button.btn-custom-time-slot:visited {
   border: none;
   box-shadow: 0 5px 10px #ccc;
   padding: 10px 20px 10px 20px;
+  z-index: 9999;
 }
 
 .back-to-top:hover {

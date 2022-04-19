@@ -100,8 +100,8 @@ const Login = () => {
       >
         <div className="container">
           <div className="row">
-            <div className="col-lg-4 col-xl-4 col-xxl-4"></div>
-            <div className="col-12 col-lg-4 col-xl-4 col-xxl-4">
+            <div className="col-lg-3 col-xl-4 col-xxl-4"></div>
+            <div className="col-12 col-lg-6 col-xl-4 col-xxl-4">
               <div
                 className="patient-login-content text-center d-flex justify-content-center align-items-center pt-5 pb-5"
                 style={{
@@ -136,7 +136,7 @@ const Login = () => {
                   <p className="fs-5 text-light my-4">Patient / User</p>
                   <div
                     className="patient-login-form"
-                    style={{ width: "340px" }}
+                    style={{ width: "300px" }}
                   >
                     <div className="mb-3">
                       <input
@@ -206,7 +206,7 @@ const Login = () => {
                 </form>
               </div>
             </div>
-            <div className="col-lg-4 col-xl-4 col-xxl-4"></div>
+            <div className="col-lg-3 col-xl-4 col-xxl-4"></div>
           </div>
         </div>
       </div>
