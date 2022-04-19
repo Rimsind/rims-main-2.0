@@ -242,14 +242,7 @@ const Index = () => {
                         })
                         .slice(`${startValue}`, `${endValue}`)
                         .map((item, index) => (
-<<<<<<< HEAD
                           <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
-=======
-                          <div
-                            className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3"
-                            key={index}
-                          >
->>>>>>> cde24533f5ae300ad120c80e2d0fcf88107daaa4
                             <div className="profile-widget me-3">
                               <div className="doc-img">
                                 <Link href="#">
