@@ -251,8 +251,8 @@ const Index = () => {
                                 <Link href="#">
                                   <a>
                                     <Image
-                                      height={200}
-                                      width={200}
+                                      height={280}
+                                      width={300}
                                       className="img-fluid"
                                       alt="User Image"
                                       src={
