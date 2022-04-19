@@ -4,65 +4,65 @@ const EPrescription = () => {
   return (
     <>
       <div className="card">
-        <div class="card-body">
-          <ul class="nav nav-tabs nav-tabs-bottom">
-            <li class="nav-item">
+        <div className="card-body">
+          <ul className="nav nav-tabs nav-tabs-bottom">
+            <li className="nav-item">
               <a
-                class="nav-link active"
+                className="nav-link active"
                 href="#bottom-justified-tab11"
                 data-bs-toggle="tab"
               >
                 Medicine
               </a>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <a
-                class="nav-link"
+                className="nav-link"
                 href="#bottom-justified-tab12"
                 data-bs-toggle="tab"
               >
                 Test
               </a>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <a
-                class="nav-link"
+                className="nav-link"
                 href="#bottom-justified-tab13"
                 data-bs-toggle="tab"
               >
                 Precaution & Safety Measures
               </a>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <a
-                class="nav-link"
+                className="nav-link"
                 href="#bottom-justified-tab14"
                 data-bs-toggle="tab"
               >
                 Food & Fluid Restriction
               </a>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <a
-                class="nav-link"
+                className="nav-link"
                 href="#bottom-justified-tab15"
                 data-bs-toggle="tab"
               >
                 Patient Education
               </a>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <a
-                class="nav-link"
+                className="nav-link"
                 href="#bottom-justified-tab16"
                 data-bs-toggle="tab"
               >
                 Other Treatment Referral
               </a>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <a
-                class="nav-link"
+                className="nav-link"
                 href="#bottom-justified-tab17"
                 data-bs-toggle="tab"
               >
@@ -70,8 +70,8 @@ const EPrescription = () => {
               </a>
             </li>
           </ul>
-          <div class="tab-content">
-            <div class="tab-pane show active" id="bottom-justified-tab11">
+          <div className="tab-content">
+            <div className="tab-pane show active" id="bottom-justified-tab11">
               <div className="gen-form border-bottom border-2 border-dark py-4">
                 <div className="row align-items-start">
                   <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 border-end border-2">
@@ -362,7 +362,7 @@ const EPrescription = () => {
                 </button>
               </div>
             </div>
-            <div class="tab-pane" id="bottom-justified-tab12">
+            <div className="tab-pane" id="bottom-justified-tab12">
               <div className="gen-form border-bottom border-2 border-dark py-4">
                 <div className="row align-items-start">
                   <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 border-end border-2">
@@ -569,7 +569,7 @@ const EPrescription = () => {
                 </button>
               </div>
             </div>
-            <div class="tab-pane" id="bottom-justified-tab13">
+            <div className="tab-pane" id="bottom-justified-tab13">
               <div className="gen-form border-bottom border-2 border-dark py-4">
                 <div className="row align-items-start">
                   <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 border-end border-2">
@@ -768,7 +768,7 @@ const EPrescription = () => {
                 </button>
               </div>
             </div>
-            <div class="tab-pane" id="bottom-justified-tab14">
+            <div className="tab-pane" id="bottom-justified-tab14">
               <div className="gen-form border-bottom border-2 border-dark py-4">
                 <div className="row align-items-start">
                   <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 border-end border-2">
@@ -963,7 +963,7 @@ const EPrescription = () => {
                 </button>
               </div>
             </div>
-            <div class="tab-pane" id="bottom-justified-tab15">
+            <div className="tab-pane" id="bottom-justified-tab15">
               <div className="gen-form border-bottom border-2 border-dark py-4">
                 <div className="row align-items-start">
                   <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 border-end border-2">
@@ -1160,7 +1160,7 @@ const EPrescription = () => {
                 </button>
               </div>
             </div>
-            <div class="tab-pane" id="bottom-justified-tab16">
+            <div className="tab-pane" id="bottom-justified-tab16">
               <div className="gen-form border-bottom border-2 border-dark py-4">
                 <div className="row align-items-start">
                   <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 border-end border-2">
@@ -1357,7 +1357,7 @@ const EPrescription = () => {
                 </button>
               </div>
             </div>
-            <div class="tab-pane" id="bottom-justified-tab17">
+            <div className="tab-pane" id="bottom-justified-tab17">
               <div className="gen-form border-bottom border-2 border-dark py-4">
                 <div className="row align-items-start">
                   <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 border-end border-2">
