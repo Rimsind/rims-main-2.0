@@ -242,7 +242,10 @@ const Index = () => {
                         })
                         .slice(`${startValue}`, `${endValue}`)
                         .map((item, index) => (
-                          <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                          <div
+                            className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3"
+                            key={index}
+                          >
                             <div className="profile-widget me-3">
                               <div className="doc-img">
                                 <Link href="#">
