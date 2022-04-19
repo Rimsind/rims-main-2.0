@@ -108,14 +108,16 @@ const Login = () => {
               <div className="tab-pane show active" id="bottom-justified-tab1">
                 <div className="row align-items-center">
                   <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
-                    <Image
-                      src="/assets/images/doctor-login.png"
-                      height="500px"
-                      width="500px"
-                    />
+                    <div className="login-image-left-side">
+                      <Image
+                        src="/assets/images/doctor-login.png"
+                        height="500px"
+                        width="500px"
+                      />
+                    </div>
                   </div>
                   <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
-                    <div className="polyclinics-login-form p-5 border border-1 rounded">
+                    <div className="polyclinics-login-form border border-1 rounded">
                       <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="mb-3">
                           <label

@@ -4183,3 +4183,29 @@ table.rehab-com-table {
   height: 500px;
   overflow-y: scroll;
 }
+
+/* Login Image Left side Custom Style Start Here */
+@media screen and (min-width: 300px) and (max-width: 900px) {
+  .login-image-left-side {
+    display: none;
+  }
+}
+.doctor-login-form,
+.doctor-signup-form,
+.nursing-login-form,
+.nursing-signup-form,
+.polyclinics-login-form,
+.polyclinics-signup-form {
+  padding: 2rem;
+}
+@media screen and (min-width: 300px) and (max-width: 900px) {
+  .doctor-login-form,
+  .doctor-signup-form,
+  .nursing-login-form,
+  .nursing-signup-form,
+  .polyclinics-login-form,
+  .polyclinics-signup-form {
+    padding: 1rem;
+  }
+}
+/* Login Image Left Side Custom Style End Here */

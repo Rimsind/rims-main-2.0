@@ -162,7 +162,7 @@ const Index = () => {
                 </div>
               </div>
               <div className="col-md-12 col-lg-8 col-xl-9">
-                {/* <div className="row">
+                <div className="row">
                   {doctors ? (
                     <>
                       {doctors
@@ -326,861 +326,849 @@ const Index = () => {
                       <ListingPageLoader />
                     </>
                   )}
-                </div> */}
-                <div className="row">
-                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
-                    <div className="profile-widget me-3">
-                      <div className="doc-img">
-                        <Link href="#">
-                          <a>
-                            <Image
-                              height={280}
-                              width={300}
-                              className="img-fluid"
-                              alt="User Image"
-                              src={"/assets/images/alternate/doctor-male.png"}
-                            />
-                          </a>
-                        </Link>
-                      </div>
-                      <div className="pro-content">
-                        <h3 className="title">
-                          <Link href="#">
-                            <a>Dr. Demo Name</a>
-                          </Link>
-                          <i className="fas fa-check-circle verified"></i>
-                        </h3>
-                        {/* <p className="speciality">10 years experience,</p> */}
-
-                        <ul className="available-info">
-                          <li>
-                            <i className="fas fa-certificate "></i> MBBS
-                          </li>
-                          <li>
-                            <div className="row align-items-center">
-                              <div className="col-6">
-                                <Image
-                                  height="20"
-                                  width="20"
-                                  src={
-                                    "/assets/images/alternate/alt-specialty.png"
-                                  }
-                                  alt=""
-                                />{" "}
-                                Medicine
-                              </div>
-                              <div className="col-6">
-                                <p>
-                                  <span className="fw-bold me-1 text-info">
-                                    Experience:
-                                  </span>
-                                  <span>10 Yrs.</span>
-                                </p>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
-                            ₹ 200 - ₹500
-                            <i
-                              className="fas fa-info-circle"
-                              data-bs-toggle="tooltip"
-                              title="Lorem Ipsum"
-                            ></i>
-                          </li>
-                        </ul>
-                        <div className="row row-sm">
-                          <div className="col-12">
-                            <Link href="#">
-                              <a className="btn book-btn">View Profile</a>
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
-                    <div className="profile-widget me-3">
-                      <div className="doc-img">
-                        <Link href="#">
-                          <a>
-                            <Image
-                              height={280}
-                              width={300}
-                              className="img-fluid"
-                              alt="User Image"
-                              src={"/assets/images/alternate/doctor-male.png"}
-                            />
-                          </a>
-                        </Link>
-                      </div>
-                      <div className="pro-content">
-                        <h3 className="title">
-                          <Link href="#">
-                            <a>Dr. Demo Name</a>
-                          </Link>
-                          <i className="fas fa-check-circle verified"></i>
-                        </h3>
-                        {/* <p className="speciality">10 years experience,</p> */}
-
-                        <ul className="available-info">
-                          <li>
-                            <i className="fas fa-certificate "></i> MBBS
-                          </li>
-                          <li>
-                            <div className="row align-items-center">
-                              <div className="col-6">
-                                <Image
-                                  height="20"
-                                  width="20"
-                                  src={
-                                    "/assets/images/alternate/alt-specialty.png"
-                                  }
-                                  alt=""
-                                />{" "}
-                                Medicine
-                              </div>
-                              <div className="col-6">
-                                <p>
-                                  <span className="fw-bold me-1 text-info">
-                                    Experience:
-                                  </span>
-                                  <span>10 Yrs.</span>
-                                </p>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
-                            ₹ 200 - ₹500
-                            <i
-                              className="fas fa-info-circle"
-                              data-bs-toggle="tooltip"
-                              title="Lorem Ipsum"
-                            ></i>
-                          </li>
-                        </ul>
-                        <div className="row row-sm">
-                          <div className="col-12">
-                            <Link href="#">
-                              <a className="btn book-btn">View Profile</a>
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
-                    <div className="profile-widget me-3">
-                      <div className="doc-img">
-                        <Link href="#">
-                          <a>
-                            <Image
-                              height={280}
-                              width={300}
-                              className="img-fluid"
-                              alt="User Image"
-                              src={"/assets/images/alternate/doctor-male.png"}
-                            />
-                          </a>
-                        </Link>
-                      </div>
-                      <div className="pro-content">
-                        <h3 className="title">
-                          <Link href="#">
-                            <a>Dr. Demo Name</a>
-                          </Link>
-                          <i className="fas fa-check-circle verified"></i>
-                        </h3>
-                        {/* <p className="speciality">10 years experience,</p> */}
-
-                        <ul className="available-info">
-                          <li>
-                            <i className="fas fa-certificate "></i> MBBS
-                          </li>
-                          <li>
-                            <div className="row align-items-center">
-                              <div className="col-6">
-                                <Image
-                                  height="20"
-                                  width="20"
-                                  src={
-                                    "/assets/images/alternate/alt-specialty.png"
-                                  }
-                                  alt=""
-                                />{" "}
-                                Medicine
-                              </div>
-                              <div className="col-6">
-                                <p>
-                                  <span className="fw-bold me-1 text-info">
-                                    Experience:
-                                  </span>
-                                  <span>10 Yrs.</span>
-                                </p>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
-                            ₹ 200 - ₹500
-                            <i
-                              className="fas fa-info-circle"
-                              data-bs-toggle="tooltip"
-                              title="Lorem Ipsum"
-                            ></i>
-                          </li>
-                        </ul>
-                        <div className="row row-sm">
-                          <div className="col-12">
-                            <Link href="#">
-                              <a className="btn book-btn">View Profile</a>
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
-                    <div className="profile-widget me-3">
-                      <div className="doc-img">
-                        <Link href="#">
-                          <a>
-                            <Image
-                              height={280}
-                              width={300}
-                              className="img-fluid"
-                              alt="User Image"
-                              src={"/assets/images/alternate/doctor-male.png"}
-                            />
-                          </a>
-                        </Link>
-                      </div>
-                      <div className="pro-content">
-                        <h3 className="title">
-                          <Link href="#">
-                            <a>Dr. Demo Name</a>
-                          </Link>
-                          <i className="fas fa-check-circle verified"></i>
-                        </h3>
-                        {/* <p className="speciality">10 years experience,</p> */}
-
-                        <ul className="available-info">
-                          <li>
-                            <i className="fas fa-certificate "></i> MBBS
-                          </li>
-                          <li>
-                            <div className="row align-items-center">
-                              <div className="col-6">
-                                <Image
-                                  height="20"
-                                  width="20"
-                                  src={
-                                    "/assets/images/alternate/alt-specialty.png"
-                                  }
-                                  alt=""
-                                />{" "}
-                                Medicine
-                              </div>
-                              <div className="col-6">
-                                <p>
-                                  <span className="fw-bold me-1 text-info">
-                                    Experience:
-                                  </span>
-                                  <span>10 Yrs.</span>
-                                </p>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
-                            ₹ 200 - ₹500
-                            <i
-                              className="fas fa-info-circle"
-                              data-bs-toggle="tooltip"
-                              title="Lorem Ipsum"
-                            ></i>
-                          </li>
-                        </ul>
-                        <div className="row row-sm">
-                          <div className="col-12">
-                            <Link href="#">
-                              <a className="btn book-btn">View Profile</a>
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
-                    <div className="profile-widget me-3">
-                      <div className="doc-img">
-                        <Link href="#">
-                          <a>
-                            <Image
-                              height={280}
-                              width={300}
-                              className="img-fluid"
-                              alt="User Image"
-                              src={"/assets/images/alternate/doctor-male.png"}
-                            />
-                          </a>
-                        </Link>
-                      </div>
-                      <div className="pro-content">
-                        <h3 className="title">
-                          <Link href="#">
-                            <a>Dr. Demo Name</a>
-                          </Link>
-                          <i className="fas fa-check-circle verified"></i>
-                        </h3>
-                        {/* <p className="speciality">10 years experience,</p> */}
-
-                        <ul className="available-info">
-                          <li>
-                            <i className="fas fa-certificate "></i> MBBS
-                          </li>
-                          <li>
-                            <div className="row align-items-center">
-                              <div className="col-6">
-                                <Image
-                                  height="20"
-                                  width="20"
-                                  src={
-                                    "/assets/images/alternate/alt-specialty.png"
-                                  }
-                                  alt=""
-                                />{" "}
-                                Medicine
-                              </div>
-                              <div className="col-6">
-                                <p>
-                                  <span className="fw-bold me-1 text-info">
-                                    Experience:
-                                  </span>
-                                  <span>10 Yrs.</span>
-                                </p>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
-                            ₹ 200 - ₹500
-                            <i
-                              className="fas fa-info-circle"
-                              data-bs-toggle="tooltip"
-                              title="Lorem Ipsum"
-                            ></i>
-                          </li>
-                        </ul>
-                        <div className="row row-sm">
-                          <div className="col-12">
-                            <Link href="#">
-                              <a className="btn book-btn">View Profile</a>
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
-                    <div className="profile-widget me-3">
-                      <div className="doc-img">
-                        <Link href="#">
-                          <a>
-                            <Image
-                              height={280}
-                              width={300}
-                              className="img-fluid"
-                              alt="User Image"
-                              src={"/assets/images/alternate/doctor-male.png"}
-                            />
-                          </a>
-                        </Link>
-                      </div>
-                      <div className="pro-content">
-                        <h3 className="title">
-                          <Link href="#">
-                            <a>Dr. Demo Name</a>
-                          </Link>
-                          <i className="fas fa-check-circle verified"></i>
-                        </h3>
-                        {/* <p className="speciality">10 years experience,</p> */}
-
-                        <ul className="available-info">
-                          <li>
-                            <i className="fas fa-certificate "></i> MBBS
-                          </li>
-                          <li>
-                            <div className="row align-items-center">
-                              <div className="col-6">
-                                <Image
-                                  height="20"
-                                  width="20"
-                                  src={
-                                    "/assets/images/alternate/alt-specialty.png"
-                                  }
-                                  alt=""
-                                />{" "}
-                                Medicine
-                              </div>
-                              <div className="col-6">
-                                <p>
-                                  <span className="fw-bold me-1 text-info">
-                                    Experience:
-                                  </span>
-                                  <span>10 Yrs.</span>
-                                </p>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
-                            ₹ 200 - ₹500
-                            <i
-                              className="fas fa-info-circle"
-                              data-bs-toggle="tooltip"
-                              title="Lorem Ipsum"
-                            ></i>
-                          </li>
-                        </ul>
-                        <div className="row row-sm">
-                          <div className="col-12">
-                            <Link href="#">
-                              <a className="btn book-btn">View Profile</a>
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
-                    <div className="profile-widget me-3">
-                      <div className="doc-img">
-                        <Link href="#">
-                          <a>
-                            <Image
-                              height={280}
-                              width={300}
-                              className="img-fluid"
-                              alt="User Image"
-                              src={"/assets/images/alternate/doctor-male.png"}
-                            />
-                          </a>
-                        </Link>
-                      </div>
-                      <div className="pro-content">
-                        <h3 className="title">
-                          <Link href="#">
-                            <a>Dr. Demo Name</a>
-                          </Link>
-                          <i className="fas fa-check-circle verified"></i>
-                        </h3>
-                        {/* <p className="speciality">10 years experience,</p> */}
-
-                        <ul className="available-info">
-                          <li>
-                            <i className="fas fa-certificate "></i> MBBS
-                          </li>
-                          <li>
-                            <div className="row align-items-center">
-                              <div className="col-6">
-                                <Image
-                                  height="20"
-                                  width="20"
-                                  src={
-                                    "/assets/images/alternate/alt-specialty.png"
-                                  }
-                                  alt=""
-                                />{" "}
-                                Medicine
-                              </div>
-                              <div className="col-6">
-                                <p>
-                                  <span className="fw-bold me-1 text-info">
-                                    Experience:
-                                  </span>
-                                  <span>10 Yrs.</span>
-                                </p>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
-                            ₹ 200 - ₹500
-                            <i
-                              className="fas fa-info-circle"
-                              data-bs-toggle="tooltip"
-                              title="Lorem Ipsum"
-                            ></i>
-                          </li>
-                        </ul>
-                        <div className="row row-sm">
-                          <div className="col-12">
-                            <Link href="#">
-                              <a className="btn book-btn">View Profile</a>
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
-                    <div className="profile-widget me-3">
-                      <div className="doc-img">
-                        <Link href="#">
-                          <a>
-                            <Image
-                              height={280}
-                              width={300}
-                              className="img-fluid"
-                              alt="User Image"
-                              src={"/assets/images/alternate/doctor-male.png"}
-                            />
-                          </a>
-                        </Link>
-                      </div>
-                      <div className="pro-content">
-                        <h3 className="title">
-                          <Link href="#">
-                            <a>Dr. Demo Name</a>
-                          </Link>
-                          <i className="fas fa-check-circle verified"></i>
-                        </h3>
-                        {/* <p className="speciality">10 years experience,</p> */}
-
-                        <ul className="available-info">
-                          <li>
-                            <i className="fas fa-certificate "></i> MBBS
-                          </li>
-                          <li>
-                            <div className="row align-items-center">
-                              <div className="col-6">
-                                <Image
-                                  height="20"
-                                  width="20"
-                                  src={
-                                    "/assets/images/alternate/alt-specialty.png"
-                                  }
-                                  alt=""
-                                />{" "}
-                                Medicine
-                              </div>
-                              <div className="col-6">
-                                <p>
-                                  <span className="fw-bold me-1 text-info">
-                                    Experience:
-                                  </span>
-                                  <span>10 Yrs.</span>
-                                </p>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
-                            ₹ 200 - ₹500
-                            <i
-                              className="fas fa-info-circle"
-                              data-bs-toggle="tooltip"
-                              title="Lorem Ipsum"
-                            ></i>
-                          </li>
-                        </ul>
-                        <div className="row row-sm">
-                          <div className="col-12">
-                            <Link href="#">
-                              <a className="btn book-btn">View Profile</a>
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
-                    <div className="profile-widget me-3">
-                      <div className="doc-img">
-                        <Link href="#">
-                          <a>
-                            <Image
-                              height={280}
-                              width={300}
-                              className="img-fluid"
-                              alt="User Image"
-                              src={"/assets/images/alternate/doctor-male.png"}
-                            />
-                          </a>
-                        </Link>
-                      </div>
-                      <div className="pro-content">
-                        <h3 className="title">
-                          <Link href="#">
-                            <a>Dr. Demo Name</a>
-                          </Link>
-                          <i className="fas fa-check-circle verified"></i>
-                        </h3>
-                        {/* <p className="speciality">10 years experience,</p> */}
-
-                        <ul className="available-info">
-                          <li>
-                            <i className="fas fa-certificate "></i> MBBS
-                          </li>
-                          <li>
-                            <div className="row align-items-center">
-                              <div className="col-6">
-                                <Image
-                                  height="20"
-                                  width="20"
-                                  src={
-                                    "/assets/images/alternate/alt-specialty.png"
-                                  }
-                                  alt=""
-                                />{" "}
-                                Medicine
-                              </div>
-                              <div className="col-6">
-                                <p>
-                                  <span className="fw-bold me-1 text-info">
-                                    Experience:
-                                  </span>
-                                  <span>10 Yrs.</span>
-                                </p>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
-                            ₹ 200 - ₹500
-                            <i
-                              className="fas fa-info-circle"
-                              data-bs-toggle="tooltip"
-                              title="Lorem Ipsum"
-                            ></i>
-                          </li>
-                        </ul>
-                        <div className="row row-sm">
-                          <div className="col-12">
-                            <Link href="#">
-                              <a className="btn book-btn">View Profile</a>
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
-                    <div className="profile-widget me-3">
-                      <div className="doc-img">
-                        <Link href="#">
-                          <a>
-                            <Image
-                              height={280}
-                              width={300}
-                              className="img-fluid"
-                              alt="User Image"
-                              src={"/assets/images/alternate/doctor-male.png"}
-                            />
-                          </a>
-                        </Link>
-                      </div>
-                      <div className="pro-content">
-                        <h3 className="title">
-                          <Link href="#">
-                            <a>Dr. Demo Name</a>
-                          </Link>
-                          <i className="fas fa-check-circle verified"></i>
-                        </h3>
-                        {/* <p className="speciality">10 years experience,</p> */}
-
-                        <ul className="available-info">
-                          <li>
-                            <i className="fas fa-certificate "></i> MBBS
-                          </li>
-                          <li>
-                            <div className="row align-items-center">
-                              <div className="col-6">
-                                <Image
-                                  height="20"
-                                  width="20"
-                                  src={
-                                    "/assets/images/alternate/alt-specialty.png"
-                                  }
-                                  alt=""
-                                />{" "}
-                                Medicine
-                              </div>
-                              <div className="col-6">
-                                <p>
-                                  <span className="fw-bold me-1 text-info">
-                                    Experience:
-                                  </span>
-                                  <span>10 Yrs.</span>
-                                </p>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
-                            ₹ 200 - ₹500
-                            <i
-                              className="fas fa-info-circle"
-                              data-bs-toggle="tooltip"
-                              title="Lorem Ipsum"
-                            ></i>
-                          </li>
-                        </ul>
-                        <div className="row row-sm">
-                          <div className="col-12">
-                            <Link href="#">
-                              <a className="btn book-btn">View Profile</a>
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
-                    <div className="profile-widget me-3">
-                      <div className="doc-img">
-                        <Link href="#">
-                          <a>
-                            <Image
-                              height={280}
-                              width={300}
-                              className="img-fluid"
-                              alt="User Image"
-                              src={"/assets/images/alternate/doctor-male.png"}
-                            />
-                          </a>
-                        </Link>
-                      </div>
-                      <div className="pro-content">
-                        <h3 className="title">
-                          <Link href="#">
-                            <a>Dr. Demo Name</a>
-                          </Link>
-                          <i className="fas fa-check-circle verified"></i>
-                        </h3>
-                        {/* <p className="speciality">10 years experience,</p> */}
-
-                        <ul className="available-info">
-                          <li>
-                            <i className="fas fa-certificate "></i> MBBS
-                          </li>
-                          <li>
-                            <div className="row align-items-center">
-                              <div className="col-6">
-                                <Image
-                                  height="20"
-                                  width="20"
-                                  src={
-                                    "/assets/images/alternate/alt-specialty.png"
-                                  }
-                                  alt=""
-                                />{" "}
-                                Medicine
-                              </div>
-                              <div className="col-6">
-                                <p>
-                                  <span className="fw-bold me-1 text-info">
-                                    Experience:
-                                  </span>
-                                  <span>10 Yrs.</span>
-                                </p>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
-                            ₹ 200 - ₹500
-                            <i
-                              className="fas fa-info-circle"
-                              data-bs-toggle="tooltip"
-                              title="Lorem Ipsum"
-                            ></i>
-                          </li>
-                        </ul>
-                        <div className="row row-sm">
-                          <div className="col-12">
-                            <Link href="#">
-                              <a className="btn book-btn">View Profile</a>
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
-                    <div className="profile-widget me-3">
-                      <div className="doc-img">
-                        <Link href="#">
-                          <a>
-                            <Image
-                              height={280}
-                              width={300}
-                              className="img-fluid"
-                              alt="User Image"
-                              src={"/assets/images/alternate/doctor-male.png"}
-                            />
-                          </a>
-                        </Link>
-                      </div>
-                      <div className="pro-content">
-                        <h3 className="title">
-                          <Link href="#">
-                            <a>Dr. Demo Name</a>
-                          </Link>
-                          <i className="fas fa-check-circle verified"></i>
-                        </h3>
-                        {/* <p className="speciality">10 years experience,</p> */}
-
-                        <ul className="available-info">
-                          <li>
-                            <i className="fas fa-certificate "></i> MBBS
-                          </li>
-                          <li>
-                            <div className="row align-items-center">
-                              <div className="col-6">
-                                <Image
-                                  height="20"
-                                  width="20"
-                                  src={
-                                    "/assets/images/alternate/alt-specialty.png"
-                                  }
-                                  alt=""
-                                />{" "}
-                                Medicine
-                              </div>
-                              <div className="col-6">
-                                <p>
-                                  <span className="fw-bold me-1 text-info">
-                                    Experience:
-                                  </span>
-                                  <span>10 Yrs.</span>
-                                </p>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
-                            ₹ 200 - ₹500
-                            <i
-                              className="fas fa-info-circle"
-                              data-bs-toggle="tooltip"
-                              title="Lorem Ipsum"
-                            ></i>
-                          </li>
-                        </ul>
-                        <div className="row row-sm">
-                          <div className="col-12">
-                            <Link href="#">
-                              <a className="btn book-btn">View Profile</a>
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
+                {/* <div className="row">
+                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                    <div className="profile-widget me-3">
+                      <div className="doc-img">
+                        <Link href="#">
+                          <a>
+                            <Image
+                              height={280}
+                              width={300}
+                              className="img-fluid"
+                              alt="User Image"
+                              src={"/assets/images/alternate/doctor-male.png"}
+                            />
+                          </a>
+                        </Link>
+                      </div>
+                      <div className="pro-content">
+                        <h3 className="title">
+                          <Link href="#">
+                            <a>Dr. Demo Name</a>
+                          </Link>
+                          <i className="fas fa-check-circle verified"></i>
+                        </h3>
+
+                        <ul className="available-info">
+                          <li>
+                            <i className="fas fa-certificate "></i> MBBS
+                          </li>
+                          <li>
+                            <div className="row align-items-baseline">
+                              <div className="col-6">
+                                <Image
+                                  height="20"
+                                  width="20"
+                                  src={
+                                    "/assets/images/alternate/alt-specialty.png"
+                                  }
+                                  alt=""
+                                />{" "}
+                                Medicine
+                              </div>
+                              <div className="col-6">
+                                <p>
+                                  <span className="fw-bold me-1 text-info">
+                                    Experience:
+                                  </span>
+                                  <span>10 Yrs.</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
+                            ₹ 200 - ₹500
+                            <i
+                              className="fas fa-info-circle"
+                              data-bs-toggle="tooltip"
+                              title="Lorem Ipsum"
+                            ></i>
+                          </li>
+                        </ul>
+                        <div className="row row-sm">
+                          <div className="col-12">
+                            <Link href="#">
+                              <a className="btn book-btn">View Profile</a>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                    <div className="profile-widget me-3">
+                      <div className="doc-img">
+                        <Link href="#">
+                          <a>
+                            <Image
+                              height={280}
+                              width={300}
+                              className="img-fluid"
+                              alt="User Image"
+                              src={"/assets/images/alternate/doctor-male.png"}
+                            />
+                          </a>
+                        </Link>
+                      </div>
+                      <div className="pro-content">
+                        <h3 className="title">
+                          <Link href="#">
+                            <a>Dr. Demo Name</a>
+                          </Link>
+                          <i className="fas fa-check-circle verified"></i>
+                        </h3>
+
+                        <ul className="available-info">
+                          <li>
+                            <i className="fas fa-certificate "></i> MBBS
+                          </li>
+                          <li>
+                            <div className="row align-items-baseline">
+                              <div className="col-6">
+                                <Image
+                                  height="20"
+                                  width="20"
+                                  src={
+                                    "/assets/images/alternate/alt-specialty.png"
+                                  }
+                                  alt=""
+                                />{" "}
+                                Medicine
+                              </div>
+                              <div className="col-6">
+                                <p>
+                                  <span className="fw-bold me-1 text-info">
+                                    Experience:
+                                  </span>
+                                  <span>10 Yrs.</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
+                            ₹ 200 - ₹500
+                            <i
+                              className="fas fa-info-circle"
+                              data-bs-toggle="tooltip"
+                              title="Lorem Ipsum"
+                            ></i>
+                          </li>
+                        </ul>
+                        <div className="row row-sm">
+                          <div className="col-12">
+                            <Link href="#">
+                              <a className="btn book-btn">View Profile</a>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                    <div className="profile-widget me-3">
+                      <div className="doc-img">
+                        <Link href="#">
+                          <a>
+                            <Image
+                              height={280}
+                              width={300}
+                              className="img-fluid"
+                              alt="User Image"
+                              src={"/assets/images/alternate/doctor-male.png"}
+                            />
+                          </a>
+                        </Link>
+                      </div>
+                      <div className="pro-content">
+                        <h3 className="title">
+                          <Link href="#">
+                            <a>Dr. Demo Name</a>
+                          </Link>
+                          <i className="fas fa-check-circle verified"></i>
+                        </h3>
+
+                        <ul className="available-info">
+                          <li>
+                            <i className="fas fa-certificate "></i> MBBS
+                          </li>
+                          <li>
+                            <div className="row align-items-baseline">
+                              <div className="col-6">
+                                <Image
+                                  height="20"
+                                  width="20"
+                                  src={
+                                    "/assets/images/alternate/alt-specialty.png"
+                                  }
+                                  alt=""
+                                />{" "}
+                                Medicine
+                              </div>
+                              <div className="col-6">
+                                <p>
+                                  <span className="fw-bold me-1 text-info">
+                                    Experience:
+                                  </span>
+                                  <span>10 Yrs.</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
+                            ₹ 200 - ₹500
+                            <i
+                              className="fas fa-info-circle"
+                              data-bs-toggle="tooltip"
+                              title="Lorem Ipsum"
+                            ></i>
+                          </li>
+                        </ul>
+                        <div className="row row-sm">
+                          <div className="col-12">
+                            <Link href="#">
+                              <a className="btn book-btn">View Profile</a>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                    <div className="profile-widget me-3">
+                      <div className="doc-img">
+                        <Link href="#">
+                          <a>
+                            <Image
+                              height={280}
+                              width={300}
+                              className="img-fluid"
+                              alt="User Image"
+                              src={"/assets/images/alternate/doctor-male.png"}
+                            />
+                          </a>
+                        </Link>
+                      </div>
+                      <div className="pro-content">
+                        <h3 className="title">
+                          <Link href="#">
+                            <a>Dr. Demo Name</a>
+                          </Link>
+                          <i className="fas fa-check-circle verified"></i>
+                        </h3>
+
+                        <ul className="available-info">
+                          <li>
+                            <i className="fas fa-certificate "></i> MBBS
+                          </li>
+                          <li>
+                            <div className="row align-items-baseline">
+                              <div className="col-6">
+                                <Image
+                                  height="20"
+                                  width="20"
+                                  src={
+                                    "/assets/images/alternate/alt-specialty.png"
+                                  }
+                                  alt=""
+                                />{" "}
+                                Medicine
+                              </div>
+                              <div className="col-6">
+                                <p>
+                                  <span className="fw-bold me-1 text-info">
+                                    Experience:
+                                  </span>
+                                  <span>10 Yrs.</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
+                            ₹ 200 - ₹500
+                            <i
+                              className="fas fa-info-circle"
+                              data-bs-toggle="tooltip"
+                              title="Lorem Ipsum"
+                            ></i>
+                          </li>
+                        </ul>
+                        <div className="row row-sm">
+                          <div className="col-12">
+                            <Link href="#">
+                              <a className="btn book-btn">View Profile</a>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                    <div className="profile-widget me-3">
+                      <div className="doc-img">
+                        <Link href="#">
+                          <a>
+                            <Image
+                              height={280}
+                              width={300}
+                              className="img-fluid"
+                              alt="User Image"
+                              src={"/assets/images/alternate/doctor-male.png"}
+                            />
+                          </a>
+                        </Link>
+                      </div>
+                      <div className="pro-content">
+                        <h3 className="title">
+                          <Link href="#">
+                            <a>Dr. Demo Name</a>
+                          </Link>
+                          <i className="fas fa-check-circle verified"></i>
+                        </h3>
+
+                        <ul className="available-info">
+                          <li>
+                            <i className="fas fa-certificate "></i> MBBS
+                          </li>
+                          <li>
+                            <div className="row align-items-baseline">
+                              <div className="col-6">
+                                <Image
+                                  height="20"
+                                  width="20"
+                                  src={
+                                    "/assets/images/alternate/alt-specialty.png"
+                                  }
+                                  alt=""
+                                />{" "}
+                                Medicine
+                              </div>
+                              <div className="col-6">
+                                <p>
+                                  <span className="fw-bold me-1 text-info">
+                                    Experience:
+                                  </span>
+                                  <span>10 Yrs.</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
+                            ₹ 200 - ₹500
+                            <i
+                              className="fas fa-info-circle"
+                              data-bs-toggle="tooltip"
+                              title="Lorem Ipsum"
+                            ></i>
+                          </li>
+                        </ul>
+                        <div className="row row-sm">
+                          <div className="col-12">
+                            <Link href="#">
+                              <a className="btn book-btn">View Profile</a>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                    <div className="profile-widget me-3">
+                      <div className="doc-img">
+                        <Link href="#">
+                          <a>
+                            <Image
+                              height={280}
+                              width={300}
+                              className="img-fluid"
+                              alt="User Image"
+                              src={"/assets/images/alternate/doctor-male.png"}
+                            />
+                          </a>
+                        </Link>
+                      </div>
+                      <div className="pro-content">
+                        <h3 className="title">
+                          <Link href="#">
+                            <a>Dr. Demo Name</a>
+                          </Link>
+                          <i className="fas fa-check-circle verified"></i>
+                        </h3>
+
+                        <ul className="available-info">
+                          <li>
+                            <i className="fas fa-certificate "></i> MBBS
+                          </li>
+                          <li>
+                            <div className="row align-items-baseline">
+                              <div className="col-6">
+                                <Image
+                                  height="20"
+                                  width="20"
+                                  src={
+                                    "/assets/images/alternate/alt-specialty.png"
+                                  }
+                                  alt=""
+                                />{" "}
+                                Medicine
+                              </div>
+                              <div className="col-6">
+                                <p>
+                                  <span className="fw-bold me-1 text-info">
+                                    Experience:
+                                  </span>
+                                  <span>10 Yrs.</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
+                            ₹ 200 - ₹500
+                            <i
+                              className="fas fa-info-circle"
+                              data-bs-toggle="tooltip"
+                              title="Lorem Ipsum"
+                            ></i>
+                          </li>
+                        </ul>
+                        <div className="row row-sm">
+                          <div className="col-12">
+                            <Link href="#">
+                              <a className="btn book-btn">View Profile</a>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                    <div className="profile-widget me-3">
+                      <div className="doc-img">
+                        <Link href="#">
+                          <a>
+                            <Image
+                              height={280}
+                              width={300}
+                              className="img-fluid"
+                              alt="User Image"
+                              src={"/assets/images/alternate/doctor-male.png"}
+                            />
+                          </a>
+                        </Link>
+                      </div>
+                      <div className="pro-content">
+                        <h3 className="title">
+                          <Link href="#">
+                            <a>Dr. Demo Name</a>
+                          </Link>
+                          <i className="fas fa-check-circle verified"></i>
+                        </h3>
+
+                        <ul className="available-info">
+                          <li>
+                            <i className="fas fa-certificate "></i> MBBS
+                          </li>
+                          <li>
+                            <div className="row align-items-baseline">
+                              <div className="col-6">
+                                <Image
+                                  height="20"
+                                  width="20"
+                                  src={
+                                    "/assets/images/alternate/alt-specialty.png"
+                                  }
+                                  alt=""
+                                />{" "}
+                                Medicine
+                              </div>
+                              <div className="col-6">
+                                <p>
+                                  <span className="fw-bold me-1 text-info">
+                                    Experience:
+                                  </span>
+                                  <span>10 Yrs.</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
+                            ₹ 200 - ₹500
+                            <i
+                              className="fas fa-info-circle"
+                              data-bs-toggle="tooltip"
+                              title="Lorem Ipsum"
+                            ></i>
+                          </li>
+                        </ul>
+                        <div className="row row-sm">
+                          <div className="col-12">
+                            <Link href="#">
+                              <a className="btn book-btn">View Profile</a>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                    <div className="profile-widget me-3">
+                      <div className="doc-img">
+                        <Link href="#">
+                          <a>
+                            <Image
+                              height={280}
+                              width={300}
+                              className="img-fluid"
+                              alt="User Image"
+                              src={"/assets/images/alternate/doctor-male.png"}
+                            />
+                          </a>
+                        </Link>
+                      </div>
+                      <div className="pro-content">
+                        <h3 className="title">
+                          <Link href="#">
+                            <a>Dr. Demo Name</a>
+                          </Link>
+                          <i className="fas fa-check-circle verified"></i>
+                        </h3>
+
+                        <ul className="available-info">
+                          <li>
+                            <i className="fas fa-certificate "></i> MBBS
+                          </li>
+                          <li>
+                            <div className="row align-items-baseline">
+                              <div className="col-6">
+                                <Image
+                                  height="20"
+                                  width="20"
+                                  src={
+                                    "/assets/images/alternate/alt-specialty.png"
+                                  }
+                                  alt=""
+                                />{" "}
+                                Medicine
+                              </div>
+                              <div className="col-6">
+                                <p>
+                                  <span className="fw-bold me-1 text-info">
+                                    Experience:
+                                  </span>
+                                  <span>10 Yrs.</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
+                            ₹ 200 - ₹500
+                            <i
+                              className="fas fa-info-circle"
+                              data-bs-toggle="tooltip"
+                              title="Lorem Ipsum"
+                            ></i>
+                          </li>
+                        </ul>
+                        <div className="row row-sm">
+                          <div className="col-12">
+                            <Link href="#">
+                              <a className="btn book-btn">View Profile</a>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                    <div className="profile-widget me-3">
+                      <div className="doc-img">
+                        <Link href="#">
+                          <a>
+                            <Image
+                              height={280}
+                              width={300}
+                              className="img-fluid"
+                              alt="User Image"
+                              src={"/assets/images/alternate/doctor-male.png"}
+                            />
+                          </a>
+                        </Link>
+                      </div>
+                      <div className="pro-content">
+                        <h3 className="title">
+                          <Link href="#">
+                            <a>Dr. Demo Name</a>
+                          </Link>
+                          <i className="fas fa-check-circle verified"></i>
+                        </h3>
+
+                        <ul className="available-info">
+                          <li>
+                            <i className="fas fa-certificate "></i> MBBS
+                          </li>
+                          <li>
+                            <div className="row align-items-baseline">
+                              <div className="col-6">
+                                <Image
+                                  height="20"
+                                  width="20"
+                                  src={
+                                    "/assets/images/alternate/alt-specialty.png"
+                                  }
+                                  alt=""
+                                />{" "}
+                                Medicine
+                              </div>
+                              <div className="col-6">
+                                <p>
+                                  <span className="fw-bold me-1 text-info">
+                                    Experience:
+                                  </span>
+                                  <span>10 Yrs.</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
+                            ₹ 200 - ₹500
+                            <i
+                              className="fas fa-info-circle"
+                              data-bs-toggle="tooltip"
+                              title="Lorem Ipsum"
+                            ></i>
+                          </li>
+                        </ul>
+                        <div className="row row-sm">
+                          <div className="col-12">
+                            <Link href="#">
+                              <a className="btn book-btn">View Profile</a>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                    <div className="profile-widget me-3">
+                      <div className="doc-img">
+                        <Link href="#">
+                          <a>
+                            <Image
+                              height={280}
+                              width={300}
+                              className="img-fluid"
+                              alt="User Image"
+                              src={"/assets/images/alternate/doctor-male.png"}
+                            />
+                          </a>
+                        </Link>
+                      </div>
+                      <div className="pro-content">
+                        <h3 className="title">
+                          <Link href="#">
+                            <a>Dr. Demo Name</a>
+                          </Link>
+                          <i className="fas fa-check-circle verified"></i>
+                        </h3>
+
+                        <ul className="available-info">
+                          <li>
+                            <i className="fas fa-certificate "></i> MBBS
+                          </li>
+                          <li>
+                            <div className="row align-items-baseline">
+                              <div className="col-6">
+                                <Image
+                                  height="20"
+                                  width="20"
+                                  src={
+                                    "/assets/images/alternate/alt-specialty.png"
+                                  }
+                                  alt=""
+                                />{" "}
+                                Medicine
+                              </div>
+                              <div className="col-6">
+                                <p>
+                                  <span className="fw-bold me-1 text-info">
+                                    Experience:
+                                  </span>
+                                  <span>10 Yrs.</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
+                            ₹ 200 - ₹500
+                            <i
+                              className="fas fa-info-circle"
+                              data-bs-toggle="tooltip"
+                              title="Lorem Ipsum"
+                            ></i>
+                          </li>
+                        </ul>
+                        <div className="row row-sm">
+                          <div className="col-12">
+                            <Link href="#">
+                              <a className="btn book-btn">View Profile</a>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                    <div className="profile-widget me-3">
+                      <div className="doc-img">
+                        <Link href="#">
+                          <a>
+                            <Image
+                              height={280}
+                              width={300}
+                              className="img-fluid"
+                              alt="User Image"
+                              src={"/assets/images/alternate/doctor-male.png"}
+                            />
+                          </a>
+                        </Link>
+                      </div>
+                      <div className="pro-content">
+                        <h3 className="title">
+                          <Link href="#">
+                            <a>Dr. Demo Name</a>
+                          </Link>
+                          <i className="fas fa-check-circle verified"></i>
+                        </h3>
+
+                        <ul className="available-info">
+                          <li>
+                            <i className="fas fa-certificate "></i> MBBS
+                          </li>
+                          <li>
+                            <div className="row align-items-baseline">
+                              <div className="col-6">
+                                <Image
+                                  height="20"
+                                  width="20"
+                                  src={
+                                    "/assets/images/alternate/alt-specialty.png"
+                                  }
+                                  alt=""
+                                />{" "}
+                                Medicine
+                              </div>
+                              <div className="col-6">
+                                <p>
+                                  <span className="fw-bold me-1 text-info">
+                                    Experience:
+                                  </span>
+                                  <span>10 Yrs.</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
+                            ₹ 200 - ₹500
+                            <i
+                              className="fas fa-info-circle"
+                              data-bs-toggle="tooltip"
+                              title="Lorem Ipsum"
+                            ></i>
+                          </li>
+                        </ul>
+                        <div className="row row-sm">
+                          <div className="col-12">
+                            <Link href="#">
+                              <a className="btn book-btn">View Profile</a>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                    <div className="profile-widget me-3">
+                      <div className="doc-img">
+                        <Link href="#">
+                          <a>
+                            <Image
+                              height={280}
+                              width={300}
+                              className="img-fluid"
+                              alt="User Image"
+                              src={"/assets/images/alternate/doctor-male.png"}
+                            />
+                          </a>
+                        </Link>
+                      </div>
+                      <div className="pro-content">
+                        <h3 className="title">
+                          <Link href="#">
+                            <a>Dr. Demo Name</a>
+                          </Link>
+                          <i className="fas fa-check-circle verified"></i>
+                        </h3>
+
+                        <ul className="available-info">
+                          <li>
+                            <i className="fas fa-certificate "></i> MBBS
+                          </li>
+                          <li>
+                            <div className="row align-items-baseline">
+                              <div className="col-6">
+                                <Image
+                                  height="20"
+                                  width="20"
+                                  src={
+                                    "/assets/images/alternate/alt-specialty.png"
+                                  }
+                                  alt=""
+                                />{" "}
+                                Medicine
+                              </div>
+                              <div className="col-6">
+                                <p>
+                                  <span className="fw-bold me-1 text-info">
+                                    Experience:
+                                  </span>
+                                  <span>10 Yrs.</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <i className="far fa-money-bill-alt text-primary"></i>{" "}
+                            ₹ 200 - ₹500
+                            <i
+                              className="fas fa-info-circle"
+                              data-bs-toggle="tooltip"
+                              title="Lorem Ipsum"
+                            ></i>
+                          </li>
+                        </ul>
+                        <div className="row row-sm">
+                          <div className="col-12">
+                            <Link href="#">
+                              <a className="btn book-btn">View Profile</a>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> */}
 
                 <div className="user-main-pagination mb-4">
                   <div className="list-pagination">
