@@ -243,7 +243,7 @@ const Index = () => {
                         .slice(`${startValue}`, `${endValue}`)
                         .map((item, index) => (
                           <div
-                            className="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 col-xxl-3"
+                            className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3"
                             key={index}
                           >
                             <div className="profile-widget me-3">
@@ -1173,10 +1173,10 @@ const Index = () => {
                 <div className="user-main-pagination mb-4">
                   <div className="list-pagination">
                     <div className="row">
-                      <div className="col-lg-10"></div>
-                      <div className="col-2">
+                      <div className="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-10"></div>
+                      <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-2">
                         <div className="row">
-                          <div className="col-6 ">
+                          <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-start">
                             {startValue >= 5 ? (
                               <button
                                 className="btn btn-primary"
@@ -1192,7 +1192,7 @@ const Index = () => {
                               </button>
                             )}
                           </div>
-                          <div className="col-6">
+                          <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-end">
                             {doctors?.length - endValue >= 0 ? (
                               <button
                                 className="btn btn-primary"

@@ -25,7 +25,7 @@ const MainHeader = () => {
             </div>
             <div className="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-7 col-xxl-7 mb-2 mb-sm-2 mb-md-2 mb-lg-0 mb-xl-0 mb-xxl-0">
               <div className="row align-items-center justify-content-center">
-                <div className="col-5 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 col-xxl-3 border-end border-1 border-light mb-2 mb-sm-2 mb-md-2 mb-lg-0 mb-xl-0 mb-xxl-0">
+                <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 col-xxl-3 border-end border-1 border-light mb-2 mb-sm-2 mb-md-2 mb-lg-0 mb-xl-0 mb-xxl-0">
                   <div className="topbar-login d-flex align-items-baseline text-light">
                     <div className="topbar-login-icon me-2">
                       <i className="fas fa-lock"></i>
@@ -37,7 +37,7 @@ const MainHeader = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-7 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 border-end border-1 border-light mb-2 mb-sm-2 mb-md-2 mb-lg-0 mb-xl-0 mb-xxl-0">
+                <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 border-end border-1 border-light mb-2 mb-sm-2 mb-md-2 mb-lg-0 mb-xl-0 mb-xxl-0">
                   <div className="topbar-login d-flex align-items-baseline text-light">
                     <div className="topbar-login-icon me-2">
                       <i className="fas fa-lock"></i>
@@ -49,7 +49,7 @@ const MainHeader = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-7 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 border-end border-1 border-light">
+                <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 border-end border-1 border-light">
                   <div className="topbar-login d-flex align-items-baseline text-light">
                     <div className="topbar-login-icon me-2">
                       <i className="fas fa-lock"></i>
@@ -61,7 +61,7 @@ const MainHeader = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-5 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3">
+                <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3">
                   <div className="topbar-login d-flex align-items-baseline text-light">
                     <div className="topbar-login-icon me-2">
                       <i className="fas fa-lock"></i>
