@@ -84,7 +84,7 @@ const Login = () => {
         type: "LOGIN_FAILED",
         payload: error.message
           ? error.message
-          : "Something went wrong, try agin",
+          : "Something went wrong, try again",
       });
     }
   };
