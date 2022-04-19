@@ -26,7 +26,7 @@ const Index = () => {
   return (
     <>
       <div className="main-wrapper">
-        <BreadCrums title="Home / User" title1="User" />
+        <BreadCrums title="Home / Dashboard" title1="Dashboard" />
 
         <div className="content">
           <div className="container-fluid">

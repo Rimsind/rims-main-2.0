@@ -2422,7 +2422,6 @@ span.banner-sub-heading-span {
 
 .section-cta {
   position: relative;
-  background: url(../images/featured-bg.jpg);
   background-position: 50% 0;
   background-size: cover;
   background-repeat: no-repeat;
@@ -4031,6 +4030,7 @@ button.btn-custom-time-slot:visited {
   border: none;
   box-shadow: 0 5px 10px #ccc;
   padding: 10px 20px 10px 20px;
+  z-index: 9999;
 }
 
 .back-to-top:hover {
@@ -4183,3 +4183,29 @@ table.rehab-com-table {
   height: 500px;
   overflow-y: scroll;
 }
+
+/* Login Image Left side Custom Style Start Here */
+@media screen and (min-width: 300px) and (max-width: 900px) {
+  .login-image-left-side {
+    display: none;
+  }
+}
+.doctor-login-form,
+.doctor-signup-form,
+.nursing-login-form,
+.nursing-signup-form,
+.polyclinics-login-form,
+.polyclinics-signup-form {
+  padding: 2rem;
+}
+@media screen and (min-width: 300px) and (max-width: 900px) {
+  .doctor-login-form,
+  .doctor-signup-form,
+  .nursing-login-form,
+  .nursing-signup-form,
+  .polyclinics-login-form,
+  .polyclinics-signup-form {
+    padding: 1rem;
+  }
+}
+/* Login Image Left Side Custom Style End Here */

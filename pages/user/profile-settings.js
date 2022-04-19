@@ -29,7 +29,7 @@ const ProfileSettings = () => {
       <div className="main-wrapper">
         <BreadCrums
           title="Home / Dashboard / Profile-Settings"
-          title1="Profile-Settings"
+          title1="Profile Settings"
         />
         <div className="content">
           <div className="container-fluid">

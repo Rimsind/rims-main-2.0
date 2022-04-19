@@ -15,7 +15,10 @@ const Specialities = () => {
           <div className="specialities-card my-5">
             <div className="row align-items-center">
               {specialities?.map((items, index) => (
-                <div className="col-3" key={index}>
+                <div
+                  className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3"
+                  key={index}
+                >
                   <div className="profile-widget browse-widget">
                     <Image
                       src="/assets/images/doctors/doctor-01.jpg"

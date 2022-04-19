@@ -38,7 +38,7 @@ const MedicalInformation = () => {
       <div className="main-wrapper">
         <BreadCrums
           title="Home / Dashboard / Medical-Information"
-          title1="Medical-Information"
+          title1="Medical Information"
         />
 
         <div className="content">

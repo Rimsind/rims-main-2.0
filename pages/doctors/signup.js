@@ -138,15 +138,25 @@ const Signup = () => {
               <div className="tab-pane show active" id="bottom-justified-tab2">
                 <div className="row align-items-center">
                   <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+<<<<<<< HEAD
                     <Image
                       src="/assets/images/doctor-login.png"
                       height="500px"
                       width="500px"
                       alt=""
                     />
+=======
+                    <div className="login-image-left-side">
+                      <Image
+                        src="/assets/images/doctor-login.png"
+                        height="500px"
+                        width="500px"
+                      />
+                    </div>
+>>>>>>> cde24533f5ae300ad120c80e2d0fcf88107daaa4
                   </div>
                   <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
-                    <div className="doctor-signup-form p-5 border border-1 rounded ">
+                    <div className="doctor-signup-form border border-1 rounded ">
                       <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="row">
                           <div className="col-6">
