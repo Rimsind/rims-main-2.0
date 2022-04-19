@@ -65,7 +65,6 @@ export const frequencyList = [
 ];
 
 export const medicineNameList = [
-  "Select",
   "Brufen 400 Tablet",
   "Brilinta 90mg Tablet",
   "Azax 500 Tablet",

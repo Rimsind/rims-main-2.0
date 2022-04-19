@@ -111,6 +111,7 @@ const Login = () => {
                       src="/assets/images/doctor-login.png"
                       height="500px"
                       width="500px"
+                      alt=""
                     />
                   </div>
                   <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
