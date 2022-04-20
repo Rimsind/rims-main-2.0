@@ -95,7 +95,7 @@ const AdvanceSettings = () => {
       <div className="main-wrapper">
         <BreadCrums
           title="Home / Dashboard / Advance-Settings"
-          title1="Advance-Settings"
+          title1="Advance Settings"
         />
         <div className="content">
           <div className="container-fluid">

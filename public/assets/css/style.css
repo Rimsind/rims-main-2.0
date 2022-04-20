@@ -4209,3 +4209,17 @@ table.rehab-com-table {
   }
 }
 /* Login Image Left Side Custom Style End Here */
+/* Login OTP Form Style Sheet Start Here */
+.lgnotp-frm-nos-til {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: poppins;
+  text-align: center;
+}
+.lgnotp-frm-desc-sub-til {
+  font-size: 16px;
+  font-family: poppins;
+  text-align: center;
+  color: #979797;
+}
+/* Login OTP Form Style Sheet End Here */
