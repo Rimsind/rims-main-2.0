@@ -107,24 +107,29 @@ const DoctorTimetableCard = ({ data, doctor }) => {
             </div>
           </div>
           <div className="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9 py-3">
-            <div className="doctor-time-slot d-flex align-items-center justify-content-between">
+            <div className="doctor-time-slot row align-items-center justify-content-between">
               {data?.schedule?.map((items, index) => (
-                <div className="doctor-location-items text-center pe-4 border-end border-1 ">
-                  <a
-                    className="fs-6 py-1 px-4 shadow-sm text-dark"
-                    style={{ backgroundColor: "#e5e5e569" }}
+                <div className="col">
+                  <div
+                    className="doctor-location-items text-center pe-4 border-end border-1"
+                    key={index}
                   >
-                    {items?.day}
-                  </a>
-                  <p className="fs-6 text-dark mt-2">{items?.timeSlots}</p>
-                  <Link href="#">
-                    <button
-                      className="btn text-light fs-6 rounded-pill"
-                      style={{ backgroundColor: "#1d00a3" }}
+                    <a
+                      className="fs-6 py-1 px-4 shadow-sm text-dark"
+                      style={{ backgroundColor: "#e5e5e569" }}
                     >
-                      Book Now
-                    </button>
-                  </Link>
+                      {items?.day}
+                    </a>
+                    <p className="fs-6 text-dark mt-2">{items?.timeSlots}</p>
+                    <Link href="#">
+                      <button
+                        className="btn text-light fs-6 rounded-pill"
+                        style={{ backgroundColor: "#1d00a3" }}
+                      >
+                        Book Now
+                      </button>
+                    </Link>
+                  </div>
                 </div>
               ))}
             </div>

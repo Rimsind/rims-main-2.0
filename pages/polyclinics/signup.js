@@ -210,7 +210,7 @@ const Signup = () => {
                           </div>
                         </div>
                         <div className="warning-text">
-                          <p className="fs-6 fw-lighter mt-2">
+                          <p className="fs-6 fw-lighter mt-2 text-center">
                             By signing up, you agree to Rims&apos;s
                             <a href="#">Terms & Condition</a> &
                             <a href="#">Privacy Policy</a>

@@ -24,7 +24,7 @@ const Index = () => {
   });
   return (
     <main className="main">
-      <BreadCrums title="Home / Hospital" title1="Hospital" />
+      <BreadCrums title="Home / Hospital List" title1="Hospital List" />
       <div className="content">
         <div className="container-fluid">
           <div className="row">

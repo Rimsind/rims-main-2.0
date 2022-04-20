@@ -29,7 +29,7 @@ const Index = () => {
       <main className="main">
         <BreadCrums
           title="Home / Nursing-Home List"
-          title1="Nursing-Home List"
+          title1="Nursing Home List"
         />
         <div className="content">
           <div className="container-fluid">
