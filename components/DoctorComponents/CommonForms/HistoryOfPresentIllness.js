@@ -183,27 +183,6 @@ const HistoryOfPresentIllness = ({ appointmentId }) => {
           </p>
         </div>
 
-        <div className="gen-form">
-          <div className="row align-items-center">
-            <div className="col-md-4">
-              <p className="fs-5 fw-bold">Allergies</p>
-            </div>
-            <div className="col-md-8">
-              <p className="fs-6">{data?.patient?.medicalHistory?.allergies}</p>
-            </div>
-          </div>
-        </div>
-        <div className="gen-form">
-          <div className="row align-items-center">
-            <div className="col-md-4">
-              <p className="fs-5 fw-bold">Vaccination</p>
-            </div>
-            <div className="col-md-8">
-              <p className="fs-6">{data?.patient?.medicalHistory?.vactions}</p>
-            </div>
-          </div>
-        </div>
-
         <div className="gen-form-btn text-center mt-3">
           <button className="btn btn-success" onClick={submitForm}>
             Save Changes
