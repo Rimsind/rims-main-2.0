@@ -256,7 +256,6 @@ const Index = () => {
                                       className="img-fluid"
                                       alt="User Image"
                                       src={
-                                        item?.image?.url ||
                                         "/assets/images/alternate/doctor-male.png"
                                       }
                                     />
@@ -266,33 +265,38 @@ const Index = () => {
                               <div className="pro-content">
                                 <h3 className="title">
                                   <Link href="#">
-                                    <a>
-                                      Dr. {item?.firstName} {item?.lastName}
-                                    </a>
+                                    <a>Dr. Demo Name</a>
                                   </Link>
                                   <i className="fas fa-check-circle verified"></i>
                                 </h3>
-                                <p className="speciality">
-                                  {item?.experienceInYrs} years experience,
-                                </p>
+                                {/* <p className="speciality">10 years experience,</p> */}
 
                                 <ul className="available-info">
                                   <li>
-                                    <i className="fas fa-certificate "></i>{" "}
-                                    Medicine
+                                    <i className="fas fa-certificate "></i> MBBS
                                   </li>
                                   <li>
-                                    <Image
-                                      height="20"
-                                      width="20"
-                                      src={
-                                        item?.specialty?.image?.url ||
-                                        "/assets/images/alternate/alt-specialty.png"
-                                      }
-                                      alt=""
-                                    />{" "}
-                                    {item?.specialty?.name}
-                                    Medicine
+                                    <div className="row align-items-center">
+                                      <div className="col-6">
+                                        <Image
+                                          height="20"
+                                          width="20"
+                                          src={
+                                            "/assets/images/alternate/alt-specialty.png"
+                                          }
+                                          alt=""
+                                        />{" "}
+                                        Medicine
+                                      </div>
+                                      <div className="col-6">
+                                        <p>
+                                          <span className="fw-bold me-1 text-info">
+                                            Experience:
+                                          </span>
+                                          <span>10 Yrs.</span>
+                                        </p>
+                                      </div>
+                                    </div>
                                   </li>
                                   <li>
                                     <i className="far fa-money-bill-alt text-primary"></i>{" "}
@@ -306,7 +310,7 @@ const Index = () => {
                                 </ul>
                                 <div className="row row-sm">
                                   <div className="col-12">
-                                    <Link href={`/doctors/${item?.id}`}>
+                                    <Link href="#">
                                       <a className="btn book-btn">
                                         View Profile
                                       </a>

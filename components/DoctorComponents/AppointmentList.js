@@ -20,8 +20,8 @@ const AppointmentList = ({ data, sl }) => {
             </a>
 
             <a>
-              {data?.patient?.title}. {data?.patient?.first_name}{" "}
-              {data?.patient?.last_name}
+              {data?.patient?.title}
+              {data?.patient?.first_name} {data?.patient?.last_name}
               <span>{data?.patient?.gender}</span>
             </a>
           </h2>

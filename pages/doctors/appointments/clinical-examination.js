@@ -35,6 +35,7 @@ const ClinicalExaminations = () => {
       return result;
     }
   );
+  console.log(appointment);
 
   const { data: doctor } = useSWR(
     `${apiUrl}/doctors/${auth.user?.profileId}`,
@@ -170,15 +171,6 @@ const ClinicalExaminations = () => {
                                   E- Prescription
                                 </a>
                               </li>
-                              <li className="nav-item">
-                                <a
-                                  href="#tab-15"
-                                  data-bs-toggle="tab"
-                                  className="nav-link"
-                                >
-                                  E-- Prescription
-                                </a>
-                              </li>
                             </ul>
                           </div>
                           <div className="card-body">
@@ -255,25 +247,12 @@ const ClinicalExaminations = () => {
                                 id="tab-14"
                                 className="tab-pane fade"
                               >
-                                <Prescription
+                                <EPrescription
                                   appointmentId={id}
                                   eprescription={appointment?.eprescription}
                                   assesment={appointment?.assesment}
                                   patient={appointment?.patient}
                                 />
-                              </div>
-                              <div
-                                role="tabpanel"
-                                id="tab-15"
-                                className="tab-pane fade"
-                              >
-                                {/* <Prescription
-                                  appointmentId={id}
-                                  eprescription={appointment?.eprescription}
-                                  assesment={appointment?.assesment}
-                                  patient={appointment?.patient}
-                                /> */}
-                                <EPrescription />
                               </div>
                             </div>
                           </div>

@@ -104,13 +104,12 @@ const Index = () => {
               <div className="tab-pane show active" id="bottom-justified-tab1">
                 <div className="row align-items-center">
                   <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
-                    <div className="login-image-left-side">
-                      <Image
-                        src="/assets/images/doctor-login.png"
-                        height="500px"
-                        width="500px"
-                      />
-                    </div>
+                    <Image
+                      src="/assets/images/doctor-login.png"
+                      height="500px"
+                      width="500px"
+                      alt=""
+                    />
                   </div>
                   <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
                     <div className="doctor-login-form border border-1 rounded ">
