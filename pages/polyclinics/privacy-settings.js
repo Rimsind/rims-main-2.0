@@ -5,6 +5,7 @@ import { apiUrl } from "config/api";
 import useSWR from "swr";
 import axios from "axios";
 import { PolyclinicSideBar } from "components/common";
+import { withAuth } from "helpers/withAuth";
 const PrivacySettings = () => {
   const { auth } = useAuth();
 
@@ -73,4 +74,4 @@ const PrivacySettings = () => {
   );
 };
 
-export default PrivacySettings;
+export default withAuth(PrivacySettings);

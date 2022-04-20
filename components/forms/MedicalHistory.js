@@ -865,7 +865,7 @@ const MedicalHistory = ({
           <table className="table">
             <thead>
               <tr>
-                <th scope="col"></th>
+                <th scope="col">Sl No.</th>
                 <th scope="col">Medicine Name</th>
                 <th scope="col">Medicine Dose</th>
                 <th scope="col">Start Date</th>
@@ -875,6 +875,7 @@ const MedicalHistory = ({
                 <th scope="col">Friquency </th>
                 <th scope="col">Any Side Effect</th>
                 <th scope="col">If Yes </th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -888,13 +889,7 @@ const MedicalHistory = ({
                 <>
                   {past_medication_history?.map((item, index) => (
                     <tr key={index}>
-                      <td>
-                        <div className="delete-table-icon">
-                          <button className="btn rounded-circle">
-                            <i className="fad fa-trash"></i>
-                          </button>
-                        </div>
-                      </td>
+                      <td>#{index + 1}</td>
                       <td>{item.medicineName}</td>
                       <td>{item.dose}</td>
                       <td>{item.startDate}</td>
@@ -904,6 +899,14 @@ const MedicalHistory = ({
                       <td>{item.frequency}</td>
                       <td>{item.sideEffect}</td>
                       <td>{item.ifYes}</td>
+                      <td>
+                        {" "}
+                        <div className="delete-table-icon">
+                          <button className="btn rounded-circle">
+                            <i className="fad fa-trash"></i>
+                          </button>
+                        </div>
+                      </td>
                     </tr>
                   ))}
                 </>

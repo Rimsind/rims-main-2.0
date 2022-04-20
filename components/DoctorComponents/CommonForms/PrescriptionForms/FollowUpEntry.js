@@ -3,6 +3,7 @@ import AssesmentAndMedicineRecords from "./Assesment&MedicineRecords";
 import axios from "axios";
 import { apiUrl } from "config/api";
 import { Slide, toast } from "react-toastify";
+import { useAuth } from "context";
 
 const FollowUpEntry = ({
   patient,
@@ -10,8 +11,8 @@ const FollowUpEntry = ({
   appointmentId,
   eprescription,
 }) => {
+  const { auth } = useAuth();
   var today = new Date();
-
   var day = today.getDate() + 1;
   var month = today.getMonth() + 1;
   var year = today.getFullYear();
@@ -50,7 +51,7 @@ const FollowUpEntry = ({
         }
       );
       const result = res.data;
-
+      console.log(result);
       toast.success("E-Prescription Submitted ", {
         position: "top-center",
         autoClose: 2000,

@@ -7,6 +7,7 @@ import { useAuth } from "context";
 import { UserPageLoader } from "components/Loaders";
 import { DoctorSidebar, EducationInfo } from "components/DoctorComponents";
 import ProfileInfo from "components/DoctorComponents/ProfileInfo";
+import { withAuth } from "helpers/withAuth";
 const ProfileSettings = () => {
   const { auth } = useAuth();
 
@@ -53,4 +54,4 @@ const ProfileSettings = () => {
   );
 };
 
-export default ProfileSettings;
+export default withAuth(ProfileSettings);

@@ -180,12 +180,11 @@ const DoctorId = () => {
                         className="tab-pane fade show active"
                       >
                         <div className="location-list">
-                          {data?.timetable?.map((items, index) => (
+                          {data?.booking_schedule?.map((items, index) => (
                             <DoctorTimetableCard
                               data={items}
                               key={index}
-                              doctor={id}
-                              auth={auth}
+                              doctorId={id}
                             />
                           ))}
                         </div>

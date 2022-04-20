@@ -131,7 +131,7 @@ const PolyclinicTimetableCard = ({ data }) => {
             </ul>
           </div>
           <div className="clinic-booking">
-            <Link href={`/doctors/${data?.id}`}>
+            <Link href={`/doctors/details?id=${data?.id}`}>
               <a className="apt-btn">View Profile</a>
             </Link>
           </div>

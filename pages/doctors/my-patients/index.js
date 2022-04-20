@@ -9,6 +9,7 @@ import {
   DoctorSidebar,
   PatientList,
 } from "components/DoctorComponents";
+import { withAuth } from "helpers/withAuth";
 const Index = () => {
   const { auth } = useAuth();
   const { data } = useSWR(
@@ -69,4 +70,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default withAuth(Index);

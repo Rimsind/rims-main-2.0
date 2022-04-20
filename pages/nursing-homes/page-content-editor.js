@@ -7,6 +7,7 @@ import { NursingSideBar } from "components/common";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { toast, Slide } from "react-toastify";
+import { withAuth } from "helpers/withAuth";
 const PageContentEditor = () => {
   const { auth } = useAuth();
 
@@ -1097,4 +1098,4 @@ const PageContentEditor = () => {
   );
 };
 
-export default PageContentEditor;
+export default withAuth(PageContentEditor);

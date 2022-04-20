@@ -1,3 +1,4 @@
+import { withAuth } from "helpers/withAuth";
 import Image from "next/image";
 const Dashboard = () => {
   return (
@@ -1589,4 +1590,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default withAuth(Dashboard);

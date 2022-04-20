@@ -6,6 +6,7 @@ import { useAuth } from "context";
 import { UserPageLoader } from "components/Loaders";
 import { AppointmentList, DoctorSidebar } from "components/DoctorComponents";
 import { useState } from "react";
+import { withAuth } from "helpers/withAuth";
 
 const Index = () => {
   const { auth } = useAuth();
@@ -266,4 +267,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default withAuth(Index);

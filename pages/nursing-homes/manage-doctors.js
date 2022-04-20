@@ -6,6 +6,7 @@ import { NursingSideBar } from "components/common";
 import { useState } from "react";
 import { toast, Slide } from "react-toastify";
 import MyDoctors from "components/polyclinicComponents/MyDoctors";
+import { withAuth } from "helpers/withAuth";
 const ManageDoctors = () => {
   const { auth } = useAuth();
 
@@ -129,4 +130,4 @@ const ManageDoctors = () => {
   );
 };
 
-export default ManageDoctors;
+export default withAuth(ManageDoctors);
