@@ -5,6 +5,7 @@ import { apiUrl } from "config/api";
 import useSWR from "swr";
 import axios from "axios";
 import { NursingSideBar } from "components/common";
+import { withAuth } from "helpers/withAuth";
 const Dashboard = () => {
   const { auth } = useAuth();
 
@@ -371,4 +372,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default withAuth(Dashboard);

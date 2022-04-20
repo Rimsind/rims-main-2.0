@@ -147,6 +147,7 @@ const UploadMedicalRecord = ({
       <table className="table table-striped mb-3">
         <thead>
           <tr>
+            <th scope="col">Sl No.</th>
             <th scope="col">Title</th>
             <th scope="col">File Name</th>
           </tr>
@@ -154,7 +155,7 @@ const UploadMedicalRecord = ({
         <tbody>
           {dataLenght === 0 ? (
             <tr>
-              <td colSpan="2" className="text-danger">
+              <td colSpan="3" className="text-danger">
                 No Previous Records Found !!
               </td>
             </tr>
@@ -162,18 +163,19 @@ const UploadMedicalRecord = ({
             <>
               {upload_medical_record?.map((item, index) => (
                 <tr key={index}>
-                  <td>
-                    <div className="delete-table-icon">
-                      <button className="btn rounded-circle">
-                        <i className="fad fa-trash"></i>
-                      </button>
-                    </div>
-                  </td>
+                  <td>#{index + 1}</td>
                   <td>{item.title}</td>
                   <td>
                     <Link href={item?.file?.url}>
                       <a target="_blank">Download</a>
                     </Link>
+                  </td>
+                  <td>
+                    <div className="delete-table-icon">
+                      <button className="btn rounded">
+                        <i className="fad fa-trash"></i>
+                      </button>
+                    </div>
                   </td>
                 </tr>
               ))}

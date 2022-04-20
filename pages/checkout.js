@@ -20,7 +20,7 @@ import {
 } from "./api/chiefComplaintesData";
 const Checkout = () => {
   const { doctorId, polyclinicId, fee, date, time } = useRouter().query;
-
+  const { auth } = useAuth();
   const { data: doctor } = useSWR(`${apiUrl}/doctors/${doctorId}`, fetcher);
   const { data: polyclinic } = useSWR(
     `${apiUrl}/polyclinics/${polyclinicId}`,
@@ -43,41 +43,51 @@ const Checkout = () => {
     setDuration("");
   };
 
-  const { auth } = useAuth();
+  const deleteComplaints = (index) => {
+    const id = index;
+    setComplainList((oldComplaints) => {
+      return oldComplaints.filter((curElem, index) => {
+        return index !== id;
+      });
+    });
+  };
 
   const { register, handleSubmit } = useForm();
   const checkout = async (data, event) => {
     event.preventDefault();
+    if (!!auth.user && !!auth.token) {
+      const payload = {
+        patient: auth.user.profileId,
+        doctor: doctor.id,
+        date: date,
+        timeSlot: time,
+        fee: fee,
+        chiefComplaints: complainList,
+        polyclinic: polyclinic.id,
+        general_problems: data.general_problems.toString(),
+        joint_related_problems: data.joint_related_problems.toString(),
+        neuro_problems: data.neuro_problems.toString(),
+        heart_problems: data.heart_problems.toString(),
+        blood_problems: data.blood_problems.toString(),
+        stomach_problems: data.stomach_problems.toString(),
+        mental_problems: data.mental_problems.toString(),
+        genetal_problems: data.genetal_problems.toString(),
+      };
 
-    const payload = {
-      patient: auth.user.profileId,
-      doctor: doctor.id,
-      date: date,
-      timeSlot: time,
-      fee: fee,
-      chiefComplaints: complainList,
-      polyclinic: polyclinic.id,
-      general_problems: data.general_problems.toString(),
-      joint_related_problems: data.joint_related_problems.toString(),
-      neuro_problems: data.neuro_problems.toString(),
-      heart_problems: data.heart_problems.toString(),
-      blood_problems: data.blood_problems.toString(),
-      stomach_problems: data.stomach_problems.toString(),
-      mental_problems: data.mental_problems.toString(),
-      genetal_problems: data.genetal_problems.toString(),
-    };
+      const res = await axios.post(`${apiUrl}/appointments`, payload, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
 
-    const res = await axios.post(`${apiUrl}/appointments`, payload, {
-      headers: {
-        Authorization: `Bearer ${auth.token}`,
-      },
-    });
-
-    const result = res.data;
-    Router.push(
-      `/success?doctorFirstName=${doctor?.firstName}&&doctorLastName=${doctor?.lastName}&&appointmentId=${result.id}&&date=${result.date}&timeSlot=${result.timeSlot}`
-    );
-    return result;
+      const result = res.data;
+      Router.push(
+        `/success?doctorFirstName=${doctor?.firstName}&&doctorLastName=${doctor?.lastName}&&appointmentId=${result.id}&&date=${result.date}&timeSlot=${result.timeSlot}`
+      );
+      return result;
+    } else {
+      Router.push("/user/login");
+    }
   };
 
   return (
@@ -143,7 +153,12 @@ const Checkout = () => {
                               {complainList.map((item, index) => (
                                 <tr key={index}>
                                   <td className="table-action">
-                                    <i className="far fa-times-circle"></i>
+                                    <i
+                                      className="far fa-times-circle"
+                                      onClick={() => {
+                                        deleteComplaints(index);
+                                      }}
+                                    ></i>
                                   </td>
                                   <td>{item.description}</td>
                                   <td>{item.duration}</td>
@@ -654,8 +669,13 @@ const Checkout = () => {
                 </div>
                 <div className="col-md-5 col-lg-4">
                   <div className="card booking-card">
-                    <div className="card-header">
-                      <h4 className="card-title fs-5 mb-0">Summary</h4>
+                    <div
+                      className="card-header"
+                      style={{ backgroundColor: "#4f96ff" }}
+                    >
+                      <h4 className="card-title fs-5 mb-0 text-light">
+                        Appointment Summary
+                      </h4>
                     </div>
                     <div className="card-body">
                       <div className="booking-summary">

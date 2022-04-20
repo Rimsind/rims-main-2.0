@@ -7,6 +7,7 @@ import { NursingSideBar } from "components/common";
 import { ProfilePicture } from "components/forms";
 import ProfileDetails from "components/polyclinicComponents/profileDetails";
 import AddressDetails from "components/polyclinicComponents/addressDetails";
+import { withAuth } from "helpers/withAuth";
 const ProfileSettings = () => {
   const { auth } = useAuth();
 
@@ -41,4 +42,4 @@ const ProfileSettings = () => {
   );
 };
 
-export default ProfileSettings;
+export default withAuth(ProfileSettings);

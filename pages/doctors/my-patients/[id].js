@@ -1,5 +1,7 @@
+import { withAuth } from "helpers/withAuth";
+
 const PatientDetails = () => {
   return <></>;
 };
 
-export default PatientDetails;
+export default withAuth(PatientDetails);

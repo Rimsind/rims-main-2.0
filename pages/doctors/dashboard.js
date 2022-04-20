@@ -7,6 +7,7 @@ import useSWR from "swr";
 import axios from "axios";
 import { UserPageLoader } from "components/Loaders";
 import { DoctorSidebar } from "components/DoctorComponents";
+import { withAuth } from "helpers/withAuth";
 const Dashboard = () => {
   const { auth } = useAuth();
 
@@ -433,4 +434,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default withAuth(Dashboard);

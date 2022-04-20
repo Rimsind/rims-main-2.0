@@ -19,6 +19,7 @@ import HistoryOfPresentIllness from "components/DoctorComponents/CommonForms/His
 import Assesment from "components/DoctorComponents/CommonForms/Assesment";
 import Prescription from "components/DoctorComponents/CommonForms/Prescription";
 import EPrescription from "components/DoctorComponents/CommonForms/ePrescription";
+import { withAuth } from "helpers/withAuth";
 
 const ClinicalExaminations = () => {
   const { id } = useRouter().query;
@@ -270,4 +271,4 @@ const ClinicalExaminations = () => {
   );
 };
 
-export default ClinicalExaminations;
+export default withAuth(ClinicalExaminations);

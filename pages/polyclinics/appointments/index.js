@@ -45,7 +45,6 @@ const Index = () => {
     setDate("");
     setStatus("");
   };
-  console.log(doctor);
 
   return (
     <>

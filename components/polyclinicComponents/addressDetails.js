@@ -7,10 +7,10 @@ import { useState } from "react";
 const AddressDetails = ({ data }) => {
   const { auth } = useAuth();
   const [loading, setLoading] = useState(false);
-  if (auth?.user?.role?.id === 6) {
+  if (auth?.user?.role?.id === 4) {
     var role = "polyclinics";
   }
-  if (auth?.user?.role?.id === 7) {
+  if (auth?.user?.role?.id === 5) {
     var role = "nursing-homes";
   }
   const { register, handleSubmit } = useForm();
