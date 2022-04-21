@@ -4,7 +4,7 @@ import Link from "next/link";
 const PathologySideBar = () => {
   return (
     <>
-      <div className="col-12 col-md-12 col-lg-4 col-xl-3 col-xxl-3 sticky-xl-top sticky-xxl-top">
+      <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-3 col-xxl-3 sticky-xl-top sticky-xxl-top">
         <div className="profile-sidebar sticky-xl-top sticky-xxl-top">
           <div className="widget-profile pro-widget-content">
             <div className="profile-info-widget py-3">

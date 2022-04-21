@@ -12541,7 +12541,7 @@ ul.benifits-col li i {
 .navbar-toggler {
   background-color: white;
   border-color: white;
-  box-shadow: 4px -2px 8px 1px #000000ad;
+  /* box-shadow: 4px -2px 8px 1px #000000ad; */
 }
 
 /* Prescription Stylesheet*/

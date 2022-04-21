@@ -1,7 +1,8 @@
 import PathologySideBar from "components/common/PathologySideBar";
 import { BreadCrums } from "components/common";
+import Link from "next/link";
 
-const Appointments = () => {
+const Index = () => {
   return (
     <>
       <section className="patho-appoinments">
@@ -10,7 +11,6 @@ const Appointments = () => {
             title="Home / Dashboard / My Appointments"
             title1="My Appointments"
           />
-
           <div className="content mb-3">
             <div className="container-fluid">
               <div className="row">
@@ -84,22 +84,45 @@ const Appointments = () => {
                             <tr>
                               <th>Sl No.</th>
                               <th>#App-Id</th>
-                              <th> Patient Name</th>
-
+                              <th>Patient Name</th>
                               <th>Age</th>
                               <th>Apointment Time</th>
                               <th>Fee</th>
                               <th>Status</th>
-                              <th colSpan="2"></th>
+                              <th>Upload Report</th>
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
+                            {/* <tr>
                               <td
                                 colSpan={8}
                                 className="text-danger text-center"
                               >
                                 No Appointments Found !!
+                              </td>
+                            </tr> */}
+                            <tr>
+                              <td>01</td>
+                              <td>#App001</td>
+                              <td>Rabindra</td>
+                              <td>25</td>
+                              <td>10:25 A.M</td>
+                              <td>₹500</td>
+                              <td>Completed</td>
+                              <td className="text-start">
+                                <div className="input-group">
+                                  <input
+                                    type="file"
+                                    className="form-control"
+                                    id="inputGroupFile02"
+                                  />
+                                  <label
+                                    className="input-group-text bg-primary-light"
+                                    htmlFor="inputGroupFile02"
+                                  >
+                                    Upload
+                                  </label>
+                                </div>
                               </td>
                             </tr>
                           </tbody>
@@ -117,4 +140,4 @@ const Appointments = () => {
   );
 };
 
-export default Appointments;
+export default Index;
