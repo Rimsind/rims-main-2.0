@@ -1,5 +1,5 @@
 import Image from "next/image";
-const VerifyCard = ({ doctorDetails, polyclinicDetails }) => {
+const VerifyCard = ({ doctorDetails, clinicDetails }) => {
   return (
     <>
       <div className="card">
@@ -40,7 +40,7 @@ const VerifyCard = ({ doctorDetails, polyclinicDetails }) => {
                     height="100"
                     width="100"
                     src={
-                      polyclinicDetails?.coverImage?.url ||
+                      clinicDetails?.image?.url ||
                       "/assets/images/card_image.jpg"
                     }
                     alt="User Image"
@@ -48,11 +48,11 @@ const VerifyCard = ({ doctorDetails, polyclinicDetails }) => {
                 </a>
                 <div className="booking-info">
                   <h6 className="fs-6 fw-bold">
-                    <a href="doctor-profile.html">{polyclinicDetails?.name}</a>
+                    <a href="doctor-profile.html">{clinicDetails?.name}</a>
                   </h6>
                   <p className="text-muted fs-6">
-                    {polyclinicDetails?.street_address},
-                    {polyclinicDetails?.city}, {polyclinicDetails?.state}
+                    {clinicDetails?.street_address},<br />
+                    {clinicDetails?.city}, {clinicDetails?.state}
                   </p>
                 </div>
               </div>

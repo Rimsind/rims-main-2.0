@@ -181,7 +181,7 @@ const Dashboard = () => {
                         <div className="row align-items-center">
                           <div className="col-6">
                             <div className="dashboard-card-number text-start">
-                              <p>{data?.polyclinics?.length}</p>
+                              <p>{data?.booking_schedule?.length}</p>
                             </div>
                           </div>
                           <div className="col-6">

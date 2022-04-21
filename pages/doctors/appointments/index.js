@@ -11,7 +11,7 @@ import { withAuth } from "helpers/withAuth";
 const Index = () => {
   const { auth } = useAuth();
   const { data: appointments } = useSWR(
-    `${apiUrl}/appointments?doctor=${auth.user?.profileId}`,
+    `${apiUrl}/appointments?doctor=${auth.user?.profileId}&&_sort=id:asc`,
     async (url) => {
       const res = await axios.get(url, {
         headers: {
@@ -37,12 +37,30 @@ const Index = () => {
     }
   );
 
-  const [date, setDate] = useState("");
+  var today = new Date();
+  var day = today.getDate();
+  var month = today.getMonth() + 1;
+  var year = today.getFullYear();
+
+  if (day < 10) {
+    var newDay = "0" + day;
+  } else {
+    var newDay = day;
+  }
+  if (month < 10) {
+    var newMonth = "0" + month;
+  } else {
+    var newMonth = month;
+  }
+
+  const currentDate = year + "-" + newMonth + "-" + newDay;
+
+  const [date, setDate] = useState(currentDate);
   const [clinic, setClinic] = useState("");
   const [status, setStatus] = useState("");
 
   const resetState = (e) => {
-    setDate("");
+    setDate(currentDate);
     setStatus("");
     setClinic("");
   };
@@ -143,6 +161,11 @@ const Index = () => {
                       <div className="table-responsive">
                         <table className="table table-hover table-center mb-0">
                           <thead>
+                            <tr>
+                              <th colSpan={7} className="text-info">
+                                Appointment List For: {date}
+                              </th>
+                            </tr>
                             <tr>
                               <th>Sl No.</th>
                               <th>#App-Id</th>

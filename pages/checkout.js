@@ -19,13 +19,25 @@ import {
   genetialProblem,
 } from "./api/chiefComplaintesData";
 const Checkout = () => {
-  const { doctorId, polyclinicId, fee, date, time } = useRouter().query;
+  const { doctorId, polyclinicId, nursingHomeId, hospitalId, fee, date, time } =
+    useRouter().query;
+  console.log(hospitalId);
+  if (polyclinicId) {
+    var clinic = "polyclinics";
+    var idName = polyclinicId;
+  } else if (nursingHomeId) {
+    var clinic = "nursing-homes";
+    var idName = nursingHomeId;
+  } else if (hospitalId) {
+    var clinic = "hospitals";
+    var idName = hospitalId;
+  }
+
+  console.log(`${apiUrl}/${clinic}/${idName}`);
+
   const { auth } = useAuth();
   const { data: doctor } = useSWR(`${apiUrl}/doctors/${doctorId}`, fetcher);
-  const { data: polyclinic } = useSWR(
-    `${apiUrl}/polyclinics/${polyclinicId}`,
-    fetcher
-  );
+  const { data: clinic } = useSWR(`${apiUrl}/${clinic}/${idName}`, fetcher);
 
   const [description, setDescription] = useState();
   const [duration, setDuration] = useState();
@@ -63,7 +75,9 @@ const Checkout = () => {
         timeSlot: time,
         fee: fee,
         chiefComplaints: complainList,
-        polyclinic: polyclinic.id,
+        polyclinic: polyclinicId,
+        nursing_home: nursingHomeId,
+        hospital: hospitalId,
         general_problems: data.general_problems.toString(),
         joint_related_problems: data.joint_related_problems.toString(),
         neuro_problems: data.neuro_problems.toString(),
@@ -96,7 +110,7 @@ const Checkout = () => {
         <BreadCrums title="Home / Checkout" title1="Complaints" />
         <div className="content">
           <div className="container">
-            <VerifyCard doctorDetails={doctor} polyclinicDetails={polyclinic} />
+            <VerifyCard doctorDetails={doctor} clinicDetails={clinic} />
             <form onSubmit={handleSubmit(checkout)}>
               <div className="row">
                 <div className="col-md-7 col-lg-8">

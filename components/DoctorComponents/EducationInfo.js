@@ -11,17 +11,18 @@ const EducationInfo = ({ data }) => {
   const [year, setYear] = useState();
 
   const addEducation = async () => {
-    const payload = {
-      educationAndAwards: [
-        ...data?.educationAndAwards,
-        {
-          degreeOrAward: degree,
-          institution: institute,
-          receivingYear: year,
-        },
-      ],
-    };
     try {
+      const payload = {
+        educationAndAwards: [
+          ...data?.educationAndAwards,
+          {
+            degreeOrAward: degree,
+            institution: institute,
+            receivingYear: year,
+          },
+        ],
+      };
+
       const res = await axios.put(
         `${apiUrl}/doctors/${auth.user?.profileId}`,
         payload,
@@ -43,7 +44,7 @@ const EducationInfo = ({ data }) => {
         theme: "colored",
         transition: Slide,
       });
-      return result;
+      return result, setDegree(""), setInstitute(""), setYear("");
     } catch (err) {
       console.log(err.message);
       toast.error("Something Went Wrong Try Again.", {
@@ -72,6 +73,7 @@ const EducationInfo = ({ data }) => {
                     type="text"
                     className="form-control"
                     placeholder="Degree or Award"
+                    value={degree}
                     onChange={(e) => setDegree(e.target.value)}
                   />
                 </div>
@@ -83,6 +85,7 @@ const EducationInfo = ({ data }) => {
                     type="text"
                     className="form-control"
                     placeholder="Institution Name"
+                    value={institute}
                     onChange={(e) => setInstitute(e.target.value)}
                   />
                 </div>
@@ -94,6 +97,7 @@ const EducationInfo = ({ data }) => {
                     type="text"
                     className="form-control"
                     placeholder="Receiving Year"
+                    value={year}
                     onChange={(e) => setYear(e.target.value)}
                   />
                 </div>
@@ -120,7 +124,7 @@ const EducationInfo = ({ data }) => {
                 <tbody>
                   {data?.educationAndAwards?.map((items, index) => (
                     <tr key={index}>
-                      <td scope="row">{index + 1}</td>
+                      <td scope="row">#{index + 1}</td>
                       <td>{items?.degreeOrAward}</td>
                       <td>{items?.institution}</td>
                       <td>{items?.receivingYear}</td>
