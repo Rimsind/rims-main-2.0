@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const DoctorTimetableCard = ({ data, doctorId }) => {
+  console.log(data);
   return (
     <>
       <section className="doctor-location">
@@ -13,12 +14,32 @@ const DoctorTimetableCard = ({ data, doctorId }) => {
             <div className="doctor-location-items py-3 pe-4 border-end border-1 ">
               <div className="doc-info-cont">
                 <h4 className="doc-name fs-5">
-                  <a href="doctor-profile.html">{data?.polyclinic?.name}</a>
+                  <a href="doctor-profile.html">
+                    {data?.polyclinic?.name ||
+                      data?.nursing_home?.name ||
+                      data?.hospital?.name}
+                  </a>
                 </h4>
                 <p className="doc-speciality text-dark">
-                  {data?.polyclinic?.street_address},<br />
-                  {data?.polyclinic?.city},{data?.polyclinic?.state},<br />
-                  {data?.polyclinic?.country}. PIN- {data?.polyclinic?.pincode}
+                  {data?.polyclinic?.street_address ||
+                    data?.nursing_home?.street_address ||
+                    data?.hospital?.street_address}
+                  ,<br />
+                  {data?.polyclinic?.city ||
+                    data?.nursing_home?.city ||
+                    data?.hospital?.city}
+                  ,
+                  {data?.polyclinic?.state ||
+                    data?.nursing_home?.state ||
+                    data?.hospital?.state}
+                  ,<br />
+                  {data?.polyclinic?.country ||
+                    data?.nursing_home?.country ||
+                    data?.hospital?.country}
+                  . PIN-
+                  {data?.polyclinic?.pincode ||
+                    data?.nursing_home?.pincode ||
+                    data?.hospital?.pincode}
                 </p>
               </div>
             </div>
@@ -40,17 +61,48 @@ const DoctorTimetableCard = ({ data, doctorId }) => {
                     {items?.time_from} - {items?.time_to}
                   </p>
                   <p className="fs-6 text-dark mt-2">Rs.{data?.fee}</p>
-
-                  <Link
-                    href={`/checkout?doctorId=${doctorId}&&polyclinicId=${data?.polyclinic?.id}&&fee=${data?.fee}&&date=${items?.date}&&time=${items?.time_from}-${items?.time_to}`}
-                  >
-                    <a
-                      className="btn text-light fs-6 rounded-pill"
-                      style={{ backgroundColor: "#1d00a3" }}
-                    >
-                      Book Now <sup className="">{items?.seats}</sup>
-                    </a>
-                  </Link>
+                  {!!data.polyclinic && (
+                    <>
+                      <Link
+                        href={`/checkout?doctorId=${doctorId}&&polyclinicId=${data?.polyclinic?.id}&&fee=${data?.fee}&&date=${items?.date}&&time=${items?.time_from}-${items?.time_to}`}
+                      >
+                        <a
+                          className="btn text-light fs-6 rounded-pill"
+                          style={{ backgroundColor: "#1d00a3" }}
+                        >
+                          Book Now <sup className="">{items?.seats}</sup>
+                        </a>
+                      </Link>
+                    </>
+                  )}{" "}
+                  {!!data.nursing_home && (
+                    <>
+                      <Link
+                        href={`/checkout?doctorId=${doctorId}&&nursingHomeId=${data?.nursing_home?.id}&&fee=${data?.fee}&&date=${items?.date}&&time=${items?.time_from}-${items?.time_to}`}
+                      >
+                        <a
+                          className="btn text-light fs-6 rounded-pill"
+                          style={{ backgroundColor: "#1d00a3" }}
+                        >
+                          Book Now <sup className="">{items?.seats}</sup>
+                        </a>
+                      </Link>
+                    </>
+                  )}{" "}
+                  {!!data.hospital && (
+                    <>
+                      <Link
+                        href={`/checkout?doctorId=${doctorId}&&hospitalId=${data?.hospital?.id}&&fee=${data?.fee}&&date=${items?.date}&&time=${items?.time_from}-${items?.time_to}`}
+                      >
+                        <a
+                          className="btn text-light fs-6 rounded-pill"
+                          style={{ backgroundColor: "#1d00a3" }}
+                        >
+                          Book Now <sup className="">{items?.seats}</sup>
+                        </a>
+                      </Link>
+                    </>
+                  )}
                 </div>
               ))}
             </div>

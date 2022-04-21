@@ -36,7 +36,7 @@ const Facilities = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="inlineRadio1"
+                                  htmlFor="inlineRadio1"
                                 >
                                   Available
                                 </label>
@@ -51,7 +51,7 @@ const Facilities = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="inlineRadio2"
+                                  htmlFor="inlineRadio2"
                                 >
                                   Not Available
                                 </label>
@@ -82,7 +82,7 @@ const Facilities = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="inlineRadio1"
+                                  htmlFor="inlineRadio1"
                                 >
                                   Available
                                 </label>
@@ -97,7 +97,7 @@ const Facilities = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="inlineRadio2"
+                                  htmlFor="inlineRadio2"
                                 >
                                   Not Available
                                 </label>
@@ -128,7 +128,7 @@ const Facilities = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="inlineRadio1"
+                                  htmlFor="inlineRadio1"
                                 >
                                   Available
                                 </label>
@@ -143,7 +143,7 @@ const Facilities = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="inlineRadio2"
+                                  htmlFor="inlineRadio2"
                                 >
                                   Not Available
                                 </label>
@@ -174,7 +174,7 @@ const Facilities = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="inlineRadio1"
+                                  htmlFor="inlineRadio1"
                                 >
                                   Available
                                 </label>
@@ -189,7 +189,7 @@ const Facilities = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="inlineRadio2"
+                                  htmlFor="inlineRadio2"
                                 >
                                   Not Available
                                 </label>
@@ -218,7 +218,7 @@ const Facilities = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="inlineRadio1"
+                                  htmlFor="inlineRadio1"
                                 >
                                   Available
                                 </label>
@@ -233,7 +233,7 @@ const Facilities = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="inlineRadio2"
+                                  htmlFor="inlineRadio2"
                                 >
                                   Not Available
                                 </label>
@@ -265,7 +265,7 @@ const Facilities = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="inlineRadio1"
+                                  htmlFor="inlineRadio1"
                                 >
                                   Available
                                 </label>
@@ -280,7 +280,7 @@ const Facilities = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="inlineRadio2"
+                                  htmlFor="inlineRadio2"
                                 >
                                   Not Available
                                 </label>
@@ -310,7 +310,7 @@ const Facilities = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="inlineRadio1"
+                                  htmlFor="inlineRadio1"
                                 >
                                   Available
                                 </label>
@@ -325,7 +325,7 @@ const Facilities = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="inlineRadio2"
+                                  htmlFor="inlineRadio2"
                                 >
                                   Not Available
                                 </label>
@@ -356,7 +356,7 @@ const Facilities = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="inlineRadio1"
+                                  htmlFor="inlineRadio1"
                                 >
                                   Available
                                 </label>
@@ -371,7 +371,7 @@ const Facilities = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="inlineRadio2"
+                                  htmlFor="inlineRadio2"
                                 >
                                   Not Available
                                 </label>
@@ -402,7 +402,7 @@ const Facilities = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="inlineRadio1"
+                                  htmlFor="inlineRadio1"
                                 >
                                   Available
                                 </label>
@@ -417,7 +417,7 @@ const Facilities = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="inlineRadio2"
+                                  htmlFor="inlineRadio2"
                                 >
                                   Not Available
                                 </label>
@@ -446,7 +446,7 @@ const Facilities = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="inlineRadio1"
+                                  htmlFor="inlineRadio1"
                                 >
                                   Available
                                 </label>
@@ -461,7 +461,7 @@ const Facilities = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="inlineRadio2"
+                                  htmlFor="inlineRadio2"
                                 >
                                   Not Available
                                 </label>

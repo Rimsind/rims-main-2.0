@@ -21,7 +21,7 @@ const MedicineEntry = ({
         eprescription: {
           ...eprescription,
           medicine: [
-            ...eprescription?.medicine,
+            ...eprescription.medicine,
             {
               duration: data.duration,
               frequency: data.frequency,

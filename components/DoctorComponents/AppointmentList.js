@@ -2,6 +2,24 @@ import Image from "next/image";
 import Link from "next/link";
 
 const AppointmentList = ({ data, sl }) => {
+  var today = new Date();
+  var day = today.getDate();
+  var month = today.getMonth() + 1;
+  var year = today.getFullYear();
+
+  if (day < 10) {
+    var newDay = "0" + day;
+  } else {
+    var newDay = day;
+  }
+  if (month < 10) {
+    var newMonth = "0" + month;
+  } else {
+    var newMonth = month;
+  }
+
+  const currentDate = year + "-" + newMonth + "-" + newDay;
+
   return (
     <>
       <tr>
@@ -46,13 +64,19 @@ const AppointmentList = ({ data, sl }) => {
         {!!data.appointment_status === false ? (
           <td className="text-end">
             <div className="table-action">
-              <Link
-                href={`/doctors/appointments/clinical-examination?id=${data?.id}`}
-              >
-                <a className="btn btn-sm bg-warning">
-                  <i className="far fa-pencil"></i> Edit
-                </a>
-              </Link>
+              {data?.date === currentDate ? (
+                <>
+                  <Link
+                    href={`/doctors/appointments/clinical-examination?id=${data?.id}`}
+                  >
+                    <a className="btn btn-sm bg-warning">
+                      <i className="far fa-pencil"></i> Edit
+                    </a>
+                  </Link>
+                </>
+              ) : (
+                <></>
+              )}
             </div>
           </td>
         ) : (

@@ -39,7 +39,7 @@ const OtpVerify = () => {
                   </div>
                   <div className="otp-resnd">
                     <p className="otp-resnd-txt text-center">
-                      If you didn't recieve a code!{" "}
+                      If you didn&apos;t recieve a code!{" "}
                       <a href="#" className="text-danger">
                         Resend
                       </a>
