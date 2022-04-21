@@ -30,10 +30,10 @@ const Dashboard = () => {
                         </div>
                         <div className="col-5">
                           <div className="dashboard-card-main-title">
-                            <p>Regular Bed</p>
+                            <p className="fs-6">Complete Blood Count (CBC)</p>
                           </div>
                         </div>
-                        <div className="col-4">
+                        <div className="col-4 text-end">
                           <p
                             className="badge bg-primary fw-lighter border border-1 border-secondary"
                             style={{ fontSize: "13px" }}
@@ -59,10 +59,10 @@ const Dashboard = () => {
                         </div>
                         <div className="col-5">
                           <div className="dashboard-card-main-title">
-                            <p>Regular Bed</p>
+                            <p>Blood Sugar Test</p>
                           </div>
                         </div>
-                        <div className="col-4">
+                        <div className="col-4 text-end">
                           <p
                             className="badge bg-primary fw-lighter border border-1 border-secondary"
                             style={{ fontSize: "13px" }}
@@ -88,10 +88,10 @@ const Dashboard = () => {
                         </div>
                         <div className="col-5">
                           <div className="dashboard-card-main-title">
-                            <p>Regular Bed</p>
+                            <p>Lipid Profile</p>
                           </div>
                         </div>
-                        <div className="col-4">
+                        <div className="col-4 text-end">
                           <p
                             className="badge bg-primary fw-lighter border border-1 border-secondary"
                             style={{ fontSize: "13px" }}
@@ -117,10 +117,10 @@ const Dashboard = () => {
                         </div>
                         <div className="col-5">
                           <div className="dashboard-card-main-title">
-                            <p>Regular Bed</p>
+                            <p>Liver Function Test</p>
                           </div>
                         </div>
-                        <div className="col-4">
+                        <div className="col-4 text-end">
                           <p
                             className="badge bg-primary fw-lighter border border-1 border-secondary"
                             style={{ fontSize: "13px" }}
@@ -146,10 +146,10 @@ const Dashboard = () => {
                         </div>
                         <div className="col-5">
                           <div className="dashboard-card-main-title">
-                            <p>Regular Bed</p>
+                            <p>Urine Analysis</p>
                           </div>
                         </div>
-                        <div className="col-4">
+                        <div className="col-4 text-end">
                           <p
                             className="badge bg-primary fw-lighter border border-1 border-secondary"
                             style={{ fontSize: "13px" }}
@@ -175,10 +175,10 @@ const Dashboard = () => {
                         </div>
                         <div className="col-5">
                           <div className="dashboard-card-main-title">
-                            <p>Regular Bed</p>
+                            <p>Kidney Function Test</p>
                           </div>
                         </div>
-                        <div className="col-4">
+                        <div className="col-4 text-end">
                           <p
                             className="badge bg-primary fw-lighter border border-1 border-secondary"
                             style={{ fontSize: "13px" }}
@@ -204,15 +204,73 @@ const Dashboard = () => {
                         </div>
                         <div className="col-5">
                           <div className="dashboard-card-main-title">
-                            <p>Regular Bed</p>
+                            <p>Thyroid Function Test</p>
                           </div>
                         </div>
-                        <div className="col-4">
+                        <div className="col-4 text-end">
                           <p
                             className="badge bg-danger fw-lighter border border-1 border-secondary"
                             style={{ fontSize: "13px" }}
                           >
-                            Available
+                            Not Available
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4 patient-dashboard-top">
+                    <div className="dashboard-card border-bottom-0">
+                      <div className="row align-items-center">
+                        <div className="col-3">
+                          <div className="dashboard-card-icon">
+                            <Image
+                              src="/assets/images/Regular-Bed.png"
+                              height="50px"
+                              width="50px"
+                              alt="Regular Bed"
+                            />
+                          </div>
+                        </div>
+                        <div className="col-5">
+                          <div className="dashboard-card-main-title">
+                            <p>Test for Vitamin D Deficiency</p>
+                          </div>
+                        </div>
+                        <div className="col-4 text-end">
+                          <p
+                            className="badge bg-danger fw-lighter border border-1 border-secondary"
+                            style={{ fontSize: "13px" }}
+                          >
+                            Not Available
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4 patient-dashboard-top">
+                    <div className="dashboard-card border-bottom-0">
+                      <div className="row align-items-center">
+                        <div className="col-3">
+                          <div className="dashboard-card-icon">
+                            <Image
+                              src="/assets/images/Regular-Bed.png"
+                              height="50px"
+                              width="50px"
+                              alt="Regular Bed"
+                            />
+                          </div>
+                        </div>
+                        <div className="col-5">
+                          <div className="dashboard-card-main-title">
+                            <p>Pap Smear Test (For Women)</p>
+                          </div>
+                        </div>
+                        <div className="col-4 text-end">
+                          <p
+                            className="badge bg-danger fw-lighter border border-1 border-secondary"
+                            style={{ fontSize: "13px" }}
+                          >
+                            Not Available
                           </p>
                         </div>
                       </div>

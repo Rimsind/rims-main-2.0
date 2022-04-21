@@ -170,7 +170,6 @@ const Index = () => {
                               <th>Sl No.</th>
                               <th>#App-Id</th>
                               <th> Patient Name</th>
-
                               <th>Age</th>
                               <th>Apointment Time</th>
                               <th>Fee</th>

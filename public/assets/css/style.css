@@ -4223,3 +4223,12 @@ table.rehab-com-table {
   color: #979797;
 }
 /* Login OTP Form Style Sheet End Here */
+
+/* Pathology Facilities Border Right Display None on Mobile Screen Style Sheeet Start Here*/
+@media screen and (min-width: 300px) and (max-width: 900px) {
+  .patho-faclt-brd-end-n {
+    border-right: none !important;
+  }
+}
+
+/* Pathology Facilities border Right Display None on Mobile Screen Style Sheet End Here */

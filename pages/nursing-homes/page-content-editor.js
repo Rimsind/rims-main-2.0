@@ -97,7 +97,7 @@ const PageContentEditor = () => {
           <div className="row">
             <NursingSideBar data={data} status3="active" />
 
-            <div className="col-md-7 col-lg-8 col-xl-9">
+            <div className="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-9 col-xxl-9">
               <div className="card">
                 <div className="card-header">
                   <p className="fs-5 fw-bold text-center lh-1">Overview</p>
