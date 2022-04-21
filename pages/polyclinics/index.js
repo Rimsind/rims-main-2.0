@@ -39,6 +39,12 @@ const Index = () => {
     }
   });
 
+  const resetData = () => {
+    setSearch("");
+    setCity("");
+    setSelectedState("");
+  };
+
   return (
     <>
       <main className="main">
@@ -75,9 +81,7 @@ const Index = () => {
                           aria-label="Default select example"
                           onChange={(e) => setSelectedState(e.target.value)}
                         >
-                          <option selected disabled>
-                            Select State
-                          </option>
+                          <option>Select State</option>
                           {locations?.map((items, index) => (
                             <option value={items?.state} key={index}>
                               {items?.state}
@@ -91,9 +95,7 @@ const Index = () => {
                           aria-label="Default select example"
                           onChange={(e) => setCity(e.target.value)}
                         >
-                          <option selected disabled>
-                            Select City
-                          </option>
+                          <option>Select City</option>
                           {filteredCity?.map((items) => (
                             <>
                               {items?.city?.map((val, index) => (
@@ -107,8 +109,8 @@ const Index = () => {
                       </div>
 
                       <div className="btn-search">
-                        <button type="button" className="btn w-100">
-                          Search
+                        <button onClick={resetData} className="btn w-100">
+                          Reset
                         </button>
                       </div>
                     </div>

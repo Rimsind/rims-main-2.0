@@ -7,7 +7,7 @@ const PolyclinicTimetableCard = ({ data }) => {
     `${apiUrl}/specialties/${data?.specialty}`,
     fetcher
   );
-  console.log(data);
+
   return (
     <>
       <div className="doctor-widget p-4 shadow-sm">

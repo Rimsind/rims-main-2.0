@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 const DoctorTimetableCard = ({ data, doctorId }) => {
-  console.log(data);
   return (
     <>
       <section className="doctor-location">

@@ -8,20 +8,20 @@ import { useState } from "react";
 
 const Index = () => {
   const { data: doctors } = useSWR(`${apiUrl}/doctors?_sort=id:desc`, fetcher);
-  console.log(doctors);
+
   const [startValue, setStartValue] = useState(0);
-  const [endValue, setEndValue] = useState(5);
+  const [endValue, setEndValue] = useState(12);
   const nextData = () => {
     if (doctors?.length - endValue >= 0) {
-      setStartValue(startValue + 5);
-      setEndValue(endValue + 5);
+      setStartValue(startValue + 12);
+      setEndValue(endValue + 12);
     }
   };
 
   const previousValue = () => {
-    if (startValue >= 5) {
-      setStartValue(startValue - 5);
-      setEndValue(endValue - 5);
+    if (startValue >= 12) {
+      setStartValue(startValue - 12);
+      setEndValue(endValue - 12);
     }
   };
 
@@ -86,9 +86,7 @@ const Index = () => {
                           aria-label="Default select example"
                           onChange={(e) => setSelectedState(e.target.value)}
                         >
-                          <option selected disabled>
-                            Select State
-                          </option>
+                          <option>Select State</option>
                           {locations?.map((items, index) => (
                             <option value={items?.state} key={index}>
                               {items?.state}
@@ -102,7 +100,7 @@ const Index = () => {
                           aria-label="Default select example"
                           onChange={(e) => setCity(e.target.value)}
                         >
-                          <option selected>Select City</option>
+                          <option>Select City</option>
                           {filteredCity?.map((items) => (
                             <>
                               {items?.city?.map((val, index) => (
@@ -124,7 +122,7 @@ const Index = () => {
                               value={gender}
                               onChange={(e) => setGender(e.target.value)}
                             >
-                              <option selected>Select Gender</option>
+                              <option>Select Gender</option>
                               <option value="Male">Male</option>
                               <option value="Female">Female</option>
                               <option value="Others">Others</option>
@@ -142,7 +140,7 @@ const Index = () => {
                               value={specialty}
                               onChange={(e) => setSpecialty(e.target.value)}
                             >
-                              <option selected>Select Specialty</option>
+                              <option>Select Specialty</option>
                               {specialties?.map((items, index) => (
                                 <option value={items?.name} key={index}>
                                   {items?.name}
@@ -210,7 +208,7 @@ const Index = () => {
                             return items;
                           } else if (
                             items?.specialty?.name.includes(specialty) &&
-                            items?.gender.includes(gender) &&
+                            items?.gender?.includes(gender) &&
                             city === ""
                           ) {
                             return items;
@@ -223,7 +221,7 @@ const Index = () => {
                           ) {
                             return items;
                           } else if (
-                            items?.gender.includes(gender) &&
+                            items?.gender?.includes(gender) &&
                             items?.address?.city
                               .toLowerCase()
                               .includes(city.toLowerCase()) &&
@@ -231,7 +229,7 @@ const Index = () => {
                           ) {
                             return items;
                           } else if (
-                            items?.gender.includes(gender) &&
+                            items?.gender?.includes(gender) &&
                             items?.address?.city
                               .toLowerCase()
                               .includes(city.toLowerCase()) &&

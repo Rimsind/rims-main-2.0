@@ -7,7 +7,6 @@ import { DetailsPageLoader } from "components/Loaders";
 const NursingHomeId = () => {
   const { id } = useRouter().query;
   const { data } = useSWR(`${apiUrl}/nursing-homes/${id}`, fetcher);
-  console.log(data);
 
   return (
     <>
@@ -341,10 +340,7 @@ const NursingHomeId = () => {
                         className="tab-pane fade show"
                       >
                         {data?.doctors?.map((items, index) => (
-                          <PolyclinicTimetableCard
-                            schedule={items}
-                            key={index}
-                          />
+                          <PolyclinicTimetableCard data={items} key={index} />
                         ))}
                       </div>
 

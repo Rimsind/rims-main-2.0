@@ -4,11 +4,8 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 import { apiUrl, fetcher } from "config/api";
 import { DetailsPageLoader } from "components/Loaders";
-import { useAuth } from "context";
 const DoctorId = () => {
   const { id } = useRouter().query;
-  const { auth } = useAuth();
-
   const { data } = useSWR(`${apiUrl}/doctors/${id}`, fetcher);
 
   return (

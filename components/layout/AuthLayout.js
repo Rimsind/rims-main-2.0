@@ -23,7 +23,7 @@ const AuthLayout = ({ children }) => {
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossOrigin="anonymous"
       ></Script>
-      <mani>{children}</mani>
+      <main>{children}</main>
     </>
   );
 };
