@@ -291,14 +291,12 @@ const Index = () => {
                                         Medicine
                                       </div>
                                       <div className="col-6">
-                                        <p>
-                                          <span className="fw-bold me-1 text-info">
-                                            Exp:
-                                          </span>
-                                          <span>
-                                            {item?.experienceInYrs} Yrs.
-                                          </span>
-                                        </p>
+                                        <span className="fw-bold me-1 text-info">
+                                          Exp:
+                                        </span>
+                                        <span>
+                                          {item?.experienceInYrs} Yrs.
+                                        </span>
                                       </div>
                                     </div>
                                   </li>
