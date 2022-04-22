@@ -10,13 +10,18 @@ const DoctorTimetableCard = ({ data, doctorId }) => {
           style={{ backgroundColor: "#abd5ff" }}
         >
           <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3">
-            <div className="doctor-location-items py-3 pe-4 border-end border-1 ">
+            <div className="doctor-location-items py-3 pe-4 border-end border-1 border-light ">
               <div className="doc-info-cont text-center text-sm-center text-md-center text-lg-start text-xl-start text-xxl-start">
                 <Image
                   className="border border-2 border-primary rounded"
                   height={50}
                   width={50}
-                  src={"/assets/images/polyclinic.jpg"}
+                  src={
+                    data?.polyclinic?.image?.url ||
+                    data?.nursing_home?.image?.url ||
+                    data?.hospital?.image?.url ||
+                    "/assets/images/polyclinic.jpg"
+                  }
                   alt="Polyclinic Image"
                 />
                 <h4 className="doc-name fs-5">

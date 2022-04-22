@@ -176,7 +176,7 @@ const DoctorId = () => {
                         id="doc_locations"
                         className="tab-pane fade show active"
                       >
-                        <div className="location-list">
+                        <div className="">
                           {data?.booking_schedule?.map((items, index) => (
                             <DoctorTimetableCard
                               data={items}
