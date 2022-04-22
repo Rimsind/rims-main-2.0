@@ -17,7 +17,6 @@ import {
 } from "components/DoctorComponents";
 import HistoryOfPresentIllness from "components/DoctorComponents/CommonForms/HistoryOfPresentIllness";
 import Assesment from "components/DoctorComponents/CommonForms/Assesment";
-import Prescription from "components/DoctorComponents/CommonForms/Prescription";
 import EPrescription from "components/DoctorComponents/CommonForms/ePrescription";
 import { withAuth } from "helpers/withAuth";
 
@@ -34,7 +33,8 @@ const ClinicalExaminations = () => {
       });
       const result = res.data;
       return result;
-    }
+    },
+    { refreshInterval: 1000 }
   );
   console.log(appointment);
 

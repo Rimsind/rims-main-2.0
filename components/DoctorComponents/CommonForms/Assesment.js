@@ -5,24 +5,12 @@ import { fetcher } from "config/api";
 import useSWR from "swr";
 import { apiUrl } from "config/api";
 import { Slide, toast } from "react-toastify";
-const Assesment = ({ appointmentId }) => {
+const Assesment = ({ appointmentId, appointment }) => {
   const { auth } = useAuth();
   const [investigation, setInvestigation] = useState();
   const [treatmentPlan, setTreatmentPlan] = useState();
   const [icd, setIcd] = useState();
 
-  const { data: appointment } = useSWR(
-    `${apiUrl}/appointments/${appointmentId}`,
-    async (url) => {
-      const res = await axios.get(url, {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      });
-      const result = res.data;
-      return result;
-    }
-  );
   const { data: doctor } = useSWR(
     `${apiUrl}/doctors/${auth.user?.profileId}`,
     async (url) => {
@@ -66,6 +54,9 @@ const Assesment = ({ appointmentId }) => {
         clinicalInvestigation: investigation,
         diagnosis: allIcd,
         treatmentPlan: treatmentPlan,
+      },
+      eprescription: {
+        status: true,
       },
     };
 

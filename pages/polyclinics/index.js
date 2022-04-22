@@ -9,7 +9,10 @@ import { apiUrl, fetcher } from "config/api";
 import useSWR from "swr";
 import { useState } from "react";
 const Index = () => {
-  const { data } = useSWR(`${apiUrl}/polyclinics?_sort=id:desc`, fetcher);
+  const { data } = useSWR(
+    `${apiUrl}/polyclinics?_sort=id:desc&&verification_status=Approved`,
+    fetcher
+  );
   const [startValue, setStartValue] = useState(0);
   const [endValue, setEndValue] = useState(5);
   const nextData = () => {

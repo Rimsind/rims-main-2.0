@@ -29,9 +29,9 @@ const MedicalInformation = () => {
       });
       const result = res.data;
       return result;
-    }
+    },
+    { refreshInterval: 1000 }
   );
-  console.log(data);
 
   return (
     <>
