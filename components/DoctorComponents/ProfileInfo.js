@@ -6,7 +6,6 @@ import { useState } from "react";
 import useSWR from "swr";
 import { Slide, toast } from "react-toastify";
 const ProfileInfo = ({ data }) => {
-  console.log(data);
   const { auth } = useAuth();
   const [loading, setLoading] = useState(false);
   const { data: specialties } = useSWR(`${apiUrl}/specialties`, fetcher);

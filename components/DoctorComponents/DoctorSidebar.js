@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useAuth } from "context";
 
 const DoctorSidebar = (props) => {
-  const { logOut } = useAuth();
   const { data } = props;
 
   return (
@@ -46,8 +45,20 @@ const DoctorSidebar = (props) => {
                         <span className="fs-6 text-secondary">
                           Account Status:
                         </span>{" "}
-                        Active
-                        <i className="fas fa-badge-check ms-1 text-primary"></i>
+                        {data?.verification_status}
+                        {data?.verification_status === "Approved" && (
+                          <>
+                            <i className="fas fa-badge-check ms-1 text-primary"></i>
+                          </>
+                        )}
+                        {data?.verification_status === "Pending" && (
+                          <i className="fas fa-exclamation-triangle ms-1 text-warning"></i>
+                        )}
+                        {data?.verification_status === "Rejected" && (
+                          <>
+                            <i className="fas fa-times-circle ms-1 text-danger"></i>
+                          </>
+                        )}
                       </h5>
                     </div>
                   </div>

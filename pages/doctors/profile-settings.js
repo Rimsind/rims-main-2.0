@@ -22,7 +22,8 @@ const ProfileSettings = () => {
       });
       const result = res.data;
       return result;
-    }
+    },
+    { refreshInterval: 1000 }
   );
   return (
     <>
@@ -40,7 +41,7 @@ const ProfileSettings = () => {
                   <div>
                     <ProfilePicture data={data} />
                     <ProfileInfo data={data} />
-                    <FeeScale />
+                    <FeeScale data={data} />
                     <AddressInfo data={data} />
                     <EducationInfo data={data} />
                   </div>

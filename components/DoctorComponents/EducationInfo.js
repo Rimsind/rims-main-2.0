@@ -4,6 +4,7 @@ import axios from "axios";
 import { toast, Slide } from "react-toastify";
 import { apiUrl } from "config/api";
 import { useAuth } from "context";
+import DatePicker from "react-datepicker";
 const EducationInfo = ({ data }) => {
   const { auth } = useAuth();
   const [degree, setDegree] = useState();
@@ -95,7 +96,7 @@ const EducationInfo = ({ data }) => {
                 <label className="mb-2">Receiving Year</label>
                 <div className="mb-3">
                   <input
-                    type="text"
+                    type="number"
                     className="form-control"
                     placeholder="Receiving Year"
                     value={year}
