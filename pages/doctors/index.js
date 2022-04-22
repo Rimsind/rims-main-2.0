@@ -275,7 +275,7 @@ const Index = () => {
                                 <ul className="available-info">
                                   <li>{item?.qualification}</li>
                                   <li>
-                                    <div className="row align-items-center">
+                                    <div className="row align-items-baseline">
                                       <div className="col-6">
                                         <Image
                                           height="20"
@@ -290,7 +290,7 @@ const Index = () => {
                                       <div className="col-6">
                                         <p>
                                           <span className="fw-bold me-1 text-info">
-                                            Experience:
+                                            Exp:
                                           </span>
                                           <span>
                                             {item?.experienceInYrs} Yrs.

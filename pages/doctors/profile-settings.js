@@ -8,6 +8,7 @@ import { UserPageLoader } from "components/Loaders";
 import { DoctorSidebar, EducationInfo } from "components/DoctorComponents";
 import ProfileInfo from "components/DoctorComponents/ProfileInfo";
 import { withAuth } from "helpers/withAuth";
+import FeeScale from "components/forms/FeeScale";
 const ProfileSettings = () => {
   const { auth } = useAuth();
 
@@ -39,6 +40,7 @@ const ProfileSettings = () => {
                   <div>
                     <ProfilePicture data={data} />
                     <ProfileInfo data={data} />
+                    <FeeScale />
                     <AddressInfo data={data} />
                     <EducationInfo data={data} />
                   </div>

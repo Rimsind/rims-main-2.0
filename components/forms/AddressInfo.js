@@ -79,6 +79,7 @@ const AddressInfo = ({ data }) => {
   return (
     <>
       <div className="card">
+        <div className="card-header fs-6 fw-bold">Address Information</div>
         <div className="card-body">
           <form onSubmit={handleSubmit(updateAddress)}>
             <div className="row form-row">

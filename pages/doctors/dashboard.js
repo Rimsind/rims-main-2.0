@@ -168,7 +168,7 @@ const Dashboard = () => {
                         <div className="row align-items-center">
                           <div className="col-3">
                             <div className="dashboard-card-icon shadow">
-                              <i className="fas fa-calendar-edit"></i>
+                              <i className="fas fa-clinic-medical"></i>
                             </div>
                           </div>
                           <div className="col-9">
@@ -205,7 +205,7 @@ const Dashboard = () => {
                         <div className="row align-items-center">
                           <div className="col-3">
                             <div className="dashboard-card-icon shadow">
-                              <i className="fas fa-users-medical"></i>
+                              <i className="fas fa-calendar-alt"></i>
                             </div>
                           </div>
                           <div className="col-9">
@@ -238,7 +238,7 @@ const Dashboard = () => {
                         <div className="row align-items-center">
                           <div className="col-3">
                             <div className="dashboard-card-icon shadow">
-                              <i className="fas fa-users-medical"></i>
+                              <i className="fas fa-calendar-edit"></i>
                             </div>
                           </div>
                           <div className="col-9">
@@ -275,7 +275,7 @@ const Dashboard = () => {
                         <div className="row align-items-center">
                           <div className="col-3">
                             <div className="dashboard-card-icon shadow">
-                              <i className="fas fa-edit"></i>
+                              <i className="fas fa-calendar-week"></i>
                             </div>
                           </div>
                           <div className="col-9">
@@ -312,7 +312,7 @@ const Dashboard = () => {
                         <div className="row align-items-center">
                           <div className="col-3">
                             <div className="dashboard-card-icon shadow">
-                              <i className="fas fa-users-medical"></i>
+                              <i className="fas fa-calendar-check"></i>
                             </div>
                           </div>
                           <div className="col-9">
@@ -349,7 +349,7 @@ const Dashboard = () => {
                         <div className="row align-items-center">
                           <div className="col-3">
                             <div className="dashboard-card-icon shadow">
-                              <i className="fas fa-users-medical"></i>
+                              <i className="fas fa-calendar-exclamation"></i>
                             </div>
                           </div>
                           <div className="col-9">
@@ -389,7 +389,7 @@ const Dashboard = () => {
                         <div className="row align-items-center">
                           <div className="col-3">
                             <div className="dashboard-card-icon shadow">
-                              <i className="fas fa-users-medical"></i>
+                              <i className="fas fa-calendar-times"></i>
                             </div>
                           </div>
                           <div className="col-9">

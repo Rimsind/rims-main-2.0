@@ -63,6 +63,7 @@ const EducationInfo = ({ data }) => {
   return (
     <>
       <div className="card">
+        <div className="card-header fs-6 fw-bold">Education Information</div>
         <div className="card-body">
           <div className="doc-education mb-4">
             <div className="row align-items-center">

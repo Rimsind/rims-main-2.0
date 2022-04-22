@@ -75,6 +75,7 @@ const ProfileInfo = ({ data }) => {
     <>
       <form onSubmit={handleSubmit(updateProfile)}>
         <div className="card">
+          <div className="card-header fs-6 fw-bold">Profile Information</div>
           <div className="card-body">
             <div className="row form-row">
               <div className="col-12 col-md-6">

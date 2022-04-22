@@ -43,8 +43,11 @@ const DoctorSidebar = (props) => {
                         {data?.specialty?.name}
                       </h5>
                       <h5 className="mb-0">
-                        <i className="fas fa-map-marker-alt"></i>{" "}
-                        {data?.address?.city}, {data?.address?.state}
+                        <span className="fs-6 text-secondary">
+                          Account Status:
+                        </span>{" "}
+                        Active
+                        <i className="fas fa-badge-check ms-1 text-primary"></i>
                       </h5>
                     </div>
                   </div>

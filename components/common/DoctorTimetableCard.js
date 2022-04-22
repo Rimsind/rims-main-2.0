@@ -11,7 +11,14 @@ const DoctorTimetableCard = ({ data, doctorId }) => {
         >
           <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3">
             <div className="doctor-location-items py-3 pe-4 border-end border-1 ">
-              <div className="doc-info-cont">
+              <div className="doc-info-cont text-center text-sm-center text-md-center text-lg-start text-xl-start text-xxl-start">
+                <Image
+                  className="border border-2 border-primary rounded"
+                  height={50}
+                  width={50}
+                  src={"/assets/images/polyclinic.jpg"}
+                  alt="Polyclinic Image"
+                />
                 <h4 className="doc-name fs-5">
                   <a href="doctor-profile.html">
                     {data?.polyclinic?.name ||
@@ -43,7 +50,7 @@ const DoctorTimetableCard = ({ data, doctorId }) => {
               </div>
             </div>
           </div>
-          <div className="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9 py-3">
+          {/* <div className="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9 py-3">
             <div className="doctor-time-slot d-flex align-items-center justify-content-between">
               {data?.slots?.map((items, index) => (
                 <div
@@ -102,6 +109,127 @@ const DoctorTimetableCard = ({ data, doctorId }) => {
                       </Link>
                     </>
                   )}
+                </div>
+              ))}
+            </div>
+          </div> */}
+          <div className="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9 py-3">
+            <div className="doctor-time-slot row align-items-center justify-content-between">
+              {data?.slots?.map((items, index) => (
+                <div className="col-12 col-sm-12 col-md-3 col-lg-4 col-xl-3 col-xxl-3 pb-3 pb-sm-3 pb-md-3 pb-lg-3 pb-xl-0 pb-xxl-0">
+                  <div
+                    className="doctor-location-items text-center pe-4 border-end border-1 "
+                    key={index}
+                  >
+                    <a
+                      className="fs-6 py-1 px-5 px-sm-5 px-md-4 px-lg-4 px-xl-5 px-xxl-5 shadow-sm"
+                      style={{
+                        backgroundColor: "#ffc107",
+                        color: "#1d00a3",
+                        fontWeight: "400",
+                      }}
+                    >
+                      {items?.date}
+                    </a>
+                    <div className="row align-items-center">
+                      <div className="col-6">
+                        <span
+                          className="fs-6"
+                          style={{ color: "#1d00a3", fontWeight: "500" }}
+                        >
+                          From
+                        </span>
+                        <p
+                          className="fs-6 text-dark"
+                          style={{ fontWeight: "500" }}
+                        >
+                          {items?.time_from}
+                        </p>
+                      </div>
+                      <div className="col-6">
+                        <span
+                          className="fs-6"
+                          style={{ color: "#1d00a3", fontWeight: "500" }}
+                        >
+                          To
+                        </span>
+                        <p
+                          className="fs-6 text-dark"
+                          style={{ fontWeight: "500" }}
+                        >
+                          {items?.time_to}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="row align-items-center">
+                      <div className="col-6">
+                        <p
+                          className="fs-6 text-dark"
+                          style={{ fontWeight: "500" }}
+                        >
+                          <i
+                            class="far fa-money-bill me-1"
+                            style={{ color: "#1d00a3" }}
+                          ></i>
+                          - ₹{data?.fee}
+                        </p>
+                      </div>
+                      <div className="col-6">
+                        <p
+                          className="fs-6 text-dark"
+                          style={{ fontWeight: "500" }}
+                        >
+                          <i
+                            class="far fa-loveseat me-1"
+                            style={{ color: "#1d00a3" }}
+                          ></i>
+                          - {items?.seats}
+                        </p>
+                      </div>
+                    </div>
+                    {!!data.polyclinic && (
+                      <>
+                        <Link
+                          href={`/checkout?doctorId=${doctorId}&&polyclinicId=${data?.polyclinic?.id}&&fee=${data?.fee}&&date=${items?.date}&&time=${items?.time_from}-${items?.time_to}`}
+                        >
+                          <a
+                            className="btn text-light fs-6 px-5 px-sm-5 px-md-4 px-lg-4 px-xl-5 px-xxl-5"
+                            style={{ backgroundColor: "#1d00a3" }}
+                          >
+                            Book Now
+                          </a>
+                        </Link>
+                      </>
+                    )}{" "}
+                    {!!data.nursing_home && (
+                      <>
+                        <Link
+                          href={`/checkout?doctorId=${doctorId}&&nursingHomeId=${data?.nursing_home?.id}&&fee=${data?.fee}&&date=${items?.date}&&time=${items?.time_from}-${items?.time_to}`}
+                        >
+                          <a
+                            className="btn text-light fs-6 px-5 px-sm-5 px-md-4 px-lg-4 px-xl-5 px-xxl-5"
+                            style={{ backgroundColor: "#1d00a3" }}
+                          >
+                            Book Now
+                          </a>
+                        </Link>
+                      </>
+                    )}{" "}
+                    {!!data.hospital && (
+                      <>
+                        <Link
+                          href={`/checkout?doctorId=${doctorId}&&hospitalId=${data?.hospital?.id}&&fee=${data?.fee}&&date=${items?.date}&&time=${items?.time_from}-${items?.time_to}`}
+                        >
+                          <a
+                            className="btn text-light fs-6 px-5 px-sm-5 px-md-4 px-lg-4 px-xl-5 px-xxl-5"
+                            style={{ backgroundColor: "#1d00a3" }}
+                          >
+                            Book Now
+                          </a>
+                        </Link>
+                      </>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
