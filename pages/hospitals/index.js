@@ -9,7 +9,10 @@ import useSWR from "swr";
 import { ListingPageLoader } from "components/Loaders";
 import { useState } from "react";
 const Index = () => {
-  const { data } = useSWR(`${apiUrl}/hospitals`, fetcher);
+  const { data } = useSWR(
+    `${apiUrl}/hospitals?_sort=id:desc&&verification_status=Approved`,
+    fetcher
+  );
   const { data: locations } = useSWR(`${apiUrl}/locations`, fetcher);
   const [search, setSearch] = useState("");
   const [city, setCity] = useState("");

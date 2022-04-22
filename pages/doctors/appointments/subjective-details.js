@@ -39,10 +39,9 @@ const SubjectiveDetails = () => {
       });
       const result = res.data;
       return result;
-    }
+    },
+    { refreshInterval: 1000 }
   );
-
-  console.log(appointment);
 
   return (
     <>

@@ -7,6 +7,7 @@ import { apiUrl } from "config/api";
 import { Slide, toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 const TestEntry = ({ patient, assesment, appointmentId, eprescription }) => {
+  console.log(eprescription);
   const { auth } = useAuth();
   const { register, handleSubmit, reset } = useForm();
   const submitTest = async (data, event) => {
@@ -15,9 +16,8 @@ const TestEntry = ({ patient, assesment, appointmentId, eprescription }) => {
       const payload = {
         eprescription: {
           ...eprescription,
-
           test: [
-            ...eprescription.test,
+            ...eprescription?.test,
             {
               name: data.name,
               specification: data.specification,
@@ -25,6 +25,7 @@ const TestEntry = ({ patient, assesment, appointmentId, eprescription }) => {
           ],
         },
       };
+      console.log(payload);
 
       const res = await axios.put(
         `${apiUrl}/appointments/${appointmentId}`,
