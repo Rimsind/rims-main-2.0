@@ -1,45 +1,16 @@
-import AuthLayout from "components/layout/AuthLayout";
+import Image from "next/image";
+import React from "react";
 import {
   OrthoExamination,
   MedicineExamination,
   RehabExamination,
   NeuroExamination,
 } from "components/reports";
-import { useRouter } from "next/router";
-import { useAuth } from "context";
-import useSWR from "swr";
-import axios from "axios";
-import { apiUrl, fetcher } from "config/api";
-import Image from "next/image";
-const ExaminationReport = () => {
-  const { id } = useRouter().query;
+export const ExaminationReport = React.forwardRef((props, ref) => {
+  const { appointments, specialty, bloodGroup } = props;
 
-  const { auth } = useAuth();
-
-  const { data: appointment } = useSWR(
-    `${apiUrl}/appointments/${id}`,
-    async (url) => {
-      const res = await axios.get(url, {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      });
-      const result = res.data;
-      return result;
-    }
-  );
-
-  const { data: specialty } = useSWR(
-    `${apiUrl}/specialties/${appointment?.doctor?.specialty}`,
-    fetcher
-  );
-
-  const { data: bloodGroup } = useSWR(
-    `${apiUrl}/blood-groups/${appointment?.patient?.blood_group}`,
-    fetcher
-  );
   return (
-    <>
+    <div ref={ref}>
       <div className="prescription">
         <div className="container prescription-body">
           <div className="pres-topbar-ribbon py-1 px-1">
@@ -92,15 +63,17 @@ const ExaminationReport = () => {
               <div className="col-md-4">
                 <div className="header-inner-item text-start">
                   <p className="fs-3 fw-bold fst-italic lh-1">
-                    Dr. {appointment?.doctor?.firstName}{" "}
-                    {appointment?.doctor?.lastName}
+                    Dr. {appointments?.doctor?.firstName}{" "}
+                    {appointments?.doctor?.lastName}
                   </p>
                   <p className="fs-6 fw-bold lh-1">
-                    {appointment?.doctor?.qualification}
+                    {appointments?.doctor?.qualification}
                   </p>
                   <p className="fs-6 lh-1">{specialty?.name}</p>
                   <p className="fs-6 lh-1">Reg. No.-58905 (WBMC)</p>
-                  <p className="fs-6 lh-1">Mob: {appointment?.doctor?.phone}</p>
+                  <p className="fs-6 lh-1">
+                    Mob: {appointments?.doctor?.phone}
+                  </p>
                 </div>
               </div>
               <div className="col-md-4">
@@ -117,22 +90,22 @@ const ExaminationReport = () => {
               <div className="col-md-4">
                 <div className="header-inner-item text-end">
                   <p className="fs-3 fw-bold fst-italic lh-1">
-                    {appointment?.polyclinic?.name}
+                    {appointments?.polyclinic?.name}
                   </p>
                   <p className="fs-6 lh-1">
-                    {appointment?.polyclinic?.street_address},{" "}
-                    {appointment?.polyclinic?.city}
+                    {appointments?.polyclinic?.street_address},{" "}
+                    {appointments?.polyclinic?.city}
                   </p>
                   <p className="fs-6 lh-1">
-                    {appointment?.polyclinic?.state},{" "}
-                    {appointment?.polyclinic?.country}, PIN:{" "}
-                    {appointment?.polyclinic?.pincode}
+                    {appointments?.polyclinic?.state},{" "}
+                    {appointments?.polyclinic?.country}, PIN:{" "}
+                    {appointments?.polyclinic?.pincode}
                   </p>
                   <p className="fs-6 lh-1">
-                    Email : {appointment?.polyclinic?.email}
+                    Email : {appointments?.polyclinic?.email}
                   </p>
                   <p className="fs-6 lh-1">
-                    Mobile No: {appointment?.polyclinic?.phone}
+                    Mobile No: {appointments?.polyclinic?.phone}
                   </p>
                 </div>
               </div>
@@ -150,7 +123,7 @@ const ExaminationReport = () => {
                       className="presc-img-profile"
                       alt=""
                       src={
-                        appointment?.patient?.image?.url ||
+                        appointments?.patient?.image?.url ||
                         "/assets/images/profile.png"
                       }
                     />
@@ -166,8 +139,8 @@ const ExaminationReport = () => {
                             <p className="fs-6 fw-bold text-light lh-1 text-light">
                               Name :
                               <span className="fs-6 fw-light ms-2">
-                                {appointment?.patient?.first_name}{" "}
-                                {appointment?.patient?.last_name}
+                                {appointments?.patient?.first_name}{" "}
+                                {appointments?.patient?.last_name}
                               </span>
                             </p>
                             <p className="fs-6 fw-bold text-light lh-1">
@@ -185,13 +158,13 @@ const ExaminationReport = () => {
                             <p className="fs-6 fw-bold text-light lh-1">
                               Age :
                               <span className="fs-6 fw-light ms-2">
-                                {appointment?.patient?.age}
+                                {appointments?.patient?.age}
                               </span>
                             </p>
                             <p className="fs-6 fw-bold text-light lh-1">
                               Gender :
                               <span className="fs-6 fw-light ms-2">
-                                {appointment?.patient?.gender}
+                                {appointments?.patient?.gender}
                               </span>
                             </p>
                           </div>
@@ -238,28 +211,28 @@ const ExaminationReport = () => {
             </div>
             {specialty?.name === "Neurologist" ? (
               <>
-                <NeuroExamination data={appointment?.neurology} />
+                <NeuroExamination data={appointments?.neurology} />
               </>
             ) : (
               <></>
             )}
             {specialty?.name === "Orthopedic" ? (
               <>
-                <OrthoExamination data={appointment?.orthopedic} />
+                <OrthoExamination data={appointments?.orthopedic} />
               </>
             ) : (
               <></>
             )}
             {specialty?.name === "Rehabilitation" ? (
               <>
-                <RehabExamination data={appointment?.rehab} />
+                <RehabExamination data={appointments?.rehab} />
               </>
             ) : (
               <></>
             )}
             {specialty?.name === "Medicine" ? (
               <>
-                <MedicineExamination data={appointment?.medicine} />
+                <MedicineExamination data={appointments?.medicine} />
               </>
             ) : (
               <></>
@@ -289,11 +262,6 @@ const ExaminationReport = () => {
           </footer>
         </div>
       </div>
-    </>
+    </div>
   );
-};
-
-export default ExaminationReport;
-ExaminationReport.getLayout = (ExaminationReport) => (
-  <AuthLayout>{ExaminationReport}</AuthLayout>
-);
+});

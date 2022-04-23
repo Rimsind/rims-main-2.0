@@ -39,7 +39,17 @@ const Neurological = ({ data, appointmentId }) => {
       }
     );
     const result = res.data;
-    alert("Form Submitted Succesfully");
+    toast.success("Form Submitted Succesfully", {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Slide,
+    });
     return result;
   };
 

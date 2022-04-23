@@ -1,37 +1,10 @@
-import AuthLayout from "components/layout/AuthLayout";
-import { useRouter } from "next/router";
-import { useAuth } from "context";
-import useSWR from "swr";
-import { apiUrl, fetcher } from "config/api";
 import Image from "next/image";
-const AssesmentReport = () => {
-  const { id } = useRouter().query;
-
-  const { auth } = useAuth();
-
-  const { data: appointment } = useSWR(
-    `${apiUrl}/appointments/${id}`,
-    async (url) => {
-      const res = await axios.get(url, {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      });
-      const result = res.data;
-      return result;
-    }
-  );
-  const { data: specialty } = useSWR(
-    `${apiUrl}/specialties/${appointment?.doctor?.specialty}`,
-    fetcher
-  );
-  const { data: bloodGroup } = useSWR(
-    `${apiUrl}/blood-groups/${appointment?.patient?.blood_group}`,
-    fetcher
-  );
+import React from "react";
+export const AssesmentReport = React.forwardRef((props, ref) => {
+  const { appointments, specialty, bloodGroup } = props;
 
   return (
-    <>
+    <div ref={ref}>
       <div className="clini-exam">
         <div className="container clini-exam-body">
           <header className="clini-exam-header">
@@ -90,7 +63,7 @@ const AssesmentReport = () => {
                         alt=""
                         className="clini-exam-img"
                         src={
-                          appointment?.patient?.image?.url ||
+                          appointments?.patient?.image?.url ||
                           "/assets/images/profile.png"
                         }
                       />
@@ -102,16 +75,16 @@ const AssesmentReport = () => {
                         </p>
                         <div className="patient_details_inner">
                           <p>
-                            Name : {appointment?.patient?.first_name}{" "}
-                            {appointment?.patient?.last_name}
+                            Name : {appointments?.patient?.first_name}{" "}
+                            {appointments?.patient?.last_name}
                           </p>
                           <p>
                             Material Status :{" "}
-                            {appointment?.patient?.marital_status}
+                            {appointments?.patient?.marital_status}
                           </p>
                           <p>Blood Group : {bloodGroup?.name}</p>
-                          <p>Date of Birth : {appointment?.patient?.dob}</p>
-                          <p>Gender : {appointment?.patient?.gender}</p>
+                          <p>Date of Birth : {appointments?.patient?.dob}</p>
+                          <p>Gender : {appointments?.patient?.gender}</p>
                         </div>
                       </div>
 
@@ -121,14 +94,19 @@ const AssesmentReport = () => {
                         </p>
                         <div className="patient_details_inner">
                           <p>
-                            Dr. {appointment?.doctor?.firstName}{" "}
-                            {appointment?.doctor?.lastName}
+                            Dr. {appointments?.doctor?.firstName}{" "}
+                            {appointments?.doctor?.lastName}
                           </p>
                           <p>
-                            Qualification: {appointment?.doctor?.qualification}
+                            Qualification: {appointments?.doctor?.qualification}
                           </p>
                           <p>Specialization: {specialty?.name}</p>
-                          <p>Clinic Name: {appointment?.polyclinic?.name}</p>
+                          <p>
+                            Clinic Name:{" "}
+                            {appointments?.polyclinic?.name ||
+                              appointments?.nursing_home?.name ||
+                              appointments?.hospital?.name}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -153,7 +131,7 @@ const AssesmentReport = () => {
                                   </tr>
                                 </thead>
                                 <tbody>
-                                  {appointment?.chiefComplaints.map(
+                                  {appointments?.chiefComplaints.map(
                                     (items, index) => (
                                       <tr key={index}>
                                         <th scope="row">*</th>
@@ -168,69 +146,69 @@ const AssesmentReport = () => {
                                 Additional Chief Complaint
                               </p>
                               <div className="patient_details_inner">
-                                {appointment?.general_problems === "false" ? (
+                                {appointments?.general_problems === "false" ? (
                                   <></>
                                 ) : (
                                   <p>
                                     General Problem:{" "}
-                                    {appointment?.general_problems}
+                                    {appointments?.general_problems}
                                   </p>
                                 )}
-                                {appointment?.genetal_problems === "false" ? (
+                                {appointments?.genetal_problems === "false" ? (
                                   <></>
                                 ) : (
                                   <p>
                                     Genital Problem :{" "}
-                                    {appointment?.genetal_problems}
+                                    {appointments?.genetal_problems}
                                   </p>
                                 )}
-                                {appointment?.heart_problems === "false" ? (
+                                {appointments?.heart_problems === "false" ? (
                                   <></>
                                 ) : (
                                   <p>
                                     Heart Related Problems :{" "}
-                                    {appointment?.heart_problems}
+                                    {appointments?.heart_problems}
                                   </p>
                                 )}
-                                {appointment?.joint_related_problems ===
+                                {appointments?.joint_related_problems ===
                                 "false" ? (
                                   <></>
                                 ) : (
                                   <p>
                                     Joint Related Problems :{" "}
-                                    {appointment?.joint_related_problems}
+                                    {appointments?.joint_related_problems}
                                   </p>
                                 )}
-                                {appointment?.mental_problems === "false" ? (
+                                {appointments?.mental_problems === "false" ? (
                                   <></>
                                 ) : (
                                   <p>
                                     Mental Problems :{" "}
-                                    {appointment?.mental_problems}
+                                    {appointments?.mental_problems}
                                   </p>
                                 )}
-                                {appointment?.neuro_problems === "false" ? (
+                                {appointments?.neuro_problems === "false" ? (
                                   <></>
                                 ) : (
                                   <p>
                                     Neurologic Problems :{" "}
-                                    {appointment?.neuro_problems}
+                                    {appointments?.neuro_problems}
                                   </p>
                                 )}
-                                {appointment?.stomach_problems === "false" ? (
+                                {appointments?.stomach_problems === "false" ? (
                                   <></>
                                 ) : (
                                   <p>
                                     Stomach & Abdominal Problems :{" "}
-                                    {appointment?.stomach_problems}
+                                    {appointments?.stomach_problems}
                                   </p>
                                 )}
-                                {appointment?.blood_problems === "false" ? (
+                                {appointments?.blood_problems === "false" ? (
                                   <></>
                                 ) : (
                                   <p>
                                     Stomach & Abdominal Problems :{" "}
-                                    {appointment?.blood_problems}
+                                    {appointments?.blood_problems}
                                   </p>
                                 )}
                               </div>
@@ -247,7 +225,7 @@ const AssesmentReport = () => {
                         <div className="row">
                           <div className="col-md-12 main_column">
                             <p>
-                              {appointment?.assesment?.clinicalInvestigation}
+                              {appointments?.assesment?.clinicalInvestigation}
                             </p>
                           </div>
                         </div>
@@ -265,16 +243,14 @@ const AssesmentReport = () => {
                                 <thead className="table-dark">
                                   <tr>
                                     <th scope="col">Sl.</th>
-                                    <th scope="col">ICD 10 Code</th>
-                                    <th scope="col">Description</th>
+                                    <th scope="col">ICD 10 Code diagnosis</th>
                                   </tr>
                                 </thead>
                                 <tbody>
-                                  {appointment?.assesment?.diagnosis.map(
+                                  {appointments?.assesment?.diagnosis.map(
                                     (items, index) => (
                                       <tr key={index}>
-                                        <th scope="row">*</th>
-                                        <td>{items?.icd10}</td>
+                                        <th scope="row">#{index + 1}</th>
                                         <td>{items?.description}</td>
                                       </tr>
                                     )
@@ -292,7 +268,7 @@ const AssesmentReport = () => {
                       </p>
                       <div className="patient_details_inner ms-2">
                         <div className="col-md-12 main_column">
-                          <p>{appointment?.assesment?.treatmentPlan}</p>
+                          <p>{appointments?.assesment?.treatmentPlan}</p>
                         </div>
                       </div>
                     </div>
@@ -307,12 +283,6 @@ const AssesmentReport = () => {
           </footer>
         </div>
       </div>
-    </>
+    </div>
   );
-};
-
-export default AssesmentReport;
-
-AssesmentReport.getLayout = (AssesmentReport) => (
-  <AuthLayout>{AssesmentReport}</AuthLayout>
-);
+});

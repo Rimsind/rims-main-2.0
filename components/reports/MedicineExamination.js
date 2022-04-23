@@ -18,7 +18,7 @@ const MedicineExamination = ({ data }) => {
                       </th>
                     </tr>
                     <tr className="text-center">
-                      <th scope="col">#</th>
+                      <th scope="col">Sl No.</th>
                       <th scope="col">Title</th>
                       <th scope="col">Description</th>
                     </tr>
@@ -26,7 +26,7 @@ const MedicineExamination = ({ data }) => {
                   <tbody>
                     {data?.skin?.map((items, index) => (
                       <tr className="text-center" key={index}>
-                        <th>{index + 1}</th>
+                        <th>#{index + 1}</th>
                         <td>{items?.option}</td>
                         <td>{items?.description}</td>
                       </tr>
@@ -48,7 +48,7 @@ const MedicineExamination = ({ data }) => {
                       </th>
                     </tr>
                     <tr className="text-center">
-                      <th scope="col">#</th>
+                      <th scope="col">Sl No.</th>
                       <th scope="col">Title</th>
                       <th scope="col">Description</th>
                     </tr>
@@ -56,7 +56,7 @@ const MedicineExamination = ({ data }) => {
                   <tbody>
                     {data?.head?.map((items, index) => (
                       <tr className="text-center" key={index}>
-                        <th>{index + 1}</th>
+                        <th>#{index + 1}</th>
                         <td>{items?.option}</td>
                         <td>{items?.description}</td>
                       </tr>
@@ -80,7 +80,7 @@ const MedicineExamination = ({ data }) => {
                       </th>
                     </tr>
                     <tr className="text-center">
-                      <th scope="col">#</th>
+                      <th scope="col">Sl No.</th>
                       <th scope="col">Title</th>
                       <th scope="col">Description</th>
                     </tr>
@@ -88,7 +88,7 @@ const MedicineExamination = ({ data }) => {
                   <tbody>
                     {data?.eyes?.map((items, index) => (
                       <tr className="text-center" key={index}>
-                        <th>{index + 1}</th>
+                        <th>#{index + 1}</th>
                         <td>{items?.option}</td>
                         <td>{items?.description}</td>
                       </tr>
@@ -110,7 +110,7 @@ const MedicineExamination = ({ data }) => {
                       </th>
                     </tr>
                     <tr className="text-center">
-                      <th scope="col">#</th>
+                      <th scope="col">Sl No.</th>
                       <th scope="col">Title</th>
                       <th scope="col">Description</th>
                     </tr>
@@ -118,7 +118,7 @@ const MedicineExamination = ({ data }) => {
                   <tbody>
                     {data?.ears?.map((items, index) => (
                       <tr className="text-center" key={index}>
-                        <th>{index + 1}</th>
+                        <th>#{index + 1}</th>
                         <td>{items?.option}</td>
                         <td>{items?.description}</td>
                       </tr>
@@ -142,7 +142,7 @@ const MedicineExamination = ({ data }) => {
                       </th>
                     </tr>
                     <tr className="text-center">
-                      <th scope="col">#</th>
+                      <th scope="col">Sl No.</th>
                       <th scope="col">Title</th>
                       <th scope="col">Description</th>
                     </tr>
@@ -150,7 +150,7 @@ const MedicineExamination = ({ data }) => {
                   <tbody>
                     {data?.nose?.map((items, index) => (
                       <tr className="text-center" key={index}>
-                        <th>{index + 1}</th>
+                        <th>#{index + 1}</th>
                         <td>{items?.option}</td>
                         <td>{items?.description}</td>
                       </tr>
@@ -172,7 +172,7 @@ const MedicineExamination = ({ data }) => {
                       </th>
                     </tr>
                     <tr className="text-center">
-                      <th scope="col">#</th>
+                      <th scope="col">Sl No.</th>
                       <th scope="col">Title</th>
                       <th scope="col">Description</th>
                     </tr>
@@ -180,7 +180,7 @@ const MedicineExamination = ({ data }) => {
                   <tbody>
                     {data?.throat?.map((items, index) => (
                       <tr className="text-center" key={index}>
-                        <th>{index + 1}</th>
+                        <th>#{index + 1}</th>
                         <td>{items?.option}</td>
                         <td>{items?.description}</td>
                       </tr>
@@ -204,7 +204,7 @@ const MedicineExamination = ({ data }) => {
                       </th>
                     </tr>
                     <tr className="text-center">
-                      <th scope="col">#</th>
+                      <th scope="col">Sl No.</th>
                       <th scope="col">Title</th>
                       <th scope="col">Description</th>
                     </tr>
@@ -212,7 +212,7 @@ const MedicineExamination = ({ data }) => {
                   <tbody>
                     {data?.neck?.map((items, index) => (
                       <tr className="text-center" key={index}>
-                        <th>{index + 1}</th>
+                        <th>#{index + 1}</th>
                         <td>{items?.option}</td>
                         <td>{items?.description}</td>
                       </tr>
@@ -234,7 +234,7 @@ const MedicineExamination = ({ data }) => {
                       </th>
                     </tr>
                     <tr className="text-center">
-                      <th scope="col">#</th>
+                      <th scope="col">Sl No.</th>
                       <th scope="col">Title</th>
                       <th scope="col">Description</th>
                     </tr>
@@ -242,7 +242,7 @@ const MedicineExamination = ({ data }) => {
                   <tbody>
                     {data?.lymphNodes?.map((items, index) => (
                       <tr className="text-center" key={index}>
-                        <th>{index + 1}</th>
+                        <th>#{index + 1}</th>
                         <td>{items?.option}</td>
                         <td>{items?.description}</td>
                       </tr>
@@ -266,7 +266,7 @@ const MedicineExamination = ({ data }) => {
                       </th>
                     </tr>
                     <tr className="text-center">
-                      <th scope="col">#</th>
+                      <th scope="col">Sl No.</th>
                       <th scope="col">Title</th>
                       <th scope="col">Description</th>
                     </tr>
@@ -274,7 +274,7 @@ const MedicineExamination = ({ data }) => {
                   <tbody>
                     {data?.respiratoryThorax?.map((items, index) => (
                       <tr className="text-center" key={index}>
-                        <th>{index + 1}</th>
+                        <th>#{index + 1}</th>
                         <td>{items?.option}</td>
                         <td>{items?.description}</td>
                       </tr>
@@ -296,7 +296,7 @@ const MedicineExamination = ({ data }) => {
                       </th>
                     </tr>
                     <tr className="text-center">
-                      <th scope="col">#</th>
+                      <th scope="col">Sl No.</th>
                       <th scope="col">Title</th>
                       <th scope="col">Description</th>
                     </tr>
@@ -304,7 +304,7 @@ const MedicineExamination = ({ data }) => {
                   <tbody>
                     {data?.cardiovascular?.map((items, index) => (
                       <tr className="text-center" key={index}>
-                        <th>{index + 1}</th>
+                        <th>#{index + 1}</th>
                         <td>{items?.option}</td>
                         <td>{items?.description}</td>
                       </tr>
@@ -328,7 +328,7 @@ const MedicineExamination = ({ data }) => {
                       </th>
                     </tr>
                     <tr className="text-center">
-                      <th scope="col">#</th>
+                      <th scope="col">Sl No.</th>
                       <th scope="col">Title</th>
                       <th scope="col">Description</th>
                     </tr>
@@ -336,7 +336,7 @@ const MedicineExamination = ({ data }) => {
                   <tbody>
                     {data?.gastrointestinal?.map((items, index) => (
                       <tr className="text-center" key={index}>
-                        <th>{index + 1}</th>
+                        <th>#{index + 1}</th>
                         <td>{items?.option}</td>
                         <td>{items?.description}</td>
                       </tr>
@@ -358,7 +358,7 @@ const MedicineExamination = ({ data }) => {
                       </th>
                     </tr>
                     <tr className="text-center">
-                      <th scope="col">#</th>
+                      <th scope="col">Sl No.</th>
                       <th scope="col">Title</th>
                       <th scope="col">Description</th>
                     </tr>
@@ -366,7 +366,7 @@ const MedicineExamination = ({ data }) => {
                   <tbody>
                     {data?.breasts?.map((items, index) => (
                       <tr className="text-center" key={index}>
-                        <th>{index + 1}</th>
+                        <th>#{index + 1}</th>
                         <td>{items?.option}</td>
                         <td>{items?.description}</td>
                       </tr>
@@ -390,7 +390,7 @@ const MedicineExamination = ({ data }) => {
                       </th>
                     </tr>
                     <tr className="text-center">
-                      <th scope="col">#</th>
+                      <th scope="col">Sl No.</th>
                       <th scope="col">Title</th>
                       <th scope="col">Description</th>
                     </tr>
@@ -398,7 +398,7 @@ const MedicineExamination = ({ data }) => {
                   <tbody>
                     {data?.Abdominal?.map((items, index) => (
                       <tr className="text-center" key={index}>
-                        <th>{index + 1}</th>
+                        <th>#{index + 1}</th>
                         <td>{items?.option}</td>
                         <td>{items?.description}</td>
                       </tr>
@@ -420,7 +420,7 @@ const MedicineExamination = ({ data }) => {
                       </th>
                     </tr>
                     <tr className="text-center">
-                      <th scope="col">#</th>
+                      <th scope="col">Sl No.</th>
                       <th scope="col">Title</th>
                       <th scope="col">Description</th>
                     </tr>
@@ -428,7 +428,7 @@ const MedicineExamination = ({ data }) => {
                   <tbody>
                     {data?.genitourinary?.map((items, index) => (
                       <tr className="text-center" key={index}>
-                        <th>{index + 1}</th>
+                        <th>#{index + 1}</th>
                         <td>{items?.option}</td>
                         <td>{items?.description}</td>
                       </tr>
@@ -452,7 +452,7 @@ const MedicineExamination = ({ data }) => {
                       </th>
                     </tr>
                     <tr className="text-center">
-                      <th scope="col">#</th>
+                      <th scope="col">Sl No.</th>
                       <th scope="col">Title</th>
                       <th scope="col">Description</th>
                     </tr>
@@ -460,7 +460,7 @@ const MedicineExamination = ({ data }) => {
                   <tbody>
                     {data?.rectal?.map((items, index) => (
                       <tr className="text-center" key={index}>
-                        <th>{index + 1}</th>
+                        <th>#{index + 1}</th>
                         <td>{items?.option}</td>
                         <td>{items?.description}</td>
                       </tr>
@@ -482,7 +482,7 @@ const MedicineExamination = ({ data }) => {
                       </th>
                     </tr>
                     <tr className="text-center">
-                      <th scope="col">#</th>
+                      <th scope="col">Sl No.</th>
                       <th scope="col">Title</th>
                       <th scope="col">Description</th>
                     </tr>
@@ -490,7 +490,7 @@ const MedicineExamination = ({ data }) => {
                   <tbody>
                     {data?.peripheralVascular?.map((items, index) => (
                       <tr className="text-center" key={index}>
-                        <th>{index + 1}</th>
+                        <th>#{index + 1}</th>
                         <td>{items?.option}</td>
                         <td>{items?.description}</td>
                       </tr>
@@ -514,7 +514,7 @@ const MedicineExamination = ({ data }) => {
                       </th>
                     </tr>
                     <tr className="text-center">
-                      <th scope="col">#</th>
+                      <th scope="col">Sl No.</th>
                       <th scope="col">Title</th>
                       <th scope="col">Description</th>
                     </tr>
@@ -522,7 +522,7 @@ const MedicineExamination = ({ data }) => {
                   <tbody>
                     {data?.neurological?.map((items, index) => (
                       <tr className="text-center" key={index}>
-                        <th>{index + 1}</th>
+                        <th>#{index + 1}</th>
                         <td>{items?.option}</td>
                         <td>{items?.description}</td>
                       </tr>
@@ -544,7 +544,7 @@ const MedicineExamination = ({ data }) => {
                       </th>
                     </tr>
                     <tr className="text-center">
-                      <th scope="col">#</th>
+                      <th scope="col">Sl No.</th>
                       <th scope="col">Title</th>
                       <th scope="col">Description</th>
                     </tr>
@@ -552,7 +552,7 @@ const MedicineExamination = ({ data }) => {
                   <tbody>
                     {data?.hematological?.map((items, index) => (
                       <tr className="text-center" key={index}>
-                        <th>{index + 1}</th>
+                        <th>#{index + 1}</th>
                         <td>{items?.option}</td>
                         <td>{items?.description}</td>
                       </tr>
@@ -576,7 +576,7 @@ const MedicineExamination = ({ data }) => {
                       </th>
                     </tr>
                     <tr className="text-center">
-                      <th scope="col">#</th>
+                      <th scope="col">Sl No.</th>
                       <th scope="col">Title</th>
                       <th scope="col">Description</th>
                     </tr>
@@ -584,7 +584,7 @@ const MedicineExamination = ({ data }) => {
                   <tbody>
                     {data?.endocrinal?.map((items, index) => (
                       <tr className="text-center" key={index}>
-                        <th>{index + 1}</th>
+                        <th>#{index + 1}</th>
                         <td>{items?.option}</td>
                         <td>{items?.description}</td>
                       </tr>
@@ -606,7 +606,7 @@ const MedicineExamination = ({ data }) => {
                       </th>
                     </tr>
                     <tr className="text-center">
-                      <th scope="col">#</th>
+                      <th scope="col">Sl No.</th>
                       <th scope="col">Title</th>
                       <th scope="col">Description</th>
                     </tr>
@@ -614,7 +614,7 @@ const MedicineExamination = ({ data }) => {
                   <tbody>
                     {data?.psychological?.map((items, index) => (
                       <tr className="text-center" key={index}>
-                        <th>{index + 1}</th>
+                        <th>#{index + 1}</th>
                         <td>{items?.option}</td>
                         <td>{items?.description}</td>
                       </tr>

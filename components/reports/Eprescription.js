@@ -1,39 +1,10 @@
-import AuthLayout from "components/layout/AuthLayout";
-import { useRouter } from "next/router";
-import { useAuth } from "context";
-import useSWR from "swr";
-import { apiUrl, fetcher } from "config/api";
 import Image from "next/image";
-const Eprescription = () => {
-  const { id } = useRouter().query;
-
-  const { auth } = useAuth();
-
-  const { data: appointments } = useSWR(
-    `${apiUrl}/appointments/${id}`,
-    async (url) => {
-      const res = await axios.get(url, {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      });
-      const result = res.data;
-      return result;
-    }
-  );
-  console.log(appointments);
-
-  const { data: specialty } = useSWR(
-    `${apiUrl}/specialties/${appointments?.doctor?.specialty}`,
-    fetcher
-  );
-  const { data: bloodGroup } = useSWR(
-    `${apiUrl}/blood-groups/${appointments?.patient?.blood_group}`,
-    fetcher
-  );
+import React from "react";
+export const EprescriptionReport = React.forwardRef((props, ref) => {
+  const { appointments, specialty, bloodGroup } = props;
 
   return (
-    <>
+    <div ref={ref}>
       <div className="prescription">
         <div className="container prescription-body">
           <div className="pres-topbar-ribbon py-1 px-1">
@@ -86,7 +57,7 @@ const Eprescription = () => {
               <div className="col-md-4">
                 <div className="header-inner-item text-start">
                   <p className="fs-3 fw-bold fst-italic lh-1">
-                    Dr. {appointments?.doctor?.firstName}{" "}
+                    Dr. {appointments?.doctor?.firstName}
                     {appointments?.doctor?.lastName}
                   </p>
                   <p className="fs-6 fw-bold lh-1">
@@ -115,22 +86,43 @@ const Eprescription = () => {
               <div className="col-md-4">
                 <div className="header-inner-item text-end">
                   <p className="fs-3 fw-bold fst-italic lh-1">
-                    {appointments?.polyclinic?.name}
+                    {appointments?.polyclinic?.name ||
+                      appointments?.nursing_home?.name ||
+                      appointments?.hospital?.name}
                   </p>
                   <p className="fs-6 lh-1">
-                    {appointments?.polyclinic?.street_address},{" "}
-                    {appointments?.polyclinic?.city}
+                    {appointments?.polyclinic?.street_address ||
+                      appointments?.nursing_home?.street_address ||
+                      appointments?.hospital?.street_address}
+                    ,
+                    {appointments?.polyclinic?.city ||
+                      appointments?.nursing_home?.city ||
+                      appointments?.hospital?.city}
                   </p>
                   <p className="fs-6 lh-1">
-                    {appointments?.polyclinic?.state},{" "}
-                    {appointments?.polyclinic?.country}, PIN:{" "}
-                    {appointments?.polyclinic?.pincode}
+                    {appointments?.polyclinic?.city ||
+                      appointments?.nursing_home?.city ||
+                      appointments?.hospital?.city}
+                    ,
+                    {appointments?.polyclinic?.country ||
+                      appointments?.nursing_home?.country ||
+                      appointments?.hospital?.country}
+                    , PIN:
+                    {appointments?.polyclinic?.pincode ||
+                      appointments?.nursing_home?.pincode ||
+                      appointments?.hospital?.pincode}
                   </p>
                   <p className="fs-6 lh-1">
-                    Email : {appointments?.polyclinic?.email}
+                    Email :{" "}
+                    {appointments?.polyclinic?.email ||
+                      appointments?.nursing_home?.email ||
+                      appointments?.hospital?.email}
                   </p>
                   <p className="fs-6 lh-1">
-                    Mobile No: {appointments?.doctor?.phone}
+                    Mobile No:{" "}
+                    {appointments?.polyclinic?.phone ||
+                      appointments?.nursing_home?.phone ||
+                      appointments?.hospital?.phone}
                   </p>
                 </div>
               </div>
@@ -162,34 +154,33 @@ const Eprescription = () => {
                           <div className="patient_details_inner">
                             <p className="fs-6 fw-bold text-light lh-1 text-light lh-1">
                               Name :
-                              <span className="fs-6 fw-light">
-                                {" "}
-                                {appointments?.patient?.first_name}{" "}
+                              <span className="fs-6 fw-light ms-1">
+                                {appointments?.patient?.first_name}
                                 {appointments?.patient?.last_name}
                               </span>
                             </p>
                             <p className="fs-6 fw-bold text-light lh-1">
-                              Material Status :{" "}
-                              <span className="fs-6 fw-light">
+                              Material Status :
+                              <span className="fs-6 fw-light ms-1">
                                 {appointments?.patient?.marital_status}
                               </span>
                             </p>
                             <p className="fs-6 fw-bold text-light lh-1">
-                              Blood Group :{" "}
-                              <span className="fs-6 fw-light">
+                              Blood Group :
+                              <span className="fs-6 fw-light ms-1">
                                 {bloodGroup?.name}
                               </span>
                             </p>
                             <p className="fs-6 fw-bold text-light lh-1">
-                              Age :{" "}
-                              <span className="fs-6 fw-light">
+                              Age :
+                              <span className="fs-6 fw-light ms-1">
                                 {appointments?.patient?.age}
                               </span>
                             </p>
                             <p className="fs-6 fw-bold text-light lh-1">
-                              Gender :{" "}
-                              <span className="fs-6 fw-light">
-                                {appointments?.patient?.gender}{" "}
+                              Gender :
+                              <span className="fs-6 fw-light ms-1">
+                                {appointments?.patient?.gender}
                               </span>
                             </p>
                           </div>
@@ -199,30 +190,30 @@ const Eprescription = () => {
                         <div className="patient_intro mb-2">
                           <div className="patient_details_inner">
                             <p className="fs-6 fw-bold text-light lh-1">
-                              Mobile :{" "}
-                              <span className="fs-6 fw-light">
+                              Mobile :
+                              <span className="fs-6 fw-light ms-1">
                                 {appointments?.patient?.mobile}
                               </span>
                             </p>
                             <p className="fs-6 fw-bold text-light lh-1">
-                              Email :{" "}
-                              <span className="fs-6 fw-light">
+                              Email :
+                              <span className="fs-6 fw-light ms-1">
                                 {appointments?.patient?.email}
                               </span>
                             </p>
                             <p className="fs-6 fw-bold text-light lh-1">
-                              City :{" "}
-                              <span className="fs-6 fw-light">
+                              City :
+                              <span className="fs-6 fw-light ms-1">
                                 {appointments?.patient?.address.city}
                               </span>
                             </p>
                             <p className="fs-6 fw-bold text-light lh-1">
-                              Country :{" "}
-                              <span className="fs-6 fw-light">India</span>
+                              Country :
+                              <span className="fs-6 fw-light ms-1">India</span>
                             </p>
                             <p className="fs-6 fw-bold text-light lh-1">
-                              State :{" "}
-                              <span className="fs-6 fw-light">
+                              State :
+                              <span className="fs-6 fw-light ms-1">
                                 {appointments?.patient?.address.state}
                               </span>
                             </p>
@@ -241,7 +232,7 @@ const Eprescription = () => {
                 <table className="table table-striped table-borderless">
                   <thead>
                     <tr>
-                      <th scope="col">Sl.</th>
+                      <th scope="col">Sl No.</th>
                       <th scope="col">Medicine Name</th>
                       <th scope="col">MG</th>
                       <th scope="col">Route</th>
@@ -256,7 +247,7 @@ const Eprescription = () => {
                     {appointments?.eprescription?.medicine.map(
                       (items, index) => (
                         <tr key={index}>
-                          <th scope="row">{index + 1}</th>
+                          <th scope="row">#{index + 1}</th>
                           <td>{items?.name}</td>
                           <td>{items?.mg}</td>
                           <td>{items?.route}</td>
@@ -276,7 +267,7 @@ const Eprescription = () => {
                 <table className="table table-striped table-borderless">
                   <thead>
                     <tr>
-                      <th scope="col">Sl.</th>
+                      <th scope="col">Sl No.</th>
                       <th scope="col">Test Name</th>
                       <th scope="col">Specification</th>
                     </tr>
@@ -284,7 +275,7 @@ const Eprescription = () => {
                   <tbody>
                     {appointments?.eprescription?.test?.map((items, index) => (
                       <tr key={index}>
-                        <th scope="row">{index + 1}</th>
+                        <th scope="row">#{index + 1}</th>
                         <td>{items?.name}</td>
                         <td>{items?.specification}</td>
                       </tr>
@@ -304,10 +295,14 @@ const Eprescription = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">*</th>
-                      <td>{appointments?.eprescription?.restrictions}</td>
-                    </tr>
+                    {appointments?.eprescription?.restrictions.map(
+                      (items, index) => (
+                        <tr key={index}>
+                          <th scope="row">#{index + 1}</th>
+                          <td>{items?.name || items?.others}</td>
+                        </tr>
+                      )
+                    )}
                   </tbody>
                 </table>
               </div>
@@ -321,10 +316,14 @@ const Eprescription = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">*</th>
-                      <td>{appointments?.eprescription?.patient_education}</td>
-                    </tr>
+                    {appointments?.eprescription?.patient_education?.map(
+                      (items, index) => (
+                        <tr key={index}>
+                          <th scope="row">#{index + 1}</th>
+                          <td>{items?.name || items?.others}</td>
+                        </tr>
+                      )
+                    )}
                   </tbody>
                 </table>
               </div>
@@ -340,10 +339,14 @@ const Eprescription = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">*</th>
-                      <td>{appointments?.eprescription?.safetyMeasures}</td>
-                    </tr>
+                    {appointments?.eprescription?.safetyMeasures?.map(
+                      (items, index) => (
+                        <tr key={index}>
+                          <th scope="row">#{index + 1}</th>
+                          <td>{items?.name || items?.others}</td>
+                        </tr>
+                      )
+                    )}
                   </tbody>
                 </table>
               </div>
@@ -359,10 +362,14 @@ const Eprescription = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">*</th>
-                      <td>{appointments?.eprescription?.treatmentreferral}</td>
-                    </tr>
+                    {appointments?.eprescription?.treatmentReferral?.map(
+                      (items, index) => (
+                        <tr key={index}>
+                          <th scope="row">#{index + 1}</th>
+                          <td>{items?.name || items?.others}</td>
+                        </tr>
+                      )
+                    )}
                   </tbody>
                 </table>
               </div>
@@ -413,12 +420,6 @@ const Eprescription = () => {
           </footer>
         </div>
       </div>
-    </>
+    </div>
   );
-};
-
-export default Eprescription;
-
-Eprescription.getLayout = (Eprescription) => (
-  <AuthLayout>{Eprescription}</AuthLayout>
-);
+});

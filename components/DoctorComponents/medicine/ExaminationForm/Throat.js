@@ -51,7 +51,7 @@ const Throat = ({ data, appointmentId }) => {
         theme: "colored",
         transition: Slide,
       });
-      return result, setAllData("");
+      return result;
     } catch (error) {
       console.log(error);
       toast.error("Something Went Wrong Try Again.", {
@@ -117,7 +117,7 @@ const Throat = ({ data, appointmentId }) => {
             </tr>
           </thead>
           <tbody>
-            {allData.map((items, index) => (
+            {allData?.map((items, index) => (
               <tr key={index}>
                 <td>x</td>
                 <td>{items?.option}</td>
