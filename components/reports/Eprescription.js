@@ -12,70 +12,48 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
             style={{ backgroundColor: "#15558d" }}
           >
             <div className="row align-items-center">
-              <div className="col-2">
-                <div className="left-content">
+              <div className="col-3">
+                <div className="left-content text-end pt-2">
                   <Image
                     src="/assets/images/logo-white.png"
                     alt="logo"
-                    width={100}
-                    height={100}
+                    width={40}
+                    height={30}
                   />
                 </div>
               </div>
-              <div className="col-6">
-                <div className="middle-content">
-                  <p className="fs-6 fw-bold text-dark">
+              <div className="col-9">
+                <div className="middle-content text-start">
+                  <span className="fs-5 fw-bold text-light lh-1">
                     REHAB INTEGRATED MEDICAL SOLUTIONS
-                  </p>
-                </div>
-              </div>
-              <div className="col-4">
-                <div className="right-content">
-                  <div className="row align-items-center">
-                    <div className="col-md-4">
-                      <p className="text-dark">
-                        <i className="fas fa-map-marker-alt text-dark me-2"></i>
-                        Haldia City Centre , WB
-                      </p>
-                    </div>
-                    <div className="col-md-4">
-                      <p className="text-dark">
-                        <i className="fas fa-phone text-dark me-2"></i>
-                        +91-90384-43073
-                      </p>
-                    </div>
-                    <div className="col-md-4">
-                      <p className="text-dark">
-                        <i className="fas fa-envelope-open-text text-dark me-2"></i>
-                        demo@email.com
-                      </p>
-                    </div>
-                  </div>
+                  </span>
                 </div>
               </div>
             </div>
           </div>
           <header
-            className="py-1 px-2 presc-header"
+            className=" px-2 presc-header"
             style={{ borderBottom: "5px solid" }}
           >
-            <div className="row align-items-center m-auto py-3">
+            <div className="row align-items-center m-auto py-1">
               <div className="col-4">
                 <div className="header-inner-item text-start">
-                  <p className="fs-3 fw-bold fst-italic lh-1">
+                  <p className="fs-5 fw-bold fst-italic lh-1">
                     Dr. {appointments?.doctor?.firstName}{" "}
                     {appointments?.doctor?.lastName}
                   </p>
                   <p className="fs-6 fw-bold lh-1">
                     {appointments?.doctor?.qualification}
                   </p>
-                  <p className="fs-6 lh-1">{specialty?.name}</p>
-                  <p className="fs-6 lh-1">
+                  <span className="fs-6 lh-1">{specialty?.name}</span>
+                  <br />
+                  <span className="fs-6 lh-1">
                     Reg. No.-{appointments?.doctor?.registration_no}
-                  </p>
-                  <p className="fs-6 lh-1">
+                  </span>
+                  <br />
+                  <span className="fs-6 lh-1">
                     Mob: {appointments?.doctor?.phone}
-                  </p>
+                  </span>
                 </div>
               </div>
               <div className="col-4">
@@ -91,7 +69,7 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
 
               <div className="col-4">
                 <div className="header-inner-item text-end">
-                  <p className="fs-3 fw-bold fst-italic lh-1">
+                  <p className="fs-5 fw-bold fst-italic lh-1">
                     {appointments?.polyclinic?.name ||
                       appointments?.nursing_home?.name ||
                       appointments?.hospital?.name}
@@ -105,7 +83,7 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                       appointments?.nursing_home?.city ||
                       appointments?.hospital?.city}
                   </p>
-                  <p className="fs-6 lh-1">
+                  <span className="fs-6 lh-1">
                     {appointments?.polyclinic?.city ||
                       appointments?.nursing_home?.city ||
                       appointments?.hospital?.city}
@@ -117,27 +95,28 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                     {appointments?.polyclinic?.pincode ||
                       appointments?.nursing_home?.pincode ||
                       appointments?.hospital?.pincode}
-                  </p>
-                  <p className="fs-6 lh-1">
-                    Email :{" "}
+                  </span>
+                  <br />
+                  <span className="fs-6 lh-1">
                     {appointments?.polyclinic?.email ||
                       appointments?.nursing_home?.email ||
                       appointments?.hospital?.email}
-                  </p>
-                  <p className="fs-6 lh-1">
+                  </span>
+                  <br />
+                  <span className="fs-6 lh-1">
                     Mobile No:{" "}
                     {appointments?.polyclinic?.phone ||
                       appointments?.nursing_home?.phone ||
                       appointments?.hospital?.phone}
-                  </p>
+                  </span>
                 </div>
               </div>
             </div>
           </header>
 
-          <main className="main mt-3">
+          <main className="main mt-2">
             <p
-              className="presc-title fs-3 fw-bold text-center"
+              className="presc-title fs-5 fw-bold text-center"
               style={{ color: " #720330" }}
             >
               e-Prescption
@@ -152,7 +131,7 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
             >
               <div className="profile_details mb-3">
                 <div className="row align-items-center">
-                  <div className="col-6">
+                  <div className="col-4">
                     <img
                       className="presc-img-profile"
                       alt=""
@@ -161,23 +140,23 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                         "/assets/images/profile.png"
                       }
                       style={{
-                        height: "19rem",
+                        height: "12rem",
                         background: "#0b6ea5",
-                        padding: "1rem",
+                        padding: "10px",
                         position: "absolute",
-                        marginTop: "-145px",
+                        marginTop: "-88px",
                         marginLeft: "25px",
                         boxShadow: "1px 8px 12px 0px #00000038",
                         borderRadius: "100%",
                       }}
                     />
                   </div>
-                  <div className="col-6">
+                  <div className="col-8">
                     <p className="fs-5 fw-bold text-light border-bottom border-light">
                       Patient Details
                     </p>
                     <div className="row">
-                      <div className="col-md-6">
+                      <div className="col-md-12">
                         <div className="patient_intro mb-2">
                           <div className="patient_details_inner">
                             <p className="fs-6 fw-bold text-light lh-1 text-light lh-1">
@@ -193,61 +172,27 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                                 {appointments?.patient?.marital_status}
                               </span>
                             </p> */}
-                            <p className="fs-6 fw-bold text-light lh-1">
+                            <span className="fs-6 fw-bold text-light lh-1 me-5">
                               Blood Group :
                               <span className="fs-6 fw-light ms-1">
                                 {bloodGroup?.name}
                               </span>
-                            </p>
-                            <p className="fs-6 fw-bold text-light lh-1">
+                            </span>
+                            <span className="fs-6 fw-bold text-light lh-1 me-5">
                               Age :
                               <span className="fs-6 fw-light ms-1">
                                 {appointments?.patient?.age}
                               </span>
-                            </p>
-                            <p className="fs-6 fw-bold text-light lh-1">
+                            </span>
+                            <span className="fs-6 fw-bold text-light lh-1">
                               Gender :
                               <span className="fs-6 fw-light ms-1">
                                 {appointments?.patient?.gender}
                               </span>
-                            </p>
+                            </span>
                           </div>
                         </div>
                       </div>
-                      {/* <div className="col-md-6">
-                        <div className="patient_intro mb-2">
-                          <div className="patient_details_inner">
-                            <p className="fs-6 fw-bold text-light lh-1">
-                              Mobile :
-                              <span className="fs-6 fw-light ms-1">
-                                {appointments?.patient?.mobile}
-                              </span>
-                            </p>
-                            <p className="fs-6 fw-bold text-light lh-1">
-                              Email :
-                              <span className="fs-6 fw-light ms-1">
-                                {appointments?.patient?.email}
-                              </span>
-                            </p>
-                            <p className="fs-6 fw-bold text-light lh-1">
-                              City :
-                              <span className="fs-6 fw-light ms-1">
-                                {appointments?.patient?.address.city}
-                              </span>
-                            </p>
-                            <p className="fs-6 fw-bold text-light lh-1">
-                              Country :
-                              <span className="fs-6 fw-light ms-1">India</span>
-                            </p>
-                            <p className="fs-6 fw-bold text-light lh-1">
-                              State :
-                              <span className="fs-6 fw-light ms-1">
-                                {appointments?.patient?.address.state}
-                              </span>
-                            </p>
-                          </div>
-                        </div>
-                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -260,25 +205,25 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                   className="fs-5 presc-table-title"
                   style={{
                     background: "linear-gradient(45deg, #6f0734, transparent)",
-                    padding: "1rem",
+                    padding: "5px 5px 5px 20px",
                     color: "white",
                     borderRadius: "30px 4px 4px 30px",
                   }}
                 >
                   Medicine
                 </p>
-                <table className="table table-striped table-borderless">
+                <table className="table table-striped table-bordered">
                   <thead>
                     <tr>
-                      <th scope="col">Sl No.</th>
+                      <th scope="col">Sl.</th>
                       <th scope="col">Medicine Name</th>
                       <th scope="col">MG</th>
                       <th scope="col">Route</th>
-                      <th scope="col">Duration (Days)</th>
+                      <th scope="col">Dur (Days)</th>
                       <th scope="col">Frequency</th>
-                      <th scope="col">Reason</th>
+                      {/* <th scope="col">Reason</th>
                       <th scope="col">Instruction</th>
-                      <th scope="col">Side Effect</th>
+                      <th scope="col">Side Effect</th> */}
                     </tr>
                   </thead>
                   <tbody>
@@ -291,9 +236,9 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                           <td>{items?.route}</td>
                           <td>{items?.duration}</td>
                           <td>{items?.frequency}</td>
-                          <td>{items?.reason}</td>
+                          {/* <td>{items?.reason}</td>
                           <td>{items?.instruction}</td>
-                          <td>{items?.sideEffects}</td>
+                          <td>{items?.sideEffects}</td> */}
                         </tr>
                       )
                     )}
@@ -305,14 +250,14 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                   className="fs-5 presc-table-title"
                   style={{
                     background: "linear-gradient(45deg, #6f0734, transparent)",
-                    padding: "1rem",
+                    padding: "5px 5px 5px 20px",
                     color: "white",
                     borderRadius: "30px 4px 4px 30px",
                   }}
                 >
                   Test
                 </p>
-                <table className="table table-striped table-borderless">
+                <table className="table table-striped table-bordered">
                   <thead>
                     <tr>
                       <th scope="col">Sl No.</th>
@@ -336,14 +281,14 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                   className="fs-5 presc-table-title"
                   style={{
                     background: "linear-gradient(45deg, #6f0734, transparent)",
-                    padding: "1rem",
+                    padding: "5px 5px 5px 20px",
                     color: "white",
                     borderRadius: "30px 4px 4px 30px",
                   }}
                 >
                   Food & Fluid Restriction
                 </p>
-                <table className="table table-striped table-borderless">
+                <table className="table table-striped table-bordered">
                   <thead>
                     <tr>
                       <th scope="col">Sl.</th>
@@ -367,14 +312,14 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                   className="fs-5 presc-table-title"
                   style={{
                     background: "linear-gradient(45deg, #6f0734, transparent)",
-                    padding: "1rem",
+                    padding: "5px 5px 5px 20px",
                     color: "white",
                     borderRadius: "30px 4px 4px 30px",
                   }}
                 >
                   Patient Education
                 </p>
-                <table className="table table-striped table-borderless">
+                <table className="table table-striped table-bordered">
                   <thead>
                     <tr>
                       <th scope="col">Sl.</th>
@@ -398,14 +343,14 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                   className="fs-5 presc-table-title"
                   style={{
                     background: "linear-gradient(45deg, #6f0734, transparent)",
-                    padding: "1rem",
+                    padding: "5px 5px 5px 20px",
                     color: "white",
                     borderRadius: "30px 4px 4px 30px",
                   }}
                 >
                   Precaution & Safety Measures
                 </p>
-                <table className="table table-striped table-borderless">
+                <table className="table table-striped table-bordered">
                   <thead>
                     <tr>
                       <th scope="col">Sl.</th>
@@ -429,14 +374,14 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                   className="fs-5 presc-table-title"
                   style={{
                     background: "linear-gradient(45deg, #6f0734, transparent)",
-                    padding: "1rem",
+                    padding: "5px 5px 5px 20px",
                     color: "white",
                     borderRadius: "30px 4px 4px 30px",
                   }}
                 >
                   Other Treatment Referral
                 </p>
-                <table className="table table-striped table-borderless">
+                <table className="table table-striped table-bordered">
                   <thead>
                     <tr>
                       <th scope="col">Sl.</th>
@@ -460,14 +405,14 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                   className="fs-5 presc-table-title"
                   style={{
                     background: "linear-gradient(45deg, #6f0734, transparent)",
-                    padding: "1rem",
+                    padding: "5px 5px 5px 20px",
                     color: "white",
                     borderRadius: "30px 4px 4px 30px",
                   }}
                 >
                   Set Follow Time Period
                 </p>
-                <table className="table table-striped table-borderless">
+                <table className="table table-striped table-bordered">
                   <thead>
                     <tr>
                       <th></th>
@@ -493,8 +438,16 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
             style={{ background: "linear-gradient(45deg, #116aa1, #720330)" }}
           >
             <div className="row align-items-center pt-3 px-3">
-              <div className="col-4"></div>
-              <div className="col-4">
+              <div className="col-3">
+                <p className="text-light">
+                  <i className="fas fa-map-marker-alt text-light me-2"></i>
+                  Webel IT Park, <br />
+                  City Center, Haldia,
+                  <br /> WB, India. <br />
+                  Pin - 721657
+                </p>
+              </div>
+              <div className="col-6">
                 <div className="banner-logo text-center mb-2">
                   <Image
                     height="50"
@@ -504,13 +457,22 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                   />
                 </div>
                 <p className="text-light fs-5 fw-bold text-center lh-1">
-                  Powered by Rims Technology
+                  Powered by RIMS IND
                 </p>
                 <p className="text-light text-center fs-6 lh-1 fst-italic">
                   A unit of Retar Mediserve Pvt. Ltd.
                 </p>
               </div>
-              <div className="col-4"></div>
+              <div className="col-3">
+                <p className="text-light">
+                  <i className="fas fa-envelope text-light me-2"></i>
+                  info@rimsind.com
+                </p>
+                <p className="text-light">
+                  <i className="fas fa-mobile text-light me-2"></i>
+                  +91 859 739 4414
+                </p>
+              </div>
             </div>
           </footer>
         </div>

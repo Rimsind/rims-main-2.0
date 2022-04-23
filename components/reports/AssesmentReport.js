@@ -7,61 +7,82 @@ export const AssesmentReport = React.forwardRef((props, ref) => {
     <div ref={ref}>
       <div className="clini-exam">
         <div className="container clini-exam-body">
-          <header className="clini-exam-header">
-            <div className="row align-items-center">
-              <div className="col-md-2">
+          <header
+            className="clini-exam-header"
+            style={{ borderBottom: "5px solid" }}
+          >
+            <div className="row align-items-center mt-3">
+              <div className="col-2">
                 <div className="left-content">
                   <Image
-                    height="100"
-                    width="130"
+                    height="80"
+                    width="100"
                     src="/assets/images/logo-dark.png"
                     style={{ height: "8rem" }}
                     alt=""
                   />
                 </div>
               </div>
-              <div className="col-md-6">
+              <div className="col-6">
                 <div className="middle-content">
-                  <p className="fs-4 fw-bold clini-exam-logo-name">
+                  <span
+                    className="fs-5 fw-bold clini-exam-logo-name lh-1"
+                    style={{ color: "#680634" }}
+                  >
                     REHAB INTEGRATED MEDICAL SOLUTIONS
-                  </p>
+                  </span>
                 </div>
               </div>
-              <div className="col-md-4 d-flex justify-content-end">
+              <div className="col-4 d-flex justify-content-end">
                 <div className="right-content">
-                  <p>
-                    <i className="fas fa-map-pin clini-exam-right-icon me-2"></i>
-                    Haldia IT Park , City Centre , WB, INDIA (HO)
-                  </p>
-                  <p>
-                    <i className="fas fa-phone clini-exam-right-icon me-2"></i>
+                  <span>
+                    <i
+                      className="fas fa-map-pin clini-exam-right-icon me-2 lh-lg"
+                      style={{ color: "#680634" }}
+                    ></i>
+                    Webel IT Park, City Centre, Haldia, WB, INDIA. Pin - 721657
+                  </span>
+                  <br />
+                  <span>
+                    <i className="fas fa-phone clini-exam-right-icon me-2 lh-lg"></i>
                     +91-90384-43073
-                  </p>
-                  <p>
-                    <i className="fas fa-envelope-open-text clini-exam-right-icon me-2"></i>
+                  </span>
+                  <br />
+                  <span>
+                    <i className="fas fa-envelope-open-text clini-exam-right-icon me-2 lh-lg"></i>
                     demo@email.com
-                  </p>
+                  </span>
                 </div>
               </div>
             </div>
           </header>
 
-          <main className="main mt-3">
+          <main className="main mt-2">
             <div className="profile_details mb-3">
               <div className="profile_heading">
-                <p className="fs-3 clini-exam-profile-heading-text fw-bold text-center">
+                <p
+                  className="fs-5 clini-exam-profile-heading-text fw-bold text-center"
+                  style={{ color: "#720330" }}
+                >
                   Clinical Examination Report
                 </p>
               </div>
               <div className="row">
-                <div className="col-md-4">
-                  <div className="clini-exam-left-content text-light">
+                <div className="col-4">
+                  <div
+                    className="clini-exam-left-content text-light"
+                    style={{
+                      background: "linear-gradient(45deg, #116aa1, #720330)",
+                      padding: "1rem",
+                    }}
+                  >
                     <div className="patient_image mb-2">
                       <Image
-                        height={350}
+                        height={450}
                         width={450}
                         alt=""
                         className="clini-exam-img"
+                        style={{ padding: "1rem" }}
                         src={
                           appointments?.patient?.image?.url ||
                           "/assets/images/profile.png"
@@ -112,10 +133,19 @@ export const AssesmentReport = React.forwardRef((props, ref) => {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-8">
+                <div className="col-8">
                   <div className="right_content">
                     <div className="right_content_inner">
-                      <p className="fs-5 clini-exam-right-content-inner-text">
+                      <p
+                        className="fs-5 clini-exam-right-content-inner-text"
+                        style={{
+                          background:
+                            " linear-gradient(45deg, #6f0734, transparent)",
+                          padding: "5px 5px 5px 20px",
+                          color: "white",
+                          borderRadius: "30px 4px 4px 30px",
+                        }}
+                      >
                         Chief Complaints with Duration
                       </p>
                       <div className="clini-exam-patient-details-inner ms-2">
@@ -142,7 +172,16 @@ export const AssesmentReport = React.forwardRef((props, ref) => {
                                   )}
                                 </tbody>
                               </table>
-                              <p className="fs-5 fw-bold border-bottom border-white mt-3">
+                              <p
+                                className="fs-5 fw-bold border-bottom border-white mt-3"
+                                style={{
+                                  background:
+                                    "linear-gradient(45deg, #6f0734, transparent)",
+                                  padding: "5px 5px 5px 20px",
+                                  color: "white",
+                                  borderRadius: "30px 4px 4px 30px",
+                                }}
+                              >
                                 Additional Chief Complaint
                               </p>
                               <div className="patient_details_inner">
@@ -218,7 +257,16 @@ export const AssesmentReport = React.forwardRef((props, ref) => {
                       </div>
                     </div>
                     <div className="right_content_inner">
-                      <p className="fs-5 clini-exam-right-content-inner">
+                      <p
+                        className="fs-5 clini-exam-right-content-inner"
+                        style={{
+                          background:
+                            "linear-gradient(45deg, #6f0734, transparent)",
+                          padding: "5px 5px 5px 20px",
+                          color: "white",
+                          borderRadius: "30px 4px 4px 30px",
+                        }}
+                      >
                         Clinical Investigation
                       </p>
                       <div className="patient_details_inner p-2">
@@ -232,7 +280,16 @@ export const AssesmentReport = React.forwardRef((props, ref) => {
                       </div>
                     </div>
                     <div className="right_content_inner">
-                      <p className="fs-5 clini-exam-right-content-inner">
+                      <p
+                        className="fs-5 clini-exam-right-content-inner"
+                        style={{
+                          background:
+                            "linear-gradient(45deg, #6f0734, transparent)",
+                          padding: "5px 5px 5px 20px",
+                          color: "white",
+                          borderRadius: "30px 4px 4px 30px",
+                        }}
+                      >
                         Medical Diagnosis
                       </p>
                       <div className="patient_details_inner ms-2">
@@ -263,7 +320,16 @@ export const AssesmentReport = React.forwardRef((props, ref) => {
                       </div>
                     </div>
                     <div className="right_content_inner">
-                      <p className="fs-5 clini-exam-right-content-inner">
+                      <p
+                        className="fs-5 clini-exam-right-content-inner"
+                        style={{
+                          background:
+                            "linear-gradient(45deg, #6f0734, transparent)",
+                          padding: "5px 5px 5px 20px",
+                          color: "white",
+                          borderRadius: "30px 4px 4px 30px",
+                        }}
+                      >
                         Treatment Plan
                       </p>
                       <div className="patient_details_inner ms-2">
@@ -279,7 +345,16 @@ export const AssesmentReport = React.forwardRef((props, ref) => {
           </main>
 
           <footer className="mb-1">
-            <p className="text-center clini-exam-footer-content">Thank You</p>
+            <p
+              className="text-center clini-exam-footer-content"
+              style={{
+                background: "linear-gradient(45deg, #116aa1, #720330)",
+                color: "white",
+                padding: "1rem 0",
+              }}
+            >
+              Thank You
+            </p>
           </footer>
         </div>
       </div>
