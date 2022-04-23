@@ -115,8 +115,16 @@ const DoctorSidebar = (props) => {
                     </a>
                   </Link>
                 </li> */}
-
                 <li className={props.status6}>
+                  <Link href="/doctors/doctor-time-table">
+                    <a>
+                      <i className="fas fa-calendar-alt"></i>
+                      <span>Time Table</span>
+                    </a>
+                  </Link>
+                </li>
+
+                <li className={props.status7}>
                   <Link href="/doctors/privacy-settings">
                     <a>
                       <i className="fas fa-key"></i>
@@ -124,7 +132,7 @@ const DoctorSidebar = (props) => {
                     </a>
                   </Link>
                 </li>
-                <li className={props.status7}>
+                <li className={props.status8}>
                   <Link href="/doctors/advance-settings">
                     <a>
                       <i className="fas fa-cogs"></i>
