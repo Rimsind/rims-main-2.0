@@ -6,12 +6,13 @@ import { apiUrl, fetcher } from "config/api";
 import axios from "axios";
 import { useAuth } from "context";
 import { UserPageLoader } from "components/Loaders";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { withAuth } from "helpers/withAuth";
 import React, { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 import { EprescriptionReport } from "components/reports/Eprescription";
+import { AssesmentReport } from "components/reports/AssesmentReport";
+import { ExaminationReport } from "components/reports/ExaminationReport";
 const AppointmentId = () => {
   const { id } = useRouter().query;
   const { auth } = useAuth();
@@ -52,8 +53,17 @@ const AppointmentId = () => {
   const chiefComplaintsLength = appointments?.chiefComplaints.length;
 
   const componentRef = useRef();
-  const handlePrint = useReactToPrint({
-    content: () => componentRef.current,
+  const prescriptionRef = componentRef;
+  const printPrescription = useReactToPrint({
+    content: () => prescriptionRef.current,
+  });
+  const assesmentRef = componentRef;
+  const printAssesment = useReactToPrint({
+    content: () => assesmentRef.current,
+  });
+  const examinationRef = componentRef;
+  const printExamination = useReactToPrint({
+    content: () => examinationRef.current,
   });
 
   return (
@@ -96,35 +106,29 @@ const AppointmentId = () => {
                         <div className="row">
                           <div className="col-sm-4 col-md-4 col-lg-4 col-xl-4 text-end">
                             <div className="d-grid gap-2 mb-2 mb-lg-0 mb-xl-0 mb-xxl-0">
-                              <Link
-                                href={`/reports/examination-report?id=${id}`}
+                              <button
+                                className="btn btn-primary py-2"
+                                onClick={printExamination}
                               >
-                                <a
-                                  className="btn btn-primary py-2"
-                                  type="button"
-                                >
-                                  Download Examination
-                                </a>
-                              </Link>
+                                Download Examination
+                              </button>
                             </div>
                           </div>
                           <div className="col-sm-4 col-md-4 col-lg-4 col-xl-4 text-end">
                             <div className="d-grid gap-2 mb-2 mb-lg-0 mb-xl-0 mb-xxl-0">
-                              <Link href={`/reports/assesment-report?id=${id}`}>
-                                <a
-                                  className="btn btn-primary py-2"
-                                  type="button"
-                                >
-                                  Download Assessments
-                                </a>
-                              </Link>
+                              <button
+                                className="btn btn-primary py-2"
+                                onClick={printAssesment}
+                              >
+                                Download Assessments
+                              </button>
                             </div>
                           </div>
                           <div className="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                             <div className="d-grid gap-2 mb-2 mb-lg-0 mb-xl-0 mb-xxl-0">
                               <button
                                 className="btn btn-danger "
-                                onClick={handlePrint}
+                                onClick={printPrescription}
                               >
                                 Download e-Prescription
                               </button>
@@ -261,7 +265,23 @@ const AppointmentId = () => {
         </div>
         <div style={{ display: "none" }}>
           <EprescriptionReport
-            ref={componentRef}
+            ref={prescriptionRef}
+            appointments={appointments}
+            specialty={specialty}
+            bloodGroup={bloodGroup}
+          />
+        </div>
+        <div style={{ display: "none" }}>
+          <AssesmentReport
+            ref={assesmentRef}
+            appointments={appointments}
+            specialty={specialty}
+            bloodGroup={bloodGroup}
+          />
+        </div>
+        <div style={{ display: "none" }}>
+          <ExaminationReport
+            ref={examinationRef}
             appointments={appointments}
             specialty={specialty}
             bloodGroup={bloodGroup}
