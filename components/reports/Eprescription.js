@@ -423,3 +423,5 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
     </div>
   );
 });
+
+EprescriptionReport.displayName = "Eprescription Report";

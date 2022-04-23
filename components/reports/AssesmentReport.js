@@ -286,3 +286,5 @@ export const AssesmentReport = React.forwardRef((props, ref) => {
     </div>
   );
 });
+
+AssesmentReport.displayName = "Assesment Report";

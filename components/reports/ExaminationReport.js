@@ -265,3 +265,5 @@ export const ExaminationReport = React.forwardRef((props, ref) => {
     </div>
   );
 });
+
+ExaminationReport.displayName = "Examination Report";

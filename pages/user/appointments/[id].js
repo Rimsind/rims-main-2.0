@@ -52,16 +52,15 @@ const AppointmentId = () => {
 
   const chiefComplaintsLength = appointments?.chiefComplaints.length;
 
-  const componentRef = useRef();
-  const prescriptionRef = componentRef;
+  const prescriptionRef = useRef();
   const printPrescription = useReactToPrint({
     content: () => prescriptionRef.current,
   });
-  const assesmentRef = componentRef;
+  const assesmentRef = useRef();
   const printAssesment = useReactToPrint({
     content: () => assesmentRef.current,
   });
-  const examinationRef = componentRef;
+  const examinationRef = useRef();
   const printExamination = useReactToPrint({
     content: () => examinationRef.current,
   });
