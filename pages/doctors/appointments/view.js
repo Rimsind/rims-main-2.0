@@ -178,6 +178,8 @@ const View = () => {
                               width="50"
                               src={
                                 appointment?.polyclinic?.image?.url ||
+                                appointment?.nursing_home?.image?.url ||
+                                appointment?.hospital?.image?.url ||
                                 "/assets/images/alternate/alt-hospital.png"
                               }
                               className="img-fluid rounded"
@@ -186,11 +188,18 @@ const View = () => {
                           </div>
                           <div className="right-details">
                             <p className="fs-6 lh-1 fst-normal">
-                              {appointment?.polyclinic?.name}
+                              {appointment?.polyclinic?.name ||
+                                appointment?.nursing_home?.name ||
+                                appointment?.hospital?.name}
                             </p>
                             <p className="fs-6 fst-italic lh-1">
-                              {appointment?.polyclinic?.city},{" "}
-                              {appointment?.polyclinic?.state}
+                              {appointment?.polyclinic?.city ||
+                                appointment?.nursing_home?.city ||
+                                appointment?.hospital?.city}
+                              ,
+                              {appointment?.polyclinic?.state ||
+                                appointment?.nursing_home?.state ||
+                                appointment?.hospital?.state}
                             </p>
                           </div>
                         </div>

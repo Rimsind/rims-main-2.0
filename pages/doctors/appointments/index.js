@@ -55,12 +55,12 @@ const Index = () => {
 
   const currentDate = year + "-" + newMonth + "-" + newDay;
 
-  const [date, setDate] = useState(currentDate);
+  const [date, setDate] = useState("");
   const [clinic, setClinic] = useState("");
   const [status, setStatus] = useState("");
 
   const resetState = (e) => {
-    setDate(currentDate);
+    setDate("");
     setStatus("");
     setClinic("");
   };
@@ -98,13 +98,21 @@ const Index = () => {
                               value={clinic}
                               onChange={(e) => setClinic(e.target.value)}
                             >
-                              <option selected>Select Polyclinic</option>
-                              {data?.timetable?.map((items, index) => (
+                              <option selected value="">
+                                All Clinic
+                              </option>
+                              {data?.booking_schedule?.map((items, index) => (
                                 <option
-                                  value={items?.polyclinic?.name}
+                                  value={
+                                    items?.polyclinic?.name ||
+                                    items?.nursing_home?.name ||
+                                    items?.hospital?.name
+                                  }
                                   key={index}
                                 >
-                                  {items?.polyclinic?.name}
+                                  {items?.polyclinic?.name ||
+                                    items?.nursing_home?.name ||
+                                    items?.hospital?.name}
                                 </option>
                               ))}
                             </select>
@@ -125,7 +133,9 @@ const Index = () => {
                               value={status}
                               onChange={(e) => setStatus(e.target.value)}
                             >
-                              <option selected>Select status</option>
+                              <option selected value="">
+                                All
+                              </option>
                               <option value="false">Pending</option>
                               <option value="true">Completed</option>
                             </select>
@@ -191,10 +201,6 @@ const Index = () => {
                               </>
                             ) : (
                               <>
-                                {/* {appointments?.map((items, index) => (
-                                  <AppointmentList data={items} key={index} />
-                                ))} */}
-
                                 {appointments
                                   ?.filter((items) => {
                                     if (
@@ -213,6 +219,20 @@ const Index = () => {
                                       items?.polyclinic?.name.includes(
                                         clinic
                                       ) &&
+                                      date === "" &&
+                                      status === ""
+                                    ) {
+                                      return items;
+                                    } else if (
+                                      items?.nursing_home?.name.includes(
+                                        clinic
+                                      ) &&
+                                      date === "" &&
+                                      status === ""
+                                    ) {
+                                      return items;
+                                    } else if (
+                                      items?.hospital?.name.includes(clinic) &&
                                       date === "" &&
                                       status === ""
                                     ) {
@@ -252,10 +272,46 @@ const Index = () => {
                                     ) {
                                       return items;
                                     } else if (
+                                      items?.nursing_home?.name.includes(
+                                        clinic
+                                      ) &&
+                                      items?.appointment_status
+                                        .toString()
+                                        .includes(status) &&
+                                      date === ""
+                                    ) {
+                                      return items;
+                                    } else if (
+                                      items?.hospital?.name.includes(clinic) &&
+                                      items?.appointment_status
+                                        .toString()
+                                        .includes(status) &&
+                                      date === ""
+                                    ) {
+                                      return items;
+                                    } else if (
                                       items?.date.includes(date) &&
                                       items?.polyclinic?.name.includes(
                                         clinic
                                       ) &&
+                                      items?.appointment_status
+                                        .toString()
+                                        .includes(status)
+                                    ) {
+                                      return items;
+                                    } else if (
+                                      items?.date.includes(date) &&
+                                      items?.nursing_home?.name.includes(
+                                        clinic
+                                      ) &&
+                                      items?.appointment_status
+                                        .toString()
+                                        .includes(status)
+                                    ) {
+                                      return items;
+                                    } else if (
+                                      items?.date.includes(date) &&
+                                      items?.hospital?.name.includes(clinic) &&
                                       items?.appointment_status
                                         .toString()
                                         .includes(status)

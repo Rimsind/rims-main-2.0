@@ -9,6 +9,9 @@ import { UserPageLoader } from "components/Loaders";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { withAuth } from "helpers/withAuth";
+import React, { useRef } from "react";
+import { useReactToPrint } from "react-to-print";
+import { EprescriptionReport } from "components/reports/Eprescription";
 const AppointmentId = () => {
   const { id } = useRouter().query;
   const { auth } = useAuth();
@@ -25,9 +28,10 @@ const AppointmentId = () => {
       return result;
     }
   );
-
-  const chiefComplaintsLength = appointments?.chiefComplaints.length;
-
+  const { data: specialty } = useSWR(
+    `${apiUrl}/specialties/${appointments?.doctor?.specialty}`,
+    fetcher
+  );
   const { data: patient } = useSWR(
     `${apiUrl}/patients/${auth.user?.profileId}`,
     async (url) => {
@@ -40,11 +44,18 @@ const AppointmentId = () => {
       return result;
     }
   );
-
-  const { data: specialty } = useSWR(
-    `${apiUrl}/specialties/${appointments?.doctor?.specialty}`,
+  const { data: bloodGroup } = useSWR(
+    `${apiUrl}/blood-groups/${appointments?.patient?.blood_group}`,
     fetcher
   );
+
+  const chiefComplaintsLength = appointments?.chiefComplaints.length;
+
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
+
   return (
     <>
       <div className="main-wrapper">
@@ -111,14 +122,12 @@ const AppointmentId = () => {
                           </div>
                           <div className="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                             <div className="d-grid gap-2 mb-2 mb-lg-0 mb-xl-0 mb-xxl-0">
-                              <Link href={`/reports/e-prescription?id=${id}`}>
-                                <a
-                                  className="btn btn-danger py-2"
-                                  type="button"
-                                >
-                                  Download e-Prescription
-                                </a>
-                              </Link>
+                              <button
+                                className="btn btn-danger "
+                                onClick={handlePrint}
+                              >
+                                Download e-Prescription
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -177,6 +186,8 @@ const AppointmentId = () => {
                               width="50"
                               src={
                                 appointments?.polyclinic?.image?.url ||
+                                appointments?.nursing_home?.image?.url ||
+                                appointments?.hospital?.image?.url ||
                                 "/assets/images/alternate/alt-hospital.png"
                               }
                               className="img-fluid rounded"
@@ -185,11 +196,18 @@ const AppointmentId = () => {
                           </div>
                           <div className="right-details">
                             <p className="fs-6 lh-1 fst-normal">
-                              {appointments?.polyclinic?.name}
+                              {appointments?.polyclinic?.name ||
+                                appointments?.nursing_home?.name ||
+                                appointments?.hospital?.name}
                             </p>
                             <p className="fs-6 fst-italic lh-1">
-                              {appointments?.polyclinic?.city},{" "}
-                              {appointments?.polyclinic?.state}
+                              {appointments?.polyclinic?.city ||
+                                appointments?.nursing_home?.city ||
+                                appointments?.hospital?.city}
+                              ,
+                              {appointments?.polyclinic?.state ||
+                                appointments?.nursing_home?.state ||
+                                appointments?.hospital?.state}
                             </p>
                           </div>
                         </div>
@@ -240,6 +258,14 @@ const AppointmentId = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div style={{ display: "none" }}>
+          <EprescriptionReport
+            ref={componentRef}
+            appointments={appointments}
+            specialty={specialty}
+            bloodGroup={bloodGroup}
+          />
         </div>
       </div>
     </>

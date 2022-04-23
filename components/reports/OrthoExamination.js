@@ -13,7 +13,7 @@ const OrthoExamination = ({ data }) => {
                 </th>
               </tr>
               <tr className="text-center">
-                <th scope="col">#</th>
+                <th scope="col">Sl No.</th>
                 <th scope="col">Categories</th>
                 <th scope="col">Test</th>
               </tr>
@@ -21,7 +21,7 @@ const OrthoExamination = ({ data }) => {
             <tbody>
               {data?.examination?.map((items, index) => (
                 <tr className="text-center" key={index}>
-                  <th>{index + 1}</th>
+                  <th>#{index + 1}</th>
                   <td>{items?.category}</td>
                   <td>{items?.test}</td>
                 </tr>

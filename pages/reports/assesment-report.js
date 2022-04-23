@@ -19,7 +19,8 @@ const AssesmentReport = () => {
       });
       const result = res.data;
       return result;
-    }
+    },
+    { refreshInterval: 1000 }
   );
   const { data: specialty } = useSWR(
     `${apiUrl}/specialties/${appointment?.doctor?.specialty}`,
@@ -128,7 +129,12 @@ const AssesmentReport = () => {
                             Qualification: {appointment?.doctor?.qualification}
                           </p>
                           <p>Specialization: {specialty?.name}</p>
-                          <p>Clinic Name: {appointment?.polyclinic?.name}</p>
+                          <p>
+                            Clinic Name:{" "}
+                            {appointment?.polyclinic?.name ||
+                              appointment?.nursing_home?.name ||
+                              appointment?.hospital?.name}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -265,16 +271,14 @@ const AssesmentReport = () => {
                                 <thead className="table-dark">
                                   <tr>
                                     <th scope="col">Sl.</th>
-                                    <th scope="col">ICD 10 Code</th>
-                                    <th scope="col">Description</th>
+                                    <th scope="col">ICD 10 Code diagnosis</th>
                                   </tr>
                                 </thead>
                                 <tbody>
                                   {appointment?.assesment?.diagnosis.map(
                                     (items, index) => (
                                       <tr key={index}>
-                                        <th scope="row">*</th>
-                                        <td>{items?.icd10}</td>
+                                        <th scope="row">#{index + 1}</th>
                                         <td>{items?.description}</td>
                                       </tr>
                                     )
