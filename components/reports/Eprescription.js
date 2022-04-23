@@ -7,43 +7,43 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
     <div ref={ref}>
       <div className="prescription">
         <div className="container prescription-body">
-          <div className="pres-topbar-ribbon py-1 px-1">
-            <div className="row align-items-end">
-              <div className="col-md-1">
+          <div className="pres-topbar-ribbon py-1 px-1 mt-2 bg-primary">
+            <div className="row align-items-center">
+              <div className="col-2">
                 <div className="left-content">
                   <Image
                     src="/assets/images/logo-white.png"
                     alt="logo"
-                    width={500}
-                    height={350}
+                    width={100}
+                    height={100}
                   />
                 </div>
               </div>
-              <div className="col-md-4">
+              <div className="col-6">
                 <div className="middle-content">
-                  <p className="fs-6 fw-bold text-light">
+                  <p className="fs-6 fw-bold text-dark">
                     REHAB INTEGRATED MEDICAL SOLUTIONS
                   </p>
                 </div>
               </div>
-              <div className="col-md-7">
+              <div className="col-4">
                 <div className="right-content">
                   <div className="row align-items-center">
                     <div className="col-md-4">
-                      <p className="text-light">
-                        <i className="fas fa-map-marker-alt text-light me-2"></i>
+                      <p className="text-dark">
+                        <i className="fas fa-map-marker-alt text-dark me-2"></i>
                         Haldia City Centre , WB
                       </p>
                     </div>
                     <div className="col-md-4">
-                      <p className="text-light">
-                        <i className="fas fa-phone text-light me-2"></i>
+                      <p className="text-dark">
+                        <i className="fas fa-phone text-dark me-2"></i>
                         +91-90384-43073
                       </p>
                     </div>
                     <div className="col-md-4">
-                      <p className="text-light">
-                        <i className="fas fa-envelope-open-text text-light me-2"></i>
+                      <p className="text-dark">
+                        <i className="fas fa-envelope-open-text text-dark me-2"></i>
                         demo@email.com
                       </p>
                     </div>
@@ -52,9 +52,12 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
               </div>
             </div>
           </div>
-          <header className="py-1 px-2 presc-header">
-            <div className="row align-items-center m-auto">
-              <div className="col-md-4">
+          <header
+            className="py-1 px-2 presc-header"
+            style={{ borderBottom: "5px solid" }}
+          >
+            <div className="row align-items-center m-auto py-3">
+              <div className="col-4">
                 <div className="header-inner-item text-start">
                   <p className="fs-3 fw-bold fst-italic lh-1">
                     Dr. {appointments?.doctor?.firstName}
@@ -72,7 +75,7 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                   </p>
                 </div>
               </div>
-              <div className="col-md-4">
+              <div className="col-4">
                 <div className="doctor-symbol text-center">
                   <Image
                     src="/assets/images/doctor-symbol.png"
@@ -83,7 +86,7 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                 </div>
               </div>
 
-              <div className="col-md-4">
+              <div className="col-4">
                 <div className="header-inner-item text-end">
                   <p className="fs-3 fw-bold fst-italic lh-1">
                     {appointments?.polyclinic?.name ||
@@ -130,11 +133,23 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
           </header>
 
           <main className="main mt-3">
-            <p className="presc-title fs-3 fw-bold text-center">e-Prescption</p>
-            <div className="presc-main_outer_bg">
+            <p
+              className="presc-title fs-3 fw-bold text-center"
+              style={{ color: " #720330" }}
+            >
+              e-Prescption
+            </p>
+            <div
+              className="presc-main_outer_bg"
+              style={{
+                background: "linear-gradient(45deg, #116aa1, #720330)",
+                position: "relative",
+                padding: "1rem",
+              }}
+            >
               <div className="profile_details mb-3">
                 <div className="row align-items-center">
-                  <div className="col-md-4">
+                  <div className="col-6">
                     <img
                       className="presc-img-profile"
                       alt=""
@@ -142,9 +157,19 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                         appointments?.patient?.image?.url ||
                         "/assets/images/profile.png"
                       }
+                      style={{
+                        height: "19rem",
+                        background: "#0b6ea5",
+                        padding: "1rem",
+                        position: "absolute",
+                        marginTop: "-145px",
+                        marginLeft: "25px",
+                        boxShadow: "1px 8px 12px 0px #00000038",
+                        borderRadius: "100%",
+                      }}
                     />
                   </div>
-                  <div className="col-md-8">
+                  <div className="col-6">
                     <p className="fs-5 fw-bold text-light border-bottom border-light">
                       Patient Details
                     </p>
@@ -228,7 +253,17 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
 
             <div>
               <div className="rfa-gen-form-data-table mt-4 p-3">
-                <p className="fs-5 presc-table-title">Medicine</p>
+                <p
+                  className="fs-5 presc-table-title"
+                  style={{
+                    background: "linear-gradient(45deg, #6f0734, transparent)",
+                    padding: "1rem",
+                    color: "white",
+                    borderRadius: "30px 4px 4px 30px",
+                  }}
+                >
+                  Medicine
+                </p>
                 <table className="table table-striped table-borderless">
                   <thead>
                     <tr>
@@ -263,7 +298,17 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                 </table>
               </div>
               <div className="rfa-gen-form-data-table mt-4 p-3">
-                <p className="fs-5 presc-table-title">Test</p>
+                <p
+                  className="fs-5 presc-table-title"
+                  style={{
+                    background: "linear-gradient(45deg, #6f0734, transparent)",
+                    padding: "1rem",
+                    color: "white",
+                    borderRadius: "30px 4px 4px 30px",
+                  }}
+                >
+                  Test
+                </p>
                 <table className="table table-striped table-borderless">
                   <thead>
                     <tr>
@@ -284,7 +329,15 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                 </table>
               </div>
               <div className="rfa-gen-form-data-table mt-4 p-3">
-                <p className="fs-5 presc-table-title">
+                <p
+                  className="fs-5 presc-table-title"
+                  style={{
+                    background: "linear-gradient(45deg, #6f0734, transparent)",
+                    padding: "1rem",
+                    color: "white",
+                    borderRadius: "30px 4px 4px 30px",
+                  }}
+                >
                   Food & Fluid Restriction
                 </p>
                 <table className="table table-striped table-borderless">
@@ -307,7 +360,17 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                 </table>
               </div>
               <div className="rfa-gen-form-data-table mt-4 p-3">
-                <p className="fs-5 presc-table-title">Patient Education</p>
+                <p
+                  className="fs-5 presc-table-title"
+                  style={{
+                    background: "linear-gradient(45deg, #6f0734, transparent)",
+                    padding: "1rem",
+                    color: "white",
+                    borderRadius: "30px 4px 4px 30px",
+                  }}
+                >
+                  Patient Education
+                </p>
                 <table className="table table-striped table-borderless">
                   <thead>
                     <tr>
@@ -328,7 +391,15 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                 </table>
               </div>
               <div className="rfa-gen-form-data-table mt-4 p-3">
-                <p className="fs-5 presc-table-title">
+                <p
+                  className="fs-5 presc-table-title"
+                  style={{
+                    background: "linear-gradient(45deg, #6f0734, transparent)",
+                    padding: "1rem",
+                    color: "white",
+                    borderRadius: "30px 4px 4px 30px",
+                  }}
+                >
                   Precaution & Safety Measures
                 </p>
                 <table className="table table-striped table-borderless">
@@ -351,7 +422,15 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                 </table>
               </div>
               <div className="rfa-gen-form-data-table mt-4 p-3">
-                <p className="fs-5 presc-table-title">
+                <p
+                  className="fs-5 presc-table-title"
+                  style={{
+                    background: "linear-gradient(45deg, #6f0734, transparent)",
+                    padding: "1rem",
+                    color: "white",
+                    borderRadius: "30px 4px 4px 30px",
+                  }}
+                >
                   Other Treatment Referral
                 </p>
                 <table className="table table-striped table-borderless">
@@ -374,7 +453,17 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                 </table>
               </div>
               <div className="rfa-gen-form-data-table mt-4 p-3">
-                <p className="fs-5 presc-table-title">Set Follow Time Period</p>
+                <p
+                  className="fs-5 presc-table-title"
+                  style={{
+                    background: "linear-gradient(45deg, #6f0734, transparent)",
+                    padding: "1rem",
+                    color: "white",
+                    borderRadius: "30px 4px 4px 30px",
+                  }}
+                >
+                  Set Follow Time Period
+                </p>
                 <table className="table table-striped table-borderless">
                   <thead>
                     <tr>
@@ -396,10 +485,13 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
             </div>
           </main>
 
-          <footer className="presc-footer">
+          <footer
+            className="presc-footer mt-5"
+            style={{ background: "linear-gradient(45deg, #116aa1, #720330)" }}
+          >
             <div className="row align-items-center pt-3 px-3">
-              <div className="col-md-4"></div>
-              <div className="col-md-4">
+              <div className="col-4"></div>
+              <div className="col-4">
                 <div className="banner-logo text-center mb-2">
                   <Image
                     height="50"
@@ -415,7 +507,7 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                   A unit of Retar Mediserve Pvt. Ltd.
                 </p>
               </div>
-              <div className="col-md-4"></div>
+              <div className="col-4"></div>
             </div>
           </footer>
         </div>
