@@ -12545,45 +12545,7 @@ ul.benifits-col li i {
 }
 
 /* Prescription Stylesheet*/
-.prescription {
-  background-color: whitesmoke;
-}
-.prescription-body {
-  background-color: white;
-}
-.pres-topbar-ribbon {
-  background-color: #075f99 !important;
-}
-.presc-header {
-  border-bottom: 5px solid;
-}
-.presc-title {
-  color: #720330;
-}
-.presc-main_outer_bg {
-  background: linear-gradient(45deg, #116aa1, #720330);
-  position: relative;
-  padding: 1rem;
-}
-.presc-img-profile {
-  height: 19rem;
-  background: #0b6ea5;
-  padding: 1rem;
-  position: absolute;
-  margin-top: -145px;
-  margin-left: 25px;
-  box-shadow: 1px 8px 12px 0px #00000038;
-  border-radius: 100%;
-}
-.presc-table-title {
-  background: linear-gradient(45deg, #6f0734, transparent);
-  padding: 1rem;
-  color: white;
-  border-radius: 30px 4px 4px 30px;
-}
-.presc-footer {
-  background: linear-gradient(45deg, #116aa1, #720330);
-}
+
 
 /* Clinical Examination */
 .clini-exam {
