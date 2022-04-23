@@ -7,7 +7,10 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
     <div ref={ref}>
       <div className="prescription">
         <div className="container prescription-body">
-          <div className="pres-topbar-ribbon py-1 px-1 mt-2 bg-primary">
+          <div
+            className="pres-topbar-ribbon py-1 px-1 mt-2 "
+            style={{ backgroundColor: "#15558d" }}
+          >
             <div className="row align-items-center">
               <div className="col-2">
                 <div className="left-content">
@@ -60,7 +63,7 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
               <div className="col-4">
                 <div className="header-inner-item text-start">
                   <p className="fs-3 fw-bold fst-italic lh-1">
-                    Dr. {appointments?.doctor?.firstName}
+                    Dr. {appointments?.doctor?.firstName}{" "}
                     {appointments?.doctor?.lastName}
                   </p>
                   <p className="fs-6 fw-bold lh-1">
@@ -184,12 +187,12 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                                 {appointments?.patient?.last_name}
                               </span>
                             </p>
-                            <p className="fs-6 fw-bold text-light lh-1">
+                            {/* <p className="fs-6 fw-bold text-light lh-1">
                               Material Status :
                               <span className="fs-6 fw-light ms-1">
                                 {appointments?.patient?.marital_status}
                               </span>
-                            </p>
+                            </p> */}
                             <p className="fs-6 fw-bold text-light lh-1">
                               Blood Group :
                               <span className="fs-6 fw-light ms-1">
@@ -211,7 +214,7 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-6">
+                      {/* <div className="col-md-6">
                         <div className="patient_intro mb-2">
                           <div className="patient_details_inner">
                             <p className="fs-6 fw-bold text-light lh-1">
@@ -244,7 +247,7 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                             </p>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
