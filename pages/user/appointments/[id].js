@@ -126,7 +126,7 @@ const AppointmentId = () => {
                           <div className="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                             <div className="d-grid gap-2 mb-2 mb-lg-0 mb-xl-0 mb-xxl-0">
                               <button
-                                className="btn btn-danger "
+                                className="btn btn-danger py-2 "
                                 onClick={printPrescription}
                               >
                                 Download e-Prescription
