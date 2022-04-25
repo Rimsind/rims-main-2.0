@@ -1061,7 +1061,7 @@ const DoctorTimeTable = () => {
                                 <div className="accrd-acrd-btn">
                                   <div className="mt-3 text-end">
                                     <button className="btn bg-danger-light me-2">
-                                      <i class="fad fa-trash-alt me-2"></i>
+                                      <i className="fad fa-trash-alt me-2"></i>
                                       Delete
                                     </button>
                                     <button className="btn btn-primary">
