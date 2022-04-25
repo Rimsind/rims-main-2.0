@@ -109,7 +109,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                         <div className="form-floating mb-3">
                           <input
                             type="date"
-                            class="form-control"
+                            className="form-control"
                             id="floatingInput"
                             defaultValue={!!items?.date ? items?.date : ""}
                           />
@@ -120,7 +120,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                         <div className="form-floating mb-3">
                           <input
                             type="text"
-                            class="form-control"
+                            className="form-control"
                             id="floatingInput"
                             defaultValue={
                               !!items?.time_from ? items?.time_from : ""
@@ -133,7 +133,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                         <div className="form-floating mb-3">
                           <input
                             type="text"
-                            class="form-control"
+                            className="form-control"
                             id="floatingInput"
                             defaultValue={
                               !!items?.time_to ? items?.time_to : ""
@@ -146,7 +146,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                         <div className="form-floating mb-3">
                           <input
                             type="text"
-                            class="form-control"
+                            className="form-control"
                             id="floatingInput"
                             placeholder="Seat"
                             defaultValue={!!items?.seats ? items?.seats : ""}
