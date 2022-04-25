@@ -113,7 +113,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                             id="floatingInput"
                             defaultValue={!!items?.date ? items?.date : ""}
                           />
-                          <label for="floatingInput">Date</label>
+                          <label htmlFor="floatingInput">Date</label>
                         </div>
                       </td>
                       <td>
@@ -126,7 +126,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                               !!items?.time_from ? items?.time_from : ""
                             }
                           />
-                          <label for="floatingInput">Start Time</label>
+                          <label htmlFor="floatingInput">Start Time</label>
                         </div>
                       </td>
                       <td>
@@ -139,7 +139,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                               !!items?.time_to ? items?.time_to : ""
                             }
                           />
-                          <label for="floatingInput">End Time</label>
+                          <label htmlFor="floatingInput">End Time</label>
                         </div>
                       </td>
                       <td>
@@ -151,7 +151,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                             placeholder="Seat"
                             defaultValue={!!items?.seats ? items?.seats : ""}
                           />
-                          <label for="floatingInput">Seat</label>
+                          <label htmlFor="floatingInput">Seat</label>
                         </div>
                       </td>
                     </tr>
