@@ -73,7 +73,7 @@ const ProfileDetails = ({ data }) => {
         <div className="card-body">
           <form onSubmit={handleSubmit(submit_polydetails)}>
             <div className="row mb-3">
-              <div className="col-md-6">
+              <div className="col-md-4">
                 <div className="row align-items-center">
                   <div className="col-md-4">
                     <div className="nursing-form-input">
@@ -94,7 +94,28 @@ const ProfileDetails = ({ data }) => {
                   </div>
                 </div>
               </div>
-              <div className="col-md-6">
+              <div className="col-md-4">
+                <div className="row align-items-center">
+                  <div className="col-md-4">
+                    <div className="nursing-form-input">
+                      <label>Registration No.</label>
+                    </div>
+                  </div>
+                  <div className="col-md-8">
+                    <div className="nursing-form-input">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Registration No."
+                        name="registration_no"
+                        {...register("name")}
+                        defaultValue={!!data?.name ? data.name : ""}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-4">
                 <div className="row align-items-center">
                   <div className="col-md-4">
                     <div className="nursing-form-input">

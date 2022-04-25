@@ -489,7 +489,7 @@ const PageContentEditor = () => {
                   <p className="fs-5 fw-bold text-center lh-1">Features</p>
                 </div>
                 <div className="card-body">
-                  <div className="row align-items-end">
+                  <div className="row align-items-baseline">
                     <div className="col-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6">
                       <div className="features-add-sec mb-3">
                         <div className="row align-items-center">

@@ -68,7 +68,7 @@ const AddressDetails = ({ data }) => {
     <>
       <div className="card">
         <div className="card-header">
-          <p className="fs-5 fw-bold text-center lh-1">Address</p>
+          <p className="fs-5 fw-bold text-center lh-1">Address Details</p>
         </div>
         <div className="card-body">
           <form onSubmit={handleSubmit(submit_polyaddress)}>
