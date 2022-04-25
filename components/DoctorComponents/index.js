@@ -11,6 +11,7 @@ import RehabExamination from "./rehab/RehabExamination";
 import MedicineExamination from "./medicine/MedicineExamination";
 import EducationInfo from "./EducationInfo";
 import StatusChanger from "./StatusChanger";
+import TimeTableAccordian from "./TimeTableAccordian";
 export {
   DoctorSidebar,
   DoctorNav,
@@ -25,4 +26,5 @@ export {
   MedicineExamination,
   EducationInfo,
   StatusChanger,
+  TimeTableAccordian,
 };

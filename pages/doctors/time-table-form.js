@@ -24,13 +24,23 @@ const DoctorTimeTableForm = () => {
       return result;
     }
   );
-  console.log(data);
 
   const [locationType, setLocationType] = useState("");
+  if (locationType === "polyclinics") {
+    var polyclinicId = clinic;
+    var nursingHomeId = null;
+    var hospitalId = null;
+  } else if (locationType === "nursinh-homes") {
+    var polyclinicId = null;
+    var nursingHomeId = clinic;
+    var hospitalId = null;
+  } else if (locationType === "hospitals") {
+    var polyclinicId = null;
+    var nursingHomeId = null;
+    var hospitalId = clinic;
+  }
   const { data: location } = useSWR(`${apiUrl}/${locationType}`, fetcher);
-
   const [clinic, setClinic] = useState();
-  console.log();
   const [fee, setFee] = useState();
   const [date, setDate] = useState();
   const [timeFrom, setTimeFrom] = useState();
@@ -43,9 +53,9 @@ const DoctorTimeTableForm = () => {
       ...allData,
       {
         date: date,
-        timeFrom: timeFrom,
-        timeTo: timeTo,
-        seat: seat,
+        time_from: timeFrom,
+        time_to: timeTo,
+        seats: seat,
       },
     ]);
     setDate("");
@@ -55,19 +65,6 @@ const DoctorTimeTableForm = () => {
   };
 
   const submitEntry = async () => {
-    if (locationType === "polyclinics") {
-      var polyclinicId = clinic;
-      var nursingHomeId = null;
-      var hospitalId = null;
-    } else if (locationType === "nursinh-homes") {
-      var polyclinicId = null;
-      var nursingHomeId = clinic;
-      var hospitalId = null;
-    } else if (locationType === "hospitals") {
-      var polyclinicId = null;
-      var nursingHomeId = null;
-      var hospitalId = clinic;
-    }
     const payload = {
       booking_schedule: [
         ...data?.booking_schedule,
@@ -92,7 +89,7 @@ const DoctorTimeTableForm = () => {
       }
     );
     const result = await res.data;
-    console.log(payload);
+
     alert("Success");
     return result;
   };
@@ -221,56 +218,51 @@ const DoctorTimeTableForm = () => {
                         <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-10 col-xxl-10 mb-2 mb-sm-2 mb-md-2 mb-lg-0 mb-xl-0 mb-xxl-0">
                           <div className="row align-items-center">
                             <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3">
-                              <div className="form-floating mb-3">
+                              <div className=" mb-3">
+                                <label>Date</label>
                                 <input
                                   type="Date"
                                   className="form-control"
-                                  id="floatingDate"
                                   value={date}
                                   onChange={(e) => setDate(e.target.value)}
                                 />
-                                <label htmlFor="floatingDate">Date</label>
                               </div>
                             </div>
                             <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3">
-                              <div className="form-floating mb-3">
+                              <div className=" mb-3">
+                                <label>Time Start</label>
                                 <input
-                                  type="Time"
+                                  type="test"
                                   className="form-control"
-                                  id="floatingTimeStart"
+                                  placeholder="Enter Time (eg. 09:00 AM) "
                                   value={timeFrom}
                                   onChange={(e) => setTimeFrom(e.target.value)}
                                 />
-                                <label htmlFor="floatingTimeStart">
-                                  Time Start
-                                </label>
                               </div>
                             </div>
                             <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3">
-                              <div className="form-floating mb-3">
+                              <div className=" mb-3">
+                                <label>Time End</label>
                                 <input
-                                  type="Time"
+                                  type="text"
                                   className="form-control"
                                   id="floatingTimeEnd"
+                                  placeholder="Enter Time (eg. 09:00 PM) "
                                   value={timeTo}
                                   onChange={(e) => setTimeTo(e.target.value)}
                                 />
-                                <label htmlFor="floatingTimeEnd">
-                                  Time End
-                                </label>
                               </div>
                             </div>
                             <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3">
-                              <div className="form-floating mb-3">
+                              <div className="mb-3">
+                                <label>Seat</label>
                                 <input
                                   type="Number"
                                   className="form-control"
-                                  id="floatingSeat"
-                                  placeholder="Seat"
+                                  placeholder="100"
                                   value={seat}
                                   onChange={(e) => setSeat(e.target.value)}
                                 />
-                                <label htmlFor="floatingSeat">Seat</label>
                               </div>
                             </div>
                           </div>
@@ -302,9 +294,9 @@ const DoctorTimeTableForm = () => {
                                 <tr key={index}>
                                   <td>#{index + 1}</td>
                                   <td>{items?.date}</td>
-                                  <td>{items?.timeFrom}</td>
-                                  <td>{items?.timeTo}</td>
-                                  <td>{items?.seat}</td>
+                                  <td>{items?.time_from}</td>
+                                  <td>{items?.time_to}</td>
+                                  <td>{items?.seats}</td>
                                 </tr>
                               ))}
                             </tbody>
