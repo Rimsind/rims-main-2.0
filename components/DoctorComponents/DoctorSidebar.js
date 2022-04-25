@@ -116,7 +116,7 @@ const DoctorSidebar = (props) => {
                   </Link>
                 </li> */}
                 <li className={props.status6}>
-                  <Link href="/doctors/doctor-time-table">
+                  <Link href="/doctors/time-table">
                     <a>
                       <i className="fas fa-calendar-alt"></i>
                       <span>Time Table</span>

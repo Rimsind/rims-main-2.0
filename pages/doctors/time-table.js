@@ -28,7 +28,7 @@ const DoctorTimeTable = () => {
       <section className="section-doc-tm-tbl">
         <div className="main-wrapper">
           <BreadCrums
-            title="Home / Doctor / Doctor-Time-Table"
+            title="Home / Doctor / Doctor Time-Table"
             title1="Doctor Time Table"
           />
 
@@ -40,7 +40,7 @@ const DoctorTimeTable = () => {
                 <div className="col-md-12 col-sm-12 col-lg-8 col-xl-9">
                   <div className="card">
                     <div className="card-header">
-                      <Link href="/doctors/doctor-time-table-form">
+                      <Link href="/doctors/time-table-form">
                         <a className="btn btn-primary fs-6 px-5 shadow-sm">
                           <i className="fas fa-plus me-2"></i>Add New Entry
                         </a>
