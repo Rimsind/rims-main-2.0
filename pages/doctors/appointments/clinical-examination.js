@@ -71,7 +71,21 @@ const ClinicalExaminations = () => {
                 <div className="col-12 col-sm-12 col-md-0 col-lg-0 col-xl-2 col-xxl-2"></div>
                 <StatusChanger id={id} />
                 <div className="col-12 col-md-6 col-sm-12 col-lg-6 col-xl-4 col-xxl-4">
-                  <div className="patient-btn-group d-flex justify-content-end">
+                  {/* <div className="patient-btn-group d-flex justify-content-end">
+                    <div className="btn-group-item shadow-sm">
+                      <Link href={`/reports/assesment-report?id=${id}`}>
+                        <a className="btn btn-success">
+                          Download Clinical Examination
+                        </a>
+                      </Link>
+                    </div>
+                    <div className="btn-group-item shadow-sm">
+                      <Link href={`/reports/assesment-report?id=${id}`}>
+                        <a className="btn btn-success">
+                          Download Subjective Assessments
+                        </a>
+                      </Link>
+                    </div>
                     <div className="btn-group-item shadow-sm">
                       <Link href={`/reports/assesment-report?id=${id}`}>
                         <a className="btn btn-success">Download Assessments</a>
@@ -82,6 +96,43 @@ const ClinicalExaminations = () => {
                         <a className="btn btn-danger">Print E-Prescription</a>
                       </Link>
                     </div>
+                  </div> */}
+                  <div className="dropdown text-end">
+                    <button
+                      className="btn btn-danger dropdown-toggle py-2"
+                      style={{ paddingLeft: "60px", paddingRight: "60px" }}
+                      type="button"
+                      id="dropdownMenuButton1"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Download Reports
+                    </button>
+                    <ul
+                      className="dropdown-menu"
+                      aria-labelledby="dropdownMenuButton1"
+                    >
+                      <li className="border-bottom border-1">
+                        <button className="btn list-group-item list-group-item-action">
+                          Download E-Prescription
+                        </button>
+                      </li>
+                      <li className="border-bottom border-1">
+                        <button className="btn list-group-item list-group-item-action">
+                          Download Assessments
+                        </button>
+                      </li>
+                      <li className="border-bottom border-1">
+                        <button className="btn list-group-item list-group-item-action">
+                          Download Clinical Examinations
+                        </button>
+                      </li>
+                      <li>
+                        <button className="btn list-group-item list-group-item-action">
+                          Download Subjective Information
+                        </button>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
