@@ -752,7 +752,7 @@ const DoctorTimeTable = () => {
                             >
                               <div className="accordion-body">
                                 <div className="row align-items-center">
-                                  <div className="col-3">
+                                  <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3">
                                     <select
                                       className="form-select"
                                       aria-label="Default select example"
@@ -765,7 +765,7 @@ const DoctorTimeTable = () => {
                                       <option value="3">Three</option>
                                     </select>
                                   </div>
-                                  <div className="col-3">
+                                  <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3">
                                     <select
                                       className="form-select"
                                       aria-label="Default select example"
@@ -778,7 +778,7 @@ const DoctorTimeTable = () => {
                                       <option value="3">Three</option>
                                     </select>
                                   </div>
-                                  <div className="col-3">
+                                  <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3">
                                     <select
                                       className="form-select"
                                       aria-label="Default select example"
@@ -789,7 +789,7 @@ const DoctorTimeTable = () => {
                                       <option value="3">Three</option>
                                     </select>
                                   </div>
-                                  <div className="col-3">
+                                  <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3">
                                     <input
                                       type="text"
                                       className="form-control"
@@ -797,7 +797,7 @@ const DoctorTimeTable = () => {
                                     />
                                   </div>
                                 </div>
-                                <div className="accrd-table mt-5">
+                                <div className="accrd-table mt-5 table-responsive">
                                   <table className="table table-bordered border-dark">
                                     <tbody>
                                       <tr>
@@ -1060,7 +1060,7 @@ const DoctorTimeTable = () => {
                                 </div>
                                 <div className="accrd-acrd-btn">
                                   <div className="mt-3 text-end">
-                                    <button className="btn bg-danger-light me-2">
+                                    <button className="btn bg-danger-light me-2 mb-3 mb-sm-3 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0">
                                       <i className="fad fa-trash-alt me-2"></i>
                                       Delete
                                     </button>

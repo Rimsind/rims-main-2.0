@@ -80,56 +80,52 @@ const Index = () => {
               <DoctorSidebar status2="active" data={data} />
               {appointments ? (
                 <div className="col-md-12 col-sm-12 col-lg-8 col-xl-9">
-                  <div className="card">
-                    <div className="card-body">
-                      <ul className="nav nav-tabs nav-tabs-bottom">
-                        <li className="nav-item">
-                          <a
-                            className="nav-link active"
-                            href="#bottom-tab1"
-                            data-bs-toggle="tab"
-                          >
-                            Today&apos;s Appointments
-                          </a>
-                        </li>
-                        <li className="nav-item">
-                          <a
-                            className="nav-link"
-                            href="#bottom-tab2"
-                            data-bs-toggle="tab"
-                          >
-                            All Appointments
-                          </a>
-                        </li>
-                      </ul>
-                      <div className="tab-content">
-                        <div className="tab-pane show active" id="bottom-tab1">
-                          {appointments ? (
-                            <>
-                              <TodaysApp
-                                appointments={appointments}
-                                appointmentsLength={appointmentsLength}
-                                data={data}
-                              />
-                            </>
-                          ) : (
-                            <UserPageLoader />
-                          )}
-                        </div>
-                        <div className="tab-pane" id="bottom-tab2">
-                          {appointments ? (
-                            <>
-                              <AllApp
-                                appointments={appointments}
-                                appointmentsLength={appointmentsLength}
-                                data={data}
-                              />
-                            </>
-                          ) : (
-                            <UserPageLoader />
-                          )}
-                        </div>
-                      </div>
+                  <ul className="nav nav-tabs nav-tabs-solid nav-tabs-rounded">
+                    <li className="nav-item">
+                      <a
+                        className="nav-link active"
+                        href="#bottom-tab1"
+                        data-bs-toggle="tab"
+                      >
+                        Today&apos;s Appointments
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a
+                        className="nav-link"
+                        href="#bottom-tab2"
+                        data-bs-toggle="tab"
+                      >
+                        All Appointments
+                      </a>
+                    </li>
+                  </ul>
+                  <div className="tab-content">
+                    <div className="tab-pane show active" id="bottom-tab1">
+                      {appointments ? (
+                        <>
+                          <TodaysApp
+                            appointments={appointments}
+                            appointmentsLength={appointmentsLength}
+                            data={data}
+                          />
+                        </>
+                      ) : (
+                        <UserPageLoader />
+                      )}
+                    </div>
+                    <div className="tab-pane" id="bottom-tab2">
+                      {appointments ? (
+                        <>
+                          <AllApp
+                            appointments={appointments}
+                            appointmentsLength={appointmentsLength}
+                            data={data}
+                          />
+                        </>
+                      ) : (
+                        <UserPageLoader />
+                      )}
                     </div>
                   </div>
                 </div>
