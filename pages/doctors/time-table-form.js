@@ -201,7 +201,9 @@ const DoctorTimeTableForm = () => {
                             )}
 
                             {location?.map((items, index) => (
-                              <option value={items?.id}>{items?.name}</option>
+                              <option value={items?.id} key={index}>
+                                {items?.name}
+                              </option>
                             ))}
                           </select>
                         </div>
