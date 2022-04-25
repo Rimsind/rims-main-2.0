@@ -225,7 +225,7 @@ const DoctorTimeTable = () => {
                           </div>
                         </div>
                       </div> */}
-                      <div
+                      {/* <div
                         className="row align-items-center border-bottom border-1"
                         style={{ backgroundColor: "#abd5ff" }}
                       >
@@ -721,6 +721,352 @@ const DoctorTimeTable = () => {
                                         </a>
                                       </Link>
                                     </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div> */}
+
+                      <div className="doc-time-table">
+                        <div className="accordion" id="accordionExample">
+                          <div className="accordion-item">
+                            <h2 className="accordion-header" id="headingOne">
+                              <button
+                                className="accordion-button"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne"
+                                aria-expanded="true"
+                                aria-controls="collapseOne"
+                              >
+                                Polyclinics Name
+                              </button>
+                            </h2>
+                            <div
+                              id="collapseOne"
+                              className="accordion-collapse collapse show"
+                              aria-labelledby="headingOne"
+                              data-bs-parent="#accordionExample"
+                            >
+                              <div className="accordion-body">
+                                <div className="row align-items-center">
+                                  <div className="col-3">
+                                    <select
+                                      className="form-select"
+                                      aria-label="Default select example"
+                                    >
+                                      <option selected>
+                                        Select Polyclinics
+                                      </option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                                  <div className="col-3">
+                                    <select
+                                      className="form-select"
+                                      aria-label="Default select example"
+                                    >
+                                      <option selected>
+                                        Select Nursing Homes
+                                      </option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                                  <div className="col-3">
+                                    <select
+                                      className="form-select"
+                                      aria-label="Default select example"
+                                    >
+                                      <option selected>Select Hospital</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                                  <div className="col-3">
+                                    <input
+                                      type="text"
+                                      className="form-control"
+                                      placeholder="Fees Ex: ₹300"
+                                    />
+                                  </div>
+                                </div>
+                                <div className="accrd-table mt-5">
+                                  <table className="table table-bordered border-dark">
+                                    <tbody>
+                                      <tr>
+                                        <td>
+                                          <div className="form-floating mb-3">
+                                            <input
+                                              type="date"
+                                              class="form-control"
+                                              id="floatingInput"
+                                            />
+                                            <label for="floatingInput">
+                                              Date
+                                            </label>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div className="form-floating mb-3">
+                                            <input
+                                              type="time"
+                                              class="form-control"
+                                              id="floatingInput"
+                                            />
+                                            <label for="floatingInput">
+                                              Start Time
+                                            </label>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div className="form-floating mb-3">
+                                            <input
+                                              type="time"
+                                              class="form-control"
+                                              id="floatingInput"
+                                            />
+                                            <label for="floatingInput">
+                                              End Time
+                                            </label>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div className="form-floating mb-3">
+                                            <input
+                                              type="text"
+                                              class="form-control"
+                                              id="floatingInput"
+                                              placeholder="Seat"
+                                            />
+                                            <label for="floatingInput">
+                                              Seat
+                                            </label>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <div className="form-floating mb-3">
+                                            <input
+                                              type="date"
+                                              class="form-control"
+                                              id="floatingInput"
+                                            />
+                                            <label for="floatingInput">
+                                              Date
+                                            </label>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div className="form-floating mb-3">
+                                            <input
+                                              type="time"
+                                              class="form-control"
+                                              id="floatingInput"
+                                            />
+                                            <label for="floatingInput">
+                                              Start Time
+                                            </label>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div className="form-floating mb-3">
+                                            <input
+                                              type="time"
+                                              class="form-control"
+                                              id="floatingInput"
+                                            />
+                                            <label for="floatingInput">
+                                              End Time
+                                            </label>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div className="form-floating mb-3">
+                                            <input
+                                              type="text"
+                                              class="form-control"
+                                              id="floatingInput"
+                                              placeholder="Seat"
+                                            />
+                                            <label for="floatingInput">
+                                              Seat
+                                            </label>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <div className="form-floating mb-3">
+                                            <input
+                                              type="date"
+                                              class="form-control"
+                                              id="floatingInput"
+                                            />
+                                            <label for="floatingInput">
+                                              Date
+                                            </label>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div className="form-floating mb-3">
+                                            <input
+                                              type="time"
+                                              class="form-control"
+                                              id="floatingInput"
+                                            />
+                                            <label for="floatingInput">
+                                              Start Time
+                                            </label>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div className="form-floating mb-3">
+                                            <input
+                                              type="time"
+                                              class="form-control"
+                                              id="floatingInput"
+                                            />
+                                            <label for="floatingInput">
+                                              End Time
+                                            </label>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div className="form-floating mb-3">
+                                            <input
+                                              type="text"
+                                              class="form-control"
+                                              id="floatingInput"
+                                              placeholder="Seat"
+                                            />
+                                            <label for="floatingInput">
+                                              Seat
+                                            </label>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <div className="form-floating mb-3">
+                                            <input
+                                              type="date"
+                                              class="form-control"
+                                              id="floatingInput"
+                                            />
+                                            <label for="floatingInput">
+                                              Date
+                                            </label>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div className="form-floating mb-3">
+                                            <input
+                                              type="time"
+                                              class="form-control"
+                                              id="floatingInput"
+                                            />
+                                            <label for="floatingInput">
+                                              Start Time
+                                            </label>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div className="form-floating mb-3">
+                                            <input
+                                              type="time"
+                                              class="form-control"
+                                              id="floatingInput"
+                                            />
+                                            <label for="floatingInput">
+                                              End Time
+                                            </label>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div className="form-floating mb-3">
+                                            <input
+                                              type="text"
+                                              class="form-control"
+                                              id="floatingInput"
+                                              placeholder="Seat"
+                                            />
+                                            <label for="floatingInput">
+                                              Seat
+                                            </label>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <div className="form-floating mb-3">
+                                            <input
+                                              type="date"
+                                              class="form-control"
+                                              id="floatingInput"
+                                            />
+                                            <label for="floatingInput">
+                                              Date
+                                            </label>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div className="form-floating mb-3">
+                                            <input
+                                              type="time"
+                                              class="form-control"
+                                              id="floatingInput"
+                                            />
+                                            <label for="floatingInput">
+                                              Start Time
+                                            </label>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div className="form-floating mb-3">
+                                            <input
+                                              type="time"
+                                              class="form-control"
+                                              id="floatingInput"
+                                            />
+                                            <label for="floatingInput">
+                                              End Time
+                                            </label>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div className="form-floating mb-3">
+                                            <input
+                                              type="text"
+                                              class="form-control"
+                                              id="floatingInput"
+                                              placeholder="Seat"
+                                            />
+                                            <label for="floatingInput">
+                                              Seat
+                                            </label>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                                <div className="accrd-acrd-btn">
+                                  <div className="mt-3 text-end">
+                                    <button className="btn bg-danger-light me-2">
+                                      <i class="fad fa-trash-alt me-2"></i>
+                                      Delete
+                                    </button>
+                                    <button className="btn btn-primary">
+                                      Save Changes
+                                    </button>
                                   </div>
                                 </div>
                               </div>
