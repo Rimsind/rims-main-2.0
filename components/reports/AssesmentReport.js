@@ -98,13 +98,9 @@ export const AssesmentReport = React.forwardRef((props, ref) => {
                           <p>
                             Name : {appointments?.patient?.first_name}{" "}
                             {appointments?.patient?.last_name}
-                          </p>
-                          <p>
-                            Material Status :{" "}
-                            {appointments?.patient?.marital_status}
-                          </p>
+                          </p>{" "}
+                          <p>Age : {appointments?.patient?.age}</p>
                           <p>Blood Group : {bloodGroup?.name}</p>
-                          <p>Date of Birth : {appointments?.patient?.dob}</p>
                           <p>Gender : {appointments?.patient?.gender}</p>
                         </div>
                       </div>
@@ -135,8 +131,12 @@ export const AssesmentReport = React.forwardRef((props, ref) => {
                           Revisit Details
                         </p>
                         <div className="patient_details_inner">
-                          <p>Date:</p>
-                          <p>Type: </p>
+                          <p>
+                            Date: {appointments?.eprescription?.followUp_date}
+                          </p>
+                          <p>
+                            Type: {appointments?.eprescription?.followUp_type}
+                          </p>
                         </div>
                       </div>
                     </div>

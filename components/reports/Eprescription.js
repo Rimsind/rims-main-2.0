@@ -162,7 +162,7 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                             <p className="fs-6 fw-bold text-light lh-1 text-light lh-1">
                               Name :
                               <span className="fs-6 fw-light ms-1">
-                                {appointments?.patient?.first_name}
+                                {appointments?.patient?.first_name}{" "}
                                 {appointments?.patient?.last_name}
                               </span>
                             </p>
@@ -197,13 +197,13 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                               <span className="fs-6 fw-bold text-light me-5">
                                 Re-visit Date :
                                 <span className="fs-6 fw-light ms-1">
-                                  {appointments?.patient?.age}
+                                  {appointments?.eprescription?.followUp_date}
                                 </span>
                               </span>
                               <span className="fs-6 fw-bold text-light">
                                 Re-visit Type :
                                 <span className="fs-6 fw-light ms-1">
-                                  {appointments?.patient?.gender}
+                                  {appointments?.eprescription?.followUp_type}
                                 </span>
                               </span>
                             </p>
@@ -432,39 +432,6 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                         </tr>
                       )
                     )}
-                  </tbody>
-                </table>
-              </div>
-              <div className="rfa-gen-form-data-table mt-1 p-3">
-                <p
-                  className="fs-5 presc-table-title"
-                  style={{
-                    background: "linear-gradient(45deg, #6f0734, transparent)",
-                    padding: "5px 5px 5px 20px",
-                    color: "white",
-                    borderRadius: "30px 4px 4px 30px",
-                  }}
-                >
-                  Set Follow Time Period
-                </p>
-                <table
-                  className="table table-striped table-bordered"
-                  style={{ marginBottom: "-20px" }}
-                >
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th scope="col">Date</th>
-
-                      <th scope="col">Followup Type</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>*</td>
-                      <td>{appointments?.eprescription?.followUp_date}</td>
-                      <td>{appointments?.eprescription?.followUp_type}</td>
-                    </tr>
                   </tbody>
                 </table>
               </div>
