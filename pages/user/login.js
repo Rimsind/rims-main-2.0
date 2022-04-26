@@ -95,6 +95,7 @@ const Login = () => {
         style={{
           backgroundImage: "url(/assets/images/ererere.png)",
           backgroundSize: "cover",
+          height: "110vh",
         }}
       >
         <div className="container">
