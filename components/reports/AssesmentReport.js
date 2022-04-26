@@ -64,7 +64,7 @@ export const AssesmentReport = React.forwardRef((props, ref) => {
                   className="fs-5 clini-exam-profile-heading-text fw-bold text-center"
                   style={{ color: "#720330" }}
                 >
-                  Clinical Examination Report
+                  Clinical Assesment Report
                 </p>
               </div>
               <div className="row">
@@ -130,6 +130,15 @@ export const AssesmentReport = React.forwardRef((props, ref) => {
                           </p>
                         </div>
                       </div>
+                      <div className="patient_intro mb-2">
+                        <p className="fs-5 fw-bold border-bottom border-white">
+                          Revisit Details
+                        </p>
+                        <div className="patient_details_inner">
+                          <p>Date:</p>
+                          <p>Type: </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -164,7 +173,7 @@ export const AssesmentReport = React.forwardRef((props, ref) => {
                                   {appointments?.chiefComplaints.map(
                                     (items, index) => (
                                       <tr key={index}>
-                                        <th scope="row">*</th>
+                                        <th scope="row">#{index + 1}</th>
                                         <td>{items?.description}</td>
                                         <td>{items?.duration}</td>
                                       </tr>

@@ -95,7 +95,7 @@ const Login = () => {
         style={{
           backgroundImage: "url(/assets/images/ererere.png)",
           backgroundSize: "cover",
-          height: "100vh",
+          height: "110vh",
         }}
       >
         <div className="container">
@@ -109,6 +109,8 @@ const Login = () => {
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   boxShadow: "0px 5px 60px 2px #000",
+                  marginTop: "50px",
+                  marginBottom: "50px",
                 }}
               >
                 <form onSubmit={handleSubmit(onSubmit)}>

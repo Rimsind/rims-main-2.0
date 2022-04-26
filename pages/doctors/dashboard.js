@@ -130,8 +130,14 @@ const Dashboard = () => {
                       <div className="dashboard-card">
                         <div className="row align-items-center">
                           <div className="col-3">
-                            <div className="dashboard-card-icon shadow">
-                              <i className="fas fa-user-injured"></i>
+                            <div className="dashboard-card-icon">
+                              <Image
+                                src="/assets/images/icons/Patient/Patient1.png"
+                                className="img-fluid"
+                                height="100px"
+                                width="100px"
+                                alt="Doctor Dashboard"
+                              />
                             </div>
                           </div>
                           <div className="col-9">
@@ -167,8 +173,14 @@ const Dashboard = () => {
                       <div className="dashboard-card">
                         <div className="row align-items-center">
                           <div className="col-3">
-                            <div className="dashboard-card-icon shadow">
-                              <i className="fas fa-clinic-medical"></i>
+                            <div className="dashboard-card-icon">
+                              <Image
+                                src="/assets/images/icons/clinics/Clinics3.png"
+                                className="img-fluid"
+                                height="100px"
+                                width="100px"
+                                alt="Doctor Dashboard"
+                              />
                             </div>
                           </div>
                           <div className="col-9">
@@ -204,8 +216,14 @@ const Dashboard = () => {
                       <div className="dashboard-card">
                         <div className="row align-items-center">
                           <div className="col-3">
-                            <div className="dashboard-card-icon shadow">
-                              <i className="fas fa-calendar-alt"></i>
+                            <div className="dashboard-card-icon">
+                              <Image
+                                src="/assets/images/icons/yesterday/yesterday's3.png"
+                                className="img-fluid"
+                                height="100px"
+                                width="100px"
+                                alt="Doctor Dashboard"
+                              />
                             </div>
                           </div>
                           <div className="col-9">
@@ -237,8 +255,14 @@ const Dashboard = () => {
                       <div className="dashboard-card">
                         <div className="row align-items-center">
                           <div className="col-3">
-                            <div className="dashboard-card-icon shadow">
-                              <i className="fas fa-calendar-edit"></i>
+                            <div className="dashboard-card-icon">
+                              <Image
+                                src="/assets/images/icons/Tommorow/Tommorow4.png"
+                                className="img-fluid"
+                                height="100px"
+                                width="100px"
+                                alt="Doctor Dashboard"
+                              />
                             </div>
                           </div>
                           <div className="col-9">
@@ -274,8 +298,14 @@ const Dashboard = () => {
                       <div className="dashboard-card">
                         <div className="row align-items-center">
                           <div className="col-3">
-                            <div className="dashboard-card-icon shadow">
-                              <i className="fas fa-calendar-week"></i>
+                            <div className="dashboard-card-icon ">
+                              <Image
+                                src="/assets/images/icons/Today/Today2.png"
+                                className="img-fluid"
+                                height="100px"
+                                width="100px"
+                                alt="Doctor Dashboard"
+                              />
                             </div>
                           </div>
                           <div className="col-9">
@@ -311,8 +341,14 @@ const Dashboard = () => {
                       <div className="dashboard-card">
                         <div className="row align-items-center">
                           <div className="col-3">
-                            <div className="dashboard-card-icon shadow">
-                              <i className="fas fa-calendar-check"></i>
+                            <div className="dashboard-card-icon ">
+                              <Image
+                                src="/assets/images/icons/Today/Today2.png"
+                                className="img-fluid"
+                                height="100px"
+                                width="100px"
+                                alt="Doctor Dashboard"
+                              />
                             </div>
                           </div>
                           <div className="col-9">
@@ -348,8 +384,14 @@ const Dashboard = () => {
                       <div className="dashboard-card">
                         <div className="row align-items-center">
                           <div className="col-3">
-                            <div className="dashboard-card-icon shadow">
-                              <i className="fas fa-calendar-exclamation"></i>
+                            <div className="dashboard-card-icon ">
+                              <Image
+                                src="/assets/images/icons/Today/Today2.png"
+                                className="img-fluid"
+                                height="100px"
+                                width="100px"
+                                alt="Doctor Dashboard"
+                              />
                             </div>
                           </div>
                           <div className="col-9">
@@ -388,8 +430,14 @@ const Dashboard = () => {
                       <div className="dashboard-card">
                         <div className="row align-items-center">
                           <div className="col-3">
-                            <div className="dashboard-card-icon shadow">
-                              <i className="fas fa-calendar-times"></i>
+                            <div className="dashboard-card-icon ">
+                              <Image
+                                src="/assets/images/icons/Today/Today2.png"
+                                className="img-fluid"
+                                height="100px"
+                                width="100px"
+                                alt="Doctor Dashboard"
+                              />
                             </div>
                           </div>
                           <div className="col-9">

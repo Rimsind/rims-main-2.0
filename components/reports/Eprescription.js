@@ -140,12 +140,12 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                         "/assets/images/profile.png"
                       }
                       style={{
-                        height: "12rem",
+                        height: "15rem",
                         background: "#0b6ea5",
                         padding: "10px",
                         position: "absolute",
-                        marginTop: "-88px",
-                        marginLeft: "25px",
+                        marginTop: "-115px",
+                        marginLeft: "2px",
                         boxShadow: "1px 8px 12px 0px #00000038",
                         borderRadius: "100%",
                       }}
@@ -172,24 +172,41 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                                 {appointments?.patient?.marital_status}
                               </span>
                             </p> */}
-                            <span className="fs-6 fw-bold text-light lh-1 me-5">
-                              Blood Group :
-                              <span className="fs-6 fw-light ms-1">
-                                {bloodGroup?.name}
+                            <p>
+                              <span className="fs-6 fw-bold text-light lh-1 me-5">
+                                Blood Group :
+                                <span className="fs-6 fw-light ms-1">
+                                  {bloodGroup?.name}
+                                </span>
                               </span>
-                            </span>
-                            <span className="fs-6 fw-bold text-light lh-1 me-5">
-                              Age :
-                              <span className="fs-6 fw-light ms-1">
-                                {appointments?.patient?.age}
+                              <span className="fs-6 fw-bold text-light lh-1 me-5">
+                                Age :
+                                <span className="fs-6 fw-light ms-1">
+                                  {appointments?.patient?.age}
+                                </span>
                               </span>
-                            </span>
-                            <span className="fs-6 fw-bold text-light lh-1">
-                              Gender :
-                              <span className="fs-6 fw-light ms-1">
-                                {appointments?.patient?.gender}
+                              <span className="fs-6 fw-bold text-light lh-1">
+                                Gender :
+                                <span className="fs-6 fw-light ms-1">
+                                  {appointments?.patient?.gender}
+                                </span>
                               </span>
-                            </span>
+                            </p>
+
+                            <p>
+                              <span className="fs-6 fw-bold text-light me-5">
+                                Re-visit Date :
+                                <span className="fs-6 fw-light ms-1">
+                                  {appointments?.patient?.age}
+                                </span>
+                              </span>
+                              <span className="fs-6 fw-bold text-light">
+                                Re-visit Type :
+                                <span className="fs-6 fw-light ms-1">
+                                  {appointments?.patient?.gender}
+                                </span>
+                              </span>
+                            </p>
                           </div>
                         </div>
                       </div>
@@ -200,7 +217,7 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
             </div>
 
             <div>
-              <div className="rfa-gen-form-data-table mt-4 p-3">
+              <div className="rfa-gen-form-data-table mt-1 p-3">
                 <p
                   className="fs-5 presc-table-title"
                   style={{
@@ -212,7 +229,10 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                 >
                   Medicine
                 </p>
-                <table className="table table-striped table-bordered">
+                <table
+                  className="table table-striped table-bordered"
+                  style={{ marginBottom: "-20px" }}
+                >
                   <thead>
                     <tr>
                       <th scope="col">Sl.</th>
@@ -245,7 +265,7 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                   </tbody>
                 </table>
               </div>
-              <div className="rfa-gen-form-data-table mt-4 p-3">
+              <div className="rfa-gen-form-data-table p-3">
                 <p
                   className="fs-5 presc-table-title"
                   style={{
@@ -257,7 +277,10 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                 >
                   Test
                 </p>
-                <table className="table table-striped table-bordered">
+                <table
+                  className="table table-striped table-bordered"
+                  style={{ marginBottom: "-20px" }}
+                >
                   <thead>
                     <tr>
                       <th scope="col">Sl No.</th>
@@ -276,7 +299,7 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                   </tbody>
                 </table>
               </div>
-              <div className="rfa-gen-form-data-table mt-4 p-3">
+              <div className="rfa-gen-form-data-table mt-1 p-3">
                 <p
                   className="fs-5 presc-table-title"
                   style={{
@@ -288,7 +311,10 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                 >
                   Food & Fluid Restriction
                 </p>
-                <table className="table table-striped table-bordered">
+                <table
+                  className="table table-striped table-bordered"
+                  style={{ marginBottom: "-20px" }}
+                >
                   <thead>
                     <tr>
                       <th scope="col">Sl.</th>
@@ -307,7 +333,7 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                   </tbody>
                 </table>
               </div>
-              <div className="rfa-gen-form-data-table mt-4 p-3">
+              <div className="rfa-gen-form-data-table mt-1 p-3">
                 <p
                   className="fs-5 presc-table-title"
                   style={{
@@ -319,7 +345,10 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                 >
                   Patient Education
                 </p>
-                <table className="table table-striped table-bordered">
+                <table
+                  className="table table-striped table-bordered"
+                  style={{ marginBottom: "-20px" }}
+                >
                   <thead>
                     <tr>
                       <th scope="col">Sl.</th>
@@ -338,7 +367,7 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                   </tbody>
                 </table>
               </div>
-              <div className="rfa-gen-form-data-table mt-4 p-3">
+              <div className="rfa-gen-form-data-table mt-1 p-3">
                 <p
                   className="fs-5 presc-table-title"
                   style={{
@@ -350,7 +379,10 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                 >
                   Precaution & Safety Measures
                 </p>
-                <table className="table table-striped table-bordered">
+                <table
+                  className="table table-striped table-bordered"
+                  style={{ marginBottom: "-20px" }}
+                >
                   <thead>
                     <tr>
                       <th scope="col">Sl.</th>
@@ -369,7 +401,7 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                   </tbody>
                 </table>
               </div>
-              <div className="rfa-gen-form-data-table mt-4 p-3">
+              <div className="rfa-gen-form-data-table mt-1 p-3">
                 <p
                   className="fs-5 presc-table-title"
                   style={{
@@ -381,7 +413,10 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                 >
                   Other Treatment Referral
                 </p>
-                <table className="table table-striped table-bordered">
+                <table
+                  className="table table-striped table-bordered"
+                  style={{ marginBottom: "-20px" }}
+                >
                   <thead>
                     <tr>
                       <th scope="col">Sl.</th>
@@ -400,7 +435,7 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                   </tbody>
                 </table>
               </div>
-              <div className="rfa-gen-form-data-table mt-4 p-3">
+              <div className="rfa-gen-form-data-table mt-1 p-3">
                 <p
                   className="fs-5 presc-table-title"
                   style={{
@@ -412,7 +447,10 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                 >
                   Set Follow Time Period
                 </p>
-                <table className="table table-striped table-bordered">
+                <table
+                  className="table table-striped table-bordered"
+                  style={{ marginBottom: "-20px" }}
+                >
                   <thead>
                     <tr>
                       <th></th>

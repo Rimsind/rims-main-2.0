@@ -163,7 +163,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                       Manual Muscle Strength And Range of Motion Assessment
                     </p>
                   </div>
-                  <table className="table table-bordered border-dark">
+                  <table className="rehab-com-table">
                     <tr className="text-center">
                       <th></th>
                       <th></th>
@@ -176,7 +176,10 @@ const Form11 = ({ appointmentId, rehabData }) => {
                       <th className="text-center py-3">Strength</th>
                     </tr>
 
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#b4dcffa6" }}
+                    >
                       <td
                         className="fs-5 fw-bold"
                         rowSpan="5"
@@ -190,7 +193,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                       </td>
                       <td>0-120</td>
                       <td>0-120</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -206,7 +209,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("hip_flexion_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -234,13 +237,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#b4dcffa6" }}
+                    >
                       <td>
                         <p>Extension / Extensors</p>
                       </td>
                       <td>0-20</td>
                       <td>0-20</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -256,7 +262,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("hip_extension_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -284,13 +290,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#b4dcffa6" }}
+                    >
                       <td>
                         <p>Abduction / Abductors</p>
                       </td>
                       <td>0-45</td>
                       <td>0-45</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -306,7 +315,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("hip_abduction_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -334,14 +343,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#b4dcffa6" }}
+                    >
                       <td>
                         <p>External Rotation / External Rotators</p>
                       </td>
                       <td>0-45</td>
                       <td>0-45</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -357,7 +368,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("hip_externalRotation_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -385,14 +396,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#b4dcffa6" }}
+                    >
                       <td>
                         <p>Internal Rotation / Internal Rotators</p>
                       </td>
                       <td>0-30</td>
                       <td>0-30</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -408,7 +421,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("hip_internalRotation_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -437,7 +450,10 @@ const Form11 = ({ appointmentId, rehabData }) => {
                       </td>
                     </tr>
 
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#c1c7f3ab" }}
+                    >
                       <td
                         className="fs-5 fw-bold"
                         rowSpan="3"
@@ -451,7 +467,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                       </td>
                       <td>0-145</td>
                       <td>0-145</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -467,7 +483,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("knee_flexion_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -495,13 +511,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#c1c7f3ab" }}
+                    >
                       <td>
                         <p>Extension </p>
                       </td>
                       <td>145-0</td>
                       <td>145-0</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -517,7 +536,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("knee_extension_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -545,13 +564,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#c1c7f3ab" }}
+                    >
                       <td>
                         <p>STRAIGHT LEG RAISE</p>
                       </td>
                       <td>0-90</td>
                       <td>0-90</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -567,7 +589,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("knee_straightLegRaise_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -596,7 +618,10 @@ const Form11 = ({ appointmentId, rehabData }) => {
                       </td>
                     </tr>
 
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#b4dcffa6" }}
+                    >
                       <td
                         className="fs-5 fw-bold"
                         rowSpan="4"
@@ -610,7 +635,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                       </td>
                       <td>0-20</td>
                       <td>0-20</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -626,7 +651,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("ankle_dorsiflexion_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -654,14 +679,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#b4dcffa6" }}
+                    >
                       <td>
                         <p>PLANTERFLEXION/FLEXORS</p>
                       </td>
                       <td>0-50</td>
                       <td>0-50</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -677,7 +704,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("ankle_planterflexion_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -705,13 +732,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#b4dcffa6" }}
+                    >
                       <td>
                         <p>INVERSION/INVERTORS</p>
                       </td>
                       <td>0-15</td>
                       <td>0-15</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -727,7 +757,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("ankle_inversion_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -755,13 +785,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#b4dcffa6" }}
+                    >
                       <td>
                         <p>EVERSION/EVERTORS</p>
                       </td>
                       <td>0-20</td>
                       <td>0-20</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -777,7 +810,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("ankle_eversion_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -805,7 +838,11 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr className="text-center">
+
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#c1c7f3ab" }}
+                    >
                       <td
                         className="fs-5 fw-bold"
                         rowSpan="6"
@@ -819,7 +856,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                       </td>
                       <td>40-70</td>
                       <td>40-70</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -835,7 +872,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("cervical_flexion_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -863,14 +900,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#c1c7f3ab" }}
+                    >
                       <td>
                         <p>EXTENSION / EXTENSORS</p>
                       </td>
                       <td>60-80</td>
                       <td>60-80</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -886,7 +925,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("cervical_extension_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label=" example"
@@ -914,13 +953,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#c1c7f3ab" }}
+                    >
                       <td>
                         <p>SIDE FLEXION / SIDE FLEXORS (LEFT)</p>
                       </td>
                       <td>40-50</td>
                       <td>40-50</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -936,7 +978,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("cervical_sideflexion_left_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -964,13 +1006,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#c1c7f3ab" }}
+                    >
                       <td>
                         <p>SIDE FLEXION / SIDE FLEXORS (RIGHT)</p>
                       </td>
                       <td>40-50</td>
                       <td>40-50</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -986,7 +1031,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("cervical_sideflexion_rigth_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1014,13 +1059,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#c1c7f3ab" }}
+                    >
                       <td>
                         <p>ROTATION / ROTATORS (LEFT)</p>
                       </td>
                       <td>70-90</td>
                       <td>70-90</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -1036,7 +1084,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("cervical_rotation_left_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1064,13 +1112,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#c1c7f3ab" }}
+                    >
                       <td>
                         <p>ROTATION / ROTATORS (RIGHT)</p>
                       </td>
                       <td>70-90</td>
                       <td>70-90</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -1086,7 +1137,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("cervical_rotation_rigth_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1114,7 +1165,11 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr className="text-center">
+
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#b4dcffa6" }}
+                    >
                       <td
                         className="fs-5 fw-bold"
                         rowSpan="7"
@@ -1128,7 +1183,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                       </td>
                       <td>20-30</td>
                       <td>20-30</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -1144,7 +1199,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("thoracic_flexion_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1172,14 +1227,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#b4dcffa6" }}
+                    >
                       <td>
                         <p>EXTENSION / EXTENSORS</p>
                       </td>
                       <td>25-35</td>
                       <td>25-35</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -1195,7 +1252,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("thoracic_extension_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1223,13 +1280,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#b4dcffa6" }}
+                    >
                       <td>
                         <p>SIDE FLEXION / SIDE FLEXORS (LEFT)</p>
                       </td>
                       <td>20-25</td>
                       <td>20-25</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -1245,7 +1305,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("thoracic_sideFlexion_left_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1273,13 +1333,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#b4dcffa6" }}
+                    >
                       <td>
                         <p>SIDE FLEXION / SIDE FLEXORS (RIGHT)</p>
                       </td>
                       <td>20-25</td>
                       <td>20-25</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -1295,7 +1358,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("thoracic_sideFlexion_right_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1323,13 +1386,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#b4dcffa6" }}
+                    >
                       <td>
                         <p>ROTATION / ROTATORS (LEFT)</p>
                       </td>
                       <td>5-10</td>
                       <td>5-10</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -1345,7 +1411,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("thoracic_rotation_left_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1373,13 +1439,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#b4dcffa6" }}
+                    >
                       <td>
                         <p>ROTATION / ROTATORS (RIGHT)</p>
                       </td>
                       <td>5-10</td>
                       <td>5-10</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -1395,7 +1464,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("thoracic_rotation_right_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1423,13 +1492,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#b4dcffa6" }}
+                    >
                       <td>
                         <p>KYPOSIS POSTURE</p>
                       </td>
                       <td>30-40</td>
                       <td>30-40</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -1445,7 +1517,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("thoracic_kyposis_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1473,7 +1545,11 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr className="text-center">
+
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#c1c7f3ab" }}
+                    >
                       <td
                         className="fs-5 fw-bold"
                         rowSpan="11"
@@ -1487,7 +1563,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                       </td>
                       <td>15-30</td>
                       <td>15-30</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -1503,7 +1579,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("lumbar_sacralinclination_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1531,14 +1607,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#c1c7f3ab" }}
+                    >
                       <td>
                         <p>STANDING LORDOSIS</p>
                       </td>
                       <td>25-40</td>
                       <td>25-40</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -1554,7 +1632,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("lumbar_standinglordosis_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1582,14 +1660,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#c1c7f3ab" }}
+                    >
                       <td>
                         <p>STANDING HIP FLEXION</p>
                       </td>
                       <td>45-65</td>
                       <td>45-65</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -1605,7 +1685,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("lumbar_standinghipflexion_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1633,13 +1713,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#c1c7f3ab" }}
+                    >
                       <td>
                         <p>FLEXION (AMA method)</p>
                       </td>
                       <td>40-75</td>
                       <td>40-75</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -1655,7 +1738,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("lumbar_flexionAMA_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1683,13 +1766,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#c1c7f3ab" }}
+                    >
                       <td>
                         <p>EXTENSION (AMA method)</p>
                       </td>
                       <td>20-35</td>
                       <td>20-35</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -1705,7 +1791,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("lumbar_extensionAMA_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1733,13 +1819,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#c1c7f3ab" }}
+                    >
                       <td>
                         <p>FLEXION (curve angle method)</p>
                       </td>
                       <td>0-20</td>
                       <td>0-20</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -1755,7 +1844,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("lumbar_flexion_curveangle_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1783,13 +1872,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#c1c7f3ab" }}
+                    >
                       <td>
                         <p>EXTENSION (curve angle method)</p>
                       </td>
                       <td>60-75</td>
                       <td>60-75</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -1805,7 +1897,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("lumbar_extention_curveangle_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1833,13 +1925,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#c1c7f3ab" }}
+                    >
                       <td>
                         <p>SIDE FLEXION / SIDE FLEXORS (LEFT)</p>
                       </td>
                       <td>15-35</td>
                       <td>15-35</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -1855,7 +1950,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("lumbar_sideflexion_left_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1883,13 +1978,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#c1c7f3ab" }}
+                    >
                       <td>
                         <p>SIDE FLEXION / SIDE FLEXORS (RIGHT)</p>
                       </td>
                       <td>15-35</td>
                       <td>15-35</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -1905,7 +2003,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("lumbar_sideflexion_right_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1933,13 +2031,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#c1c7f3ab" }}
+                    >
                       <td>
                         <p>ROTATION / ROTATORS (LEFT)</p>
                       </td>
                       <td>10-20</td>
                       <td>10-20</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -1955,7 +2056,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("lumbar_rotation_left_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
@@ -1983,13 +2084,16 @@ const Form11 = ({ appointmentId, rehabData }) => {
                         </select>
                       </td>
                     </tr>
-                    <tr className="text-center">
+                    <tr
+                      className="text-center"
+                      style={{ backgroundColor: "#c1c7f3ab" }}
+                    >
                       <td>
                         <p>ROTATION / ROTATORS (RIGHT)</p>
                       </td>
                       <td>10-20</td>
                       <td>10-20</td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <input
                           className="form-control border-1 border-dark"
                           type="text"
@@ -2005,7 +2109,7 @@ const Form11 = ({ appointmentId, rehabData }) => {
                           {...register("lumbar_rotation_right_score")}
                         />
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 py-3">
                         <select
                           className="form-select bg-light "
                           aria-label="example"
