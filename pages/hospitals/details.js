@@ -1,5 +1,6 @@
 import { BreadCrums, PolyclinicTimetableCard } from "components/common/index";
 import Image from "next/image";
+import Link from "next/Link";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import { apiUrl, fetcher } from "config/api";
@@ -9,7 +10,7 @@ const HospitalId = () => {
 
   return (
     <>
-      <main className="main">
+      {/* <main className="main">
         <BreadCrums title="Home / Hospital Details" title1="Hospital Details" />
 
         <div className="hospital_details_nav sticky-top">
@@ -701,7 +702,767 @@ const HospitalId = () => {
             loading="lazy"
           ></iframe>
         </div>
-      </main>
+      </main> */}
+      <section className="section-hospital">
+        <BreadCrums title="Home / Hospital Details" title1="Hospital Details" />
+        <div className="container-fluid">
+          <div className="content">
+            <div className="row align-items-start">
+              <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+                <div className="card">
+                  <div className="card-body">
+                    <div className="doc-info-left">
+                      <div className="doctor-img poly-img">
+                        <a href="#">
+                          <Image
+                            height="300"
+                            width="300"
+                            src={"/assets/images/card_image.jpg"}
+                            className="img-fluid"
+                            alt="User Image"
+                          />
+                        </a>
+                      </div>
+                      <div className="doc-info-cont">
+                        <h4 className="doc-name">
+                          <a href="#" className="fs-3">
+                            Haldia Hospital
+                          </a>
+                        </h4>
+                        <p className="doc-speciality">Haldia, West Bengal</p>
+                        <i className="far fa-phone me-1"></i>
+                        Emergency: 1800-30000-123
+                        <div className="clinic-details"></div>
+                        <div className="clinic-services">
+                          <span>Emergency</span>
+                          <span>Outdoor</span>
+                          <span>ICU</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+                <div className="card">
+                  <div className="card-body">
+                    <div className="row align-items-start">
+                      <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                        <h6 className="fs-6 fw-bold">Contact Info</h6>
+                        <div className="info-right">
+                          <div className="hos-email-right mb-3">
+                            <i className="far fa-envelope me-2"></i>
+                            haldiahospital@gmail.com
+                          </div>
+                          <div className="hos-phone-right mb-3">
+                            <i className="far fa-phone me-2"></i>
+                            03224-25852
+                          </div>
+                          <div className="hos-address-right mb-3">
+                            <i className="far fa-map me-2"></i>
+                            City Center, Haldia, WB,
+                            <br /> India, Pin - 721657
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                        <iframe
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3697.6567278699035!2d88.07755181541287!3d22.06272295705107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02f0c7d1cdc935%3A0xdc5e28eac9b1b75b!2sWebel%20IT%20Park!5e0!3m2!1sen!2sin!4v1650972672514!5m2!1sen!2sin"
+                          width="300"
+                          height="200"
+                          allowFullScreen=""
+                          loading="lazy"
+                        ></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="row align-items-start">
+              <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+                <div className="card">
+                  <div className="card-body">
+                    <div className="hos-desc">
+                      <h6 className="fs-5 fw-bold text-center mb-5">
+                        About Us
+                      </h6>
+                      <div className="hospital-cta-benner my-3">
+                        <Image
+                          src="/user_assets/img/doctorbanner.jpg"
+                          alt="Hospital CTA Banner Image"
+                          height="200px"
+                          width="1000px"
+                        />
+                      </div>
+                      <p className="fs-6">
+                        Nunc quam tellus, rhoncus nec orci ac, auctor bibendum
+                        lacus. Nunc quam tellus, rhoncus nec orci ac, auctor
+                        bibendum lacus. Nunc quam tellus, rhoncus nec orci ac,
+                        auctor bibendum lacus. Nunc quam tellus, rhoncus nec
+                        orci ac, auctor bibendum lacus.
+                      </p>
+                      <p className="fs-6">
+                        Nunc quam tellus, rhoncus nec orci ac, auctor bibendum
+                        lacus. Nunc quam tellus, rhoncus nec orci ac, auctor
+                        bibendum lacus. Nunc quam tellus, rhoncus nec orci ac,
+                        auctor bibendum lacus. Nunc quam tellus, rhoncus nec
+                        orci ac, auctor bibendum lacus.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+                <div className="card">
+                  <div className="card-body">
+                    <div className="hos-features">
+                      <h6 className="fs-5 fw-bold text-center mb-5">
+                        Features
+                      </h6>
+                      <div className="row align-items-center">
+                        <div className="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4 mb-3">
+                          <div className="dashboard-card">
+                            <div className="row align-items-end">
+                              <div className="col-3">
+                                <div className="dashboard-card-icon">
+                                  <Image
+                                    src="/assets/images/Icu-Bed.png"
+                                    height="50px"
+                                    width="50px"
+                                    alt="ICU Bed"
+                                  />
+                                </div>
+                              </div>
+                              <div className="col-9">
+                                <div className="dashboard-card-main-title">
+                                  <p>ICU Bed</p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="row align-items-center dashboard-lower-content">
+                              <div className="col-6 text-start border-end border-2">
+                                <div className="dashboard-card-title">
+                                  <p className="fs-6 fw-bold text-secondary fst-italic">
+                                    Total Bed
+                                  </p>
+                                </div>
+                                <div className="dashboard-card-inner-number">
+                                  <p className="fs-6 text-danger">12</p>
+                                </div>
+                              </div>
+                              <div className="col-6 text-end">
+                                <div className="dashboard-card-title">
+                                  <p className="fs-6 fw-bold text-secondary fst-italic">
+                                    Available Bed
+                                  </p>
+                                </div>
+                                <div className="dashboard-card-inner-number">
+                                  <p className="fs-6 text-info">5</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4 mb-3">
+                          <div className="dashboard-card">
+                            <div className="row align-items-end">
+                              <div className="col-3">
+                                <div className="dashboard-card-icon">
+                                  <Image
+                                    src="/assets/images/Icu-Bed.png"
+                                    height="50px"
+                                    width="50px"
+                                    alt="ICU Bed"
+                                  />
+                                </div>
+                              </div>
+                              <div className="col-9">
+                                <div className="dashboard-card-main-title">
+                                  <p>ICU Bed</p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="row align-items-center dashboard-lower-content">
+                              <div className="col-6 text-start border-end border-2">
+                                <div className="dashboard-card-title">
+                                  <p className="fs-6 fw-bold text-secondary fst-italic">
+                                    Total Bed
+                                  </p>
+                                </div>
+                                <div className="dashboard-card-inner-number">
+                                  <p className="fs-6 text-danger">12</p>
+                                </div>
+                              </div>
+                              <div className="col-6 text-end">
+                                <div className="dashboard-card-title">
+                                  <p className="fs-6 fw-bold text-secondary fst-italic">
+                                    Available Bed
+                                  </p>
+                                </div>
+                                <div className="dashboard-card-inner-number">
+                                  <p className="fs-6 text-info">5</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4 mb-3">
+                          <div className="dashboard-card">
+                            <div className="row align-items-end">
+                              <div className="col-3">
+                                <div className="dashboard-card-icon">
+                                  <Image
+                                    src="/assets/images/Icu-Bed.png"
+                                    height="50px"
+                                    width="50px"
+                                    alt="ICU Bed"
+                                  />
+                                </div>
+                              </div>
+                              <div className="col-9">
+                                <div className="dashboard-card-main-title">
+                                  <p>ICU Bed</p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="row align-items-center dashboard-lower-content">
+                              <div className="col-6 text-start border-end border-2">
+                                <div className="dashboard-card-title">
+                                  <p className="fs-6 fw-bold text-secondary fst-italic">
+                                    Total Bed
+                                  </p>
+                                </div>
+                                <div className="dashboard-card-inner-number">
+                                  <p className="fs-6 text-danger">12</p>
+                                </div>
+                              </div>
+                              <div className="col-6 text-end">
+                                <div className="dashboard-card-title">
+                                  <p className="fs-6 fw-bold text-secondary fst-italic">
+                                    Available Bed
+                                  </p>
+                                </div>
+                                <div className="dashboard-card-inner-number">
+                                  <p className="fs-6 text-info">5</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4 mb-3">
+                          <div className="dashboard-card">
+                            <div className="row align-items-end">
+                              <div className="col-3">
+                                <div className="dashboard-card-icon">
+                                  <Image
+                                    src="/assets/images/Icu-Bed.png"
+                                    height="50px"
+                                    width="50px"
+                                    alt="ICU Bed"
+                                  />
+                                </div>
+                              </div>
+                              <div className="col-9">
+                                <div className="dashboard-card-main-title">
+                                  <p>ICU Bed</p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="row align-items-center dashboard-lower-content">
+                              <div className="col-6 text-start border-end border-2">
+                                <div className="dashboard-card-title">
+                                  <p className="fs-6 fw-bold text-secondary fst-italic">
+                                    Total Bed
+                                  </p>
+                                </div>
+                                <div className="dashboard-card-inner-number">
+                                  <p className="fs-6 text-danger">12</p>
+                                </div>
+                              </div>
+                              <div className="col-6 text-end">
+                                <div className="dashboard-card-title">
+                                  <p className="fs-6 fw-bold text-secondary fst-italic">
+                                    Available Bed
+                                  </p>
+                                </div>
+                                <div className="dashboard-card-inner-number">
+                                  <p className="fs-6 text-info">5</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4 mb-3">
+                          <div className="dashboard-card">
+                            <div className="row align-items-end">
+                              <div className="col-3">
+                                <div className="dashboard-card-icon">
+                                  <Image
+                                    src="/assets/images/Icu-Bed.png"
+                                    height="50px"
+                                    width="50px"
+                                    alt="ICU Bed"
+                                  />
+                                </div>
+                              </div>
+                              <div className="col-9">
+                                <div className="dashboard-card-main-title">
+                                  <p>ICU Bed</p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="row align-items-center dashboard-lower-content">
+                              <div className="col-6 text-start border-end border-2">
+                                <div className="dashboard-card-title">
+                                  <p className="fs-6 fw-bold text-secondary fst-italic">
+                                    Total Bed
+                                  </p>
+                                </div>
+                                <div className="dashboard-card-inner-number">
+                                  <p className="fs-6 text-danger">12</p>
+                                </div>
+                              </div>
+                              <div className="col-6 text-end">
+                                <div className="dashboard-card-title">
+                                  <p className="fs-6 fw-bold text-secondary fst-italic">
+                                    Available Bed
+                                  </p>
+                                </div>
+                                <div className="dashboard-card-inner-number">
+                                  <p className="fs-6 text-info">5</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4 mb-3">
+                          <div className="dashboard-card">
+                            <div className="row align-items-end">
+                              <div className="col-3">
+                                <div className="dashboard-card-icon">
+                                  <Image
+                                    src="/assets/images/Icu-Bed.png"
+                                    height="50px"
+                                    width="50px"
+                                    alt="ICU Bed"
+                                  />
+                                </div>
+                              </div>
+                              <div className="col-9">
+                                <div className="dashboard-card-main-title">
+                                  <p>ICU Bed</p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="row align-items-center dashboard-lower-content">
+                              <div className="col-6 text-start border-end border-2">
+                                <div className="dashboard-card-title">
+                                  <p className="fs-6 fw-bold text-secondary fst-italic">
+                                    Total Bed
+                                  </p>
+                                </div>
+                                <div className="dashboard-card-inner-number">
+                                  <p className="fs-6 text-danger">12</p>
+                                </div>
+                              </div>
+                              <div className="col-6 text-end">
+                                <div className="dashboard-card-title">
+                                  <p className="fs-6 fw-bold text-secondary fst-italic">
+                                    Available Bed
+                                  </p>
+                                </div>
+                                <div className="dashboard-card-inner-number">
+                                  <p className="fs-6 text-info">5</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="card">
+              <div className="card-body">
+                <h6 className="fs-5 fw-bold text-center mb-5">Doctors</h6>
+                <div className="hos-doc-list">
+                  <div className="row align-items-center">
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-2 col-xxl-2">
+                      <div className="profile-widget me-3">
+                        <div className="doc-img">
+                          <Link href="#">
+                            <a>
+                              <Image
+                                height={280}
+                                width={320}
+                                className="img-fluid"
+                                alt="User Image"
+                                src={"/assets/images/alternate/alt-user.png"}
+                              />
+                            </a>
+                          </Link>
+                        </div>
+                        <div className="pro-content">
+                          <h3 className="title">
+                            <Link href="#">
+                              <a>Dr. Samir Barman</a>
+                            </Link>
+                            <i className="fas fa-check-circle verified"></i>
+                          </h3>
+                          <p className="speciality">
+                            50 years experience, Consultant Rehabilation
+                          </p>
+
+                          <ul className="available-info">
+                            <li>
+                              <i className="fas fa-certificate "></i>
+                              MBBS
+                            </li>
+                            <li>
+                              <Image
+                                height="20"
+                                width="20"
+                                src="/assets/images/alternate/alt-specialty.png"
+                                alt=""
+                              />
+                              BVDJHVDHJVDHDS
+                            </li>
+                            <li>
+                              <i className="far fa-money-bill-alt text-primary"></i>
+                              ₹200 - ₹500
+                              <i
+                                className="fas fa-info-circle"
+                                data-bs-toggle="tooltip"
+                                title="Lorem Ipsum"
+                              ></i>
+                            </li>
+                          </ul>
+                          <div className="row row-sm">
+                            <div className="col-12">
+                              <Link href="#">
+                                <a className="btn book-btn">View Profile</a>
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-2 col-xxl-2">
+                      <div className="profile-widget me-3">
+                        <div className="doc-img">
+                          <Link href="#">
+                            <a>
+                              <Image
+                                height={280}
+                                width={320}
+                                className="img-fluid"
+                                alt="User Image"
+                                src={"/assets/images/alternate/alt-user.png"}
+                              />
+                            </a>
+                          </Link>
+                        </div>
+                        <div className="pro-content">
+                          <h3 className="title">
+                            <Link href="#">
+                              <a>Dr. Samir Barman</a>
+                            </Link>
+                            <i className="fas fa-check-circle verified"></i>
+                          </h3>
+                          <p className="speciality">
+                            50 years experience, Consultant Rehabilation
+                          </p>
+
+                          <ul className="available-info">
+                            <li>
+                              <i className="fas fa-certificate "></i>
+                              MBBS
+                            </li>
+                            <li>
+                              <Image
+                                height="20"
+                                width="20"
+                                src="/assets/images/alternate/alt-specialty.png"
+                                alt=""
+                              />
+                              BVDJHVDHJVDHDS
+                            </li>
+                            <li>
+                              <i className="far fa-money-bill-alt text-primary"></i>
+                              ₹200 - ₹500
+                              <i
+                                className="fas fa-info-circle"
+                                data-bs-toggle="tooltip"
+                                title="Lorem Ipsum"
+                              ></i>
+                            </li>
+                          </ul>
+                          <div className="row row-sm">
+                            <div className="col-12">
+                              <Link href="#">
+                                <a className="btn book-btn">View Profile</a>
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-2 col-xxl-2">
+                      <div className="profile-widget me-3">
+                        <div className="doc-img">
+                          <Link href="#">
+                            <a>
+                              <Image
+                                height={280}
+                                width={320}
+                                className="img-fluid"
+                                alt="User Image"
+                                src={"/assets/images/alternate/alt-user.png"}
+                              />
+                            </a>
+                          </Link>
+                        </div>
+                        <div className="pro-content">
+                          <h3 className="title">
+                            <Link href="#">
+                              <a>Dr. Samir Barman</a>
+                            </Link>
+                            <i className="fas fa-check-circle verified"></i>
+                          </h3>
+                          <p className="speciality">
+                            50 years experience, Consultant Rehabilation
+                          </p>
+
+                          <ul className="available-info">
+                            <li>
+                              <i className="fas fa-certificate "></i>
+                              MBBS
+                            </li>
+                            <li>
+                              <Image
+                                height="20"
+                                width="20"
+                                src="/assets/images/alternate/alt-specialty.png"
+                                alt=""
+                              />
+                              BVDJHVDHJVDHDS
+                            </li>
+                            <li>
+                              <i className="far fa-money-bill-alt text-primary"></i>
+                              ₹200 - ₹500
+                              <i
+                                className="fas fa-info-circle"
+                                data-bs-toggle="tooltip"
+                                title="Lorem Ipsum"
+                              ></i>
+                            </li>
+                          </ul>
+                          <div className="row row-sm">
+                            <div className="col-12">
+                              <Link href="#">
+                                <a className="btn book-btn">View Profile</a>
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-2 col-xxl-2">
+                      <div className="profile-widget me-3">
+                        <div className="doc-img">
+                          <Link href="#">
+                            <a>
+                              <Image
+                                height={280}
+                                width={320}
+                                className="img-fluid"
+                                alt="User Image"
+                                src={"/assets/images/alternate/alt-user.png"}
+                              />
+                            </a>
+                          </Link>
+                        </div>
+                        <div className="pro-content">
+                          <h3 className="title">
+                            <Link href="#">
+                              <a>Dr. Samir Barman</a>
+                            </Link>
+                            <i className="fas fa-check-circle verified"></i>
+                          </h3>
+                          <p className="speciality">
+                            50 years experience, Consultant Rehabilation
+                          </p>
+
+                          <ul className="available-info">
+                            <li>
+                              <i className="fas fa-certificate "></i>
+                              MBBS
+                            </li>
+                            <li>
+                              <Image
+                                height="20"
+                                width="20"
+                                src="/assets/images/alternate/alt-specialty.png"
+                                alt=""
+                              />
+                              BVDJHVDHJVDHDS
+                            </li>
+                            <li>
+                              <i className="far fa-money-bill-alt text-primary"></i>
+                              ₹200 - ₹500
+                              <i
+                                className="fas fa-info-circle"
+                                data-bs-toggle="tooltip"
+                                title="Lorem Ipsum"
+                              ></i>
+                            </li>
+                          </ul>
+                          <div className="row row-sm">
+                            <div className="col-12">
+                              <Link href="#">
+                                <a className="btn book-btn">View Profile</a>
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-2 col-xxl-2">
+                      <div className="profile-widget me-3">
+                        <div className="doc-img">
+                          <Link href="#">
+                            <a>
+                              <Image
+                                height={280}
+                                width={320}
+                                className="img-fluid"
+                                alt="User Image"
+                                src={"/assets/images/alternate/alt-user.png"}
+                              />
+                            </a>
+                          </Link>
+                        </div>
+                        <div className="pro-content">
+                          <h3 className="title">
+                            <Link href="#">
+                              <a>Dr. Samir Barman</a>
+                            </Link>
+                            <i className="fas fa-check-circle verified"></i>
+                          </h3>
+                          <p className="speciality">
+                            50 years experience, Consultant Rehabilation
+                          </p>
+
+                          <ul className="available-info">
+                            <li>
+                              <i className="fas fa-certificate "></i>
+                              MBBS
+                            </li>
+                            <li>
+                              <Image
+                                height="20"
+                                width="20"
+                                src="/assets/images/alternate/alt-specialty.png"
+                                alt=""
+                              />
+                              BVDJHVDHJVDHDS
+                            </li>
+                            <li>
+                              <i className="far fa-money-bill-alt text-primary"></i>
+                              ₹200 - ₹500
+                              <i
+                                className="fas fa-info-circle"
+                                data-bs-toggle="tooltip"
+                                title="Lorem Ipsum"
+                              ></i>
+                            </li>
+                          </ul>
+                          <div className="row row-sm">
+                            <div className="col-12">
+                              <Link href="#">
+                                <a className="btn book-btn">View Profile</a>
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-2 col-xxl-2">
+                      <div className="profile-widget me-3">
+                        <div className="doc-img">
+                          <Link href="#">
+                            <a>
+                              <Image
+                                height={280}
+                                width={320}
+                                className="img-fluid"
+                                alt="User Image"
+                                src={"/assets/images/alternate/alt-user.png"}
+                              />
+                            </a>
+                          </Link>
+                        </div>
+                        <div className="pro-content">
+                          <h3 className="title">
+                            <Link href="#">
+                              <a>Dr. Samir Barman</a>
+                            </Link>
+                            <i className="fas fa-check-circle verified"></i>
+                          </h3>
+                          <p className="speciality">
+                            50 years experience, Consultant Rehabilation
+                          </p>
+
+                          <ul className="available-info">
+                            <li>
+                              <i className="fas fa-certificate "></i>
+                              MBBS
+                            </li>
+                            <li>
+                              <Image
+                                height="20"
+                                width="20"
+                                src="/assets/images/alternate/alt-specialty.png"
+                                alt=""
+                              />
+                              BVDJHVDHJVDHDS
+                            </li>
+                            <li>
+                              <i className="far fa-money-bill-alt text-primary"></i>
+                              ₹200 - ₹500
+                              <i
+                                className="fas fa-info-circle"
+                                data-bs-toggle="tooltip"
+                                title="Lorem Ipsum"
+                              ></i>
+                            </li>
+                          </ul>
+                          <div className="row row-sm">
+                            <div className="col-12">
+                              <Link href="#">
+                                <a className="btn book-btn">View Profile</a>
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
