@@ -173,6 +173,7 @@ const Index = () => {
                                       data={items}
                                       key={index}
                                       sl={index + 1}
+                                      path="user"
                                     />
                                   ))}
                               </>

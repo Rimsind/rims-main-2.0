@@ -2,7 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import useSWR from "swr";
 import { apiUrl, fetcher } from "config/api";
-const MyAppointments = ({ data, sl }) => {
+
+const MyAppointments = ({ data, sl, path }) => {
+  console.log(path, "crc");
   const { data: specialty } = useSWR(
     `${apiUrl}/specialties/${data?.doctor?.specialty}`,
     fetcher
@@ -52,7 +54,7 @@ const MyAppointments = ({ data, sl }) => {
             {!!data.appointment_status === false ? (
               <></>
             ) : (
-              <Link href={`/user/appointments/${data?.id}`}>
+              <Link href={`/${path}/appointments/${data?.id}`}>
                 <a className="btn btn-sm bg-info-light">
                   <i className="far fa-eye"></i> View
                 </a>

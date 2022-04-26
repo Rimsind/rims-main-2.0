@@ -57,6 +57,7 @@ const AppointmentId = () => {
           <div className="container-fluid">
             <div className="row">
               <PolyclinicSideBar data={data} status7="active" />
+
               {appointments ? (
                 <div className="col-md-12 col-sm-12 col-lg-8 col-xl-9">
                   <div className="upper-section">

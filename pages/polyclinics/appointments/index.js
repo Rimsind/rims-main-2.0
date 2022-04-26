@@ -267,6 +267,7 @@ const Index = () => {
                                           data={items}
                                           key={index}
                                           sl={index + 1}
+                                          path="polyclinics"
                                         />
                                       ))}
                                   </>
@@ -460,6 +461,7 @@ const Index = () => {
                                       })
                                       .map((items, index) => (
                                         <MyAppointments
+                                          path="polyclinics"
                                           data={items}
                                           key={index}
                                           sl={index + 1}

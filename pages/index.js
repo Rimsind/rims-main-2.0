@@ -184,7 +184,7 @@ const Index = () => {
         <section className="section section-doctor">
           <div className="container-fluid">
             <div className="row">
-              <div className="col-lg-4">
+              <div className="col-lg-4 ">
                 <div className="section-header">
                   <h2>Book Our Doctor</h2>
                   <p>Lorem Ipsum is simply dummy text</p>
@@ -206,7 +206,7 @@ const Index = () => {
                   </Link>
                 </div>
               </div>
-              <div className="col-lg-8">
+              <div className="col-lg-8 ">
                 <div className="doctor-slider slider">
                   <div className="row carousel-styling">
                     {doctors ? (
