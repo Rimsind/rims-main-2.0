@@ -51,17 +51,14 @@ const DetailsNew = () => {
                       <div className="doc-lft-innr-dtls mt-5">
                         <div className="doc-lft-innr-titl">
                           <h6>
-                            <span className="fs-3 fw-bold text-info">
+                            <span className="fs-5 fw-bold text-info">
                               Dr. Samir Barman
-                            </span>
-                            <span className="fs-5 ms-2 text-muted">
-                              Consultant, Medicine
                             </span>
                           </h6>
                         </div>
                         <div className="doc-lft-innr-sb-titl">
                           <h6 className="fs-6 text-muted fst-italic">
-                            Co-Director at Mayro Clinic Graduate School
+                            Medicine
                           </h6>
                         </div>
                         <div className="doc-left-innr-qal mt-4">
@@ -135,7 +132,7 @@ const DetailsNew = () => {
               <div className="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-10">
                 <div className="card">
                   <div className="card-body">
-                    <div className="">
+                    <div>
                       {data?.booking_schedule?.map((items, index) => (
                         <DoctorTimetableCard
                           data={items}

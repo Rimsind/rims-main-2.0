@@ -122,12 +122,12 @@ const DoctorTimetableCard = ({ data, doctorId }) => {
             <div className="doctor-time-slot row align-items-center justify-content-around">
               {data?.slots?.map((items, index) => (
                 <div
-                  className="col-12 col-sm-12 col-md-3 col-lg-2 col-xl-2 col-xxl-2 py-3 bg-light"
+                  className="col-12 col-sm-12 col-md-5 col-lg-2 col-xl-2 col-xxl-2 py-3 bg-light mb-3"
                   key={index}
                 >
                   <div className="doctor-location-items text-center">
                     <a
-                      className="fs-6 py-1 px-5 px-sm-5 px-md-4 px-lg-0 px-xl-2 px-xxl-4 shadow-sm"
+                      className="fs-6 py-1 px-5 px-sm-5 px-md-4 px-lg-0 px-xl-0 px-xxl-2 shadow-sm"
                       style={{
                         backgroundColor: "#ffc107",
                         color: "#1d00a3",
