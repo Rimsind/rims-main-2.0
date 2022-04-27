@@ -314,7 +314,7 @@ const Index = () => {
                                 <div className="row row-sm">
                                   <div className="col-12">
                                     <Link
-                                      href={`/doctors/details-new?id=${item?.id}`}
+                                      href={`/doctors/details?id=${item?.id}`}
                                     >
                                       <a className="btn book-btn">
                                         View Profile

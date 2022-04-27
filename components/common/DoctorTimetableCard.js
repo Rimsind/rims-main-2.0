@@ -1,13 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const DoctorTimetableCard = ({ data, doctorId }) => {
+const DoctorTimetableCard = ({ data, doctorId, indexValue }) => {
+  if (indexValue % 2 === 0) {
+    var color = "#abd5ff";
+  } else {
+    var color = "#abd5ff91";
+  }
+
   return (
     <>
       <section className="doctor-location">
         <div
           className="row align-items-center border-bottom border-1"
-          style={{ backgroundColor: "#abd5ff" }}
+          style={{ backgroundColor: `${color}` }}
         >
           <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-2 col-xxl-2">
             <div className="doctor-location-items py-3 pe-4 border-end border-1 border-light ">
@@ -55,69 +61,7 @@ const DoctorTimetableCard = ({ data, doctorId }) => {
               </div>
             </div>
           </div>
-          {/* <div className="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9 py-3">
-            <div className="doctor-time-slot d-flex align-items-center justify-content-between">
-              {data?.slots?.map((items, index) => (
-                <div
-                  className="doctor-location-items text-center pe-4 border-end border-1 "
-                  key={index}
-                >
-                  <a
-                    className="fs-6 py-1 px-4 shadow-sm text-dark"
-                    style={{ backgroundColor: "#ffc107" }}
-                  >
-                    {items?.date}
-                  </a>
-                  <p className="fs-6 text-dark mt-2">
-                    {items?.time_from} - {items?.time_to}
-                  </p>
-                  <p className="fs-6 text-dark mt-2">Rs.{data?.fee}</p>
-                  {!!data.polyclinic && (
-                    <>
-                      <Link
-                        href={`/checkout?doctorId=${doctorId}&&polyclinicId=${data?.polyclinic?.id}&&fee=${data?.fee}&&date=${items?.date}&&time=${items?.time_from}-${items?.time_to}`}
-                      >
-                        <a
-                          className="btn text-light fs-6 rounded-pill"
-                          style={{ backgroundColor: "#1d00a3" }}
-                        >
-                          Book Now <sup className="">{items?.seats}</sup>
-                        </a>
-                      </Link>
-                    </>
-                  )}{" "}
-                  {!!data.nursing_home && (
-                    <>
-                      <Link
-                        href={`/checkout?doctorId=${doctorId}&&nursingHomeId=${data?.nursing_home?.id}&&fee=${data?.fee}&&date=${items?.date}&&time=${items?.time_from}-${items?.time_to}`}
-                      >
-                        <a
-                          className="btn text-light fs-6 rounded-pill"
-                          style={{ backgroundColor: "#1d00a3" }}
-                        >
-                          Book Now <sup className="">{items?.seats}</sup>
-                        </a>
-                      </Link>
-                    </>
-                  )}{" "}
-                  {!!data.hospital && (
-                    <>
-                      <Link
-                        href={`/checkout?doctorId=${doctorId}&&hospitalId=${data?.hospital?.id}&&fee=${data?.fee}&&date=${items?.date}&&time=${items?.time_from}-${items?.time_to}`}
-                      >
-                        <a
-                          className="btn text-light fs-6 rounded-pill"
-                          style={{ backgroundColor: "#1d00a3" }}
-                        >
-                          Book Now <sup className="">{items?.seats}</sup>
-                        </a>
-                      </Link>
-                    </>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div> */}
+
           <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-10 col-xxl-10 py-3">
             <div className="doctor-time-slot row align-items-center justify-content-around">
               {data?.slots?.map((items, index) => (
