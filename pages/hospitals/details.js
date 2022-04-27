@@ -773,7 +773,7 @@ const HospitalId = () => {
             <div className="card">
               <div className="card-body">
                 <div className="row align-items-start">
-                  <div className="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 col-xxl-5">
+                  <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 col-xxl-5">
                     <div className="hos-desc">
                       <h6 className="fs-4 fw-bold  mb-5">Who We Are</h6>
                       {/* <div className="hospital-cta-benner my-3">
@@ -800,23 +800,12 @@ const HospitalId = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7 col-xxl-7">
+                  <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-7 col-xxl-7">
                     <div className="hos-features">
                       {/* <h6 className="fs-5 fw-bold  mb-5">Features</h6> */}
                       <div className="row align-items-center">
-                        <div className="col-6">
-                          <div
-                            className="hospital-details-item"
-                            style={{
-                              display: "flex",
-                              justifyContent: "center",
-                              alignItems: "center",
-                              height: "138px",
-                              marginBottom: "20px",
-                              background:
-                                "linear-gradient(314deg, #73042b 40%, #15558d 75%)",
-                            }}
-                          >
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                          <div className="hospital-details-item">
                             <div className="main_heading">
                               <h6
                                 style={{
@@ -828,279 +817,29 @@ const HospitalId = () => {
                               >
                                 Regular Beds
                               </h6>
-                              <div className="d-flex align-items-center">
-                                <p
-                                  style={{ color: "#0031bd", fontSize: "18px" }}
-                                >
-                                  Total - <span className="count">20</span>
-                                </p>
-                                <p
-                                  style={{
-                                    color: "#009789",
-                                    fontSize: "18px",
-                                    marginLeft: "17px",
-                                  }}
-                                >
-                                  Available - <span className="count">15</span>
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-6">
-                          <div
-                            className="hospital-details-item"
-                            style={{
-                              display: "flex",
-                              justifyContent: "center",
-                              alignItems: "center",
-                              height: "138px",
-                              marginBottom: "20px",
-                              background:
-                                "linear-gradient(314deg, #73042b 40%, #15558d 75%)",
-                            }}
-                          >
-                            <div className="main_heading">
-                              <h6
-                                style={{
-                                  fontSize: "20px",
-                                  paddingTop: "11px",
-                                  color: "black",
-                                  marginBottom: "9px",
-                                }}
-                              >
-                                ICU Beds
-                              </h6>
-                              <div className="d-flex align-items-center">
-                                <p
-                                  style={{ color: "#0031bd", fontSize: "18px" }}
-                                >
-                                  Total - <span className="count">20</span>
-                                </p>
-                                <p
-                                  style={{
-                                    color: "#009789",
-                                    fontSize: "18px",
-                                    marginLeft: "17px",
-                                  }}
-                                >
-                                  Available - <span className="count">15</span>
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-6">
-                          <div
-                            className="hospital-details-item"
-                            style={{
-                              display: "flex",
-                              justifyContent: "center",
-                              alignItems: "center",
-                              height: "138px",
-                              marginBottom: "20px",
-                              background:
-                                "linear-gradient(314deg, #73042b 40%, #15558d 75%)",
-                            }}
-                          >
-                            <div className="main_heading">
-                              <h6
-                                style={{
-                                  fontSize: "20px",
-                                  paddingTop: "11px",
-                                  color: "black",
-                                  marginBottom: "9px",
-                                }}
-                              >
-                                Ambulance
-                              </h6>
-                              <div className="d-flex align-items-center">
-                                <p
-                                  style={{ color: "#0031bd", fontSize: "18px" }}
-                                >
-                                  Total - <span className="count">20</span>
-                                </p>
-                                <p
-                                  style={{
-                                    color: "#009789",
-                                    fontSize: "18px",
-                                    marginLeft: "17px",
-                                  }}
-                                >
-                                  Available - <span className="count">15</span>
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-6">
-                          <div
-                            className="hospital-details-item"
-                            style={{
-                              display: "flex",
-                              justifyContent: "center",
-                              alignItems: "center",
-                              height: "138px",
-                              marginBottom: "20px",
-                              background:
-                                "linear-gradient(314deg, #73042b 40%, #15558d 75%)",
-                            }}
-                          >
-                            <div className="main_heading">
-                              <h6
-                                style={{
-                                  fontSize: "20px",
-                                  paddingTop: "11px",
-                                  color: "black",
-                                  marginBottom: "9px",
-                                }}
-                              >
-                                ICU Ambulance
-                              </h6>
-                              <div className="d-flex align-items-center">
-                                <p
-                                  style={{ color: "#0031bd", fontSize: "18px" }}
-                                >
-                                  Total - <span className="count">20</span>
-                                </p>
-                                <p
-                                  style={{
-                                    color: "#009789",
-                                    fontSize: "18px",
-                                    marginLeft: "17px",
-                                  }}
-                                >
-                                  Available - <span className="count">15</span>
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-6">
-                          <div
-                            className="hospital-details-item"
-                            style={{
-                              display: "flex",
-                              justifyContent: "center",
-                              alignItems: "center",
-                              height: "138px",
-                              marginBottom: "20px",
-                              background:
-                                "linear-gradient(314deg, #73042b 40%, #15558d 75%)",
-                            }}
-                          >
-                            <div className="main_heading">
-                              <h6
-                                style={{
-                                  fontSize: "20px",
-                                  paddingTop: "11px",
-                                  color: "black",
-                                  marginBottom: "9px",
-                                }}
-                              >
-                                Burn Care Unit
-                              </h6>
-                              <div className="d-flex align-items-center">
-                                <p
-                                  style={{ color: "#0031bd", fontSize: "18px" }}
-                                >
-                                  Total - <span className="count">20</span>
-                                </p>
-                                <p
-                                  style={{
-                                    color: "#009789",
-                                    fontSize: "18px",
-                                    marginLeft: "17px",
-                                  }}
-                                >
-                                  Available - <span className="count">15</span>
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-6">
-                          <div
-                            className="hospital-details-item"
-                            style={{
-                              display: "flex",
-                              justifyContent: "center",
-                              alignItems: "center",
-                              height: "138px",
-                              marginBottom: "20px",
-                              background:
-                                "linear-gradient(314deg, #73042b 40%, #15558d 75%)",
-                            }}
-                          >
-                            <div className="main_heading">
-                              <h6
-                                style={{
-                                  fontSize: "20px",
-                                  paddingTop: "11px",
-                                  color: "black",
-                                  marginBottom: "9px",
-                                }}
-                              >
-                                Operation Theater
-                              </h6>
-                              <div className="d-flex align-items-center">
-                                <p
-                                  style={{ color: "#0031bd", fontSize: "18px" }}
-                                >
-                                  Total - <span className="count">20</span>
-                                </p>
-                                <p
-                                  style={{
-                                    color: "#009789",
-                                    fontSize: "18px",
-                                    marginLeft: "17px",
-                                  }}
-                                >
-                                  Available - <span className="count">15</span>
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-6">
-                          <div
-                            className="hospital-details-item"
-                            style={{
-                              display: "flex",
-                              justifyContent: "center",
-                              alignItems: "center",
-                              height: "138px",
-                              marginBottom: "20px",
-                              background:
-                                "linear-gradient(314deg, #73042b 40%, #15558d 75%)",
-                            }}
-                          >
-                            <div className="main_heading">
-                              <h6
-                                style={{
-                                  fontSize: "20px",
-                                  paddingTop: "11px",
-                                  color: "black",
-                                  marginBottom: "9px",
-                                }}
-                              >
-                                Doctors
-                              </h6>
-                              <div className="d-flex align-items-center">
-                                <p
-                                  style={{ color: "#0031bd", fontSize: "18px" }}
-                                >
-                                  Total - <span className="count">20</span>
-                                </p>
-                                <p
-                                  style={{
-                                    color: "#009789",
-                                    fontSize: "18px",
-                                    marginLeft: "17px",
-                                  }}
-                                >
-                                  Available - <span className="count">15</span>
-                                </p>
+                              <div className="row align-items-center">
+                                <div className="col-5">
+                                  <p
+                                    style={{
+                                      color: "#0031bd",
+                                      fontSize: "18px",
+                                    }}
+                                  >
+                                    Total - <span className="count">20</span>
+                                  </p>
+                                </div>
+                                <div className="col-7">
+                                  <p
+                                    style={{
+                                      color: "#009789",
+                                      fontSize: "18px",
+                                      marginLeft: "17px",
+                                    }}
+                                  >
+                                    Available -{" "}
+                                    <span className="count">15</span>
+                                  </p>
+                                </div>
                               </div>
                             </div>
                           </div>

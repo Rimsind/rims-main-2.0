@@ -2975,27 +2975,16 @@ p span.second_choose_text {
   border-bottom: 2px solid #000b48;
 }
 
-/* .hospital-details-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 138px;
-  margin-bottom: 20px;
-  background: url(../../user_assets/img/blog-1.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-} */
+.hospital-details-item {
+  text-align: center;
+  padding: 10px 10px;
+  background: linear-gradient(314deg, #73042b 40%, #15558d 75%);
+  margin-bottom: 25px;
+}
 
 .hospital-details-item .main_heading {
-  height: 100px;
-  background-color: aliceblue;
-  width: 306px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-size: 18px;
-  font-weight: 500;
+  margin: 10px 10px;
+  background: white;
 }
 
 .hospital-details-main-sub-heading {
