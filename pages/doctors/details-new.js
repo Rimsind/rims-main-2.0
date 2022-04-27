@@ -34,7 +34,59 @@ const DetailsNew = () => {
                             marginLeft: "-40px",
                           }}
                         >
-                          <Image
+                          {data?.gender === "Male" && (
+                            <Image
+                              height="140"
+                              width="140"
+                              src={
+                                data?.image?.url ||
+                                "/assets/images/alternate/doctor-male.png"
+                              }
+                              style={{
+                                height: "15rem",
+                                background: "#0b6ea5",
+                                padding: "10px",
+                              }}
+                              className="img-fluid border border-1 rounded-circle"
+                              alt="User Image"
+                            />
+                          )}
+                          {data?.gender === "Female" && (
+                            <Image
+                              height="140"
+                              width="140"
+                              src={
+                                data?.image?.url ||
+                                "/assets/images/alternate/doctor-female.png"
+                              }
+                              style={{
+                                height: "15rem",
+                                background: "#0b6ea5",
+                                padding: "10px",
+                              }}
+                              className="img-fluid border border-1 rounded-circle"
+                              alt="User Image"
+                            />
+                          )}
+                          {data?.gender === "" ||
+                            (data.gender === null && (
+                              <Image
+                                height="140"
+                                width="140"
+                                src={
+                                  data?.image?.url ||
+                                  "/assets/images/alternate/alt-user.png"
+                                }
+                                style={{
+                                  height: "15rem",
+                                  background: "#0b6ea5",
+                                  padding: "10px",
+                                }}
+                                className="img-fluid border border-1 rounded-circle"
+                                alt="User Image"
+                              />
+                            ))}
+                          {/* <Image
                             height="140"
                             width="140"
                             src="/assets/images/alternate/doctor-male.png"
@@ -45,20 +97,20 @@ const DetailsNew = () => {
                               background: "#0b6ea5",
                               padding: "10px",
                             }}
-                          />
+                          /> */}
                         </div>
                       </div>
                       <div className="doc-lft-innr-dtls mt-5">
                         <div className="doc-lft-innr-titl">
                           <h6>
                             <span className="fs-5 fw-bold text-info">
-                              Dr. Samir Barman
+                              Dr. {data?.firstName} {data?.lastName}
                             </span>
                           </h6>
                         </div>
                         <div className="doc-lft-innr-sb-titl">
                           <h6 className="fs-6 text-muted fst-italic">
-                            Medicine
+                            {data?.specialty?.name}
                           </h6>
                         </div>
                         <div className="doc-left-innr-qal mt-4">
@@ -67,23 +119,27 @@ const DetailsNew = () => {
                               <i className="fas fa-map-marker-alt"></i>
                             </span>
                             <span className="text-secondary ms-2">
-                              City Center, Haldia
+                              {data?.address?.city}, {data?.address?.state}
                             </span>
+                          </h6>
+                          <h6 className="doc-department text-secondary fs-6">
+                            <Image
+                              height={20}
+                              width={20}
+                              src={
+                                data?.specialty?.image?.url ||
+                                "/images/profile.png"
+                              }
+                              alt=""
+                            />{" "}
+                            {data?.specialty?.name}
                           </h6>
                           <h6 className="fs-6 text-muted">
                             <span className="text-info">
-                              <i class="fas fa-user-tag"></i>
+                              <i className="fas fa-certificate"></i>
                             </span>
                             <span className="text-secondary ms-2">
-                              Medicine
-                            </span>
-                          </h6>
-                          <h6 className="fs-6 text-muted">
-                            <span className="text-info">
-                              <i class="fas fa-badge"></i>
-                            </span>
-                            <span className="text-secondary ms-2">
-                              MBBS, MD
+                              {data?.qualification}
                             </span>
                           </h6>
                           <h6 className="fs-6 text-muted">
@@ -91,7 +147,8 @@ const DetailsNew = () => {
                               <i class="fas fa-suitcase"></i>
                             </span>
                             <span className="text-secondary ms-2">
-                              25 Yrs Experience
+                              {data?.experienceInYrs} years experience,
+                              Consultant
                             </span>
                           </h6>
                         </div>
@@ -104,11 +161,7 @@ const DetailsNew = () => {
                     <h6 className="fs-6 fw-bold">About Me</h6>
                   </div>
                   <div className="card-body">
-                    <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, when an unknown
-                    </p>
+                    <p>{data?.bio}</p>
                   </div>
                 </div>
                 <div className="card">
@@ -117,14 +170,28 @@ const DetailsNew = () => {
                   </div>
                   <div className="card-body">
                     <div className="edu-awrd">
-                      <h6 className="fs-6 text-muted">
-                        <span className="text-info">
-                          <i class="fas fa-suitcase"></i>
-                        </span>
-                        <span className="text-secondary ms-2">
-                          25 Yrs Experience
-                        </span>
-                      </h6>
+                      <div className="experience-box">
+                        <ul className="experience-list">
+                          {data?.educationAndAwards?.map((items, index) => (
+                            <li key={index}>
+                              <div className="experience-user">
+                                <div className="before-circle"></div>
+                              </div>
+                              <div className="experience-content">
+                                <div className="timeline-content">
+                                  <a href="#/" className="name">
+                                    {items?.degreeOrAward}
+                                  </a>
+                                  <div>{items?.institution}</div>
+                                  <span className="time">
+                                    {items?.receivingYear}
+                                  </span>
+                                </div>
+                              </div>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
