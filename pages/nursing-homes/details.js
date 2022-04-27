@@ -339,9 +339,11 @@ const NursingHomeId = () => {
                         id="doc_doctor"
                         className="tab-pane fade show"
                       >
-                        {data?.doctors?.map((items, index) => (
-                          <PolyclinicTimetableCard data={items} key={index} />
-                        ))}
+                        <div className="row align-items-start">
+                          {data?.doctors?.map((items, index) => (
+                            <PolyclinicTimetableCard data={items} key={index} />
+                          ))}
+                        </div>
                       </div>
 
                       <div

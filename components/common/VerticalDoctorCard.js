@@ -56,14 +56,13 @@ const VerticalDoctorCard = ({ data }) => {
             </Link>
             <i className="fas fa-check-circle verified"></i>
           </h3>
-          <p className="speciality">
-            {data?.experienceInYrs} years experience, Consultant{" "}
-            {data?.specialty?.name}
-          </p>
-
+          <span className="speciality">
+            {data?.qualification} {data?.experienceInYrs} years
+          </span>
           <ul className="available-info">
             <li>
-              <i className="fas fa-certificate "></i> {data?.qualification}
+              <i className="fas fa-certificate "></i> {data?.experienceInYrs}{" "}
+              years
             </li>
             <li>
               <Image

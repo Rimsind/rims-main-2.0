@@ -5,10 +5,20 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 import { apiUrl, fetcher } from "config/api";
 import { DetailsPageLoader } from "components/Loaders";
+
 const HospitalId = () => {
   const { id } = useRouter().query;
   const { data } = useSWR(`${apiUrl}/hospitals/${id}`, fetcher);
 
+  const facilitiesList = [
+    "Regular Beds",
+    "ICU Beds",
+    "Regular Ambulance",
+    "ICU Ambulance",
+    "Operation Theater",
+    "Burn Care Unit",
+    "Doctors & Nurse",
+  ];
   return (
     <>
       <section className="section-hospital">
@@ -146,6 +156,246 @@ const HospitalId = () => {
                             </div>
                           </div>
                         </div>
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                          <div className="hospital-details-item">
+                            <div className="main_heading">
+                              <h6
+                                style={{
+                                  fontSize: "20px",
+                                  paddingTop: "11px",
+                                  color: "black",
+                                  marginBottom: "9px",
+                                }}
+                              >
+                                ICU Beds
+                              </h6>
+                              <div className="row align-items-center">
+                                <div className="col-5">
+                                  <p
+                                    style={{
+                                      color: "#0031bd",
+                                      fontSize: "18px",
+                                    }}
+                                  >
+                                    Total - <span className="count">20</span>
+                                  </p>
+                                </div>
+                                <div className="col-7">
+                                  <p
+                                    style={{
+                                      color: "#009789",
+                                      fontSize: "18px",
+                                      marginLeft: "17px",
+                                    }}
+                                  >
+                                    Available -{" "}
+                                    <span className="count">15</span>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                          <div className="hospital-details-item">
+                            <div className="main_heading">
+                              <h6
+                                style={{
+                                  fontSize: "20px",
+                                  paddingTop: "11px",
+                                  color: "black",
+                                  marginBottom: "9px",
+                                }}
+                              >
+                                Regular Ambulance
+                              </h6>
+                              <div className="row align-items-center">
+                                <div className="col-5">
+                                  <p
+                                    style={{
+                                      color: "#0031bd",
+                                      fontSize: "18px",
+                                    }}
+                                  >
+                                    Total - <span className="count">20</span>
+                                  </p>
+                                </div>
+                                <div className="col-7">
+                                  <p
+                                    style={{
+                                      color: "#009789",
+                                      fontSize: "18px",
+                                      marginLeft: "17px",
+                                    }}
+                                  >
+                                    Available -{" "}
+                                    <span className="count">15</span>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                          <div className="hospital-details-item">
+                            <div className="main_heading">
+                              <h6
+                                style={{
+                                  fontSize: "20px",
+                                  paddingTop: "11px",
+                                  color: "black",
+                                  marginBottom: "9px",
+                                }}
+                              >
+                                ICU Ambulance
+                              </h6>
+                              <div className="row align-items-center">
+                                <div className="col-5">
+                                  <p
+                                    style={{
+                                      color: "#0031bd",
+                                      fontSize: "18px",
+                                    }}
+                                  >
+                                    Total - <span className="count">20</span>
+                                  </p>
+                                </div>
+                                <div className="col-7">
+                                  <p
+                                    style={{
+                                      color: "#009789",
+                                      fontSize: "18px",
+                                      marginLeft: "17px",
+                                    }}
+                                  >
+                                    Available -{" "}
+                                    <span className="count">15</span>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                          <div className="hospital-details-item">
+                            <div className="main_heading">
+                              <h6
+                                style={{
+                                  fontSize: "20px",
+                                  paddingTop: "11px",
+                                  color: "black",
+                                  marginBottom: "9px",
+                                }}
+                              >
+                                Operation Theater
+                              </h6>
+                              <div className="row align-items-center">
+                                <div className="col-5">
+                                  <p
+                                    style={{
+                                      color: "#0031bd",
+                                      fontSize: "18px",
+                                    }}
+                                  >
+                                    Total - <span className="count">20</span>
+                                  </p>
+                                </div>
+                                <div className="col-7">
+                                  <p
+                                    style={{
+                                      color: "#009789",
+                                      fontSize: "18px",
+                                      marginLeft: "17px",
+                                    }}
+                                  >
+                                    Available -{" "}
+                                    <span className="count">15</span>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                          <div className="hospital-details-item">
+                            <div className="main_heading">
+                              <h6
+                                style={{
+                                  fontSize: "20px",
+                                  paddingTop: "11px",
+                                  color: "black",
+                                  marginBottom: "9px",
+                                }}
+                              >
+                                Burn Care Units
+                              </h6>
+                              <div className="row align-items-center">
+                                <div className="col-5">
+                                  <p
+                                    style={{
+                                      color: "#0031bd",
+                                      fontSize: "18px",
+                                    }}
+                                  >
+                                    Total - <span className="count">20</span>
+                                  </p>
+                                </div>
+                                <div className="col-7">
+                                  <p
+                                    style={{
+                                      color: "#009789",
+                                      fontSize: "18px",
+                                      marginLeft: "17px",
+                                    }}
+                                  >
+                                    Available -{" "}
+                                    <span className="count">15</span>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                          <div className="hospital-details-item">
+                            <div className="main_heading">
+                              <h6
+                                style={{
+                                  fontSize: "20px",
+                                  paddingTop: "11px",
+                                  color: "black",
+                                  marginBottom: "9px",
+                                }}
+                              >
+                                Doctors & Nurse
+                              </h6>
+                              <div className="row align-items-center">
+                                <div className="col-5">
+                                  <p
+                                    style={{
+                                      color: "#0031bd",
+                                      fontSize: "18px",
+                                    }}
+                                  >
+                                    Total - <span className="count">20</span>
+                                  </p>
+                                </div>
+                                <div className="col-7">
+                                  <p
+                                    style={{
+                                      color: "#009789",
+                                      fontSize: "18px",
+                                      marginLeft: "17px",
+                                    }}
+                                  >
+                                    Available -{" "}
+                                    <span className="count">15</span>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -158,71 +408,7 @@ const HospitalId = () => {
                 <div className="hos-doc-list">
                   <div className="row align-items-center">
                     {data?.doctors?.map((items, index) => (
-                      <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
-                        <div className="profile-widget me-3">
-                          <div className="doc-img">
-                            <Link href="#">
-                              <a>
-                                <Image
-                                  height={280}
-                                  width={320}
-                                  className="img-fluid"
-                                  alt="User Image"
-                                  src={
-                                    items?.image?.url ||
-                                    "/assets/images/alternate/alt-user.png"
-                                  }
-                                />
-                              </a>
-                            </Link>
-                          </div>
-                          <div className="pro-content">
-                            <h3 className="title">
-                              <Link href="#">
-                                <a>
-                                  Dr. {items?.firstName} {items?.lastName}
-                                </a>
-                              </Link>
-                              <i className="fas fa-check-circle verified"></i>
-                            </h3>
-                            <p className="speciality">
-                              50 years experience, Consultant Rehabilation
-                            </p>
-
-                            <ul className="available-info">
-                              <li>
-                                <i className="fas fa-certificate "></i>
-                                MBBS
-                              </li>
-                              <li>
-                                <Image
-                                  height="20"
-                                  width="20"
-                                  src="/assets/images/alternate/alt-specialty.png"
-                                  alt=""
-                                />
-                                BVDJHVDHJVDHDS
-                              </li>
-                              <li>
-                                <i className="far fa-money-bill-alt text-primary"></i>
-                                ₹200 - ₹500
-                                <i
-                                  className="fas fa-info-circle"
-                                  data-bs-toggle="tooltip"
-                                  title="Lorem Ipsum"
-                                ></i>
-                              </li>
-                            </ul>
-                            <div className="row row-sm">
-                              <div className="col-12">
-                                <Link href="#">
-                                  <a className="btn book-btn">View Profile</a>
-                                </Link>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      <PolyclinicTimetableCard data={items} key={index} />
                     ))}
                   </div>
                 </div>
