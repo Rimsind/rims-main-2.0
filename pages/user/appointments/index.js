@@ -123,7 +123,7 @@ const Index = () => {
                               <th>Doctor</th>
                               <th>Appt Date</th>
 
-                              <th>Amount</th>
+                              <th>Fee</th>
                               <th>Follow Up</th>
                               <th>Status</th>
                               <th></th>

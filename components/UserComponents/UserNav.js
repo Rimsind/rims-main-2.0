@@ -8,7 +8,7 @@ const UserNav = (props) => {
 
   return (
     <>
-      <div className="col-sm-12 col-md-12 col-lg-4 col-xl-3 left-nav">
+      <div className="col-sm-12 col-md-12 col-lg-3 col-xl-3 left-nav">
         <div className="profile-sidebar left-nav">
           <div className="widget-profile pro-widget-content">
             {patient ? (

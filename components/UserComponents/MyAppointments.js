@@ -19,8 +19,8 @@ const MyAppointments = ({ data, sl, path }) => {
           <h2 className="table-avatar">
             <a href="doctor-profile.html" className="avatar avatar-sm me-2">
               <Image
-                height="145"
-                width="145"
+                height="50"
+                width="50"
                 className="avatar-img rounded-circle"
                 src={data?.doctor?.image?.url || "/assets/images/profile.png"}
                 alt="User Image"

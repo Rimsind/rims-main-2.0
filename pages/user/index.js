@@ -33,7 +33,7 @@ const Index = () => {
             <div className="row">
               <UserNav status1="active" patient={data} />
               {data ? (
-                <div className="col-sm-12 col-md-12 col-lg-8 col-xl-9">
+                <div className="col-sm-12 col-md-12 col-lg-9 col-xl-9">
                   <div className="row">
                     <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
                       <div

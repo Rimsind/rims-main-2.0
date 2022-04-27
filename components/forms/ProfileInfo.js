@@ -1,13 +1,16 @@
 import { useForm } from "react-hook-form";
-import { apiUrl } from "config/api";
+import { apiUrl, fetcher } from "config/api";
 import axios from "axios";
 import { useAuth } from "context";
 import { useState } from "react";
 import { ToastContainer, toast, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useSWR from "swr";
 
 const ProfileInfo = ({ data }) => {
   const { auth } = useAuth();
+
+  const { data: bloodGroups } = useSWR(`${apiUrl}/blood-groups`, fetcher);
   const [loading, setLoading] = useState(false);
   const { register, handleSubmit } = useForm();
   const updateProfile = async (data, event) => {
@@ -216,33 +219,11 @@ const ProfileInfo = ({ data }) => {
                         ? data.blood_group?.name
                         : "Select"}
                     </option>
-                    <option name="blood_group" value="2">
-                      A+
-                    </option>
-                    <option name="blood_group" value="3">
-                      A-
-                    </option>
-                    <option name="blood_group" value="4">
-                      B+
-                    </option>
-                    <option name="blood_group" value="5">
-                      B-
-                    </option>
-                    <option name="blood_group" value="6">
-                      AB+
-                    </option>
-                    <option name="blood_group" value="7">
-                      AB-
-                    </option>
-                    <option name="blood_group" value="9">
-                      O+
-                    </option>
-                    <option name="blood_group" value="8">
-                      O-
-                    </option>
-                    <option name="blood_group" value="8">
-                      NA
-                    </option>
+                    {bloodGroups?.map((items, index) => (
+                      <option name="blood_group" value={items?.id} key={index}>
+                        {items?.name}
+                      </option>
+                    ))}
                   </select>
                 </div>
               </div>
