@@ -133,7 +133,7 @@ const Index = () => {
                     .map((items, index) => (
                       <HorizontalPolyclinicCard
                         data={items}
-                        link="hospitals"
+                        path="hospitals"
                         key={index}
                       />
                     ))}

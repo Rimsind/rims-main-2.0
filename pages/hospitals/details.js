@@ -10,15 +10,6 @@ const HospitalId = () => {
   const { id } = useRouter().query;
   const { data } = useSWR(`${apiUrl}/hospitals/${id}`, fetcher);
 
-  const facilitiesList = [
-    "Regular Beds",
-    "ICU Beds",
-    "Regular Ambulance",
-    "ICU Ambulance",
-    "Operation Theater",
-    "Burn Care Unit",
-    "Doctors & Nurse",
-  ];
   return (
     <>
       <section className="section-hospital">
@@ -72,7 +63,7 @@ const HospitalId = () => {
                 <div className="card">
                   <div className="card-body">
                     <div className="row align-items-start">
-                      <div className="col-12 col-sm-12 col-md-6 col-lg-12 col-xl-12 col-xxl-6">
+                      <div className="col-12 col-sm-12 col-md-6 col-lg-7 col-xl-7 col-xxl-5">
                         <h6 className="fs-6 fw-bold">Contact Info</h6>
                         <div className="info-right">
                           <div className="hos-email-right mb-3">
@@ -89,6 +80,25 @@ const HospitalId = () => {
                             <br /> {data?.country}, Pin - {data?.pincode}
                           </div>
                         </div>
+                      </div>{" "}
+                      <div className="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-5 col-xxl-5">
+                        <h6 className="fs-6 fw-bold">Working Hours</h6>
+                        <div className="info-right">
+                          <div className="hos-email-right mb-3">
+                            <i className="far fa-clock me-2"></i>
+                            {data?.workingHours?.Start} -{" "}
+                            {data?.workingHours?.end}
+                          </div>
+                          <div className="hos-phone-right mb-3">
+                            <i className="far fa-ambulance me-2"></i>
+                            Ambulance no: {data?.ambulance_no}
+                          </div>
+                          {/* <div className="hos-address-right mb-3">
+                            <i className="far fa-map me-2"></i>
+                            {data?.street_address}, {data?.city}, {data?.state},
+                            <br /> {data?.country}, Pin - {data?.pincode}
+                          </div> */}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -101,14 +111,14 @@ const HospitalId = () => {
                   <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 col-xxl-5">
                     <div className="hos-desc">
                       <h6 className="fs-4 fw-bold  mb-5">Who We Are</h6>
-                      {/* <div className="hospital-cta-benner my-3">
+                      <div className="hospital-cta-benner my-3">
                         <Image
                           src="/user_assets/img/doctorbanner.jpg"
                           alt="Hospital CTA Banner Image"
                           height="200px"
                           width="1000px"
                         />
-                      </div> */}
+                      </div>
                       <p className="fs-6">{data?.overview}</p>
                     </div>
                   </div>
