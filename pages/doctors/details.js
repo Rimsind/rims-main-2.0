@@ -134,7 +134,7 @@ const DoctorId = () => {
                             </h6>
                             <h6 className="fs-6 text-muted">
                               <span className="text-info">
-                                <i class="fas fa-suitcase"></i>
+                                <i className="fas fa-suitcase"></i>
                               </span>
                               <span className="text-secondary ms-2">
                                 {data?.experienceInYrs} years experience,
