@@ -9,7 +9,7 @@ const DoctorTimetableCard = ({ data, doctorId }) => {
           className="row align-items-center border-bottom border-1"
           style={{ backgroundColor: "#abd5ff" }}
         >
-          <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3">
+          <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-2 col-xxl-2">
             <div className="doctor-location-items py-3 pe-4 border-end border-1 border-light ">
               <div className="doc-info-cont text-center text-sm-center text-md-center text-lg-start text-xl-start text-xxl-start">
                 <Image
@@ -118,16 +118,16 @@ const DoctorTimetableCard = ({ data, doctorId }) => {
               ))}
             </div>
           </div> */}
-          <div className="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9 py-3">
-            <div className="doctor-time-slot row align-items-center justify-content-between">
+          <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-10 col-xxl-10 py-3">
+            <div className="doctor-time-slot row align-items-center justify-content-around">
               {data?.slots?.map((items, index) => (
                 <div
-                  className="col-12 col-sm-12 col-md-3 col-lg-4 col-xl-3 col-xxl-3 pb-3 pb-sm-3 pb-md-3 pb-lg-3 pb-xl-0 pb-xxl-0"
+                  className="col-12 col-sm-12 col-md-3 col-lg-2 col-xl-2 col-xxl-2 py-3 bg-light"
                   key={index}
                 >
-                  <div className="doctor-location-items text-center pe-4 border-end border-1 ">
+                  <div className="doctor-location-items text-center">
                     <a
-                      className="fs-6 py-1 px-5 px-sm-5 px-md-4 px-lg-4 px-xl-5 px-xxl-5 shadow-sm"
+                      className="fs-6 py-1 px-5 px-sm-5 px-md-4 px-lg-0 px-xl-4 px-xxl-4 shadow-sm"
                       style={{
                         backgroundColor: "#ffc107",
                         color: "#1d00a3",
@@ -198,7 +198,7 @@ const DoctorTimetableCard = ({ data, doctorId }) => {
                           href={`/checkout?doctorId=${doctorId}&&polyclinicId=${data?.polyclinic?.id}&&fee=${data?.fee}&&date=${items?.date}&&time=${items?.time_from}-${items?.time_to}`}
                         >
                           <a
-                            className="btn text-light fs-6 px-5 px-sm-5 px-md-4 px-lg-4 px-xl-5 px-xxl-5"
+                            className="btn text-light fs-6 px-4 px-sm-4 px-md-4 px-lg-4 px-xl-4 px-xxl-4"
                             style={{ backgroundColor: "#1d00a3" }}
                           >
                             Book Now
@@ -212,7 +212,7 @@ const DoctorTimetableCard = ({ data, doctorId }) => {
                           href={`/checkout?doctorId=${doctorId}&&nursingHomeId=${data?.nursing_home?.id}&&fee=${data?.fee}&&date=${items?.date}&&time=${items?.time_from}-${items?.time_to}`}
                         >
                           <a
-                            className="btn text-light fs-6 px-5 px-sm-5 px-md-4 px-lg-4 px-xl-5 px-xxl-5"
+                            className="btn text-light fs-6 px-4 px-sm-4 px-md-4 px-lg-4 px-xl-4 px-xxl-4"
                             style={{ backgroundColor: "#1d00a3" }}
                           >
                             Book Now
@@ -226,7 +226,7 @@ const DoctorTimetableCard = ({ data, doctorId }) => {
                           href={`/checkout?doctorId=${doctorId}&&hospitalId=${data?.hospital?.id}&&fee=${data?.fee}&&date=${items?.date}&&time=${items?.time_from}-${items?.time_to}`}
                         >
                           <a
-                            className="btn text-light fs-6 px-5 px-sm-5 px-md-4 px-lg-4 px-xl-5 px-xxl-5"
+                            className="btn text-light fs-6 px-4 px-sm-4 px-md-4 px-lg-4 px-xl-4 px-xxl-4"
                             style={{ backgroundColor: "#1d00a3" }}
                           >
                             Book Now
