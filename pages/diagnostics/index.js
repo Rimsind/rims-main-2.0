@@ -151,7 +151,7 @@ const Index = () => {
                       .map((items, index) => (
                         <HorizontalPolyclinicCard
                           data={items}
-                          path="polyclinics"
+                          path="diagnostics"
                           key={index}
                         />
                       ))}

@@ -141,6 +141,13 @@ const NavBar = () => {
                         Hospital
                       </a>
                     </Link>
+                  </li>{" "}
+                  <li className="nav-item">
+                    <Link href="/diagnostics">
+                      <a className="nav-link navbar-link text-white">
+                        Diagnostic Centers
+                      </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
                     <Link href={"http://medshop.rimsind.com/"} passHref>
