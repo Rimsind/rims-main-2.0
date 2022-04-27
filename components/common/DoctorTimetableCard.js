@@ -127,7 +127,7 @@ const DoctorTimetableCard = ({ data, doctorId }) => {
                 >
                   <div className="doctor-location-items text-center">
                     <a
-                      className="fs-6 py-1 px-5 px-sm-5 px-md-4 px-lg-0 px-xl-4 px-xxl-4 shadow-sm"
+                      className="fs-6 py-1 px-5 px-sm-5 px-md-4 px-lg-0 px-xl-2 px-xxl-4 shadow-sm"
                       style={{
                         backgroundColor: "#ffc107",
                         color: "#1d00a3",
@@ -198,7 +198,7 @@ const DoctorTimetableCard = ({ data, doctorId }) => {
                           href={`/checkout?doctorId=${doctorId}&&polyclinicId=${data?.polyclinic?.id}&&fee=${data?.fee}&&date=${items?.date}&&time=${items?.time_from}-${items?.time_to}`}
                         >
                           <a
-                            className="btn text-light fs-6 px-4 px-sm-4 px-md-4 px-lg-4 px-xl-4 px-xxl-4"
+                            className="btn text-light fs-6 px-4 px-sm-4 px-md-4 px-lg-2 px-xl-2 px-xxl-4"
                             style={{ backgroundColor: "#1d00a3" }}
                           >
                             Book Now
@@ -212,7 +212,7 @@ const DoctorTimetableCard = ({ data, doctorId }) => {
                           href={`/checkout?doctorId=${doctorId}&&nursingHomeId=${data?.nursing_home?.id}&&fee=${data?.fee}&&date=${items?.date}&&time=${items?.time_from}-${items?.time_to}`}
                         >
                           <a
-                            className="btn text-light fs-6 px-4 px-sm-4 px-md-4 px-lg-4 px-xl-4 px-xxl-4"
+                            className="btn text-light fs-6 px-4 px-sm-4 px-md-4 px-lg-2 px-xl-2 px-xxl-4"
                             style={{ backgroundColor: "#1d00a3" }}
                           >
                             Book Now
@@ -226,7 +226,7 @@ const DoctorTimetableCard = ({ data, doctorId }) => {
                           href={`/checkout?doctorId=${doctorId}&&hospitalId=${data?.hospital?.id}&&fee=${data?.fee}&&date=${items?.date}&&time=${items?.time_from}-${items?.time_to}`}
                         >
                           <a
-                            className="btn text-light fs-6 px-4 px-sm-4 px-md-4 px-lg-4 px-xl-4 px-xxl-4"
+                            className="btn text-light fs-6 px-4 px-sm-4 px-md-4 px-lg-2 px-xl-2 px-xxl-4"
                             style={{ backgroundColor: "#1d00a3" }}
                           >
                             Book Now
