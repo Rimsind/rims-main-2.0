@@ -705,7 +705,7 @@ const HospitalId = () => {
       </main> */}
       <section className="section-hospital">
         <BreadCrums title="Home / Hospital Details" title1="Hospital Details" />
-        <div className="container-fluid">
+        <div className="container">
           <div className="content">
             <div className="row align-items-start">
               <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
@@ -765,36 +765,25 @@ const HospitalId = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                        <iframe
-                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3697.6567278699035!2d88.07755181541287!3d22.06272295705107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02f0c7d1cdc935%3A0xdc5e28eac9b1b75b!2sWebel%20IT%20Park!5e0!3m2!1sen!2sin!4v1650972672514!5m2!1sen!2sin"
-                          width="300"
-                          height="200"
-                          allowFullScreen=""
-                          loading="lazy"
-                        ></iframe>
-                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="row align-items-start">
-              <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
-                <div className="card">
-                  <div className="card-body">
+            <div className="card">
+              <div className="card-body">
+                <div className="row align-items-start">
+                  <div className="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 col-xxl-5">
                     <div className="hos-desc">
-                      <h6 className="fs-5 fw-bold text-center mb-5">
-                        About Us
-                      </h6>
-                      <div className="hospital-cta-benner my-3">
+                      <h6 className="fs-4 fw-bold  mb-5">Who We Are</h6>
+                      {/* <div className="hospital-cta-benner my-3">
                         <Image
                           src="/user_assets/img/doctorbanner.jpg"
                           alt="Hospital CTA Banner Image"
                           height="200px"
                           width="1000px"
                         />
-                      </div>
+                      </div> */}
                       <p className="fs-6">
                         Nunc quam tellus, rhoncus nec orci ac, auctor bibendum
                         lacus. Nunc quam tellus, rhoncus nec orci ac, auctor
@@ -811,276 +800,307 @@ const HospitalId = () => {
                       </p>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
-                <div className="card">
-                  <div className="card-body">
+                  <div className="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7 col-xxl-7">
                     <div className="hos-features">
-                      <h6 className="fs-5 fw-bold text-center mb-5">
-                        Features
-                      </h6>
+                      {/* <h6 className="fs-5 fw-bold  mb-5">Features</h6> */}
                       <div className="row align-items-center">
-                        <div className="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4 mb-3">
-                          <div className="dashboard-card">
-                            <div className="row align-items-end">
-                              <div className="col-3">
-                                <div className="dashboard-card-icon">
-                                  <Image
-                                    src="/assets/images/Icu-Bed.png"
-                                    height="50px"
-                                    width="50px"
-                                    alt="ICU Bed"
-                                  />
-                                </div>
-                              </div>
-                              <div className="col-9">
-                                <div className="dashboard-card-main-title">
-                                  <p>ICU Bed</p>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div className="row align-items-center dashboard-lower-content">
-                              <div className="col-6 text-start border-end border-2">
-                                <div className="dashboard-card-title">
-                                  <p className="fs-6 fw-bold text-secondary fst-italic">
-                                    Total Bed
-                                  </p>
-                                </div>
-                                <div className="dashboard-card-inner-number">
-                                  <p className="fs-6 text-danger">12</p>
-                                </div>
-                              </div>
-                              <div className="col-6 text-end">
-                                <div className="dashboard-card-title">
-                                  <p className="fs-6 fw-bold text-secondary fst-italic">
-                                    Available Bed
-                                  </p>
-                                </div>
-                                <div className="dashboard-card-inner-number">
-                                  <p className="fs-6 text-info">5</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4 mb-3">
-                          <div className="dashboard-card">
-                            <div className="row align-items-end">
-                              <div className="col-3">
-                                <div className="dashboard-card-icon">
-                                  <Image
-                                    src="/assets/images/Icu-Bed.png"
-                                    height="50px"
-                                    width="50px"
-                                    alt="ICU Bed"
-                                  />
-                                </div>
-                              </div>
-                              <div className="col-9">
-                                <div className="dashboard-card-main-title">
-                                  <p>ICU Bed</p>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div className="row align-items-center dashboard-lower-content">
-                              <div className="col-6 text-start border-end border-2">
-                                <div className="dashboard-card-title">
-                                  <p className="fs-6 fw-bold text-secondary fst-italic">
-                                    Total Bed
-                                  </p>
-                                </div>
-                                <div className="dashboard-card-inner-number">
-                                  <p className="fs-6 text-danger">12</p>
-                                </div>
-                              </div>
-                              <div className="col-6 text-end">
-                                <div className="dashboard-card-title">
-                                  <p className="fs-6 fw-bold text-secondary fst-italic">
-                                    Available Bed
-                                  </p>
-                                </div>
-                                <div className="dashboard-card-inner-number">
-                                  <p className="fs-6 text-info">5</p>
-                                </div>
+                        <div className="col-6">
+                          <div
+                            className="hospital-details-item"
+                            style={{
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center",
+                              height: "138px",
+                              marginBottom: "20px",
+                              background:
+                                "linear-gradient(314deg, #73042b 40%, #15558d 75%)",
+                            }}
+                          >
+                            <div className="main_heading">
+                              <h6
+                                style={{
+                                  fontSize: "20px",
+                                  paddingTop: "11px",
+                                  color: "black",
+                                  marginBottom: "9px",
+                                }}
+                              >
+                                Regular Beds
+                              </h6>
+                              <div className="d-flex align-items-center">
+                                <p
+                                  style={{ color: "#0031bd", fontSize: "18px" }}
+                                >
+                                  Total - <span className="count">20</span>
+                                </p>
+                                <p
+                                  style={{
+                                    color: "#009789",
+                                    fontSize: "18px",
+                                    marginLeft: "17px",
+                                  }}
+                                >
+                                  Available - <span className="count">15</span>
+                                </p>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div className="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4 mb-3">
-                          <div className="dashboard-card">
-                            <div className="row align-items-end">
-                              <div className="col-3">
-                                <div className="dashboard-card-icon">
-                                  <Image
-                                    src="/assets/images/Icu-Bed.png"
-                                    height="50px"
-                                    width="50px"
-                                    alt="ICU Bed"
-                                  />
-                                </div>
-                              </div>
-                              <div className="col-9">
-                                <div className="dashboard-card-main-title">
-                                  <p>ICU Bed</p>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div className="row align-items-center dashboard-lower-content">
-                              <div className="col-6 text-start border-end border-2">
-                                <div className="dashboard-card-title">
-                                  <p className="fs-6 fw-bold text-secondary fst-italic">
-                                    Total Bed
-                                  </p>
-                                </div>
-                                <div className="dashboard-card-inner-number">
-                                  <p className="fs-6 text-danger">12</p>
-                                </div>
-                              </div>
-                              <div className="col-6 text-end">
-                                <div className="dashboard-card-title">
-                                  <p className="fs-6 fw-bold text-secondary fst-italic">
-                                    Available Bed
-                                  </p>
-                                </div>
-                                <div className="dashboard-card-inner-number">
-                                  <p className="fs-6 text-info">5</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4 mb-3">
-                          <div className="dashboard-card">
-                            <div className="row align-items-end">
-                              <div className="col-3">
-                                <div className="dashboard-card-icon">
-                                  <Image
-                                    src="/assets/images/Icu-Bed.png"
-                                    height="50px"
-                                    width="50px"
-                                    alt="ICU Bed"
-                                  />
-                                </div>
-                              </div>
-                              <div className="col-9">
-                                <div className="dashboard-card-main-title">
-                                  <p>ICU Bed</p>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div className="row align-items-center dashboard-lower-content">
-                              <div className="col-6 text-start border-end border-2">
-                                <div className="dashboard-card-title">
-                                  <p className="fs-6 fw-bold text-secondary fst-italic">
-                                    Total Bed
-                                  </p>
-                                </div>
-                                <div className="dashboard-card-inner-number">
-                                  <p className="fs-6 text-danger">12</p>
-                                </div>
-                              </div>
-                              <div className="col-6 text-end">
-                                <div className="dashboard-card-title">
-                                  <p className="fs-6 fw-bold text-secondary fst-italic">
-                                    Available Bed
-                                  </p>
-                                </div>
-                                <div className="dashboard-card-inner-number">
-                                  <p className="fs-6 text-info">5</p>
-                                </div>
+                        <div className="col-6">
+                          <div
+                            className="hospital-details-item"
+                            style={{
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center",
+                              height: "138px",
+                              marginBottom: "20px",
+                              background:
+                                "linear-gradient(314deg, #73042b 40%, #15558d 75%)",
+                            }}
+                          >
+                            <div className="main_heading">
+                              <h6
+                                style={{
+                                  fontSize: "20px",
+                                  paddingTop: "11px",
+                                  color: "black",
+                                  marginBottom: "9px",
+                                }}
+                              >
+                                ICU Beds
+                              </h6>
+                              <div className="d-flex align-items-center">
+                                <p
+                                  style={{ color: "#0031bd", fontSize: "18px" }}
+                                >
+                                  Total - <span className="count">20</span>
+                                </p>
+                                <p
+                                  style={{
+                                    color: "#009789",
+                                    fontSize: "18px",
+                                    marginLeft: "17px",
+                                  }}
+                                >
+                                  Available - <span className="count">15</span>
+                                </p>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div className="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4 mb-3">
-                          <div className="dashboard-card">
-                            <div className="row align-items-end">
-                              <div className="col-3">
-                                <div className="dashboard-card-icon">
-                                  <Image
-                                    src="/assets/images/Icu-Bed.png"
-                                    height="50px"
-                                    width="50px"
-                                    alt="ICU Bed"
-                                  />
-                                </div>
-                              </div>
-                              <div className="col-9">
-                                <div className="dashboard-card-main-title">
-                                  <p>ICU Bed</p>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div className="row align-items-center dashboard-lower-content">
-                              <div className="col-6 text-start border-end border-2">
-                                <div className="dashboard-card-title">
-                                  <p className="fs-6 fw-bold text-secondary fst-italic">
-                                    Total Bed
-                                  </p>
-                                </div>
-                                <div className="dashboard-card-inner-number">
-                                  <p className="fs-6 text-danger">12</p>
-                                </div>
-                              </div>
-                              <div className="col-6 text-end">
-                                <div className="dashboard-card-title">
-                                  <p className="fs-6 fw-bold text-secondary fst-italic">
-                                    Available Bed
-                                  </p>
-                                </div>
-                                <div className="dashboard-card-inner-number">
-                                  <p className="fs-6 text-info">5</p>
-                                </div>
+                        <div className="col-6">
+                          <div
+                            className="hospital-details-item"
+                            style={{
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center",
+                              height: "138px",
+                              marginBottom: "20px",
+                              background:
+                                "linear-gradient(314deg, #73042b 40%, #15558d 75%)",
+                            }}
+                          >
+                            <div className="main_heading">
+                              <h6
+                                style={{
+                                  fontSize: "20px",
+                                  paddingTop: "11px",
+                                  color: "black",
+                                  marginBottom: "9px",
+                                }}
+                              >
+                                Ambulance
+                              </h6>
+                              <div className="d-flex align-items-center">
+                                <p
+                                  style={{ color: "#0031bd", fontSize: "18px" }}
+                                >
+                                  Total - <span className="count">20</span>
+                                </p>
+                                <p
+                                  style={{
+                                    color: "#009789",
+                                    fontSize: "18px",
+                                    marginLeft: "17px",
+                                  }}
+                                >
+                                  Available - <span className="count">15</span>
+                                </p>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div className="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4 mb-3">
-                          <div className="dashboard-card">
-                            <div className="row align-items-end">
-                              <div className="col-3">
-                                <div className="dashboard-card-icon">
-                                  <Image
-                                    src="/assets/images/Icu-Bed.png"
-                                    height="50px"
-                                    width="50px"
-                                    alt="ICU Bed"
-                                  />
-                                </div>
-                              </div>
-                              <div className="col-9">
-                                <div className="dashboard-card-main-title">
-                                  <p>ICU Bed</p>
-                                </div>
+                        <div className="col-6">
+                          <div
+                            className="hospital-details-item"
+                            style={{
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center",
+                              height: "138px",
+                              marginBottom: "20px",
+                              background:
+                                "linear-gradient(314deg, #73042b 40%, #15558d 75%)",
+                            }}
+                          >
+                            <div className="main_heading">
+                              <h6
+                                style={{
+                                  fontSize: "20px",
+                                  paddingTop: "11px",
+                                  color: "black",
+                                  marginBottom: "9px",
+                                }}
+                              >
+                                ICU Ambulance
+                              </h6>
+                              <div className="d-flex align-items-center">
+                                <p
+                                  style={{ color: "#0031bd", fontSize: "18px" }}
+                                >
+                                  Total - <span className="count">20</span>
+                                </p>
+                                <p
+                                  style={{
+                                    color: "#009789",
+                                    fontSize: "18px",
+                                    marginLeft: "17px",
+                                  }}
+                                >
+                                  Available - <span className="count">15</span>
+                                </p>
                               </div>
                             </div>
-
-                            <div className="row align-items-center dashboard-lower-content">
-                              <div className="col-6 text-start border-end border-2">
-                                <div className="dashboard-card-title">
-                                  <p className="fs-6 fw-bold text-secondary fst-italic">
-                                    Total Bed
-                                  </p>
-                                </div>
-                                <div className="dashboard-card-inner-number">
-                                  <p className="fs-6 text-danger">12</p>
-                                </div>
+                          </div>
+                        </div>
+                        <div className="col-6">
+                          <div
+                            className="hospital-details-item"
+                            style={{
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center",
+                              height: "138px",
+                              marginBottom: "20px",
+                              background:
+                                "linear-gradient(314deg, #73042b 40%, #15558d 75%)",
+                            }}
+                          >
+                            <div className="main_heading">
+                              <h6
+                                style={{
+                                  fontSize: "20px",
+                                  paddingTop: "11px",
+                                  color: "black",
+                                  marginBottom: "9px",
+                                }}
+                              >
+                                Burn Care Unit
+                              </h6>
+                              <div className="d-flex align-items-center">
+                                <p
+                                  style={{ color: "#0031bd", fontSize: "18px" }}
+                                >
+                                  Total - <span className="count">20</span>
+                                </p>
+                                <p
+                                  style={{
+                                    color: "#009789",
+                                    fontSize: "18px",
+                                    marginLeft: "17px",
+                                  }}
+                                >
+                                  Available - <span className="count">15</span>
+                                </p>
                               </div>
-                              <div className="col-6 text-end">
-                                <div className="dashboard-card-title">
-                                  <p className="fs-6 fw-bold text-secondary fst-italic">
-                                    Available Bed
-                                  </p>
-                                </div>
-                                <div className="dashboard-card-inner-number">
-                                  <p className="fs-6 text-info">5</p>
-                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-6">
+                          <div
+                            className="hospital-details-item"
+                            style={{
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center",
+                              height: "138px",
+                              marginBottom: "20px",
+                              background:
+                                "linear-gradient(314deg, #73042b 40%, #15558d 75%)",
+                            }}
+                          >
+                            <div className="main_heading">
+                              <h6
+                                style={{
+                                  fontSize: "20px",
+                                  paddingTop: "11px",
+                                  color: "black",
+                                  marginBottom: "9px",
+                                }}
+                              >
+                                Operation Theater
+                              </h6>
+                              <div className="d-flex align-items-center">
+                                <p
+                                  style={{ color: "#0031bd", fontSize: "18px" }}
+                                >
+                                  Total - <span className="count">20</span>
+                                </p>
+                                <p
+                                  style={{
+                                    color: "#009789",
+                                    fontSize: "18px",
+                                    marginLeft: "17px",
+                                  }}
+                                >
+                                  Available - <span className="count">15</span>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-6">
+                          <div
+                            className="hospital-details-item"
+                            style={{
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center",
+                              height: "138px",
+                              marginBottom: "20px",
+                              background:
+                                "linear-gradient(314deg, #73042b 40%, #15558d 75%)",
+                            }}
+                          >
+                            <div className="main_heading">
+                              <h6
+                                style={{
+                                  fontSize: "20px",
+                                  paddingTop: "11px",
+                                  color: "black",
+                                  marginBottom: "9px",
+                                }}
+                              >
+                                Doctors
+                              </h6>
+                              <div className="d-flex align-items-center">
+                                <p
+                                  style={{ color: "#0031bd", fontSize: "18px" }}
+                                >
+                                  Total - <span className="count">20</span>
+                                </p>
+                                <p
+                                  style={{
+                                    color: "#009789",
+                                    fontSize: "18px",
+                                    marginLeft: "17px",
+                                  }}
+                                >
+                                  Available - <span className="count">15</span>
+                                </p>
                               </div>
                             </div>
                           </div>
@@ -1096,7 +1116,7 @@ const HospitalId = () => {
                 <h6 className="fs-5 fw-bold text-center mb-5">Doctors</h6>
                 <div className="hos-doc-list">
                   <div className="row align-items-center">
-                    <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-2 col-xxl-2">
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
                       <div className="profile-widget me-3">
                         <div className="doc-img">
                           <Link href="#">
@@ -1156,7 +1176,7 @@ const HospitalId = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-2 col-xxl-2">
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
                       <div className="profile-widget me-3">
                         <div className="doc-img">
                           <Link href="#">
@@ -1216,7 +1236,7 @@ const HospitalId = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-2 col-xxl-2">
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
                       <div className="profile-widget me-3">
                         <div className="doc-img">
                           <Link href="#">
@@ -1276,127 +1296,7 @@ const HospitalId = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-2 col-xxl-2">
-                      <div className="profile-widget me-3">
-                        <div className="doc-img">
-                          <Link href="#">
-                            <a>
-                              <Image
-                                height={280}
-                                width={320}
-                                className="img-fluid"
-                                alt="User Image"
-                                src={"/assets/images/alternate/alt-user.png"}
-                              />
-                            </a>
-                          </Link>
-                        </div>
-                        <div className="pro-content">
-                          <h3 className="title">
-                            <Link href="#">
-                              <a>Dr. Samir Barman</a>
-                            </Link>
-                            <i className="fas fa-check-circle verified"></i>
-                          </h3>
-                          <p className="speciality">
-                            50 years experience, Consultant Rehabilation
-                          </p>
-
-                          <ul className="available-info">
-                            <li>
-                              <i className="fas fa-certificate "></i>
-                              MBBS
-                            </li>
-                            <li>
-                              <Image
-                                height="20"
-                                width="20"
-                                src="/assets/images/alternate/alt-specialty.png"
-                                alt=""
-                              />
-                              BVDJHVDHJVDHDS
-                            </li>
-                            <li>
-                              <i className="far fa-money-bill-alt text-primary"></i>
-                              ₹200 - ₹500
-                              <i
-                                className="fas fa-info-circle"
-                                data-bs-toggle="tooltip"
-                                title="Lorem Ipsum"
-                              ></i>
-                            </li>
-                          </ul>
-                          <div className="row row-sm">
-                            <div className="col-12">
-                              <Link href="#">
-                                <a className="btn book-btn">View Profile</a>
-                              </Link>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-2 col-xxl-2">
-                      <div className="profile-widget me-3">
-                        <div className="doc-img">
-                          <Link href="#">
-                            <a>
-                              <Image
-                                height={280}
-                                width={320}
-                                className="img-fluid"
-                                alt="User Image"
-                                src={"/assets/images/alternate/alt-user.png"}
-                              />
-                            </a>
-                          </Link>
-                        </div>
-                        <div className="pro-content">
-                          <h3 className="title">
-                            <Link href="#">
-                              <a>Dr. Samir Barman</a>
-                            </Link>
-                            <i className="fas fa-check-circle verified"></i>
-                          </h3>
-                          <p className="speciality">
-                            50 years experience, Consultant Rehabilation
-                          </p>
-
-                          <ul className="available-info">
-                            <li>
-                              <i className="fas fa-certificate "></i>
-                              MBBS
-                            </li>
-                            <li>
-                              <Image
-                                height="20"
-                                width="20"
-                                src="/assets/images/alternate/alt-specialty.png"
-                                alt=""
-                              />
-                              BVDJHVDHJVDHDS
-                            </li>
-                            <li>
-                              <i className="far fa-money-bill-alt text-primary"></i>
-                              ₹200 - ₹500
-                              <i
-                                className="fas fa-info-circle"
-                                data-bs-toggle="tooltip"
-                                title="Lorem Ipsum"
-                              ></i>
-                            </li>
-                          </ul>
-                          <div className="row row-sm">
-                            <div className="col-12">
-                              <Link href="#">
-                                <a className="btn book-btn">View Profile</a>
-                              </Link>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-2 col-xxl-2">
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
                       <div className="profile-widget me-3">
                         <div className="doc-img">
                           <Link href="#">
@@ -1462,6 +1362,13 @@ const HospitalId = () => {
             </div>
           </div>
         </div>
+      </section>
+      <section className="contact-map d-flex">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3697.656727869912!2d88.07755181541287!3d22.06272295705107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02f0c7d1cdc935%3A0xdc5e28eac9b1b75b!2sWebel%20IT%20Park!5e0!3m2!1sen!2sin!4v1648626968245!5m2!1sen!2sin"
+          allowFullScreen=""
+          loading="lazy"
+        ></iframe>
       </section>
     </>
   );
