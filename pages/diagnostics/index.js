@@ -5,7 +5,7 @@ import useSWR from "swr";
 import { useState } from "react";
 const Index = () => {
   const { data } = useSWR(
-    `${apiUrl}/polyclinics?_sort=id:desc&&verification_status=Approved`,
+    `${apiUrl}/diagnostic-centers?_sort=id:desc&&verification_status=Approved`,
     fetcher
   );
   const [startValue, setStartValue] = useState(0);

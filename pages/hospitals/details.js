@@ -1,6 +1,5 @@
 import { BreadCrums, PolyclinicTimetableCard } from "components/common/index";
 import Image from "next/image";
-import Link from "next/Link";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import { apiUrl, fetcher } from "config/api";
@@ -45,7 +44,7 @@ const HospitalId = () => {
                           {data?.city},{data?.state}
                         </p>
                         <i className="far fa-phone me-1"></i>
-                        Emergency: {data?.emargengy_no}
+                        Emergency: {data?.emergency_no}
                         <div className="clinic-details"></div>
                         <div className="clinic-services">
                           {data?.features?.map((items, index) => (
@@ -147,7 +146,10 @@ const HospitalId = () => {
                                       fontSize: "18px",
                                     }}
                                   >
-                                    Total - <span className="count">20</span>
+                                    Total -{" "}
+                                    <span className="count">
+                                      {data?.total_regular_bed}
+                                    </span>
                                   </p>
                                 </div>
                                 <div className="col-7">
@@ -159,7 +161,9 @@ const HospitalId = () => {
                                     }}
                                   >
                                     Available -{" "}
-                                    <span className="count">15</span>
+                                    <span className="count">
+                                      {data?.available_regular_bed}
+                                    </span>
                                   </p>
                                 </div>
                               </div>
@@ -187,7 +191,10 @@ const HospitalId = () => {
                                       fontSize: "18px",
                                     }}
                                   >
-                                    Total - <span className="count">20</span>
+                                    Total -{" "}
+                                    <span className="count">
+                                      {data?.total_icu_bed}
+                                    </span>
                                   </p>
                                 </div>
                                 <div className="col-7">
@@ -199,7 +206,9 @@ const HospitalId = () => {
                                     }}
                                   >
                                     Available -{" "}
-                                    <span className="count">15</span>
+                                    <span className="count">
+                                      {data?.available_icu_bed}
+                                    </span>
                                   </p>
                                 </div>
                               </div>
@@ -227,7 +236,10 @@ const HospitalId = () => {
                                       fontSize: "18px",
                                     }}
                                   >
-                                    Total - <span className="count">20</span>
+                                    Total -{" "}
+                                    <span className="count">
+                                      {data?.total_ambulance}
+                                    </span>
                                   </p>
                                 </div>
                                 <div className="col-7">
@@ -239,7 +251,9 @@ const HospitalId = () => {
                                     }}
                                   >
                                     Available -{" "}
-                                    <span className="count">15</span>
+                                    <span className="count">
+                                      {data?.available_ambulance}
+                                    </span>
                                   </p>
                                 </div>
                               </div>
@@ -267,7 +281,10 @@ const HospitalId = () => {
                                       fontSize: "18px",
                                     }}
                                   >
-                                    Total - <span className="count">20</span>
+                                    Total -{" "}
+                                    <span className="count">
+                                      {data?.total_icu_ambulance}
+                                    </span>
                                   </p>
                                 </div>
                                 <div className="col-7">
@@ -279,7 +296,9 @@ const HospitalId = () => {
                                     }}
                                   >
                                     Available -{" "}
-                                    <span className="count">15</span>
+                                    <span className="count">
+                                      {data?.available?.icu_ambulance}
+                                    </span>
                                   </p>
                                 </div>
                               </div>
@@ -307,7 +326,10 @@ const HospitalId = () => {
                                       fontSize: "18px",
                                     }}
                                   >
-                                    Total - <span className="count">20</span>
+                                    Total -{" "}
+                                    <span className="count">
+                                      {data?.total_ot}
+                                    </span>
                                   </p>
                                 </div>
                                 <div className="col-7">
@@ -319,7 +341,9 @@ const HospitalId = () => {
                                     }}
                                   >
                                     Available -{" "}
-                                    <span className="count">15</span>
+                                    <span className="count">
+                                      {data?.available_ot}
+                                    </span>
                                   </p>
                                 </div>
                               </div>
@@ -347,7 +371,10 @@ const HospitalId = () => {
                                       fontSize: "18px",
                                     }}
                                   >
-                                    Total - <span className="count">20</span>
+                                    Total -{" "}
+                                    <span className="count">
+                                      {data?.total_burn_unit}
+                                    </span>
                                   </p>
                                 </div>
                                 <div className="col-7">
@@ -359,7 +386,9 @@ const HospitalId = () => {
                                     }}
                                   >
                                     Available -{" "}
-                                    <span className="count">15</span>
+                                    <span className="count">
+                                      {data?.available_burn_unit}
+                                    </span>
                                   </p>
                                 </div>
                               </div>
@@ -387,7 +416,10 @@ const HospitalId = () => {
                                       fontSize: "18px",
                                     }}
                                   >
-                                    Total - <span className="count">20</span>
+                                    Doctor -
+                                    <span className="count">
+                                      {data?.total_doctors}
+                                    </span>
                                   </p>
                                 </div>
                                 <div className="col-7">
@@ -398,8 +430,10 @@ const HospitalId = () => {
                                       marginLeft: "17px",
                                     }}
                                   >
-                                    Available -{" "}
-                                    <span className="count">15</span>
+                                    Nurse -
+                                    <span className="count">
+                                      {data?.total_nurse}
+                                    </span>
                                   </p>
                                 </div>
                               </div>
@@ -429,7 +463,7 @@ const HospitalId = () => {
       </section>
       <section className="contact-map d-flex">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3697.656727869912!2d88.07755181541287!3d22.06272295705107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02f0c7d1cdc935%3A0xdc5e28eac9b1b75b!2sWebel%20IT%20Park!5e0!3m2!1sen!2sin!4v1648626968245!5m2!1sen!2sin"
+          src={data?.google_map}
           allowFullScreen=""
           loading="lazy"
         ></iframe>
