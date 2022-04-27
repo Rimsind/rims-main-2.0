@@ -117,7 +117,7 @@ const FamilyMadicalHistory = ({ familyHistory, patientId, updated_at }) => {
               <div className="row">
                 <div className="col-md-8">
                   <label htmlFor="" className="form-label">
-                    Age (if leaving)
+                    Age (if living)
                   </label>
                 </div>
                 <div className="col-md-4">

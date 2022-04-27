@@ -786,7 +786,7 @@ const MedicalHistory = ({
             <div className="col-md-6 col-lg-3 col-xxl-3 col-xl-3 mb-0 mb-md-3 mb-lg-0 mb-xl-0">
               <div className="row justify-centent-between align-items-center">
                 <div className="col-md-4 col-lg-6 col-xxl-6 col-xl-6">
-                  Friquency:
+                  Frequency:
                 </div>
                 <div className="col-md-8 col-lg-6 col-xxl-6 col-xl-6">
                   <select

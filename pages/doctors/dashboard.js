@@ -175,7 +175,7 @@ const Dashboard = () => {
                           <div className="col-3">
                             <div className="dashboard-card-icon">
                               <Image
-                                src="/assets/images/icons/clinics/Clinics3.png"
+                                src="/assets/images/icons/Clinics/Clinics3.png"
                                 className="img-fluid"
                                 height="100px"
                                 width="100px"
@@ -218,7 +218,7 @@ const Dashboard = () => {
                           <div className="col-3">
                             <div className="dashboard-card-icon">
                               <Image
-                                src="/assets/images/icons/yesterday/yesterday's3.png"
+                                src="/assets/images/icons/yesterday/Yesterday's3.png"
                                 className="img-fluid"
                                 height="100px"
                                 width="100px"
