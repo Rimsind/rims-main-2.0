@@ -1,4 +1,4 @@
-import { BreadCrums, HorizontalDoctorCard } from "components/common/index";
+import { BreadCrums } from "components/common/index";
 import useSWR from "swr";
 import Link from "next/link";
 import Image from "next/image";
