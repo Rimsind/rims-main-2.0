@@ -169,20 +169,20 @@ const DetailsNew = () => {
                         <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-2">
                           <div className="row">
                             <div
-                              class="btn-group"
+                              className="btn-group"
                               role="group"
                               aria-label="Basic example"
                             >
-                              <button type="button" class="btn btn-primary">
+                              <button type="button" className="btn btn-primary">
                                 Prev
                               </button>
                               <button
                                 type="button"
-                                class="btn btn-primary disabled"
+                                className="btn btn-primary disabled"
                               >
                                 1
                               </button>
-                              <button type="button" class="btn btn-primary">
+                              <button type="button" className="btn btn-primary">
                                 Next
                               </button>
                             </div>
