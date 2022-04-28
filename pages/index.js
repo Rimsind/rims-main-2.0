@@ -1,8 +1,6 @@
 import {
   FooterBanner,
-  SpecialityBlock,
   VerticalDoctorCard,
-  FeatureIcon,
   FacilityCard,
   VerticalPolyclinicCard,
 } from "components/common/";
@@ -153,7 +151,24 @@ const Index = () => {
                     {specialties ? (
                       <Carousel breakPoints={breakPoints}>
                         {specialties?.map((items, index) => (
-                          <SpecialityBlock specialties={items} key={index} />
+                          <div className="col-md" key={index}>
+                            <div className="speicality-item text-center">
+                              <div className="speicality-img">
+                                <img
+                                  src={items?.image?.url}
+                                  className="img-fluid"
+                                  alt="Speciality"
+                                />
+                                <span>
+                                  <i
+                                    className="fa fa-circle"
+                                    aria-hidden="true"
+                                  ></i>
+                                </span>
+                              </div>
+                              <p>{items?.name}</p>
+                            </div>
+                          </div>
                         ))}
                       </Carousel>
                     ) : (
