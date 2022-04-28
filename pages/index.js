@@ -355,7 +355,7 @@ const Index = () => {
                       <VerticalPolyclinicCard
                         data={items}
                         key={index}
-                        link="polyclinics"
+                        link="hospitals"
                       />
                     ))}
                   </Carousel>
