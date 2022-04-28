@@ -29,7 +29,7 @@ const NavBar = () => {
               >
                 <ul className="navbar-nav mx-auto">
                   <li className="nav-item">
-                    <Link href="/doctors/dashboard">
+                    <Link href="/doctors/auth/dashboard">
                       <a className="nav-link navbar-link text-white">
                         Dashboard
                       </a>
@@ -43,14 +43,14 @@ const NavBar = () => {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link href="/doctors/profile-settings">
+                    <Link href="/doctors/auth/profile-settings">
                       <a className="nav-link navbar-link text-white">
                         View / Update Profiles
                       </a>
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link href="/doctors/privacy-settings">
+                    <Link href="/doctors/auth/privacy-settings">
                       <a className="nav-link navbar-link text-white">
                         Change Password
                       </a>
@@ -58,7 +58,7 @@ const NavBar = () => {
                   </li>
 
                   <li className="nav-item nav-items-end">
-                    <Link href="/doctors/advance-settings">
+                    <Link href="/doctors/auth/advance-settings">
                       <a className="nav-link navbar-link text-white">
                         Advance Settings
                       </a>

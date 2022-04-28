@@ -313,9 +313,7 @@ const Index = () => {
                                 </ul>
                                 <div className="row row-sm">
                                   <div className="col-12">
-                                    <Link
-                                      href={`/doctors/details?id=${item?.id}`}
-                                    >
+                                    <Link href={`/doctors/${item?.id}`}>
                                       <a className="btn book-btn">
                                         View Profile
                                       </a>

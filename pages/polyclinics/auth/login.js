@@ -61,7 +61,7 @@ const Login = () => {
           theme: "colored",
           transition: Slide,
         });
-        router.push("/polyclinics/dashboard");
+        router.push("/polyclinics/auth/dashboard");
       }
     } catch (error) {
       dispatchAuth({
@@ -99,7 +99,7 @@ const Login = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <Link href="/polyclinics/signup">
+                <Link href="/polyclinics/auth/signup">
                   <a className="nav-link">Register</a>
                 </Link>
               </li>

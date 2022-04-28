@@ -1,21 +1,15 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { setCookie } from "nookies";
 import router from "next/router";
-import { useAuth } from "context/index";
-import Image from "next/image";
+import { useAuth } from "context";
 import { toast, Slide } from "react-toastify";
 import { apiUrl } from "config/api";
-const Login = () => {
+const Index = () => {
   const { dispatchAuth } = useAuth();
-  const {
-    register,
-    handleSubmit,
-    reset,
-    watch,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = async (data, e) => {
     e.preventDefault();
@@ -33,7 +27,7 @@ const Login = () => {
       const res = await axios.post(`${apiUrl}/auth/local`, payload);
       const result = res.data;
 
-      if (result.jwt && result.user.role.id === 5) {
+      if (result.jwt && result.user.role.id === 3) {
         setCookie(null, "token", result.jwt, {
           maxAge: 30 * 24 * 60 * 60,
           path: "/",
@@ -49,6 +43,7 @@ const Login = () => {
         });
 
         reset();
+
         toast.success("login success", {
           position: "top-center",
           autoClose: 4000,
@@ -60,17 +55,18 @@ const Login = () => {
           theme: "colored",
           transition: Slide,
         });
-        router.push("/nursing-homes/dashboard");
+        router.push("/doctors/auth/dashboard");
       }
     } catch (error) {
       dispatchAuth({
         type: "LOGIN_FAILED",
         payload: error.message
           ? error.message
-          : "Something went wrong, try agin",
+          : "Something went wrong, try again",
       });
       console.log(error.message);
-      toast.error("Email Or Password does not exist", {
+
+      toast.error("login failed", {
         position: "top-center",
         autoClose: 4000,
         hideProgressBar: false,
@@ -79,12 +75,13 @@ const Login = () => {
         draggable: true,
         progress: undefined,
         theme: "colored",
+        transition: Slide,
       });
     }
   };
   return (
     <>
-      <section className="nursing-login-section">
+      <section className="doctor-login-section">
         <div className="container">
           <div className="card-body">
             <ul className="nav nav-tabs nav-tabs-bottom nav-justified">
@@ -98,7 +95,7 @@ const Login = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <Link href="/nursing-homes/signup">
+                <Link href="/doctors/auth/signup">
                   <a className="nav-link">Register</a>
                 </Link>
               </li>
@@ -115,11 +112,11 @@ const Login = () => {
                     />
                   </div>
                   <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
-                    <div className="nursing-login-form border border-1 rounded">
+                    <div className="doctor-login-form border border-1 rounded ">
                       <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="mb-3">
                           <label
-                            htmlForm="exampleInputEmail1"
+                            htmlFor="exampleInputEmail1"
                             className="form-label"
                           >
                             Email address
@@ -137,7 +134,7 @@ const Login = () => {
                         </div>
                         <div className="mb-3">
                           <label
-                            htmlForm="exampleInputPassword1"
+                            htmlFor="exampleInputPassword1"
                             className="form-label"
                           >
                             Password
@@ -159,7 +156,7 @@ const Login = () => {
                               />
                               <label
                                 className="form-check-label"
-                                htmlForm="exampleCheck1"
+                                htmlFor="exampleCheck1"
                               >
                                 Show Password
                               </label>
@@ -197,4 +194,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Index;

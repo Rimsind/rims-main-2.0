@@ -31,7 +31,7 @@ const MainHeader = () => {
                       <i className="fas fa-lock"></i>
                     </div>
                     <div className="topbar-login-title">
-                      <Link href="/doctors/login">
+                      <Link href="/doctors/auth/login">
                         <a className="fs-6">Doctor Login</a>
                       </Link>
                     </div>
@@ -43,7 +43,7 @@ const MainHeader = () => {
                       <i className="fas fa-lock"></i>
                     </div>
                     <div className="topbar-login-title">
-                      <Link href="/polyclinics/login">
+                      <Link href="/polyclinics/auth/login">
                         <a className="fs-6">Polyclinic Login</a>
                       </Link>
                     </div>
@@ -55,7 +55,7 @@ const MainHeader = () => {
                       <i className="fas fa-lock"></i>
                     </div>
                     <div className="topbar-login-title">
-                      <Link href="/nursing-homes/login">
+                      <Link href="/nursing-homes/auth/login">
                         <a className="fs-6">Nursing Login</a>
                       </Link>
                     </div>

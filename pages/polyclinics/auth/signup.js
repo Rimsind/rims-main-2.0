@@ -25,12 +25,11 @@ const Signup = () => {
   const createUserProfile = async (data, token) => {
     const profilePayload = {
       name: data.name,
-
       email: data.email,
     };
 
     //post function for the user profile
-    const res = await axios.post(`${apiUrl}/nursing-homes`, profilePayload, {
+    const res = await axios.post(`${apiUrl}/polyclinics`, profilePayload, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -46,7 +45,7 @@ const Signup = () => {
     if (data.password != data.confirmPassword) {
       toast.error("Passwords do not match", {
         position: "top-center",
-        autoClose: 5000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
@@ -57,6 +56,7 @@ const Signup = () => {
       });
       return;
     }
+
     try {
       const payload = {
         username: data.email,
@@ -75,7 +75,7 @@ const Signup = () => {
           `${apiUrl}/users/${result.user.id}`,
           {
             profileId: profile.id,
-            role: 5,
+            role: 4,
           },
           {
             headers: {
@@ -87,7 +87,7 @@ const Signup = () => {
       reset();
       toast.success("Registration Succesful", {
         position: "top-center",
-        autoClose: 5000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
@@ -96,30 +96,30 @@ const Signup = () => {
         theme: "colored",
         transition: Slide,
       });
-      Router.push("/nursing-homes/login");
+      reset();
+      Router.push("/polyclinics/auth/login");
     } catch (err) {
       console.log(err.message);
       toast.error("Registration Failed", {
         position: "top-center",
-        autoClose: 5000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
         draggable: true,
         progress: undefined,
         theme: "colored",
-        transition: Slide,
       });
     }
   };
   return (
     <>
-      <section className="nursing-signup-section">
+      <section className="polyclinics-signup-section">
         <div className="container">
           <div className="card-body">
             <ul className="nav nav-tabs nav-tabs-bottom nav-justified">
               <li className="nav-item">
-                <Link href="/nursing-homes/login">
+                <Link href="/polyclinics/auth/login">
                   <a className="nav-link">Login</a>
                 </Link>
               </li>
@@ -145,7 +145,7 @@ const Signup = () => {
                     />
                   </div>
                   <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
-                    <div className="nursing-signup-form border border-1 rounded">
+                    <div className="polyclinics-signup-form border border-1 rounded">
                       <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="row">
                           <div className="col-12">
@@ -193,10 +193,11 @@ const Signup = () => {
                           <input
                             type="password"
                             className="form-control"
-                            required
                             {...register("confirmPassword")}
+                            required
                           />
                         </div>
+
                         <div className="row mt-5">
                           <div className="col-12 text-center">
                             <button
