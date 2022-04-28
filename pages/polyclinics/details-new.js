@@ -1204,71 +1204,20 @@ const DetailsNew = () => {
                   <div className="row">
                     <div className="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-10"></div>
                     <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-2">
-                      {/* <div className="row">
-                          <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-start">
-                            {startValue >= 5 ? (
-                              <button
-                                className="btn btn-primary"
-                                onClick={previousValue}
-                              >
-                                <i className="fal fa-long-arrow-left me-2"></i>
-                                Prev
-                              </button>
-                            ) : (
-                              <button className="btn btn-primary" disabled>
-                                <i className="fal fa-long-arrow-left me-2"></i>
-                                Prev
-                              </button>
-                            )}
-                          </div>
-                          <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-end">
-                            {doctors?.length - endValue >= 0 ? (
-                              <button
-                                className="btn btn-primary"
-                                onClick={nextData}
-                              >
-                                Next
-                                <i className="fal fa-long-arrow-right ms-2"></i>
-                              </button>
-                            ) : (
-                              <button className="btn btn-primary" disabled>
-                                Next
-                                <i className="fal fa-long-arrow-right ms-2"></i>
-                              </button>
-                            )}
-                          </div>
-                        </div> */}
-                      <div className="row">
-                        {/* <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-start">
-                          <button className="btn btn-primary" disabled>
-                            <i className="fal fa-long-arrow-left me-2"></i>
-                            Prev
-                          </button>
-                        </div> */}
-                        <div
-                          class="btn-group"
-                          role="group"
-                          aria-label="Basic example"
-                        >
-                          <button type="button" class="btn btn-primary">
-                            Prev
-                          </button>
-                          <button
-                            type="button"
-                            class="btn btn-primary disabled"
-                          >
-                            1
-                          </button>
-                          <button type="button" class="btn btn-primary">
-                            Next
-                          </button>
-                        </div>
-                        {/* <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-end">
-                          <button className="btn btn-primary" disabled>
-                            Next
-                            <i className="fal fa-long-arrow-right ms-2"></i>
-                          </button>
-                        </div> */}
+                      <div
+                        class="btn-group"
+                        role="group"
+                        aria-label="Basic example"
+                      >
+                        <button type="button" class="btn btn-primary">
+                          Prev
+                        </button>
+                        <button type="button" class="btn btn-primary disabled">
+                          1
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                          Next
+                        </button>
                       </div>
                     </div>
                   </div>
