@@ -143,7 +143,35 @@ const Index = () => {
               )}
 
               <div className="user-main-pagination mb-4">
-                <p>pagination</p>
+                <div className="list-pagination">
+                  <div className="row">
+                    <div className="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-10"></div>
+                    <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-2">
+                      <div className="row">
+                        <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-start">
+                          <div
+                            class="btn-group"
+                            role="group"
+                            aria-label="Basic example"
+                          >
+                            <button type="button" class="btn btn-primary">
+                              Prev
+                            </button>
+                            <button
+                              type="button"
+                              class="btn btn-primary disabled"
+                            >
+                              1
+                            </button>
+                            <button type="button" class="btn btn-primary">
+                              Next
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

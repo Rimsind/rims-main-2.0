@@ -6445,16 +6445,7 @@ body .multi-optn {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-.clinic-services span {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  display: inline-block;
-  font-size: 12px;
-  padding: 3px 10px;
-}
-.clinic-services span + span {
-  margin-left: 5px;
-}
+
 .clini-infos {
   margin-bottom: 15px;
 }
