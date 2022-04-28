@@ -26,7 +26,6 @@ const GlobalProvider = ({ children }) => {
     destroyCookie(null, "user");
     destroyCookie(null, "token");
     dispatchAuth({ type: "AUTH_RESET" });
-    setProfile();
     router.push("/");
   };
 

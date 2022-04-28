@@ -131,7 +131,7 @@ const MainHeader = () => {
                 </a>
               </div>
 
-              {!!auth?.token && !!auth?.user ? (
+              {auth?.token && auth?.user ? (
                 <div className="profile-hover-dropdown">
                   <button className="profile-hover-dropbtn">
                     <Image

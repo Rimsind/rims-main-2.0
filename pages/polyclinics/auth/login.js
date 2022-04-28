@@ -119,12 +119,7 @@ const Login = () => {
                     <div className="polyclinics-login-form border border-1 rounded">
                       <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="mb-3">
-                          <label
-                            htmlForm="exampleInputEmail1"
-                            className="form-label"
-                          >
-                            Email address
-                          </label>
+                          <label className="form-label">Email address</label>
                           <input
                             type="email"
                             className="form-control"
@@ -137,12 +132,7 @@ const Login = () => {
                           </div>
                         </div>
                         <div className="mb-3">
-                          <label
-                            htmlForm="exampleInputPassword1"
-                            className="form-label"
-                          >
-                            Password
-                          </label>
+                          <label className="form-label">Password</label>
                           <input
                             type="password"
                             className="form-control"
@@ -158,10 +148,7 @@ const Login = () => {
                                 className="form-check-input"
                                 id="exampleCheck1"
                               />
-                              <label
-                                className="form-check-label"
-                                htmlForm="exampleCheck1"
-                              >
+                              <label className="form-check-label">
                                 Show Password
                               </label>
                             </div>
