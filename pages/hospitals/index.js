@@ -1,9 +1,4 @@
-import {
-  BreadCrums,
-  LocationFilter,
-  HorizontalPolyclinicCard,
-  ListPagination,
-} from "components/common/index";
+import { BreadCrums, HorizontalPolyclinicCard } from "components/common/index";
 import { apiUrl, fetcher } from "config/api";
 import useSWR from "swr";
 import { ListingPageLoader } from "components/Loaders";
@@ -148,7 +143,7 @@ const Index = () => {
               )}
 
               <div className="user-main-pagination mb-4">
-                <ListPagination />
+                <p>pagination</p>
               </div>
             </div>
           </div>
