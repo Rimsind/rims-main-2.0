@@ -43,7 +43,7 @@ const Details = () => {
                         background: "#0b6ea5",
                         padding: "10px",
                       }}
-                      className="img-fluid border border-1 rounded-circle bg-light"
+                      className="img-fluid border border-1 border-dark rounded-circle"
                       alt="User Image"
                     />
                   </div>
