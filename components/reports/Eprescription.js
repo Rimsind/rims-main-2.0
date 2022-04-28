@@ -119,7 +119,7 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
               className="presc-title fs-5 fw-bold text-center"
               style={{ color: " #720330" }}
             >
-              e-Prescption
+              e-Prescription
             </p>
             <div
               className="presc-main_outer_bg"

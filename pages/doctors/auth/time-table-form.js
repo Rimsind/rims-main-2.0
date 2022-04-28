@@ -8,6 +8,7 @@ import axios from "axios";
 import { withAuth } from "helpers/withAuth";
 import { useState } from "react";
 import { set } from "react-hook-form";
+import Router from "next/router";
 
 const DoctorTimeTableForm = () => {
   const { auth } = useAuth();
@@ -26,19 +27,6 @@ const DoctorTimeTableForm = () => {
   );
 
   const [locationType, setLocationType] = useState("");
-  if (locationType === "polyclinics") {
-    var polyclinicId = clinic;
-    var nursingHomeId = null;
-    var hospitalId = null;
-  } else if (locationType === "nursinh-homes") {
-    var polyclinicId = null;
-    var nursingHomeId = clinic;
-    var hospitalId = null;
-  } else if (locationType === "hospitals") {
-    var polyclinicId = null;
-    var nursingHomeId = null;
-    var hospitalId = clinic;
-  }
   const { data: location } = useSWR(`${apiUrl}/${locationType}`, fetcher);
   const [clinic, setClinic] = useState();
   const [fee, setFee] = useState();
@@ -47,7 +35,19 @@ const DoctorTimeTableForm = () => {
   const [timeTo, setTimeTo] = useState();
   const [seat, setSeat] = useState();
   const [allData, setAllData] = useState([]);
-
+  if (locationType === "polyclinics") {
+    var polyclinicId = clinic;
+    var nursingHomeId = null;
+    var hospitalId = null;
+  } else if (locationType === "nursing-homes") {
+    var polyclinicId = null;
+    var nursingHomeId = clinic;
+    var hospitalId = null;
+  } else if (locationType === "hospitals") {
+    var polyclinicId = null;
+    var nursingHomeId = null;
+    var hospitalId = clinic;
+  }
   const addEntry = () => {
     setAllData([
       ...allData,
@@ -89,9 +89,8 @@ const DoctorTimeTableForm = () => {
       }
     );
     const result = await res.data;
-
     alert("Success");
-    return result;
+    return result, Router.push("/doctors/auth/time-table");
   };
   return (
     <>

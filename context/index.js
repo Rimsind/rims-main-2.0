@@ -23,9 +23,10 @@ const GlobalProvider = ({ children }) => {
   const router = useRouter();
 
   const logOut = async () => {
-    await destroyCookie(null, "user");
-    await destroyCookie(null, "token");
+    destroyCookie(null, "user");
+    destroyCookie(null, "token");
     dispatchAuth({ type: "AUTH_RESET" });
+    setProfile();
     router.push("/");
   };
 
