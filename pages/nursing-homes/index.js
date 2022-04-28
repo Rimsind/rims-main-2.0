@@ -157,20 +157,20 @@ const Index = () => {
                         <div className="row">
                           <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-start">
                             <div
-                              class="btn-group"
+                              className="btn-group"
                               role="group"
                               aria-label="Basic example"
                             >
-                              <button type="button" class="btn btn-primary">
+                              <button type="button" className="btn btn-primary">
                                 Prev
                               </button>
                               <button
                                 type="button"
-                                class="btn btn-primary disabled"
+                                className="btn btn-primary disabled"
                               >
                                 1
                               </button>
-                              <button type="button" class="btn btn-primary">
+                              <button type="button" className="btn btn-primary">
                                 Next
                               </button>
                             </div>
