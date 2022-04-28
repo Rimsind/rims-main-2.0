@@ -16,7 +16,7 @@ const DetailsNew = () => {
           <>
             <div className="content">
               <div className="row align-items-start">
-                <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-2">
+                <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3">
                   <div className="card">
                     <div className="card-body">
                       <div className="doctor-left-profile">
@@ -141,12 +141,15 @@ const DetailsNew = () => {
                     </div>
                   </div>
                   <div className="card">
+                    <div className="card-header">
+                      <h6 className="fs-6 fw-bold">Google Map</h6>
+                    </div>
                     <div className="card-body">
                       <div className="doc-left-innr-qal">
                         <iframe
                           src={data?.google_map}
-                          width="260"
-                          height="200"
+                          width="250"
+                          height="250"
                           style={{ border: "0" }}
                           allowFullScreen=""
                           loading="lazy"
@@ -155,7 +158,7 @@ const DetailsNew = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-10">
+                <div className="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9">
                   <div className="row align-items-start">
                     {data?.doctors?.map((items, index) => (
                       <PolyclinicTimetableCard data={items} key={index} />

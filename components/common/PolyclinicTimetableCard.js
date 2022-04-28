@@ -10,7 +10,7 @@ const PolyclinicTimetableCard = ({ data }) => {
 
   return (
     <>
-      <div className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-2">
+      <div className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
         <div className="profile-widget me-3">
           <div className="doc-img">
             <Link href="#">

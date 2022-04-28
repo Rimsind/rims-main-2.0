@@ -16,10 +16,22 @@ import { SliderCardLoader, SpecialtyLoader } from "components/Loaders";
 const Index = () => {
   const { data: banners } = useSWR(`${apiUrl}/banners`, fetcher);
   const { data: specialties } = useSWR(`${apiUrl}/specialties`, fetcher);
-  const { data: doctors } = useSWR(`${apiUrl}/doctors`, fetcher);
-  const { data: polyclinics } = useSWR(`${apiUrl}/polyclinics`, fetcher);
-  const { data: nursingHomes } = useSWR(`${apiUrl}/nursing-homes`, fetcher);
-  const { data: hospitals } = useSWR(`${apiUrl}/hospitals`, fetcher);
+  const { data: doctors } = useSWR(
+    `${apiUrl}/doctors?_sort=id:desc&&verification_status=Approved`,
+    fetcher
+  );
+  const { data: polyclinics } = useSWR(
+    `${apiUrl}/polyclinics?_sort=id:desc&&verification_status=Approved`,
+    fetcher
+  );
+  const { data: nursingHomes } = useSWR(
+    `${apiUrl}/nursing-homes?_sort=id:desc&&verification_status=Approved`,
+    fetcher
+  );
+  const { data: hospitals } = useSWR(
+    `${apiUrl}/hospitals?_sort=id:desc&&verification_status=Approved`,
+    fetcher
+  );
   const breakPoints = [
     { width: 1, itemsToShow: 1 },
     { width: 550, itemsToShow: 3, itemsToScroll: 1 },
