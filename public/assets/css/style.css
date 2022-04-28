@@ -4221,3 +4221,18 @@ table.rehab-com-table {
 }
 
 /* Pathology Facilities border Right Display None on Mobile Screen Style Sheet End Here */
+
+/* Diagnostics Stylesheet Start Here */
+.test-card-btn button {
+  padding: 10px;
+  background: white;
+  border: 1px solid;
+}
+
+.test-card-btn button:hover {
+  background: #15558d;
+  border: 1px solid #15558d;
+  color: white;
+}
+
+/* Diagnostics Stylesheet End Here */
