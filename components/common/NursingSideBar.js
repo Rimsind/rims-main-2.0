@@ -35,7 +35,7 @@ const NursingSideBar = (props) => {
             <nav className="dashboard-menu">
               <ul>
                 <li className={props.status1}>
-                  <Link href="/nursing-homes/dashboard">
+                  <Link href="/nursing-homes/auth/dashboard">
                     <a>
                       <i className="fas fa-tachometer"></i>
                       <span>Dashboard</span>
@@ -44,7 +44,7 @@ const NursingSideBar = (props) => {
                 </li>
 
                 <li className={props.status2}>
-                  <Link href="/nursing-homes/manage-doctors">
+                  <Link href="/nursing-homes/auth/manage-doctors">
                     <a>
                       <i className="fas fa-tasks-alt"></i>
                       <span>Manage Doctors</span>
@@ -53,7 +53,7 @@ const NursingSideBar = (props) => {
                 </li>
 
                 <li className={props.status3}>
-                  <Link href="/nursing-homes/page-content-editor">
+                  <Link href="/nursing-homes/auth/page-content-editor">
                     <a>
                       <i className="fas fa-pencil-alt"></i>
                       <span>Page Content Editor</span>
@@ -62,7 +62,7 @@ const NursingSideBar = (props) => {
                 </li>
 
                 <li className={props.status4}>
-                  <Link href="/nursing-homes/profile-settings">
+                  <Link href="/nursing-homes/auth/profile-settings">
                     <a>
                       <i className="fas fa-user-cog"></i>
                       <span>View / Update Profiles</span>
@@ -71,7 +71,7 @@ const NursingSideBar = (props) => {
                 </li>
 
                 <li className={props.status5}>
-                  <Link href="/nursing-homes/privacy-settings">
+                  <Link href="/nursing-homes/auth/privacy-settings">
                     <a>
                       <i className="fas fa-key"></i>
                       <span>Change Password</span>
@@ -80,7 +80,7 @@ const NursingSideBar = (props) => {
                 </li>
 
                 <li className={props.status6}>
-                  <Link href="/nursing-homes/advance-settings">
+                  <Link href="/nursing-homes/auth/advance-settings">
                     <a>
                       <i className="fas fa-cogs"></i>
                       <span>Advance Settings</span>

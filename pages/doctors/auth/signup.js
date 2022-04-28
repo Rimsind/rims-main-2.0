@@ -97,7 +97,7 @@ const Signup = () => {
         theme: "colored",
         transition: Slide,
       });
-      router.push("/doctors/login");
+      router.push("/doctors/auth/login");
     } catch (err) {
       console.log(err.message);
       toast.error("Registration Failed", {
@@ -120,7 +120,7 @@ const Signup = () => {
           <div className="card-body">
             <ul className="nav nav-tabs nav-tabs-bottom nav-justified">
               <li className="nav-item">
-                <Link href="/doctors/login">
+                <Link href="/doctors/auth/login">
                   <a className="nav-link">Login</a>
                 </Link>
               </li>

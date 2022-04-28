@@ -10,7 +10,7 @@ const PolyclinicTimetableCard = ({ data }) => {
 
   return (
     <>
-      <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
+      <div className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-2">
         <div className="profile-widget me-3">
           <div className="doc-img">
             <Link href="#">
@@ -64,7 +64,7 @@ const PolyclinicTimetableCard = ({ data }) => {
             </ul>
             <div className="row row-sm">
               <div className="col-12">
-                <Link href={`/doctors/details?id=${data?.id}`}>
+                <Link href={`/doctors/${data?.id}`}>
                   <a className="btn book-btn">View Profile</a>
                 </Link>
               </div>

@@ -36,7 +36,7 @@ const PolyclinicSideBar = (props) => {
             <nav className="dashboard-menu">
               <ul>
                 <li className={props.status1}>
-                  <Link href="/polyclinics/dashboard">
+                  <Link href="/polyclinics/auth/dashboard">
                     <a>
                       <i className="fas fa-tachometer"></i>
                       <span>Dashboard</span>
@@ -52,7 +52,7 @@ const PolyclinicSideBar = (props) => {
                   </Link>
                 </li>
                 <li className={props.status2}>
-                  <Link href="/polyclinics/manage-doctors">
+                  <Link href="/polyclinics/auth/manage-doctors">
                     <a>
                       <i className="fas fa-tasks-alt"></i>
                       <span>Manage Doctors</span>
@@ -60,17 +60,8 @@ const PolyclinicSideBar = (props) => {
                   </Link>
                 </li>
 
-                {/* <li className={props.status3}>
-                  <Link href="/polyclinics/page-content-editor">
-                    <a>
-                      <i className="fas fa-list-alt"></i>
-                      <span>Page Content Editor</span>
-                    </a>
-                  </Link>
-                </li> */}
-
                 <li className={props.status4}>
-                  <Link href="/polyclinics/profile-settings">
+                  <Link href="/polyclinics/auth/profile-settings">
                     <a>
                       <i className="fas fa-user-cog"></i>
                       <span>View / Update Profiles</span>
@@ -79,7 +70,7 @@ const PolyclinicSideBar = (props) => {
                 </li>
 
                 <li className={props.status5}>
-                  <Link href="/polyclinics/privacy-settings">
+                  <Link href="/polyclinics/auth/privacy-settings">
                     <a>
                       <i className="fas fa-key"></i>
                       <span>Change Password</span>
@@ -88,7 +79,7 @@ const PolyclinicSideBar = (props) => {
                 </li>
 
                 <li className={props.status6}>
-                  <Link href="/polyclinics/advance-settings">
+                  <Link href="/polyclinics/auth/advance-settings">
                     <a>
                       <i className="fas fa-cogs"></i>
                       <span>Advance Settings</span>

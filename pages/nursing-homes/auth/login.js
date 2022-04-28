@@ -1,15 +1,21 @@
-import Image from "next/image";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { setCookie } from "nookies";
 import router from "next/router";
-import { useAuth } from "context";
+import { useAuth } from "context/index";
+import Image from "next/image";
 import { toast, Slide } from "react-toastify";
 import { apiUrl } from "config/api";
-const Index = () => {
+const Login = () => {
   const { dispatchAuth } = useAuth();
-  const { register, handleSubmit, reset } = useForm();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    watch,
+    formState: { errors },
+  } = useForm();
 
   const onSubmit = async (data, e) => {
     e.preventDefault();
@@ -27,7 +33,7 @@ const Index = () => {
       const res = await axios.post(`${apiUrl}/auth/local`, payload);
       const result = res.data;
 
-      if (result.jwt && result.user.role.id === 3) {
+      if (result.jwt && result.user.role.id === 5) {
         setCookie(null, "token", result.jwt, {
           maxAge: 30 * 24 * 60 * 60,
           path: "/",
@@ -43,7 +49,6 @@ const Index = () => {
         });
 
         reset();
-
         toast.success("login success", {
           position: "top-center",
           autoClose: 4000,
@@ -55,18 +60,17 @@ const Index = () => {
           theme: "colored",
           transition: Slide,
         });
-        router.push("/doctors/dashboard");
+        router.push("/nursing-homes/auth/dashboard");
       }
     } catch (error) {
       dispatchAuth({
         type: "LOGIN_FAILED",
         payload: error.message
           ? error.message
-          : "Something went wrong, try again",
+          : "Something went wrong, try agin",
       });
       console.log(error.message);
-
-      toast.error("login failed", {
+      toast.error("Email Or Password does not exist", {
         position: "top-center",
         autoClose: 4000,
         hideProgressBar: false,
@@ -75,13 +79,12 @@ const Index = () => {
         draggable: true,
         progress: undefined,
         theme: "colored",
-        transition: Slide,
       });
     }
   };
   return (
     <>
-      <section className="doctor-login-section">
+      <section className="nursing-login-section">
         <div className="container">
           <div className="card-body">
             <ul className="nav nav-tabs nav-tabs-bottom nav-justified">
@@ -95,7 +98,7 @@ const Index = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <Link href="/doctors/signup">
+                <Link href="/nursing-homes/auth/signup">
                   <a className="nav-link">Register</a>
                 </Link>
               </li>
@@ -112,11 +115,11 @@ const Index = () => {
                     />
                   </div>
                   <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
-                    <div className="doctor-login-form border border-1 rounded ">
+                    <div className="nursing-login-form border border-1 rounded">
                       <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="mb-3">
                           <label
-                            htmlFor="exampleInputEmail1"
+                            htmlForm="exampleInputEmail1"
                             className="form-label"
                           >
                             Email address
@@ -134,7 +137,7 @@ const Index = () => {
                         </div>
                         <div className="mb-3">
                           <label
-                            htmlFor="exampleInputPassword1"
+                            htmlForm="exampleInputPassword1"
                             className="form-label"
                           >
                             Password
@@ -156,7 +159,7 @@ const Index = () => {
                               />
                               <label
                                 className="form-check-label"
-                                htmlFor="exampleCheck1"
+                                htmlForm="exampleCheck1"
                               >
                                 Show Password
                               </label>
@@ -194,4 +197,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Login;

@@ -83,7 +83,7 @@ const DoctorSidebar = (props) => {
             <nav className="dashboard-menu">
               <ul>
                 <li className={props.status1}>
-                  <Link href="/doctors/dashboard">
+                  <Link href="/doctors/auth/dashboard">
                     <a>
                       <i className="fas fa-tachometer"></i>
                       <span>Dashboard</span>
@@ -91,7 +91,7 @@ const DoctorSidebar = (props) => {
                   </Link>
                 </li>
                 <li className={props.status2}>
-                  <Link href="/doctors/appointments/">
+                  <Link href="/doctors/appointments">
                     <a>
                       <i className="fas fa-calendar-check"></i>
                       <span>My Appointments</span>
@@ -100,7 +100,7 @@ const DoctorSidebar = (props) => {
                 </li>
 
                 <li className={props.status4}>
-                  <Link href="/doctors/profile-settings">
+                  <Link href="/doctors/auth/profile-settings">
                     <a>
                       <i className="fas fa-user-cog"></i>
                       <span>View / Update Profiles</span>
@@ -108,7 +108,7 @@ const DoctorSidebar = (props) => {
                   </Link>
                 </li>
                 {/* <li className={props.status5}>
-                  <Link href="/doctors/my-patients">
+                  <Link href="/doctors/auth/my-patients">
                     <a href="medical-info.html">
                       <i className="fas fa-user-cog"></i>
                       <span>My Patients</span>
@@ -116,7 +116,7 @@ const DoctorSidebar = (props) => {
                   </Link>
                 </li> */}
                 <li className={props.status6}>
-                  <Link href="/doctors/time-table">
+                  <Link href="/doctors/auth/time-table">
                     <a>
                       <i className="fas fa-calendar-alt"></i>
                       <span>Time Table</span>
@@ -125,7 +125,7 @@ const DoctorSidebar = (props) => {
                 </li>
 
                 <li className={props.status5}>
-                  <Link href="/doctors/privacy-settings">
+                  <Link href="/doctors/auth/privacy-settings">
                     <a>
                       <i className="fas fa-key"></i>
                       <span>Change Password</span>
@@ -133,7 +133,7 @@ const DoctorSidebar = (props) => {
                   </Link>
                 </li>
                 <li className={props.status7}>
-                  <Link href="/doctors/advance-settings">
+                  <Link href="/doctors/auth/advance-settings">
                     <a>
                       <i className="fas fa-cogs"></i>
                       <span>Advance Settings</span>
