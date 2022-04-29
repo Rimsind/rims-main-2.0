@@ -3,22 +3,50 @@ import { BreadCrums } from "components/common";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { apiUrl } from "config/api";
+import { toast, Slide } from "react-toastify";
 const Contact = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const submitEnquirey = async (data, event) => {
     event.preventDefault();
-    const payload = {
-      name: data.name,
-      email: data.email,
-      subject: data.subject,
-      message: data.message,
-    };
-    console.log(payload);
+    try {
+      const payload = {
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        subject: data.subject,
+        message: data.message,
+      };
 
-    const res = await axios.post(`${apiUrl}/enquireys`);
-    const result = res.data;
-    alert("success");
-    return result;
+      const res = await axios.post(`${apiUrl}/contact-uses`, payload);
+      const result = res.data;
+      console.log(result);
+      toast.success("Enquirey Submitted Succesfully.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+      reset();
+      return result;
+    } catch (error) {
+      console.log(error.message);
+      toast.error("Something Went Wrong Try Again.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Slide,
+      });
+    }
   };
   return (
     <>
@@ -59,7 +87,8 @@ const Contact = () => {
                   </div>
                   <div className="infor-details text-center">
                     <label>Email</label>
-                    <p>rimsind21@gmail.com</p>
+                    <p>info@rimsind.com</p>
+                    <p>support@rimsind.com</p>
                   </div>
                 </div>
               </div>
@@ -124,6 +153,17 @@ const Contact = () => {
                             className="form-control"
                             required
                             {...register("email")}
+                          />
+                        </div>
+                      </div>
+                      <div className="col-md-12">
+                        <div className="form-group mb-3 input-level">
+                          <label>Phone Nuber</label>
+                          <input
+                            type="number"
+                            className="form-control"
+                            required
+                            {...register("phone")}
                           />
                         </div>
                       </div>
