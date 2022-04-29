@@ -10,7 +10,7 @@ const Index = () => {
                   <h6>CONDITIONS</h6>
                   <ul className=" list-unstyled">
                     <li>
-                      <div class="form-check">
+                      <div className="form-check">
                         <input
                           className="form-check-input"
                           type="checkbox"
@@ -23,7 +23,7 @@ const Index = () => {
                       </div>
                     </li>
                     <li>
-                      <div class="form-check">
+                      <div className="form-check">
                         <input
                           className="form-check-input"
                           type="checkbox"
@@ -36,7 +36,7 @@ const Index = () => {
                       </div>
                     </li>
                     <li>
-                      <div class="form-check">
+                      <div className="form-check">
                         <input
                           className="form-check-input"
                           type="checkbox"
@@ -49,7 +49,7 @@ const Index = () => {
                       </div>
                     </li>
                     <li>
-                      <div class="form-check">
+                      <div className="form-check">
                         <input
                           className="form-check-input"
                           type="checkbox"
@@ -62,7 +62,7 @@ const Index = () => {
                       </div>
                     </li>
                     <li>
-                      <div class="form-check">
+                      <div className="form-check">
                         <input
                           className="form-check-input"
                           type="checkbox"
@@ -75,7 +75,7 @@ const Index = () => {
                       </div>
                     </li>
                     <li>
-                      <div class="form-check">
+                      <div className="form-check">
                         <input
                           className="form-check-input"
                           type="checkbox"
