@@ -7,771 +7,1151 @@ const Details = () => {
       <section className="section-patho-details">
         <main className="main">
           <BreadCrums
-            title="Home / Pathology Details"
-            title1="Pathology Details"
+            title="Home / Diagnostics Details"
+            title1="Diagnostics Details"
           />
-          <div className="content">
-            <div className="container">
-              <div className="diag-banner-img">
-                <div
-                  className="doctor-left-profile-inner"
-                  style={{
-                    background:
-                      "url(/assets/images/banner-diagonostic-center.jpg)",
-                    position: "relative",
-                    height: "300px",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    borderBottom: "5px solid #15558d",
-                    borderRadius: "0 0 10px 10px",
-                  }}
-                >
-                  <div
-                    className="doc-lft-prof"
-                    style={{
-                      position: "absolute",
-                      marginTop: "220px",
-                      marginLeft: "577px",
-                    }}
-                  >
-                    <Image
-                      height="140"
-                      width="140"
-                      src={"/assets/images/alternate/alt-hospital.png"}
-                      style={{
-                        height: "15rem",
-                        background: "#0b6ea5",
-                        padding: "10px",
-                      }}
-                      className="img-fluid border border-1 border-dark rounded-circle"
-                      alt="User Image"
-                    />
-                  </div>
-                  {/* <div
-                    className="doc-lft-prof"
-                    style={{
-                      position: "absolute",
-                      marginTop: "220px",
-                      marginLeft: "855px",
-                    }}
-                  >
-                    <Image
-                      height="140"
-                      width="140"
-                      src={"/assets/images/alternate/alt-hospital.png"}
-                      style={{
-                        height: "15rem",
-                        background: "#0b6ea5",
-                        padding: "10px",
-                      }}
-                      className="img-fluid border border-1 rounded-circle bg-light"
-                      alt="User Image"
-                    />
-                  </div> */}
-                </div>
-              </div>
-              <div className="diag-banner-title">
-                <h6
-                  className="fs-4 fw-bold  text-center"
-                  style={{ marginTop: "70px", color: "#15558d" }}
-                >
-                  Apollo Diagnostics Center
-                </h6>
-              </div>
-              <div className="diag-banner-sub-title">
-                <h6 className="fs-6 fst-italic text-secondary text-center">
-                  City Center, Haldia, WB, India
-                </h6>
-                <h6 className="fs-6 text-muted text-center">
-                  <span style={{ color: "#15558d" }}>
-                    <i className="fas fa-mobile"></i>
-                  </span>
-                  <span className=" ms-2" style={{ color: "#15558d" }}>
-                    +91 8945 6325 85
-                  </span>
-                </h6>
-                <h6 className="fs-6 text-muted text-center">
-                  <span style={{ color: "#15558d" }}>
-                    <i className="fas fa-clock"></i>
-                  </span>
-                  <span className=" ms-2" style={{ color: "#15558d" }}>
-                    09:30 AM - 09:30 PM
-                  </span>
-                </h6>
-              </div>
-              <div
-                className="diag-speciality mt-5"
-                style={{ background: "#e7e7e7c7", padding: "20px" }}
-              >
-                <div className="row align-items-center">
-                  <div className="col-2">
-                    <div className="speicality-item text-center">
-                      <div className="">
-                        <img
-                          src="/assets/images/diagnostics/heart.jpg"
-                          className="img-fluid"
-                          alt="Speciality"
-                        />
-                      </div>
-                      <div className="speciality-item-name">
-                        <h6 className="fs-6 mt-3">Heart</h6>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-2">
-                    <div className="speicality-item text-center">
-                      <div className="">
-                        <img
-                          src="/assets/images/diagnostics/thyroid.jpg"
-                          className="img-fluid"
-                          alt="Speciality"
-                        />
-                      </div>
-                      <div className="speciality-item-name">
-                        <h6 className="fs-6 mt-3">Thyroid</h6>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-2">
-                    <div className="speicality-item text-center">
-                      <div className="">
-                        <img
-                          src="/assets/images/diagnostics/liver.jpg"
-                          className="img-fluid"
-                          alt="Speciality"
-                        />
-                      </div>
-                      <div className="speciality-item-name">
-                        <h6 className="fs-6 mt-3">Liver</h6>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-2">
-                    <div className="speicality-item text-center">
-                      <div className="">
-                        <img
-                          src="/assets/images/diagnostics/lungs.jpg"
-                          className="img-fluid"
-                          alt="Speciality"
-                        />
-                      </div>
-                      <div className="speciality-item-name">
-                        <h6 className="fs-6 mt-3">Lungs</h6>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-2">
-                    <div className="speicality-item text-center">
-                      <div className="">
-                        <img
-                          src="/assets/images/diagnostics/infertility.jpg"
-                          className="img-fluid"
-                          alt="Speciality"
-                        />
-                      </div>
-                      <div className="speciality-item-name">
-                        <h6 className="fs-6 mt-3">Infertility</h6>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-2">
-                    <div className="speicality-item text-center">
-                      <div className="">
-                        <img
-                          src="/assets/images/diagnostics/kidney.jpg"
-                          className="img-fluid"
-                          alt="Speciality"
-                        />
-                      </div>
-                      <div className="speciality-item-name">
-                        <h6 className="fs-6 mt-3">Kidney</h6>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="diag-step-work text-center py-4 px-3"
-                style={{ background: "#00abb285" }}
-              >
-                <div className="diag-step-work-inner">
-                  <h6
-                    className="fs-5"
-                    style={{
-                      marginBottom: "-50px",
-                      color: "#004581",
-                      fontWeight: "600",
-                    }}
-                  >
-                    HOW DOES HOME SAMPLE COLLECTION WORK?
-                  </h6>
-                  {/* <div className="row align-items-center my-5">
-                    <div className="col">
-                      <div className="col-inner">
-                        <i className="far fa-vial fs-1"></i>
-                        <h6 className="fw-bold mt-2">SELECT YOUR TEST</h6>
-                      </div>
-                    </div>
-
-                    <div className="col">
-                      <div className="col-inner">
-                        <i className="far fa-home fs-1"></i>
-                        <h6 className="fw-bold mt-2">
-                          SELECT HOME COLLECTION OPTION
-                        </h6>
-                      </div>
-                    </div>
-
-                    <div className="col">
-                      <div className="col-inner">
-                        <i className="far fa-credit-card fs-1"></i>
-                        <h6 className="fw-bold mt-2">
-                          SELECT TIME, DATE <br /> & PAY ONLINE
-                        </h6>
-                      </div>
-                    </div>
-
-                    <div className="col">
-                      <div className="col-inner">
-                        <i className="far fa-biking-mountain fs-1"></i>
-                        <h6 className="fw-bold mt-2">
-                          OUR COLLECTION <br /> AGENT VISIT YOU
-                        </h6>
-                      </div>
-                    </div>
-
-                    <div className="col">
-                      <div className="col-inner">
-                        <i className="far fa-microscope fs-1"></i>
-                        <h6 className="fw-bold mt-2">
-                          TESTING DONE <br /> AT LAB
-                        </h6>
-                      </div>
-                    </div>
-
-                    <div className="col">
-                      <div className="col-inner">
-                        <i className="far fa-ballot-check fs-1"></i>
-                        <h6 className="fw-bold mt-2">
-                          VIEW/DOWNLOAD <br /> YOUR REPORT ONLINE
-                        </h6>
-                      </div>
-                    </div>
-                  </div> */}
-                  <div className="step-img">
-                    <Image
-                      src="/assets/images/diagnostics/diag.png"
-                      height="300px"
-                      width="900px"
-                      alt="Step Image"
-                    />
-                  </div>
+          <div className="page-wrapper">
+            <div className="diag-banner">
+              <Image
+                src="/assets/images/main.jpg"
+                width="2000px"
+                height="500px"
+                alt="Main Slider"
+              />
+            </div>
+            <div
+              className="diag-ribbon"
+              style={{
+                marginTop: "-8px",
+                backgroundColor: "#427cc5",
+                paddingTop: "50px",
+                paddingBottom: "50px",
+              }}
+            >
+              <div className="container">
+                <div className="diag-ribbon-inner">
                   <div className="row align-items-center">
-                    <div className="col-2"></div>
-                    <div className="col-8">
-                      <p
-                        className="fs-6 text-dark"
-                        style={{ marginTop: "-50px" }}
-                      >
-                        Avail home collection through an easy 6-stage process.
-                        Visit our website and select the prescribed test. Choose
-                        the Home Collection option. Select the time and date,
-                        then pay online or pay after availing our service. Our
-                        collection agent will visit you and take a sample, while
-                        following all the necessary precautions. We will perform
-                        the required tests at our state-of-our-art lab. Once the
-                        results arrive, you can view or download your report
-                        online. Taking a test couldn’t be easier or safer than
-                        at Apollo Diagnostics.
+                    <div className="col-4">
+                      <div className="diag-ribbon-inner-item">
+                        <div className="row align-items-center">
+                          <div className="col-3">
+                            <div className="diag-ribbon-inner-item-icon">
+                              <i
+                                className="far fa-map-marker-alt bg-light rounded-circle"
+                                style={{
+                                  padding: "25px 30px 25px 30px",
+                                  fontSize: "30px",
+                                  color: "#427cc5",
+                                }}
+                              ></i>
+                            </div>
+                          </div>
+                          <div className="col-9">
+                            <div className="diag-ribbon-inner-item-con">
+                              <h6
+                                className="text-light"
+                                style={{
+                                  fontSize: "20px",
+                                  fontWeight: "500",
+                                }}
+                              >
+                                Address
+                              </h6>
+                              <p className="fs-6 text-light">
+                                City Center, Haldia, WB, India
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-4">
+                      <div className="diag-ribbon-inner-item">
+                        <div className="row align-items-center">
+                          <div className="col-3">
+                            <div className="diag-ribbon-inner-item-icon">
+                              <i
+                                className="far fa-mobile-android-alt bg-light rounded-circle"
+                                style={{
+                                  padding: "25px 30px 25px 30px",
+                                  fontSize: "30px",
+                                  color: "#427cc5",
+                                }}
+                              ></i>
+                            </div>
+                          </div>
+                          <div className="col-9">
+                            <div className="diag-ribbon-inner-item-con">
+                              <h6
+                                className="text-light"
+                                style={{
+                                  fontSize: "20px",
+                                  fontWeight: "500",
+                                }}
+                              >
+                                Mobile
+                              </h6>
+                              <p className="fs-6 text-light">
+                                +91 8945 6321 85
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-4">
+                      <div className="diag-ribbon-inner-item">
+                        <div className="row align-items-center">
+                          <div className="col-3">
+                            <div className="diag-ribbon-inner-item-icon">
+                              <i
+                                className="far fa-envelope bg-light rounded-circle"
+                                style={{
+                                  padding: "25px",
+                                  fontSize: "30px",
+                                  color: "#427cc5",
+                                }}
+                              ></i>
+                            </div>
+                          </div>
+                          <div className="col-9">
+                            <div className="diag-ribbon-inner-item-con">
+                              <h6
+                                className="text-light"
+                                style={{
+                                  fontSize: "20px",
+                                  fontWeight: "500",
+                                }}
+                              >
+                                Email ID
+                              </h6>
+                              <p className="fs-6 text-light">
+                                haldiadiagnostics@gmail.com
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="diag-test-card py-5">
+              <div className="container">
+                <div className="diag-test-card-title">
+                  <h6
+                    className="text-center"
+                    style={{
+                      fontSize: "30px",
+                      fontWeight: "500",
+                      fontFamily: "ubuntu",
+                    }}
+                  >
+                    Popular Test Procedures
+                  </h6>
+                  <p
+                    className="text-center mt-2"
+                    style={{
+                      fontSize: "18px",
+                      fontFamily: "poppins",
+                    }}
+                  >
+                    There live the blind texts separated they right at the coast
+                    of the Semantics.
+                  </p>
+                </div>
+                <div className="row align-items-start mt-5">
+                  <div className="col-3">
+                    <div className="card">
+                      <div className="card-body">
+                        <div className="diag-test-card-inner-item">
+                          <h6 className="fs-5" style={{ color: "#427cc5" }}>
+                            Malaria Test
+                          </h6>
+                          <h6 className="text-black pt-2">
+                            Pre Test Information
+                          </h6>
+                          <p className="text-secondary">
+                            No special prparation is required for the test.
+                          </p>
+                          <h6 className="text-black pt-2">Report Delivery</h6>
+                          <p className="text-secondary">Same Day</p>
+                          <h6
+                            className="text-black pt-2"
+                            style={{
+                              fontSize: "18px",
+                              fontFamily: "roboto",
+                              fontWeight: "600",
+                            }}
+                          >
+                            Includes:
+                          </h6>
+                          <ul className="list-unstyled">
+                            <li>
+                              <i className="far fa-check me-1 text-secondary"></i>
+                              Blood Glucose
+                            </li>
+                            <li>
+                              <i className="far fa-check me-1 text-secondary"></i>
+                              Liver Functioning
+                            </li>
+                            <li>
+                              <i className="far fa-check me-1 text-secondary"></i>
+                              Heart Health
+                            </li>
+                          </ul>
+                          <h6
+                            className="mb-5"
+                            style={{
+                              fontSize: "30px",
+                              fontWeight: "500",
+                              fontFamily: "roboto",
+                            }}
+                          >
+                            ₹300
+                          </h6>
+                          <div className="test-card-btn-grp">
+                            <div className="row align-items-center">
+                              <div className="col-6">
+                                <button
+                                  style={{
+                                    padding: "15px 8px",
+                                    border: "1px solid #000",
+                                    background: "white",
+                                    fontSize: "16px",
+                                    fontWeight: "500",
+                                  }}
+                                >
+                                  View Details
+                                </button>
+                              </div>
+                              <div className="col-6">
+                                <button
+                                  style={{
+                                    padding: "15px 8px",
+                                    border: "1px solid #000",
+                                    background: "white",
+                                    fontSize: "16px",
+                                    fontWeight: "500",
+                                  }}
+                                >
+                                  Add To Cart
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-3">
+                    <div className="card">
+                      <div className="card-body">
+                        <div className="diag-test-card-inner-item">
+                          <h6 className="fs-5" style={{ color: "#427cc5" }}>
+                            Malaria Test
+                          </h6>
+                          <h6 className="text-black pt-2">
+                            Pre Test Information
+                          </h6>
+                          <p className="text-secondary">
+                            No special prparation is required for the test.
+                          </p>
+                          <h6 className="text-black pt-2">Report Delivery</h6>
+                          <p className="text-secondary">Same Day</p>
+                          <h6
+                            className="text-black pt-2"
+                            style={{
+                              fontSize: "18px",
+                              fontFamily: "roboto",
+                              fontWeight: "600",
+                            }}
+                          >
+                            Includes:
+                          </h6>
+                          <ul className="list-unstyled">
+                            <li>
+                              <i className="far fa-check me-1 text-secondary"></i>
+                              Blood Glucose
+                            </li>
+                            <li>
+                              <i className="far fa-check me-1 text-secondary"></i>
+                              Liver Functioning
+                            </li>
+                            <li>
+                              <i className="far fa-check me-1 text-secondary"></i>
+                              Heart Health
+                            </li>
+                          </ul>
+                          <h6
+                            className="mb-5"
+                            style={{
+                              fontSize: "30px",
+                              fontWeight: "500",
+                              fontFamily: "roboto",
+                            }}
+                          >
+                            ₹300
+                          </h6>
+                          <div className="test-card-btn-grp">
+                            <div className="row align-items-center">
+                              <div className="col-6">
+                                <button
+                                  style={{
+                                    padding: "15px 8px",
+                                    border: "1px solid #000",
+                                    background: "white",
+                                    fontSize: "16px",
+                                    fontWeight: "500",
+                                  }}
+                                >
+                                  View Details
+                                </button>
+                              </div>
+                              <div className="col-6">
+                                <button
+                                  style={{
+                                    padding: "15px 8px",
+                                    border: "1px solid #000",
+                                    background: "white",
+                                    fontSize: "16px",
+                                    fontWeight: "500",
+                                  }}
+                                >
+                                  Add To Cart
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-3">
+                    <div className="card">
+                      <div className="card-body">
+                        <div className="diag-test-card-inner-item">
+                          <h6 className="fs-5" style={{ color: "#427cc5" }}>
+                            Malaria Test
+                          </h6>
+                          <h6 className="text-black pt-2">
+                            Pre Test Information
+                          </h6>
+                          <p className="text-secondary">
+                            No special prparation is required for the test.
+                          </p>
+                          <h6 className="text-black pt-2">Report Delivery</h6>
+                          <p className="text-secondary">Same Day</p>
+                          <h6
+                            className="text-black pt-2"
+                            style={{
+                              fontSize: "18px",
+                              fontFamily: "roboto",
+                              fontWeight: "600",
+                            }}
+                          >
+                            Includes:
+                          </h6>
+                          <ul className="list-unstyled">
+                            <li>
+                              <i className="far fa-check me-1 text-secondary"></i>
+                              Blood Glucose
+                            </li>
+                            <li>
+                              <i className="far fa-check me-1 text-secondary"></i>
+                              Liver Functioning
+                            </li>
+                            <li>
+                              <i className="far fa-check me-1 text-secondary"></i>
+                              Heart Health
+                            </li>
+                          </ul>
+                          <h6
+                            className="mb-5"
+                            style={{
+                              fontSize: "30px",
+                              fontWeight: "500",
+                              fontFamily: "roboto",
+                            }}
+                          >
+                            ₹300
+                          </h6>
+                          <div className="test-card-btn-grp">
+                            <div className="row align-items-center">
+                              <div className="col-6">
+                                <button
+                                  style={{
+                                    padding: "15px 8px",
+                                    border: "1px solid #000",
+                                    background: "white",
+                                    fontSize: "16px",
+                                    fontWeight: "500",
+                                  }}
+                                >
+                                  View Details
+                                </button>
+                              </div>
+                              <div className="col-6">
+                                <button
+                                  style={{
+                                    padding: "15px 8px",
+                                    border: "1px solid #000",
+                                    background: "white",
+                                    fontSize: "16px",
+                                    fontWeight: "500",
+                                  }}
+                                >
+                                  Add To Cart
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-3">
+                    <div className="card">
+                      <div className="card-body">
+                        <div className="diag-test-card-inner-item">
+                          <h6 className="fs-5" style={{ color: "#427cc5" }}>
+                            Malaria Test
+                          </h6>
+                          <h6 className="text-black pt-2">
+                            Pre Test Information
+                          </h6>
+                          <p className="text-secondary">
+                            No special prparation is required for the test.
+                          </p>
+                          <h6 className="text-black pt-2">Report Delivery</h6>
+                          <p className="text-secondary">Same Day</p>
+                          <h6
+                            className="text-black pt-2"
+                            style={{
+                              fontSize: "18px",
+                              fontFamily: "roboto",
+                              fontWeight: "600",
+                            }}
+                          >
+                            Includes:
+                          </h6>
+                          <ul className="list-unstyled">
+                            <li>
+                              <i className="far fa-check me-1 text-secondary"></i>
+                              Blood Glucose
+                            </li>
+                            <li>
+                              <i className="far fa-check me-1 text-secondary"></i>
+                              Liver Functioning
+                            </li>
+                            <li>
+                              <i className="far fa-check me-1 text-secondary"></i>
+                              Heart Health
+                            </li>
+                          </ul>
+                          <h6
+                            className="mb-5"
+                            style={{
+                              fontSize: "30px",
+                              fontWeight: "500",
+                              fontFamily: "roboto",
+                            }}
+                          >
+                            ₹300
+                          </h6>
+                          <div className="test-card-btn-grp">
+                            <div className="row align-items-center">
+                              <div className="col-6">
+                                <button
+                                  style={{
+                                    padding: "15px 8px",
+                                    border: "1px solid #000",
+                                    background: "white",
+                                    fontSize: "16px",
+                                    fontWeight: "500",
+                                  }}
+                                >
+                                  View Details
+                                </button>
+                              </div>
+                              <div className="col-6">
+                                <button
+                                  style={{
+                                    padding: "15px 8px",
+                                    border: "1px solid #000",
+                                    background: "white",
+                                    fontSize: "16px",
+                                    fontWeight: "500",
+                                  }}
+                                >
+                                  Add To Cart
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="section-diag-btn text-center">
+                  <button className="btn btn-primary">View All Tests</button>
+                </div>
+              </div>
+            </div>
+            <div className="diag-middle-banner">
+              <Image
+                src="/assets/images/diagnostics/diag-banner.jpg"
+                width="2000px"
+                height="400px"
+                alt="Main Slider"
+              />
+            </div>
+            <div className="diag-common-test my-5">
+              <div className="container">
+                <div className="diag-test-card-title">
+                  <h6
+                    className="text-center"
+                    style={{
+                      fontSize: "30px",
+                      fontWeight: "500",
+                      fontFamily: "ubuntu",
+                    }}
+                  >
+                    Most Common Tests
+                  </h6>
+                  <p
+                    className="text-center mt-2"
+                    style={{
+                      fontSize: "18px",
+                      fontFamily: "poppins",
+                    }}
+                  >
+                    There live the blind texts separated they right at the coast
+                    of the Semantics.
+                  </p>
+                </div>
+                <div className="row align-items-center mt-5">
+                  <div className="col-2">
+                    <div className="speicality-item text-center">
+                      <div className="speicality-img">
+                        <img
+                          src="/assets/images/diagnostics/heart.png"
+                          className="img-fluid"
+                          height="80px"
+                          width="80px"
+                          alt="Speciality"
+                        />
+                        <span>
+                          <i className="fa fa-circle" aria-hidden="true"></i>
+                        </span>
+                      </div>
+                      <p className="fs-5" style={{ marginLeft: "-40px" }}>
+                        Heart
                       </p>
                     </div>
-                    <div className="col-2"></div>
                   </div>
-                </div>
-              </div>
-              <div className="book-home-sample">
-                <div className="row align-items-center">
-                  <div className="col-4"></div>
-                  <div className="col-4">
-                    <div className="d-grid gap-2">
-                      <button
-                        style={{
-                          background: "#15558d",
-                          color: "white",
-                          padding: "15px 20px 15px 20px",
-                          border: "none",
-                          borderRadius: "0 0 6px 6px",
-                        }}
-                      >
-                        BOOK YOUR HOME SAMPLE COLLECTION NOW
-                      </button>
+                  <div className="col-2">
+                    <div className="speicality-item text-center">
+                      <div className="speicality-img">
+                        <img
+                          src="/assets/images/diagnostics/endocrine.png"
+                          className="img-fluid"
+                          height="80px"
+                          width="80px"
+                          alt="Speciality"
+                        />
+                        <span>
+                          <i className="fa fa-circle" aria-hidden="true"></i>
+                        </span>
+                      </div>
+                      <p className="fs-5" style={{ marginLeft: "-40px" }}>
+                        Thyroid
+                      </p>
                     </div>
                   </div>
-                  <div className="col-4"></div>
+                  <div className="col-2">
+                    <div className="speicality-item text-center">
+                      <div className="speicality-img">
+                        <img
+                          src="/assets/images/diagnostics/liver.png"
+                          className="img-fluid"
+                          height="80px"
+                          width="80px"
+                          alt="Speciality"
+                        />
+                        <span>
+                          <i className="fa fa-circle" aria-hidden="true"></i>
+                        </span>
+                      </div>
+                      <p className="fs-5" style={{ marginLeft: "-40px" }}>
+                        Liver
+                      </p>
+                    </div>
+                  </div>
+                  <div className="col-2">
+                    <div className="speicality-item text-center">
+                      <div className="speicality-img">
+                        <img
+                          src="/assets/images/diagnostics/lungs.png"
+                          className="img-fluid"
+                          height="80px"
+                          width="80px"
+                          alt="Speciality"
+                        />
+                        <span>
+                          <i className="fa fa-circle" aria-hidden="true"></i>
+                        </span>
+                      </div>
+                      <p className="fs-5" style={{ marginLeft: "-40px" }}>
+                        Lungs
+                      </p>
+                    </div>
+                  </div>
+                  <div className="col-2">
+                    <div className="speicality-item text-center">
+                      <div className="speicality-img">
+                        <img
+                          src="/assets/images/diagnostics/heart.png"
+                          className="img-fluid"
+                          height="80px"
+                          width="80px"
+                          alt="Speciality"
+                        />
+                        <span>
+                          <i className="fa fa-circle" aria-hidden="true"></i>
+                        </span>
+                      </div>
+                      <p className="fs-5" style={{ marginLeft: "-40px" }}>
+                        Infertility
+                      </p>
+                    </div>
+                  </div>
+                  <div className="col-2">
+                    <div className="speicality-item text-center">
+                      <div className="speicality-img">
+                        <img
+                          src="/assets/images/diagnostics/heart.png"
+                          className="img-fluid"
+                          height="80px"
+                          width="80px"
+                          alt="Speciality"
+                        />
+                        <span>
+                          <i className="fa fa-circle" aria-hidden="true"></i>
+                        </span>
+                      </div>
+                      <p className="fs-5" style={{ marginLeft: "-40px" }}>
+                        Kidney
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="diag-common-test mt-5">
-                <div className="diag-test-title">
+            </div>
+            <div
+              className="diag-test-card py-5"
+              style={{
+                background:
+                  "url(/assets/images/diagnostics/card-banner-diag.jpg)",
+              }}
+            >
+              <div className="container">
+                <div className="diag-test-card-title">
                   <h6
-                    className="text-center mb-4"
-                    style={{ fontSize: "25px", fontWeight: "500" }}
-                  >
-                    Top Common Test
-                  </h6>
-                </div>
-                <div className="row align-items-center">
-                  <div className="col-3">
-                    <div className="card">
-                      <div className="card-body">
-                        <div className="test-card">
-                          <div className="test-card-inner">
-                            <h6
-                              className="text-info"
-                              style={{ fontSize: "17px" }}
-                            >
-                              LIPID PROFILE
-                            </h6>
-                            <h6 className="fw-bold">Pre Test Information</h6>
-                            <p>
-                              No special preparation is required for the test.
-                            </p>
-                            <h6 className="fw-bold">Report Delivary</h6>
-                            <p>Same Day</p>
-                            <h6
-                              className="fs-4"
-                              style={{ fontFamily: "ubuntu" }}
-                            >
-                              ₹300
-                            </h6>
-                          </div>
-                        </div>
-                        <div className="test-card-button mt-5">
-                          <div className="row align-items-center">
-                            <div className="col-6">
-                              <div className="test-card-btn">
-                                <button>View Details</button>
-                              </div>
-                            </div>
-                            <div className="col-6">
-                              <div className="test-card-btn">
-                                <button>Add to Cart</button>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="test-card-msg text-center mt-2">
-                            <h6>
-                              <span className="text-danger">
-                                <i className="far fa-home"></i>
-                              </span>
-                              <span className="ms-1">
-                                Home Collection Available
-                              </span>
-                            </h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-3">
-                    <div className="card">
-                      <div className="card-body">
-                        <div className="test-card">
-                          <div className="test-card-inner">
-                            <h6
-                              className="text-info"
-                              style={{ fontSize: "17px" }}
-                            >
-                              LIPID PROFILE
-                            </h6>
-                            <h6 className="fw-bold">Pre Test Information</h6>
-                            <p>
-                              No special preparation is required for the test.
-                            </p>
-                            <h6 className="fw-bold">Report Delivary</h6>
-                            <p>Same Day</p>
-                            <h6
-                              className="fs-4"
-                              style={{ fontFamily: "ubuntu" }}
-                            >
-                              ₹300
-                            </h6>
-                          </div>
-                        </div>
-                        <div className="test-card-button mt-5">
-                          <div className="row align-items-center">
-                            <div className="col-6">
-                              <div className="test-card-btn">
-                                <button>View Details</button>
-                              </div>
-                            </div>
-                            <div className="col-6">
-                              <div className="test-card-btn">
-                                <button>Add to Cart</button>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="test-card-msg text-center mt-2">
-                            <h6>
-                              <span className="text-danger">
-                                <i className="far fa-home"></i>
-                              </span>
-                              <span className="ms-1">
-                                Home Collection Available
-                              </span>
-                            </h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-3">
-                    <div className="card">
-                      <div className="card-body">
-                        <div className="test-card">
-                          <div className="test-card-inner">
-                            <h6
-                              className="text-info"
-                              style={{ fontSize: "17px" }}
-                            >
-                              LIPID PROFILE
-                            </h6>
-                            <h6 className="fw-bold">Pre Test Information</h6>
-                            <p>
-                              No special preparation is required for the test.
-                            </p>
-                            <h6 className="fw-bold">Report Delivary</h6>
-                            <p>Same Day</p>
-                            <h6
-                              className="fs-4"
-                              style={{ fontFamily: "ubuntu" }}
-                            >
-                              ₹300
-                            </h6>
-                          </div>
-                        </div>
-                        <div className="test-card-button mt-5">
-                          <div className="row align-items-center">
-                            <div className="col-6">
-                              <div className="test-card-btn">
-                                <button>View Details</button>
-                              </div>
-                            </div>
-                            <div className="col-6">
-                              <div className="test-card-btn">
-                                <button>Add to Cart</button>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="test-card-msg text-center mt-2">
-                            <h6>
-                              <span className="text-danger">
-                                <i className="far fa-home"></i>
-                              </span>
-                              <span className="ms-1">
-                                Home Collection Available
-                              </span>
-                            </h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-3">
-                    <div className="card">
-                      <div className="card-body">
-                        <div className="test-card">
-                          <div className="test-card-inner">
-                            <h6
-                              className="text-info"
-                              style={{ fontSize: "17px" }}
-                            >
-                              LIPID PROFILE
-                            </h6>
-                            <h6 className="fw-bold">Pre Test Information</h6>
-                            <p>
-                              No special preparation is required for the test.
-                            </p>
-                            <h6 className="fw-bold">Report Delivary</h6>
-                            <p>Same Day</p>
-                            <h6
-                              className="fs-4"
-                              style={{ fontFamily: "ubuntu" }}
-                            >
-                              ₹300
-                            </h6>
-                          </div>
-                        </div>
-                        <div className="test-card-button mt-5">
-                          <div className="row align-items-center">
-                            <div className="col-6">
-                              <div className="test-card-btn">
-                                <button>View Details</button>
-                              </div>
-                            </div>
-                            <div className="col-6">
-                              <div className="test-card-btn">
-                                <button>Add to Cart</button>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="test-card-msg text-center mt-2">
-                            <h6>
-                              <span className="text-danger">
-                                <i className="far fa-home"></i>
-                              </span>
-                              <span className="ms-1">
-                                Home Collection Available
-                              </span>
-                            </h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="diag-test-card-all-test-btn text-center mb-5">
-                  <button
-                    className="btn"
+                    className="text-center"
                     style={{
-                      padding: "15px 30px",
-                      background: "#15558d",
-                      color: "white",
+                      fontSize: "30px",
+                      fontWeight: "500",
+                      fontFamily: "ubuntu",
                     }}
-                  >
-                    View All Tests
-                  </button>
-                </div>
-              </div>
-              <div className="diag-common-test mt-5">
-                <div className="diag-test-title">
-                  <h6
-                    className="text-center mb-4"
-                    style={{ fontSize: "25px", fontWeight: "500" }}
                   >
                     Top Health Checkup Packages
                   </h6>
-                </div>
-                <div className="row align-items-center">
-                  <div className="col-3">
-                    <div className="card">
-                      <div className="card-body">
-                        <div className="test-card">
-                          <div className="test-card-inner">
-                            <h6
-                              className="text-info"
-                              style={{ fontSize: "17px" }}
-                            >
-                              LIPID PROFILE
-                            </h6>
-                            <h6 className="fw-bold">Pre Test Information</h6>
-                            <p>
-                              No special preparation is required for the test.
-                            </p>
-                            <h6 className="fw-bold">Report Delivary</h6>
-                            <p>Same Day</p>
-                            <h6
-                              className="fs-4"
-                              style={{ fontFamily: "ubuntu" }}
-                            >
-                              ₹300
-                            </h6>
-                          </div>
-                        </div>
-                        <div className="test-card-button mt-5">
-                          <div className="row align-items-center">
-                            <div className="col-6">
-                              <div className="test-card-btn">
-                                <button>View Details</button>
-                              </div>
-                            </div>
-                            <div className="col-6">
-                              <div className="test-card-btn">
-                                <button>Add to Cart</button>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="test-card-msg text-center mt-2">
-                            <h6>
-                              <span className="text-danger">
-                                <i className="far fa-home"></i>
-                              </span>
-                              <span className="ms-1">
-                                Home Collection Available
-                              </span>
-                            </h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-3">
-                    <div className="card">
-                      <div className="card-body">
-                        <div className="test-card">
-                          <div className="test-card-inner">
-                            <h6
-                              className="text-info"
-                              style={{ fontSize: "17px" }}
-                            >
-                              LIPID PROFILE
-                            </h6>
-                            <h6 className="fw-bold">Pre Test Information</h6>
-                            <p>
-                              No special preparation is required for the test.
-                            </p>
-                            <h6 className="fw-bold">Report Delivary</h6>
-                            <p>Same Day</p>
-                            <h6
-                              className="fs-4"
-                              style={{ fontFamily: "ubuntu" }}
-                            >
-                              ₹300
-                            </h6>
-                          </div>
-                        </div>
-                        <div className="test-card-button mt-5">
-                          <div className="row align-items-center">
-                            <div className="col-6">
-                              <div className="test-card-btn">
-                                <button>View Details</button>
-                              </div>
-                            </div>
-                            <div className="col-6">
-                              <div className="test-card-btn">
-                                <button>Add to Cart</button>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="test-card-msg text-center mt-2">
-                            <h6>
-                              <span className="text-danger">
-                                <i className="far fa-home"></i>
-                              </span>
-                              <span className="ms-1">
-                                Home Collection Available
-                              </span>
-                            </h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-3">
-                    <div className="card">
-                      <div className="card-body">
-                        <div className="test-card">
-                          <div className="test-card-inner">
-                            <h6
-                              className="text-info"
-                              style={{ fontSize: "17px" }}
-                            >
-                              LIPID PROFILE
-                            </h6>
-                            <h6 className="fw-bold">Pre Test Information</h6>
-                            <p>
-                              No special preparation is required for the test.
-                            </p>
-                            <h6 className="fw-bold">Report Delivary</h6>
-                            <p>Same Day</p>
-                            <h6
-                              className="fs-4"
-                              style={{ fontFamily: "ubuntu" }}
-                            >
-                              ₹300
-                            </h6>
-                          </div>
-                        </div>
-                        <div className="test-card-button mt-5">
-                          <div className="row align-items-center">
-                            <div className="col-6">
-                              <div className="test-card-btn">
-                                <button>View Details</button>
-                              </div>
-                            </div>
-                            <div className="col-6">
-                              <div className="test-card-btn">
-                                <button>Add to Cart</button>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="test-card-msg text-center mt-2">
-                            <h6>
-                              <span className="text-danger">
-                                <i className="far fa-home"></i>
-                              </span>
-                              <span className="ms-1">
-                                Home Collection Available
-                              </span>
-                            </h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-3">
-                    <div className="card">
-                      <div className="card-body">
-                        <div className="test-card">
-                          <div className="test-card-inner">
-                            <h6
-                              className="text-info"
-                              style={{ fontSize: "17px" }}
-                            >
-                              LIPID PROFILE
-                            </h6>
-                            <h6 className="fw-bold">Pre Test Information</h6>
-                            <p>
-                              No special preparation is required for the test.
-                            </p>
-                            <h6 className="fw-bold">Report Delivary</h6>
-                            <p>Same Day</p>
-                            <h6
-                              className="fs-4"
-                              style={{ fontFamily: "ubuntu" }}
-                            >
-                              ₹300
-                            </h6>
-                          </div>
-                        </div>
-                        <div className="test-card-button mt-5">
-                          <div className="row align-items-center">
-                            <div className="col-6">
-                              <div className="test-card-btn">
-                                <button>View Details</button>
-                              </div>
-                            </div>
-                            <div className="col-6">
-                              <div className="test-card-btn">
-                                <button>Add to Cart</button>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="test-card-msg text-center mt-2">
-                            <h6>
-                              <span className="text-danger">
-                                <i className="far fa-home"></i>
-                              </span>
-                              <span className="ms-1">
-                                Home Collection Available
-                              </span>
-                            </h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="diag-test-card-all-test-btn text-center mb-5">
-                  <button
-                    className="btn"
+                  <p
+                    className="text-center mt-2"
                     style={{
-                      padding: "15px 30px",
-                      background: "#15558d",
-                      color: "white",
+                      fontSize: "18px",
+                      fontFamily: "poppins",
                     }}
                   >
-                    View All Health Checkup Packages
-                  </button>
+                    There live the blind texts separated they right at the coast
+                    of the Semantics.
+                  </p>
+                </div>
+                <div className="row align-items-start mt-5">
+                  <div className="col-3">
+                    <div className="card">
+                      <div className="card-body">
+                        <div className="diag-test-card-inner-item">
+                          <h6 className="fs-5" style={{ color: "#427cc5" }}>
+                            Malaria Test
+                          </h6>
+                          <h6 className="text-black pt-2">
+                            Pre Test Information
+                          </h6>
+                          <p className="text-secondary">
+                            No special prparation is required for the test.
+                          </p>
+                          <h6 className="text-black pt-2">Report Delivery</h6>
+                          <p className="text-secondary">Same Day</p>
+                          <h6
+                            className="text-black pt-2"
+                            style={{
+                              fontSize: "18px",
+                              fontFamily: "roboto",
+                              fontWeight: "600",
+                            }}
+                          >
+                            Includes:
+                          </h6>
+                          <ul className="list-unstyled">
+                            <li>
+                              <i className="far fa-check me-1 text-secondary"></i>
+                              Blood Glucose
+                            </li>
+                            <li>
+                              <i className="far fa-check me-1 text-secondary"></i>
+                              Liver Functioning
+                            </li>
+                            <li>
+                              <i className="far fa-check me-1 text-secondary"></i>
+                              Heart Health
+                            </li>
+                          </ul>
+                          <h6
+                            className="mb-5"
+                            style={{
+                              fontSize: "30px",
+                              fontWeight: "500",
+                              fontFamily: "roboto",
+                            }}
+                          >
+                            ₹300
+                          </h6>
+                          <div className="test-card-btn-grp">
+                            <div className="row align-items-center">
+                              <div className="col-6">
+                                <button
+                                  style={{
+                                    padding: "15px 8px",
+                                    border: "1px solid #000",
+                                    background: "white",
+                                    fontSize: "16px",
+                                    fontWeight: "500",
+                                  }}
+                                >
+                                  View Details
+                                </button>
+                              </div>
+                              <div className="col-6">
+                                <button
+                                  style={{
+                                    padding: "15px 8px",
+                                    border: "1px solid #000",
+                                    background: "white",
+                                    fontSize: "16px",
+                                    fontWeight: "500",
+                                  }}
+                                >
+                                  Add To Cart
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-3">
+                    <div className="card">
+                      <div className="card-body">
+                        <div className="diag-test-card-inner-item">
+                          <h6 className="fs-5" style={{ color: "#427cc5" }}>
+                            Malaria Test
+                          </h6>
+                          <h6 className="text-black pt-2">
+                            Pre Test Information
+                          </h6>
+                          <p className="text-secondary">
+                            No special prparation is required for the test.
+                          </p>
+                          <h6 className="text-black pt-2">Report Delivery</h6>
+                          <p className="text-secondary">Same Day</p>
+                          <h6
+                            className="text-black pt-2"
+                            style={{
+                              fontSize: "18px",
+                              fontFamily: "roboto",
+                              fontWeight: "600",
+                            }}
+                          >
+                            Includes:
+                          </h6>
+                          <ul className="list-unstyled">
+                            <li>
+                              <i className="far fa-check me-1 text-secondary"></i>
+                              Blood Glucose
+                            </li>
+                            <li>
+                              <i className="far fa-check me-1 text-secondary"></i>
+                              Liver Functioning
+                            </li>
+                            <li>
+                              <i className="far fa-check me-1 text-secondary"></i>
+                              Heart Health
+                            </li>
+                          </ul>
+                          <h6
+                            className="mb-5"
+                            style={{
+                              fontSize: "30px",
+                              fontWeight: "500",
+                              fontFamily: "roboto",
+                            }}
+                          >
+                            ₹300
+                          </h6>
+                          <div className="test-card-btn-grp">
+                            <div className="row align-items-center">
+                              <div className="col-6">
+                                <button
+                                  style={{
+                                    padding: "15px 8px",
+                                    border: "1px solid #000",
+                                    background: "white",
+                                    fontSize: "16px",
+                                    fontWeight: "500",
+                                  }}
+                                >
+                                  View Details
+                                </button>
+                              </div>
+                              <div className="col-6">
+                                <button
+                                  style={{
+                                    padding: "15px 8px",
+                                    border: "1px solid #000",
+                                    background: "white",
+                                    fontSize: "16px",
+                                    fontWeight: "500",
+                                  }}
+                                >
+                                  Add To Cart
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-3">
+                    <div className="card">
+                      <div className="card-body">
+                        <div className="diag-test-card-inner-item">
+                          <h6 className="fs-5" style={{ color: "#427cc5" }}>
+                            Malaria Test
+                          </h6>
+                          <h6 className="text-black pt-2">
+                            Pre Test Information
+                          </h6>
+                          <p className="text-secondary">
+                            No special prparation is required for the test.
+                          </p>
+                          <h6 className="text-black pt-2">Report Delivery</h6>
+                          <p className="text-secondary">Same Day</p>
+                          <h6
+                            className="text-black pt-2"
+                            style={{
+                              fontSize: "18px",
+                              fontFamily: "roboto",
+                              fontWeight: "600",
+                            }}
+                          >
+                            Includes:
+                          </h6>
+                          <ul className="list-unstyled">
+                            <li>
+                              <i className="far fa-check me-1 text-secondary"></i>
+                              Blood Glucose
+                            </li>
+                            <li>
+                              <i className="far fa-check me-1 text-secondary"></i>
+                              Liver Functioning
+                            </li>
+                            <li>
+                              <i className="far fa-check me-1 text-secondary"></i>
+                              Heart Health
+                            </li>
+                          </ul>
+                          <h6
+                            className="mb-5"
+                            style={{
+                              fontSize: "30px",
+                              fontWeight: "500",
+                              fontFamily: "roboto",
+                            }}
+                          >
+                            ₹300
+                          </h6>
+                          <div className="test-card-btn-grp">
+                            <div className="row align-items-center">
+                              <div className="col-6">
+                                <button
+                                  style={{
+                                    padding: "15px 8px",
+                                    border: "1px solid #000",
+                                    background: "white",
+                                    fontSize: "16px",
+                                    fontWeight: "500",
+                                  }}
+                                >
+                                  View Details
+                                </button>
+                              </div>
+                              <div className="col-6">
+                                <button
+                                  style={{
+                                    padding: "15px 8px",
+                                    border: "1px solid #000",
+                                    background: "white",
+                                    fontSize: "16px",
+                                    fontWeight: "500",
+                                  }}
+                                >
+                                  Add To Cart
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-3">
+                    <div className="card">
+                      <div className="card-body">
+                        <div className="diag-test-card-inner-item">
+                          <h6 className="fs-5" style={{ color: "#427cc5" }}>
+                            Malaria Test
+                          </h6>
+                          <h6 className="text-black pt-2">
+                            Pre Test Information
+                          </h6>
+                          <p className="text-secondary">
+                            No special prparation is required for the test.
+                          </p>
+                          <h6 className="text-black pt-2">Report Delivery</h6>
+                          <p className="text-secondary">Same Day</p>
+                          <h6
+                            className="text-black pt-2"
+                            style={{
+                              fontSize: "18px",
+                              fontFamily: "roboto",
+                              fontWeight: "600",
+                            }}
+                          >
+                            Includes:
+                          </h6>
+                          <ul className="list-unstyled">
+                            <li>
+                              <i className="far fa-check me-1 text-secondary"></i>
+                              Blood Glucose
+                            </li>
+                            <li>
+                              <i className="far fa-check me-1 text-secondary"></i>
+                              Liver Functioning
+                            </li>
+                            <li>
+                              <i className="far fa-check me-1 text-secondary"></i>
+                              Heart Health
+                            </li>
+                          </ul>
+                          <h6
+                            className="mb-5"
+                            style={{
+                              fontSize: "30px",
+                              fontWeight: "500",
+                              fontFamily: "roboto",
+                            }}
+                          >
+                            ₹300
+                          </h6>
+                          <div className="test-card-btn-grp">
+                            <div className="row align-items-center">
+                              <div className="col-6">
+                                <button
+                                  style={{
+                                    padding: "15px 8px",
+                                    border: "1px solid #000",
+                                    background: "white",
+                                    fontSize: "16px",
+                                    fontWeight: "500",
+                                  }}
+                                >
+                                  View Details
+                                </button>
+                              </div>
+                              <div className="col-6">
+                                <button
+                                  style={{
+                                    padding: "15px 8px",
+                                    border: "1px solid #000",
+                                    background: "white",
+                                    fontSize: "16px",
+                                    fontWeight: "500",
+                                  }}
+                                >
+                                  Add To Cart
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="section-diag-btn text-center">
+                  <button className="btn btn-primary">View All Tests</button>
+                </div>
+              </div>
+            </div>
+            <div className="diag-common-test my-5">
+              <div className="container">
+                <div className="diag-test-card-title">
+                  <h6
+                    className="text-center"
+                    style={{
+                      fontSize: "30px",
+                      fontWeight: "500",
+                      fontFamily: "ubuntu",
+                    }}
+                  >
+                    Simple & Quick Process
+                  </h6>
+                  <p
+                    className="text-center mt-2"
+                    style={{
+                      fontSize: "18px",
+                      fontFamily: "poppins",
+                    }}
+                  >
+                    There live the blind texts separated they right at the coast
+                    of the Semantics.
+                  </p>
+                </div>
+                <div className="row g-0 mt-5">
+                  <div className="col-2">
+                    <div className="process-box-1 first">
+                      <div className="process-box-header">
+                        <i className="fas fa-vial icon"></i>
+                      </div>
+                      <div className="process-box-body">
+                        <h5 className="heading-font-bold">Select Your Test</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-2">
+                    <div className="process-box-1">
+                      <div className="process-box-header">
+                        <i className="fas fa-home icon"></i>
+                      </div>
+                      <div className="process-box-body">
+                        <h5 className="heading-font-bold">
+                          Select Home Collection Option
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-2">
+                    <div className="process-box-1">
+                      <div className="process-box-header">
+                        <i className="fas fa-credit-card icon"></i>
+                      </div>
+                      <div className="process-box-body">
+                        <h5 className="heading-font-bold">
+                          Select Time, Date & Pay Online
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-2">
+                    <div className="process-box-1">
+                      <div className="process-box-header">
+                        <i className="fas fa-biking-mountain icon"></i>
+                      </div>
+                      <div className="process-box-body">
+                        <h5 className="heading-font-bold">
+                          Our Collection Agent Visit You
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-2">
+                    <div className="process-box-1">
+                      <div className="process-box-header">
+                        <i className="fas fa-microscope icon"></i>
+                      </div>
+                      <div className="process-box-body">
+                        <h5 className="heading-font-bold">
+                          Testing Done At Lab
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-2">
+                    <div className="process-box-1 last">
+                      <div className="process-box-header">
+                        <i className="fas fa-ballot icon"></i>
+                      </div>
+                      <div className="process-box-body">
+                        <h5 className="heading-font-bold">
+                          View/Download Your Report Online
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="diag-contact-banner pt-5"
+              style={{
+                background:
+                  "url(/assets/images/diagnostics/contact-diag-banner.jpg)",
+                backgroundSize: "cover",
+                backgroundPosition: "center center",
+              }}
+            >
+              <div className="container">
+                <div className="row align-items-center">
+                  <div className="col-7">
+                    <img
+                      src="/assets/images/diagnostics/contact-item-img.png"
+                      className="img-fluid"
+                      alt=""
+                    />
+                  </div>
+                  <div className="col-5">
+                    <h4
+                      className="text-light mb-2"
+                      style={{ fontSize: "20px" }}
+                    >
+                      For All Your Diagnostic Needs
+                    </h4>
+                    <h3
+                      className="text-light mt-3 mb-5"
+                      style={{ fontSize: "30px" }}
+                    >
+                      Trust the leaders in diagnostic since 1990
+                    </h3>
+                    <button className="btn btn-light text-dark fs-6">
+                      +91 8945 6325 23
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
