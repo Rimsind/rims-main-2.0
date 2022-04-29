@@ -47,6 +47,7 @@ const Index = () => {
     autoplaySpeed: 3500,
     pauseOnHover: true,
   };
+  //
 
   return (
     <>
