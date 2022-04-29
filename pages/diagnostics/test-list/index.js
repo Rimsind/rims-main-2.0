@@ -17,7 +17,10 @@ const Index = () => {
                           value=""
                           id="defaultCheck1"
                         />
-                        <label className="form-check-label" for="defaultCheck1">
+                        <label
+                          className="form-check-label"
+                          htmlFor="defaultCheck1"
+                        >
                           Heart
                         </label>
                       </div>
@@ -30,7 +33,10 @@ const Index = () => {
                           value=""
                           id="defaultCheck1"
                         />
-                        <label className="form-check-label" for="defaultCheck1">
+                        <label
+                          className="form-check-label"
+                          htmlFor="defaultCheck1"
+                        >
                           Infertility
                         </label>
                       </div>
@@ -43,7 +49,10 @@ const Index = () => {
                           value=""
                           id="defaultCheck1"
                         />
-                        <label className="form-check-label" for="defaultCheck1">
+                        <label
+                          className="form-check-label"
+                          htmlFor="defaultCheck1"
+                        >
                           Kidney
                         </label>
                       </div>
@@ -56,7 +65,10 @@ const Index = () => {
                           value=""
                           id="defaultCheck1"
                         />
-                        <label className="form-check-label" for="defaultCheck1">
+                        <label
+                          className="form-check-label"
+                          htmlFor="defaultCheck1"
+                        >
                           Liver
                         </label>
                       </div>
@@ -69,7 +81,10 @@ const Index = () => {
                           value=""
                           id="defaultCheck1"
                         />
-                        <label className="form-check-label" for="defaultCheck1">
+                        <label
+                          className="form-check-label"
+                          htmlFor="defaultCheck1"
+                        >
                           Lungs
                         </label>
                       </div>
@@ -82,7 +97,10 @@ const Index = () => {
                           value=""
                           id="defaultCheck1"
                         />
-                        <label className="form-check-label" for="defaultCheck1">
+                        <label
+                          className="form-check-label"
+                          htmlFor="defaultCheck1"
+                        >
                           Thyroid
                         </label>
                       </div>
