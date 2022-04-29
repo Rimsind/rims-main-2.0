@@ -6,16 +6,12 @@ const Details = () => {
     <>
       <section className="section-patho-details">
         <main className="main">
-          <BreadCrums
-            title="Home / Diagnostics Details"
-            title1="Diagnostics Details"
-          />
           <div className="page-wrapper">
             <div className="diag-banner">
               <Image
                 src="/assets/images/main.jpg"
                 width="2000px"
-                height="500px"
+                height="600px"
                 alt="Main Slider"
               />
             </div>
@@ -613,7 +609,7 @@ const Details = () => {
                     <div className="speicality-item text-center">
                       <div className="speicality-img">
                         <img
-                          src="/assets/images/diagnostics/heart.png"
+                          src="/assets/images/diagnostics/infertility.png"
                           className="img-fluid"
                           height="80px"
                           width="80px"
@@ -631,12 +627,13 @@ const Details = () => {
                   <div className="col-2">
                     <div className="speicality-item text-center">
                       <div className="speicality-img">
-                        <img
-                          src="/assets/images/diagnostics/heart.png"
+                        <Image
+                          src="/assets/images/diagnostics/kidney.png"
                           className="img-fluid"
                           height="80px"
                           width="80px"
                           alt="Speciality"
+                          style={{ zIndex: "9999" }}
                         />
                         <span>
                           <i className="fa fa-circle" aria-hidden="true"></i>
