@@ -6,18 +6,50 @@ const Details = () => {
     <>
       <section className="section-patho-details">
         <main className="main">
-          <BreadCrums
-            title="Home / Diagnostics Details"
-            title1="Diagnostics Details"
-          />
           <div className="page-wrapper">
-            <div className="diag-banner">
-              <Image
-                src="/assets/images/main.jpg"
-                width="2000px"
-                height="500px"
-                alt="Main Slider"
-              />
+            <div
+              className="diag-slider"
+              style={{
+                background:
+                  "linear-gradient(45deg, black, transparent), url(/assets/images/diagnostics/diag-banner-img.jpg)",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                height: "600px",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <div className="container">
+                <div className="diag-slider-inner">
+                  <div className="row g-2 align-items-start">
+                    <div className="col-2">
+                      <Image
+                        src="/assets/images/polyclinic.jpg"
+                        height="150px"
+                        width="150px"
+                        alt="Hello"
+                        className="rounded-circle"
+                      />
+                    </div>
+                    <div className="col-10">
+                      <h6 className="text-light" style={{ fontSize: "45px" }}>
+                        Apollo Diagnostics Center
+                      </h6>
+                      <h6 className="text-light" style={{ fontSize: "25px" }}>
+                        City Center, Haldia
+                      </h6>
+                      <h6 className="mt-4">
+                        <span
+                          className="text-light ms-1"
+                          style={{ fontSize: "19px" }}
+                        >
+                          +91 8945 6321 85
+                        </span>
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div
               className="diag-ribbon"
