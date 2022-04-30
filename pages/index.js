@@ -162,7 +162,11 @@ const Index = () => {
                 <div className="specialities-slider slider">
                   <div className="row carousel-styling">
                     {specialties ? (
-                      <Carousel breakPoints={breakPoints}>
+                      <Carousel
+                        breakPoints={breakPoints}
+                        enableAutoPlay
+                        autoPlaySpeed={1500}
+                      >
                         {specialties?.map((items, index) => (
                           <div className="col-md" key={index}>
                             <div className="speicality-item text-center">
@@ -238,7 +242,11 @@ const Index = () => {
                 <div className="doctor-slider slider">
                   <div className="row carousel-styling">
                     {doctors ? (
-                      <Carousel breakPoints={breakPoints}>
+                      <Carousel
+                        breakPoints={breakPoints}
+                        enableAutoPlay
+                        autoPlaySpeed={1500}
+                      >
                         {doctors?.map((items, index) => (
                           <VerticalDoctorCard data={items} key={index} />
                         ))}
@@ -283,7 +291,11 @@ const Index = () => {
             <div className="our-doctors">
               <div className="d-flex carousel-styling">
                 {polyclinics ? (
-                  <Carousel breakPoints={breakPoints}>
+                  <Carousel
+                    breakPoints={breakPoints}
+                    enableAutoPlay
+                    autoPlaySpeed={1500}
+                  >
                     {polyclinics?.map((items, index) => (
                       <VerticalPolyclinicCard
                         data={items}
@@ -363,7 +375,11 @@ const Index = () => {
             <div className="our-doctors">
               <div className="d-flex carousel-styling">
                 {hospitals ? (
-                  <Carousel breakPoints={breakPoints}>
+                  <Carousel
+                    breakPoints={breakPoints}
+                    enableAutoPlay
+                    autoPlaySpeed={1500}
+                  >
                     {hospitals?.map((items, index) => (
                       <VerticalPolyclinicCard
                         data={items}
@@ -417,7 +433,11 @@ const Index = () => {
             <div className="our-doctors">
               <div className="d-flex carousel-styling">
                 {nursingHomes ? (
-                  <Carousel breakPoints={breakPoints}>
+                  <Carousel
+                    breakPoints={breakPoints}
+                    enableAutoPlay
+                    autoPlaySpeed={1500}
+                  >
                     {nursingHomes?.map((items, index) => (
                       <VerticalPolyclinicCard
                         data={items}

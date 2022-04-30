@@ -11,6 +11,7 @@ import MainHeader from "./MainHeader";
 import PolyclinicSideBar from "./PolyclinicSideBar";
 import NursingSideBar from "./NursingSideBar";
 import AuthNav from "./AuthNav";
+import TestCard from "./TestCard";
 
 export {
   BreadCrums,
@@ -26,4 +27,5 @@ export {
   PolyclinicSideBar,
   NursingSideBar,
   AuthNav,
+  TestCard,
 };

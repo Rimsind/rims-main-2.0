@@ -1,7 +1,19 @@
-import { BreadCrums } from "components/common/index";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import useSWR from "swr";
+import { apiUrl, fetcher } from "config/api";
+import Carousel from "react-elastic-carousel";
+import { TestCard } from "components/common";
 
 const Details = () => {
+  const { id } = useRouter().query;
+  const { data } = useSWR(`${apiUrl}/diagnostic-centers/${id}`, fetcher);
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 550, itemsToShow: 3, itemsToScroll: 1 },
+    { width: 768, itemsToShow: 4, itemsToScroll: 1 },
+    { width: 1200, itemsToShow: 4 },
+  ];
   return (
     <>
       <section className="section-patho-details">
@@ -24,7 +36,9 @@ const Details = () => {
                   <div className="row g-2 align-items-start">
                     <div className="col-2">
                       <Image
-                        src="/assets/images/polyclinic.jpg"
+                        src={
+                          data?.image?.url || "/assets/images/polyclinic.jpg"
+                        }
                         height="150px"
                         width="150px"
                         alt="Hello"
@@ -33,17 +47,17 @@ const Details = () => {
                     </div>
                     <div className="col-10">
                       <h6 className="text-light" style={{ fontSize: "45px" }}>
-                        Apollo Diagnostics Center
+                        {data?.name}
                       </h6>
                       <h6 className="text-light" style={{ fontSize: "25px" }}>
-                        City Center, Haldia
+                        {data?.city}, {data?.state}
                       </h6>
                       <h6 className="mt-4">
                         <span
                           className="text-light ms-1"
                           style={{ fontSize: "19px" }}
                         >
-                          +91 8945 6321 85
+                          +91 {data?.phone}
                         </span>
                       </h6>
                     </div>
@@ -90,7 +104,9 @@ const Details = () => {
                                 Address
                               </h6>
                               <p className="fs-6 text-light">
-                                City Center, Haldia, WB, India
+                                {data?.street_address} {data?.city},{" "}
+                                {data?.state}, {data?.country}. Pin-{" "}
+                                {data?.pincode}
                               </p>
                             </div>
                           </div>
@@ -124,7 +140,7 @@ const Details = () => {
                                 Mobile
                               </h6>
                               <p className="fs-6 text-light">
-                                +91 8945 6321 85
+                                +91 {data?.phone}
                               </p>
                             </div>
                           </div>
@@ -157,9 +173,7 @@ const Details = () => {
                               >
                                 Email ID
                               </h6>
-                              <p className="fs-6 text-light">
-                                haldiadiagnostics@gmail.com
-                              </p>
+                              <p className="fs-6 text-light">{data?.email}</p>
                             </div>
                           </div>
                         </div>
@@ -193,339 +207,21 @@ const Details = () => {
                     of the Semantics.
                   </p>
                 </div>
-                <div className="row align-items-start mt-5">
-                  <div className="col-3">
-                    <div className="card">
-                      <div className="card-body">
-                        <div className="diag-test-card-inner-item">
-                          <h6 className="fs-5" style={{ color: "#427cc5" }}>
-                            Malaria Test
-                          </h6>
-                          <h6 className="text-black pt-2">
-                            Pre Test Information
-                          </h6>
-                          <p className="text-secondary">
-                            No special prparation is required for the test.
-                          </p>
-                          <h6 className="text-black pt-2">Report Delivery</h6>
-                          <p className="text-secondary">Same Day</p>
-                          <h6
-                            className="text-black pt-2"
-                            style={{
-                              fontSize: "18px",
-                              fontFamily: "roboto",
-                              fontWeight: "600",
-                            }}
-                          >
-                            Includes:
-                          </h6>
-                          <ul className="list-unstyled">
-                            <li>
-                              <i className="far fa-check me-1 text-secondary"></i>
-                              Blood Glucose
-                            </li>
-                            <li>
-                              <i className="far fa-check me-1 text-secondary"></i>
-                              Liver Functioning
-                            </li>
-                            <li>
-                              <i className="far fa-check me-1 text-secondary"></i>
-                              Heart Health
-                            </li>
-                          </ul>
-                          <h6
-                            className="mb-5"
-                            style={{
-                              fontSize: "30px",
-                              fontWeight: "500",
-                              fontFamily: "roboto",
-                            }}
-                          >
-                            ₹300
-                          </h6>
-                          <div className="test-card-btn-grp">
-                            <div className="row align-items-center">
-                              <div className="col-6">
-                                <button
-                                  style={{
-                                    padding: "15px 8px",
-                                    border: "1px solid #000",
-                                    background: "white",
-                                    fontSize: "16px",
-                                    fontWeight: "500",
-                                  }}
-                                >
-                                  View Details
-                                </button>
-                              </div>
-                              <div className="col-6">
-                                <button
-                                  style={{
-                                    padding: "15px 8px",
-                                    border: "1px solid #000",
-                                    background: "white",
-                                    fontSize: "16px",
-                                    fontWeight: "500",
-                                  }}
-                                >
-                                  Add To Cart
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-3">
-                    <div className="card">
-                      <div className="card-body">
-                        <div className="diag-test-card-inner-item">
-                          <h6 className="fs-5" style={{ color: "#427cc5" }}>
-                            Malaria Test
-                          </h6>
-                          <h6 className="text-black pt-2">
-                            Pre Test Information
-                          </h6>
-                          <p className="text-secondary">
-                            No special prparation is required for the test.
-                          </p>
-                          <h6 className="text-black pt-2">Report Delivery</h6>
-                          <p className="text-secondary">Same Day</p>
-                          <h6
-                            className="text-black pt-2"
-                            style={{
-                              fontSize: "18px",
-                              fontFamily: "roboto",
-                              fontWeight: "600",
-                            }}
-                          >
-                            Includes:
-                          </h6>
-                          <ul className="list-unstyled">
-                            <li>
-                              <i className="far fa-check me-1 text-secondary"></i>
-                              Blood Glucose
-                            </li>
-                            <li>
-                              <i className="far fa-check me-1 text-secondary"></i>
-                              Liver Functioning
-                            </li>
-                            <li>
-                              <i className="far fa-check me-1 text-secondary"></i>
-                              Heart Health
-                            </li>
-                          </ul>
-                          <h6
-                            className="mb-5"
-                            style={{
-                              fontSize: "30px",
-                              fontWeight: "500",
-                              fontFamily: "roboto",
-                            }}
-                          >
-                            ₹300
-                          </h6>
-                          <div className="test-card-btn-grp">
-                            <div className="row align-items-center">
-                              <div className="col-6">
-                                <button
-                                  style={{
-                                    padding: "15px 8px",
-                                    border: "1px solid #000",
-                                    background: "white",
-                                    fontSize: "16px",
-                                    fontWeight: "500",
-                                  }}
-                                >
-                                  View Details
-                                </button>
-                              </div>
-                              <div className="col-6">
-                                <button
-                                  style={{
-                                    padding: "15px 8px",
-                                    border: "1px solid #000",
-                                    background: "white",
-                                    fontSize: "16px",
-                                    fontWeight: "500",
-                                  }}
-                                >
-                                  Add To Cart
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-3">
-                    <div className="card">
-                      <div className="card-body">
-                        <div className="diag-test-card-inner-item">
-                          <h6 className="fs-5" style={{ color: "#427cc5" }}>
-                            Malaria Test
-                          </h6>
-                          <h6 className="text-black pt-2">
-                            Pre Test Information
-                          </h6>
-                          <p className="text-secondary">
-                            No special prparation is required for the test.
-                          </p>
-                          <h6 className="text-black pt-2">Report Delivery</h6>
-                          <p className="text-secondary">Same Day</p>
-                          <h6
-                            className="text-black pt-2"
-                            style={{
-                              fontSize: "18px",
-                              fontFamily: "roboto",
-                              fontWeight: "600",
-                            }}
-                          >
-                            Includes:
-                          </h6>
-                          <ul className="list-unstyled">
-                            <li>
-                              <i className="far fa-check me-1 text-secondary"></i>
-                              Blood Glucose
-                            </li>
-                            <li>
-                              <i className="far fa-check me-1 text-secondary"></i>
-                              Liver Functioning
-                            </li>
-                            <li>
-                              <i className="far fa-check me-1 text-secondary"></i>
-                              Heart Health
-                            </li>
-                          </ul>
-                          <h6
-                            className="mb-5"
-                            style={{
-                              fontSize: "30px",
-                              fontWeight: "500",
-                              fontFamily: "roboto",
-                            }}
-                          >
-                            ₹300
-                          </h6>
-                          <div className="test-card-btn-grp">
-                            <div className="row align-items-center">
-                              <div className="col-6">
-                                <button
-                                  style={{
-                                    padding: "15px 8px",
-                                    border: "1px solid #000",
-                                    background: "white",
-                                    fontSize: "16px",
-                                    fontWeight: "500",
-                                  }}
-                                >
-                                  View Details
-                                </button>
-                              </div>
-                              <div className="col-6">
-                                <button
-                                  style={{
-                                    padding: "15px 8px",
-                                    border: "1px solid #000",
-                                    background: "white",
-                                    fontSize: "16px",
-                                    fontWeight: "500",
-                                  }}
-                                >
-                                  Add To Cart
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-3">
-                    <div className="card">
-                      <div className="card-body">
-                        <div className="diag-test-card-inner-item">
-                          <h6 className="fs-5" style={{ color: "#427cc5" }}>
-                            Malaria Test
-                          </h6>
-                          <h6 className="text-black pt-2">
-                            Pre Test Information
-                          </h6>
-                          <p className="text-secondary">
-                            No special prparation is required for the test.
-                          </p>
-                          <h6 className="text-black pt-2">Report Delivery</h6>
-                          <p className="text-secondary">Same Day</p>
-                          <h6
-                            className="text-black pt-2"
-                            style={{
-                              fontSize: "18px",
-                              fontFamily: "roboto",
-                              fontWeight: "600",
-                            }}
-                          >
-                            Includes:
-                          </h6>
-                          <ul className="list-unstyled">
-                            <li>
-                              <i className="far fa-check me-1 text-secondary"></i>
-                              Blood Glucose
-                            </li>
-                            <li>
-                              <i className="far fa-check me-1 text-secondary"></i>
-                              Liver Functioning
-                            </li>
-                            <li>
-                              <i className="far fa-check me-1 text-secondary"></i>
-                              Heart Health
-                            </li>
-                          </ul>
-                          <h6
-                            className="mb-5"
-                            style={{
-                              fontSize: "30px",
-                              fontWeight: "500",
-                              fontFamily: "roboto",
-                            }}
-                          >
-                            ₹300
-                          </h6>
-                          <div className="test-card-btn-grp">
-                            <div className="row align-items-center">
-                              <div className="col-6">
-                                <button
-                                  style={{
-                                    padding: "15px 8px",
-                                    border: "1px solid #000",
-                                    background: "white",
-                                    fontSize: "16px",
-                                    fontWeight: "500",
-                                  }}
-                                >
-                                  View Details
-                                </button>
-                              </div>
-                              <div className="col-6">
-                                <button
-                                  style={{
-                                    padding: "15px 8px",
-                                    border: "1px solid #000",
-                                    background: "white",
-                                    fontSize: "16px",
-                                    fontWeight: "500",
-                                  }}
-                                >
-                                  Add To Cart
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div className="row align-items-start mt-5 carousel-style">
+                  <Carousel
+                    breakPoints={breakPoints}
+                    enableAutoPlay
+                    autoPlaySpeed={1500}
+                  >
+                    <TestCard />
+                    <TestCard />
+                    <TestCard />
+                    <TestCard />
+                    <TestCard />
+                    <TestCard />
+                    <TestCard />
+                    <TestCard />
+                  </Carousel>
                 </div>
                 <div className="section-diag-btn text-center">
                   <button className="btn btn-primary">View All Tests</button>
@@ -714,338 +410,20 @@ const Details = () => {
                   </p>
                 </div>
                 <div className="row align-items-start mt-5">
-                  <div className="col-3">
-                    <div className="card">
-                      <div className="card-body">
-                        <div className="diag-test-card-inner-item">
-                          <h6 className="fs-5" style={{ color: "#427cc5" }}>
-                            Malaria Test
-                          </h6>
-                          <h6 className="text-black pt-2">
-                            Pre Test Information
-                          </h6>
-                          <p className="text-secondary">
-                            No special prparation is required for the test.
-                          </p>
-                          <h6 className="text-black pt-2">Report Delivery</h6>
-                          <p className="text-secondary">Same Day</p>
-                          <h6
-                            className="text-black pt-2"
-                            style={{
-                              fontSize: "18px",
-                              fontFamily: "roboto",
-                              fontWeight: "600",
-                            }}
-                          >
-                            Includes:
-                          </h6>
-                          <ul className="list-unstyled">
-                            <li>
-                              <i className="far fa-check me-1 text-secondary"></i>
-                              Blood Glucose
-                            </li>
-                            <li>
-                              <i className="far fa-check me-1 text-secondary"></i>
-                              Liver Functioning
-                            </li>
-                            <li>
-                              <i className="far fa-check me-1 text-secondary"></i>
-                              Heart Health
-                            </li>
-                          </ul>
-                          <h6
-                            className="mb-5"
-                            style={{
-                              fontSize: "30px",
-                              fontWeight: "500",
-                              fontFamily: "roboto",
-                            }}
-                          >
-                            ₹300
-                          </h6>
-                          <div className="test-card-btn-grp">
-                            <div className="row align-items-center">
-                              <div className="col-6">
-                                <button
-                                  style={{
-                                    padding: "15px 8px",
-                                    border: "1px solid #000",
-                                    background: "white",
-                                    fontSize: "16px",
-                                    fontWeight: "500",
-                                  }}
-                                >
-                                  View Details
-                                </button>
-                              </div>
-                              <div className="col-6">
-                                <button
-                                  style={{
-                                    padding: "15px 8px",
-                                    border: "1px solid #000",
-                                    background: "white",
-                                    fontSize: "16px",
-                                    fontWeight: "500",
-                                  }}
-                                >
-                                  Add To Cart
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-3">
-                    <div className="card">
-                      <div className="card-body">
-                        <div className="diag-test-card-inner-item">
-                          <h6 className="fs-5" style={{ color: "#427cc5" }}>
-                            Malaria Test
-                          </h6>
-                          <h6 className="text-black pt-2">
-                            Pre Test Information
-                          </h6>
-                          <p className="text-secondary">
-                            No special prparation is required for the test.
-                          </p>
-                          <h6 className="text-black pt-2">Report Delivery</h6>
-                          <p className="text-secondary">Same Day</p>
-                          <h6
-                            className="text-black pt-2"
-                            style={{
-                              fontSize: "18px",
-                              fontFamily: "roboto",
-                              fontWeight: "600",
-                            }}
-                          >
-                            Includes:
-                          </h6>
-                          <ul className="list-unstyled">
-                            <li>
-                              <i className="far fa-check me-1 text-secondary"></i>
-                              Blood Glucose
-                            </li>
-                            <li>
-                              <i className="far fa-check me-1 text-secondary"></i>
-                              Liver Functioning
-                            </li>
-                            <li>
-                              <i className="far fa-check me-1 text-secondary"></i>
-                              Heart Health
-                            </li>
-                          </ul>
-                          <h6
-                            className="mb-5"
-                            style={{
-                              fontSize: "30px",
-                              fontWeight: "500",
-                              fontFamily: "roboto",
-                            }}
-                          >
-                            ₹300
-                          </h6>
-                          <div className="test-card-btn-grp">
-                            <div className="row align-items-center">
-                              <div className="col-6">
-                                <button
-                                  style={{
-                                    padding: "15px 8px",
-                                    border: "1px solid #000",
-                                    background: "white",
-                                    fontSize: "16px",
-                                    fontWeight: "500",
-                                  }}
-                                >
-                                  View Details
-                                </button>
-                              </div>
-                              <div className="col-6">
-                                <button
-                                  style={{
-                                    padding: "15px 8px",
-                                    border: "1px solid #000",
-                                    background: "white",
-                                    fontSize: "16px",
-                                    fontWeight: "500",
-                                  }}
-                                >
-                                  Add To Cart
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-3">
-                    <div className="card">
-                      <div className="card-body">
-                        <div className="diag-test-card-inner-item">
-                          <h6 className="fs-5" style={{ color: "#427cc5" }}>
-                            Malaria Test
-                          </h6>
-                          <h6 className="text-black pt-2">
-                            Pre Test Information
-                          </h6>
-                          <p className="text-secondary">
-                            No special prparation is required for the test.
-                          </p>
-                          <h6 className="text-black pt-2">Report Delivery</h6>
-                          <p className="text-secondary">Same Day</p>
-                          <h6
-                            className="text-black pt-2"
-                            style={{
-                              fontSize: "18px",
-                              fontFamily: "roboto",
-                              fontWeight: "600",
-                            }}
-                          >
-                            Includes:
-                          </h6>
-                          <ul className="list-unstyled">
-                            <li>
-                              <i className="far fa-check me-1 text-secondary"></i>
-                              Blood Glucose
-                            </li>
-                            <li>
-                              <i className="far fa-check me-1 text-secondary"></i>
-                              Liver Functioning
-                            </li>
-                            <li>
-                              <i className="far fa-check me-1 text-secondary"></i>
-                              Heart Health
-                            </li>
-                          </ul>
-                          <h6
-                            className="mb-5"
-                            style={{
-                              fontSize: "30px",
-                              fontWeight: "500",
-                              fontFamily: "roboto",
-                            }}
-                          >
-                            ₹300
-                          </h6>
-                          <div className="test-card-btn-grp">
-                            <div className="row align-items-center">
-                              <div className="col-6">
-                                <button
-                                  style={{
-                                    padding: "15px 8px",
-                                    border: "1px solid #000",
-                                    background: "white",
-                                    fontSize: "16px",
-                                    fontWeight: "500",
-                                  }}
-                                >
-                                  View Details
-                                </button>
-                              </div>
-                              <div className="col-6">
-                                <button
-                                  style={{
-                                    padding: "15px 8px",
-                                    border: "1px solid #000",
-                                    background: "white",
-                                    fontSize: "16px",
-                                    fontWeight: "500",
-                                  }}
-                                >
-                                  Add To Cart
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-3">
-                    <div className="card">
-                      <div className="card-body">
-                        <div className="diag-test-card-inner-item">
-                          <h6 className="fs-5" style={{ color: "#427cc5" }}>
-                            Malaria Test
-                          </h6>
-                          <h6 className="text-black pt-2">
-                            Pre Test Information
-                          </h6>
-                          <p className="text-secondary">
-                            No special prparation is required for the test.
-                          </p>
-                          <h6 className="text-black pt-2">Report Delivery</h6>
-                          <p className="text-secondary">Same Day</p>
-                          <h6
-                            className="text-black pt-2"
-                            style={{
-                              fontSize: "18px",
-                              fontFamily: "roboto",
-                              fontWeight: "600",
-                            }}
-                          >
-                            Includes:
-                          </h6>
-                          <ul className="list-unstyled">
-                            <li>
-                              <i className="far fa-check me-1 text-secondary"></i>
-                              Blood Glucose
-                            </li>
-                            <li>
-                              <i className="far fa-check me-1 text-secondary"></i>
-                              Liver Functioning
-                            </li>
-                            <li>
-                              <i className="far fa-check me-1 text-secondary"></i>
-                              Heart Health
-                            </li>
-                          </ul>
-                          <h6
-                            className="mb-5"
-                            style={{
-                              fontSize: "30px",
-                              fontWeight: "500",
-                              fontFamily: "roboto",
-                            }}
-                          >
-                            ₹300
-                          </h6>
-                          <div className="test-card-btn-grp">
-                            <div className="row align-items-center">
-                              <div className="col-6">
-                                <button
-                                  style={{
-                                    padding: "15px 8px",
-                                    border: "1px solid #000",
-                                    background: "white",
-                                    fontSize: "16px",
-                                    fontWeight: "500",
-                                  }}
-                                >
-                                  View Details
-                                </button>
-                              </div>
-                              <div className="col-6">
-                                <button
-                                  style={{
-                                    padding: "15px 8px",
-                                    border: "1px solid #000",
-                                    background: "white",
-                                    fontSize: "16px",
-                                    fontWeight: "500",
-                                  }}
-                                >
-                                  Add To Cart
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <Carousel
+                    breakPoints={breakPoints}
+                    enableAutoPlay
+                    autoPlaySpeed={1500}
+                  >
+                    <TestCard />
+                    <TestCard />
+                    <TestCard />
+                    <TestCard />
+                    <TestCard />
+                    <TestCard />
+                    <TestCard />
+                    <TestCard />
+                  </Carousel>
                 </div>
                 <div className="section-diag-btn text-center">
                   <button className="btn btn-primary">View All Tests</button>
@@ -1151,7 +529,7 @@ const Details = () => {
               </div>
             </div>
             <div
-              className="diag-contact-banner pt-5"
+              className="diag-contact-banner pt-5 mb-1"
               style={{
                 background:
                   "url(/assets/images/diagnostics/contact-diag-banner.jpg)",
@@ -1182,7 +560,7 @@ const Details = () => {
                       Trust the leaders in diagnostic since 1990
                     </h3>
                     <button className="btn btn-light text-dark fs-6">
-                      +91 8945 6325 23
+                      +91 {data?.phone}
                     </button>
                   </div>
                 </div>
