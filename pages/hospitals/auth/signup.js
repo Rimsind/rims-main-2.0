@@ -75,7 +75,7 @@ const Signup = () => {
           `${apiUrl}/users/${result.user.id}`,
           {
             profileId: profile.id,
-            role: 4,
+            role: 6,
           },
           {
             headers: {

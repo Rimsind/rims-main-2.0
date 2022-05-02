@@ -7,7 +7,7 @@ import { useAuth } from "context";
 import { UserPageLoader } from "components/Loaders";
 import { withAuth } from "helpers/withAuth";
 
-import { PolyclinicSideBar } from "components/common";
+import { HospitalSideBar } from "components/common";
 import AllApps from "components/polyclinicComponents/AppTabs/AllApps";
 import TodaysApp from "components/polyclinicComponents/AppTabs/TodaysApp";
 const Index = () => {
@@ -50,7 +50,7 @@ const Index = () => {
         <div className="content mb-3">
           <div className="container-fluid">
             <div className="row">
-              <PolyclinicSideBar data={data} status7="active" />
+              <HospitalSideBar data={data} status7="active" />
               {appointments ? (
                 <div className="col-md-12 col-sm-12 col-lg-8 col-xl-9">
                   <ul className="nav nav-tabs nav-tabs-rounded">

@@ -4,13 +4,13 @@ import { useAuth } from "context";
 import { apiUrl } from "config/api";
 import useSWR from "swr";
 import axios from "axios";
-import { PolyclinicSideBar } from "components/common";
+import { HospitalSideBar } from "components/common";
 import { withAuth } from "helpers/withAuth";
 const PrivacySettings = () => {
   const { auth } = useAuth();
 
   const { data } = useSWR(
-    `${apiUrl}/polyclinics/${auth.user?.profileId}`,
+    `${apiUrl}/hospitals/${auth.user?.profileId}`,
     async (url) => {
       const res = await axios.get(url, {
         headers: {
@@ -32,7 +32,7 @@ const PrivacySettings = () => {
         <div className="content">
           <div className="container-fluid">
             <div className="row">
-              <PolyclinicSideBar status5="active" data={data} />
+              <HospitalSideBar status5="active" data={data} />
 
               <div className="col-md-12 col-sm-12 col-lg-8 col-xl-9">
                 <div className="card">

@@ -13,6 +13,9 @@ const AddressDetails = ({ data }) => {
   if (auth?.user?.role?.id === 5) {
     var role = "nursing-homes";
   }
+  if (auth?.user?.role?.id === 6) {
+    var role = "hospitals";
+  }
   const { register, handleSubmit } = useForm();
   const submit_polyaddress = async (data, event) => {
     setLoading(true);

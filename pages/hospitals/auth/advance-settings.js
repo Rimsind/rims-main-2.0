@@ -7,11 +7,11 @@ import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast, Slide } from "react-toastify";
-import { PolyclinicSideBar } from "components/common";
+import { HospitalSideBar } from "components/common";
 const AdvanceSettings = () => {
   const { auth } = useAuth();
   const { data } = useSWR(
-    `${apiUrl}/polyclinics/${auth?.user?.profileId}`,
+    `${apiUrl}/hospitals/${auth?.user?.profileId}`,
     async (url) => {
       const res = await axios.get(url, {
         headers: {
@@ -49,7 +49,7 @@ const AdvanceSettings = () => {
     event.preventDefault();
     try {
       const payload = {
-        polyclinic: auth?.user?.profileId,
+        hospital: auth?.user?.profileId,
         reason: data.deleteReasonList,
         description: data.describeDeleteReason,
       };
@@ -99,7 +99,7 @@ const AdvanceSettings = () => {
         <div className="content">
           <div className="container-fluid">
             <div className="row">
-              <PolyclinicSideBar data={data} status6="active" />
+              <HospitalSideBar data={data} status6="active" />
               <div className="col-md-12 col-sm-12 col-lg-8 col-xl-9">
                 {dataLenght === 0 || !dataLenght ? (
                   <div className="card">

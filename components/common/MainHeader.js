@@ -186,6 +186,11 @@ const MainHeader = () => {
                         ) : (
                           <></>
                         )}
+                        {auth?.user?.role?.id === 6 ? (
+                          <h6>{profile?.name}</h6>
+                        ) : (
+                          <></>
+                        )}
                       </div>
                     </div>
                     {auth?.user?.role?.id === 1 ? (
@@ -230,6 +235,25 @@ const MainHeader = () => {
                           <a className="dropdown-item">My Appointments</a>
                         </Link>
                         <Link href="/nursing-homes/auth/profile-settings">
+                          <a className="dropdown-item">Profile Settings</a>
+                        </Link>
+
+                        <button className="dropdown-item" onClick={logOut}>
+                          Logout
+                        </button>
+                      </>
+                    ) : (
+                      <></>
+                    )}{" "}
+                    {auth?.user?.role?.id === 6 ? (
+                      <>
+                        <Link href="/hospitals/auth/dashboard">
+                          <a className="dropdown-item">Dashboard</a>
+                        </Link>
+                        <Link href="/hospitals/appointments">
+                          <a className="dropdown-item">My Appointments</a>
+                        </Link>
+                        <Link href="/hospitals/auth/profile-settings">
                           <a className="dropdown-item">Profile Settings</a>
                         </Link>
 
