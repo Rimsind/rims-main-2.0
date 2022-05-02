@@ -205,10 +205,15 @@ const MainHeader = () => {
                     )}
                     {auth?.user?.role?.id === 4 ? (
                       <>
-                        <Link href="/polyclinics/dashboard">
+                        <Link href="/polyclinics/auth/dashboard">
                           <a className="dropdown-item">Dashboard</a>
+                        </Link>{" "}
+                        <Link href="/polyclinics/appointments">
+                          <a className="dropdown-item">My Appointments</a>
+                        </Link>{" "}
+                        <Link href="/polyclinics/auth/profile-settings">
+                          <a className="dropdown-item">Profile Settings</a>
                         </Link>
-
                         <button className="dropdown-item" onClick={logOut}>
                           Logout
                         </button>
@@ -218,8 +223,14 @@ const MainHeader = () => {
                     )}
                     {auth?.user?.role?.id === 5 ? (
                       <>
-                        <Link href="/nursing-homes/dashboard">
+                        <Link href="/nursing-homes/auth/dashboard">
                           <a className="dropdown-item">Dashboard</a>
+                        </Link>
+                        <Link href="/nursing-homes/appointments">
+                          <a className="dropdown-item">My Appointments</a>
+                        </Link>
+                        <Link href="/nursing-homes/auth/profile-settings">
+                          <a className="dropdown-item">Profile Settings</a>
                         </Link>
 
                         <button className="dropdown-item" onClick={logOut}>
@@ -231,10 +242,13 @@ const MainHeader = () => {
                     )}
                     {auth?.user?.role?.id === 3 ? (
                       <>
-                        <Link href="/doctors/dashboard">
+                        <Link href="/doctors/auth/dashboard">
                           <a className="dropdown-item">Dashboard</a>
                         </Link>
-                        <Link href="/doctors/profile-settings">
+                        <Link href="/doctors/appointments">
+                          <a className="dropdown-item">My Appointments</a>
+                        </Link>
+                        <Link href="/doctors/auth/profile-settings">
                           <a className="dropdown-item">Profile Settings</a>
                         </Link>
                         <button className="dropdown-item" onClick={logOut}>

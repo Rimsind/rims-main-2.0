@@ -20,7 +20,8 @@ const ManageDoctors = () => {
       });
       const result = res.data;
       return result;
-    }
+    },
+    { refreshInterval: 1000 }
   );
 
   const { data: doctors } = useSWR(`${apiUrl}/doctors`, fetcher);

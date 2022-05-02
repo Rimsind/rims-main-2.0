@@ -53,8 +53,8 @@ const DoctorTimeTableForm = () => {
       ...allData,
       {
         date: date,
-        time_from: timeFrom,
-        time_to: timeTo,
+        startr_time: timeFrom,
+        end_time: timeTo,
         seats: seat,
       },
     ]);

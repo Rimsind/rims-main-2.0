@@ -105,7 +105,7 @@ const AllApps = ({ appointments, data, appointmentsLength }) => {
                 {appointmentsLength === 0 ? (
                   <>
                     <tr>
-                      <td colSpan={6} className="text-danger text-center">
+                      <td colSpan={7} className="text-danger text-center">
                         No Appointments Found !!
                       </td>
                     </tr>

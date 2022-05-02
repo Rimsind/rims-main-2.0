@@ -42,6 +42,14 @@ const NursingSideBar = (props) => {
                     </a>
                   </Link>
                 </li>
+                <li className={props.status7}>
+                  <Link href="/nursing-homes/appointments">
+                    <a>
+                      <i className="fas fa-tachometer"></i>
+                      <span>My Appointments</span>
+                    </a>
+                  </Link>
+                </li>
 
                 <li className={props.status2}>
                   <Link href="/nursing-homes/auth/manage-doctors">

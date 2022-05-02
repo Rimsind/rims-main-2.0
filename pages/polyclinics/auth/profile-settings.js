@@ -5,13 +5,12 @@ import useSWR from "swr";
 import axios from "axios";
 import { PolyclinicSideBar } from "components/common";
 import { ProfilePicture } from "components/forms";
-import ProfileDetails from "components/polyclinicComponents/profileDetails";
+import ProfileDetails from "components/polyclinicComponents/ProfileDetails";
 import AddressDetails from "components/polyclinicComponents/addressDetails";
 import { withAuth } from "helpers/withAuth";
 import FeaturesDetails from "components/polyclinicComponents/FeaturesDetails";
 const ProfileSettings = () => {
   const { auth } = useAuth();
-
   const { data } = useSWR(
     `${apiUrl}/polyclinics/${auth?.user?.profileId}`,
     async (url) => {

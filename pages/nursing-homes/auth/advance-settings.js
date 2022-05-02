@@ -21,7 +21,8 @@ const AdvanceSettings = () => {
       });
       const result = res.data;
       return result;
-    }
+    },
+    { refreshInterval: 1000 }
   );
   const { data: delete_request } = useSWR(
     `${apiUrl}/delete-requests?nursing_home=${auth.user?.profileId}`,
@@ -100,7 +101,7 @@ const AdvanceSettings = () => {
         <div className="content">
           <div className="container-fluid">
             <div className="row">
-              <NursingSideBar status6="active" patient={data} />
+              <NursingSideBar status6="active" data={data} />
 
               <div className="col-md-12 col-sm-12 col-lg-8 col-xl-9">
                 {dataLenght === 0 || !dataLenght ? (

@@ -7,6 +7,7 @@ import { NursingSideBar } from "components/common";
 import { ProfilePicture } from "components/forms";
 import ProfileDetails from "components/polyclinicComponents/profileDetails";
 import AddressDetails from "components/polyclinicComponents/addressDetails";
+import FeaturesDetails from "components/polyclinicComponents/FeaturesDetails";
 import { withAuth } from "helpers/withAuth";
 const ProfileSettings = () => {
   const { auth } = useAuth();
@@ -21,7 +22,8 @@ const ProfileSettings = () => {
       });
       const result = res.data;
       return result;
-    }
+    },
+    { refreshInterval: 1000 }
   );
   return (
     <>
@@ -34,6 +36,7 @@ const ProfileSettings = () => {
               <ProfilePicture data={data} />
               <ProfileDetails data={data} />
               <AddressDetails data={data} />
+              <FeaturesDetails data={data} />
             </div>
           </div>
         </div>

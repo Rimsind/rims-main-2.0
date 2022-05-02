@@ -6,13 +6,14 @@ import { toast, Slide } from "react-toastify";
 import { useState } from "react";
 const ProfileDetails = ({ data }) => {
   const { auth } = useAuth();
-  const [loading, setLoading] = useState(false);
   if (auth?.user?.role?.id === 4) {
     var role = "polyclinics";
   }
   if (auth?.user?.role?.id === 5) {
     var role = "nursing-homes";
   }
+  const [loading, setLoading] = useState(false);
+
   const { register, handleSubmit } = useForm();
   const submit_polydetails = async (data, event) => {
     setLoading(true);
@@ -23,12 +24,12 @@ const ProfileDetails = ({ data }) => {
         contact_person_name: data.contact_person_name,
         phone: data.phone,
         registration_no: data.registration_no,
-        // workingHours: {
-        //   start_time: data.start_time,
-        //   end_time: data.end_time,
-        // },
+        workingHours: {
+          start_time: data.start_time,
+          end_time: data?.end_time,
+        },
       };
-      // console.log(payload);
+
       const res = await axios.put(
         `${apiUrl}/${role}/${auth.user?.profileId}`,
         payload,
@@ -82,7 +83,7 @@ const ProfileDetails = ({ data }) => {
                 <div className="row align-items-center">
                   <div className="col-md-4">
                     <div className="nursing-form-input">
-                      <label>Polyclinic Name</label>
+                      <label>Clinic Name</label>
                     </div>
                   </div>
                   <div className="col-md-8">
@@ -90,7 +91,7 @@ const ProfileDetails = ({ data }) => {
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Polyclinic Name"
+                        placeholder="Clinic Name"
                         {...register("name")}
                         defaultValue={!!data?.name ? data?.name : ""}
                       />
@@ -113,7 +114,7 @@ const ProfileDetails = ({ data }) => {
                         {...register("contact_person_name")}
                         defaultValue={
                           !!data?.contact_person_name
-                            ? data.contact_person_name
+                            ? data?.contact_person_name
                             : ""
                         }
                       />
@@ -138,7 +139,7 @@ const ProfileDetails = ({ data }) => {
                         placeholder="Registration No."
                         {...register("registration_no")}
                         defaultValue={
-                          !!data?.registration_no ? data.registration_no : ""
+                          !!data?.registration_no ? data?.registration_no : ""
                         }
                       />
                     </div>
@@ -159,7 +160,7 @@ const ProfileDetails = ({ data }) => {
                         className="form-control"
                         placeholder="Email Id"
                         disabled
-                        defaultValue={!!data?.email ? data.email : ""}
+                        defaultValue={!!data?.email ? data?.email : ""}
                       />
                     </div>
                   </div>
@@ -179,7 +180,7 @@ const ProfileDetails = ({ data }) => {
                         className="form-control"
                         placeholder="eg: 987456321"
                         {...register("phone")}
-                        defaultValue={!!data?.phone ? data.phone : ""}
+                        defaultValue={!!data?.phone ? data?.phone : ""}
                       />
                     </div>
                   </div>
@@ -199,8 +200,8 @@ const ProfileDetails = ({ data }) => {
                       placeholder="e.g 09:00 AM"
                       {...register("start_time")}
                       defaultValue={
-                        !!data?.workingHours && !!data?.workingHours?.Start
-                          ? data?.workingHours?.Start
+                        !!data?.workingHours && !!data?.workingHours?.start_time
+                          ? data?.workingHours?.start_time
                           : ""
                       }
                     />
@@ -219,8 +220,8 @@ const ProfileDetails = ({ data }) => {
                       placeholder="e.g 09:00 PM"
                       {...register("end_time")}
                       defaultValue={
-                        !!data?.workingHours && !!data?.workingHours?.end
-                          ? data?.workingHours?.end
+                        !!data?.workingHours && !!data?.workingHours?.end_time
+                          ? data?.workingHours?.end_time
                           : ""
                       }
                     />
