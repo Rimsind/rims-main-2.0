@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { useAuth } from "context";
 import { apiUrl } from "config/api";
 import useSWR from "swr";
@@ -31,7 +30,6 @@ const ProfileSettings = () => {
         <div className="container-fluid">
           <div className="row">
             <PolyclinicSideBar data={data} status1="active" />
-
             <div className="col-md-12 col-lg-12 col-xl-9 col-xxl-9">
               <ProfilePicture data={data} />
               <ProfileDetails data={data} />
