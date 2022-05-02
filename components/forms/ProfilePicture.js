@@ -22,6 +22,9 @@ const ProfilePicture = ({ data }) => {
   if (auth?.user?.role?.id === 5) {
     var role = "nursing-homes";
   }
+  if (auth?.user?.role?.id === 6) {
+    var role = "hospitals";
+  }
 
   const [loading, setLoading] = useState(false);
   const [previewImage, setPreviewImage] = useState(null);
