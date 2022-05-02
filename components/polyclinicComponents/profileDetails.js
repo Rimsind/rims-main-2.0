@@ -20,12 +20,15 @@ const ProfileDetails = ({ data }) => {
     try {
       const payload = {
         name: data.name,
+        contact_person_name: data.contact_person_name,
         phone: data.phone,
-        workingHours: {
-          Start: data.start,
-          end: data.end,
-        },
+        registration_no: data.registration_no,
+        // workingHours: {
+        //   start_time: data.start_time,
+        //   end_time: data.end_time,
+        // },
       };
+      // console.log(payload);
       const res = await axios.put(
         `${apiUrl}/${role}/${auth.user?.profileId}`,
         payload,
@@ -47,7 +50,8 @@ const ProfileDetails = ({ data }) => {
         theme: "colored",
         transition: Slide,
       });
-      return result, setLoading(false);
+      setLoading(false);
+      return result;
     } catch (error) {
       console.log(error);
       toast.error("Something Went Wrong Try Again.", {
@@ -64,6 +68,7 @@ const ProfileDetails = ({ data }) => {
       setLoading(false);
     }
   };
+
   return (
     <>
       <div className="card">
@@ -73,7 +78,7 @@ const ProfileDetails = ({ data }) => {
         <div className="card-body">
           <form onSubmit={handleSubmit(submit_polydetails)}>
             <div className="row mb-3">
-              <div className="col-md-4">
+              <div className="col-md-6">
                 <div className="row align-items-center">
                   <div className="col-md-4">
                     <div className="nursing-form-input">
@@ -86,19 +91,43 @@ const ProfileDetails = ({ data }) => {
                         type="text"
                         className="form-control"
                         placeholder="Polyclinic Name"
-                        name="polyclinic_name"
                         {...register("name")}
-                        defaultValue={!!data?.name ? data.name : ""}
+                        defaultValue={!!data?.name ? data?.name : ""}
                       />
                     </div>
                   </div>
                 </div>
               </div>
+              <div className="col-md-6">
+                <div className="row align-items-center">
+                  <div className="col-md-4">
+                    <div className="nursing-form-input">
+                      <label>Conatct Person Name</label>
+                    </div>
+                  </div>
+                  <div className="col-md-8">
+                    <div className="nursing-form-input">
+                      <input
+                        type="text"
+                        className="form-control"
+                        {...register("contact_person_name")}
+                        defaultValue={
+                          !!data?.contact_person_name
+                            ? data.contact_person_name
+                            : ""
+                        }
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="row  mb-3">
               <div className="col-md-4">
                 <div className="row align-items-center">
                   <div className="col-md-4">
                     <div className="nursing-form-input">
-                      <label>Registration No.</label>
+                      <label>Reg No.</label>
                     </div>
                   </div>
                   <div className="col-md-8">
@@ -107,9 +136,10 @@ const ProfileDetails = ({ data }) => {
                         type="text"
                         className="form-control"
                         placeholder="Registration No."
-                        name="registration_no"
-                        {...register("name")}
-                        defaultValue={!!data?.name ? data.name : ""}
+                        {...register("registration_no")}
+                        defaultValue={
+                          !!data?.registration_no ? data.registration_no : ""
+                        }
                       />
                     </div>
                   </div>
@@ -117,12 +147,12 @@ const ProfileDetails = ({ data }) => {
               </div>
               <div className="col-md-4">
                 <div className="row align-items-center">
-                  <div className="col-md-4">
+                  <div className="col-md-3">
                     <div className="nursing-form-input">
-                      <label>Email Id</label>
+                      <label>Email</label>
                     </div>
                   </div>
-                  <div className="col-md-8">
+                  <div className="col-md-9">
                     <div className="nursing-form-input">
                       <input
                         type="email"
@@ -135,22 +165,19 @@ const ProfileDetails = ({ data }) => {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="row">
               <div className="col-md-4">
                 <div className="row align-items-center">
-                  <div className="col-md-4">
+                  <div className="col-md-3">
                     <div className="nursing-form-input">
                       <label>Phone</label>
                     </div>
                   </div>
-                  <div className="col-md-8">
+                  <div className="col-md-9">
                     <div className="nursing-form-input">
                       <input
                         type="number"
                         className="form-control"
                         placeholder="eg: 987456321"
-                        name="polyclinic_phone"
                         {...register("phone")}
                         defaultValue={!!data?.phone ? data.phone : ""}
                       />
@@ -158,54 +185,50 @@ const ProfileDetails = ({ data }) => {
                   </div>
                 </div>
               </div>
-              <div className="col-md-4">
+            </div>
+            <div className="row align-items-center">
+              <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                 <div className="row align-items-center">
-                  <div className="col-md-4">
-                    <div className="nursing-form-input">
-                      <label>Opening Time</label>
-                    </div>
+                  <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+                    <label>Start Time</label>
                   </div>
-                  <div className="col-md-8">
-                    <div className="nursing-form-input">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="eg: 10:00 A.M."
-                        name="polyclinic_start_time"
-                        {...register("start")}
-                        defaultValue={
-                          !!data?.workingHours ? data?.workingHours?.Start : ""
-                        }
-                      />
-                    </div>
+                  <div className="col-12 col-sm-12 col-md-6 col-lg-8 col-xl-8 col-xxl-8">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="e.g 09:00 AM"
+                      {...register("start_time")}
+                      defaultValue={
+                        !!data?.workingHours && !!data?.workingHours?.Start
+                          ? data?.workingHours?.Start
+                          : ""
+                      }
+                    />
                   </div>
                 </div>
               </div>
-              <div className="col-md-4">
+              <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                 <div className="row align-items-center">
-                  <div className="col-md-4">
-                    <div className="nursing-form-input">
-                      <label>Closing Time</label>
-                    </div>
+                  <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+                    <label>End Time</label>
                   </div>
-                  <div className="col-md-8">
-                    <div className="nursing-form-input">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="eg: 03:30 P.M."
-                        name="polyclinic_end_time"
-                        {...register("end")}
-                        defaultValue={
-                          !!data?.workingHours ? data?.workingHours?.end : ""
-                        }
-                      />
-                    </div>
+                  <div className="col-12 col-sm-12 col-md-6 col-lg-8 col-xl-8 col-xxl-8">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="e.g 09:00 PM"
+                      {...register("end_time")}
+                      defaultValue={
+                        !!data?.workingHours && !!data?.workingHours?.end
+                          ? data?.workingHours?.end
+                          : ""
+                      }
+                    />
                   </div>
                 </div>
               </div>
             </div>
-            <div className="save-btn-poly mt-4 text-end">
+            <div className="save-btn-poly mt-5 text-end">
               <input
                 type="submit"
                 className="btn btn-primary submit-btn"

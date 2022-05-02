@@ -39,33 +39,6 @@ const Index = () => {
     }
   );
 
-  var today = new Date();
-  var day = today.getDate();
-  var month = today.getMonth() + 1;
-  var year = today.getFullYear();
-
-  if (day < 10) {
-    var newDay = "0" + day;
-  } else {
-    var newDay = day;
-  }
-  if (month < 10) {
-    var newMonth = "0" + month;
-  } else {
-    var newMonth = month;
-  }
-
-  const currentDate = year + "-" + newMonth + "-" + newDay;
-
-  const [date, setDate] = useState(currentDate);
-  const [clinic, setClinic] = useState("");
-  const [status, setStatus] = useState("");
-
-  const resetState = (e) => {
-    setDate(currentDate);
-    setStatus("");
-    setClinic("");
-  };
   return (
     <>
       <div className="main-wrapper">

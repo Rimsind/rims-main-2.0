@@ -19,6 +19,7 @@ const ProfileInfo = ({ data }) => {
         firstName: data.firstName,
         lastName: data.lastName,
         phone: data.phone,
+        gender: data.gender,
         qualification: data.qualification,
         experienceInYrs: data.experienceInYear,
         bio: data.bio,
@@ -99,7 +100,7 @@ const ProfileInfo = ({ data }) => {
                   />
                 </div>
               </div>
-              <div className="col-12 col-md-4">
+              <div className="col-12 col-md-3">
                 <div className="form-group">
                   <label>Email ID</label>
                   <input
@@ -110,7 +111,7 @@ const ProfileInfo = ({ data }) => {
                   />
                 </div>
               </div>
-              <div className="col-12 col-md-4">
+              <div className="col-12 col-md-3">
                 <div className="form-group">
                   <label>Mobile</label>
                   <input
@@ -122,20 +123,36 @@ const ProfileInfo = ({ data }) => {
                   />
                 </div>
               </div>
-              <div className="col-12 col-md-4">
+              <div className="col-12 col-md-3">
                 <div className="form-group">
                   <label>Registration No</label>
                   <input
                     type="text"
                     placeholder="+1 202-555-0125"
                     className="form-control"
-                    {...register("registration_number")}
+                    {...register("registration_no")}
                     defaultValue={
-                      !!data?.registration_number
-                        ? data.registration_number
-                        : ""
+                      !!data?.registration_no ? data.registration_no : ""
                     }
                   />
+                </div>
+              </div>
+              <div className="col-12 col-md-3">
+                <div className="form-group">
+                  <label>Gender</label>
+                  <select
+                    className="form-select"
+                    aria-label="Default select example"
+                    {...register("gender")}
+                  >
+                    <option defaultChecked={!!data?.gender ? data.gender : ""}>
+                      {!!data?.gender ? data.gender : ""}
+                    </option>
+
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Others">Others</option>
+                  </select>
                 </div>
               </div>
               <div className="col-12 col-md-3">
@@ -181,7 +198,7 @@ const ProfileInfo = ({ data }) => {
                     {...register("specialty")}
                   >
                     <option
-                      defaultChecked={
+                      defaultValue={
                         !!data?.specialty?.id ? data.specialty?.id : ""
                       }
                     >
