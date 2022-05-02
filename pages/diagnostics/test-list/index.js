@@ -23,7 +23,7 @@ const Index = () => {
                             />
                             <label
                               className="form-check-label"
-                              for="defaultCheck1"
+                              htmlFor="defaultCheck1"
                             >
                               Heart
                             </label>
@@ -39,7 +39,7 @@ const Index = () => {
                             />
                             <label
                               className="form-check-label"
-                              for="defaultCheck1"
+                              htmlFor="defaultCheck1"
                             >
                               Infertility
                             </label>
@@ -55,7 +55,7 @@ const Index = () => {
                             />
                             <label
                               className="form-check-label"
-                              for="defaultCheck1"
+                              htmlFor="defaultCheck1"
                             >
                               Kidney
                             </label>
@@ -71,7 +71,7 @@ const Index = () => {
                             />
                             <label
                               className="form-check-label"
-                              for="defaultCheck1"
+                              htmlFor="defaultCheck1"
                             >
                               Liver
                             </label>
@@ -87,7 +87,7 @@ const Index = () => {
                             />
                             <label
                               className="form-check-label"
-                              for="defaultCheck1"
+                              htmlFor="defaultCheck1"
                             >
                               Lungs
                             </label>
@@ -103,7 +103,7 @@ const Index = () => {
                             />
                             <label
                               className="form-check-label"
-                              for="defaultCheck1"
+                              htmlFor="defaultCheck1"
                             >
                               Thyroid
                             </label>
