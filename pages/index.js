@@ -160,7 +160,7 @@ const Index = () => {
             <div className="row justify-content-center mb-lg-5">
               <div className="col-md-9">
                 <div className="specialities-slider slider">
-                  {/* <div className="row carousel-styling">
+                  <div className="row carousel-styling">
                     {specialties ? (
                       <Carousel
                         breakPoints={breakPoints}
@@ -168,23 +168,20 @@ const Index = () => {
                         autoPlaySpeed={1500}
                       >
                         {specialties?.map((items, index) => (
-                          <div className="col-md" key={index}>
-                            <div className="speicality-item text-center">
-                              <div className="speicality-img">
-                                <img
-                                  src={items?.image?.url}
-                                  className="img-fluid"
-                                  alt="Speciality"
-                                />
-                                <span>
-                                  <i
-                                    className="fa fa-circle"
-                                    aria-hidden="true"
-                                  ></i>
-                                </span>
-                              </div>
-                              <p>{items?.name}</p>
+                          <div
+                            className="speicality-item text-center"
+                            key={index}
+                          >
+                            <div className="">
+                              <Image
+                                src={items?.image?.url}
+                                className="img-fluid"
+                                width="150"
+                                height="150"
+                                alt="Speciality"
+                              />
                             </div>
+                            <p>{items?.name}</p>
                           </div>
                         ))}
                       </Carousel>
@@ -198,92 +195,6 @@ const Index = () => {
                         </Carousel>
                       </>
                     )}
-                  </div> */}
-                  <div className="row carousel-styling">
-                    <div className="col-2">
-                      <div className="speicality-item text-center">
-                        <div className="">
-                          <Image
-                            src="/assets/images/Doctors.png"
-                            className="img-fluid"
-                            width="100px"
-                            height="100px"
-                            alt="Speciality"
-                          />
-                        </div>
-                        <p>demo</p>
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="speicality-item text-center">
-                        <div className="">
-                          <Image
-                            src="/assets/images/Doctors.png"
-                            className="img-fluid"
-                            width="100px"
-                            height="100px"
-                            alt="Speciality"
-                          />
-                        </div>
-                        <p>demo</p>
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="speicality-item text-center">
-                        <div className="">
-                          <Image
-                            src="/assets/images/Doctors.png"
-                            className="img-fluid"
-                            width="100px"
-                            height="100px"
-                            alt="Speciality"
-                          />
-                        </div>
-                        <p>demo</p>
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="speicality-item text-center">
-                        <div className="">
-                          <Image
-                            src="/assets/images/Doctors.png"
-                            className="img-fluid"
-                            width="100px"
-                            height="100px"
-                            alt="Speciality"
-                          />
-                        </div>
-                        <p>demo</p>
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="speicality-item text-center">
-                        <div className="">
-                          <Image
-                            src="/assets/images/Doctors.png"
-                            className="img-fluid"
-                            width="100px"
-                            height="100px"
-                            alt="Speciality"
-                          />
-                        </div>
-                        <p>demo</p>
-                      </div>
-                    </div>
-                    <div className="col-2">
-                      <div className="speicality-item text-center">
-                        <div className="">
-                          <Image
-                            src="/assets/images/Doctors.png"
-                            className="img-fluid"
-                            width="100px"
-                            height="100px"
-                            alt="Speciality"
-                          />
-                        </div>
-                        <p>demo</p>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>

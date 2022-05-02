@@ -10,28 +10,28 @@ const TestDetails = () => {
         <section className="diag-details">
           <div className="container">
             <div className="diag-details-inner py-4 px-4">
-              <ul class="nav nav-tabs nav-tabs-solid">
-                <li class="nav-item me-3">
+              <ul className="nav nav-tabs nav-tabs-solid">
+                <li className="nav-item me-3">
                   <a
-                    class="nav-link active"
+                    className="nav-link active"
                     href="#solid-justified-tab1"
                     data-bs-toggle="tab"
                   >
                     Info for Patient
                   </a>
                 </li>
-                <li class="nav-item me-3">
+                <li className="nav-item me-3">
                   <a
-                    class="nav-link"
+                    className="nav-link"
                     href="#solid-justified-tab2"
                     data-bs-toggle="tab"
                   >
                     Test Included
                   </a>
                 </li>
-                <li class="nav-item me-3">
+                <li className="nav-item me-3">
                   <a
-                    class="nav-link"
+                    className="nav-link"
                     href="#solid-justified-tab3"
                     data-bs-toggle="tab"
                   >
@@ -39,8 +39,8 @@ const TestDetails = () => {
                   </a>
                 </li>
               </ul>
-              <div class="tab-content py-5 px-5">
-                <div class="tab-pane show active" id="solid-justified-tab1">
+              <div className="tab-content py-5 px-5">
+                <div className="tab-pane show active" id="solid-justified-tab1">
                   <div className="tab-content-test-title">
                     <h6 className="text-info pb-4" style={{ fontSize: "20px" }}>
                       C-REACTIVE PROTEIN CRP (QUANTITATIVE) Test In Hyderabad
@@ -52,7 +52,7 @@ const TestDetails = () => {
                         <div className="row align-items-center">
                           <div className="col-6">
                             <i
-                              class="far fa-vial text-muted"
+                              className="far fa-vial text-muted"
                               style={{ fontSize: "16px" }}
                             ></i>
                             <span
@@ -77,7 +77,7 @@ const TestDetails = () => {
                         <div className="row align-items-center">
                           <div className="col-6">
                             <i
-                              class="far fa-info-circle text-muted"
+                              className="far fa-info-circle text-muted"
                               style={{ fontSize: "16px" }}
                             ></i>
                             <span
@@ -102,7 +102,7 @@ const TestDetails = () => {
                         <div className="row align-items-center">
                           <div className="col-6">
                             <i
-                              class="far fa-ballot-check text-muted"
+                              className="far fa-ballot-check text-muted"
                               style={{ fontSize: "16px" }}
                             ></i>
                             <span
@@ -127,7 +127,7 @@ const TestDetails = () => {
                         <div className="row align-items-center">
                           <div className="col-6">
                             <i
-                              class="far fa-atom text-muted"
+                              className="far fa-atom text-muted"
                               style={{ fontSize: "16px" }}
                             ></i>
                             <span
@@ -152,7 +152,7 @@ const TestDetails = () => {
                         <div className="row align-items-center">
                           <div className="col-6">
                             <i
-                              class="far fa-money-bill-wave text-muted"
+                              className="far fa-money-bill-wave text-muted"
                               style={{ fontSize: "16px" }}
                             ></i>
                             <span
@@ -202,10 +202,10 @@ const TestDetails = () => {
                     </div>
                   </div>
                 </div>
-                <div class="tab-pane" id="solid-justified-tab2">
+                <div className="tab-pane" id="solid-justified-tab2">
                   <p>Not Available</p>
                 </div>
-                <div class="tab-pane" id="solid-justified-tab3">
+                <div className="tab-pane" id="solid-justified-tab3">
                   <div className="tab-content-test-title">
                     <h6 className="text-info" style={{ fontSize: "20px" }}>
                       Info for Doctor
