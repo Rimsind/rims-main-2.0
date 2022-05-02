@@ -5,9 +5,11 @@ import useSWR from "swr";
 import axios from "axios";
 import { NursingSideBar } from "components/common";
 import { ProfilePicture } from "components/forms";
-import ProfileDetails from "components/polyclinicComponents/profileDetails";
-import AddressDetails from "components/polyclinicComponents/addressDetails";
-import FeaturesDetails from "components/polyclinicComponents/FeaturesDetails";
+import {
+  AddressDetails,
+  FeaturesDetails,
+  ProfileDetails,
+} from "components/polyclinicComponents/index";
 import { withAuth } from "helpers/withAuth";
 const ProfileSettings = () => {
   const { auth } = useAuth();

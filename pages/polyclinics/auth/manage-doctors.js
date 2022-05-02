@@ -5,7 +5,7 @@ import useSWR from "swr";
 import axios from "axios";
 import { PolyclinicSideBar } from "components/common";
 import { toast, Slide } from "react-toastify";
-import MyDoctors from "components/polyclinicComponents/MyDoctors";
+import { MyDoctors } from "components/polyclinicComponents";
 import { withAuth } from "helpers/withAuth";
 const ManageDoctors = () => {
   const { auth } = useAuth();
