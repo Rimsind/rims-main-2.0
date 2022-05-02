@@ -644,7 +644,7 @@ const Details = () => {
                     <div className="speicality-item text-center">
                       <div className="speicality-img">
                         <img
-                          src="/assets/images/diagnostics/heart.png"
+                          src="/assets/images/diagnostics/infertility.png"
                           className="img-fluid"
                           height="80px"
                           width="80px"
@@ -662,12 +662,13 @@ const Details = () => {
                   <div className="col-2">
                     <div className="speicality-item text-center">
                       <div className="speicality-img">
-                        <img
-                          src="/assets/images/diagnostics/heart.png"
+                        <Image
+                          src="/assets/images/diagnostics/kidney.png"
                           className="img-fluid"
                           height="80px"
                           width="80px"
                           alt="Speciality"
+                          style={{ zIndex: "9999" }}
                         />
                         <span>
                           <i className="fa fa-circle" aria-hidden="true"></i>
