@@ -9,7 +9,7 @@ import { withAuth } from "helpers/withAuth";
 import {
   AddressDetails,
   FeaturesDetails,
-  ProfileDetails,
+  ClinicProfileDetails,
 } from "components/polyclinicComponents/index";
 const ProfileSettings = () => {
   const { auth } = useAuth();
@@ -35,7 +35,7 @@ const ProfileSettings = () => {
             <PolyclinicSideBar data={data} status1="active" />
             <div className="col-md-12 col-lg-12 col-xl-9 col-xxl-9">
               <ProfilePicture data={data} />
-              <ProfileDetails data={data} />
+              <ClinicProfileDetails data={data} />
               <AddressDetails data={data} />
               <FeaturesDetails data={data} />
             </div>

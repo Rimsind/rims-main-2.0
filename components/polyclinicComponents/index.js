@@ -1,5 +1,5 @@
 import AddressDetails from "./addressDetails";
-import ProfileDetails from "./ProfileDetails";
+import ClinicProfileDetails from "./ProfileDetails";
 import MyDoctors from "./MyDoctors";
 import FeaturesDetails from "./FeaturesDetails";
 import AllApps from "./AppTabs/AllApps";
@@ -11,5 +11,5 @@ export {
   TodaysApp,
   MyDoctors,
   FeaturesDetails,
-  ProfileDetails,
+  ClinicProfileDetails,
 };
