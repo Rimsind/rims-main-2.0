@@ -8,7 +8,7 @@ import { ProfilePicture } from "components/forms";
 import {
   AddressDetails,
   FeaturesDetails,
-  ClinicProfileDetails,
+  ProfileInfo,
 } from "components/polyclinicComponents/index";
 import { withAuth } from "helpers/withAuth";
 const ProfileSettings = () => {
@@ -36,7 +36,7 @@ const ProfileSettings = () => {
 
             <div className="col-md-7 col-lg-8 col-xl-9">
               <ProfilePicture data={data} />
-              <ClinicProfileDetails data={data} />
+              <ProfileInfo data={data} />
               <AddressDetails data={data} />
               <FeaturesDetails data={data} />
             </div>

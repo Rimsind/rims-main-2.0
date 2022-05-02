@@ -4,7 +4,7 @@ import axios from "axios";
 import { apiUrl } from "config/api";
 import { toast, Slide } from "react-toastify";
 import { useState } from "react";
-const ClinicProfileDetails = ({ data }) => {
+const ProfileInfo = ({ data }) => {
   const { auth } = useAuth();
   if (auth?.user?.role?.id === 4) {
     var role = "polyclinics";
@@ -69,9 +69,9 @@ const ClinicProfileDetails = ({ data }) => {
       setLoading(false);
     }
   };
-
   return (
     <>
+      {" "}
       <div className="card">
         <div className="card-header">
           <p className="fs-5 fw-bold text-center">Profile Details</p>
@@ -244,4 +244,4 @@ const ClinicProfileDetails = ({ data }) => {
   );
 };
 
-export default ClinicProfileDetails;
+export default ProfileInfo;
