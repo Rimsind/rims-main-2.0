@@ -260,120 +260,89 @@ const Details = () => {
                     of the Semantics.
                   </p>
                 </div>
-                <div className="row align-items-center mt-5">
+                <div className="row carousel-styling my-5">
                   <div className="col-2">
                     <div className="speicality-item text-center">
-                      <div className="speicality-img">
-                        <img
-                          src="/assets/images/diagnostics/heart.png"
-                          className="img-fluid"
-                          height="80px"
-                          width="80px"
-                          alt="Speciality"
-                        />
-                        <span>
-                          <i className="fa fa-circle" aria-hidden="true"></i>
-                        </span>
-                      </div>
-                      <p className="fs-5" style={{ marginLeft: "-40px" }}>
-                        Heart
-                      </p>
-                    </div>
-                  </div>
-                  <div className="col-2">
-                    <div className="speicality-item text-center">
-                      <div className="speicality-img">
-                        <img
-                          src="/assets/images/diagnostics/endocrine.png"
-                          className="img-fluid"
-                          height="80px"
-                          width="80px"
-                          alt="Speciality"
-                        />
-                        <span>
-                          <i className="fa fa-circle" aria-hidden="true"></i>
-                        </span>
-                      </div>
-                      <p className="fs-5" style={{ marginLeft: "-40px" }}>
-                        Thyroid
-                      </p>
-                    </div>
-                  </div>
-                  <div className="col-2">
-                    <div className="speicality-item text-center">
-                      <div className="speicality-img">
-                        <img
-                          src="/assets/images/diagnostics/liver.png"
-                          className="img-fluid"
-                          height="80px"
-                          width="80px"
-                          alt="Speciality"
-                        />
-                        <span>
-                          <i className="fa fa-circle" aria-hidden="true"></i>
-                        </span>
-                      </div>
-                      <p className="fs-5" style={{ marginLeft: "-40px" }}>
-                        Liver
-                      </p>
-                    </div>
-                  </div>
-                  <div className="col-2">
-                    <div className="speicality-item text-center">
-                      <div className="speicality-img">
-                        <img
-                          src="/assets/images/diagnostics/lungs.png"
-                          className="img-fluid"
-                          height="80px"
-                          width="80px"
-                          alt="Speciality"
-                        />
-                        <span>
-                          <i className="fa fa-circle" aria-hidden="true"></i>
-                        </span>
-                      </div>
-                      <p className="fs-5" style={{ marginLeft: "-40px" }}>
-                        Lungs
-                      </p>
-                    </div>
-                  </div>
-                  <div className="col-2">
-                    <div className="speicality-item text-center">
-                      <div className="speicality-img">
-                        <img
-                          src="/assets/images/diagnostics/infertility.png"
-                          className="img-fluid"
-                          height="80px"
-                          width="80px"
-                          alt="Speciality"
-                        />
-                        <span>
-                          <i className="fa fa-circle" aria-hidden="true"></i>
-                        </span>
-                      </div>
-                      <p className="fs-5" style={{ marginLeft: "-40px" }}>
-                        Infertility
-                      </p>
-                    </div>
-                  </div>
-                  <div className="col-2">
-                    <div className="speicality-item text-center">
-                      <div className="speicality-img">
+                      <div className="">
                         <Image
-                          src="/assets/images/diagnostics/kidney.png"
+                          src="/assets/images/Doctors.png"
                           className="img-fluid"
-                          height="80px"
-                          width="80px"
+                          width="100px"
+                          height="100px"
                           alt="Speciality"
-                          style={{ zIndex: "9999" }}
                         />
-                        <span>
-                          <i className="fa fa-circle" aria-hidden="true"></i>
-                        </span>
                       </div>
-                      <p className="fs-5" style={{ marginLeft: "-40px" }}>
-                        Kidney
-                      </p>
+                      <p>demo</p>
+                    </div>
+                  </div>
+                  <div className="col-2">
+                    <div className="speicality-item text-center">
+                      <div className="">
+                        <Image
+                          src="/assets/images/Doctors.png"
+                          className="img-fluid"
+                          width="100px"
+                          height="100px"
+                          alt="Speciality"
+                        />
+                      </div>
+                      <p>demo</p>
+                    </div>
+                  </div>
+                  <div className="col-2">
+                    <div className="speicality-item text-center">
+                      <div className="">
+                        <Image
+                          src="/assets/images/Doctors.png"
+                          className="img-fluid"
+                          width="100px"
+                          height="100px"
+                          alt="Speciality"
+                        />
+                      </div>
+                      <p>demo</p>
+                    </div>
+                  </div>
+                  <div className="col-2">
+                    <div className="speicality-item text-center">
+                      <div className="">
+                        <Image
+                          src="/assets/images/Doctors.png"
+                          className="img-fluid"
+                          width="100px"
+                          height="100px"
+                          alt="Speciality"
+                        />
+                      </div>
+                      <p>demo</p>
+                    </div>
+                  </div>
+                  <div className="col-2">
+                    <div className="speicality-item text-center">
+                      <div className="">
+                        <Image
+                          src="/assets/images/Doctors.png"
+                          className="img-fluid"
+                          width="100px"
+                          height="100px"
+                          alt="Speciality"
+                        />
+                      </div>
+                      <p>demo</p>
+                    </div>
+                  </div>
+                  <div className="col-2">
+                    <div className="speicality-item text-center">
+                      <div className="">
+                        <Image
+                          src="/assets/images/Doctors.png"
+                          className="img-fluid"
+                          width="100px"
+                          height="100px"
+                          alt="Speciality"
+                        />
+                      </div>
+                      <p>demo</p>
                     </div>
                   </div>
                 </div>

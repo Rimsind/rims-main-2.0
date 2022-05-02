@@ -160,7 +160,7 @@ const Index = () => {
             <div className="row justify-content-center mb-lg-5">
               <div className="col-md-9">
                 <div className="specialities-slider slider">
-                  <div className="row carousel-styling">
+                  {/* <div className="row carousel-styling">
                     {specialties ? (
                       <Carousel
                         breakPoints={breakPoints}
@@ -198,6 +198,92 @@ const Index = () => {
                         </Carousel>
                       </>
                     )}
+                  </div> */}
+                  <div className="row carousel-styling">
+                    <div className="col-2">
+                      <div className="speicality-item text-center">
+                        <div className="">
+                          <Image
+                            src="/assets/images/Doctors.png"
+                            className="img-fluid"
+                            width="100px"
+                            height="100px"
+                            alt="Speciality"
+                          />
+                        </div>
+                        <p>demo</p>
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="speicality-item text-center">
+                        <div className="">
+                          <Image
+                            src="/assets/images/Doctors.png"
+                            className="img-fluid"
+                            width="100px"
+                            height="100px"
+                            alt="Speciality"
+                          />
+                        </div>
+                        <p>demo</p>
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="speicality-item text-center">
+                        <div className="">
+                          <Image
+                            src="/assets/images/Doctors.png"
+                            className="img-fluid"
+                            width="100px"
+                            height="100px"
+                            alt="Speciality"
+                          />
+                        </div>
+                        <p>demo</p>
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="speicality-item text-center">
+                        <div className="">
+                          <Image
+                            src="/assets/images/Doctors.png"
+                            className="img-fluid"
+                            width="100px"
+                            height="100px"
+                            alt="Speciality"
+                          />
+                        </div>
+                        <p>demo</p>
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="speicality-item text-center">
+                        <div className="">
+                          <Image
+                            src="/assets/images/Doctors.png"
+                            className="img-fluid"
+                            width="100px"
+                            height="100px"
+                            alt="Speciality"
+                          />
+                        </div>
+                        <p>demo</p>
+                      </div>
+                    </div>
+                    <div className="col-2">
+                      <div className="speicality-item text-center">
+                        <div className="">
+                          <Image
+                            src="/assets/images/Doctors.png"
+                            className="img-fluid"
+                            width="100px"
+                            height="100px"
+                            alt="Speciality"
+                          />
+                        </div>
+                        <p>demo</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
