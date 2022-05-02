@@ -4337,3 +4337,64 @@ i.icon {
 }
 
 /* Diagnostics Stylesheet End Here */
+
+/* New Style of Tabs stylesheet start here*/
+.diag-details {
+  background-color: "#efefef";
+}
+.diag-details-inner .nav-tabs-solid {
+  background-color: #efefef;
+}
+.diag-details-inner .nav-tabs.nav-tabs-solid > li > a.active,
+.diag-details-inner .nav-tabs.nav-tabs-solid > li > a.active:hover,
+.diag-details-inner .nav-tabs.nav-tabs-solid > li > a.active:focus {
+  background-color: white;
+  border-color: white;
+  color: #73042b;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 15px 40px 15px 40px;
+  border-radius: 5px 5px 1px 1px;
+}
+.diag-details-inner .tab-content {
+  background: white;
+}
+.diag-details-inner .nav-tabs.nav-tabs-solid > li > a,
+.diag-details-inner .nav-tabs.nav-tabs-solid > li > a:hover,
+.diag-details-inner .nav-tabs.nav-tabs-solid > li > a:focus {
+  background-color: #73042b;
+  border-color: #73042b;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 15px 40px 15px 40px;
+  border-radius: 5px 5px 1px 1px;
+}
+/* New Style of Tabs stylesheet end here */
+
+.add-to-cart-diag-btn {
+  margin-top: 20px;
+}
+
+.back-to-list-diag-btn button {
+  background-color: white;
+  border: 1px solid #b9b9b9;
+  padding: 10px 30px;
+  font-size: 16px;
+}
+
+.back-to-list-diag-btn button:hover {
+  background-color: white;
+  border: 1px solid #73042b;
+  padding: 10px 30px;
+  font-size: 16px;
+}
+
+.jRFJkP,
+cNNJIt,
+.jRFJkP:disabled,
+.cNNJIt:disabled {
+  min-width: 50px !important;
+  min-height: 30px !important;
+  line-height: 20px !important;
+}

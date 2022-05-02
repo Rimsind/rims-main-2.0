@@ -1,4 +1,3 @@
-import { BreadCrums } from "components/common/index";
 import Image from "next/image";
 
 const Details = () => {

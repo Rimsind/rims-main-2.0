@@ -5,92 +5,116 @@ const Index = () => {
         <div className="container">
           <div className="content">
             <div className="row align-items-start">
-              <div className="col-2 sticky-top">
+              <div className="col-3 sticky-top">
                 <div className="left-test-list-title">
-                  <h6>CONDITIONS</h6>
-                  <ul className=" list-unstyled">
-                    <li>
-                      <div class="form-check">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          value=""
-                          id="defaultCheck1"
-                        />
-                        <label className="form-check-label" for="defaultCheck1">
-                          Heart
-                        </label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="form-check">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          value=""
-                          id="defaultCheck1"
-                        />
-                        <label className="form-check-label" for="defaultCheck1">
-                          Infertility
-                        </label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="form-check">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          value=""
-                          id="defaultCheck1"
-                        />
-                        <label className="form-check-label" for="defaultCheck1">
-                          Kidney
-                        </label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="form-check">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          value=""
-                          id="defaultCheck1"
-                        />
-                        <label className="form-check-label" for="defaultCheck1">
-                          Liver
-                        </label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="form-check">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          value=""
-                          id="defaultCheck1"
-                        />
-                        <label className="form-check-label" for="defaultCheck1">
-                          Lungs
-                        </label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="form-check">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          value=""
-                          id="defaultCheck1"
-                        />
-                        <label className="form-check-label" for="defaultCheck1">
-                          Thyroid
-                        </label>
-                      </div>
-                    </li>
-                  </ul>
+                  <div className="card">
+                    <div className="card-header">
+                      <h6 className="fs-6 fw-bold">CONDITIONS</h6>
+                    </div>
+                    <div className="card-body">
+                      <ul className=" list-unstyled">
+                        <li>
+                          <div class="form-check">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value=""
+                              id="defaultCheck1"
+                            />
+                            <label
+                              className="form-check-label"
+                              for="defaultCheck1"
+                            >
+                              Heart
+                            </label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="form-check">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value=""
+                              id="defaultCheck1"
+                            />
+                            <label
+                              className="form-check-label"
+                              for="defaultCheck1"
+                            >
+                              Infertility
+                            </label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="form-check">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value=""
+                              id="defaultCheck1"
+                            />
+                            <label
+                              className="form-check-label"
+                              for="defaultCheck1"
+                            >
+                              Kidney
+                            </label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="form-check">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value=""
+                              id="defaultCheck1"
+                            />
+                            <label
+                              className="form-check-label"
+                              for="defaultCheck1"
+                            >
+                              Liver
+                            </label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="form-check">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value=""
+                              id="defaultCheck1"
+                            />
+                            <label
+                              className="form-check-label"
+                              for="defaultCheck1"
+                            >
+                              Lungs
+                            </label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="form-check">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value=""
+                              id="defaultCheck1"
+                            />
+                            <label
+                              className="form-check-label"
+                              for="defaultCheck1"
+                            >
+                              Thyroid
+                            </label>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="col-10">
+              <div className="col-9">
                 <div className="test-list-right-title">
                   <h6
                     style={{
