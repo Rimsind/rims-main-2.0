@@ -14,17 +14,20 @@ const Index = () => {
 
   const [startValue, setStartValue] = useState(0);
   const [endValue, setEndValue] = useState(12);
-  const nextData = () => {
+  const [pageIndex, setPageIndex] = useState(1);
+  const nextPage = () => {
     if (doctors?.length - endValue >= 0) {
       setStartValue(startValue + 12);
       setEndValue(endValue + 12);
+      setPageIndex(pageIndex + 1);
     }
   };
 
-  const previousValue = () => {
+  const previousPage = () => {
     if (startValue >= 12) {
       setStartValue(startValue - 12);
       setEndValue(endValue - 12);
+      setPageIndex(pageIndex - 1);
     }
   };
 
@@ -347,18 +350,34 @@ const Index = () => {
                               role="group"
                               aria-label="Basic example"
                             >
-                              <button type="button" className="btn btn-primary">
-                                Prev
+                              {" "}
+                              {startValue === 0 ? (
+                                <button className="btn btn-secondary" disabled>
+                                  Prev
+                                </button>
+                              ) : (
+                                <button
+                                  className="btn btn-secondary"
+                                  onClick={previousPage}
+                                >
+                                  Prev
+                                </button>
+                              )}
+                              <button className="btn border disabled mx-1">
+                                {pageIndex}
                               </button>
-                              <button
-                                type="button"
-                                className="btn btn-primary disabled"
-                              >
-                                1
-                              </button>
-                              <button type="button" className="btn btn-primary">
-                                Next
-                              </button>
+                              {doctors?.length - endValue >= 0 ? (
+                                <button
+                                  className="btn btn-secondary"
+                                  onClick={nextPage}
+                                >
+                                  Next
+                                </button>
+                              ) : (
+                                <button className="btn btn-secondary" disabled>
+                                  Next
+                                </button>
+                              )}
                             </div>
                           </div>
                         </div>

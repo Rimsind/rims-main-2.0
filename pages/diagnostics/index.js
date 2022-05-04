@@ -9,18 +9,21 @@ const Index = () => {
     fetcher
   );
   const [startValue, setStartValue] = useState(0);
-  const [endValue, setEndValue] = useState(5);
-  const nextData = () => {
+  const [endValue, setEndValue] = useState(10);
+  const [pageIndex, setPageIndex] = useState(1);
+  const nextPage = () => {
     if (data?.length - endValue >= 0) {
-      setStartValue(startValue + 5);
-      setEndValue(endValue + 5);
+      setStartValue(startValue + 10);
+      setEndValue(endValue + 10);
+      setPageIndex(pageIndex + 1);
     }
   };
 
-  const previousValue = () => {
-    if (startValue >= 5) {
-      setStartValue(startValue - 5);
-      setEndValue(endValue - 5);
+  const previousPage = () => {
+    if (startValue >= 10) {
+      setStartValue(startValue - 10);
+      setEndValue(endValue - 10);
+      setPageIndex(pageIndex - 1);
     }
   };
   const { data: locations } = useSWR(`${apiUrl}/locations`, fetcher);
@@ -177,18 +180,34 @@ const Index = () => {
                               role="group"
                               aria-label="Basic example"
                             >
-                              <button type="button" className="btn btn-primary">
-                                Prev
+                              {" "}
+                              {startValue === 0 ? (
+                                <button className="btn btn-secondary" disabled>
+                                  Prev
+                                </button>
+                              ) : (
+                                <button
+                                  className="btn btn-secondary"
+                                  onClick={previousPage}
+                                >
+                                  Prev
+                                </button>
+                              )}
+                              <button className="btn border disabled mx-1">
+                                {pageIndex}
                               </button>
-                              <button
-                                type="button"
-                                className="btn btn-primary disabled"
-                              >
-                                1
-                              </button>
-                              <button type="button" className="btn btn-primary">
-                                Next
-                              </button>
+                              {data?.length - endValue >= 0 ? (
+                                <button
+                                  className="btn btn-secondary"
+                                  onClick={nextPage}
+                                >
+                                  Next
+                                </button>
+                              ) : (
+                                <button className="btn btn-secondary" disabled>
+                                  Next
+                                </button>
+                              )}
                             </div>
                           </div>
                         </div>

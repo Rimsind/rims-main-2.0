@@ -43,11 +43,6 @@ const DetailsNew = () => {
                                 data?.image?.url ||
                                 "/assets/images/alternate/alt-hospital.png"
                               }
-                              style={{
-                                height: "15rem",
-                                background: "#0b6ea5",
-                                padding: "10px",
-                              }}
                               className="img-fluid border border-1 rounded-circle bg-light"
                               alt="User Image"
                             />

@@ -8,6 +8,24 @@ const Index = () => {
     `${apiUrl}/hospitals?_sort=id:desc&&verification_status=Approved`,
     fetcher
   );
+  const [startValue, setStartValue] = useState(0);
+  const [endValue, setEndValue] = useState(10);
+  const [pageIndex, setPageIndex] = useState(1);
+  const nextPage = () => {
+    if (data?.length - endValue >= 0) {
+      setStartValue(startValue + 10);
+      setEndValue(endValue + 10);
+      setPageIndex(pageIndex + 1);
+    }
+  };
+
+  const previousPage = () => {
+    if (startValue >= 10) {
+      setStartValue(startValue - 10);
+      setEndValue(endValue - 10);
+      setPageIndex(pageIndex - 1);
+    }
+  };
   const { data: locations } = useSWR(`${apiUrl}/locations`, fetcher);
   const [search, setSearch] = useState("");
   const [city, setCity] = useState("");
@@ -125,6 +143,7 @@ const Index = () => {
                         return items;
                       }
                     })
+                    .slice(`${startValue}`, `${endValue}`)
                     .map((items, index) => (
                       <HorizontalPolyclinicCard
                         data={items}
@@ -154,18 +173,34 @@ const Index = () => {
                             role="group"
                             aria-label="Basic example"
                           >
-                            <button type="button" className="btn btn-primary">
-                              Prev
+                            {" "}
+                            {startValue === 0 ? (
+                              <button className="btn btn-secondary" disabled>
+                                Prev
+                              </button>
+                            ) : (
+                              <button
+                                className="btn btn-secondary"
+                                onClick={previousPage}
+                              >
+                                Prev
+                              </button>
+                            )}
+                            <button className="btn border disabled mx-1">
+                              {pageIndex}
                             </button>
-                            <button
-                              type="button"
-                              className="btn btn-primary disabled"
-                            >
-                              1
-                            </button>
-                            <button type="button" className="btn btn-primary">
-                              Next
-                            </button>
+                            {data?.length - endValue >= 0 ? (
+                              <button
+                                className="btn btn-secondary"
+                                onClick={nextPage}
+                              >
+                                Next
+                              </button>
+                            ) : (
+                              <button className="btn btn-secondary" disabled>
+                                Next
+                              </button>
+                            )}
                           </div>
                         </div>
                       </div>
