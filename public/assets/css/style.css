@@ -3239,11 +3239,11 @@ p.why-choose-heading-main-head {
   margin-bottom: 100px;
 }
 
-.patient-img img {
+.patient-img .profile-new-img {
   height: 200px;
   padding: 20px;
   border-radius: 100%;
-  box-shadow: 0 4px 18px -7px #1b5a90;
+  /* box-shadow: 0 4px 18px -7px #1b5a90; */
 }
 
 .patient-details p {

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import useSWR from "swr";
 import { apiUrl, fetcher } from "config/api";
 const PatientDemographics = ({ patientInfo }) => {
@@ -11,10 +12,17 @@ const PatientDemographics = ({ patientInfo }) => {
         <div className="widget-profile pro-widget-content">
           <div className="profile-info-widget">
             <div className="patient-img text-center">
-              <img
-                src={patientInfo?.image?.url || "/user_assets/img/profile.png"}
-                alt="User Image"
-              />
+              <div className="pt-3 pb-5">
+                <Image
+                  height={180}
+                  width={180}
+                  className="profile-new-img"
+                  src={
+                    patientInfo?.image?.url || "/user_assets/img/profile.png"
+                  }
+                  alt="User Image"
+                />
+              </div>
             </div>
             <div className="profile-det-info pt-2 ps-3 text-center">
               <p className="fs-5">
