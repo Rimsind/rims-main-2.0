@@ -30,11 +30,12 @@ const Specialities = () => {
                       <Image
                         height={120}
                         width={120}
+                        alt=""
                         src={
                           items?.image?.url ||
                           "/assets/images/alternate/alt-specialty.png"
                         }
-                      ></Image>
+                      />
                       <h3 className="fs-5 mt-3">{items?.name}</h3>
                       <a href="#" className="arrows" tabIndex="0">
                         <i className="fas fa-long-arrow-alt-right"></i>

@@ -513,6 +513,7 @@ const Details = () => {
                       src="/assets/images/diagnostics/contact-item-img.png"
                       height="320"
                       width="500"
+                      alt=""
                     />
                   </div>
                   <div className="col-5">
