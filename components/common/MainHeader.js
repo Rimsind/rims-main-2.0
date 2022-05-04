@@ -287,9 +287,9 @@ const MainHeader = () => {
               ) : (
                 <li className="nav-item ms-2">
                   <Link href="/user/login">
-                    <button className="nav-link login_font btn bg-custom-login text-light">
+                    <a className="nav-link login_font btn bg-custom-login text-light">
                       LOGIN / SIGNUP
-                    </button>
+                    </a>
                   </Link>
                 </li>
               )}
