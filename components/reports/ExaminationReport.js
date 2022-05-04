@@ -137,37 +137,43 @@ export const ExaminationReport = React.forwardRef((props, ref) => {
               <div className="profile_details mb-3">
                 <div className="row align-items-center">
                   <div className="col-4">
-                    <img
-                      className="presc-img-profile"
-                      alt=""
-                      src={
-                        appointments?.patient?.image?.url ||
-                        "/assets/images/profile.png"
-                      }
+                    <div
+                      className="presc-img-profile text-center"
                       style={{
-                        height: "12rem",
+                        height: "15.1rem",
                         background: "#0b6ea5",
                         padding: "10px",
                         position: "absolute",
-                        marginTop: "-88px",
-                        marginLeft: "25px",
+                        marginTop: "-118px",
+                        marginLeft: "2px",
                         boxShadow: "1px 8px 12px 0px #00000038",
                         borderRadius: "100%",
                       }}
-                    />
+                    >
+                      <Image
+                        className="rounded-circle"
+                        width={220}
+                        height={220}
+                        alt=""
+                        src={
+                          appointments?.patient?.image?.url ||
+                          "/assets/images/profile.png"
+                        }
+                      />
+                    </div>
                   </div>
                   <div className="col-8">
                     <p className="fs-5 fw-bold text-light border-bottom border-light">
                       Patient Details
                     </p>
                     <div className="row">
-                      <div className="col-12">
+                      <div className="col-md-12">
                         <div className="patient_intro mb-2">
                           <div className="patient_details_inner">
                             <p className="fs-6 fw-bold text-light lh-1 text-light lh-1">
                               Name :
                               <span className="fs-6 fw-light ms-1">
-                                {appointments?.patient?.first_name}
+                                {appointments?.patient?.first_name}{" "}
                                 {appointments?.patient?.last_name}
                               </span>
                             </p>
@@ -177,24 +183,41 @@ export const ExaminationReport = React.forwardRef((props, ref) => {
                                 {appointments?.patient?.marital_status}
                               </span>
                             </p> */}
-                            <span className="fs-6 fw-bold text-light lh-1 me-5">
-                              Blood Group :
-                              <span className="fs-6 fw-light ms-1">
-                                {bloodGroup?.name}
+                            <p>
+                              <span className="fs-6 fw-bold text-light lh-1 me-5">
+                                Blood Group :
+                                <span className="fs-6 fw-light ms-1">
+                                  {bloodGroup?.name}
+                                </span>
                               </span>
-                            </span>
-                            <span className="fs-6 fw-bold text-light lh-1 me-5">
-                              Age :
-                              <span className="fs-6 fw-light ms-1">
-                                {appointments?.patient?.age}
+                              <span className="fs-6 fw-bold text-light lh-1 me-5">
+                                Age :
+                                <span className="fs-6 fw-light ms-1">
+                                  {appointments?.patient?.age}
+                                </span>
                               </span>
-                            </span>
-                            <span className="fs-6 fw-bold text-light lh-1">
-                              Gender :
-                              <span className="fs-6 fw-light ms-1">
-                                {appointments?.patient?.gender}
+                              <span className="fs-6 fw-bold text-light lh-1">
+                                Gender :
+                                <span className="fs-6 fw-light ms-1">
+                                  {appointments?.patient?.gender}
+                                </span>
                               </span>
-                            </span>
+                            </p>
+
+                            <p>
+                              <span className="fs-6 fw-bold text-light me-5">
+                                Re-visit Date :
+                                <span className="fs-6 fw-light ms-1">
+                                  {appointments?.eprescription?.followUp_date}
+                                </span>
+                              </span>
+                              <span className="fs-6 fw-bold text-light">
+                                Re-visit Type :
+                                <span className="fs-6 fw-light ms-1">
+                                  {appointments?.eprescription?.followUp_type}
+                                </span>
+                              </span>
+                            </p>
                           </div>
                         </div>
                       </div>

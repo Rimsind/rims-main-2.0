@@ -132,24 +132,30 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
               <div className="profile_details mb-3">
                 <div className="row align-items-center">
                   <div className="col-4">
-                    <img
-                      className="presc-img-profile"
-                      alt=""
-                      src={
-                        appointments?.patient?.image?.url ||
-                        "/assets/images/profile.png"
-                      }
+                    <div
+                      className="presc-img-profile text-center"
                       style={{
-                        height: "15rem",
+                        height: "15.1rem",
                         background: "#0b6ea5",
                         padding: "10px",
                         position: "absolute",
-                        marginTop: "-115px",
+                        marginTop: "-118px",
                         marginLeft: "2px",
                         boxShadow: "1px 8px 12px 0px #00000038",
                         borderRadius: "100%",
                       }}
-                    />
+                    >
+                      <Image
+                        className="rounded-circle"
+                        width={220}
+                        height={220}
+                        alt=""
+                        src={
+                          appointments?.patient?.image?.url ||
+                          "/assets/images/profile.png"
+                        }
+                      />
+                    </div>
                   </div>
                   <div className="col-8">
                     <p className="fs-5 fw-bold text-light border-bottom border-light">

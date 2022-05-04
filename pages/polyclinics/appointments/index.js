@@ -46,7 +46,6 @@ const Index = () => {
           title="Home / Dashboard / My Appointments"
           title1="My Appointments"
         />
-
         <div className="content mb-3">
           <div className="container-fluid">
             <div className="row">
