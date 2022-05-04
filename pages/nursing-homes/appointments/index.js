@@ -58,7 +58,7 @@ const Index = () => {
                           href="#bottom-tab1"
                           data-bs-toggle="tab"
                         >
-                          Today's Appointments
+                          Today&apos;s Appointments
                         </a>
                       </li>
                       <li className="nav-item">
