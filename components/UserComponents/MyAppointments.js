@@ -4,7 +4,6 @@ import useSWR from "swr";
 import { apiUrl, fetcher } from "config/api";
 
 const MyAppointments = ({ data, sl, path }) => {
-  console.log(path, "crc");
   const { data: specialty } = useSWR(
     `${apiUrl}/specialties/${data?.doctor?.specialty}`,
     fetcher

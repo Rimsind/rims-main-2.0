@@ -18,12 +18,13 @@ const TodaysApp = ({ appointments, data, appointmentsLength }) => {
   }
 
   const currentDate = year + "-" + newMonth + "-" + newDay;
-  const [doctor, setDoctor] = useState(currentDate);
-  const [date, setDate] = useState("");
+  console.log(currentDate);
+  const [doctor, setDoctor] = useState("");
+  const [date, setDate] = useState(currentDate);
   const [status, setStatus] = useState("");
   const resetState = () => {
-    setDoctor(currentDate);
-    setDate("");
+    setDoctor("");
+    setDate(currentDate);
     setStatus("");
   };
   return (
@@ -175,7 +176,7 @@ const TodaysApp = ({ appointments, data, appointmentsLength }) => {
                           data={items}
                           key={index}
                           sl={index + 1}
-                          path="polyclinics"
+                          path="hospitals"
                         />
                       ))}
                   </>

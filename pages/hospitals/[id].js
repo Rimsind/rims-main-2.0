@@ -48,7 +48,10 @@ const HospitalId = () => {
                         <div className="clinic-details"></div>
                         <div className="clinic-services">
                           {data?.features?.map((items, index) => (
-                            <span className="bg-info text-light" key={index}>
+                            <span
+                              className="bg-info text-light me-2"
+                              key={index}
+                            >
                               {items?.feature_name}
                             </span>
                           ))}
@@ -85,8 +88,8 @@ const HospitalId = () => {
                         <div className="info-right">
                           <div className="hos-email-right mb-3">
                             <i className="far fa-clock me-2"></i>
-                            {data?.workingHours?.Start} -{" "}
-                            {data?.workingHours?.end}
+                            {data?.workingHours?.start_time} -{" "}
+                            {data?.workingHours?.end_time}
                           </div>
                           <div className="hos-phone-right mb-3">
                             <i className="far fa-ambulance me-2"></i>
@@ -297,7 +300,7 @@ const HospitalId = () => {
                                   >
                                     Available -{" "}
                                     <span className="count">
-                                      {data?.available?.icu_ambulance}
+                                      {data?.available_icu_ambulance}
                                     </span>
                                   </p>
                                 </div>

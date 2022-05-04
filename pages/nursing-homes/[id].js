@@ -61,8 +61,8 @@ const NursingHomeId = () => {
                             </li>
                             <li>
                               <i className="far fa-clock"></i>
-                              {data?.workingHours?.Start} to{" "}
-                              {data?.workingHours?.end}
+                              {data?.workingHours?.start_time} to{" "}
+                              {data?.workingHours?.end_time}
                             </li>
                             <li>
                               <i className="fas fa-map-marker-alt"></i>{" "}
@@ -270,13 +270,12 @@ const NursingHomeId = () => {
                                 <div className="row row-sm special-footer">
                                   <div className="col-6 text-start">
                                     <a className="doc-count">
-                                      {data?.totalBurnUnits} <span>Total</span>
+                                      {data?.totalOT} <span>Total</span>
                                     </a>
                                   </div>
                                   <div className="col-6 text-end">
                                     <a className="clin-count">
-                                      {data?.availableBurnUnits}{" "}
-                                      <span>Available</span>
+                                      {data?.availableOT} <span>Available</span>
                                     </a>
                                   </div>
                                 </div>
