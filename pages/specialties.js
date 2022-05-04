@@ -21,18 +21,21 @@ const Specialities = () => {
                 >
                   <div className="profile-widget browse-widget">
                     <Image
-                      src="/assets/images/doctors/doctor-01.jpg"
+                      src="/assets/images/specialty-bg.jpg"
                       height="350px"
                       width="350px"
                       alt="Specialities Image"
                     />
                     <div className="overlay">
-                      <img
+                      <Image
+                        height={120}
+                        width={120}
+                        alt=""
                         src={
                           items?.image?.url ||
                           "/assets/images/alternate/alt-specialty.png"
                         }
-                      ></img>
+                      />
                       <h3 className="fs-5 mt-3">{items?.name}</h3>
                       <a href="#" className="arrows" tabIndex="0">
                         <i className="fas fa-long-arrow-alt-right"></i>

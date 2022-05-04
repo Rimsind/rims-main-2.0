@@ -9,6 +9,11 @@ import { UserPageLoader } from "components/Loaders";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { withAuth } from "helpers/withAuth";
+import React, { useRef } from "react";
+import { useReactToPrint } from "react-to-print";
+import { EprescriptionReport } from "components/reports/Eprescription";
+import { AssesmentReport } from "components/reports/AssesmentReport";
+import { ExaminationReport } from "components/reports/ExaminationReport";
 const AppointmentId = () => {
   const { id } = useRouter().query;
   const { auth } = useAuth();
@@ -45,6 +50,23 @@ const AppointmentId = () => {
     `${apiUrl}/specialties/${appointments?.doctor?.specialty}`,
     fetcher
   );
+  const { data: bloodGroup } = useSWR(
+    `${apiUrl}/blood-groups/${appointments?.patient?.blood_group}`,
+    fetcher
+  );
+
+  const prescriptionRef = useRef();
+  const printPrescription = useReactToPrint({
+    content: () => prescriptionRef.current,
+  });
+  const assesmentRef = useRef();
+  const printAssesment = useReactToPrint({
+    content: () => assesmentRef.current,
+  });
+  const examinationRef = useRef();
+  const printExamination = useReactToPrint({
+    content: () => examinationRef.current,
+  });
   return (
     <>
       <div className="main-wrapper">
@@ -81,48 +103,37 @@ const AppointmentId = () => {
                           </div>
                         </div>
                       </div>
-
                       <div className="col-12 col-lg-9 col-xl-9 col-xxl-9">
                         <div className="right-upper-content">
                           <div className="row">
                             <div className="col-sm-4 col-md-4 col-lg-4 col-xl-4 text-end">
                               <div className="d-grid gap-2 mb-2 mb-lg-0 mb-xl-0 mb-xxl-0">
-                                <Link
-                                  href={`/reports/examination-report?id=${id}`}
+                                <button
+                                  className="btn btn-primary py-2"
+                                  onClick={printExamination}
                                 >
-                                  <a
-                                    className="btn btn-primary py-2"
-                                    type="button"
-                                  >
-                                    Download Examination
-                                  </a>
-                                </Link>
+                                  Download Examination
+                                </button>
                               </div>
                             </div>
                             <div className="col-sm-4 col-md-4 col-lg-4 col-xl-4 text-end">
                               <div className="d-grid gap-2 mb-2 mb-lg-0 mb-xl-0 mb-xxl-0">
-                                <Link
-                                  href={`/reports/assesment-report?id=${id}`}
+                                <button
+                                  className="btn btn-primary py-2"
+                                  onClick={printAssesment}
                                 >
-                                  <a
-                                    className="btn btn-primary py-2"
-                                    type="button"
-                                  >
-                                    Download Assessments
-                                  </a>
-                                </Link>
+                                  Download Assessments
+                                </button>
                               </div>
                             </div>
                             <div className="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                               <div className="d-grid gap-2 mb-2 mb-lg-0 mb-xl-0 mb-xxl-0">
-                                <Link href={`/reports/e-prescription?id=${id}`}>
-                                  <a
-                                    className="btn btn-danger py-2"
-                                    type="button"
-                                  >
-                                    Download e-Prescription
-                                  </a>
-                                </Link>
+                                <button
+                                  className="btn btn-danger py-2 "
+                                  onClick={printPrescription}
+                                >
+                                  Download e-Prescription
+                                </button>
                               </div>
                             </div>
                           </div>
@@ -249,6 +260,30 @@ const AppointmentId = () => {
               )}
             </div>
           </div>
+        </div>
+        <div style={{ display: "none" }}>
+          <EprescriptionReport
+            ref={prescriptionRef}
+            appointments={appointments}
+            specialty={specialty}
+            bloodGroup={bloodGroup}
+          />
+        </div>
+        <div style={{ display: "none" }}>
+          <AssesmentReport
+            ref={assesmentRef}
+            appointments={appointments}
+            specialty={specialty}
+            bloodGroup={bloodGroup}
+          />
+        </div>
+        <div style={{ display: "none" }}>
+          <ExaminationReport
+            ref={examinationRef}
+            appointments={appointments}
+            specialty={specialty}
+            bloodGroup={bloodGroup}
+          />
         </div>
       </div>
     </>

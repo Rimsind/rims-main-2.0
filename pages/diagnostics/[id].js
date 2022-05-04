@@ -498,7 +498,7 @@ const Details = () => {
               </div>
             </div>
             <div
-              className="diag-contact-banner pt-5 mb-1"
+              className="diag-contact-banner pt-5 "
               style={{
                 background:
                   "url(/assets/images/diagnostics/contact-diag-banner.jpg)",
@@ -509,9 +509,10 @@ const Details = () => {
               <div className="container">
                 <div className="row align-items-center">
                   <div className="col-7">
-                    <img
+                    <Image
                       src="/assets/images/diagnostics/contact-item-img.png"
-                      className="img-fluid"
+                      height="320"
+                      width="500"
                       alt=""
                     />
                   </div>
