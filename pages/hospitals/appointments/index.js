@@ -53,40 +53,42 @@ const Index = () => {
               <HospitalSideBar data={data} status7="active" />
               {appointments ? (
                 <div className="col-md-12 col-sm-12 col-lg-8 col-xl-9">
-                  <ul className="nav nav-tabs nav-tabs-rounded">
-                    <li className="nav-item">
-                      <a
-                        className="nav-link active"
-                        href="#bottom-tab1"
-                        data-bs-toggle="tab"
-                      >
-                        Today
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="nav-link"
-                        href="#bottom-tab2"
-                        data-bs-toggle="tab"
-                      >
-                        All
-                      </a>
-                    </li>
-                  </ul>
-                  <div className="tab-content">
-                    <div className="tab-pane show active" id="bottom-tab1">
-                      <TodaysApp
-                        appointments={appointments}
-                        appointmentsLength={appointmentsLength}
-                        data={data}
-                      />
-                    </div>
-                    <div className="tab-pane" id="bottom-tab2">
-                      <AllApps
-                        appointments={appointments}
-                        appointmentsLength={appointmentsLength}
-                        data={data}
-                      />
+                  <div className="diag-details-inner">
+                    <ul className="nav nav-tabs nav-tabs-solid">
+                      <li className="nav-item">
+                        <a
+                          className="nav-link active"
+                          href="#bottom-tab1"
+                          data-bs-toggle="tab"
+                        >
+                          Today's Appointments
+                        </a>
+                      </li>
+                      <li className="nav-item">
+                        <a
+                          className="nav-link"
+                          href="#bottom-tab2"
+                          data-bs-toggle="tab"
+                        >
+                          All Appointments
+                        </a>
+                      </li>
+                    </ul>
+                    <div className="tab-content">
+                      <div className="tab-pane show active" id="bottom-tab1">
+                        <TodaysApp
+                          appointments={appointments}
+                          appointmentsLength={appointmentsLength}
+                          data={data}
+                        />
+                      </div>
+                      <div className="tab-pane" id="bottom-tab2">
+                        <AllApps
+                          appointments={appointments}
+                          appointmentsLength={appointmentsLength}
+                          data={data}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
