@@ -135,13 +135,13 @@ const TodaysApp = ({ appointments, data, appointmentsLength }) => {
                         if (date === "" && clinic === "" && status === "") {
                           return items;
                         } else if (
-                          items?.date.includes(date) &&
+                          items?.date?.includes(date) &&
                           clinic === "" &&
                           status === ""
                         ) {
                           return items;
                         } else if (
-                          items?.polyclinic?.name.includes(clinic) &&
+                          items?.polyclinic?.name?.includes(clinic) &&
                           date === "" &&
                           status === ""
                         ) {
@@ -153,7 +153,7 @@ const TodaysApp = ({ appointments, data, appointmentsLength }) => {
                         ) {
                           return items;
                         } else if (
-                          items?.hospital?.name.includes(clinic) &&
+                          items?.hospital?.name?.includes(clinic) &&
                           date === "" &&
                           status === ""
                         ) {
@@ -173,19 +173,19 @@ const TodaysApp = ({ appointments, data, appointmentsLength }) => {
                         ) {
                           return items;
                         } else if (
-                          items?.date.includes(date) &&
+                          items?.date?.includes(date) &&
                           items?.nursing_home?.name.includes(clinic) &&
                           status === ""
                         ) {
                           return items;
                         } else if (
-                          items?.date.includes(date) &&
+                          items?.date?.includes(date) &&
                           items?.hospital?.name.includes(clinic) &&
                           status === ""
                         ) {
                           return items;
                         } else if (
-                          items?.date.includes(date) &&
+                          items?.date?.includes(date) &&
                           items?.appointment_status
                             .toString()
                             .includes(status) &&
@@ -193,7 +193,7 @@ const TodaysApp = ({ appointments, data, appointmentsLength }) => {
                         ) {
                           return items;
                         } else if (
-                          items?.polyclinic?.name.includes(clinic) &&
+                          items?.polyclinic?.name?.includes(clinic) &&
                           items?.appointment_status
                             .toString()
                             .includes(status) &&
@@ -201,7 +201,7 @@ const TodaysApp = ({ appointments, data, appointmentsLength }) => {
                         ) {
                           return items;
                         } else if (
-                          items?.nursing_home?.name.includes(clinic) &&
+                          items?.nursing_home?.name?.includes(clinic) &&
                           items?.appointment_status
                             .toString()
                             .includes(status) &&
@@ -209,7 +209,7 @@ const TodaysApp = ({ appointments, data, appointmentsLength }) => {
                         ) {
                           return items;
                         } else if (
-                          items?.hospital?.name.includes(clinic) &&
+                          items?.hospital?.name?.includes(clinic) &&
                           items?.appointment_status
                             .toString()
                             .includes(status) &&
@@ -217,7 +217,7 @@ const TodaysApp = ({ appointments, data, appointmentsLength }) => {
                         ) {
                           return items;
                         } else if (
-                          items?.date.includes(date) &&
+                          items?.date?.includes(date) &&
                           items?.polyclinic?.name.includes(clinic) &&
                           items?.appointment_status.toString().includes(status)
                         ) {

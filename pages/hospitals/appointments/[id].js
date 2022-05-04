@@ -182,7 +182,7 @@ const AppointmentId = () => {
                                 height="50"
                                 width="50"
                                 src={
-                                  appointments?.polyclinic?.image?.url ||
+                                  appointments?.hospital?.image?.url ||
                                   "/assets/images/alternate/alt-hospital.png"
                                 }
                                 className="img-fluid rounded"
@@ -191,11 +191,11 @@ const AppointmentId = () => {
                             </div>
                             <div className="right-details">
                               <p className="fs-6 lh-1 fst-normal">
-                                {appointments?.polyclinic?.name}
+                                {appointments?.hospital?.name}
                               </p>
                               <p className="fs-6 fst-italic lh-1">
-                                {appointments?.polyclinic?.city},{" "}
-                                {appointments?.polyclinic?.state}
+                                {appointments?.hospital?.city},{" "}
+                                {appointments?.hospital?.state}
                               </p>
                             </div>
                           </div>

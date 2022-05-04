@@ -70,8 +70,8 @@ const DetailsNew = () => {
                                 <i className="fas fa-clock"></i>
                               </span>
                               <span className="text-secondary ms-2">
-                                {data?.workingHours?.Start} to{" "}
-                                {data?.workingHours?.end}
+                                {data?.workingHours?.start_time} to{" "}
+                                {data?.workingHours?.end_time}
                               </span>
                             </h6>
                           </div>

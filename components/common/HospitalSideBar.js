@@ -5,7 +5,7 @@ import Link from "next/link";
 const HospitalSideBar = (props) => {
   const { logOut } = useAuth();
   const { data } = props;
-  console.log(data);
+
   return (
     <>
       {" "}
@@ -53,6 +53,14 @@ const HospitalSideBar = (props) => {
                       <span>Appointments</span>
                     </a>
                   </Link>
+                </li>{" "}
+                <li className={props.status8}>
+                  <Link href="/hospitals/auth/page-content-editor">
+                    <a>
+                      <i className="fas fa-calendar-check"></i>
+                      <span>Page Content Editor</span>
+                    </a>
+                  </Link>
                 </li>
                 <li className={props.status2}>
                   <Link href="/hospitals/auth/manage-doctors">
@@ -62,7 +70,6 @@ const HospitalSideBar = (props) => {
                     </a>
                   </Link>
                 </li>
-
                 <li className={props.status4}>
                   <Link href="/hospitals/auth/profile-settings">
                     <a>
@@ -71,7 +78,6 @@ const HospitalSideBar = (props) => {
                     </a>
                   </Link>
                 </li>
-
                 <li className={props.status5}>
                   <Link href="/hospitals/auth/privacy-settings">
                     <a>
@@ -80,7 +86,6 @@ const HospitalSideBar = (props) => {
                     </a>
                   </Link>
                 </li>
-
                 <li className={props.status6}>
                   <Link href="/hospitals/auth/advance-settings">
                     <a>
@@ -89,7 +94,6 @@ const HospitalSideBar = (props) => {
                     </a>
                   </Link>
                 </li>
-
                 {/* <li>
                   <button className="btn" onClick={logOut}>
                     <i className="fas fa-sign-out-alt ms-2 me-2 text-danger"></i>

@@ -170,7 +170,7 @@ const AllApps = ({ appointments, data, appointmentsLength }) => {
                       })
                       .map((items, index) => (
                         <MyAppointments
-                          path="polyclinics"
+                          path="hospitals"
                           data={items}
                           key={index}
                           sl={index + 1}
