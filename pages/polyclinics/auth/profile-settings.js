@@ -32,7 +32,7 @@ const ProfileSettings = () => {
       <div className="content mb-3">
         <div className="container-fluid">
           <div className="row">
-            <PolyclinicSideBar data={data} status1="active" />
+            <PolyclinicSideBar data={data} status4="active" />
             <div className="col-md-12 col-lg-12 col-xl-9 col-xxl-9">
               <ProfilePicture data={data} />
               <ProfileInfo data={data} />

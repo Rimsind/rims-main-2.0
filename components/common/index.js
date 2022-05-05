@@ -13,6 +13,7 @@ import NursingSideBar from "./NursingSideBar";
 import AuthNav from "./AuthNav";
 import TestCard from "./TestCard";
 import HospitalSideBar from "./HospitalSideBar";
+import DiagnosticsCategory from "./DiagnosticsCategory";
 
 export {
   BreadCrums,
@@ -30,4 +31,5 @@ export {
   AuthNav,
   TestCard,
   HospitalSideBar,
+  DiagnosticsCategory,
 };

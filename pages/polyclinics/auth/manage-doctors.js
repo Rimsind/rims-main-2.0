@@ -63,7 +63,7 @@ const ManageDoctors = () => {
       <div className="content mb-3">
         <div className="container-fluid">
           <div className="row">
-            <PolyclinicSideBar data={data} status1="active" />
+            <PolyclinicSideBar data={data} status2="active" />
 
             <div className="col-md-12 col-lg-8 col-xl-9 col-xxl-9">
               <div className="card">

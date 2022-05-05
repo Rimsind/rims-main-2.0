@@ -3,9 +3,7 @@ import { useAuth } from "context";
 import { useState } from "react";
 const TodaysApp = ({ appointments, data, appointmentsLength }) => {
   const { auth } = useAuth();
-  if (auth?.user?.role?.id === 1) {
-    var role = "user";
-  }
+
   if (auth?.user?.role?.id === 3) {
     var role = "doctors";
   }

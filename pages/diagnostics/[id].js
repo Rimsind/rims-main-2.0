@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 import { apiUrl, fetcher } from "config/api";
 import Carousel from "react-elastic-carousel";
-import { TestCard } from "components/common";
+import { DiagnosticsCategory, TestCard } from "components/common";
 
 const Details = () => {
   const { id } = useRouter().query;
@@ -184,7 +184,7 @@ const Details = () => {
               </div>
             </div>
             <div className="diag-test-card py-5">
-              <div className="container">
+              <div className="container-fluid">
                 <div className="diag-test-card-title">
                   <h6
                     className="text-center"
@@ -223,7 +223,7 @@ const Details = () => {
                     <TestCard />
                   </Carousel>
                 </div>
-                <div className="section-diag-btn text-center">
+                <div className="section-diag-btn text-center mt-3">
                   <button className="btn btn-primary">View All Tests</button>
                 </div>
               </div>
@@ -261,90 +261,30 @@ const Details = () => {
                   </p>
                 </div>
                 <div className="row carousel-styling my-5">
-                  <div className="col-2">
-                    <div className="speicality-item text-center">
-                      <div className="">
-                        <Image
-                          src="/assets/images/Doctors.png"
-                          className="img-fluid"
-                          width="100px"
-                          height="100px"
-                          alt="Speciality"
-                        />
-                      </div>
-                      <p>demo</p>
-                    </div>
-                  </div>
-                  <div className="col-2">
-                    <div className="speicality-item text-center">
-                      <div className="">
-                        <Image
-                          src="/assets/images/Doctors.png"
-                          className="img-fluid"
-                          width="100px"
-                          height="100px"
-                          alt="Speciality"
-                        />
-                      </div>
-                      <p>demo</p>
-                    </div>
-                  </div>
-                  <div className="col-2">
-                    <div className="speicality-item text-center">
-                      <div className="">
-                        <Image
-                          src="/assets/images/Doctors.png"
-                          className="img-fluid"
-                          width="100px"
-                          height="100px"
-                          alt="Speciality"
-                        />
-                      </div>
-                      <p>demo</p>
-                    </div>
-                  </div>
-                  <div className="col-2">
-                    <div className="speicality-item text-center">
-                      <div className="">
-                        <Image
-                          src="/assets/images/Doctors.png"
-                          className="img-fluid"
-                          width="100px"
-                          height="100px"
-                          alt="Speciality"
-                        />
-                      </div>
-                      <p>demo</p>
-                    </div>
-                  </div>
-                  <div className="col-2">
-                    <div className="speicality-item text-center">
-                      <div className="">
-                        <Image
-                          src="/assets/images/Doctors.png"
-                          className="img-fluid"
-                          width="100px"
-                          height="100px"
-                          alt="Speciality"
-                        />
-                      </div>
-                      <p>demo</p>
-                    </div>
-                  </div>
-                  <div className="col-2">
-                    <div className="speicality-item text-center">
-                      <div className="">
-                        <Image
-                          src="/assets/images/Doctors.png"
-                          className="img-fluid"
-                          width="100px"
-                          height="100px"
-                          alt="Speciality"
-                        />
-                      </div>
-                      <p>demo</p>
-                    </div>
-                  </div>
+                  <DiagnosticsCategory
+                    url="/assets/images/diagnostics/heart.png"
+                    title="Heart"
+                  />
+                  <DiagnosticsCategory
+                    url="/assets/images/diagnostics/endocrine.png"
+                    title="Thyroid"
+                  />
+                  <DiagnosticsCategory
+                    url="/assets/images/diagnostics/liver.png"
+                    title="Liver"
+                  />
+                  <DiagnosticsCategory
+                    url="/assets/images/diagnostics/lungs.png"
+                    title="Lungs"
+                  />
+                  <DiagnosticsCategory
+                    url="/assets/images/diagnostics/infertility.png"
+                    title="Infertility"
+                  />
+                  <DiagnosticsCategory
+                    url="/assets/images/diagnostics/kidney.png"
+                    title="Kidney"
+                  />
                 </div>
               </div>
             </div>
@@ -355,7 +295,7 @@ const Details = () => {
                   "url(/assets/images/diagnostics/card-banner-diag.jpg)",
               }}
             >
-              <div className="container">
+              <div className="container-fluid">
                 <div className="diag-test-card-title">
                   <h6
                     className="text-center"
@@ -394,7 +334,7 @@ const Details = () => {
                     <TestCard />
                   </Carousel>
                 </div>
-                <div className="section-diag-btn text-center">
+                <div className="section-diag-btn text-center mt-3">
                   <button className="btn btn-primary">View All Tests</button>
                 </div>
               </div>

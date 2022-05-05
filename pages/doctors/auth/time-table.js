@@ -35,7 +35,7 @@ const DoctorTimeTable = () => {
           <div className="content">
             <div className="container-fluid">
               <div className="row">
-                <DoctorSidebar status6="active" data={data} />
+                <DoctorSidebar status5="active" data={data} />
 
                 <div className="col-md-12 col-sm-12 col-lg-8 col-xl-9">
                   <div className="card">

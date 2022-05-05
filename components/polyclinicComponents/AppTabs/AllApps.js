@@ -1,6 +1,20 @@
 import MyAppointments from "components/UserComponents/MyAppointments";
+import { useAuth } from "context";
 import { useState } from "react";
 const AllApps = ({ appointments, data, appointmentsLength }) => {
+  const { auth } = useAuth();
+  if (auth?.user?.role?.id === 3) {
+    var role = "doctors";
+  }
+  if (auth?.user?.role?.id === 4) {
+    var role = "polyclinics";
+  }
+  if (auth?.user?.role?.id === 5) {
+    var role = "nursing-homes";
+  }
+  if (auth?.user?.role?.id === 6) {
+    var role = "hospitals";
+  }
   const [doctor, setDoctor] = useState("");
   const [date, setDate] = useState("");
   const [status, setStatus] = useState("");
@@ -170,7 +184,7 @@ const AllApps = ({ appointments, data, appointmentsLength }) => {
                       })
                       .map((items, index) => (
                         <MyAppointments
-                          path="hospitals"
+                          path={role}
                           data={items}
                           key={index}
                           sl={index + 1}
