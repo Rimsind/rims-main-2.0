@@ -4,6 +4,7 @@ import useSWR from "swr";
 import { apiUrl, fetcher } from "config/api";
 import Carousel from "react-elastic-carousel";
 import { DiagnosticsCategory, TestCard } from "components/common";
+import Link from "next/link";
 
 const Details = () => {
   const { id } = useRouter().query;
@@ -213,18 +214,15 @@ const Details = () => {
                     enableAutoPlay
                     autoPlaySpeed={1500}
                   >
-                    <TestCard />
-                    <TestCard />
-                    <TestCard />
-                    <TestCard />
-                    <TestCard />
-                    <TestCard />
-                    <TestCard />
-                    <TestCard />
+                    {data?.test_packages?.map((items, index) => (
+                      <TestCard data={items} key={index} clinicId={id} />
+                    ))}
                   </Carousel>
                 </div>
                 <div className="section-diag-btn text-center mt-3">
-                  <button className="btn btn-primary">View All Tests</button>
+                  <Link href={`/diagnostics/test-list?id=${id}`}>
+                    <a className="btn btn-primary">View All Tests</a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -324,18 +322,15 @@ const Details = () => {
                     enableAutoPlay
                     autoPlaySpeed={1500}
                   >
-                    <TestCard />
-                    <TestCard />
-                    <TestCard />
-                    <TestCard />
-                    <TestCard />
-                    <TestCard />
-                    <TestCard />
-                    <TestCard />
+                    {data?.test_packages?.map((items, index) => (
+                      <TestCard data={items} key={index} clinicId={id} />
+                    ))}
                   </Carousel>
                 </div>
                 <div className="section-diag-btn text-center mt-3">
-                  <button className="btn btn-primary">View All Tests</button>
+                  <Link href={`/diagnostics/test-list?id=${id}`}>
+                    <a className="btn btn-primary">View All Tests</a>
+                  </Link>
                 </div>
               </div>
             </div>

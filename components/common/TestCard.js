@@ -1,18 +1,17 @@
-const TestCard = () => {
+import Link from "next/link";
+const TestCard = ({ data, clinicId }) => {
   return (
     <>
       <div className="card me-2">
         <div className="card-body">
           <div className="diag-test-card-inner-item">
             <h6 className="fs-5" style={{ color: "#427cc5" }}>
-              Malaria Test
+              {data?.name}
             </h6>
             <h6 className="text-black pt-2">Pre Test Information</h6>
-            <p className="text-secondary">
-              No special prparation is required for the test.
-            </p>
+            <p className="text-secondary">{data?.pre_test_info}</p>
             <h6 className="text-black pt-2">Report Delivery</h6>
-            <p className="text-secondary">Same Day</p>
+            <p className="text-secondary">{data?.report_delivery}</p>
             <h6
               className="text-black pt-2"
               style={{
@@ -24,18 +23,12 @@ const TestCard = () => {
               Includes:
             </h6>
             <ul className="list-unstyled">
-              <li>
-                <i className="far fa-check me-1 text-secondary"></i>
-                Blood Glucose
-              </li>
-              <li>
-                <i className="far fa-check me-1 text-secondary"></i>
-                Liver Functioning
-              </li>
-              <li>
-                <i className="far fa-check me-1 text-secondary"></i>
-                Heart Health
-              </li>
+              {data?.test_includes?.map((items, index) => (
+                <li>
+                  <i className="far fa-check me-1 text-secondary"></i>
+                  {items?.items}
+                </li>
+              ))}
             </ul>
             <h6
               className="mb-5"
@@ -45,25 +38,29 @@ const TestCard = () => {
                 fontFamily: "roboto",
               }}
             >
-              ₹300
+              ₹{data?.price}
             </h6>
             <div className="test-card-btn-grp">
               <div className="row align-items-center">
                 <div className="col-6">
-                  <button
-                    style={{
-                      padding: "15px 8px",
-                      border: "1px solid #000",
-                      background: "white",
-                      fontSize: "16px",
-                      fontWeight: "500",
-                    }}
+                  <Link
+                    href={`/diagnostics/test-list/details?testId=${data?.id}&&clinicId=${clinicId}`}
                   >
-                    View Details
-                  </button>
+                    <a
+                      style={{
+                        padding: "15px 8px",
+                        border: "1px solid #000",
+                        background: "white",
+                        fontSize: "16px",
+                        fontWeight: "500",
+                      }}
+                    >
+                      View Details
+                    </a>
+                  </Link>
                 </div>
                 <div className="col-6">
-                  <button
+                  <a
                     style={{
                       padding: "15px 8px",
                       border: "1px solid #000",
@@ -72,8 +69,8 @@ const TestCard = () => {
                       fontWeight: "500",
                     }}
                   >
-                    Add To Cart
-                  </button>
+                    Book Now
+                  </a>
                 </div>
               </div>
             </div>
