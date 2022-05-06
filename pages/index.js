@@ -176,8 +176,8 @@ const Index = () => {
                               <Image
                                 src={items?.image?.url}
                                 className="img-fluid"
-                                width="200"
-                                height="200"
+                                width="150"
+                                height="150"
                                 alt="Speciality"
                               />
                             </div>
