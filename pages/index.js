@@ -210,7 +210,10 @@ const Index = () => {
             </div>
           </div>
         </section>
-        <section className="section section-doctor">
+        <section
+          className="section section-doctor"
+          style={{ background: "url(/assets/images/featured-bg.jpg)" }}
+        >
           <div className="container-fluid">
             <div className="row">
               <div className="col-lg-4 ">
@@ -313,7 +316,12 @@ const Index = () => {
             </div>
           </div>
         </section>
-        <section className="clinic-features-section">
+        <section
+          className="clinic-features-section"
+          style={{
+            background: "url(/assets/images/diagnostics/card-banner-diag.jpg)",
+          }}
+        >
           <div className="container">
             <div className="row">
               <div className="col-md-6">

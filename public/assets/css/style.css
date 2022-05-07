@@ -1789,7 +1789,6 @@ span.banner-sub-heading-span {
 }
 
 .section-doctor {
-  background: url(../images/featured-bg.jpg);
   padding: 80px 0;
 }
 
@@ -2091,7 +2090,7 @@ span.banner-sub-heading-span {
 
 .clinic-features-section {
   position: relative;
-  background: url(../images/diagnostics/card-banner-diag.jpg);
+
   background-position: 50% 0;
   background-size: cover;
   background-repeat: no-repeat;
