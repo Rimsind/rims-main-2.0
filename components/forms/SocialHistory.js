@@ -80,10 +80,11 @@ const SocialHistory = ({ patientId, socialHistory, updated_at }) => {
     "Two Level",
     "Multi Level",
     "Stairs, No Railing",
+    "Stairs, Railing",
     "Ramps",
     "Elevation",
     "Elevators",
-    "Stairs, Railing",
+
     "Uneven Terrain",
     "Others",
   ];
@@ -97,8 +98,8 @@ const SocialHistory = ({ patientId, socialHistory, updated_at }) => {
     "Regular Cane",
     "Front Wheel Walker",
     "Motorized Wheelchair",
-    "Four Wheel Walker with Seat",
     "Glasses",
+    "Four Wheel Walker with Seat",
     "Left Hearing Aid",
     "Right Hearing Aid",
     "Others",
