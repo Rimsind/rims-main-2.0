@@ -24,7 +24,7 @@ const TestCard = ({ data, clinicId }) => {
             </h6>
             <ul className="list-unstyled">
               {data?.test_includes?.map((items, index) => (
-                <li>
+                <li key={index}>
                   <i className="far fa-check me-1 text-secondary"></i>
                   {items?.items}
                 </li>
