@@ -138,8 +138,8 @@ const Index = () => {
                 <div className="right-test-list">
                   <div className="row align-items-center">
                     {data?.test_packages?.map((items, index) => (
-                      <div className="col-3">
-                        <TestCard data={items} key={index} clinicId={id} />{" "}
+                      <div className="col-3" key={index}>
+                        <TestCard data={items} clinicId={id} />
                       </div>
                     ))}
                   </div>
