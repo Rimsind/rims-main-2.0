@@ -201,8 +201,10 @@ const Footer = () => {
           <div className="row pt-4">
             <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 text-center text-sm-center text-md-center text-lg-start text-xl-start text-xxl-start">
               <p>
-                &copy; Copyright
-                <span className="ms-2">Rehab Integrated Medical Solutions</span>
+                &copy; Copyright All right&apos;s Reserved With
+                <span className="ms-2">
+                  Rims Ind a Unit Of Retar Mediserve Pvt. Ltd.
+                </span>
               </p>
             </div>
             <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 text-center text-sm-center text-md-center text-lg-end text-xl-end text-xxl-end">
