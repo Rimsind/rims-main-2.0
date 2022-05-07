@@ -19,7 +19,10 @@ const MainHeader = () => {
             <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-5 col-xxl-5 mb-3 mb-sm-3 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0">
               <div className="left-topbar-number">
                 <a href="tel:+180030000123" className="fs-6 text-light">
-                  Emergency - 1800-30000-123
+                  24x7 Help Line -{" "}
+                  <a href="tel:8597-3944-14" className="text-light">
+                    +91 8597-3944-14
+                  </a>
                 </a>
               </div>
             </div>

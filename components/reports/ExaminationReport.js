@@ -279,7 +279,7 @@ export const ExaminationReport = React.forwardRef((props, ref) => {
                   />
                 </div>
                 <p className="text-light fs-5 fw-bold text-center lh-1">
-                  Powered by RIMS IND
+                  Powered by Rims Ind a Unit Of Retar Mediserve Pvt. Ltd.
                 </p>
                 <p className="text-light text-center fs-6 lh-1 fst-italic">
                   A unit of Retar Mediserve Pvt. Ltd.

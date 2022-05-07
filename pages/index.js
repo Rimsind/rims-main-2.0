@@ -165,7 +165,7 @@ const Index = () => {
                       <Carousel
                         breakPoints={breakPoints}
                         enableAutoPlay
-                        autoPlaySpeed={1500}
+                        autoPlaySpeed={2000}
                       >
                         {specialties?.map((items, index) => (
                           <div

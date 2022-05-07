@@ -1665,6 +1665,7 @@ span.banner-sub-heading-span {
 .section-specialities .specialities-slider .carousel-styling .rec.rec-arrow {
   background-color: #10defd;
   color: white;
+  display: none;
 }
 
 .section-specialities
@@ -1678,6 +1679,7 @@ span.banner-sub-heading-span {
   height: 10px;
   width: 10px;
   border-radius: 50%;
+  display: none;
 }
 
 .section-specialities
@@ -1787,7 +1789,7 @@ span.banner-sub-heading-span {
 }
 
 .section-doctor {
-  background-color: #f8f9fa;
+  background: url(../images/featured-bg.jpg);
   padding: 80px 0;
 }
 
@@ -1865,6 +1867,7 @@ span.banner-sub-heading-span {
 .section-doctor .doctor-slider .carousel-styling .rec.rec-arrow {
   background-color: #10defd;
   color: white;
+  display: none;
 }
 
 .section-doctor .doctor-slider .carousel-styling .rec.rec-arrow:disabled {
@@ -1875,6 +1878,7 @@ span.banner-sub-heading-span {
   height: 10px;
   width: 10px;
   border-radius: 50%;
+  display: none;
 }
 
 .section-doctor .doctor-slider .carousel-styling .rec.rec-dot_active {
@@ -2087,7 +2091,7 @@ span.banner-sub-heading-span {
 
 .clinic-features-section {
   position: relative;
-  background: url(../images/featured-bg.jpg);
+  background: url(../images/diagnostics/card-banner-diag.jpg);
   background-position: 50% 0;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2187,6 +2191,7 @@ span.banner-sub-heading-span {
 .our-doctors-section .our-doctors .carousel-styling .rec.rec-arrow {
   background-color: #10defd;
   color: white;
+  display: none;
 }
 
 .our-doctors-section .our-doctors .carousel-styling .rec.rec-arrow:disabled {
@@ -2197,6 +2202,7 @@ span.banner-sub-heading-span {
   height: 10px;
   width: 10px;
   border-radius: 50%;
+  display: none;
 }
 
 .our-doctors-section .our-doctors .carousel-styling .rec.rec-dot_active {
@@ -2204,6 +2210,7 @@ span.banner-sub-heading-span {
   border-color: #10defd;
   -webkit-box-shadow: 0 0 1px 3px #78eeff;
   box-shadow: 0 0 1px 3px #78eeff;
+  display: none;
 }
 
 .our-doctors-section .our-doctors .carousel-styling .rec.rec-dot:hover,
@@ -4397,4 +4404,8 @@ cNNJIt,
   min-width: 50px !important;
   min-height: 30px !important;
   line-height: 20px !important;
+}
+
+.diag-test-card .carousel-styling .rec.rec-dot {
+  display: none;
 }

@@ -471,7 +471,7 @@ export const EprescriptionReport = React.forwardRef((props, ref) => {
                   Powered by RIMS IND
                 </p>
                 <p className="text-light text-center fs-6 lh-1 fst-italic">
-                  A unit of Retar Mediserve Pvt. Ltd.
+                  Rims Ind a Unit Of Retar Mediserve Pvt. Ltd.
                 </p>
               </div>
               <div className="col-3">

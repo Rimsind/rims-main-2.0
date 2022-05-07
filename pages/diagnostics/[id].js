@@ -208,7 +208,7 @@ const Details = () => {
                     of the Semantics.
                   </p>
                 </div>
-                <div className="row align-items-start mt-5 carousel-style">
+                <div className="row align-items-start mt-5 carousel-styling">
                   <Carousel
                     breakPoints={breakPoints}
                     enableAutoPlay
@@ -316,7 +316,7 @@ const Details = () => {
                     of the Semantics.
                   </p>
                 </div>
-                <div className="row align-items-start mt-5">
+                <div className="row align-items-start mt-5 carousel-styling">
                   <Carousel
                     breakPoints={breakPoints}
                     enableAutoPlay

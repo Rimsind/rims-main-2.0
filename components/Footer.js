@@ -24,7 +24,7 @@ const Footer = () => {
                 </div>
                 <div className="footer_para mt-3">
                   <p className="ft_para text-light">
-                    REHAB INTEGRATED MEDICAL SOLUTION
+                    Rims Ind a Unit Of Retar Mediserve Pvt. Ltd.
                   </p>
                 </div>
                 <div className="footer_social">

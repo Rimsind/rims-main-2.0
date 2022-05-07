@@ -362,7 +362,7 @@ export const AssesmentReport = React.forwardRef((props, ref) => {
                 padding: "1rem 0",
               }}
             >
-              Thank You
+              Rims Ind a Unit Of Retar Mediserve Pvt. Ltd.
             </p>
           </footer>
         </div>
