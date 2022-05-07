@@ -107,11 +107,11 @@ const SocialHistory = ({ patientId, socialHistory, updated_at }) => {
   const live_where = [
     "Private Home",
     "Rented Home",
-    "Extended Care",
+
     "Duplex",
     "Apartment",
     "Flat",
-    "Homeless",
+
     "Others",
   ];
 
