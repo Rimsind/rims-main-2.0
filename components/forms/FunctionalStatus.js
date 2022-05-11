@@ -90,10 +90,13 @@ const FunctionalStatus = ({ patientId, functionalStatus, updated_at }) => {
         <div className="gen-form mb-3">
           <div className="row justify-content-between align-items-start">
             <h3 className="fs-5 fs-bold text-dark mb-3">
-              Any Difficulty With Current Functional Mobility
+              Any Problem With Functional Mobility and Transfers
             </h3>
             <div className="col-md-4">
-              <h3 className="fs-6 fs-bold text-dark">Bed Mobility</h3>
+              <h3 className="fs-6 fs-bold text-dark">
+                Bed Mobility (Moving in bed such as rolling, scooting, getting
+                in and out of bed)
+              </h3>
             </div>
             <div className="col-md-8">
               <div className="row">
@@ -163,7 +166,7 @@ const FunctionalStatus = ({ patientId, functionalStatus, updated_at }) => {
         <div className="gen-form mb-3">
           <div className="row justify-content-between align-items-start">
             <h3 className="fs-5 fs-bold text-dark mb-3">
-              Any Difficulty with Walking / movement such as
+              Any Problem in Walking or Ambulation such as
             </h3>
             <div className="col-md-4">
               <h3 className="fs-6 fs-bold text-dark">On Ramps</h3>
@@ -197,7 +200,7 @@ const FunctionalStatus = ({ patientId, functionalStatus, updated_at }) => {
                 ))}
               </div>
             </div>
-            <div className="col-md-4">
+            {/* <div className="col-md-4">
               <h3 className="fs-6 fs-bold text-dark">Gai (Walking)</h3>
             </div>
             <div className="col-md-8">
@@ -228,7 +231,7 @@ const FunctionalStatus = ({ patientId, functionalStatus, updated_at }) => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
             <div className="col-md-4">
               <h3 className="fs-6 fs-bold text-dark">On Level Surfaces</h3>
             </div>
@@ -330,7 +333,7 @@ const FunctionalStatus = ({ patientId, functionalStatus, updated_at }) => {
         <div className="gen-form mb-3">
           <div className="row justify-content-between align-items-start">
             <h3 className="fs-5 fs-bold text-dark mb-3">
-              Any Difficulty With Self-Care Activities Such As
+              Any Problem in Self-Care Activities Such As
             </h3>
             <div className="col-md-4">
               <h3 className="fs-6 fs-bold text-dark">Bathing</h3>
@@ -433,7 +436,7 @@ const FunctionalStatus = ({ patientId, functionalStatus, updated_at }) => {
         <div className="gen-form mb-3">
           <div className="row justify-content-between align-items-start">
             <h3 className="fs-5 fs-bold text-dark mb-3">
-              Any Difficulty With Home Management Such As
+              Any Problem in Home Management Such As
             </h3>
             <div className="col-md-4">
               <h3 className="fs-6 fs-bold text-dark">Household Chores</h3>
@@ -571,7 +574,7 @@ const FunctionalStatus = ({ patientId, functionalStatus, updated_at }) => {
         >
           <div className="row justify-content-between align-items-start">
             <h3 className="fs-5 fs-bold text-dark mb-3">
-              Any Difficulty With Community And Work Activities Such As
+              Any Problem in Community And Work Activities Such As
             </h3>
             <div className="col-md-4">
               <h3 className="fs-6 fs-bold text-dark">Work</h3>
