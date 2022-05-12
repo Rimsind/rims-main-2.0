@@ -3,9 +3,17 @@ import Link from "next/link";
 const FooterBanner = () => {
   return (
     <>
-      <section className="section section-cta">
+      <section
+        className="section section-cta"
+        style={{
+          background: "url(/assets/images/footer-banner-bg.jpg)",
+          backgroundSize: "cover",
+          height: "500px",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="container">
-          <div className="section-cta-inner">
+          <div className="section-cta-inner pt-5">
             <div className="row">
               <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
                 <div className="section-heading">
@@ -41,7 +49,7 @@ const FooterBanner = () => {
                 </div>
               </div>
               <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
-                <div className="cta-img mb-2">
+                {/* <div className="cta-img mb-2">
                   <Image
                     className="img-fluid pb-4 pb-sm-4 pb-md-0 pb-lg-0 pb-xl-0 pb-xxl-0 pt-4 pt-sm-4 pt-md-0 pt-lg-0 pt-xl-0 pt-xxl-0"
                     src="/user_assets/img/gif/cta-right.gif"
@@ -49,7 +57,7 @@ const FooterBanner = () => {
                     width={400}
                     alt=""
                   />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
