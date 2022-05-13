@@ -16,7 +16,7 @@ const DoctorId = () => {
           <div className="container-fluid">
             <div className="content">
               <div className="row align-items-start">
-                <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-2">
+                <div className="col-6">
                   <div className="card">
                     <div className="card-body">
                       <div className="doctor-left-profile">
@@ -91,115 +91,119 @@ const DoctorId = () => {
                           </div>
                         </div>
                         <div className="doc-lft-innr-dtls mt-5">
-                          <div className="doc-lft-innr-titl">
-                            <h6>
-                              <span className="fs-5 fw-bold text-info">
-                                Dr. {data?.firstName} {data?.lastName}
-                              </span>
-                            </h6>
+                          <div className="row align-items-start">
+                            <div className="col-5">
+                              <div className="doc-lft-innr-titl">
+                                <h6>
+                                  <span className="fs-5 fw-bold text-info">
+                                    Dr. {data?.firstName} {data?.lastName}
+                                  </span>
+                                </h6>
+                              </div>
+                              <div className="doc-lft-innr-sb-titl">
+                                <h6 className="fs-6 text-muted fst-italic">
+                                  {data?.specialty?.name}
+                                </h6>
+                              </div>
+                              <div className="doc-left-innr-qal mt-4">
+                                <h6 className="fs-6 text-muted">
+                                  <span className="text-info">
+                                    <i className="fas fa-map-marker-alt"></i>
+                                  </span>
+                                  <span className="text-secondary ms-2">
+                                    {data?.address?.city},{" "}
+                                    {data?.address?.state}
+                                  </span>
+                                </h6>
+                                <h6 className="doc-department text-secondary fs-6">
+                                  <Image
+                                    height={20}
+                                    width={20}
+                                    src={
+                                      data?.specialty?.image?.url ||
+                                      "/images/profile.png"
+                                    }
+                                    alt=""
+                                  />{" "}
+                                  {data?.specialty?.name}
+                                </h6>
+                                <h6 className="fs-6 text-muted">
+                                  <span className="text-info">
+                                    <i className="fas fa-certificate"></i>
+                                  </span>
+                                  <span className="text-secondary ms-2">
+                                    {data?.qualification}
+                                  </span>
+                                </h6>
+                                <h6 className="fs-6 text-muted">
+                                  <span className="text-info">
+                                    <i className="fas fa-suitcase"></i>
+                                  </span>
+                                  <span className="text-secondary ms-2">
+                                    {data?.experienceInYrs} years experience,
+                                    Consultant
+                                  </span>
+                                </h6>
+                              </div>
+                            </div>
+                            <div className="col-7">
+                              <h6 className="fs-5 fw-bold mb-3 border-bottom border-1 pb-2">
+                                About Me
+                              </h6>
+                              <div className="about-me-doctor-para">
+                                <p>{data?.bio}</p>
+                              </div>
+                            </div>
                           </div>
-                          <div className="doc-lft-innr-sb-titl">
-                            <h6 className="fs-6 text-muted fst-italic">
-                              {data?.specialty?.name}
-                            </h6>
-                          </div>
-                          <div className="doc-left-innr-qal mt-4">
-                            <h6 className="fs-6 text-muted">
-                              <span className="text-info">
-                                <i className="fas fa-map-marker-alt"></i>
-                              </span>
-                              <span className="text-secondary ms-2">
-                                {data?.address?.city}, {data?.address?.state}
-                              </span>
-                            </h6>
-                            <h6 className="doc-department text-secondary fs-6">
-                              <Image
-                                height={20}
-                                width={20}
-                                src={
-                                  data?.specialty?.image?.url ||
-                                  "/images/profile.png"
-                                }
-                                alt=""
-                              />{" "}
-                              {data?.specialty?.name}
-                            </h6>
-                            <h6 className="fs-6 text-muted">
-                              <span className="text-info">
-                                <i className="fas fa-certificate"></i>
-                              </span>
-                              <span className="text-secondary ms-2">
-                                {data?.qualification}
-                              </span>
-                            </h6>
-                            <h6 className="fs-6 text-muted">
-                              <span className="text-info">
-                                <i className="fas fa-suitcase"></i>
-                              </span>
-                              <span className="text-secondary ms-2">
-                                {data?.experienceInYrs} years experience,
-                                Consultant
-                              </span>
-                            </h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="card">
-                    <div className="card-header">
-                      <h6 className="fs-6 fw-bold">About Me</h6>
-                    </div>
-                    <div className="card-body">
-                      <p>{data?.bio}</p>
-                    </div>
-                  </div>
-                  <div className="card">
-                    <div className="card-header">
-                      <h6 className="fs-6 fw-bold">Educations & Awards</h6>
-                    </div>
-                    <div className="card-body">
-                      <div className="edu-awrd">
-                        <div className="experience-box">
-                          <ul className="experience-list">
-                            {data?.educationAndAwards?.map((items, index) => (
-                              <li key={index}>
-                                <div className="experience-user">
-                                  <div className="before-circle"></div>
-                                </div>
-                                <div className="experience-content">
-                                  <div className="timeline-content">
-                                    <a href="#/" className="name">
-                                      {items?.degreeOrAward}
-                                    </a>
-                                    <div>{items?.institution}</div>
-                                    <span className="time">
-                                      {items?.receivingYear}
-                                    </span>
-                                  </div>
-                                </div>
-                              </li>
-                            ))}
-                          </ul>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-10">
+                <div className="col-6">
                   <div className="card">
                     <div className="card-body">
-                      <div>
-                        {data?.booking_schedule?.map((items, index) => (
-                          <DoctorTimetableCard
-                            data={items}
-                            key={index}
-                            doctorId={id}
-                            indexValue={index + 1}
-                          />
-                        ))}
+                      <h6 className="fs-5 fw-bold mb-3 border-bottom border-1 pb-2">
+                        Education & Awards
+                      </h6>
+                      <div className="edu-awrd">
+                        <div className="experience-box">
+                          <div className="row align-items-center">
+                            {data?.educationAndAwards?.map((items, index) => (
+                              <div className="col-6">
+                                <div className="edu-inner-item bg-primary-light p-3 my-2">
+                                  <h6 className="fs-6 fw-bold">
+                                    {items?.degreeOrAward}
+                                  </h6>
+                                  <h6>{items?.institution}</h6>
+                                  <h6>
+                                    <span className="me-2">
+                                      Recieving Year-
+                                    </span>
+                                    {items?.receivingYear}
+                                  </h6>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="card">
+                <div className="card-body">
+                  <div>
+                    {data?.booking_schedule?.map((items, index) => (
+                      <DoctorTimetableCard
+                        data={items}
+                        key={index}
+                        doctorId={id}
+                        indexValue={index + 1}
+                      />
+                    ))}
                   </div>
                 </div>
               </div>

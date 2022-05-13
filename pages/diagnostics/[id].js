@@ -35,7 +35,7 @@ const Details = () => {
               <div className="container">
                 <div className="diag-slider-inner">
                   <div className="row g-2 align-items-start">
-                    <div className="col-2">
+                    <div className="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2 text-center text-sm-center text-md-start text-lg-start text-xl-start text-xxl-start">
                       <Image
                         src={
                           data?.image?.url || "/assets/images/polyclinic.jpg"
@@ -46,7 +46,7 @@ const Details = () => {
                         className="rounded-circle"
                       />
                     </div>
-                    <div className="col-10">
+                    <div className="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 col-xxl-10 text-center text-sm-center text-md-start text-lg-start text-xl-start text-xxl-start">
                       <h6 className="text-light" style={{ fontSize: "45px" }}>
                         {data?.name}
                       </h6>
@@ -78,11 +78,11 @@ const Details = () => {
               <div className="container">
                 <div className="diag-ribbon-inner">
                   <div className="row align-items-center">
-                    <div className="col-4">
+                    <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 text-center text-sm-center text-md-start text-lg-start text-xl-start text-xxl-start">
                       <div className="diag-ribbon-inner-item">
                         <div className="row align-items-center">
-                          <div className="col-3">
-                            <div className="diag-ribbon-inner-item-icon">
+                          <div className="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+                            <div className="diag-ribbon-inner-item-icon mb-3 mb-sm-3 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0">
                               <i
                                 className="far fa-map-marker-alt bg-light rounded-circle"
                                 style={{
@@ -93,7 +93,7 @@ const Details = () => {
                               ></i>
                             </div>
                           </div>
-                          <div className="col-9">
+                          <div className="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 col-xxl-9">
                             <div className="diag-ribbon-inner-item-con">
                               <h6
                                 className="text-light"
@@ -114,11 +114,11 @@ const Details = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-4">
+                    <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 text-center text-sm-center text-md-start text-lg-start text-xl-start text-xxl-start">
                       <div className="diag-ribbon-inner-item">
                         <div className="row align-items-center">
-                          <div className="col-3">
-                            <div className="diag-ribbon-inner-item-icon">
+                          <div className="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+                            <div className="diag-ribbon-inner-item-icon mb-3 mb-sm-3 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0">
                               <i
                                 className="far fa-mobile-android-alt bg-light rounded-circle"
                                 style={{
@@ -129,7 +129,7 @@ const Details = () => {
                               ></i>
                             </div>
                           </div>
-                          <div className="col-9">
+                          <div className="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 col-xxl-9">
                             <div className="diag-ribbon-inner-item-con">
                               <h6
                                 className="text-light"
@@ -148,11 +148,11 @@ const Details = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-4">
+                    <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 text-center text-sm-center text-md-start text-lg-start text-xl-start text-xxl-start">
                       <div className="diag-ribbon-inner-item">
                         <div className="row align-items-center">
-                          <div className="col-3">
-                            <div className="diag-ribbon-inner-item-icon">
+                          <div className="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+                            <div className="diag-ribbon-inner-item-icon mb-3 mb-sm-3 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0">
                               <i
                                 className="far fa-envelope bg-light rounded-circle"
                                 style={{
@@ -163,7 +163,7 @@ const Details = () => {
                               ></i>
                             </div>
                           </div>
-                          <div className="col-9">
+                          <div className="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 col-xxl-9">
                             <div className="diag-ribbon-inner-item-con">
                               <h6
                                 className="text-light"
@@ -359,7 +359,7 @@ const Details = () => {
                   </p>
                 </div>
                 <div className="row g-0 mt-5">
-                  <div className="col-2">
+                  <div className="col-4 col-sm-4 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                     <div className="process-box-1 first">
                       <div className="process-box-header">
                         <i className="fas fa-vial icon"></i>
@@ -369,7 +369,7 @@ const Details = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-2">
+                  <div className="col-4 col-sm-4 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                     <div className="process-box-1">
                       <div className="process-box-header">
                         <i className="fas fa-home icon"></i>
@@ -381,7 +381,7 @@ const Details = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-2">
+                  <div className="col-4 col-sm-4 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                     <div className="process-box-1">
                       <div className="process-box-header">
                         <i className="fas fa-credit-card icon"></i>
@@ -393,7 +393,7 @@ const Details = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-2">
+                  <div className="col-4 col-sm-4 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                     <div className="process-box-1">
                       <div className="process-box-header">
                         <i className="fas fa-biking-mountain icon"></i>
@@ -405,7 +405,7 @@ const Details = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-2">
+                  <div className="col-4 col-sm-4 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                     <div className="process-box-1">
                       <div className="process-box-header">
                         <i className="fas fa-microscope icon"></i>
@@ -417,7 +417,7 @@ const Details = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-2">
+                  <div className="col-4 col-sm-4 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                     <div className="process-box-1 last">
                       <div className="process-box-header">
                         <i className="fas fa-ballot icon"></i>
@@ -443,7 +443,7 @@ const Details = () => {
             >
               <div className="container">
                 <div className="row align-items-center">
-                  <div className="col-7">
+                  <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 col-xxl-7">
                     <Image
                       src="/assets/images/diagnostics/contact-item-img.png"
                       height="320"
@@ -451,7 +451,7 @@ const Details = () => {
                       alt=""
                     />
                   </div>
-                  <div className="col-5">
+                  <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5 mb-3 mb-sm-3 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0">
                     <h4
                       className="text-light mb-2"
                       style={{ fontSize: "20px" }}
