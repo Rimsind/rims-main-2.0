@@ -196,14 +196,15 @@ const DoctorId = () => {
               <div className="card">
                 <div className="card-body">
                   <div>
-                    {data?.booking_schedule?.map((items, index) => (
+                    {/* {data?.booking_schedule?.map((items, index) => (
                       <DoctorTimetableCard
                         data={items}
                         key={index}
                         doctorId={id}
                         indexValue={index + 1}
                       />
-                    ))}
+                    ))} */}
+                    <DoctorTimetableCard />
                   </div>
                 </div>
               </div>

@@ -11,7 +11,7 @@ const DoctorTimetableCard = ({ data, doctorId, indexValue }) => {
   return (
     <>
       <section className="doctor-location">
-        <div
+        {/* <div
           className="row align-items-center border-bottom border-1"
           style={{ backgroundColor: `${color}` }}
         >
@@ -183,6 +183,111 @@ const DoctorTimetableCard = ({ data, doctorId, indexValue }) => {
               ))}
             </div>
           </div>
+        </div> */}
+        <div className="doc-time-tab-table table-responsive">
+          <table className="table table-striped table-bordered border-dark align-middle">
+            <thead>
+              <tr>
+                <th>Clinics</th>
+                <th className="text-center">Monday</th>
+                <th className="text-center">Tuesday</th>
+                <th className="text-center">Wednesday</th>
+                <th className="text-center">Thursday</th>
+                <th className="text-center">Friday</th>
+                <th className="text-center">Saturday</th>
+                <th className="text-center">Sunday</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="py-2">
+                  <Image
+                    className="border border-2 border-primary rounded"
+                    height={50}
+                    width={50}
+                    src={"/assets/images/polyclinic.jpg"}
+                    alt="Polyclinic Image"
+                  />
+                  <h4 className="doc-name fs-5">
+                    <a href="doctor-profile.html">Demo Nursing Home</a>
+                  </h4>
+                  <p className="doc-speciality text-dark">
+                    City Center ,<br />
+                    Haldia , West Bengal ,<br />
+                    India . PIN- 721657
+                  </p>
+                  <Link href="#">
+                    <a
+                      className="btn text-light fs-6 px-4 px-sm-4 px-md-4 px-lg-2 px-xl-2 px-xxl-4"
+                      style={{ backgroundColor: "#1d00a3" }}
+                    >
+                      Book Now
+                    </a>
+                  </Link>
+                </td>
+                <td>
+                  <div className="doctor-location-items text-center">
+                    <div className="row align-items-center">
+                      <div className="col-6">
+                        <span
+                          className="fs-6"
+                          style={{ color: "#1d00a3", fontWeight: "500" }}
+                        >
+                          From
+                        </span>
+                        <p
+                          className="fs-6 text-dark"
+                          style={{ fontWeight: "500" }}
+                        >
+                          11:00
+                        </p>
+                      </div>
+                      <div className="col-6">
+                        <span
+                          className="fs-6"
+                          style={{ color: "#1d00a3", fontWeight: "500" }}
+                        >
+                          To
+                        </span>
+                        <p
+                          className="fs-6 text-dark"
+                          style={{ fontWeight: "500" }}
+                        >
+                          01:00
+                        </p>
+                      </div>
+                    </div>
+                    <div className="row align-items-center">
+                      <div className="col-6">
+                        <p
+                          className="fs-6 text-dark"
+                          style={{ fontWeight: "500" }}
+                        >
+                          <i
+                            className="far fa-money-bill me-1"
+                            style={{ color: "#1d00a3" }}
+                          ></i>
+                          - ₹500
+                        </p>
+                      </div>
+                      <div className="col-6">
+                        <p
+                          className="fs-6 text-dark"
+                          style={{ fontWeight: "500" }}
+                        >
+                          <i
+                            className="far fa-loveseat me-1"
+                            style={{ color: "#1d00a3" }}
+                          ></i>
+                          - 100
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
     </>
