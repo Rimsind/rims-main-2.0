@@ -24,6 +24,24 @@ const Index = () => {
       return result;
     }
   );
+  const [startValue, setStartValue] = useState(0);
+  const [endValue, setEndValue] = useState(10);
+  const [pageIndex, setPageIndex] = useState(1);
+  const nextPage = () => {
+    if (appointments?.length - endValue >= 0) {
+      setStartValue(startValue + 10);
+      setEndValue(endValue + 10);
+      setPageIndex(pageIndex + 1);
+    }
+  };
+
+  const previousPage = () => {
+    if (startValue >= 10) {
+      setStartValue(startValue - 10);
+      setEndValue(endValue - 10);
+      setPageIndex(pageIndex - 1);
+    }
+  };
 
   const appointmentsLength = appointments?.length;
 
@@ -80,7 +98,9 @@ const Index = () => {
                               value={status}
                               onChange={(e) => setStatus(e.target.value)}
                             >
-                              <option selected>Select status</option>
+                              <option selected value="">
+                                View All
+                              </option>
                               <option value="false">Pending</option>
                               <option value="true">Completed</option>
                             </select>
@@ -168,6 +188,7 @@ const Index = () => {
                                       return items;
                                     }
                                   })
+                                  .slice(`${startValue}`, `${endValue}`)
                                   .map((items, index) => (
                                     <MyAppointments
                                       data={items}
@@ -180,6 +201,46 @@ const Index = () => {
                             )}
                           </tbody>
                         </table>
+                      </div>
+                      <div className="row mt-4">
+                        <div className="col-6"></div>
+                        <div className="col-6 text-end">
+                          {" "}
+                          <div
+                            className="btn-group"
+                            role="group"
+                            aria-label="Basic example"
+                          >
+                            {" "}
+                            {startValue === 0 ? (
+                              <button className="btn btn-secondary" disabled>
+                                Prev
+                              </button>
+                            ) : (
+                              <button
+                                className="btn btn-secondary"
+                                onClick={previousPage}
+                              >
+                                Prev
+                              </button>
+                            )}
+                            <button className="btn border disabled mx-1">
+                              {pageIndex}
+                            </button>
+                            {appointments?.length - endValue >= 0 ? (
+                              <button
+                                className="btn btn-secondary"
+                                onClick={nextPage}
+                              >
+                                Next
+                              </button>
+                            ) : (
+                              <button className="btn btn-secondary" disabled>
+                                Next
+                              </button>
+                            )}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useAuth } from "context";
 import { uploadImage } from "utils/uploadImage";
 import { Slide, toast } from "react-toastify";
+import { set } from "react-hook-form";
 const UploadMedicalRecord = ({
   upload_medical_record,
   updated_at,
@@ -15,20 +16,44 @@ const UploadMedicalRecord = ({
   const { auth } = useAuth();
 
   const [loading, setLoading] = useState(false);
+  const [imageLoading, setImageLoading] = useState(false);
   const [title, setTitle] = useState();
   const [profileImage, setProfileImage] = useState();
+  const [allRecords, setAllRecords] = useState(
+    upload_medical_record.concat([])
+  );
 
-  const uploadProfileImage = async () => {
-    setLoading(true);
+  const addNewEntry = async () => {
+    setImageLoading(true);
     const image = await uploadImage(profileImage, auth.token);
-    const payload = {
-      upload_medical_record: [
-        ...upload_medical_record,
+    setAllRecords((oldItems) => {
+      return [
+        ...oldItems,
         {
           title: title,
           file: image,
         },
-      ],
+      ];
+    });
+    setImageLoading(false);
+    setTitle("");
+    setProfileImage("");
+  };
+
+  const deleteData = (index) => {
+    const id = index;
+    setAllRecords((oldItems) => {
+      return oldItems.filter((items, index) => {
+        return id !== index;
+      });
+    });
+  };
+
+  const uploadProfileImage = async () => {
+    setLoading(true);
+
+    const payload = {
+      upload_medical_record: allRecords,
     };
     try {
       const response = await axios.put(
@@ -110,28 +135,14 @@ const UploadMedicalRecord = ({
           className="right-button"
           style={{ textAlign: "right", marginTop: "10px" }}
         >
-          {loading ? (
-            <div className="upload-btn-spin">
-              <button className="btn btn-primary">
-                <div className="d-flex align-items-center">
-                  <div
-                    className="spinner-border ms-auto me-3"
-                    role="status"
-                    aria-hidden="true"
-                  ></div>
-                  <strong>Uploading...</strong>
-                </div>
-              </button>
-            </div>
+          {imageLoading === true ? (
+            <button className="btn btn-info" disabled>
+              Loading File...
+            </button>
           ) : (
-            <input
-              type="btn"
-              className="btn btn-primary"
-              readOnly
-              value={loading ? "Uploading..." : "upload Image"}
-              disabled={loading}
-              onClick={uploadProfileImage}
-            />
+            <button className="btn btn-primary" onClick={addNewEntry}>
+              Add Entry
+            </button>
           )}
         </div>
       </div>
@@ -161,7 +172,7 @@ const UploadMedicalRecord = ({
             </tr>
           ) : (
             <>
-              {upload_medical_record?.map((item, index) => (
+              {allRecords?.map((item, index) => (
                 <tr key={index}>
                   <td>#{index + 1}</td>
                   <td>{item.title}</td>
@@ -172,7 +183,10 @@ const UploadMedicalRecord = ({
                   </td>
                   <td>
                     <div className="delete-table-icon">
-                      <button className="btn rounded">
+                      <button
+                        className="btn rounded"
+                        onClick={() => deleteData(index)}
+                      >
                         <i className="fad fa-trash"></i>
                       </button>
                     </div>
@@ -183,6 +197,20 @@ const UploadMedicalRecord = ({
           )}
         </tbody>
       </table>
+      <div className="row mt-4">
+        <div className="col-12 text-end">
+          {!!loading === false ? (
+            <button className="btn btn-primary" onClick={uploadProfileImage}>
+              {" "}
+              Save Changes
+            </button>
+          ) : (
+            <button className="btn btn-primary" disabled>
+              Saving...
+            </button>
+          )}
+        </div>
+      </div>
       <p className="text-info">Last Updated On : {updated_at}</p>
     </>
   );

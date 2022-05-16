@@ -18,14 +18,7 @@ const MedicalHistory = ({
   past_medication_history,
   past_surgical_history,
 }) => {
-  const surgicalDataLength = past_surgical_history?.length;
-  const medicineDataLength = past_medication_history?.length;
-
   const { auth } = useAuth();
-  const [surgery, setSurgery] = useState();
-  const [surgeryDate, setSurgeryDate] = useState();
-  const [loading, setLoading] = useState(false);
-
   var today = new Date();
   var maxDay = today.getDate();
   var maxMonth = today.getMonth() + 1;
@@ -41,49 +34,35 @@ const MedicalHistory = ({
     var newMaxMonth = maxMonth;
   }
   const maxDate = maxYear + "-" + newMaxMonth + "-" + newMaxDay;
+  const [loading, setLoading] = useState(false);
 
-  const submitSurgery = async () => {
+  const [surgery, setSurgery] = useState();
+  const [surgeryDate, setSurgeryDate] = useState();
+  const [allSurgery, setAllSurgery] = useState(
+    past_surgical_history.concat([])
+  );
+
+  const addNewSurgery = async () => {
     if (!!surgery && !!surgeryDate) {
-      const payload = {
-        past_surgical_history: [
-          ...past_surgical_history,
+      setAllSurgery((oldItems) => {
+        return [
+          ...oldItems,
           {
             name: surgery,
             date: surgeryDate,
           },
-        ],
-      };
-      const res = await axios.put(`${apiUrl}/patients/${patientId}`, payload, {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
+        ];
       });
-      const result = res.data;
-
-      toast.success("Surgical History Updated", {
-        position: "top-center",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-        transition: Slide,
-      });
-      return result, setLoading(false), setSurgery(""), setSurgeryDate("");
-    } else {
-      toast("Please enter all the fields", {
-        position: "top-center",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: true,
-        progress: undefined,
-        transition: Slide,
-      });
+      setSurgery(""), setSurgeryDate("");
     }
+  };
+  const deleteSurgery = (index) => {
+    const id = index;
+    setAllSurgery((oldItems) => {
+      return oldItems.filter((items, index) => {
+        return id !== index;
+      });
+    });
   };
 
   const [medicineName, setMedicineName] = useState();
@@ -95,12 +74,15 @@ const MedicalHistory = ({
   const [frequency, setFrequency] = useState();
   const [sideEffect, setSideEffect] = useState();
   const [ifYes, setIfYes] = useState();
+  const [allMedicaton, setAllMediation] = useState(
+    past_medication_history.concat([])
+  );
 
-  const submitMedicine = async () => {
+  const addNewMedicine = async () => {
     if (!!medicineName && !!dose && !!type) {
-      const payload = {
-        past_medication_history: [
-          ...past_medication_history,
+      setAllMediation((oldItems) => {
+        return [
+          ...oldItems,
           {
             medicineName: medicineName,
             dose: dose,
@@ -112,35 +94,8 @@ const MedicalHistory = ({
             sideEffect: sideEffect,
             ifYes: ifYes,
           },
-        ],
-      };
-
-      const res = await axios.put(`${apiUrl}/patients/${patientId}`, payload, {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
+        ];
       });
-      const result = res.data;
-
-      toast.success("Medication History Updated", {
-        position: "top-center",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-        transition: Slide,
-      });
-      return (
-        result,
-        setMedicineName(""),
-        setDose(""),
-        setStartDate(""),
-        setIfYes(""),
-        setType()
-      );
     } else {
       toast("Please enter all the fields ", {
         position: "top-center",
@@ -154,6 +109,15 @@ const MedicalHistory = ({
         transition: Slide,
       });
     }
+  };
+
+  const deleteMedication = (index) => {
+    const id = index;
+    setAllMediation((oldItems) => {
+      return oldItems.filter((items, index) => {
+        return id !== index;
+      });
+    });
   };
 
   const { register, handleSubmit } = useForm();
@@ -177,6 +141,7 @@ const MedicalHistory = ({
             other: data.other,
           },
         },
+        past_surgical_history: allSurgery,
       };
 
       const res = await axios.put(`${apiUrl}/patients/${patientId}`, payload, {
@@ -599,7 +564,7 @@ const MedicalHistory = ({
                 </div>
               </div>
               <div className="col-md-3 col-lg-2 col-xl-2 text-end mt-2 mt-md-0 mt-lg-0">
-                <span className="btn btn-primary" onClick={submitSurgery}>
+                <span className="btn btn-primary" onClick={addNewSurgery}>
                   Add Items
                 </span>
               </div>
@@ -616,7 +581,7 @@ const MedicalHistory = ({
                 </tr>
               </thead>
               <tbody>
-                {surgicalDataLength === 0 ? (
+                {allSurgery.length === 0 ? (
                   <tr>
                     <td colSpan="4" className="text-danger text-center">
                       No Previous Records Found !!
@@ -624,14 +589,17 @@ const MedicalHistory = ({
                   </tr>
                 ) : (
                   <>
-                    {past_surgical_history?.map((item, index) => (
+                    {allSurgery?.map((item, index) => (
                       <tr key={index}>
                         <td>#{index + 1}</td>
                         <td>{item.name}</td>
                         <td>{item.date}</td>
                         <td>
                           <div className="delete-table-icon">
-                            <button className="btn">
+                            <button
+                              className="btn"
+                              onClick={() => deleteSurgery(index)}
+                            >
                               <i className="fad fa-trash"></i>
                             </button>
                           </div>
@@ -763,7 +731,6 @@ const MedicalHistory = ({
               </div>
             </div>
           </div>
-
           <div className="row justify-centent-between align-items-start mb-3 mt-3">
             <div className="col-md-6 col-lg-3 col-xxl-3 col-xl-3 mb-0 mb-md-3 mb-lg-0 mb-xl-0">
               <div className="row justify-centent-between align-items-center">
@@ -855,7 +822,7 @@ const MedicalHistory = ({
             </div>
           </div>
           <div className="text-end">
-            <span className="btn btn-primary" onClick={submitMedicine}>
+            <span className="btn btn-primary" onClick={addNewMedicine}>
               Add Items
             </span>
           </div>
@@ -879,7 +846,7 @@ const MedicalHistory = ({
               </tr>
             </thead>
             <tbody>
-              {medicineDataLength === 0 ? (
+              {allMedicaton.length === 0 ? (
                 <tr>
                   <td colSpan="9" className="text-danger text-center">
                     No Previous Records Found !!
@@ -887,7 +854,7 @@ const MedicalHistory = ({
                 </tr>
               ) : (
                 <>
-                  {past_medication_history?.map((item, index) => (
+                  {allMedicaton?.map((item, index) => (
                     <tr key={index}>
                       <td>#{index + 1}</td>
                       <td>{item.medicineName}</td>
@@ -902,7 +869,10 @@ const MedicalHistory = ({
                       <td>
                         {" "}
                         <div className="delete-table-icon">
-                          <button className="btn rounded-circle">
+                          <button
+                            className="btn"
+                            onClick={() => deleteMedication(index)}
+                          >
                             <i className="fad fa-trash"></i>
                           </button>
                         </div>

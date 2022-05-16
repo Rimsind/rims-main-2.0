@@ -11,7 +11,6 @@ const Index = () => {
     `${apiUrl}/doctors?_sort=id:desc&&verification_status=Approved`,
     fetcher
   );
-  console.log(doctors);
 
   const [startValue, setStartValue] = useState(0);
   const [endValue, setEndValue] = useState(12);

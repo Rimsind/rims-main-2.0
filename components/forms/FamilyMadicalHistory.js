@@ -4,26 +4,61 @@ import axios from "axios";
 import { useAuth } from "context";
 import { useState } from "react";
 import { Slide, toast } from "react-toastify";
+
+const disease = [
+  "Anemia",
+  "Cancer",
+  "Diabetes",
+  "Epilepsy",
+  "Glaucoma",
+  "Heart Disease",
+  "High Blood Pressure",
+  "Hay Fever",
+  "Hives",
+  "Kidney Disease",
+  "Mental Illness",
+  "Rheumatoid Arthritis",
+  "Tuberculosis",
+  "Others",
+];
 const FamilyMadicalHistory = ({ familyHistory, patientId, updated_at }) => {
   const dataLength = familyHistory?.length;
   const { auth } = useAuth();
   const [loading, setLoading] = useState(false);
+  const [allHistory, setAllHistory] = useState(familyHistory.concat([]));
   const { register, handleSubmit, reset } = useForm();
-  const updateFamilyHistory = async (data, event) => {
-    setLoading(true);
+  const addNewEntry = async (data, event) => {
     event.preventDefault();
+    setAllHistory((oldItems) => {
+      return [
+        ...oldItems,
+        {
+          relation: data.relation,
+          age_if_death: data.age_if_death,
+          age_if_living: data.age_if_living,
+          cause_of_death: data.cause_of_death,
+          diseases: data.disease.toString(),
+        },
+      ];
+    });
+    reset();
+  };
+
+  const deleteData = (index) => {
+    const id = index;
+    setAllHistory((oldItems) => {
+      return oldItems.filter((items, index) => {
+        return index !== id;
+      });
+    });
+  };
+
+  const updateFamilyHistory = async () => {
+    setLoading(true);
+
     try {
       const payload = {
-        familyHistory: [
-          ...familyHistory,
-          {
-            relation: data.relation,
-            age_if_living: data.age_if_living,
-            age_if_death: data.age_if_death,
-            cause_of_death: data.cause_of_death,
-            diseases: data.disease.toString(),
-          },
-        ],
+        familyHistory: allHistory,
       };
 
       const res = await axios.put(`${apiUrl}/patients/${patientId}`, payload, {
@@ -62,26 +97,9 @@ const FamilyMadicalHistory = ({ familyHistory, patientId, updated_at }) => {
     }
   };
 
-  const disease = [
-    "Anemia",
-    "Cancer",
-    "Diabetes",
-    "Epilepsy",
-    "Glaucoma",
-    "Heart Disease",
-    "High Blood Pressure",
-    "Hay Fever",
-    "Hives",
-    "Kidney Disease",
-    "Mental Illness",
-    "Rheumatoid Arthritis",
-    "Tuberculosis",
-    "Others",
-  ];
-
   return (
     <>
-      <form onSubmit={handleSubmit(updateFamilyHistory)}>
+      <form onSubmit={handleSubmit(addNewEntry)}>
         <div className="gen-form mb-3">
           <div
             className="row justify-centent-between align-items-center"
@@ -200,12 +218,9 @@ const FamilyMadicalHistory = ({ familyHistory, patientId, updated_at }) => {
               <div className="col-md-4"></div>
               <div className="col-md-4">
                 <div className="right-button" style={{ textAlign: "right" }}>
-                  <input
-                    type="submit"
-                    className="btn btn-primary"
-                    value={loading ? "Saving..." : "Save Changes"}
-                    disabled={loading}
-                  />
+                  <button className="btn btn-primary" type="submit">
+                    Add Entry
+                  </button>
                 </div>
               </div>
             </div>
@@ -245,7 +260,7 @@ const FamilyMadicalHistory = ({ familyHistory, patientId, updated_at }) => {
                 </>
               ) : (
                 <>
-                  {familyHistory?.map((item, index) => (
+                  {allHistory?.map((item, index) => (
                     <tr key={index}>
                       <td className="fw-bold">#{index + 1}</td>
                       <td>{item.relation}</td>
@@ -255,7 +270,10 @@ const FamilyMadicalHistory = ({ familyHistory, patientId, updated_at }) => {
                       <td>{item.diseases}</td>
                       <td>
                         <div className="delete-table-icon">
-                          <button className="btn rounded-circle">
+                          <button
+                            className="btn"
+                            onClick={() => deleteData(index)}
+                          >
                             <i className="fad fa-trash "></i>
                           </button>
                         </div>
@@ -266,6 +284,20 @@ const FamilyMadicalHistory = ({ familyHistory, patientId, updated_at }) => {
               )}
             </tbody>
           </table>
+        </div>
+        <div className="row mt-4">
+          <div className="col-12 text-end">
+            {!!loading === false ? (
+              <button className="btn btn-primary" onClick={updateFamilyHistory}>
+                {" "}
+                Save Changes
+              </button>
+            ) : (
+              <button className="btn btn-primary" disabled>
+                Saving...
+              </button>
+            )}
+          </div>
         </div>
       </div>
       <p className="text-info">Last Updated On : {updated_at}</p>
