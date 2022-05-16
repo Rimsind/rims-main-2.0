@@ -11,6 +11,7 @@ const Index = () => {
     `${apiUrl}/doctors?_sort=id:desc&&verification_status=Approved`,
     fetcher
   );
+  console.log(doctors);
 
   const [startValue, setStartValue] = useState(0);
   const [endValue, setEndValue] = useState(12);
@@ -148,7 +149,7 @@ const Index = () => {
                             >
                               <option>Select Specialty</option>
                               {specialties?.map((items, index) => (
-                                <option value={items?.name} key={index}>
+                                <option value={items?.id} key={index}>
                                   {items?.name}
                                 </option>
                               ))}
@@ -179,6 +180,15 @@ const Index = () => {
                           ) {
                             return items;
                           } else if (
+                            items?.firstName
+                              ?.toLowerCase()
+                              ?.includes(name.toLowerCase()) &&
+                            city === "" &&
+                            gender === "" &&
+                            specialty === ""
+                          ) {
+                            return items;
+                          } else if (
                             items?.lastName
                               ?.toLowerCase()
                               ?.includes(name.toLowerCase()) &&
@@ -195,7 +205,8 @@ const Index = () => {
                           ) {
                             return items;
                           } else if (
-                            items?.specialty?.name
+                            items?.specialty?.id
+                              .toString()
                               .toLowerCase()
                               .includes(specialty) &&
                             name === "" &&
@@ -213,33 +224,162 @@ const Index = () => {
                           ) {
                             return items;
                           } else if (
-                            items?.specialty?.name.includes(specialty) &&
+                            items?.firstName
+                              ?.toLowerCase()
+                              ?.includes(name.toLowerCase()) &&
                             items?.gender?.includes(gender) &&
+                            specialty === "" &&
                             city === ""
                           ) {
                             return items;
                           } else if (
-                            items?.address?.city
-                              .toLowerCase()
-                              .includes(city.toLowerCase()) &&
-                            items?.specialty?.name.includes(specialty) &&
-                            gender === ""
+                            items?.lastName
+                              ?.toLowerCase()
+                              ?.includes(name.toLowerCase()) &&
+                            items?.gender?.includes(gender) &&
+                            specialty === "" &&
+                            city === ""
                           ) {
                             return items;
                           } else if (
-                            items?.gender?.includes(gender) &&
-                            items?.address?.city
+                            items?.firstName
+                              ?.toLowerCase()
+                              ?.includes(name.toLowerCase()) &&
+                            items?.specialty?.id
+                              .toString()
                               .toLowerCase()
+                              .includes(specialty) &&
+                            gender === "" &&
+                            city === ""
+                          ) {
+                            return items;
+                          } else if (
+                            items?.lastName
+                              ?.toLowerCase()
+                              ?.includes(name.toLowerCase()) &&
+                            items?.specialty?.id
+                              .toString()
+                              .toLowerCase()
+                              .includes(specialty) &&
+                            gender === "" &&
+                            city === ""
+                          ) {
+                            return items;
+                          } else if (
+                            items?.firstName
+                              ?.toLowerCase()
+                              ?.includes(name.toLowerCase()) &&
+                            items?.address?.city
+                              ?.toLowerCase()
                               .includes(city.toLowerCase()) &&
+                            gender === "" &&
                             specialty === ""
                           ) {
                             return items;
                           } else if (
+                            items?.lastName
+                              ?.toLowerCase()
+                              ?.includes(name.toLowerCase()) &&
+                            items?.address?.city
+                              ?.toLowerCase()
+                              .includes(city.toLowerCase()) &&
+                            gender === "" &&
+                            specialty === ""
+                          ) {
+                            return items;
+                          } else if (
+                            items?.specialty?.id
+                              .toString()
+                              .toLowerCase()
+                              .includes(specialty) &&
+                            items?.gender?.includes(gender) &&
+                            name === "" &&
+                            city === ""
+                          ) {
+                            return items;
+                          } else if (
                             items?.gender?.includes(gender) &&
                             items?.address?.city
-                              .toLowerCase()
+                              ?.toLowerCase()
                               .includes(city.toLowerCase()) &&
-                            items?.specialty?.name.includes(specialty)
+                            name === "" &&
+                            specialty === ""
+                          ) {
+                            return items;
+                          } else if (
+                            items?.specialty?.id
+                              .toString()
+                              .toLowerCase()
+                              .includes(specialty) &&
+                            items?.address?.city
+                              ?.toLowerCase()
+                              .includes(city.toLowerCase()) &&
+                            name === "" &&
+                            gender === ""
+                          ) {
+                            return items;
+                          } else if (
+                            items?.firstName
+                              ?.toLowerCase()
+                              ?.includes(name.toLowerCase()) &&
+                            items?.gender?.includes(gender) &&
+                            items?.specialty?.id
+                              .toString()
+                              .toLowerCase()
+                              .includes(specialty) &&
+                            city === ""
+                          ) {
+                            return items;
+                          } else if (
+                            items?.lastName
+                              ?.toLowerCase()
+                              ?.includes(name.toLowerCase()) &&
+                            items?.gender?.includes(gender) &&
+                            items?.specialty?.id
+                              .toString()
+                              .toLowerCase()
+                              .includes(specialty) &&
+                            city === ""
+                          ) {
+                            return items;
+                          } else if (
+                            items?.gender?.includes(gender) &&
+                            items?.specialty?.id
+                              .toString()
+                              .toLowerCase()
+                              .includes(specialty) &&
+                            items?.address?.city
+                              ?.toLowerCase()
+                              .includes(city.toLowerCase()) &&
+                            name === ""
+                          ) {
+                            return items;
+                          } else if (
+                            items?.firstName
+                              ?.toLowerCase()
+                              ?.includes(name.toLowerCase()) &&
+                            items?.gender?.includes(gender) &&
+                            items?.specialty?.id
+                              .toString()
+                              .toLowerCase()
+                              .includes(specialty) &&
+                            items?.address?.city
+                              ?.toLowerCase()
+                              .includes(city.toLowerCase())
+                          ) {
+                            return items;
+                          } else if (
+                            items?.lastName
+                              ?.toLowerCase()
+                              ?.includes(name.toLowerCase()) &&
+                            items?.gender?.includes(gender) &&
+                            items?.specialty?.id
+                              .toString()
+                              .toLowerCase()
+                              .includes(specialty) &&
+                            items?.address?.city
+                              ?.toLowerCase()
+                              .includes(city.toLowerCase())
                           ) {
                             return items;
                           }
@@ -291,7 +431,7 @@ const Index = () => {
                                           }
                                           alt=""
                                         />
-                                        Medicine
+                                        {item?.specialty?.name}
                                       </div>
                                       <div className="col-6">
                                         <span className="fw-bold me-1 text-info">
