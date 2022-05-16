@@ -170,7 +170,7 @@ const DoctorId = () => {
                         <div className="experience-box">
                           <div className="row align-items-center">
                             {data?.educationAndAwards?.map((items, index) => (
-                              <div className="col-6">
+                              <div className="col-6" key={index}>
                                 <div className="edu-inner-item bg-primary-light p-3 my-2">
                                   <h6 className="fs-6 fw-bold">
                                     {items?.degreeOrAward}
