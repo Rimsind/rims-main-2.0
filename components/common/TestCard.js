@@ -42,7 +42,7 @@ const TestCard = ({ data, clinicId }) => {
             </h6>
             <div className="test-card-btn-grp">
               <div className="row align-items-center text-center text-sm-center text-md-start text-lg-start text-xl-start text-xxl-start">
-                <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5 mb-sm-5 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0">
+                <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 mb-5 mb-sm-5 mb-md-5 mb-lg-5 mb-xl-0 mb-xxl-0">
                   <Link
                     href={`/diagnostics/test-list/details?testId=${data?.id}&&clinicId=${clinicId}`}
                   >
@@ -59,7 +59,7 @@ const TestCard = ({ data, clinicId }) => {
                     </a>
                   </Link>
                 </div>
-                <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5 mb-sm-5 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0">
+                <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 mb-5 mb-sm-5 mb-md-5 mb-lg-5 mb-xl-0 mb-xxl-0">
                   <a
                     style={{
                       padding: "15px 8px",

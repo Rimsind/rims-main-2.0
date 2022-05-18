@@ -81,7 +81,7 @@ const Details = () => {
                     <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 text-center text-sm-center text-md-start text-lg-start text-xl-start text-xxl-start">
                       <div className="diag-ribbon-inner-item">
                         <div className="row align-items-center">
-                          <div className="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+                          <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
                             <div className="diag-ribbon-inner-item-icon mb-3 mb-sm-3 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0">
                               <i
                                 className="far fa-map-marker-alt bg-light rounded-circle"
@@ -93,7 +93,7 @@ const Details = () => {
                               ></i>
                             </div>
                           </div>
-                          <div className="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 col-xxl-9">
+                          <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-9 col-xxl-9">
                             <div className="diag-ribbon-inner-item-con">
                               <h6
                                 className="text-light"
@@ -117,7 +117,7 @@ const Details = () => {
                     <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 text-center text-sm-center text-md-start text-lg-start text-xl-start text-xxl-start">
                       <div className="diag-ribbon-inner-item">
                         <div className="row align-items-center">
-                          <div className="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+                          <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
                             <div className="diag-ribbon-inner-item-icon mb-3 mb-sm-3 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0">
                               <i
                                 className="far fa-mobile-android-alt bg-light rounded-circle"
@@ -129,7 +129,7 @@ const Details = () => {
                               ></i>
                             </div>
                           </div>
-                          <div className="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 col-xxl-9">
+                          <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-9 col-xxl-9">
                             <div className="diag-ribbon-inner-item-con">
                               <h6
                                 className="text-light"
@@ -151,7 +151,7 @@ const Details = () => {
                     <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 text-center text-sm-center text-md-start text-lg-start text-xl-start text-xxl-start">
                       <div className="diag-ribbon-inner-item">
                         <div className="row align-items-center">
-                          <div className="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+                          <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
                             <div className="diag-ribbon-inner-item-icon mb-3 mb-sm-3 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0">
                               <i
                                 className="far fa-envelope bg-light rounded-circle"
@@ -163,7 +163,7 @@ const Details = () => {
                               ></i>
                             </div>
                           </div>
-                          <div className="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 col-xxl-9">
+                          <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-9 col-xxl-9">
                             <div className="diag-ribbon-inner-item-con">
                               <h6
                                 className="text-light"
@@ -219,7 +219,7 @@ const Details = () => {
                     ))}
                   </Carousel>
                 </div>
-                <div className="section-diag-btn text-center mt-3">
+                <div className="section-diag-btn text-center">
                   <Link href={`/diagnostics/test-list?id=${id}`}>
                     <a className="btn btn-primary">View All Tests</a>
                   </Link>
@@ -327,7 +327,7 @@ const Details = () => {
                     ))}
                   </Carousel>
                 </div>
-                <div className="section-diag-btn text-center mt-3">
+                <div className="section-diag-btn text-center">
                   <Link href={`/diagnostics/test-list?id=${id}`}>
                     <a className="btn btn-primary">View All Tests</a>
                   </Link>
