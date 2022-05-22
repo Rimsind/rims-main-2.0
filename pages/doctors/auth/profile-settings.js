@@ -25,6 +25,7 @@ const ProfileSettings = () => {
     },
     { refreshInterval: 1000 }
   );
+
   return (
     <>
       <div className="main-wrapper">
@@ -43,7 +44,9 @@ const ProfileSettings = () => {
                     <ProfileInfo data={data} />
                     <FeeScale data={data} />
                     <AddressInfo data={data} />
-                    <EducationInfo data={data} />
+                    <EducationInfo
+                      educationAndAwards={data?.educationAndAwards}
+                    />
                   </div>
                 </div>
               ) : (

@@ -4,24 +4,57 @@ import axios from "axios";
 import { toast, Slide } from "react-toastify";
 import { apiUrl } from "config/api";
 import { useAuth } from "context";
+import { useForm } from "react-hook-form";
 
-const EducationInfo = ({ data }) => {
+const EducationInfo = ({ educationAndAwards }) => {
   const { auth } = useAuth();
-  const [degree, setDegree] = useState();
-  const [institute, setInstitute] = useState();
-  const [year, setYear] = useState();
 
-  const addEducation = async () => {
+  const [allAwards, setAllAwards] = useState(educationAndAwards.concat([]));
+  const { register, handleSubmit, reset } = useForm();
+  const addEducation = (data, event) => {
+    event.preventDefault();
+    if (!!data.degreeOrAward && !!data.institution && !!data.receivingYear) {
+      setAllAwards((oldItems) => {
+        return [
+          ...oldItems,
+          {
+            degreeOrAward: data.degreeOrAward,
+            institution: data.institution,
+            receivingYear: data.receivingYear,
+          },
+        ];
+      });
+      reset();
+    } else {
+      toast("Please enter all the fields.", {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        transition: Slide,
+        pauseOnFocusLoss: false,
+      });
+
+      return;
+    }
+  };
+
+  const deleteAwards = (index) => {
+    const id = index;
+    setAllAwards((oldItems) => {
+      return oldItems.filter((items, index) => {
+        return id != index;
+      });
+    });
+  };
+
+  const submitData = async () => {
     try {
       const payload = {
-        educationAndAwards: [
-          ...data?.educationAndAwards,
-          {
-            degreeOrAward: degree,
-            institution: institute,
-            receivingYear: year,
-          },
-        ],
+        educationAndAwards: allAwards,
       };
 
       const res = await axios.put(
@@ -45,7 +78,7 @@ const EducationInfo = ({ data }) => {
         theme: "colored",
         transition: Slide,
       });
-      return result, setDegree(""), setInstitute(""), setYear("");
+      return result;
     } catch (err) {
       console.log(err.message);
       toast.error("Something Went Wrong Try Again.", {
@@ -66,51 +99,50 @@ const EducationInfo = ({ data }) => {
       <div className="card">
         <div className="card-header fs-6 fw-bold">Education Information</div>
         <div className="card-body">
-          <div className="doc-education mb-4">
-            <div className="row align-items-center">
-              <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3">
-                <label className="mb-2">Degree or Award</label>
-                <div className="mb-3">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Degree or Award"
-                    value={degree}
-                    onChange={(e) => setDegree(e.target.value)}
-                  />
+          <form onSubmit={handleSubmit(addEducation)}>
+            <div className="doc-education mb-4">
+              <div className="row align-items-center">
+                <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3">
+                  <label className="mb-2">Degree or Award</label>
+                  <div className="mb-3">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Degree or Award"
+                      {...register("degreeOrAward")}
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3">
-                <label className="mb-2">Institution Name</label>
-                <div className="mb-3">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Institution Name"
-                    value={institute}
-                    onChange={(e) => setInstitute(e.target.value)}
-                  />
+                <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3">
+                  <label className="mb-2">Institution Name</label>
+                  <div className="mb-3">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Institution Name"
+                      {...register("institution")}
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3">
-                <label className="mb-2">Receiving Year</label>
-                <div className="mb-3">
-                  <input
-                    type="number"
-                    className="form-control"
-                    placeholder="Receiving Year"
-                    value={year}
-                    onChange={(e) => setYear(e.target.value)}
-                  />
+                <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3">
+                  <label className="mb-2">Receiving Year</label>
+                  <div className="mb-3">
+                    <input
+                      type="number"
+                      className="form-control"
+                      placeholder="Receiving Year"
+                      {...register("receivingYear")}
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3">
-                <button className="btn btn-primary" onClick={addEducation}>
-                  Add Education
-                </button>
+                <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3">
+                  <button className="btn btn-primary" type="submit">
+                    Add Education
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
+          </form>
           <div className="card-table mt-5">
             <div className="table-responsive">
               <table className="table">
@@ -124,7 +156,7 @@ const EducationInfo = ({ data }) => {
                   </tr>
                 </thead>
                 <tbody>
-                  {data?.educationAndAwards?.map((items, index) => (
+                  {allAwards?.map((items, index) => (
                     <tr key={index}>
                       <td scope="row">#{index + 1}</td>
                       <td>{items?.degreeOrAward}</td>
@@ -133,9 +165,12 @@ const EducationInfo = ({ data }) => {
                       <td className="text-end">
                         <div className="table-action">
                           <Link href="#">
-                            <a className="btn btn-sm bg-danger-light">
+                            <button
+                              className="btn btn-sm bg-danger-light"
+                              onClick={() => deleteAwards(index)}
+                            >
                               <i className="far fa-trash-alt"></i> Delete
-                            </a>
+                            </button>
                           </Link>
                         </div>
                       </td>
@@ -143,6 +178,13 @@ const EducationInfo = ({ data }) => {
                   ))}
                 </tbody>
               </table>
+            </div>
+          </div>
+          <div className="row mt-4">
+            <div className="col-12 text-end">
+              <button className="btn btn-primary" onClick={submitData}>
+                Save Changes
+              </button>
             </div>
           </div>
         </div>
