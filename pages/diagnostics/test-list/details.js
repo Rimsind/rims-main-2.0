@@ -72,7 +72,7 @@ const TestDetails = () => {
                       <ul className="list-group list-group-flush">
                         <li className="list-group-item">
                           <div className="row align-items-center">
-                            <div className="col-6">
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2 mb-sm-2 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0">
                               <i
                                 className="far fa-vial text-muted"
                                 style={{ fontSize: "16px" }}
@@ -88,7 +88,7 @@ const TestDetails = () => {
                                 Test Type
                               </span>
                             </div>
-                            <div className="col-6">
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2 mb-sm-2 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0">
                               <h6
                                 style={{ fontSize: "16px", fontWeight: "400" }}
                               >
@@ -99,7 +99,7 @@ const TestDetails = () => {
                         </li>
                         <li className="list-group-item">
                           <div className="row align-items-center">
-                            <div className="col-6">
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2 mb-sm-2 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0">
                               <i
                                 className="far fa-info-circle text-muted"
                                 style={{ fontSize: "16px" }}
@@ -115,7 +115,7 @@ const TestDetails = () => {
                                 Pre-test Information
                               </span>
                             </div>
-                            <div className="col-6">
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2 mb-sm-2 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0">
                               <h6
                                 style={{ fontSize: "16px", fontWeight: "400" }}
                               >
@@ -126,7 +126,7 @@ const TestDetails = () => {
                         </li>
                         <li className="list-group-item">
                           <div className="row align-items-center">
-                            <div className="col-6">
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2 mb-sm-2 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0">
                               <i
                                 className="far fa-ballot-check text-muted"
                                 style={{ fontSize: "16px" }}
@@ -142,7 +142,7 @@ const TestDetails = () => {
                                 Report Delivery
                               </span>
                             </div>
-                            <div className="col-6">
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2 mb-sm-2 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0">
                               <h6
                                 style={{ fontSize: "16px", fontWeight: "400" }}
                               >
@@ -153,7 +153,7 @@ const TestDetails = () => {
                         </li>
                         <li className="list-group-item">
                           <div className="row align-items-center">
-                            <div className="col-6">
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2 mb-sm-2 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0">
                               <i
                                 className="far fa-atom text-muted"
                                 style={{ fontSize: "16px" }}
@@ -169,7 +169,7 @@ const TestDetails = () => {
                                 Components
                               </span>
                             </div>
-                            <div className="col-6">
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2 mb-sm-2 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0">
                               <h6
                                 style={{ fontSize: "16px", fontWeight: "400" }}
                               >
@@ -180,7 +180,7 @@ const TestDetails = () => {
                         </li>
                         <li className="list-group-item">
                           <div className="row align-items-center">
-                            <div className="col-6">
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2 mb-sm-2 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0">
                               <i
                                 className="far fa-money-bill-wave text-muted"
                                 style={{ fontSize: "16px" }}
@@ -196,7 +196,7 @@ const TestDetails = () => {
                                 Price
                               </span>
                             </div>
-                            <div className="col-6">
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2 mb-sm-2 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0">
                               <h6
                                 style={{
                                   fontSize: "16px",
@@ -213,7 +213,7 @@ const TestDetails = () => {
                       <div className="add-to-cart-diag-btn">
                         <div className="row align-items-center">
                           <div className="col-3"></div>
-                          <div className="col-6">
+                          <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2 mb-sm-2 mb-md-0 mb-lg-0 mb-xl-0 mb-xxl-0">
                             <div className="d-grid gap-2 text-center">
                               <button
                                 className="btn book-btn"

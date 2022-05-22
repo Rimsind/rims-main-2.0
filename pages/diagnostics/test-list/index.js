@@ -11,7 +11,7 @@ const Index = () => {
         <div className="container-fluid">
           <div className="content">
             <div className="row align-items-start">
-              <div className="col-2 sticky-top">
+              <div className="col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 col-xxl-2 sticky-lg-top sticky-xl-top sticky-xxl-top">
                 <div className="left-test-list-title">
                   <div className="card">
                     <div className="card-header">
@@ -120,7 +120,7 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-10">
+              <div className="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 col-xxl-10">
                 <div className="test-list-right-title">
                   <h6
                     style={{
@@ -138,7 +138,10 @@ const Index = () => {
                 <div className="right-test-list">
                   <div className="row align-items-center">
                     {data?.test_packages?.map((items, index) => (
-                      <div className="col-3" key={index}>
+                      <div
+                        className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3"
+                        key={index}
+                      >
                         <TestCard data={items} clinicId={id} />
                       </div>
                     ))}
