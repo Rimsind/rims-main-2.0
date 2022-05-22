@@ -12,6 +12,8 @@ import MedicineExamination from "./medicine/MedicineExamination";
 import EducationInfo from "./EducationInfo";
 import StatusChanger from "./StatusChanger";
 import TimeTableAccordian from "./TimeTableAccordian";
+import RoutineCardClosed from "./RoutineCardClosed";
+import RoutineCardOpen from "./RoutineCardOpen";
 export {
   DoctorSidebar,
   DoctorNav,
@@ -27,4 +29,6 @@ export {
   EducationInfo,
   StatusChanger,
   TimeTableAccordian,
+  RoutineCardClosed,
+  RoutineCardOpen,
 };

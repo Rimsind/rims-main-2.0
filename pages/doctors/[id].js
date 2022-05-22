@@ -196,15 +196,32 @@ const DoctorId = () => {
               <div className="card">
                 <div className="card-body">
                   <div>
-                    {/* {data?.booking_schedule?.map((items, index) => (
-                      <DoctorTimetableCard
-                        data={items}
-                        key={index}
-                        doctorId={id}
-                        indexValue={index + 1}
-                      />
-                    ))} */}
-                    <DoctorTimetableCard />
+                    <section className="doctor-location">
+                      <div className="doc-time-tab-table table-responsive">
+                        <table className="table table-striped table-bordered border-dark align-middle">
+                          <thead>
+                            <tr>
+                              <th>Clinics</th>
+                              <th className="text-center">Monday</th>
+                              <th className="text-center">Tuesday</th>
+                              <th className="text-center">Wednesday</th>
+                              <th className="text-center">Thursday</th>
+                              <th className="text-center">Friday</th>
+                              <th className="text-center">Saturday</th>
+                              <th className="text-center">Sunday</th>
+                            </tr>
+                          </thead>
+                          {data?.timeTable?.map((items, index) => (
+                            <DoctorTimetableCard
+                              data={items}
+                              key={index}
+                              doctorId={id}
+                              indexValue={index + 1}
+                            />
+                          ))}{" "}
+                        </table>
+                      </div>
+                    </section>
                   </div>
                 </div>
               </div>

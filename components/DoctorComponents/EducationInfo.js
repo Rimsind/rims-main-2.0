@@ -164,14 +164,12 @@ const EducationInfo = ({ educationAndAwards }) => {
                       <td>{items?.receivingYear}</td>
                       <td className="text-end">
                         <div className="table-action">
-                          <Link href="#">
-                            <button
-                              className="btn btn-sm bg-danger-light"
-                              onClick={() => deleteAwards(index)}
-                            >
-                              <i className="far fa-trash-alt"></i> Delete
-                            </button>
-                          </Link>
+                          <button
+                            className="btn btn-sm bg-danger-light"
+                            onClick={() => deleteAwards(index)}
+                          >
+                            <i className="far fa-trash-alt"></i> Delete
+                          </button>
                         </div>
                       </td>
                     </tr>
