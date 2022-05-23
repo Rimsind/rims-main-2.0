@@ -10,7 +10,10 @@ const DetailsNew = () => {
   const { data } = useSWR(`${apiUrl}/polyclinics/${id}`, fetcher);
   return (
     <section className="section-details">
-      <BreadCrums title="Home / Doctor Details" title1="Doctor Details" />
+      <BreadCrums
+        title="Home / Polyclinics Details"
+        title1="Polyclinics Details"
+      />
       <div className="container-fluid">
         {data ? (
           <>
