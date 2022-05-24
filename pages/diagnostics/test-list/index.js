@@ -136,7 +136,7 @@ const Index = () => {
                   <h6 className="fs-6 text-info">Online Test Booking</h6>
                 </div>
                 <div className="right-test-list">
-                  <div className="row align-items-center">
+                  <div className="row align-items-start">
                     {data?.test_packages?.map((items, index) => (
                       <div
                         className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3"
