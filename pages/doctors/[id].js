@@ -200,7 +200,7 @@ const DoctorId = () => {
                 <div className="card-body">
                   <div>
                     <section className="doctor-location">
-                      <div className="doc-time-tab-table table-responsive">
+                      <div className="doc-time-tab-table table-responsive table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl table-responsive-xxl">
                         <table className="table table-group-divider align-middle">
                           <thead
                             style={{
