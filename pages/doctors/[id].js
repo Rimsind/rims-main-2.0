@@ -16,7 +16,7 @@ const DoctorId = () => {
           <div className="container-fluid">
             <div className="content">
               <div className="row align-items-start">
-                <div className="col-6">
+                <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
                   <div className="card">
                     <div className="card-body">
                       <div className="doctor-left-profile">
@@ -92,7 +92,7 @@ const DoctorId = () => {
                         </div>
                         <div className="doc-lft-innr-dtls mt-5">
                           <div className="row align-items-start">
-                            <div className="col-5">
+                            <div className="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 col-xxl-5">
                               <div className="doc-lft-innr-titl">
                                 <h6>
                                   <span className="fs-5 fw-bold text-info">
@@ -146,7 +146,7 @@ const DoctorId = () => {
                                 </h6>
                               </div>
                             </div>
-                            <div className="col-7">
+                            <div className="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7 col-xxl-7 mt-3 mt-sm-3 mt-md-3 mt-lg-0 mt-xl-0 mt-xxl-0">
                               <h6 className="fs-5 fw-bold mb-3 border-bottom border-1 pb-2">
                                 About Me
                               </h6>
@@ -160,7 +160,7 @@ const DoctorId = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-6">
+                <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
                   <div className="card">
                     <div className="card-body">
                       <h6 className="fs-5 fw-bold mb-3 border-bottom border-1 pb-2">
@@ -170,7 +170,10 @@ const DoctorId = () => {
                         <div className="experience-box">
                           <div className="row align-items-center">
                             {data?.educationAndAwards?.map((items, index) => (
-                              <div className="col-6" key={index}>
+                              <div
+                                className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6"
+                                key={index}
+                              >
                                 <div className="edu-inner-item bg-primary-light p-3 my-2">
                                   <h6 className="fs-6 fw-bold">
                                     {items?.degreeOrAward}
@@ -198,8 +201,13 @@ const DoctorId = () => {
                   <div>
                     <section className="doctor-location">
                       <div className="doc-time-tab-table table-responsive">
-                        <table className="table table-striped table-bordered border-dark align-middle">
-                          <thead>
+                        <table className="table table-group-divider align-middle">
+                          <thead
+                            style={{
+                              backgroundColor: "#2f71ab",
+                              color: "#fff",
+                            }}
+                          >
                             <tr>
                               <th>Clinics</th>
                               <th className="text-center">Monday</th>
@@ -209,6 +217,7 @@ const DoctorId = () => {
                               <th className="text-center">Friday</th>
                               <th className="text-center">Saturday</th>
                               <th className="text-center">Sunday</th>
+                              <th className="text-center">Details</th>
                             </tr>
                           </thead>
                           {data?.timeTable?.map((items, index) => (
