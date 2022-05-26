@@ -4,6 +4,7 @@ import axios from "axios";
 import { apiUrl } from "config/api";
 import { toast, Slide } from "react-toastify";
 import { useState } from "react";
+import { inputTime } from "pages/api/inputTime";
 const ProfileInfo = ({ data }) => {
   const { auth } = useAuth();
   if (auth?.user?.role?.id === 4) {
@@ -18,7 +19,7 @@ const ProfileInfo = ({ data }) => {
   const [loading, setLoading] = useState(false);
 
   const { register, handleSubmit } = useForm();
-  const submit_polydetails = async (data, event) => {
+  const submitDetails = async (data, event) => {
     setLoading(true);
     event.preventDefault();
     try {
@@ -82,7 +83,7 @@ const ProfileInfo = ({ data }) => {
           <p className="fs-5 fw-bold text-center">Profile Details</p>
         </div>
         <div className="card-body">
-          <form onSubmit={handleSubmit(submit_polydetails)}>
+          <form onSubmit={handleSubmit(submitDetails)}>
             <div className="row mb-3">
               <div className="col-md-6">
                 <div className="row align-items-center">
@@ -98,7 +99,7 @@ const ProfileInfo = ({ data }) => {
                         className="form-control"
                         placeholder="Clinic Name"
                         {...register("name")}
-                        defaultValue={!!data ? data.name : ""}
+                        defaultValue={!!data && !!data.name ? data.name : ""}
                       />
                     </div>
                   </div>
@@ -117,7 +118,11 @@ const ProfileInfo = ({ data }) => {
                         type="text"
                         className="form-control"
                         {...register("contact_person_name")}
-                        defaultValue={!!data ? data?.contact_person_name : ""}
+                        defaultValue={
+                          !!data && !!data.contact_person_name
+                            ? data.contact_person_name
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -139,7 +144,11 @@ const ProfileInfo = ({ data }) => {
                         className="form-control"
                         placeholder="Registration No."
                         {...register("registration_no")}
-                        defaultValue={!!data ? data.registration_no : ""}
+                        defaultValue={
+                          !!data && !!data.registration_no
+                            ? data.registration_no
+                            : ""
+                        }
                       />
                     </div>
                   </div>
@@ -159,7 +168,7 @@ const ProfileInfo = ({ data }) => {
                         className="form-control"
                         placeholder="Email Id"
                         disabled
-                        defaultValue={!!data ? data.email : ""}
+                        defaultValue={!!data && !!data.email ? data.email : ""}
                       />
                     </div>
                   </div>
@@ -179,7 +188,7 @@ const ProfileInfo = ({ data }) => {
                         className="form-control"
                         placeholder="eg: 987456321"
                         {...register("phone")}
-                        defaultValue={!!data ? data.phone : ""}
+                        defaultValue={!!data && !!data.phone ? data.phone : ""}
                       />
                     </div>
                   </div>
@@ -197,7 +206,9 @@ const ProfileInfo = ({ data }) => {
                     placeholder="Overview"
                     id="floatingTextarea"
                     rows="3"
-                    defaultValue={!!data ? data.overview : ""}
+                    defaultValue={
+                      !!data && !!data.overview ? data.overview : ""
+                    }
                     {...register("overview")}
                   ></textarea>
                 </div>
@@ -217,7 +228,7 @@ const ProfileInfo = ({ data }) => {
                       className="form-select"
                       aria-label="Default select example"
                       defaultValue={
-                        !!data && data.workingHours
+                        !!data && !!data.workingHours
                           ? data.workingHours.start_time
                           : ""
                       }
@@ -226,7 +237,7 @@ const ProfileInfo = ({ data }) => {
                       <option
                         disabled
                         defaultValue={
-                          !!data && data.workingHours
+                          !!data && !!data.workingHours
                             ? data.workingHours.start_time
                             : ""
                         }
@@ -236,8 +247,11 @@ const ProfileInfo = ({ data }) => {
                           : ""}
                       </option>
                       <option value="Open 24 Hrs">Open 24 Hrs</option>
-                      <option value="00:00">00:00</option>
-                      <option value="00:30">00:30</option>
+                      {inputTime.map((items, index) => (
+                        <option value={items.value} key={index}>
+                          {items.display}
+                        </option>
+                      ))}
                     </select>
                   </div>
                 </div>
@@ -252,7 +266,7 @@ const ProfileInfo = ({ data }) => {
                       className="form-select"
                       aria-label="Default select example"
                       defaultValue={
-                        !!data && data.workingHours
+                        !!data && !!data.workingHours
                           ? data.workingHours.end_time
                           : ""
                       }
@@ -270,8 +284,11 @@ const ProfileInfo = ({ data }) => {
                           : ""}
                       </option>
                       <option value="Open 24 Hrs">Open 24 Hrs</option>
-                      <option value="00:00">00:00</option>
-                      <option value="00:30">00:30</option>
+                      {inputTime.map((items, index) => (
+                        <option value={items.value} key={index}>
+                          {items.display}
+                        </option>
+                      ))}
                     </select>
                   </div>
                 </div>

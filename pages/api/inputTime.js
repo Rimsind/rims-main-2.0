@@ -1,4 +1,4 @@
-const inputTime = [
+export const inputTime = [
   {
     value: "12:00 AM",
     display: "00:00",
