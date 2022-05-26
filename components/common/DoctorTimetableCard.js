@@ -18,21 +18,10 @@ const DoctorTimetableCard = ({ data, doctorId, indexValue }) => {
       <tbody>
         <tr>
           <td className="py-2">
-            {/* <Image
-              className="border border-2 border-primary rounded"
-              height={50}
-              width={50}
-              src={
-                data?.polyclinic?.image?.url ||
-                data?.hospital?.image?.url ||
-                data?.nursing_home?.image?.url
-              }
-              alt="Polyclinic Image"
-            /> */}
             <h4 className="doc-name fs-5">
               <a href="doctor-profile.html">
                 {data?.polyclinic?.name ||
-                  data?.hursing_home?.name ||
+                  data?.nursing_home?.name ||
                   data?.hospital?.name}
               </a>
             </h4>

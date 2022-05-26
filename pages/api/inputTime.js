@@ -1,5 +1,9 @@
 export const inputTime = [
   {
+    value: "",
+    display: "",
+  },
+  {
     value: "12:00 AM",
     display: "00:00",
   },

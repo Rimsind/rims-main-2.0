@@ -5,7 +5,6 @@ import useSWR from "swr";
 import axios from "axios";
 import { DoctorSidebar, TimeTableAccordian } from "components/DoctorComponents";
 import { withAuth } from "helpers/withAuth";
-import Image from "next/image";
 import Link from "next/link";
 
 const DoctorTimeTable = () => {
@@ -54,7 +53,7 @@ const DoctorTimeTable = () => {
                     <div className="card-body">
                       <div className="doc-time-table">
                         <div className="accordion" id="accordionExample">
-                          {data?.booking_schedule?.map((items, index) => (
+                          {data?.timeTable?.map((items, index) => (
                             <TimeTableAccordian
                               data={items}
                               key={index}
