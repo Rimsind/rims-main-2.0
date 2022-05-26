@@ -73,7 +73,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                               />
                               <label
                                 className="form-check-label"
-                                for="inlineRadio1"
+                                htmlFor="inlineRadio1"
                               >
                                 Open
                               </label>
@@ -94,7 +94,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                               />
                               <label
                                 className="form-check-label"
-                                for="inlineRadio1"
+                                htmlFor="inlineRadio1"
                               >
                                 Closed
                               </label>
@@ -178,7 +178,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                               />
                               <label
                                 className="form-check-label"
-                                for="inlineRadio1"
+                                htmlFor="inlineRadio1"
                               >
                                 Open
                               </label>
@@ -199,7 +199,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                               />
                               <label
                                 className="form-check-label"
-                                for="inlineRadio1"
+                                htmlFor="inlineRadio1"
                               >
                                 Closed
                               </label>
@@ -284,7 +284,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                               />
                               <label
                                 className="form-check-label"
-                                for="inlineRadio1"
+                                htmlFor="inlineRadio1"
                               >
                                 Open
                               </label>
@@ -305,7 +305,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                               />
                               <label
                                 className="form-check-label"
-                                for="inlineRadio1"
+                                htmlFor="inlineRadio1"
                               >
                                 Closed
                               </label>
@@ -388,7 +388,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                               />
                               <label
                                 className="form-check-label"
-                                for="inlineRadio1"
+                                htmlFor="inlineRadio1"
                               >
                                 Open
                               </label>
@@ -409,7 +409,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                               />
                               <label
                                 className="form-check-label"
-                                for="inlineRadio1"
+                                htmlFor="inlineRadio1"
                               >
                                 Closed
                               </label>
@@ -492,7 +492,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                               />
                               <label
                                 className="form-check-label"
-                                for="inlineRadio1"
+                                htmlFor="inlineRadio1"
                               >
                                 Open
                               </label>
@@ -513,7 +513,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                               />
                               <label
                                 className="form-check-label"
-                                for="inlineRadio1"
+                                htmlFor="inlineRadio1"
                               >
                                 Closed
                               </label>
@@ -596,7 +596,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                               />
                               <label
                                 className="form-check-label"
-                                for="inlineRadio1"
+                                htmlFor="inlineRadio1"
                               >
                                 Open
                               </label>
@@ -617,7 +617,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                               />
                               <label
                                 className="form-check-label"
-                                for="inlineRadio1"
+                                htmlFor="inlineRadio1"
                               >
                                 Closed
                               </label>
@@ -700,7 +700,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                               />
                               <label
                                 className="form-check-label"
-                                for="inlineRadio1"
+                                htmlFor="inlineRadio1"
                               >
                                 Open
                               </label>
@@ -721,7 +721,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                               />
                               <label
                                 className="form-check-label"
-                                for="inlineRadio1"
+                                htmlFor="inlineRadio1"
                               >
                                 Closed
                               </label>

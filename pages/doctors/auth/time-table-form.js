@@ -26,8 +26,6 @@ const DoctorTimeTableForm = () => {
     }
   );
 
-  console.log(doctor?.timeTable);
-
   const [locationType, setLocationType] = useState("");
   const { data: location } = useSWR(`${apiUrl}/${locationType}`, fetcher);
   const [clinic, setClinic] = useState();
@@ -91,7 +89,6 @@ const DoctorTimeTableForm = () => {
         },
       ],
     };
-    console.log(payload);
 
     const res = await axios.put(
       `${apiUrl}/doctors/${auth.user?.profileId}`,
@@ -149,7 +146,7 @@ const DoctorTimeTableForm = () => {
                                   />
                                   <label
                                     className="form-check-label"
-                                    htmlFor="polyclinic"
+                                    htmlhtmlFor="polyclinic"
                                   >
                                     Polyclinics
                                   </label>
@@ -167,7 +164,7 @@ const DoctorTimeTableForm = () => {
                                   />
                                   <label
                                     className="form-check-label"
-                                    htmlFor="nursing-homes"
+                                    htmlhtmlFor="nursing-homes"
                                   >
                                     Nursing Homes
                                   </label>
@@ -185,7 +182,7 @@ const DoctorTimeTableForm = () => {
                                   />
                                   <label
                                     className="form-check-label"
-                                    htmlFor="hospital"
+                                    htmlhtmlFor="hospital"
                                   >
                                     Hospital
                                   </label>
@@ -251,7 +248,7 @@ const DoctorTimeTableForm = () => {
                                       />
                                       <label
                                         className="form-check-label"
-                                        for="inlineRadio1"
+                                        htmlFor="inlineRadio1"
                                       >
                                         Open
                                       </label>
@@ -270,7 +267,7 @@ const DoctorTimeTableForm = () => {
                                       />
                                       <label
                                         className="form-check-label"
-                                        for="inlineRadio1"
+                                        htmlFor="inlineRadio1"
                                       >
                                         Closed
                                       </label>
@@ -343,7 +340,7 @@ const DoctorTimeTableForm = () => {
                                       />
                                       <label
                                         className="form-check-label"
-                                        for="inlineRadio1"
+                                        htmlFor="inlineRadio1"
                                       >
                                         Open
                                       </label>
@@ -362,7 +359,7 @@ const DoctorTimeTableForm = () => {
                                       />
                                       <label
                                         className="form-check-label"
-                                        for="inlineRadio1"
+                                        htmlFor="inlineRadio1"
                                       >
                                         Closed
                                       </label>
@@ -436,7 +433,7 @@ const DoctorTimeTableForm = () => {
                                       />
                                       <label
                                         className="form-check-label"
-                                        for="inlineRadio1"
+                                        htmlFor="inlineRadio1"
                                       >
                                         Open
                                       </label>
@@ -455,7 +452,7 @@ const DoctorTimeTableForm = () => {
                                       />
                                       <label
                                         className="form-check-label"
-                                        for="inlineRadio1"
+                                        htmlFor="inlineRadio1"
                                       >
                                         Closed
                                       </label>
@@ -528,7 +525,7 @@ const DoctorTimeTableForm = () => {
                                       />
                                       <label
                                         className="form-check-label"
-                                        for="inlineRadio1"
+                                        htmlFor="inlineRadio1"
                                       >
                                         Open
                                       </label>
@@ -547,7 +544,7 @@ const DoctorTimeTableForm = () => {
                                       />
                                       <label
                                         className="form-check-label"
-                                        for="inlineRadio1"
+                                        htmlFor="inlineRadio1"
                                       >
                                         Closed
                                       </label>
@@ -621,7 +618,7 @@ const DoctorTimeTableForm = () => {
                                       />
                                       <label
                                         className="form-check-label"
-                                        for="inlineRadio1"
+                                        htmlFor="inlineRadio1"
                                       >
                                         Open
                                       </label>
@@ -640,7 +637,7 @@ const DoctorTimeTableForm = () => {
                                       />
                                       <label
                                         className="form-check-label"
-                                        for="inlineRadio1"
+                                        htmlFor="inlineRadio1"
                                       >
                                         Closed
                                       </label>
@@ -714,7 +711,7 @@ const DoctorTimeTableForm = () => {
                                       />
                                       <label
                                         className="form-check-label"
-                                        for="inlineRadio1"
+                                        htmlFor="inlineRadio1"
                                       >
                                         Open
                                       </label>
@@ -733,7 +730,7 @@ const DoctorTimeTableForm = () => {
                                       />
                                       <label
                                         className="form-check-label"
-                                        for="inlineRadio1"
+                                        htmlFor="inlineRadio1"
                                       >
                                         Closed
                                       </label>
@@ -806,7 +803,7 @@ const DoctorTimeTableForm = () => {
                                       />
                                       <label
                                         className="form-check-label"
-                                        for="inlineRadio1"
+                                        htmlFor="inlineRadio1"
                                       >
                                         Open
                                       </label>
@@ -825,7 +822,7 @@ const DoctorTimeTableForm = () => {
                                       />
                                       <label
                                         className="form-check-label"
-                                        for="inlineRadio1"
+                                        htmlFor="inlineRadio1"
                                       >
                                         Closed
                                       </label>

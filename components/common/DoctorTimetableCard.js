@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import {
   RoutineCardClosed,
@@ -6,7 +5,6 @@ import {
 } from "components/DoctorComponents";
 
 const DoctorTimetableCard = ({ data, doctorId, indexValue }) => {
-  console.log(data);
   if (indexValue % 2 === 0) {
     var color = "#abd5ff";
   } else {
