@@ -64,6 +64,7 @@ const DoctorTimeTable = () => {
                           ))}
                         </div>
                       </div>
+
                       <div className="d-grid gap-2">
                         <Link href="/doctors/auth/time-table-form">
                           <a className="btn btn-primary fs-6 px-5 shadow-sm">
