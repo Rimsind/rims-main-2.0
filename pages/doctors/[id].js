@@ -201,7 +201,7 @@ const DoctorId = () => {
                   <div>
                     <section className="doctor-location">
                       <div className="doc-time-tab-table table-responsive table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl table-responsive-xxl">
-                        <table className="table table-group-divider align-middle">
+                        <table className="table table-bordered border-secondary align-middle">
                           <thead
                             style={{
                               backgroundColor: "#2f71ab",
