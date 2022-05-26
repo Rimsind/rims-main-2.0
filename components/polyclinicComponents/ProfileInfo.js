@@ -23,10 +23,12 @@ const ProfileInfo = ({ data }) => {
     event.preventDefault();
     try {
       const payload = {
+        overview: data.overview,
         name: data.name,
         contact_person_name: data.contact_person_name,
         phone: data.phone,
         registration_no: data.registration_no,
+
         workingHours: {
           start_time: data.start_time,
           end_time: data?.end_time,
@@ -96,7 +98,7 @@ const ProfileInfo = ({ data }) => {
                         className="form-control"
                         placeholder="Clinic Name"
                         {...register("name")}
-                        defaultValue={!!data?.name ? data?.name : ""}
+                        defaultValue={!!data ? data.name : ""}
                       />
                     </div>
                   </div>
@@ -115,11 +117,7 @@ const ProfileInfo = ({ data }) => {
                         type="text"
                         className="form-control"
                         {...register("contact_person_name")}
-                        defaultValue={
-                          !!data?.contact_person_name
-                            ? data?.contact_person_name
-                            : ""
-                        }
+                        defaultValue={!!data ? data?.contact_person_name : ""}
                       />
                     </div>
                   </div>
@@ -141,9 +139,7 @@ const ProfileInfo = ({ data }) => {
                         className="form-control"
                         placeholder="Registration No."
                         {...register("registration_no")}
-                        defaultValue={
-                          !!data?.registration_no ? data?.registration_no : ""
-                        }
+                        defaultValue={!!data ? data.registration_no : ""}
                       />
                     </div>
                   </div>
@@ -163,7 +159,7 @@ const ProfileInfo = ({ data }) => {
                         className="form-control"
                         placeholder="Email Id"
                         disabled
-                        defaultValue={!!data?.email ? data?.email : ""}
+                        defaultValue={!!data ? data.email : ""}
                       />
                     </div>
                   </div>
@@ -183,7 +179,7 @@ const ProfileInfo = ({ data }) => {
                         className="form-control"
                         placeholder="eg: 987456321"
                         {...register("phone")}
-                        defaultValue={!!data?.phone ? data?.phone : ""}
+                        defaultValue={!!data ? data.phone : ""}
                       />
                     </div>
                   </div>
@@ -200,7 +196,9 @@ const ProfileInfo = ({ data }) => {
                     className="form-control"
                     placeholder="Overview"
                     id="floatingTextarea"
-                    rows="10"
+                    rows="3"
+                    defaultValue={!!data ? data.overview : ""}
+                    {...register("overview")}
                   ></textarea>
                 </div>
               </div>
@@ -218,67 +216,28 @@ const ProfileInfo = ({ data }) => {
                     <select
                       className="form-select"
                       aria-label="Default select example"
+                      defaultValue={
+                        !!data && data.workingHours
+                          ? data.workingHours.start_time
+                          : ""
+                      }
+                      {...register("start_time")}
                     >
-                      <option>Open 24 Hrs</option>
-                      <option>00:00</option>
-                      <option>00:30</option>
-                      <option>01:00</option>
-                      <option>01:30</option>
-                      <option>02:00</option>
-                      <option>02:30</option>
-                      <option>03:00</option>
-                      <option>03:30</option>
-                      <option>04:00</option>
-                      <option>04:30</option>
-                      <option>05:00</option>
-                      <option>05:30</option>
-                      <option>06:00</option>
-                      <option>06:30</option>
-                      <option>07:00</option>
-                      <option>07:30</option>
-                      <option>08:00</option>
-                      <option>08:30</option>
-                      <option>09:00</option>
-                      <option>09:30</option>
-                      <option>10:00</option>
-                      <option>10:30</option>
-                      <option>11:00</option>
-                      <option>11:30</option>
-                      <option>12:00</option>
-                      <option>12:30</option>
-                      <option>13:00</option>
-                      <option>13:30</option>
-                      <option>14:00</option>
-                      <option>14:30</option>
-                      <option>15:00</option>
-                      <option>15:30</option>
-                      <option>16:00</option>
-                      <option>16:30</option>
-                      <option>17:00</option>
-                      <option>17:30</option>
-                      <option>18:00</option>
-                      <option>18:30</option>
-                      <option>19:00</option>
-                      <option>19:30</option>
-                      <option>20:00</option>
-                      <option>20:30</option>
-                      <option>21:00</option>
-                      <option>21:30</option>
-                      <option>22:00</option>
-                      <option>22:30</option>
-                      <option>23:00</option>
-                      <option>23:30</option>
-                      <option>24:00</option>
-                      <option>24:30</option>
-                    </select>
-                  </div>
-                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
-                    <select
-                      className="form-select"
-                      aria-label="Default select example"
-                    >
-                      <option>AM</option>
-                      <option>PM</option>
+                      <option
+                        disabled
+                        defaultValue={
+                          !!data && data.workingHours
+                            ? data.workingHours.start_time
+                            : ""
+                        }
+                      >
+                        {!!data && data.workingHours
+                          ? data.workingHours.start_time
+                          : ""}
+                      </option>
+                      <option value="Open 24 Hrs">Open 24 Hrs</option>
+                      <option value="00:00">00:00</option>
+                      <option value="00:30">00:30</option>
                     </select>
                   </div>
                 </div>
@@ -292,67 +251,27 @@ const ProfileInfo = ({ data }) => {
                     <select
                       className="form-select"
                       aria-label="Default select example"
+                      defaultValue={
+                        !!data && data.workingHours
+                          ? data.workingHours.end_time
+                          : ""
+                      }
+                      {...register("end_time")}
                     >
-                      <option>Open 24 Hrs</option>
-                      <option>00:00</option>
-                      <option>00:30</option>
-                      <option>01:00</option>
-                      <option>01:30</option>
-                      <option>02:00</option>
-                      <option>02:30</option>
-                      <option>03:00</option>
-                      <option>03:30</option>
-                      <option>04:00</option>
-                      <option>04:30</option>
-                      <option>05:00</option>
-                      <option>05:30</option>
-                      <option>06:00</option>
-                      <option>06:30</option>
-                      <option>07:00</option>
-                      <option>07:30</option>
-                      <option>08:00</option>
-                      <option>08:30</option>
-                      <option>09:00</option>
-                      <option>09:30</option>
-                      <option>10:00</option>
-                      <option>10:30</option>
-                      <option>11:00</option>
-                      <option>11:30</option>
-                      <option>12:00</option>
-                      <option>12:30</option>
-                      <option>13:00</option>
-                      <option>13:30</option>
-                      <option>14:00</option>
-                      <option>14:30</option>
-                      <option>15:00</option>
-                      <option>15:30</option>
-                      <option>16:00</option>
-                      <option>16:30</option>
-                      <option>17:00</option>
-                      <option>17:30</option>
-                      <option>18:00</option>
-                      <option>18:30</option>
-                      <option>19:00</option>
-                      <option>19:30</option>
-                      <option>20:00</option>
-                      <option>20:30</option>
-                      <option>21:00</option>
-                      <option>21:30</option>
-                      <option>22:00</option>
-                      <option>22:30</option>
-                      <option>23:00</option>
-                      <option>23:30</option>
-                      <option>24:00</option>
-                      <option>24:30</option>
-                    </select>
-                  </div>
-                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
-                    <select
-                      className="form-select"
-                      aria-label="Default select example"
-                    >
-                      <option>AM</option>
-                      <option>PM</option>
+                      <option
+                        defaultValue={
+                          !!data && data.workingHours
+                            ? data.workingHours.end_time
+                            : ""
+                        }
+                      >
+                        {!!data && data.workingHours
+                          ? data.workingHours.end_time
+                          : ""}
+                      </option>
+                      <option value="Open 24 Hrs">Open 24 Hrs</option>
+                      <option value="00:00">00:00</option>
+                      <option value="00:30">00:30</option>
                     </select>
                   </div>
                 </div>
