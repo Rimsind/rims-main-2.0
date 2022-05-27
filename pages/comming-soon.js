@@ -1,5 +1,5 @@
-import AuthLayout from "components/layout/AuthLayout";
 import Image from "next/image";
+import Link from "next/link";
 
 const ComingSoon = () => {
   return (
@@ -43,9 +43,11 @@ const ComingSoon = () => {
                     </p>
                   </div>
                   <div className="section-coming-btn mt-5">
-                    <button className="btn btn-primary py-2 px-lg-5">
-                      Go Back To Home
-                    </button>
+                    <Link href="/">
+                      <a className="btn btn-primary py-2 px-lg-5">
+                        Go Back To Home
+                      </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="col-6">
@@ -67,4 +69,3 @@ const ComingSoon = () => {
 };
 
 export default ComingSoon;
-// ComingSoon.getLayout = (ComingSoon) => <AuthLayout>{ComingSoon}</AuthLayout>;

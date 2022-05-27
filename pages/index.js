@@ -118,7 +118,12 @@ const Index = () => {
                       We provide the a wide range of medical services, so every
                       person could have the opportunity.
                     </p>
-                    <Link href={"http://medshop.rimsind.com/"} passHref>
+                    {/* <Link href={"http://medshop.rimsind.com/"} passHref>
+                      <a className="book-now">
+                        Book Now <i className="fas fa-long-arrow-alt-right"></i>
+                      </a>
+                    </Link> */}
+                    <Link href="/comming-soon">
                       <a className="book-now">
                         Book Now <i className="fas fa-long-arrow-alt-right"></i>
                       </a>

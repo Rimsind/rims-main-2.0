@@ -149,12 +149,19 @@ const NavBar = () => {
                       </a>
                     </Link>
                   </li>
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                     <Link href={"http://medshop.rimsind.com/"} passHref>
                       <a
                         className="nav-link navbar-link text-white"
                         target="_blank"
                       >
+                        Pharmacy
+                      </a>
+                    </Link>
+                  </li> */}
+                  <li className="nav-item">
+                    <Link href="/comming-soon">
+                      <a className="nav-link navbar-link text-white">
                         Pharmacy
                       </a>
                     </Link>
