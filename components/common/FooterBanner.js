@@ -17,11 +17,11 @@ const FooterBanner = () => {
             <div className="row">
               <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
                 <div className="section-heading">
-                  <p className="mb-3">Introducing Prime Doctors</p>
+                  <p className="mb-3">Introducing RIMS IND</p>
                   <h2>
-                    Hassel-free appoinments
+                    Hassel-free Doctor appoinments
                     <br />
-                    with Prime Doctors
+                    with 10000+ Doctors
                   </h2>
                 </div>
                 <div className="section-content d-flex justify-content-between">

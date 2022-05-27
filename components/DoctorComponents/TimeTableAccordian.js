@@ -5,7 +5,6 @@ import { inputTime } from "pages/api/inputTime";
 
 const TimeTableAccordian = ({ data, collaps, heading }) => {
   const doctor = data;
-  console.log(doctor);
   const { register, handleSubmit } = useForm();
   const submitEntry = async (data, event) => {
     event.preventDefault();

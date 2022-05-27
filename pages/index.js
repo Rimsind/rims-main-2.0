@@ -94,9 +94,11 @@ const Index = () => {
                       We hire the best specialists to deliver top-notch
                       diagnostic services for you.
                     </p>
-                    <a href="#" className="book-now">
-                      Book Now <i className="fas fa-long-arrow-alt-right"></i>
-                    </a>
+                    <Link href="/doctors">
+                      <a className="book-now">
+                        Book Now <i className="fas fa-long-arrow-alt-right"></i>
+                      </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -116,9 +118,11 @@ const Index = () => {
                       We provide the a wide range of medical services, so every
                       person could have the opportunity.
                     </p>
-                    <a href="#" className="book-now">
-                      Book Now <i className="fas fa-long-arrow-alt-right"></i>
-                    </a>
+                    <Link href={"http://medshop.rimsind.com/"} passHref>
+                      <a className="book-now">
+                        Book Now <i className="fas fa-long-arrow-alt-right"></i>
+                      </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -138,9 +142,11 @@ const Index = () => {
                       We use the first-class medical equipment for timely
                       diagnostics of various diseases.
                     </p>
-                    <a href="#" className="book-now">
-                      Book Now <i className="fas fa-long-arrow-alt-right"></i>
-                    </a>
+                    <Link href="/diagnostics">
+                      <a className="book-now">
+                        Book Now <i className="fas fa-long-arrow-alt-right"></i>
+                      </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -151,10 +157,10 @@ const Index = () => {
         <section className="section section-specialities">
           <div className="container-fluid">
             <div className="section-header text-center">
-              <h2 className="fs-4">Clinic and Specialities</h2>
+              <h2 className="fs-4">Medical Specialties</h2>
               <p className="sub-title">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                .
+                Begin your specialty exploration by reading the profiles of more
+                than 100 specialties and subspecialties
               </p>
             </div>
             <div className="row justify-content-center mb-lg-5">
@@ -218,20 +224,21 @@ const Index = () => {
             <div className="row">
               <div className="col-lg-4 ">
                 <div className="section-header">
-                  <h2>Book Our Doctor</h2>
-                  <p>Lorem Ipsum is simply dummy text</p>
+                  <h2>Find Doctors</h2>
+                  <p>Find the best doctor for you & your loved ones.</p>
                 </div>
                 <div className="about-content">
                   <p className="fs-6">
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout. The point of using Lorem Ipsum.
+                    Consult with 10000+ Doctors through chat, call & physical
+                    visits. Get a super-fast medical solution online and
+                    offline. Consult online with the best doctors all over the
+                    globe. Find the best Doctors. Book an appointment with
+                    date-time flexibility.
                   </p>
                   <p className="fs-6">
-                    web page editors now use Lorem Ipsum as their default model
-                    text, and a search for &apos;lorem ipsum&apos; will uncover
-                    many web sites still in their infancy. Various versions have
-                    evolved over the years, sometimes
+                    We provide you with the largest Doctor database. So that you
+                    can choose the best for you and make the best medical
+                    decisions for yourself and your loved ones.
                   </p>
                   <Link href="/doctors">
                     <a className="btn btn-primary py-3 px-4">View More</a>
@@ -273,10 +280,10 @@ const Index = () => {
             <div className="row">
               <div className="col-md-6">
                 <div className="section-heading">
-                  <h2>Your Best Rated Polyclinics</h2>
+                  <h2>Our Recently Added Polyclinics</h2>
                   <p>
-                    Access to expert physicians and surgeons, technologies and
-                    top-quality surgery facilities right here.
+                    Find the best rated polyclinics around you and Throughout
+                    India.
                   </p>
                 </div>
               </div>
@@ -326,7 +333,7 @@ const Index = () => {
             <div className="row">
               <div className="col-md-6">
                 <div className="section-heading">
-                  <h2>Availabe Features in Our Polyclinic</h2>
+                  <h2>Key Features Of Our Polyclinic</h2>
                 </div>
               </div>
               <div className="col-md-6"></div>
@@ -362,10 +369,10 @@ const Index = () => {
             <div className="row">
               <div className="col-md-6">
                 <div className="section-heading">
-                  <h2>Your Best Rated Hospitals</h2>
+                  <h2>Our Top Rated Hospitals</h2>
                   <p>
-                    Access to expert physicians and surgeons, technologies and
-                    top-quality surgery facilities right here.
+                    Find your nearest hospital with the best medical services
+                    and facilities.
                   </p>
                 </div>
               </div>
@@ -420,10 +427,10 @@ const Index = () => {
             <div className="row">
               <div className="col-md-6">
                 <div className="section-heading">
-                  <h2>Your Best Rated Nursing Homes</h2>
+                  <h2>Our Top Rated Nursing Homes</h2>
                   <p>
-                    Access to expert physicians and surgeons, technologies and
-                    top-quality surgery facilities right here.
+                    Find the best rated Nursing Homes around you and throughout
+                    India.
                   </p>
                 </div>
               </div>
