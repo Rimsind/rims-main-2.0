@@ -164,9 +164,9 @@ const UploadMedicalRecord = ({
           </tr>
         </thead>
         <tbody>
-          {dataLenght === 0 ? (
+          {allRecords.length === 0 ? (
             <tr>
-              <td colSpan="3" className="text-danger">
+              <td colSpan="3" className="text-danger text-center">
                 No Previous Records Found !!
               </td>
             </tr>

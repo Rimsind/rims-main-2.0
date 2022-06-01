@@ -99,17 +99,18 @@ const Signup = () => {
       reset();
       router.push("/user/login");
     } catch (err) {
-      toast.error("Registration Failed", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-        transition: Slide,
-      });
+      if ((err.response.status = 400)) {
+        toast.warn("User Already Exists", {
+          position: "top-center",
+          autoClose: 1500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          transition: Slide,
+        });
+      }
     }
   };
   return (
