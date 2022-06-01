@@ -8,25 +8,25 @@ import { useState } from "react";
 
 const Index = () => {
   const { data: doctors } = useSWR(
-    `${apiUrl}/doctors?_sort=id:desc&&verification_status=Approved`,
+    `${apiUrl}/doctors?_sort=id:desc&&verification_status=Approved&&_limit=-1`,
     fetcher
   );
 
   const [startValue, setStartValue] = useState(0);
-  const [endValue, setEndValue] = useState(12);
+  const [endValue, setEndValue] = useState(16);
   const [pageIndex, setPageIndex] = useState(1);
   const nextPage = () => {
     if (doctors?.length - endValue >= 0) {
-      setStartValue(startValue + 12);
-      setEndValue(endValue + 12);
+      setStartValue(startValue + 16);
+      setEndValue(endValue + 16);
       setPageIndex(pageIndex + 1);
     }
   };
 
   const previousPage = () => {
-    if (startValue >= 12) {
-      setStartValue(startValue - 12);
-      setEndValue(endValue - 12);
+    if (startValue >= 16) {
+      setStartValue(startValue - 16);
+      setEndValue(endValue - 16);
       setPageIndex(pageIndex - 1);
     }
   };
@@ -75,6 +75,7 @@ const Index = () => {
                           type="search"
                           placeholder="Search"
                           aria-label="Search"
+                          value={name}
                           onChange={(e) => setName(e.target.value)}
                         />
                       </form>
@@ -204,10 +205,7 @@ const Index = () => {
                           ) {
                             return items;
                           } else if (
-                            items?.specialty?.id
-                              .toString()
-                              .toLowerCase()
-                              .includes(specialty) &&
+                            items?.specialties?.includes(specialty) &&
                             name === "" &&
                             gender === "" &&
                             city === ""
@@ -244,10 +242,7 @@ const Index = () => {
                             items?.firstName
                               ?.toLowerCase()
                               ?.includes(name.toLowerCase()) &&
-                            items?.specialty?.id
-                              .toString()
-                              .toLowerCase()
-                              .includes(specialty) &&
+                            items?.specialties?.includes(specialty) &&
                             gender === "" &&
                             city === ""
                           ) {
@@ -256,10 +251,7 @@ const Index = () => {
                             items?.lastName
                               ?.toLowerCase()
                               ?.includes(name.toLowerCase()) &&
-                            items?.specialty?.id
-                              .toString()
-                              .toLowerCase()
-                              .includes(specialty) &&
+                            items?.specialties?.includes(specialty) &&
                             gender === "" &&
                             city === ""
                           ) {
@@ -287,10 +279,7 @@ const Index = () => {
                           ) {
                             return items;
                           } else if (
-                            items?.specialty?.id
-                              .toString()
-                              .toLowerCase()
-                              .includes(specialty) &&
+                            items?.specialties?.includes(specialty) &&
                             items?.gender?.includes(gender) &&
                             name === "" &&
                             city === ""
@@ -306,10 +295,7 @@ const Index = () => {
                           ) {
                             return items;
                           } else if (
-                            items?.specialty?.id
-                              .toString()
-                              .toLowerCase()
-                              .includes(specialty) &&
+                            items?.specialties?.includes(specialty) &&
                             items?.address?.city
                               ?.toLowerCase()
                               .includes(city.toLowerCase()) &&
@@ -322,10 +308,7 @@ const Index = () => {
                               ?.toLowerCase()
                               ?.includes(name.toLowerCase()) &&
                             items?.gender?.includes(gender) &&
-                            items?.specialty?.id
-                              .toString()
-                              .toLowerCase()
-                              .includes(specialty) &&
+                            items?.specialties?.includes(specialty) &&
                             city === ""
                           ) {
                             return items;
@@ -334,19 +317,13 @@ const Index = () => {
                               ?.toLowerCase()
                               ?.includes(name.toLowerCase()) &&
                             items?.gender?.includes(gender) &&
-                            items?.specialty?.id
-                              .toString()
-                              .toLowerCase()
-                              .includes(specialty) &&
+                            items?.specialties?.includes(specialty) &&
                             city === ""
                           ) {
                             return items;
                           } else if (
                             items?.gender?.includes(gender) &&
-                            items?.specialty?.id
-                              .toString()
-                              .toLowerCase()
-                              .includes(specialty) &&
+                            items?.specialties?.includes(specialty) &&
                             items?.address?.city
                               ?.toLowerCase()
                               .includes(city.toLowerCase()) &&
@@ -358,10 +335,7 @@ const Index = () => {
                               ?.toLowerCase()
                               ?.includes(name.toLowerCase()) &&
                             items?.gender?.includes(gender) &&
-                            items?.specialty?.id
-                              .toString()
-                              .toLowerCase()
-                              .includes(specialty) &&
+                            items?.specialties?.includes(specialty) &&
                             items?.address?.city
                               ?.toLowerCase()
                               .includes(city.toLowerCase())
@@ -372,10 +346,7 @@ const Index = () => {
                               ?.toLowerCase()
                               ?.includes(name.toLowerCase()) &&
                             items?.gender?.includes(gender) &&
-                            items?.specialty?.id
-                              .toString()
-                              .toLowerCase()
-                              .includes(specialty) &&
+                            items?.specialties?.includes(specialty) &&
                             items?.address?.city
                               ?.toLowerCase()
                               .includes(city.toLowerCase())
@@ -418,39 +389,53 @@ const Index = () => {
                                 {/* <p className="speciality">10 years experience,</p> */}
 
                                 <ul className="available-info">
-                                  <li>{item?.qualification}</li>
+                                  <li>
+                                    {" "}
+                                    <span className="doc-qualification">
+                                      {item?.qualification}
+                                    </span>
+                                  </li>
                                   <li>
                                     <div className="row align-items-baseline">
-                                      <div className="col-6">
+                                      <div className="col-12">
                                         <Image
                                           height="20"
                                           width="20"
-                                          src={
-                                            "/assets/images/alternate/alt-specialty.png"
-                                          }
+                                          src="/assets/images/doctor-symbol.png"
                                           alt=""
                                         />
-                                        {item?.specialty?.name}
+                                        {item?.specialties?.map(
+                                          (data, index) => (
+                                            <span key={index}>
+                                              {data?.name}
+                                              {", "}
+                                            </span>
+                                          )
+                                        )}
                                       </div>
-                                      <div className="col-6">
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div className="row align-items-baseline">
+                                      <div className="col-5">
                                         <span className="fw-bold me-1 text-info">
                                           Exp:
                                         </span>
                                         <span>
                                           {item?.experienceInYrs} Yrs.
                                         </span>
+                                      </div>{" "}
+                                      <div className="col-7">
+                                        <i className="far fa-money-bill-alt text-primary"></i>{" "}
+                                        ₹ {item?.feeScale?.min} - ₹
+                                        {item?.feeScale?.max}
+                                        <i
+                                          className="fas fa-info-circle"
+                                          data-bs-toggle="tooltip"
+                                          title="Lorem Ipsum"
+                                        ></i>
                                       </div>
                                     </div>
-                                  </li>
-                                  <li>
-                                    <i className="far fa-money-bill-alt text-primary"></i>{" "}
-                                    ₹ {item?.feeScale?.min} - ₹
-                                    {item?.feeScale?.max}
-                                    <i
-                                      className="fas fa-info-circle"
-                                      data-bs-toggle="tooltip"
-                                      title="Lorem Ipsum"
-                                    ></i>
                                   </li>
                                 </ul>
                                 <div className="row row-sm">

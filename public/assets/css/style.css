@@ -4408,3 +4408,11 @@ cNNJIt,
 .diag-test-card .carousel-styling .rec.rec-dot {
   display: none;
 }
+
+/* doctor card qualification */
+.doc-qualification {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
