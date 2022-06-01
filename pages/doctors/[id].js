@@ -125,7 +125,7 @@ const DoctorId = () => {
                                   />
 
                                   {data?.specialties?.map((items, index) => (
-                                    <span className="ms-1">
+                                    <span className="ms-1" key={index}>
                                       {items?.name},{" "}
                                     </span>
                                   ))}
