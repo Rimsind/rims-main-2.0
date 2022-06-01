@@ -364,16 +364,43 @@ const Index = () => {
                               <div className="doc-img">
                                 <Link href="#">
                                   <a>
-                                    <Image
-                                      height={280}
-                                      width={300}
-                                      className="img-fluid"
-                                      alt="User Image"
-                                      src={
-                                        item?.image?.url ||
-                                        "/assets/images/alternate/doctor-male.png"
-                                      }
-                                    />
+                                    {item?.gender === "Male" && (
+                                      <Image
+                                        height={280}
+                                        width={320}
+                                        className="img-fluid"
+                                        alt="User Image"
+                                        src={
+                                          item?.image?.url ||
+                                          "/assets/images/alternate/doctor-male.png"
+                                        }
+                                      />
+                                    )}
+                                    {item?.gender === "Female" && (
+                                      <Image
+                                        height={280}
+                                        width={320}
+                                        className="img-fluid"
+                                        alt="User Image"
+                                        src={
+                                          item?.image?.url ||
+                                          "/assets/images/alternate/doctor-female.png"
+                                        }
+                                      />
+                                    )}
+                                    {item?.gender === "" ||
+                                      (item?.gender === null && (
+                                        <Image
+                                          height={280}
+                                          width={320}
+                                          className="img-fluid"
+                                          alt="User Image"
+                                          src={
+                                            item?.image?.url ||
+                                            "/assets/images/alternate/alt-user.png"
+                                          }
+                                        />
+                                      ))}
                                   </a>
                                 </Link>
                               </div>
