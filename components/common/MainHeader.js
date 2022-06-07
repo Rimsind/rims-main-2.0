@@ -19,7 +19,7 @@ const MainHeader = () => {
             <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-5 col-xxl-5 mb-3 mb-sm-3 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0">
               <div className="left-topbar-number">
                 <a href="tel:+180030000123" className="fs-6 text-light">
-                  24x7 Help Line -{" "}
+                  24x7 Help Line -
                   <a href="tel:8597-3944-14" className="text-light">
                     +91 8597-3944-14
                   </a>
@@ -171,25 +171,30 @@ const MainHeader = () => {
                           </h6>
                         ) : (
                           <></>
-                        )}{" "}
+                        )}
                         {auth?.user?.role?.id === 3 ? (
                           <h6>
                             Dr.{profile?.firstName} {profile?.lastName}
                           </h6>
                         ) : (
                           <></>
-                        )}{" "}
+                        )}
                         {auth?.user?.role?.id === 4 ? (
                           <h6>{profile?.name}</h6>
                         ) : (
                           <></>
-                        )}{" "}
+                        )}
                         {auth?.user?.role?.id === 5 ? (
                           <h6>{profile?.name}</h6>
                         ) : (
                           <></>
                         )}
                         {auth?.user?.role?.id === 6 ? (
+                          <h6>{profile?.name}</h6>
+                        ) : (
+                          <></>
+                        )}
+                        {auth?.user?.role?.id === 9 ? (
                           <h6>{profile?.name}</h6>
                         ) : (
                           <></>
@@ -215,10 +220,10 @@ const MainHeader = () => {
                       <>
                         <Link href="/polyclinics/auth/dashboard">
                           <a className="dropdown-item">Dashboard</a>
-                        </Link>{" "}
+                        </Link>
                         <Link href="/polyclinics/appointments">
                           <a className="dropdown-item">My Appointments</a>
-                        </Link>{" "}
+                        </Link>
                         <Link href="/polyclinics/auth/profile-settings">
                           <a className="dropdown-item">Profile Settings</a>
                         </Link>
@@ -247,7 +252,7 @@ const MainHeader = () => {
                       </>
                     ) : (
                       <></>
-                    )}{" "}
+                    )}
                     {auth?.user?.role?.id === 6 ? (
                       <>
                         <Link href="/hospitals/auth/dashboard">
@@ -276,6 +281,24 @@ const MainHeader = () => {
                           <a className="dropdown-item">My Appointments</a>
                         </Link>
                         <Link href="/doctors/auth/profile-settings">
+                          <a className="dropdown-item">Profile Settings</a>
+                        </Link>
+                        <button className="dropdown-item" onClick={logOut}>
+                          Logout
+                        </button>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                    {auth?.user?.role?.id === 9 ? (
+                      <>
+                        <Link href="/diagnostics/auth/dashboard">
+                          <a className="dropdown-item">Dashboard</a>
+                        </Link>
+                        {/* <Link href="/doctors/appointments">
+                          <a className="dropdown-item">My Appointments</a>
+                        </Link> */}
+                        <Link href="/diagnostics/auth/profile-settings">
                           <a className="dropdown-item">Profile Settings</a>
                         </Link>
                         <button className="dropdown-item" onClick={logOut}>

@@ -16,6 +16,9 @@ const ProfileInfo = ({ data }) => {
   if (auth?.user?.role?.id === 6) {
     var role = "hospitals";
   }
+  if (auth?.user?.role?.id === 9) {
+    var role = "diagnostic-centers";
+  }
   const [loading, setLoading] = useState(false);
 
   const { register, handleSubmit } = useForm();
@@ -29,10 +32,11 @@ const ProfileInfo = ({ data }) => {
         contact_person_name: data.contact_person_name,
         phone: data.phone,
         registration_no: data.registration_no,
-
+        alternate_phone: data.alternate_phone,
+        telephone: data.telephone,
         workingHours: {
           start_time: data.start_time,
-          end_time: data?.end_time,
+          end_time: data.end_time,
         },
       };
 
@@ -86,111 +90,142 @@ const ProfileInfo = ({ data }) => {
           <form onSubmit={handleSubmit(submitDetails)}>
             <div className="row mb-3">
               <div className="col-md-6">
-                <div className="row align-items-center">
-                  <div className="col-md-4">
-                    <div className="nursing-form-input">
-                      <label>Clinic Name</label>
-                    </div>
-                  </div>
-                  <div className="col-md-8">
-                    <div className="nursing-form-input">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Clinic Name"
-                        {...register("name")}
-                        defaultValue={!!data && !!data.name ? data.name : ""}
-                      />
-                    </div>
-                  </div>
-                </div>
+                <label>Clinic Name</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Clinic Name"
+                  defaultValue={!!data?.name ? data.name : ""}
+                  {...register("name")}
+                />
               </div>
               <div className="col-md-6">
-                <div className="row align-items-center">
-                  <div className="col-md-4">
-                    <div className="nursing-form-input">
-                      <label>Conatct Person Name</label>
-                    </div>
-                  </div>
-                  <div className="col-md-8">
-                    <div className="nursing-form-input">
-                      <input
-                        type="text"
-                        className="form-control"
-                        {...register("contact_person_name")}
-                        defaultValue={
-                          !!data && !!data.contact_person_name
-                            ? data.contact_person_name
-                            : ""
-                        }
-                      />
-                    </div>
-                  </div>
-                </div>
+                <label>Conatct Person Name</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  {...register("contact_person_name")}
+                  defaultValue={
+                    !!data?.contact_person_name ? data.contact_person_name : ""
+                  }
+                />
               </div>
             </div>
             <div className="row  mb-3">
               <div className="col-md-4">
-                <div className="row align-items-center">
-                  <div className="col-md-4">
-                    <div className="nursing-form-input">
-                      <label>Reg No.</label>
-                    </div>
-                  </div>
-                  <div className="col-md-8">
-                    <div className="nursing-form-input">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Registration No."
-                        {...register("registration_no")}
+                <label>Reg No.</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Registration No."
+                  defaultValue={
+                    !!data?.registration_no ? data.registration_no : ""
+                  }
+                  {...register("registration_no")}
+                />
+              </div>
+              <div className="col-md-4">
+                <label>Email</label>
+                <input
+                  type="email"
+                  className="form-control"
+                  placeholder="Email Id"
+                  disabled
+                  defaultValue={!!data && !!data.email ? data.email : ""}
+                />
+              </div>
+              <div className="col-md-4">
+                <label>Phone</label>
+                <input
+                  type="number"
+                  className="form-control"
+                  placeholder="eg: 987456321"
+                  {...register("phone")}
+                  defaultValue={!!data?.phone ? data.phone : ""}
+                />
+              </div>
+            </div>{" "}
+            <div className="row">
+              <div className="col-md-4">
+                <label>Alternate Phone</label>
+                <input
+                  type="number"
+                  className="form-control"
+                  placeholder="eg: 987456321"
+                  {...register("alternate_phone")}
+                  defaultValue={
+                    !!data?.alternate_phone ? data.alternate_phone : ""
+                  }
+                />
+              </div>
+              <div className="col-md-4">
+                <label>Telephone</label>
+                <input
+                  type="number"
+                  className="form-control"
+                  placeholder="eg: 987456321"
+                  {...register("telephone")}
+                  defaultValue={!!data?.telephone ? data.telephone : ""}
+                />
+              </div>
+              <div className="col-md-4">
+                <div className="row">
+                  <div className="col-6">
+                    {" "}
+                    <label>Start Time</label>
+                    <select
+                      className="form-select"
+                      aria-label="Default select example"
+                      defaultValue={
+                        !!data?.workingHours ? data.workingHours.start_time : ""
+                      }
+                      {...register("start_time")}
+                    >
+                      <option
+                        disabled
                         defaultValue={
-                          !!data && !!data.registration_no
-                            ? data.registration_no
+                          !!data?.workingHours
+                            ? data.workingHours.start_time
                             : ""
                         }
-                      />
-                    </div>
+                      >
+                        {!!data?.workingHours
+                          ? data.workingHours.start_time
+                          : ""}
+                      </option>
+                      <option value="Open 24 Hrs">Open 24 Hrs</option>
+                      {inputTime.map((items, index) => (
+                        <option value={items.value} key={index}>
+                          {items.display}
+                        </option>
+                      ))}
+                    </select>
                   </div>
-                </div>
-              </div>
-              <div className="col-md-4">
-                <div className="row align-items-center">
-                  <div className="col-md-3">
-                    <div className="nursing-form-input">
-                      <label>Email</label>
-                    </div>
-                  </div>
-                  <div className="col-md-9">
-                    <div className="nursing-form-input">
-                      <input
-                        type="email"
-                        className="form-control"
-                        placeholder="Email Id"
-                        disabled
-                        defaultValue={!!data && !!data.email ? data.email : ""}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-4">
-                <div className="row align-items-center">
-                  <div className="col-md-3">
-                    <div className="nursing-form-input">
-                      <label>Phone</label>
-                    </div>
-                  </div>
-                  <div className="col-md-9">
-                    <div className="nursing-form-input">
-                      <input
-                        type="number"
-                        className="form-control"
-                        placeholder="eg: 987456321"
-                        {...register("phone")}
-                        defaultValue={!!data && !!data.phone ? data.phone : ""}
-                      />
-                    </div>
+                  <div className="col-6">
+                    {" "}
+                    <label>End Time</label>
+                    <select
+                      className="form-select"
+                      aria-label="Default select example"
+                      defaultValue={
+                        !!data?.workingHours ? data.workingHours.end_time : ""
+                      }
+                      {...register("end_time")}
+                    >
+                      <option
+                        defaultValue={
+                          !!data?.workingHours ? data.workingHours.end_time : ""
+                        }
+                      >
+                        {!!data?.workingHours ? data.workingHours.end_time : ""}
+                      </option>
+                      <option value="Open 24 Hrs">Open 24 Hrs</option>
+                      {inputTime.map((items, index) => (
+                        <option value={items.value} key={index}>
+                          {items.display}
+                        </option>
+                      ))}
+                    </select>
                   </div>
                 </div>
               </div>
@@ -198,99 +233,14 @@ const ProfileInfo = ({ data }) => {
             <div className="row">
               <div className="col-12 col-md-12">
                 <div className="form-group">
-                  <label className="mb-2" htmlFor="floatingTextarea">
-                    Overview
-                  </label>
+                  <label className="mb-2">Overview</label>
                   <textarea
                     className="form-control"
                     placeholder="Overview"
-                    id="floatingTextarea"
                     rows="3"
-                    defaultValue={
-                      !!data && !!data.overview ? data.overview : ""
-                    }
+                    defaultValue={!!data?.overview ? data.overview : ""}
                     {...register("overview")}
                   ></textarea>
-                </div>
-              </div>
-            </div>
-            <div className="row align-items-center">
-              <p className="workings-hours-title text-center my-5 fs-5 fw-bold border-bottom border-1 pb-3">
-                Working Hours
-              </p>
-              <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                <div className="row align-items-center">
-                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
-                    <label>Start Time -</label>
-                  </div>
-                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
-                    <select
-                      className="form-select"
-                      aria-label="Default select example"
-                      defaultValue={
-                        !!data && !!data.workingHours
-                          ? data.workingHours.start_time
-                          : ""
-                      }
-                      {...register("start_time")}
-                    >
-                      <option
-                        disabled
-                        defaultValue={
-                          !!data && !!data.workingHours
-                            ? data.workingHours.start_time
-                            : ""
-                        }
-                      >
-                        {!!data && data.workingHours
-                          ? data.workingHours.start_time
-                          : ""}
-                      </option>
-                      <option value="Open 24 Hrs">Open 24 Hrs</option>
-                      {inputTime.map((items, index) => (
-                        <option value={items.value} key={index}>
-                          {items.display}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                <div className="row align-items-center">
-                  <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4 text-center">
-                    <label>End Time -</label>
-                  </div>
-                  <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
-                    <select
-                      className="form-select"
-                      aria-label="Default select example"
-                      defaultValue={
-                        !!data && !!data.workingHours
-                          ? data.workingHours.end_time
-                          : ""
-                      }
-                      {...register("end_time")}
-                    >
-                      <option
-                        defaultValue={
-                          !!data && data.workingHours
-                            ? data.workingHours.end_time
-                            : ""
-                        }
-                      >
-                        {!!data && data.workingHours
-                          ? data.workingHours.end_time
-                          : ""}
-                      </option>
-                      <option value="Open 24 Hrs">Open 24 Hrs</option>
-                      {inputTime.map((items, index) => (
-                        <option value={items.value} key={index}>
-                          {items.display}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
                 </div>
               </div>
             </div>

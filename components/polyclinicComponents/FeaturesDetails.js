@@ -14,6 +14,9 @@ const FeaturesDetails = ({ data }) => {
   if (auth?.user?.role?.id === 6) {
     var role = "hospitals";
   }
+  if (auth?.user?.role?.id === 9) {
+    var role = "diagnostic-centers";
+  }
   const features = data?.features;
   const { register, handleSubmit, reset } = useForm();
   const submitFeatures = async (data, event) => {

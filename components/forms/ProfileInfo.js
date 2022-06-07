@@ -53,7 +53,8 @@ const ProfileInfo = ({ data }) => {
         theme: "colored",
         transition: Slide,
       });
-      return result, setLoading(false);
+      setLoading(false);
+      return result;
     } catch (error) {
       console.log(error.message);
       toast.error("Something went wrong.", {

@@ -16,12 +16,16 @@ const AddressDetails = ({ data }) => {
   if (auth?.user?.role?.id === 6) {
     var role = "hospitals";
   }
+  if (auth?.user?.role?.id === 9) {
+    var role = "diagnostic-centers";
+  }
   const { register, handleSubmit } = useForm();
   const submit_polyaddress = async (data, event) => {
     setLoading(true);
     event.preventDefault();
     try {
       const payload = {
+        building_name: data.building_name,
         street_address: data.street_address,
         state: data.state,
         city: data.city,
@@ -76,132 +80,86 @@ const AddressDetails = ({ data }) => {
         <div className="card-body">
           <form onSubmit={handleSubmit(submit_polyaddress)}>
             <div className="row mb-3">
-              <div className="col-md-7">
-                <div className="row align-items-center">
-                  <div className="col-md-3">
-                    <label>Street Address</label>
-                  </div>
-                  <div className="col-md-9">
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Street Address"
-                      {...register("street_address")}
-                      defaultValue={
-                        !!data?.street_address ? data.street_address : ""
-                      }
-                    />
-                  </div>
-                </div>
+              <div className="col-md-4">
+                <label>Flat no/ Building/ House</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Street Address"
+                  {...register("building_name")}
+                  defaultValue={!!data?.building_name ? data.building_name : ""}
+                />
               </div>
-              <div className="col-md-5">
-                <div className="row align-items-center">
-                  <div className="col-md-2">
-                    <div className="nursing-form-input">
-                      <label>City</label>
-                    </div>
-                  </div>
-                  <div className="col-md-10">
-                    <div className="nursing-form-input">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="City"
-                        name="city"
-                        {...register("city")}
-                        defaultValue={!!data?.city ? data.city : ""}
-                      />
-                    </div>
-                  </div>
-                </div>
+              <div className="col-md-4">
+                <label>Street / Area</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Street Address"
+                  {...register("street_address")}
+                  defaultValue={
+                    !!data?.street_address ? data.street_address : ""
+                  }
+                />
+              </div>
+              <div className="col-md-4">
+                <label>City</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="City"
+                  name="city"
+                  {...register("city")}
+                  defaultValue={!!data?.city ? data.city : ""}
+                />
               </div>
             </div>
             <div className="row mb-3">
               <div className="col-md-4">
-                <div className="row align-items-center">
-                  <div className="col-md-3">
-                    <div className="nursing-form-input">
-                      <label>State</label>
-                    </div>
-                  </div>
-                  <div className="col-md-9">
-                    <div className="nursing-form-input">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="State"
-                        name="state"
-                        {...register("state")}
-                        defaultValue={!!data?.state ? data.state : ""}
-                      />
-                    </div>
-                  </div>
-                </div>
+                <label>State</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="State"
+                  name="state"
+                  {...register("state")}
+                  defaultValue={!!data?.state ? data.state : ""}
+                />
               </div>
               <div className="col-md-4">
-                <div className="row align-items-center">
-                  <div className="col-md-3">
-                    <div className="nursing-form-input">
-                      <label>Country</label>
-                    </div>
-                  </div>
-                  <div className="col-md-9">
-                    <div className="nursing-form-input">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Country"
-                        name="country"
-                        {...register("country")}
-                        defaultValue={!!data?.country ? data.country : ""}
-                      />
-                    </div>
-                  </div>
-                </div>
+                <label>Country</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Country"
+                  name="country"
+                  {...register("country")}
+                  defaultValue={!!data?.country ? data.country : ""}
+                />
               </div>
               <div className="col-md-4">
-                <div className="row align-items-center">
-                  <div className="col-md-4">
-                    <div className="nursing-form-input">
-                      <label>Pin Code</label>
-                    </div>
-                  </div>
-                  <div className="col-md-8">
-                    <div className="nursing-form-input">
-                      <input
-                        type="number"
-                        className="form-control"
-                        placeholder="Pin Code"
-                        name="pincode"
-                        {...register("pincode")}
-                        defaultValue={!!data?.pincode ? data.pincode : ""}
-                      />
-                    </div>
-                  </div>
-                </div>
+                <label>Pin Code</label>
+                <input
+                  type="number"
+                  className="form-control"
+                  placeholder="Pin Code"
+                  name="pincode"
+                  {...register("pincode")}
+                  defaultValue={!!data?.pincode ? data.pincode : ""}
+                />
               </div>
             </div>
             <div className="row mb-3">
               <div className="col-md-12">
-                <div className="row align-items-center">
-                  <div className="col-md-3">
-                    <div className="nursing-form-input">
-                      <label>Google Map Location</label>
-                    </div>
-                  </div>
-                  <div className="col-md-9">
-                    <div className="nursing-form-input">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Enter map url"
-                        name="google_map"
-                        {...register("google_map")}
-                        defaultValue={!!data?.google_map ? data.google_map : ""}
-                      />
-                    </div>
-                  </div>
-                </div>
+                <label>Google Map Location</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Enter map url"
+                  name="google_map"
+                  {...register("google_map")}
+                  defaultValue={!!data?.google_map ? data.google_map : ""}
+                />
               </div>
             </div>
 
