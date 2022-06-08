@@ -89,6 +89,7 @@ const DoctorTimeTableForm = () => {
         },
       ],
     };
+    // console.log(payload);
 
     const res = await axios.put(
       `${apiUrl}/doctors/${auth.user?.profileId}`,

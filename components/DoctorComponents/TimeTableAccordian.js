@@ -1,20 +1,54 @@
 import { fetcher, apiUrl } from "config/api";
+import { useAuth } from "context";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 import useSWR from "swr";
 import { inputTime } from "pages/api/inputTime";
+import axios from "axios";
 
-const TimeTableAccordian = ({ data, collaps, heading }) => {
-  const doctor = data;
+const TimeTableAccordian = ({ data, collaps, heading, indexValue }) => {
+  const schedule = data;
+  const { auth } = useAuth();
+
+  const { data: doctor } = useSWR(
+    `${apiUrl}/doctors/${auth.user?.profileId}`,
+    async (url) => {
+      const res = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      const result = res.data;
+      return result;
+    }
+  );
+
+  if (!!schedule?.polyclinic) {
+    var polyclinicId = schedule?.polyclinic?.id;
+    var nursingHomeId = null;
+    var hospitalId = null;
+  } else if (!!schedule.nursing_home) {
+    var polyclinicId = null;
+    var nursingHomeId = schedule?.nursing_home?.id;
+    var hospitalId = null;
+  } else if (!!schedule?.hospital?.id) {
+    var polyclinicId = null;
+    var nursingHomeId = null;
+    var hospitalId = schedule?.polyclinic?.id;
+  }
+
+  const { timeTable } = doctor;
+  const [allRoutine, setAllRoutine] = useState(timeTable.concat([]));
+
   const { register, handleSubmit } = useForm();
   const submitEntry = async (data, event) => {
     event.preventDefault();
     const payload = {
       timeTable: [
         {
-          id: doctor.routine.id,
-          // polyclinic: parseInt(polyclinicId),
-          // nursing_home: parseInt(nursingHomeId),
-          // hospital: parseInt(hospitalId),
+          polyclinic: polyclinicId,
+          nursing_home: nursingHomeId,
+          hospital: hospitalId,
           fee: data.fee,
           routine: {
             monday: data.monday,
@@ -42,8 +76,57 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
         },
       ],
     };
-    console.log(payload);
+
+    updateArray(indexValue, payload);
   };
+
+  const updateArray = async (indexValue, payload) => {
+    const id = indexValue;
+    const filterData = allRoutine.filter((items, index) => {
+      return id !== index;
+    });
+    const newPayload = {
+      timeTable: filterData.concat(payload.timeTable),
+    };
+
+    const res = await axios.put(
+      `${apiUrl}/doctors/${auth.user?.profileId}`,
+      newPayload,
+      {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      }
+    );
+    const result = await res.data;
+    alert("Success");
+    return result;
+  };
+
+  const deleteRoutine = async () => {
+    const id = indexValue;
+
+    const filterData = allRoutine.filter((items, index) => {
+      return id !== index;
+    });
+    const newPayload = {
+      timeTable: filterData,
+    };
+
+    const res = await axios.put(
+      `${apiUrl}/doctors/${auth.user?.profileId}`,
+      newPayload,
+      {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      }
+    );
+    const result = await res.data;
+    alert("Success");
+    return result;
+  };
+
   return (
     <>
       <form onSubmit={handleSubmit(submitEntry)}>
@@ -57,9 +140,9 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
               aria-expanded="false"
               aria-controls={`${collaps}`}
             >
-              {doctor?.polyclinic?.name ||
-                doctor?.nursing_home?.name ||
-                doctor?.hospital?.name}
+              {schedule?.polyclinic?.name ||
+                schedule?.nursing_home?.name ||
+                schedule?.hospital?.name}
             </button>
           </h2>
           <div
@@ -73,9 +156,9 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                 <div className="row align-items-baseline border-bottom border-1 pb-3">
                   <div className="col-12 col-sm-12 col-md-9 col-lg-12 col-xl-9 col-xxl-9 mb-2 mb-sm-2 mb-md-2 mb-lg-0 mb-xl-0 mb-xxl-0">
                     <h1>
-                      {doctor?.polyclinic?.name ||
-                        doctor?.nursing_home?.name ||
-                        doctor?.hospital?.name}
+                      {schedule?.polyclinic?.name ||
+                        schedule?.nursing_home?.name ||
+                        schedule?.hospital?.name}
                     </h1>
                   </div>
                   <div className="col-12 col-sm-12 col-md-3 col-lg-6 col-xl-3 col-xxl-3 mb-2 mb-sm-2 mb-md-2 mb-lg-0 mb-xl-0 mb-xxl-0">
@@ -83,7 +166,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                       type="text"
                       className="form-control"
                       placeholder="Fees Ex: ₹500"
-                      defaultValue={!!doctor.fee ? doctor.fee : ""}
+                      defaultValue={!!schedule.fee ? schedule.fee : ""}
                       {...register("fee")}
                     />
                   </div>
@@ -105,7 +188,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                                 id="inlineRadio1"
                                 value={1}
                                 defaultChecked={
-                                  !!data && doctor.routine.monday === true
+                                  !!data && schedule.routine.monday === true
                                 }
                                 {...register("monday")}
                               />
@@ -126,7 +209,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                                 id="inlineRadio1"
                                 value={0}
                                 defaultChecked={
-                                  !!data && doctor.routine.monday === false
+                                  !!data && schedule.routine.monday === false
                                 }
                                 {...register("monday")}
                               />
@@ -147,15 +230,15 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                           aria-label="Default select example"
                           {...register("monday_start_time")}
                           defaultValue={
-                            !!data ? doctor.routine.monday_start_time : ""
+                            !!data ? schedule.routine.monday_start_time : ""
                           }
                         >
                           <option
                             defaultValue={
-                              !!data ? doctor.routine.monday_start_time : ""
+                              !!data ? schedule.routine.monday_start_time : ""
                             }
                           >
-                            {!!data ? doctor.routine.monday_start_time : ""}
+                            {!!data ? schedule.routine.monday_start_time : ""}
                           </option>
                           {inputTime.map((items, index) => (
                             <option key={index} value={items.value}>
@@ -174,16 +257,16 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                           aria-label="Default select example"
                           {...register("monday_end_time")}
                           defaultValue={
-                            !!data ? doctor.routine.monday_end_time : ""
+                            !!data ? schedule.routine.monday_end_time : ""
                           }
                         >
                           {" "}
                           <option
                             defaultValue={
-                              !!data ? doctor.routine.monday_end_time : ""
+                              !!data ? schedule.routine.monday_end_time : ""
                             }
                           >
-                            {!!data ? doctor.routine.monday_end_time : ""}
+                            {!!data ? schedule.routine.monday_end_time : ""}
                           </option>
                           {inputTime.map((items, index) => (
                             <option key={index} value={items.value}>
@@ -210,7 +293,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                                 id="inlineRadio1"
                                 value={1}
                                 defaultChecked={
-                                  !!data && doctor.routine.tuesday === true
+                                  !!data && schedule.routine.tuesday === true
                                 }
                                 {...register("tuesday")}
                               />
@@ -231,7 +314,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                                 id="inlineRadio1"
                                 value={0}
                                 defaultChecked={
-                                  !!data && doctor.routine.tuesday === false
+                                  !!data && schedule.routine.tuesday === false
                                 }
                                 {...register("tuesday")}
                               />
@@ -252,16 +335,16 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                           aria-label="Default select example"
                           {...register("tuesday_start_time")}
                           defaultValue={
-                            !!data ? doctor.routine.tuesday_start_time : ""
+                            !!data ? schedule.routine.tuesday_start_time : ""
                           }
                         >
                           {" "}
                           <option
                             defaultValue={
-                              !!data ? doctor.routine.tuesday_start_time : ""
+                              !!data ? schedule.routine.tuesday_start_time : ""
                             }
                           >
-                            {!!data ? doctor.routine.tuesday_start_time : ""}
+                            {!!data ? schedule.routine.tuesday_start_time : ""}
                           </option>
                           {inputTime.map((items, index) => (
                             <option key={index} value={items.value}>
@@ -280,16 +363,16 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                           aria-label="Default select example"
                           {...register("tuesday_end_time")}
                           defaultValue={
-                            !!data ? doctor.routine.tuesday_end_time : ""
+                            !!data ? schedule.routine.tuesday_end_time : ""
                           }
                         >
                           {" "}
                           <option
                             defaultValue={
-                              !!data ? doctor.routine.tuesday_end_time : ""
+                              !!data ? schedule.routine.tuesday_end_time : ""
                             }
                           >
-                            {!!data ? doctor.routine.tuesday_end_time : ""}
+                            {!!data ? schedule.routine.tuesday_end_time : ""}
                           </option>
                           {inputTime.map((items, index) => (
                             <option key={index} value={items.value}>
@@ -316,7 +399,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                                 id="inlineRadio1"
                                 value={1}
                                 defaultChecked={
-                                  !!data && doctor.routine.wednesday === true
+                                  !!data && schedule.routine.wednesday === true
                                 }
                                 {...register("wednesday")}
                               />
@@ -337,7 +420,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                                 id="inlineRadio1"
                                 value={0}
                                 defaultChecked={
-                                  !!data && doctor.routine.wednesday === false
+                                  !!data && schedule.routine.wednesday === false
                                 }
                                 {...register("wednesday")}
                               />
@@ -358,15 +441,19 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                           aria-label="Default select example"
                           {...register("wednesday_start_time")}
                           defaultValue={
-                            !!data ? doctor.routine.wednesday_start_time : ""
+                            !!data ? schedule.routine.wednesday_start_time : ""
                           }
                         >
                           <option
                             defaultValue={
-                              !!data ? doctor.routine.wednesday_start_time : ""
+                              !!data
+                                ? schedule.routine.wednesday_start_time
+                                : ""
                             }
                           >
-                            {!!data ? doctor.routine.wednesday_start_time : ""}
+                            {!!data
+                              ? schedule.routine.wednesday_start_time
+                              : ""}
                           </option>
                           {inputTime.map((items, index) => (
                             <option key={index} value={items.value}>
@@ -385,15 +472,15 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                           aria-label="Default select example"
                           {...register("wednesday_end_time")}
                           defaultValue={
-                            !!data ? doctor.routine.wednesday_end_time : ""
+                            !!data ? schedule.routine.wednesday_end_time : ""
                           }
                         >
                           <option
                             defaultValue={
-                              !!data ? doctor.routine.wednesday_end_time : ""
+                              !!data ? schedule.routine.wednesday_end_time : ""
                             }
                           >
-                            {!!data ? doctor.routine.wednesday_end_time : ""}
+                            {!!data ? schedule.routine.wednesday_end_time : ""}
                           </option>
                           {inputTime.map((items, index) => (
                             <option key={index} value={items.value}>
@@ -420,7 +507,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                                 id="inlineRadio1"
                                 value={1}
                                 defaultChecked={
-                                  !!data && doctor.routine.thursday === true
+                                  !!data && schedule.routine.thursday === true
                                 }
                                 {...register("thursday")}
                               />
@@ -441,7 +528,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                                 id="inlineRadio1"
                                 value={0}
                                 defaultChecked={
-                                  !!data && doctor.routine.thursday === false
+                                  !!data && schedule.routine.thursday === false
                                 }
                                 {...register("thursday")}
                               />
@@ -462,15 +549,15 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                           aria-label="Default select example"
                           {...register("thursday_start_time")}
                           defaultValue={
-                            !!data ? doctor.routine.thursday_start_time : ""
+                            !!data ? schedule.routine.thursday_start_time : ""
                           }
                         >
                           <option
                             defaultValue={
-                              !!data ? doctor.routine.thursday_start_time : ""
+                              !!data ? schedule.routine.thursday_start_time : ""
                             }
                           >
-                            {!!data ? doctor.routine.thursday_start_time : ""}
+                            {!!data ? schedule.routine.thursday_start_time : ""}
                           </option>
                           {inputTime.map((items, index) => (
                             <option key={index} value={items.value}>
@@ -489,15 +576,15 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                           aria-label="Default select example"
                           {...register("thursday_end_time")}
                           defaultValue={
-                            !!data ? doctor.routine.thursday_end_time : ""
+                            !!data ? schedule.routine.thursday_end_time : ""
                           }
                         >
                           <option
                             defaultValue={
-                              !!data ? doctor.routine.thursday_end_time : ""
+                              !!data ? schedule.routine.thursday_end_time : ""
                             }
                           >
-                            {!!data ? doctor.routine.thursday_end_time : ""}
+                            {!!data ? schedule.routine.thursday_end_time : ""}
                           </option>
                           {inputTime.map((items, index) => (
                             <option key={index} value={items.value}>
@@ -524,7 +611,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                                 id="inlineRadio1"
                                 value={1}
                                 defaultChecked={
-                                  !!data && doctor.routine.wednesday === true
+                                  !!data && schedule.routine.wednesday === true
                                 }
                                 {...register("friday")}
                               />
@@ -545,7 +632,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                                 id="inlineRadio1"
                                 value={0}
                                 defaultChecked={
-                                  !!data && doctor.routine.friday === false
+                                  !!data && schedule.routine.friday === false
                                 }
                                 {...register("friday")}
                               />
@@ -566,15 +653,15 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                           aria-label="Default select example"
                           {...register("friday_start_time")}
                           defaultValue={
-                            !!data ? doctor.routine.friday_start_time : ""
+                            !!data ? schedule.routine.friday_start_time : ""
                           }
                         >
                           <option
                             defaultValue={
-                              !!data ? doctor.routine.friday_start_time : ""
+                              !!data ? schedule.routine.friday_start_time : ""
                             }
                           >
-                            {!!data ? doctor.routine.friday_start_time : ""}
+                            {!!data ? schedule.routine.friday_start_time : ""}
                           </option>
                           {inputTime.map((items, index) => (
                             <option key={index} value={items.value}>
@@ -593,15 +680,15 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                           aria-label="Default select example"
                           {...register("friday_end_time")}
                           defaultValue={
-                            !!data ? doctor.routine.friday_end_time : ""
+                            !!data ? schedule.routine.friday_end_time : ""
                           }
                         >
                           <option
                             defaultValue={
-                              !!data ? doctor.routine.friday_end_time : ""
+                              !!data ? schedule.routine.friday_end_time : ""
                             }
                           >
-                            {!!data ? doctor.routine.friday_end_time : ""}
+                            {!!data ? schedule.routine.friday_end_time : ""}
                           </option>
                           {inputTime.map((items, index) => (
                             <option key={index} value={items.value}>
@@ -628,7 +715,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                                 id="inlineRadio1"
                                 value={1}
                                 defaultChecked={
-                                  !!data && doctor.routine.saturday === true
+                                  !!data && schedule.routine.saturday === true
                                 }
                                 {...register("saturday")}
                               />
@@ -649,7 +736,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                                 id="inlineRadio1"
                                 value={0}
                                 defaultChecked={
-                                  !!data && doctor.routine.saturday === false
+                                  !!data && schedule.routine.saturday === false
                                 }
                                 {...register("saturday")}
                               />
@@ -670,15 +757,15 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                           aria-label="Default select example"
                           {...register("saturday_start_time")}
                           defaultValue={
-                            !!data ? doctor.routine.saturday_start_time : ""
+                            !!data ? schedule.routine.saturday_start_time : ""
                           }
                         >
                           <option
                             defaultValue={
-                              !!data ? doctor.routine.saturday_start_time : ""
+                              !!data ? schedule.routine.saturday_start_time : ""
                             }
                           >
-                            {!!data ? doctor.routine.saturday_start_time : ""}
+                            {!!data ? schedule.routine.saturday_start_time : ""}
                           </option>
                           {inputTime.map((items, index) => (
                             <option key={index} value={items.value}>
@@ -697,15 +784,15 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                           aria-label="Default select example"
                           {...register("saturday_end_time")}
                           defaultValue={
-                            !!data ? doctor.routine.saturday_end_time : ""
+                            !!data ? schedule.routine.saturday_end_time : ""
                           }
                         >
                           <option
                             defaultValue={
-                              !!data ? doctor.routine.saturday_end_time : ""
+                              !!data ? schedule.routine.saturday_end_time : ""
                             }
                           >
-                            {!!data ? doctor.routine.saturday_end_time : ""}
+                            {!!data ? schedule.routine.saturday_end_time : ""}
                           </option>
                           {inputTime.map((items, index) => (
                             <option key={index} value={items.value}>
@@ -732,7 +819,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                                 id="inlineRadio1"
                                 value={1}
                                 defaultChecked={
-                                  !!data && doctor.routine.sunday === true
+                                  !!data && schedule.routine.sunday === true
                                 }
                                 {...register("sunday")}
                               />
@@ -753,7 +840,7 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                                 id="inlineRadio1"
                                 value={0}
                                 defaultChecked={
-                                  !!data && doctor.routine.sunday === false
+                                  !!data && schedule.routine.sunday === false
                                 }
                                 {...register("sunday")}
                               />
@@ -774,15 +861,15 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                           aria-label="Default select example"
                           {...register("sunday_start_time")}
                           defaultValue={
-                            !!data ? doctor.routine.sunday_start_time : ""
+                            !!data ? schedule.routine.sunday_start_time : ""
                           }
                         >
                           <option
                             defaultValue={
-                              !!data ? doctor.routine.sunday_start_time : ""
+                              !!data ? schedule.routine.sunday_start_time : ""
                             }
                           >
-                            {!!data ? doctor.routine.sunday_start_time : ""}
+                            {!!data ? schedule.routine.sunday_start_time : ""}
                           </option>
                           {inputTime.map((items, index) => (
                             <option key={index} value={items.value}>
@@ -801,15 +888,15 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                           aria-label="Default select example"
                           {...register("sunday_end_time")}
                           defaultValue={
-                            !!data ? doctor.routine.sunday_end_time : ""
+                            !!data ? schedule.routine.sunday_end_time : ""
                           }
                         >
                           <option
                             defaultValue={
-                              !!data ? doctor.routine.sunday_end_time : ""
+                              !!data ? schedule.routine.sunday_end_time : ""
                             }
                           >
-                            {!!data ? doctor.routine.sunday_end_time : ""}
+                            {!!data ? schedule.routine.sunday_end_time : ""}
                           </option>
                           {inputTime.map((items, index) => (
                             <option key={index} value={items.value}>
@@ -823,6 +910,12 @@ const TimeTableAccordian = ({ data, collaps, heading }) => {
                 </div>
 
                 <div className="submit-section text-end mt-5">
+                  <span
+                    className="btn btn-danger submit-btn"
+                    onClick={deleteRoutine}
+                  >
+                    Delete
+                  </span>
                   <button type="submit" className="btn btn-primary submit-btn">
                     Save Changes
                   </button>
