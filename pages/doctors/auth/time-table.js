@@ -57,6 +57,7 @@ const DoctorTimeTable = () => {
                             <TimeTableAccordian
                               data={items}
                               key={index}
+                              indexValue={index}
                               collaps={`collaps${index + 1}`}
                               heading={`heading${index + 1}`}
                             />

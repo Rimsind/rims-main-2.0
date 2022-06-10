@@ -14,6 +14,7 @@ import AuthNav from "./AuthNav";
 import TestCard from "./TestCard";
 import HospitalSideBar from "./HospitalSideBar";
 import DiagnosticsCategory from "./DiagnosticsCategory";
+import DiagnosticSideBar from "./DiagnosticSideBar";
 
 export {
   BreadCrums,
@@ -32,4 +33,5 @@ export {
   TestCard,
   HospitalSideBar,
   DiagnosticsCategory,
+  DiagnosticSideBar,
 };

@@ -3,8 +3,12 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useAuth } from "context";
 import useSWR from "swr";
-import { apiUrl } from "config/api";
+import { apiUrl, fetcher } from "config/api";
 import axios from "axios";
+import { EprescriptionReport } from "components/reports/Eprescription";
+import { AssesmentReport } from "components/reports/AssesmentReport";
+import { ExaminationReport } from "components/reports/ExaminationReport";
+import { SubjectiveReport } from "components/reports/SubjectiveReport";
 import {
   AllergyCard,
   PatientDemographics,
@@ -18,6 +22,8 @@ import {
 import HistoryOfPresentIllness from "components/DoctorComponents/CommonForms/HistoryOfPresentIllness";
 import Assesment from "components/DoctorComponents/CommonForms/Assesment";
 import EPrescription from "components/DoctorComponents/CommonForms/ePrescription";
+import React, { useRef } from "react";
+import { useReactToPrint } from "react-to-print";
 import { withAuth } from "helpers/withAuth";
 
 const ClinicalExaminations = () => {
@@ -36,7 +42,7 @@ const ClinicalExaminations = () => {
     },
     { refreshInterval: 1000 }
   );
-  console.log(appointment);
+  console.log(appointment?.patient);
 
   const { data: doctor } = useSWR(
     `${apiUrl}/doctors/${auth.user?.profileId}`,
@@ -50,6 +56,27 @@ const ClinicalExaminations = () => {
       return result;
     }
   );
+  const { data: bloodGroup } = useSWR(
+    `${apiUrl}/blood-groups/${appointment?.patient?.blood_group}`,
+    fetcher
+  );
+
+  const prescriptionRef = useRef();
+  const printPrescription = useReactToPrint({
+    content: () => prescriptionRef.current,
+  });
+  const assesmentRef = useRef();
+  const printAssesment = useReactToPrint({
+    content: () => assesmentRef.current,
+  });
+  const examinationRef = useRef();
+  const printExamination = useReactToPrint({
+    content: () => examinationRef.current,
+  });
+  const subjectiveRef = useRef();
+  const printSubjective = useReactToPrint({
+    content: () => subjectiveRef.current,
+  });
 
   return (
     <>
@@ -71,32 +98,6 @@ const ClinicalExaminations = () => {
                 <div className="col-12 col-sm-12 col-md-0 col-lg-0 col-xl-2 col-xxl-2"></div>
                 <StatusChanger id={id} />
                 <div className="col-12 col-md-6 col-sm-12 col-lg-6 col-xl-4 col-xxl-4">
-                  {/* <div className="patient-btn-group d-flex justify-content-end">
-                    <div className="btn-group-item shadow-sm">
-                      <Link href={`/reports/assesment-report?id=${id}`}>
-                        <a className="btn btn-success">
-                          Download Clinical Examination
-                        </a>
-                      </Link>
-                    </div>
-                    <div className="btn-group-item shadow-sm">
-                      <Link href={`/reports/assesment-report?id=${id}`}>
-                        <a className="btn btn-success">
-                          Download Subjective Assessments
-                        </a>
-                      </Link>
-                    </div>
-                    <div className="btn-group-item shadow-sm">
-                      <Link href={`/reports/assesment-report?id=${id}`}>
-                        <a className="btn btn-success">Download Assessments</a>
-                      </Link>
-                    </div>
-                    <div className="btn-group-item ms-2 shadow-sm">
-                      <Link href={`/reports/e-prescription?id=${id}`}>
-                        <a className="btn btn-danger">Print E-Prescription</a>
-                      </Link>
-                    </div>
-                  </div> */}
                   <div className="dropdown text-end">
                     <button
                       className="btn btn-danger dropdown-toggle py-2"
@@ -113,22 +114,34 @@ const ClinicalExaminations = () => {
                       aria-labelledby="dropdownMenuButton1"
                     >
                       <li className="border-bottom border-1">
-                        <button className="btn list-group-item list-group-item-action">
+                        <button
+                          className="btn list-group-item list-group-item-action"
+                          onClick={printPrescription}
+                        >
                           Download E-Prescription
                         </button>
                       </li>
                       <li className="border-bottom border-1">
-                        <button className="btn list-group-item list-group-item-action">
+                        <button
+                          className="btn list-group-item list-group-item-action"
+                          onClick={printAssesment}
+                        >
                           Download Assessments
                         </button>
                       </li>
                       <li className="border-bottom border-1">
-                        <button className="btn list-group-item list-group-item-action">
+                        <button
+                          className="btn list-group-item list-group-item-action"
+                          onClick={printExamination}
+                        >
                           Download Clinical Examinations
                         </button>
                       </li>
                       <li>
-                        <button className="btn list-group-item list-group-item-action">
+                        <button
+                          className="btn list-group-item list-group-item-action"
+                          onClick={printSubjective}
+                        >
                           Download Subjective Information
                         </button>
                       </li>
@@ -317,6 +330,38 @@ const ClinicalExaminations = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div style={{ display: "none" }}>
+        <EprescriptionReport
+          ref={prescriptionRef}
+          appointments={appointment}
+          specialty={doctor?.specialty}
+          bloodGroup={bloodGroup}
+        />
+      </div>
+      <div style={{ display: "none" }}>
+        <AssesmentReport
+          ref={assesmentRef}
+          appointments={appointment}
+          specialty={doctor?.specialty}
+          bloodGroup={bloodGroup}
+        />
+      </div>
+      <div style={{ display: "none" }}>
+        <ExaminationReport
+          ref={examinationRef}
+          appointments={appointment}
+          specialty={doctor?.specialty}
+          bloodGroup={bloodGroup}
+        />
+      </div>{" "}
+      <div style={{ display: "block" }}>
+        <SubjectiveReport
+          ref={subjectiveRef}
+          appointments={appointment}
+          specialty={doctor?.specialty}
+          bloodGroup={bloodGroup}
+        />
       </div>
     </>
   );

@@ -56,6 +56,9 @@ const GlobalProvider = ({ children }) => {
         if (auth?.user?.role?.id === 6) {
           var role = "hospitals";
         }
+        if (auth?.user?.role?.id === 9) {
+          var role = "diagnostic-centers";
+        }
 
         const res = await axios.get(
           `${apiUrl}/${role}/${auth?.user?.profileId}`,

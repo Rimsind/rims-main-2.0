@@ -8,25 +8,25 @@ import { useState } from "react";
 
 const Index = () => {
   const { data: doctors } = useSWR(
-    `${apiUrl}/doctors?_sort=id:desc&&verification_status=Approved`,
+    `${apiUrl}/doctors?_sort=id:desc&&verification_status=Approved&&_limit=-1`,
     fetcher
   );
 
   const [startValue, setStartValue] = useState(0);
-  const [endValue, setEndValue] = useState(12);
+  const [endValue, setEndValue] = useState(16);
   const [pageIndex, setPageIndex] = useState(1);
   const nextPage = () => {
     if (doctors?.length - endValue >= 0) {
-      setStartValue(startValue + 12);
-      setEndValue(endValue + 12);
+      setStartValue(startValue + 16);
+      setEndValue(endValue + 16);
       setPageIndex(pageIndex + 1);
     }
   };
 
   const previousPage = () => {
-    if (startValue >= 12) {
-      setStartValue(startValue - 12);
-      setEndValue(endValue - 12);
+    if (startValue >= 16) {
+      setStartValue(startValue - 16);
+      setEndValue(endValue - 16);
       setPageIndex(pageIndex - 1);
     }
   };
@@ -75,6 +75,7 @@ const Index = () => {
                           type="search"
                           placeholder="Search"
                           aria-label="Search"
+                          value={name}
                           onChange={(e) => setName(e.target.value)}
                         />
                       </form>
@@ -417,8 +418,10 @@ const Index = () => {
                                 </h3>
                                 {/* <p className="speciality">10 years experience,</p> */}
 
-                                <ul className="available-info">
-                                  <li>{item?.qualification}</li>
+                                <ul className="available-info ">
+                                  <li className="doc-qualification">
+                                    {item?.qualification}
+                                  </li>
                                   <li>
                                     <div className="row align-items-baseline">
                                       <div className="col-6">

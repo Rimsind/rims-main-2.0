@@ -8,6 +8,8 @@ const DoctorId = () => {
   const { id } = useRouter().query;
   const { data } = useSWR(`${apiUrl}/doctors/${id}`, fetcher);
 
+  console.log(data?.specialties);
+
   return (
     <>
       <section className="section section-details">
@@ -108,40 +110,38 @@ const DoctorId = () => {
                               <div className="doc-left-innr-qal mt-4">
                                 <h6 className="fs-6 text-muted">
                                   <span className="text-info">
-                                    <i className="fas fa-map-marker-alt"></i>
-                                  </span>
-                                  <span className="text-secondary ms-2">
-                                    {data?.address?.city},{" "}
-                                    {data?.address?.state}
-                                  </span>
-                                </h6>
-                                <h6 className="doc-department text-secondary fs-6">
-                                  <Image
-                                    height={20}
-                                    width={20}
-                                    src={
-                                      data?.specialty?.image?.url ||
-                                      "/images/profile.png"
-                                    }
-                                    alt=""
-                                  />{" "}
-                                  {data?.specialty?.name}
-                                </h6>
-                                <h6 className="fs-6 text-muted">
-                                  <span className="text-info">
                                     <i className="fas fa-certificate"></i>
                                   </span>
                                   <span className="text-secondary ms-2">
                                     {data?.qualification}
                                   </span>
                                 </h6>
-                                <h6 className="fs-6 text-muted">
+                                <h6 className="doc-department text-secondary fs-6 mt-3">
+                                  <Image
+                                    height={18}
+                                    width={18}
+                                    src="/assets/images/doctor-symbol.png"
+                                    alt=""
+                                  />
+
+                                  {data?.specialty?.name}
+                                </h6>
+
+                                <h6 className="fs-6 text-muted mt-3">
                                   <span className="text-info">
                                     <i className="fas fa-suitcase"></i>
                                   </span>
                                   <span className="text-secondary ms-2">
-                                    {data?.experienceInYrs} years experience,
-                                    Consultant
+                                    {data?.experienceInYrs} years experience
+                                  </span>
+                                </h6>
+                                <h6 className="fs-6 text-muted mt-3">
+                                  <span className="text-info">
+                                    <i className="fas fa-map-marker-alt"></i>
+                                  </span>
+                                  <span className="text-secondary ms-2">
+                                    {data?.address?.city},{" "}
+                                    {data?.address?.state}
                                   </span>
                                 </h6>
                               </div>

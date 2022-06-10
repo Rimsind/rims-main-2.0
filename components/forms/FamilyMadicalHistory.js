@@ -250,7 +250,7 @@ const FamilyMadicalHistory = ({ familyHistory, patientId, updated_at }) => {
               </tr>
             </thead>
             <tbody>
-              {dataLength === 0 ? (
+              {allHistory.length === 0 ? (
                 <>
                   <tr>
                     <td colSpan="6" className="text-danger text-center">

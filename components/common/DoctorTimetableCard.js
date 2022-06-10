@@ -18,12 +18,14 @@ const DoctorTimetableCard = ({ data, doctorId, indexValue }) => {
           <td className="py-2">
             <h4 className="doc-name fs-5">
               <a href="doctor-profile.html">
+                <i className="fas fa-hospital me-1"></i>
                 {data?.polyclinic?.name ||
                   data?.nursing_home?.name ||
                   data?.hospital?.name}
               </a>
             </h4>
             <p className="doc-speciality text-dark">
+              <i className="fas fa-map-marker-alt"></i>{" "}
               {data?.polyclinic?.street_address ||
                 data?.hospital?.street_address ||
                 data?.nursing_home?.street_address}

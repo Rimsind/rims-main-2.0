@@ -56,34 +56,39 @@ const VerticalDoctorCard = ({ data }) => {
             </Link>
             <i className="fas fa-check-circle verified"></i>
           </h3>
-          <span className="speciality">
-            {data?.qualification} {data?.experienceInYrs} years
-          </span>
+          <span className="doc-qualification">{data?.qualification}</span>
           <ul className="available-info">
             <li>
-              <i className="fas fa-certificate "></i> {data?.experienceInYrs}{" "}
-              years
+              <div className="row align-items-baseline">
+                <div className="col-12">
+                  <Image
+                    height="20"
+                    width="20"
+                    src="/assets/images/doctor-symbol.png"
+                    alt=""
+                  />
+                  {data?.specialties?.map((items, index) => (
+                    <span key={index}>{items?.name} </span>
+                  ))}
+                </div>
+              </div>
             </li>
             <li>
-              <Image
-                height="20"
-                width="20"
-                src={
-                  data?.specialty?.image?.url ||
-                  "/assets/images/alternate/alt-specialty.png"
-                }
-                alt=""
-              />{" "}
-              {data?.specialty?.name}
-            </li>
-            <li>
-              <i className="far fa-money-bill-alt text-primary"></i> ₹
-              {data?.feeScale?.min} - ₹{data?.feeScale?.max}
-              <i
-                className="fas fa-info-circle"
-                data-bs-toggle="tooltip"
-                title="Lorem Ipsum"
-              ></i>
+              <div className="row align-items-baseline">
+                <div className="col-5">
+                  <span className="fw-bold me-1 text-info">Exp:</span>
+                  <span>{data?.experienceInYrs} Yrs.</span>
+                </div>{" "}
+                <div className="col-7">
+                  <i className="far fa-money-bill-alt text-primary"></i> ₹{" "}
+                  {data?.feeScale?.min} - ₹{data?.feeScale?.max}
+                  <i
+                    className="fas fa-info-circle"
+                    data-bs-toggle="tooltip"
+                    title="Lorem Ipsum"
+                  ></i>
+                </div>
+              </div>
             </li>
           </ul>
           <div className="row row-sm">
