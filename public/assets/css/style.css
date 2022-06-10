@@ -4416,3 +4416,23 @@ cNNJIt,
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
+
+/* Booking Stylesheet */
+
+.next-booking-slots {
+  display: flex;
+  height: 70vh;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 750px) {
+  .next-booking-slots {
+    display: block;
+    height: fit-content;
+  }
+}
+
+button.btn-book-custom {
+  background-color: #fff;
+}
