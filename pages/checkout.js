@@ -19,24 +19,29 @@ import {
   genetialProblem,
 } from "./api/chiefComplaintesData";
 const Checkout = () => {
-  const { doctorId, polyclinicId, nursingHomeId, hospitalId, fee, date, time } =
-    useRouter().query;
-  console.log(hospitalId);
-  if (polyclinicId) {
+  const { doctorId, clinicId, clinicType, fee, date } = useRouter().query;
+
+  if (clinicType === "polyclinics") {
     var clinic = "polyclinics";
-    var idName = polyclinicId;
-  } else if (nursingHomeId) {
+    var polyclinicId = parseInt(clinicId);
+    var nursingHomeId = null;
+    var hospitalId = null;
+  } else if (clinicType === "nursing-homes") {
     var clinic = "nursing-homes";
-    var idName = nursingHomeId;
-  } else if (hospitalId) {
+    var polyclinicId = null;
+    var nursingHomeId = parseInt(clinicId);
+    var hospitalId = null;
+  } else if (clinicType === "hospitals") {
     var clinic = "hospitals";
-    var idName = hospitalId;
+    var polyclinicId = null;
+    var nursingHomeId = null;
+    var hospitalId = parseInt(clinicId);
   }
 
   const { auth } = useAuth();
   const { data: doctor } = useSWR(`${apiUrl}/doctors/${doctorId}`, fetcher);
   const { data: clinicDetails } = useSWR(
-    `${apiUrl}/${clinic}/${idName}`,
+    `${apiUrl}/${clinic}/${clinicId}`,
     fetcher
   );
 
@@ -65,43 +70,54 @@ const Checkout = () => {
     });
   };
 
+  const [agree, setAgree] = useState(false);
+  console.log(agree);
+
   const { register, handleSubmit } = useForm();
   const checkout = async (data, event) => {
     event.preventDefault();
-    if (!!auth.user && !!auth.token) {
-      const payload = {
-        patient: auth.user.profileId,
-        doctor: doctor.id,
-        date: date,
-        timeSlot: time,
-        fee: fee,
-        chiefComplaints: complainList,
-        polyclinic: polyclinicId,
-        nursing_home: nursingHomeId,
-        hospital: hospitalId,
-        general_problems: data.general_problems.toString(),
-        joint_related_problems: data.joint_related_problems.toString(),
-        neuro_problems: data.neuro_problems.toString(),
-        heart_problems: data.heart_problems.toString(),
-        blood_problems: data.blood_problems.toString(),
-        stomach_problems: data.stomach_problems.toString(),
-        mental_problems: data.mental_problems.toString(),
-        genetal_problems: data.genetal_problems.toString(),
-      };
+    if (agree === false) {
+      alert("Please Accept the Terms & Conditions");
+      return;
+    }
+    try {
+      if (!!auth.user && !!auth.token) {
+        const payload = {
+          patient: auth?.user?.profileId,
+          doctor: doctor?.id,
+          date: date,
+          fee: fee,
+          chiefComplaints: complainList,
+          polyclinic: polyclinicId,
+          nursing_home: nursingHomeId,
+          hospital: hospitalId,
+          general_problems: data.general_problems.toString(),
+          joint_related_problems: data.joint_related_problems.toString(),
+          neuro_problems: data.neuro_problems.toString(),
+          heart_problems: data.heart_problems.toString(),
+          blood_problems: data.blood_problems.toString(),
+          stomach_problems: data.stomach_problems.toString(),
+          mental_problems: data.mental_problems.toString(),
+          genetal_problems: data.genetal_problems.toString(),
+        };
+        console.log(payload);
 
-      const res = await axios.post(`${apiUrl}/appointments`, payload, {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      });
+        const res = await axios.post(`${apiUrl}/appointments`, payload, {
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+          },
+        });
 
-      const result = res.data;
-      Router.push(
-        `/success?doctorFirstName=${doctor?.firstName}&&doctorLastName=${doctor?.lastName}&&appointmentId=${result.id}&&date=${result.date}&timeSlot=${result.timeSlot}`
-      );
-      return result;
-    } else {
-      Router.push("/user/login");
+        const result = res.data;
+        Router.push(
+          `/success?doctorFirstName=${doctor?.firstName}&&doctorLastName=${doctor?.lastName}&&appointmentId=${result.id}&&date=${result.date}&timeSlot=${result.timeSlot}`
+        );
+        return result;
+      } else {
+        Router.push("/user/login");
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -699,9 +715,9 @@ const Checkout = () => {
                             <li>
                               Date <span>{date}</span>
                             </li>
-                            <li>
-                              Time <span>{time}</span>
-                            </li>
+                            {/* <li>
+                              Time <span></span>
+                            </li> */}
                           </ul>
                           <ul className="booking-fee">
                             <li>
@@ -817,15 +833,21 @@ const Checkout = () => {
                         </div>
                       </div>
 
-                      {/* <div className="terms-accept">
+                      <div className="terms-accept">
                         <div className="custom-checkbox">
-                          <input type="checkbox" id="terms_accept" />
+                          <input
+                            type="checkbox"
+                            id="terms_accept"
+                            onChange={(e) =>
+                              setAgree(!!agree === false ? true : false)
+                            }
+                          />
                           <label htmlFor="terms_accept">
                             I have read and accept
                             <a href="#">Terms &amp; Conditions</a>
                           </label>
                         </div>
-                      </div> */}
+                      </div>
 
                       <div className="submit-section mt-4 d-grid gap-2">
                         <button

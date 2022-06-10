@@ -1,6 +1,38 @@
 import Image from "next/image";
+import Router, { useRouter } from "next/router";
+import useSWR from "swr";
+import { apiUrl, fetcher } from "config/api";
+import { useState } from "react";
 
 const BookingSlots = () => {
+  const { doctorId, clinicId, clinicType, timeTableId, fee } =
+    useRouter().query;
+
+  const { data: clinic } = useSWR(
+    `${apiUrl}/${clinicType}/${clinicId}`,
+    fetcher
+  );
+  const { data: doctor } = useSWR(`${apiUrl}/doctors/${doctorId}`, fetcher);
+  const [date, setDate] = useState(null);
+  // console.log(doctor);
+
+  const dateSelect = (data) => {
+    const value =
+      data?.day.toString() + "-" + data?.month.toString() + "-" + data?.year;
+    setDate(value);
+  };
+
+  const ckeckout = () => {
+    if (date === null) {
+      alert("Please Select a date");
+      return;
+    } else {
+      Router.push(
+        `/checkout?doctorId=${doctorId}&&clinicId=${clinicId}&&date=${date}&&clinicType=${clinicType}&&fee=${fee}`
+      );
+    }
+  };
+
   return (
     <>
       <section className="next-booking-slots">
@@ -21,15 +53,20 @@ const BookingSlots = () => {
                         <div className="row align-items-center">
                           <div className="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-2 col-xxl-2">
                             <Image
-                              src="/assets/images/alternate/alt-polyclinic.png"
+                              src={
+                                clinic?.image?.url ||
+                                "/assets/images/alternate/alt-polyclinic.png"
+                              }
                               height={100}
                               width={100}
                               alt="Polyclinic Image"
                             />
                           </div>
                           <div className="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-10 col-xxl-10">
-                            <h6 className="fs-5 fw-bold">Rims Polyclinic</h6>
-                            <h6 className="fs-6">Haldia, West Bengal</h6>
+                            <h6 className="fs-5 fw-bold">{clinic?.name}</h6>
+                            <h6 className="fs-6">
+                              {clinic?.city}, {clinic?.state}
+                            </h6>
                           </div>
                         </div>
                       </div>
@@ -40,67 +77,41 @@ const BookingSlots = () => {
                     style={{ backgroundColor: "#efefef", padding: "20px" }}
                   >
                     <div className="row align-items-center">
-                      <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-3 text-center">
-                        <div className="booking-item">
-                          <button className="btn btn-book-custom">
-                            23-06-2022
-                          </button>
-                        </div>
-                      </div>
-                      <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-3 text-center">
-                        <div className="booking-item">
-                          <button className="btn btn-book-custom">
-                            23-06-2022
-                          </button>
-                        </div>
-                      </div>
-                      <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-3 text-center">
-                        <div className="booking-item">
-                          <button className="btn btn-book-custom">
-                            23-06-2022
-                          </button>
-                        </div>
-                      </div>
-                      <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-3 text-center">
-                        <div className="booking-item">
-                          <button className="btn btn-book-custom">
-                            23-06-2022
-                          </button>
-                        </div>
-                      </div>
-                      <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-3 text-center">
-                        <div className="booking-item">
-                          <button className="btn btn-book-custom">
-                            23-06-2022
-                          </button>
-                        </div>
-                      </div>
-                      <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-3 text-center">
-                        <div className="booking-item">
-                          <button className="btn btn-book-custom">
-                            23-06-2022
-                          </button>
-                        </div>
-                      </div>
-                      <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-3 text-center">
-                        <div className="booking-item">
-                          <button className="btn btn-book-custom">
-                            23-06-2022
-                          </button>
-                        </div>
-                      </div>
-                      <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-3 text-center">
-                        <div className="booking-item">
-                          <button className="btn btn-book-custom">
-                            23-06-2022
-                          </button>
-                        </div>
-                      </div>
+                      {doctor?.timeTable
+                        ?.filter((items, index) => {
+                          if (items?.id?.toString().includes(timeTableId)) {
+                            return items;
+                          }
+                        })
+                        .map((items, index) => (
+                          <div className="row align-items-center" key={index}>
+                            {items?.date_and_slots?.map((data, index) => (
+                              <div
+                                className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-3 text-center"
+                                key={index}
+                              >
+                                <div className="booking-item">
+                                  <button
+                                    className="btn btn-book-custom"
+                                    onClick={() => dateSelect(data, index)}
+                                  >
+                                    {data?.day}-{data?.month}-{data?.year}
+                                  </button>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        ))}
                     </div>
                   </div>
                   <div className="row align-items-center pt-4">
                     <div className="col-12 text-end">
-                      <button className="btn btn-primary px-5">Next</button>
+                      <button
+                        className="btn btn-primary px-5"
+                        onClick={ckeckout}
+                      >
+                        Next
+                      </button>
                     </div>
                   </div>
                 </div>

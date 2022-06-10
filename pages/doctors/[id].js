@@ -8,8 +8,6 @@ const DoctorId = () => {
   const { id } = useRouter().query;
   const { data } = useSWR(`${apiUrl}/doctors/${id}`, fetcher);
 
-  console.log(data?.specialties);
-
   return (
     <>
       <section className="section section-details">

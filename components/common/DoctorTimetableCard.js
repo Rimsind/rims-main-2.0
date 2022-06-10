@@ -4,13 +4,23 @@ import {
   RoutineCardOpen,
 } from "components/DoctorComponents";
 
-const DoctorTimetableCard = ({ data, doctorId, indexValue }) => {
-  if (indexValue % 2 === 0) {
-    var color = "#abd5ff";
-  } else {
-    var color = "#abd5ff91";
+const DoctorTimetableCard = ({ data, doctorId }) => {
+  console.log(data);
+  if (data.polyclnic !== null) {
+    var clinicId = data?.polyclinic?.id;
+    var clinicType = "polyclinics";
+    console.log("polyclinic");
   }
-
+  if (data?.hospital !== null) {
+    var clinicId = data?.hospital?.id;
+    var clinicType = "hospitals";
+    console.log("hospital");
+  }
+  if (data?.nursing_home !== null) {
+    var clinicId = data?.nursing_home?.id;
+    var clinicType = "nursing-homes";
+    console.log("nursing-home");
+  }
   return (
     <>
       <tbody>
@@ -114,7 +124,9 @@ const DoctorTimetableCard = ({ data, doctorId, indexValue }) => {
               ></i>
               - ₹ {data?.fee}
             </p>
-            <Link href="#">
+            <Link
+              href={`/booking-slots?doctorId=${doctorId}&&clinicType=${clinicType}&&clinicId=${clinicId}&&timeTableId=${data?.id}&&fee=${data?.fee}`}
+            >
               <a
                 className="btn text-light fs-6 px-4 px-sm-4 px-md-4 px-lg-2 px-xl-2 px-xxl-4"
                 style={{ backgroundColor: "#1d00a3" }}
