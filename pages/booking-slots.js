@@ -14,7 +14,9 @@ const BookingSlots = () => {
   );
   const { data: doctor } = useSWR(`${apiUrl}/doctors/${doctorId}`, fetcher);
   const [date, setDate] = useState(null);
-  // console.log(doctor);
+  var today = new Date();
+  var currDate = today.getDate();
+  var currMonth = today.getMonth() + 1;
 
   const dateSelect = (data) => {
     const value =
@@ -85,21 +87,41 @@ const BookingSlots = () => {
                         })
                         .map((items, index) => (
                           <div className="row align-items-center" key={index}>
-                            {items?.date_and_slots?.map((data, index) => (
-                              <div
-                                className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-3 text-center"
-                                key={index}
-                              >
-                                <div className="booking-item">
-                                  <button
-                                    className="btn btn-book-custom"
-                                    onClick={() => dateSelect(data, index)}
-                                  >
-                                    {data?.day}-{data?.month}-{data?.year}
-                                  </button>
+                            {items?.date_and_slots
+                              ?.filter((data, index) => {
+                                if (
+                                  data?.day > currDate &&
+                                  data?.month >= currMonth
+                                ) {
+                                  return items;
+                                }
+                              })
+                              .map((data, index) => (
+                                <div
+                                  className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-3 text-center"
+                                  key={index}
+                                >
+                                  <div className="booking-item">
+                                    <button
+                                      className="btn btn-book-custom"
+                                      onClick={() => dateSelect(data, index)}
+                                    >
+                                      {data?.day.toString().length < 2 ? (
+                                        <>0{data?.day}</>
+                                      ) : (
+                                        <>{data?.day}</>
+                                      )}
+                                      -
+                                      {data?.month.toString().length < 2 ? (
+                                        <>0{data?.month}</>
+                                      ) : (
+                                        <>{data?.month}</>
+                                      )}
+                                      -{data?.year}
+                                    </button>
+                                  </div>
                                 </div>
-                              </div>
-                            ))}
+                              ))}
                           </div>
                         ))}
                     </div>
