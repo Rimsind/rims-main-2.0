@@ -838,6 +838,7 @@ const Checkout = () => {
                           <input
                             type="checkbox"
                             id="terms_accept"
+                            className="me-2"
                             onChange={(e) =>
                               setAgree(!!agree === false ? true : false)
                             }

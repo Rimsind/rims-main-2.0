@@ -441,7 +441,7 @@ const Index = () => {
               </div>
               <div className="col-md-6 text-end">
                 <div className="poly-btn text-lg-end text-xl-end text-xxl-end text-center mb-3 mb-lg-3 mb-xl-3 mb-xxl-3">
-                  <Link href="/doctors">
+                  <Link href="/nursing-homes">
                     <a className="btn btn-primary py-3 px-4">View More</a>
                   </Link>
                 </div>

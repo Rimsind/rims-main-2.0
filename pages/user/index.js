@@ -120,8 +120,6 @@ const Index = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="row">
                     <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
                       <div
                         className="card bmi"
@@ -204,6 +202,7 @@ const Index = () => {
                       </div>
                     </div>
                   </div>
+                  <div className="row"></div>
                 </div>
               ) : (
                 <UserPageLoader />

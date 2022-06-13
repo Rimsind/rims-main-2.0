@@ -4436,3 +4436,18 @@ cNNJIt,
 button.btn-book-custom {
   background-color: #fff;
 }
+
+/* Help Stylesheet */
+.section-help .effect {
+  background-color: #7aaedb;
+}
+
+.section-help .effect:hover {
+  box-shadow: 0 0 50px rgb(17 17 17 / 50%);
+  transform: rotate(0deg) translateY(-5px) scale(1.025);
+  background-color: #15558d;
+  -webkit-transition: background-color 2s ease-out;
+  -moz-transition: background-color 2s ease-out;
+  -o-transition: background-color 2s ease-out;
+  transition: background-color 2s ease-out;
+}
