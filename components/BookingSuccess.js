@@ -3,7 +3,7 @@ const BookingSuccess = (props) => {
   return (
     <>
       <div className="thank_you_main d-flex justify-content-center">
-        <div className="thank_you_inner shadow-lg">
+        <div className="thank_you_inner shadow">
           <div className="container">
             <div className="success_icon text-center">
               <i className="fas fa-check-circle"></i>

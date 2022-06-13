@@ -38,7 +38,7 @@ const FooterBanner = () => {
                   </p>
                 </div>
                 <div className="book  mb-0 mb-sm-0 mb-md-5 mb-lg-0 mb-xl-0 mb-xxl-0">
-                  <Link href="/doctors">
+                  <Link href="/contact">
                     <a
                       className="btn text-light py-3 px-4"
                       style={{ backgroundColor: "#0de0fe" }}

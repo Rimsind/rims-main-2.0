@@ -2236,8 +2236,8 @@ span.banner-sub-heading-span {
 }
 
 .our-doctors-section .item .our-doctors-card {
-  background: rgba(232, 246, 255, 0.4);
-  border: 1px solid rgba(231, 237, 255, 0.5);
+  background: #e8f6ff66;
+  border: 1px solid #e7edff80;
   border-radius: 10px;
   padding: 10px;
 }
@@ -4435,4 +4435,75 @@ cNNJIt,
 
 button.btn-book-custom {
   background-color: #fff;
+}
+
+/* Help Stylesheet */
+.section-help .effect {
+  background-color: #7aaedb;
+}
+
+.section-help .effect:hover {
+  box-shadow: 0 0 50px rgb(17 17 17 / 50%);
+  transform: rotate(0deg) translateY(-5px) scale(1.025);
+  background-color: #15558d;
+  -webkit-transition: background-color 2s ease-out;
+  -moz-transition: background-color 2s ease-out;
+  -o-transition: background-color 2s ease-out;
+  transition: background-color 2s ease-out;
+}
+
+/* User Dashboard New stylesheet */
+.inner-item .col-inner-items-new {
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  /* padding: 10px; */
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 40px;
+  border: none;
+  box-shadow: -1px 0px 6px 0px #2f71ab;
+  background: #ffffff;
+}
+
+.inner-item .col-inner-item-new-circle {
+  border-right: 1px solid;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  padding-top: 7px;
+  padding-bottom: 5px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-top-left-radius: 50px;
+  text-align: center;
+  border: none;
+  box-shadow: 1px 0px 6px 0px #2f71ab;
+  background: #ffffff;
+}
+
+.col-inner-items-inner-top-item {
+  padding-top: 6px;
+  padding-left: 15px;
+}
+
+.col-inner-items-inner-top-item h6 {
+  color: #bd5700;
+}
+
+.col-inner-items-inner-item {
+  padding-top: 5px;
+  text-align: center;
+  background-color: #3e7cb3;
+  margin-left: 60px;
+  height: 28px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 50px;
+}
+
+.col-inner-item-new-circle i {
+  font-size: 30px;
+}
+
+.col-inner-items-inner-item h6 {
+  color: white;
 }
