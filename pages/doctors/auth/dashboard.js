@@ -57,23 +57,23 @@ const Dashboard = () => {
   const nextDate = year + "-" + newMonth + "-" + nextDay;
 
   const todaysAppointment = appointments?.filter((items) => {
-    if (items?.date.includes(currentDate)) {
+    if (items?.date?.includes(currentDate)) {
       return items;
     }
   });
   const yesterdayAppointment = appointments?.filter((items) => {
-    if (items?.date.includes(previousDate)) {
+    if (items?.date?.includes(previousDate)) {
       return items;
     }
   });
   const tommorowAppointment = appointments?.filter((items) => {
-    if (items?.date.includes(nextDate)) {
+    if (items?.date?.includes(nextDate)) {
       return items;
     }
   });
   const appointmentCompleted = appointments?.filter((items) => {
     if (
-      items?.date.includes(currentDate) &&
+      items?.date?.includes(currentDate) &&
       items?.appointment_status?.toString().includes("true")
     ) {
       return items;
@@ -81,7 +81,7 @@ const Dashboard = () => {
   });
   const appointmentPending = appointments?.filter((items) => {
     if (
-      items?.date.includes(currentDate) &&
+      items?.date?.includes(currentDate) &&
       items?.appointment_status?.toString().includes("false")
     ) {
       return items;
@@ -193,7 +193,7 @@ const Dashboard = () => {
                         <div className="row align-items-center">
                           <div className="col-6">
                             <div className="dashboard-card-number text-start">
-                              <p>{data?.booking_schedule?.length}</p>
+                              <p>{data?.timeTable?.length}</p>
                             </div>
                           </div>
                           <div className="col-6">
