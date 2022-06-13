@@ -35,7 +35,7 @@ const Login = () => {
       const res = await axios.post(`${apiUrl}/auth/local`, payload);
       const result = res.data;
 
-      if (result.jwt && result.user.role.id === 1) {
+      if (result.jwt && result.user) {
         setCookie(null, "token", result.jwt, {
           maxAge: 30 * 24 * 60 * 60,
           path: "/",
