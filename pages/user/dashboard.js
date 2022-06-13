@@ -260,7 +260,7 @@ const Dashboard = () => {
                   </div>
                   <div className="user-dashboard-banner my-3">
                     <Image
-                      src="/assets/images/user-dashboard-banner.png"
+                      src="/assets/images/user-dashboard-banner3.png"
                       height={450}
                       width={1920}
                       alt="User Dashboard Banner"

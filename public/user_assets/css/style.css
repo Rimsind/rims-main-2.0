@@ -10585,14 +10585,14 @@ ul.benifits-col li i {
   margin-bottom: 50px;
 }
 
-.contact-form .section-header h2::after {
+/* .contact-form .section-header h2::after {
   content: "";
   border-bottom: 2px solid #7dcbeb;
   width: 300px;
   display: block;
   margin-left: 500px;
   margin-top: 10px;
-}
+} */
 
 .contact-form form {
   background: #fff;
