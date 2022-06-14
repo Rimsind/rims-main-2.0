@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { toast, Slide } from "react-toastify";
 import { apiUrl } from "config/api";
+
 const Signup = () => {
   const router = useRouter();
   const {
@@ -136,7 +137,7 @@ const Signup = () => {
                   boxShadow: "0px 5px 60px 2px #000",
                 }}
               >
-                <form onSubmit={handleSubmit(onSubmit)}>
+                {/* <form onSubmit={handleSubmit(onSubmit)}>
                   <Image
                     src="/assets/images/logo-white.png"
                     width="150px"
@@ -199,18 +200,197 @@ const Signup = () => {
                     >
                       Sign up
                     </button>
-                    {/* <div className="forgot-password-sec my-4">
-                      <p className="fs-6">Forgot Your Password</p>
-                    </div> */}
-                    {/* <div className="welcome-heading mt-5 mb-4">
-                      <p className="fs-1 text-capitalize text-light">Welcome</p>
-                    </div> */}
                     <div className="dont-account my-4">
                       <p>Already Have An Account?</p>
                     </div>
                     <Link href="/user/login">
                       <a className="btn btn-dark rounded-pill px-5">Login</a>
                     </Link>
+                  </div>
+                </form> */}
+                <form className="text-start">
+                  <div className="form-first-step">
+                    <div className="select-radio-btn mb-2">
+                      <div className="form-check">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="exampleRadios"
+                          id="exampleRadios1"
+                          value="option1"
+                        />
+                        <label
+                          className="form-check-label"
+                          for="exampleRadios1"
+                        >
+                          User / Patient
+                        </label>
+                      </div>
+                      <div className="form-check">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="exampleRadios"
+                          id="exampleRadios2"
+                          value="option2"
+                        />
+                        <label
+                          className="form-check-label"
+                          for="exampleRadios2"
+                        >
+                          Doctor
+                        </label>
+                      </div>
+                      <div className="form-check">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="exampleRadios"
+                          id="exampleRadios3"
+                          value="option3"
+                        />
+                        <label
+                          className="form-check-label"
+                          for="exampleRadios3"
+                        >
+                          Polyclinic
+                        </label>
+                      </div>
+                      <div className="form-check">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="exampleRadios"
+                          id="exampleRadios4"
+                          value="option4"
+                        />
+                        <label
+                          className="form-check-label"
+                          for="exampleRadios4"
+                        >
+                          Nursing Home
+                        </label>
+                      </div>
+                      <div className="form-check">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="exampleRadios"
+                          id="exampleRadios5"
+                          value="option5"
+                        />
+                        <label
+                          className="form-check-label"
+                          for="exampleRadios5"
+                        >
+                          Hospital
+                        </label>
+                      </div>
+                      <div className="form-check">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="exampleRadios"
+                          id="exampleRadios6"
+                          value="option6"
+                        />
+                        <label
+                          className="form-check-label"
+                          for="exampleRadios6"
+                        >
+                          Diagnostic Center
+                        </label>
+                      </div>
+                    </div>
+                    <div className="row align-items-center">
+                      <div className="col-12 text-end my-3">
+                        <button className="btn btn-primary">Next</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="form-second-step">
+                    <div className="row align-items-center mb-2">
+                      <div className="col-4">
+                        <label>First Name</label>
+                      </div>
+                      <div className="col-8">
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="First Name"
+                        />
+                      </div>
+                    </div>
+                    <div className="row align-items-center mb-2">
+                      <div className="col-4">
+                        <label>Last Name</label>
+                      </div>
+                      <div className="col-8">
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Last Name"
+                        />
+                      </div>
+                    </div>
+                    <div className="row align-items-center mb-2">
+                      <div className="col-4">
+                        <label>Email ID</label>
+                      </div>
+                      <div className="col-8">
+                        <input
+                          type="email"
+                          className="form-control"
+                          placeholder="Email ID"
+                        />
+                      </div>
+                    </div>
+                    <div className="row align-items-center mb-2">
+                      <div className="col-4">
+                        <label>Phone No.</label>
+                      </div>
+                      <div className="col-8">
+                        <input
+                          type="number"
+                          className="form-control"
+                          placeholder="Phone No."
+                        />
+                      </div>
+                    </div>
+                    <div className="row align-items-center">
+                      <div className="col-12 text-end my-3">
+                        <button className="btn btn-primary me-2">
+                          Previous
+                        </button>
+                        <button className="btn btn-primary">Next</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="form-third-step">
+                    <div className="row align-items-center mb-2">
+                      <div className="col-5">
+                        <label>Create Password</label>
+                      </div>
+                      <div className="col-7">
+                        <input type="password" className="form-control" />
+                      </div>
+                    </div>
+                    <div className="row align-items-center mb-2">
+                      <div className="col-5">
+                        <label>Confirm Password</label>
+                      </div>
+                      <div className="col-7">
+                        <input type="password" className="form-control" />
+                      </div>
+                    </div>
+                    <div className="row align-items-center">
+                      <div className="col-12 text-end my-3">
+                        <button className="btn btn-primary me-2">
+                          Previous
+                        </button>
+                        <button className="btn btn-primary">Register</button>
+                      </div>
+                    </div>
                   </div>
                 </form>
               </div>
@@ -219,6 +399,7 @@ const Signup = () => {
           </div>
         </div>
       </div>
+      {/* {AddLibrary("/user-assets/js/step-form.js")}; */}
     </>
   );
 };
