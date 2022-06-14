@@ -208,191 +208,9 @@ const Signup = () => {
                     </Link>
                   </div>
                 </form> */}
-                <form className="text-start">
-                  <div className="form-first-step">
-                    <div className="select-radio-btn mb-2">
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="exampleRadios"
-                          id="exampleRadios1"
-                          value="option1"
-                        />
-                        <label
-                          className="form-check-label"
-                          for="exampleRadios1"
-                        >
-                          User / Patient
-                        </label>
-                      </div>
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="exampleRadios"
-                          id="exampleRadios2"
-                          value="option2"
-                        />
-                        <label
-                          className="form-check-label"
-                          for="exampleRadios2"
-                        >
-                          Doctor
-                        </label>
-                      </div>
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="exampleRadios"
-                          id="exampleRadios3"
-                          value="option3"
-                        />
-                        <label
-                          className="form-check-label"
-                          for="exampleRadios3"
-                        >
-                          Polyclinic
-                        </label>
-                      </div>
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="exampleRadios"
-                          id="exampleRadios4"
-                          value="option4"
-                        />
-                        <label
-                          className="form-check-label"
-                          for="exampleRadios4"
-                        >
-                          Nursing Home
-                        </label>
-                      </div>
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="exampleRadios"
-                          id="exampleRadios5"
-                          value="option5"
-                        />
-                        <label
-                          className="form-check-label"
-                          for="exampleRadios5"
-                        >
-                          Hospital
-                        </label>
-                      </div>
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="exampleRadios"
-                          id="exampleRadios6"
-                          value="option6"
-                        />
-                        <label
-                          className="form-check-label"
-                          for="exampleRadios6"
-                        >
-                          Diagnostic Center
-                        </label>
-                      </div>
-                    </div>
-                    <div className="row align-items-center">
-                      <div className="col-12 text-end my-3">
-                        <button className="btn btn-primary">Next</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="form-second-step">
-                    <div className="row align-items-center mb-2">
-                      <div className="col-4">
-                        <label>First Name</label>
-                      </div>
-                      <div className="col-8">
-                        <input
-                          type="text"
-                          className="form-control"
-                          placeholder="First Name"
-                        />
-                      </div>
-                    </div>
-                    <div className="row align-items-center mb-2">
-                      <div className="col-4">
-                        <label>Last Name</label>
-                      </div>
-                      <div className="col-8">
-                        <input
-                          type="text"
-                          className="form-control"
-                          placeholder="Last Name"
-                        />
-                      </div>
-                    </div>
-                    <div className="row align-items-center mb-2">
-                      <div className="col-4">
-                        <label>Email ID</label>
-                      </div>
-                      <div className="col-8">
-                        <input
-                          type="email"
-                          className="form-control"
-                          placeholder="Email ID"
-                        />
-                      </div>
-                    </div>
-                    <div className="row align-items-center mb-2">
-                      <div className="col-4">
-                        <label>Phone No.</label>
-                      </div>
-                      <div className="col-8">
-                        <input
-                          type="number"
-                          className="form-control"
-                          placeholder="Phone No."
-                        />
-                      </div>
-                    </div>
-                    <div className="row align-items-center">
-                      <div className="col-12 text-end my-3">
-                        <button className="btn btn-primary me-2">
-                          Previous
-                        </button>
-                        <button className="btn btn-primary">Next</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="form-third-step">
-                    <div className="row align-items-center mb-2">
-                      <div className="col-5">
-                        <label>Create Password</label>
-                      </div>
-                      <div className="col-7">
-                        <input type="password" className="form-control" />
-                      </div>
-                    </div>
-                    <div className="row align-items-center mb-2">
-                      <div className="col-5">
-                        <label>Confirm Password</label>
-                      </div>
-                      <div className="col-7">
-                        <input type="password" className="form-control" />
-                      </div>
-                    </div>
-                    <div className="row align-items-center">
-                      <div className="col-12 text-end my-3">
-                        <button className="btn btn-primary me-2">
-                          Previous
-                        </button>
-                        <button className="btn btn-primary">Register</button>
-                      </div>
-                    </div>
-                  </div>
-                </form>
+                <UserType />
+                {/* <BasicDetails />
+                <PasswordDetails /> */}
               </div>
             </div>
             <div className="col-4 col-lg-4 col-xl-4 col-xxl-4"></div>
@@ -407,3 +225,185 @@ const Signup = () => {
 export default Signup;
 
 Signup.getLayout = (Signup) => <AuthLayout>{Signup}</AuthLayout>;
+
+export const UserType = () => {
+  return (
+    <>
+      <div className="form-first-step">
+        <div className="select-radio-btn mb-2">
+          <div className="form-check">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="exampleRadios"
+              id="exampleRadios1"
+              value="option1"
+            />
+            <label className="form-check-label" for="exampleRadios1">
+              User / Patient
+            </label>
+          </div>
+          <div className="form-check">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="exampleRadios"
+              id="exampleRadios2"
+              value="option2"
+            />
+            <label className="form-check-label" for="exampleRadios2">
+              Doctor
+            </label>
+          </div>
+          <div className="form-check">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="exampleRadios"
+              id="exampleRadios3"
+              value="option3"
+            />
+            <label className="form-check-label" for="exampleRadios3">
+              Polyclinic
+            </label>
+          </div>
+          <div className="form-check">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="exampleRadios"
+              id="exampleRadios4"
+              value="option4"
+            />
+            <label className="form-check-label" for="exampleRadios4">
+              Nursing Home
+            </label>
+          </div>
+          <div className="form-check">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="exampleRadios"
+              id="exampleRadios5"
+              value="option5"
+            />
+            <label className="form-check-label" for="exampleRadios5">
+              Hospital
+            </label>
+          </div>
+          <div className="form-check">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="exampleRadios"
+              id="exampleRadios6"
+              value="option6"
+            />
+            <label className="form-check-label" for="exampleRadios6">
+              Diagnostic Center
+            </label>
+          </div>
+        </div>
+        <div className="row align-items-center">
+          <div className="col-12 text-end my-3">
+            <button className="btn btn-primary">Next</button>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export const BasicDetails = () => {
+  return (
+    <>
+      <div className="form-second-step">
+        <div className="row align-items-center mb-2">
+          <div className="col-4">
+            <label>First Name</label>
+          </div>
+          <div className="col-8">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="First Name"
+            />
+          </div>
+        </div>
+        <div className="row align-items-center mb-2">
+          <div className="col-4">
+            <label>Last Name</label>
+          </div>
+          <div className="col-8">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Last Name"
+            />
+          </div>
+        </div>
+        <div className="row align-items-center mb-2">
+          <div className="col-4">
+            <label>Email ID</label>
+          </div>
+          <div className="col-8">
+            <input
+              type="email"
+              className="form-control"
+              placeholder="Email ID"
+            />
+          </div>
+        </div>
+        <div className="row align-items-center mb-2">
+          <div className="col-4">
+            <label>Phone No.</label>
+          </div>
+          <div className="col-8">
+            <input
+              type="number"
+              className="form-control"
+              placeholder="Phone No."
+            />
+          </div>
+        </div>
+        <div className="row align-items-center">
+          <div className="col-12 text-end my-3">
+            <button className="btn btn-primary me-2">Previous</button>
+            <button className="btn btn-primary">Next</button>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export const PasswordDetails = () => {
+  return (
+    <>
+      <div className="form-third-step">
+        <div className="row align-items-center mb-2">
+          <div className="col-5">
+            <label>Create Password</label>
+          </div>
+          <div className="col-7">
+            <input type="password" className="form-control" />
+          </div>
+        </div>
+        <div className="row align-items-center mb-2">
+          <div className="col-5">
+            <label>Confirm Password</label>
+          </div>
+          <div className="col-7">
+            <input type="password" className="form-control" />
+          </div>
+        </div>
+        <div className="row align-items-center">
+          <div className="col-12 text-end my-3">
+            <button className="btn btn-primary me-2">Previous</button>
+            <button className="btn btn-primary">Register</button>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
