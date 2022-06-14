@@ -209,15 +209,14 @@ const Signup = () => {
                   </div>
                 </form> */}
                 <UserType />
-                {/* <BasicDetails />
-                <PasswordDetails /> */}
+                {/* <BasicDetails /> */}
+                {/* <PasswordDetails /> */}
               </div>
             </div>
             <div className="col-4 col-lg-4 col-xl-4 col-xxl-4"></div>
           </div>
         </div>
       </div>
-      {/* {AddLibrary("/user-assets/js/step-form.js")}; */}
     </>
   );
 };
@@ -230,83 +229,161 @@ export const UserType = () => {
   return (
     <>
       <div className="form-first-step">
-        <div className="select-radio-btn mb-2">
-          <div className="form-check">
-            <input
-              className="form-check-input"
-              type="radio"
-              name="exampleRadios"
-              id="exampleRadios1"
-              value="option1"
-            />
-            <label className="form-check-label" for="exampleRadios1">
-              User / Patient
-            </label>
+        <Image
+          src="/assets/images/logo-white.png"
+          width="120px"
+          height="100px"
+          alt="Rims Logo"
+        />
+        <div className="row align-items-center my-4">
+          <div className="col-2 text-center">
+            <div className="step-inner-items" style={{ marginTop: "5px" }}>
+              <div className="step-inner-pointer">
+                <h6
+                  className="fs-6"
+                  style={{
+                    border: "2px solid",
+                    borderRadius: "100%",
+                    padding: "4px",
+                    backgroundColor: "#0c5199",
+                    color: "white",
+                  }}
+                >
+                  1
+                </h6>
+              </div>
+            </div>
           </div>
-          <div className="form-check">
-            <input
-              className="form-check-input"
-              type="radio"
-              name="exampleRadios"
-              id="exampleRadios2"
-              value="option2"
-            />
-            <label className="form-check-label" for="exampleRadios2">
-              Doctor
-            </label>
+          {/* <div className="col-3">
+            <div
+              className="empty"
+              style={{ border: "2px solid #0c5199" }}
+            ></div>
+          </div> */}
+          <div className="col-3">
+            <div className="empty" style={{ border: "2px solid white" }}></div>
           </div>
-          <div className="form-check">
-            <input
-              className="form-check-input"
-              type="radio"
-              name="exampleRadios"
-              id="exampleRadios3"
-              value="option3"
-            />
-            <label className="form-check-label" for="exampleRadios3">
-              Polyclinic
-            </label>
+
+          <div className="col-2 text-center">
+            <div className="step-inner-items" style={{ marginTop: "5px" }}>
+              <h6
+                className="fs-6"
+                style={{
+                  border: "2px solid #0c5199",
+                  borderRadius: "100%",
+                  padding: "4px",
+                  backgroundColor: "white",
+                  color: "#0c5199",
+                }}
+              >
+                2
+              </h6>
+            </div>
           </div>
-          <div className="form-check">
-            <input
-              className="form-check-input"
-              type="radio"
-              name="exampleRadios"
-              id="exampleRadios4"
-              value="option4"
-            />
-            <label className="form-check-label" for="exampleRadios4">
-              Nursing Home
-            </label>
+          <div className="col-3">
+            <div className="empty" style={{ border: "2px solid white" }}></div>
           </div>
-          <div className="form-check">
-            <input
-              className="form-check-input"
-              type="radio"
-              name="exampleRadios"
-              id="exampleRadios5"
-              value="option5"
-            />
-            <label className="form-check-label" for="exampleRadios5">
-              Hospital
-            </label>
-          </div>
-          <div className="form-check">
-            <input
-              className="form-check-input"
-              type="radio"
-              name="exampleRadios"
-              id="exampleRadios6"
-              value="option6"
-            />
-            <label className="form-check-label" for="exampleRadios6">
-              Diagnostic Center
-            </label>
+          <div className="col-2 text-center">
+            <div className="step-inner-items" style={{ marginTop: "5px" }}>
+              <h6
+                className="fs-6"
+                style={{
+                  border: "2px solid #0c5199",
+                  borderRadius: "100%",
+                  padding: "4px",
+                  backgroundColor: "white",
+                  color: "#0c5199",
+                }}
+              >
+                3
+              </h6>
+            </div>
           </div>
         </div>
-        <div className="row align-items-center">
-          <div className="col-12 text-end my-3">
-            <button className="btn btn-primary">Next</button>
+        {/* <p className="fs-5 text-light my-4">Patient / User</p> */}
+        <div className="card">
+          <div className="card-body" style={{ width: "300px" }}>
+            <h6 className="fs-6 fw-bold">Select Account Type</h6>
+            <hr />
+            <div className="select-radio-btn mb-2 text-start">
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  name="exampleRadios"
+                  id="exampleRadios1"
+                  value="option1"
+                />
+                <label className="form-check-label" for="exampleRadios1">
+                  User / Patient
+                </label>
+              </div>
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  name="exampleRadios"
+                  id="exampleRadios2"
+                  value="option2"
+                />
+                <label className="form-check-label" for="exampleRadios2">
+                  Doctor
+                </label>
+              </div>
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  name="exampleRadios"
+                  id="exampleRadios3"
+                  value="option3"
+                />
+                <label className="form-check-label" for="exampleRadios3">
+                  Polyclinic
+                </label>
+              </div>
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  name="exampleRadios"
+                  id="exampleRadios4"
+                  value="option4"
+                />
+                <label className="form-check-label" for="exampleRadios4">
+                  Nursing Home
+                </label>
+              </div>
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  name="exampleRadios"
+                  id="exampleRadios5"
+                  value="option5"
+                />
+                <label className="form-check-label" for="exampleRadios5">
+                  Hospital
+                </label>
+              </div>
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  name="exampleRadios"
+                  id="exampleRadios6"
+                  value="option6"
+                />
+                <label className="form-check-label" for="exampleRadios6">
+                  Diagnostic Center
+                </label>
+              </div>
+            </div>
+            <div className="row align-items-center">
+              <div className="col-12 text-end my-3">
+                <button className="btn btn-primary">Next</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -318,58 +395,119 @@ export const BasicDetails = () => {
   return (
     <>
       <div className="form-second-step">
-        <div className="row align-items-center mb-2">
-          <div className="col-4">
-            <label>First Name</label>
+        <Image
+          src="/assets/images/logo-white.png"
+          width="120px"
+          height="100px"
+          alt="Rims Logo"
+        />
+        <div className="row align-items-center my-4">
+          <div className="col-2 text-center">
+            <div className="step-inner-items" style={{ marginTop: "5px" }}>
+              <div className="step-inner-pointer">
+                <h6
+                  className="fs-6"
+                  style={{
+                    border: "2px solid",
+                    borderRadius: "100%",
+                    padding: "4px",
+                    backgroundColor: "#0c5199",
+                    color: "white",
+                  }}
+                >
+                  1
+                </h6>
+              </div>
+            </div>
           </div>
-          <div className="col-8">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="First Name"
-            />
+          <div className="col-3">
+            <div
+              className="empty"
+              style={{ border: "2px solid #0c5199" }}
+            ></div>
+          </div>
+          {/* <div className="col-3">
+            <div className="empty" style={{ border: "2px solid white" }}></div>
+          </div> */}
+
+          <div className="col-2 text-center">
+            <div className="step-inner-items" style={{ marginTop: "5px" }}>
+              <h6
+                className="fs-6"
+                style={{
+                  border: "2px solid",
+                  borderRadius: "100%",
+                  padding: "4px",
+                  backgroundColor: "#0c5199",
+                  color: "white",
+                }}
+              >
+                2
+              </h6>
+            </div>
+          </div>
+          <div className="col-3">
+            <div className="empty" style={{ border: "2px solid white" }}></div>
+          </div>
+          <div className="col-2 text-center">
+            <div className="step-inner-items" style={{ marginTop: "5px" }}>
+              <h6
+                className="fs-6"
+                style={{
+                  border: "2px solid #0c5199",
+                  borderRadius: "100%",
+                  padding: "4px",
+                  backgroundColor: "white",
+                  color: "#0c5199",
+                }}
+              >
+                3
+              </h6>
+            </div>
           </div>
         </div>
-        <div className="row align-items-center mb-2">
-          <div className="col-4">
-            <label>Last Name</label>
-          </div>
-          <div className="col-8">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Last Name"
-            />
-          </div>
-        </div>
-        <div className="row align-items-center mb-2">
-          <div className="col-4">
-            <label>Email ID</label>
-          </div>
-          <div className="col-8">
-            <input
-              type="email"
-              className="form-control"
-              placeholder="Email ID"
-            />
-          </div>
-        </div>
-        <div className="row align-items-center mb-2">
-          <div className="col-4">
-            <label>Phone No.</label>
-          </div>
-          <div className="col-8">
-            <input
-              type="number"
-              className="form-control"
-              placeholder="Phone No."
-            />
-          </div>
-        </div>
-        <div className="row align-items-center">
-          <div className="col-12 text-end my-3">
-            <button className="btn btn-primary me-2">Previous</button>
-            <button className="btn btn-primary">Next</button>
+        <div className="card">
+          <div className="card-body" style={{ width: "300px" }}>
+            <h6 className="fs-6 fw-bold">Personal Information</h6>
+            <hr />
+            <div className="text-start mb-2">
+              <label>First Name</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter First Name"
+              />
+            </div>
+            <div className="text-start mb-2">
+              <label>Last Name</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter Last Name"
+              />
+            </div>
+            <div className="text-start mb-2">
+              <label>Email ID</label>
+              <input
+                type="email"
+                className="form-control"
+                placeholder="Enter Email ID"
+              />
+            </div>
+            <div className="text-start mb-2">
+              <label>Phone No.</label>
+              <input
+                type="number"
+                className="form-control"
+                placeholder="Enter Phone No."
+              />
+            </div>
+            <div className="row align-items-center">
+              <div className="col-12 text-end my-3">
+                <button className="btn btn-primary me-2">Previous</button>
+                <button className="btn btn-primary">Next</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -381,26 +519,98 @@ export const PasswordDetails = () => {
   return (
     <>
       <div className="form-third-step">
-        <div className="row align-items-center mb-2">
-          <div className="col-5">
-            <label>Create Password</label>
+        <Image
+          src="/assets/images/logo-white.png"
+          width="120px"
+          height="100px"
+          alt="Rims Logo"
+        />
+        <div className="row align-items-center my-4">
+          <div className="col-2 text-center">
+            <div className="step-inner-items" style={{ marginTop: "5px" }}>
+              <div className="step-inner-pointer">
+                <h6
+                  className="fs-6"
+                  style={{
+                    border: "2px solid",
+                    borderRadius: "100%",
+                    padding: "4px",
+                    backgroundColor: "#0c5199",
+                    color: "white",
+                  }}
+                >
+                  1
+                </h6>
+              </div>
+            </div>
           </div>
-          <div className="col-7">
-            <input type="password" className="form-control" />
+          <div className="col-3">
+            <div
+              className="empty"
+              style={{ border: "2px solid #0c5199" }}
+            ></div>
+          </div>
+          {/* <div className="col-3">
+            <div className="empty" style={{ border: "2px solid white" }}></div>
+          </div> */}
+
+          <div className="col-2 text-center">
+            <div className="step-inner-items" style={{ marginTop: "5px" }}>
+              <h6
+                className="fs-6"
+                style={{
+                  border: "2px solid",
+                  borderRadius: "100%",
+                  padding: "4px",
+                  backgroundColor: "#0c5199",
+                  color: "white",
+                }}
+              >
+                2
+              </h6>
+            </div>
+          </div>
+          <div className="col-3">
+            <div
+              className="empty"
+              style={{ border: "2px solid #0c5199" }}
+            ></div>
+          </div>
+          <div className="col-2 text-center">
+            <div className="step-inner-items" style={{ marginTop: "5px" }}>
+              <h6
+                className="fs-6"
+                style={{
+                  border: "2px solid",
+                  borderRadius: "100%",
+                  padding: "4px",
+                  backgroundColor: "#0c5199",
+                  color: "white",
+                }}
+              >
+                3
+              </h6>
+            </div>
           </div>
         </div>
-        <div className="row align-items-center mb-2">
-          <div className="col-5">
-            <label>Confirm Password</label>
-          </div>
-          <div className="col-7">
-            <input type="password" className="form-control" />
-          </div>
-        </div>
-        <div className="row align-items-center">
-          <div className="col-12 text-end my-3">
-            <button className="btn btn-primary me-2">Previous</button>
-            <button className="btn btn-primary">Register</button>
+        <div className="card">
+          <div className="card-body" style={{ width: "300px" }}>
+            <h6 className="fs-6 fw-bold">Set Password</h6>
+            <hr />
+            <div className="text-start mb-2">
+              <label>Create Password</label>
+              <input type="password" className="form-control" />
+            </div>
+            <div className="text-start mb-2">
+              <label>Confirm Password</label>
+              <input type="password" className="form-control" />
+            </div>
+            <div className="row align-items-center">
+              <div className="col-12 text-end my-3">
+                <button className="btn btn-primary me-2">Previous</button>
+                <button className="btn btn-primary">Register</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
