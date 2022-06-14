@@ -74,7 +74,9 @@ const Contact = () => {
                   </div>
                   <div className="infor-details text-center">
                     <label>Phone Number</label>
-                    <p>+91 8597-3944-14</p>
+                    <p>
+                      <a href="tel:8597394414">+91 8597-3944-14</a>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -87,8 +89,14 @@ const Contact = () => {
                   </div>
                   <div className="infor-details text-center">
                     <label>Email</label>
-                    <p>info@rimsind.com</p>
-                    <p>support@rimsind.com</p>
+                    <p>
+                      <a href="mailto:info@rimsind.com">info@rimsind.com</a>
+                    </p>
+                    <p>
+                      <a href="mailto:support@rimsind.com">
+                        support@rimsind.com
+                      </a>
+                    </p>
                   </div>
                 </div>
               </div>
