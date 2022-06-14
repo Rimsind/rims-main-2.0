@@ -366,7 +366,7 @@ const Signup = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="exampleRadios1"
+                                  htmlFor="exampleRadios1"
                                 >
                                   User / Patient
                                 </label>
@@ -382,7 +382,7 @@ const Signup = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="exampleRadios2"
+                                  htmlFor="exampleRadios2"
                                 >
                                   Doctor
                                 </label>
@@ -398,7 +398,7 @@ const Signup = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="exampleRadios3"
+                                  htmlFor="exampleRadios3"
                                 >
                                   Polyclinic
                                 </label>
@@ -414,7 +414,7 @@ const Signup = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="exampleRadios4"
+                                  htmlFor="exampleRadios4"
                                 >
                                   Nursing Home
                                 </label>
@@ -430,7 +430,7 @@ const Signup = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="exampleRadios5"
+                                  htmlFor="exampleRadios5"
                                 >
                                   Hospital
                                 </label>
@@ -446,7 +446,7 @@ const Signup = () => {
                                 />
                                 <label
                                   className="form-check-label"
-                                  for="exampleRadios6"
+                                  htmlFor="exampleRadios6"
                                 >
                                   Diagnostic Center
                                 </label>
