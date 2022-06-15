@@ -68,7 +68,7 @@ const Dashboard = () => {
                             <div className="col-inner-items-new">
                               <div className="col-inner-items-inner-top-item">
                                 <h6 className="fs-4">
-                                  78 <span className="fs-6"></span>
+                                  78 <span className="fs-6">BPM</span>
                                 </h6>
                               </div>
                               <div className="col-inner-items-inner-item">
@@ -96,7 +96,7 @@ const Dashboard = () => {
                             <div className="col-inner-items-new">
                               <div className="col-inner-items-inner-top-item">
                                 <h6 className="fs-4">
-                                  97.5 <span className="fs-6">°F</span>
+                                  97.5 <span className="fs-6">°C</span>
                                 </h6>
                               </div>
                               <div className="col-inner-items-inner-item">

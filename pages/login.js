@@ -164,7 +164,7 @@ const Login = () => {
                     <div className="forgot-password-sec my-4">
                       <p className="fs-6">Forgot Your Password</p>
                     </div>
-                    <div className="my-3">
+                    {/* <div className="my-3">
                       <div className="row align-items-center">
                         <div className="col-5">
                           <div
@@ -187,10 +187,10 @@ const Login = () => {
                           ></div>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
 
                     <div className="dont-account">
-                      <p>Don&apos;t You Have Account?</p>
+                      <p className="text-light">Don&apos;t You Have Account?</p>
                     </div>
                     <Link href="/signup">
                       <a className="btn btn-dark rounded-pill px-5">Sign up</a>

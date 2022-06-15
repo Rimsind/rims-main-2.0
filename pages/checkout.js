@@ -129,14 +129,14 @@ const Checkout = () => {
           <div className="container">
             <VerifyCard doctorDetails={doctor} clinicDetails={clinicDetails} />
             <form onSubmit={handleSubmit(checkout)}>
-              <div className="row">
-                <div className="col-md-7 col-lg-8">
+              <div className="row align-items-start">
+                <div className="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 col-xxl-8">
                   <div className="card shadow-sm">
                     <div className="prbl-header">
                       <p className="fs-6 fw-bold">Explain Your Problem</p>
                     </div>
-                    <div className="row">
-                      <div className="col-md-12">
+                    <div className="row align-items-center">
+                      <div className="col-12">
                         <div className="expln-prbl p-3">
                           <textarea
                             className="form-control mb-3"
@@ -145,8 +145,8 @@ const Checkout = () => {
                             onChange={(e) => setDescription(e.target.value)}
                             value={description}
                           ></textarea>
-                          <div className="row">
-                            <div className="col-md">
+                          <div className="row align-items-start">
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                               <input
                                 type="text"
                                 className="form-control mb-3"
@@ -155,7 +155,7 @@ const Checkout = () => {
                                 value={duration}
                               />
                             </div>
-                            <div className="col-md">
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                               <div className="btn-search">
                                 <button
                                   type="button"
@@ -169,7 +169,7 @@ const Checkout = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-12">
+                      <div className="col-12">
                         <div className="table-desc p-3">
                           <table className="table table-striped">
                             <thead>
@@ -206,7 +206,7 @@ const Checkout = () => {
                       <p className="fs-6 fw-bold">Advance Option</p>
                     </div>
                     <div className="row">
-                      <div className="col-md-6">
+                      <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                         <div className="card">
                           <div className="accordion" id="accordionExample">
                             <div className="accordion-item">
@@ -220,7 +220,7 @@ const Checkout = () => {
                                   aria-controls="collapseOne"
                                 >
                                   <div className="row align-items-center">
-                                    <div className="col-md-3">
+                                    <div className="col-3">
                                       <div className="accrd-img">
                                         <Image
                                           height="100"
@@ -230,7 +230,7 @@ const Checkout = () => {
                                         />
                                       </div>
                                     </div>
-                                    <div className="col-md-9">
+                                    <div className="col-9">
                                       <p className="fs-6 fw-normal">
                                         General Problems
                                       </p>
@@ -278,7 +278,7 @@ const Checkout = () => {
                                   aria-controls="collapseTwo"
                                 >
                                   <div className="row align-items-center">
-                                    <div className="col-md-3">
+                                    <div className="col-3">
                                       <div className="accrd-img">
                                         <Image
                                           height="150"
@@ -288,7 +288,7 @@ const Checkout = () => {
                                         />
                                       </div>
                                     </div>
-                                    <div className="col-md-9">
+                                    <div className="col-9">
                                       <p className="fs-6 fw-normal">
                                         Rehumetologic
                                       </p>
@@ -341,7 +341,7 @@ const Checkout = () => {
                                   aria-controls="collapseThree"
                                 >
                                   <div className="row align-items-center">
-                                    <div className="col-md-3">
+                                    <div className="col-3">
                                       <div className="accrd-img">
                                         <Image
                                           height="100"
@@ -351,7 +351,7 @@ const Checkout = () => {
                                         />
                                       </div>
                                     </div>
-                                    <div className="col-md-9">
+                                    <div className="col-9">
                                       <p className="fs-6 fw-normal">
                                         Neurologic Problems
                                       </p>
@@ -399,7 +399,7 @@ const Checkout = () => {
                                   aria-controls="collapseFour"
                                 >
                                   <div className="row align-items-center">
-                                    <div className="col-md-3">
+                                    <div className="col-3">
                                       <div className="accrd-img">
                                         <Image
                                           height="100"
@@ -409,7 +409,7 @@ const Checkout = () => {
                                         />
                                       </div>
                                     </div>
-                                    <div className="col-md-9">
+                                    <div className="col-9">
                                       <p className="fs-6 fw-normal">
                                         Heart Related Problems
                                       </p>
@@ -449,7 +449,7 @@ const Checkout = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-6">
+                      <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                         <div className="card">
                           <div className="accordion" id="accordionRight">
                             <div className="accordion-item">
@@ -463,7 +463,7 @@ const Checkout = () => {
                                   aria-controls="collapseFive"
                                 >
                                   <div className="row align-items-center">
-                                    <div className="col-md-3">
+                                    <div className="col-3">
                                       <div className="accrd-img">
                                         <Image
                                           height="50"
@@ -473,7 +473,7 @@ const Checkout = () => {
                                         />
                                       </div>
                                     </div>
-                                    <div className="col-md-9">
+                                    <div className="col-9">
                                       <p className="fs-6 fw-normal">
                                         Blood Related Problems
                                       </p>
@@ -521,7 +521,7 @@ const Checkout = () => {
                                   aria-controls="collapseSix"
                                 >
                                   <div className="row align-items-center">
-                                    <div className="col-md-3">
+                                    <div className="col-3">
                                       <div className="accrd-img">
                                         <Image
                                           height="50"
@@ -531,7 +531,7 @@ const Checkout = () => {
                                         />
                                       </div>
                                     </div>
-                                    <div className="col-md-9">
+                                    <div className="col-9">
                                       <p className="fs-6 fw-normal">
                                         Stomach & Abdominal Problems
                                       </p>
@@ -584,7 +584,7 @@ const Checkout = () => {
                                   aria-controls="collapseSeven"
                                 >
                                   <div className="row align-items-center">
-                                    <div className="col-md-3">
+                                    <div className="col-3">
                                       <div className="accrd-img">
                                         <Image
                                           height="150"
@@ -594,7 +594,7 @@ const Checkout = () => {
                                         />
                                       </div>
                                     </div>
-                                    <div className="col-md-9">
+                                    <div className="col-9">
                                       <p className="fs-6 fw-normal">
                                         Mental Problems
                                       </p>
@@ -645,7 +645,7 @@ const Checkout = () => {
                                   aria-controls="collapseEight"
                                 >
                                   <div className="row align-items-center">
-                                    <div className="col-md-3">
+                                    <div className="col-3">
                                       <div className="accrd-img">
                                         <Image
                                           height="100"
@@ -655,7 +655,7 @@ const Checkout = () => {
                                         />
                                       </div>
                                     </div>
-                                    <div className="col-md-9">
+                                    <div className="col-9">
                                       <p className="fs-6 fw-normal">
                                         Genetial Problems
                                       </p>
@@ -698,7 +698,7 @@ const Checkout = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-5 col-lg-4">
+                <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
                   <div className="card booking-card">
                     <div
                       className="card-header"

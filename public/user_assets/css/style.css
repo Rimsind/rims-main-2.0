@@ -3650,6 +3650,7 @@ html.menu-opened body {
   overflow: hidden;
   z-index: 1;
   border-radius: 4px;
+  text-align: center;
 }
 .doc-img img {
   border-radius: 4px;

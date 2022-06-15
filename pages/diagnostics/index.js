@@ -49,7 +49,10 @@ const Index = () => {
   return (
     <>
       <main className="main">
-        <BreadCrums title="Home / Polyclinics List" title1="Polyclinics List" />
+        <BreadCrums
+          title="Home / Diagnostic Center List"
+          title1="Diagnostic Center List"
+        />
         <div className="content">
           <div className="container-fluid">
             <div className="row">

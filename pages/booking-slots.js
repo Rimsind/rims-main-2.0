@@ -125,6 +125,24 @@ const BookingSlots = () => {
                           </div>
                         ))}
                     </div>
+                    {/* <div className="row align-items-center">
+                      <div className="col-3">
+                        <div className="innr-time-table">
+                          <input type="checkbox" id="activate-div1" />
+                          <label for="activate-div1">
+                            <div className="my-div">26-06-2022</div>
+                          </label>
+                        </div>
+                      </div>
+                      <div className="col-3">
+                        <div className="innr-time-table">
+                          <input type="checkbox" id="activate-div2" />
+                          <label for="activate-div2">
+                            <div className="my-div">26-06-2022</div>
+                          </label>
+                        </div>
+                      </div>
+                    </div> */}
                   </div>
                   <div className="row align-items-center pt-4">
                     <div className="col-12 text-end">

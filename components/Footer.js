@@ -183,13 +183,6 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            {/* <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-2 col-xxl-2">
-              <div className="admn_btn">
-                <Link href="/administration">
-                  <a className="btn btn-primary">Administrative</a>
-                </Link>
-              </div>
-            </div> */}
           </div>
         </div>
       </footer>
@@ -200,10 +193,12 @@ const Footer = () => {
         <div className="container">
           <div className="row pt-4">
             <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 text-center text-sm-center text-md-center text-lg-start text-xl-start text-xxl-start">
-              <p>
-                &copy; Copyright All right&apos;s Reserved With
-                <span className="ms-2">
-                  Rims Ind a Unit Of Retar Mediserve Pvt. Ltd.
+              <p style={{ fontVariant: "small-caps" }}>
+                &copy; 2019-2022. Copyright All Right&apos;s Reserved with
+                <span className="ms-2" style={{ fontVariant: "initial" }}>
+                  <mark className="shadow rounded-1">
+                    RIMS IND unit of Retar Mediserve Pvt. Ltd.
+                  </mark>
                 </span>
               </p>
             </div>

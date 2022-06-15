@@ -770,7 +770,7 @@ const Signup = () => {
                       </form>
                     </>
                   )}
-                  <div className="my-3">
+                  {/* <div className="my-3">
                     <div className="row align-items-center">
                       <div className="col-5">
                         <div
@@ -793,7 +793,7 @@ const Signup = () => {
                         ></div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
 
                   <div className="dont-account">
                     <p className="text-light">

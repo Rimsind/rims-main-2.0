@@ -4434,8 +4434,37 @@ cNNJIt,
 }
 
 button.btn-book-custom {
-  background-color: #fff;
+  background-color: white;
 }
+
+button.btn-book-custom:hover,
+button.btn-book-custom:active,
+button.btn-book-custom:target,
+button.btn-book-custom:focus,
+button.btn-book-custom:focus-visible {
+  background-color: #202e7a;
+  color: white;
+}
+
+/* #activate-div1,
+#activate-div2 {
+  display: none;
+}
+
+.my-div {
+  background-color: #fff;
+  border-radius: 5px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#activate-div1:checked ~ label .my-div,
+#activate-div2:checked ~ label .my-div {
+  background-color: red;
+  color: white;
+} */
 
 /* Help Stylesheet */
 .section-help .effect {
