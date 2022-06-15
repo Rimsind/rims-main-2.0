@@ -208,9 +208,9 @@ const Signup = () => {
                     </Link>
                   </div>
                 </form> */}
-                <UserType />
+                {/* <UserType /> */}
                 {/* <BasicDetails /> */}
-                {/* <PasswordDetails /> */}
+                <PasswordDetails />
               </div>
             </div>
             <div className="col-4 col-lg-4 col-xl-4 col-xxl-4"></div>
