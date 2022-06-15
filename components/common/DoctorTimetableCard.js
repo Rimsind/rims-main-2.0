@@ -3,9 +3,11 @@ import {
   RoutineCardClosed,
   RoutineCardOpen,
 } from "components/DoctorComponents";
+import { useAuth } from "context";
+import Router from "next/router";
 
 const DoctorTimetableCard = ({ data, doctorId }) => {
-  console.log(data);
+  const { auth } = useAuth();
   if (data.polyclnic !== null) {
     var clinicId = data?.polyclinic?.id;
     var clinicType = "polyclinics";
@@ -21,6 +23,16 @@ const DoctorTimetableCard = ({ data, doctorId }) => {
     var clinicType = "nursing-homes";
     console.log("nursing-home");
   }
+
+  const loginCheck = () => {
+    if (auth.token && auth.user) {
+      Router.pust(
+        `/booking-slots?doctorId=${doctorId}&&clinicType=${clinicType}&&clinicId=${clinicId}&&timeTableId=${data?.id}&&fee=${data?.fee}`
+      );
+    } else {
+      Router.push(`/login?redirect=${`doctors/${doctorId}`}`);
+    }
+  };
   return (
     <>
       <tbody>
@@ -124,16 +136,17 @@ const DoctorTimetableCard = ({ data, doctorId }) => {
               ></i>
               - ₹ {data?.fee}
             </p>
-            <Link
+            {/* <Link
               href={`/booking-slots?doctorId=${doctorId}&&clinicType=${clinicType}&&clinicId=${clinicId}&&timeTableId=${data?.id}&&fee=${data?.fee}`}
+            > */}
+            <button
+              className="btn text-light fs-6 px-4 px-sm-4 px-md-4 px-lg-2 px-xl-2 px-xxl-4"
+              style={{ backgroundColor: "#1d00a3" }}
+              onClick={loginCheck}
             >
-              <a
-                className="btn text-light fs-6 px-4 px-sm-4 px-md-4 px-lg-2 px-xl-2 px-xxl-4"
-                style={{ backgroundColor: "#1d00a3" }}
-              >
-                Book Now
-              </a>
-            </Link>
+              Book Now
+            </button>
+            {/* </Link> */}
           </td>
         </tr>
       </tbody>

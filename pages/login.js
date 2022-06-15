@@ -4,11 +4,13 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { setCookie } from "nookies";
-import Router from "next/router";
+import Router, { useRouter } from "next/router";
 import { useAuth } from "context";
 import { toast, Slide } from "react-toastify";
 import { apiUrl } from "config/api";
 const Login = () => {
+  const { redirect } = useRouter().query;
+  console.log(redirect);
   const {
     register,
     handleSubmit,
@@ -62,12 +64,12 @@ const Login = () => {
           theme: "colored",
           transition: Slide,
         });
-        Router.push("/");
-        // if (redirect) {
-        //   Router.push(`/${redirect}`);
-        // } else {
-        //   Router.push("/");
-        // }
+        // Router.push("/");
+        if (redirect) {
+          Router.push(`/${redirect}`);
+        } else {
+          Router.push("/");
+        }
       }
     } catch (error) {
       toast.error("Email Or Password does not exist", {
