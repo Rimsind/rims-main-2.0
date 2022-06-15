@@ -174,9 +174,9 @@ const MainHeader = () => {
                         <Link href="/user/profile-settings">
                           <a className="dropdown-item">Profile Settings</a>
                         </Link>
-                        <button className="dropdown-item" onClick={logOut}>
+                        {/* <button className="dropdown-item" onClick={logOut}>
                           Logout
-                        </button>
+                        </button> */}
                       </>
                     ) : (
                       <></>
@@ -192,9 +192,9 @@ const MainHeader = () => {
                         <Link href="/polyclinics/auth/profile-settings">
                           <a className="dropdown-item">Profile Settings</a>
                         </Link>
-                        <button className="dropdown-item" onClick={logOut}>
+                        {/* <button className="dropdown-item" onClick={logOut}>
                           Logout
-                        </button>
+                        </button> */}
                       </>
                     ) : (
                       <></>
@@ -211,9 +211,9 @@ const MainHeader = () => {
                           <a className="dropdown-item">Profile Settings</a>
                         </Link>
 
-                        <button className="dropdown-item" onClick={logOut}>
+                        {/* <button className="dropdown-item" onClick={logOut}>
                           Logout
-                        </button>
+                        </button> */}
                       </>
                     ) : (
                       <></>
@@ -230,9 +230,9 @@ const MainHeader = () => {
                           <a className="dropdown-item">Profile Settings</a>
                         </Link>
 
-                        <button className="dropdown-item" onClick={logOut}>
+                        {/* <button className="dropdown-item" onClick={logOut}>
                           Logout
-                        </button>
+                        </button> */}
                       </>
                     ) : (
                       <></>
@@ -248,9 +248,9 @@ const MainHeader = () => {
                         <Link href="/doctors/auth/profile-settings">
                           <a className="dropdown-item">Profile Settings</a>
                         </Link>
-                        <button className="dropdown-item" onClick={logOut}>
+                        {/* <button className="dropdown-item" onClick={logOut}>
                           Logout
-                        </button>
+                        </button> */}
                       </>
                     ) : (
                       <></>
@@ -266,13 +266,16 @@ const MainHeader = () => {
                         <Link href="/diagnostics/auth/profile-settings">
                           <a className="dropdown-item">Profile Settings</a>
                         </Link>
-                        <button className="dropdown-item" onClick={logOut}>
+                        {/* <button className="dropdown-item" onClick={logOut}>
                           Logout
-                        </button>
+                        </button> */}
                       </>
                     ) : (
                       <></>
                     )}
+                    <button className="dropdown-item" onClick={logOut}>
+                      Logout
+                    </button>
                   </div>
                 </div>
               ) : (

@@ -71,8 +71,6 @@ const Checkout = () => {
   };
 
   const [agree, setAgree] = useState(false);
-  console.log(agree);
-
   const { register, handleSubmit } = useForm();
   const checkout = async (data, event) => {
     event.preventDefault();
