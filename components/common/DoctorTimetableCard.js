@@ -26,7 +26,7 @@ const DoctorTimetableCard = ({ data, doctorId }) => {
 
   const loginCheck = () => {
     if (auth.token && auth.user) {
-      Router.pust(
+      Router.push(
         `/booking-slots?doctorId=${doctorId}&&clinicType=${clinicType}&&clinicId=${clinicId}&&timeTableId=${data?.id}&&fee=${data?.fee}`
       );
     } else {
