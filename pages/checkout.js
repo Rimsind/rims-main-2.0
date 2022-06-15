@@ -114,7 +114,7 @@ const Checkout = () => {
         );
         return result;
       } else {
-        Router.push("/user/login");
+        Router.push("/login");
       }
     } catch (error) {
       console.log(error);

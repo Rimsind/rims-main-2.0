@@ -131,7 +131,7 @@ const Login = () => {
                   </div>
                   <Image
                     src="/assets/images/logo-white.png"
-                    width="150px"
+                    width="120px"
                     height="100px"
                     alt="Rims Logo"
                   />
@@ -161,47 +161,38 @@ const Login = () => {
                     >
                       Login
                     </button>
-                    <div className="forgot-password-sec mt-4 mb-1">
+                    <div className="forgot-password-sec my-4">
                       <p className="fs-6">Forgot Your Password</p>
                     </div>
-                    <div className="mb-4">
-                      <p>
-                        ------------------------------ OR
-                        ------------------------------
-                      </p>
-                    </div>
-                    <div className="social-login mb-3">
+                    <div className="my-3">
                       <div className="row align-items-center">
-                        <div className="col-6 text-end">
-                          <div className="social-login-inner mb-4">
-                            <Link href="#">
-                              <a className="border border-1 border-light p-3 bg-light rounded">
-                                <i className="fab fa-google fs-5 text-danger"></i>
-                              </a>
-                            </Link>
+                        <div className="col-5">
+                          <div
+                            className="empty-div"
+                            style={{ borderBottom: "2px dashed black" }}
+                          ></div>
+                        </div>
+                        <div className="col-2">
+                          <div
+                            className="content-middle-item"
+                            style={{ marginTop: "9px" }}
+                          >
+                            <h6>OR</h6>
                           </div>
                         </div>
-                        <div className="col-6 text-start">
-                          <div className="social-login-inner mb-4">
-                            <Link href="#">
-                              <a
-                                className="p-3 rounded"
-                                style={{
-                                  backgroundColor: "#1877f2",
-                                  border: "1px solid #1877f2",
-                                }}
-                              >
-                                <i className="fab fa-facebook fs-5 text-light"></i>
-                              </a>
-                            </Link>
-                          </div>
+                        <div className="col-5">
+                          <div
+                            className="empty-div"
+                            style={{ borderBottom: "2px dashed black" }}
+                          ></div>
                         </div>
                       </div>
                     </div>
+
                     <div className="dont-account">
                       <p>Don&apos;t You Have Account?</p>
                     </div>
-                    <Link href="/user/signup">
+                    <Link href="/signup">
                       <a className="btn btn-dark rounded-pill px-5">Sign up</a>
                     </Link>
                   </div>

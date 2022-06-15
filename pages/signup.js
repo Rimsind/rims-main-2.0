@@ -223,7 +223,7 @@ const Signup = () => {
         transition: Slide,
       });
       reset();
-      router.push("/user/login");
+      router.push("/login");
     } catch (err) {
       if ((err.response.status = 400)) {
         toast.warn("User Already Exists", {
@@ -253,9 +253,9 @@ const Signup = () => {
         <div className="container">
           <div className="row">
             <div className="col-4 col-lg-4 col-xl-4 col-xxl-4"></div>
-            <div className="col-12 col-4 col-lg-4 col-xl-4 col-xxl-4">
+            <div className="col-12 col-4 col-lg-12 col-xl-4 col-xxl-4">
               <div
-                className="patient-login-content text-center d-flex justify-content-center align-items-center pt-5 pb-5"
+                className="patient-login-content text-center d-flex justify-content-center align-items-center py-3"
                 style={{
                   backgroundImage: "url(/assets/images/Loginerer.png)",
                   backgroundSize: "cover",
@@ -264,6 +264,21 @@ const Signup = () => {
                 }}
               >
                 <div className="form-first-step">
+                  <div
+                    className="back-home-btn text-center"
+                    style={{
+                      borderRadius: "100px 30px 30px 100px",
+                    }}
+                  >
+                    <div className="back-to-home-button mb-4">
+                      <Link href="/">
+                        <a className="fs-6 text-warning">
+                          <i className="fas fa-arrow-circle-left me-2 fs-6"></i>
+                          Back To Home
+                        </a>
+                      </Link>
+                    </div>
+                  </div>
                   <Image
                     src="/assets/images/logo-white.png"
                     width="120px"
@@ -273,7 +288,7 @@ const Signup = () => {
                   {count === 0 && (
                     <>
                       <form onSubmit={handleSubmit(submitUserType)}>
-                        <div className="row align-items-center my-4">
+                        <div className="row align-items-center my-2">
                           <div className="col-2 text-center">
                             <div
                               className="step-inner-items"
@@ -470,7 +485,7 @@ const Signup = () => {
                   {count === 1 && (
                     <>
                       <form onSubmit={handleSubmit(submitInfo)}>
-                        <div className="row align-items-center my-4">
+                        <div className="row align-items-center my-2">
                           <div className="col-2 text-center">
                             <div
                               className="step-inner-items"
@@ -628,7 +643,7 @@ const Signup = () => {
                   {count === 2 && (
                     <>
                       <form onSubmit={handleSubmit(onSubmit)}>
-                        <div className="row align-items-center my-4">
+                        <div className="row align-items-center my-2">
                           <div className="col-2 text-center">
                             <div
                               className="step-inner-items"
@@ -755,6 +770,40 @@ const Signup = () => {
                       </form>
                     </>
                   )}
+                  <div className="my-3">
+                    <div className="row align-items-center">
+                      <div className="col-5">
+                        <div
+                          className="empty-div"
+                          style={{ borderBottom: "2px dashed black" }}
+                        ></div>
+                      </div>
+                      <div className="col-2">
+                        <div
+                          className="content-middle-item"
+                          style={{ marginTop: "9px" }}
+                        >
+                          <h6>OR</h6>
+                        </div>
+                      </div>
+                      <div className="col-5">
+                        <div
+                          className="empty-div"
+                          style={{ borderBottom: "2px dashed black" }}
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="dont-account">
+                    <p className="text-light">
+                      Already Have An Account?
+                      <Link href="/user/login">
+                        <a className="ms-1 me-1">Login</a>
+                      </Link>
+                      Here.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

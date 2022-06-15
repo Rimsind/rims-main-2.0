@@ -9,7 +9,7 @@ const MainHeader = () => {
   return (
     <>
       <section
-        className="upper-main-mrq h-100 py-3"
+        className="upper-main-mrq h-100 py-1"
         style={{
           background: "linear-gradient(223deg, #73042b 60%, #15558d 50%)",
         }}
@@ -18,64 +18,29 @@ const MainHeader = () => {
           <div className="row align-items-center">
             <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-5 col-xxl-5 mb-3 mb-sm-3 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0">
               <div className="left-topbar-number">
-                <a href="tel:+180030000123" className="fs-6 text-light">
+                <a href="tel:+918597394414" className="fs-6 text-light">
                   24x7 Help Line -
-                  <a href="tel:8597-3944-14" className="text-light">
+                  <a href="tel:+918597394414" className="ms-2 text-light">
                     +91 8597-3944-14
                   </a>
                 </a>
               </div>
             </div>
             <div className="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-7 col-xxl-7 mb-2 mb-sm-2 mb-md-2 mb-lg-0 mb-xl-0 mb-xxl-0">
-              <div className="row align-items-center justify-content-center">
-                <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 col-xxl-3 border-end border-1 border-light mb-2 mb-sm-2 mb-md-2 mb-lg-0 mb-xl-0 mb-xxl-0">
-                  <div className="topbar-login d-flex align-items-baseline text-light">
-                    <div className="topbar-login-icon me-2">
-                      <i className="fas fa-lock"></i>
-                    </div>
-                    <div className="topbar-login-title">
-                      <Link href="/doctors/auth/login">
-                        <a className="fs-6">Doctor Login</a>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 border-end border-1 border-light mb-2 mb-sm-2 mb-md-2 mb-lg-0 mb-xl-0 mb-xxl-0">
-                  <div className="topbar-login d-flex align-items-baseline text-light">
-                    <div className="topbar-login-icon me-2">
-                      <i className="fas fa-lock"></i>
-                    </div>
-                    <div className="topbar-login-title">
-                      <Link href="/polyclinics/auth/login">
-                        <a className="fs-6">Polyclinic Login</a>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 border-end border-1 border-light">
-                  <div className="topbar-login d-flex align-items-baseline text-light">
-                    <div className="topbar-login-icon me-2">
-                      <i className="fas fa-lock"></i>
-                    </div>
-                    <div className="topbar-login-title">
-                      <Link href="/nursing-homes/auth/login">
-                        <a className="fs-6">Nursing Login</a>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3">
-                  <div className="topbar-login d-flex align-items-baseline text-light">
-                    <div className="topbar-login-icon me-2">
-                      <i className="fas fa-lock"></i>
-                    </div>
-                    <div className="topbar-login-title">
-                      <Link href="/hospitals/auth/login">
-                        <a className="fs-6">Hospital Login</a>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+              <div
+                className="right-topbar-content"
+                style={{ paddingTop: "8px" }}
+              >
+                <h6
+                  style={{
+                    fontSize: "16px",
+                    color: "white",
+                    fontVariant: "small-caps",
+                    letterSpacing: "2px",
+                  }}
+                >
+                  Rims Ind a Unit of Retar Mediserve Pvt. Ltd.
+                </h6>
               </div>
             </div>
           </div>

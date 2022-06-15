@@ -74,7 +74,7 @@ const Index = () => {
 
         <section
           className="category-sec"
-          style={{ marginTop: "-64px", background: "#fff" }}
+          style={{ marginTop: "-55px", background: "#fff" }}
         >
           <div className="container">
             <div className="d-flex">
