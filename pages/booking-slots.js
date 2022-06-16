@@ -19,8 +19,17 @@ const BookingSlots = () => {
   var currMonth = today.getMonth() + 1;
 
   const dateSelect = (data) => {
-    const value =
-      data?.day.toString() + "-" + data?.month.toString() + "-" + data?.year;
+    if (data.day.toString().length < 2) {
+      var date = "0" + data.day;
+    } else {
+      var date = data.day;
+    }
+    if (data.month.toString().length < 2) {
+      var month = "0" + data.month;
+    } else {
+      var month = data.month;
+    }
+    const value = data.year + "-" + month + "-" + date;
     setDate(value);
   };
 
@@ -106,18 +115,18 @@ const BookingSlots = () => {
                                       className="btn btn-book-custom"
                                       onClick={() => dateSelect(data, index)}
                                     >
-                                      {data?.day.toString().length < 2 ? (
-                                        <>0{data?.day}</>
-                                      ) : (
-                                        <>{data?.day}</>
-                                      )}
-                                      -
+                                      {data?.year}-
                                       {data?.month.toString().length < 2 ? (
                                         <>0{data?.month}</>
                                       ) : (
                                         <>{data?.month}</>
                                       )}
-                                      -{data?.year}
+                                      -
+                                      {data?.day.toString().length < 2 ? (
+                                        <>0{data?.day}</>
+                                      ) : (
+                                        <>{data?.day}</>
+                                      )}
                                     </button>
                                   </div>
                                 </div>
