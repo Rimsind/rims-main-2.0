@@ -1,7 +1,6 @@
 const BreadCrums = (props) => {
   return (
     <>
-      {" "}
       <div className="page_content">
         <div className="container-fluid">
           <div className="breadcrumb-content">
