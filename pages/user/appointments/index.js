@@ -59,6 +59,7 @@ const Index = () => {
   );
 
   const [date, setDate] = useState("");
+  console.log(date);
   const [status, setStatus] = useState("");
   const resetState = () => {
     setDate("");
@@ -118,6 +119,7 @@ const Index = () => {
                             <input
                               type="date"
                               className="form-control"
+                              data-date-format="DD MMMM YYYY"
                               value={date}
                               onChange={(e) => setDate(e.target.value)}
                             />

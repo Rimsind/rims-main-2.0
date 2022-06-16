@@ -24,7 +24,10 @@ const ManageDoctors = () => {
     { refreshInterval: 1000 }
   );
 
-  const { data: doctors } = useSWR(`${apiUrl}/doctors`, fetcher);
+  const { data: doctors } = useSWR(
+    `${apiUrl}/doctors?_sort=id:desc&&verification_status=Approved&&_limit=-1`,
+    fetcher
+  );
   const [allDoctors, setAllDoctors] = useState([]);
   const addNewDoctor = (e) => {
     setAllDoctors([...data?.doctors, e.target.value]);

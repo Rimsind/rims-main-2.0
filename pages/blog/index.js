@@ -96,7 +96,7 @@ const Index = () => {
                 <div className="left-blog-content">
                   <div className="left-latest-blog-title">
                     <h6 className="title">Latest Blog</h6>
-                    <h4 className="sub-title">Don't miss daily news</h4>
+                    <h4 className="sub-title">Don&apos;t miss daily news</h4>
                   </div>
                   <div className="left-latest-blog-content">
                     {/* Blog Post Item */}

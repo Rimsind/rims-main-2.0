@@ -32,7 +32,7 @@ const AllApp = ({ appointments, data, appointmentsLength }) => {
                   <option selected value="">
                     Select Polyclinic
                   </option>
-                  {data?.booking_schedule?.map((items, index) => (
+                  {data?.timeTable?.map((items, index) => (
                     <option
                       value={
                         items?.polyclinic?.name ||

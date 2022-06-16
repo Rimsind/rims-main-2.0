@@ -50,7 +50,7 @@ const TodaysApp = ({ appointments, data, appointmentsLength }) => {
                   <option selected value="">
                     View All
                   </option>
-                  {data?.booking_schedule?.map((items, index) => (
+                  {data?.timeTable?.map((items, index) => (
                     <option
                       value={
                         items?.polyclinic?.name ||
