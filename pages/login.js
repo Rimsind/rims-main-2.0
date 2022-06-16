@@ -131,18 +131,21 @@ const Login = () => {
                       </Link>
                     </div>
                   </div>
-                  <Image
-                    src="/assets/images/logo-white.png"
-                    width="120px"
-                    height="100px"
-                    alt="Rims Logo"
-                  />
-                  <p className="fs-5 text-light my-4">Patient / User</p>
+                  <div className="logo my-3">
+                    <Image
+                      src="/assets/images/logo-white.png"
+                      width="120px"
+                      height="100px"
+                      alt="Rims Logo"
+                    />
+                  </div>
+
                   <div
                     className="patient-login-form"
                     style={{ width: "300px" }}
                   >
-                    <div className="mb-3">
+                    <div className="mb-3 text-start">
+                      <label>Username</label>
                       <input
                         type="text"
                         className="form-control"
@@ -150,7 +153,8 @@ const Login = () => {
                         {...register("email")}
                       />
                     </div>
-                    <div className="mb-3">
+                    <div className="mb-3 text-start">
+                      <label>Password</label>
                       <input
                         type="password"
                         className="form-control"

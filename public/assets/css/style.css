@@ -4536,3 +4536,134 @@ button.btn-book-custom:focus-visible {
 .col-inner-items-inner-item h6 {
   color: white;
 }
+
+/* Blog & News Stylesheet Start Here */
+.post-categories-marker a.marker {
+  background: #73042b;
+  padding: 6px 13px;
+  font-size: 11px;
+  border-radius: 2px;
+  color: white;
+}
+
+.post-categories-marker a.marker:hover {
+  background: #000000;
+}
+
+.post-categories-marker {
+  margin: 0 0 10px 0;
+}
+
+.blog-post-time i {
+  color: #73042b;
+  font-size: 15px;
+}
+
+.author-content-name h6:hover {
+  color: #73042b;
+}
+
+.blog-read-more-btn a.read-now-link {
+  color: #001038;
+  font-size: 16px;
+  font-weight: 500;
+  /* border-bottom: 3px solid #fff3; */
+  padding: 8px 13px;
+  border: 2px solid #fff3;
+}
+
+.blog-read-more-btn a.read-now-link:hover {
+  color: #73042b;
+  /* padding-bottom: 5px; */
+  /* border-bottom-color: #fff9; */
+  border-color: #fff9;
+  background-color: #fff9;
+}
+
+.blog-banner-title h6:hover {
+  text-decoration: underline;
+}
+
+.blog-lower {
+  padding: 70px 0;
+}
+
+.left-latest-blog-title h6.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #292929;
+}
+.left-latest-blog-title h4.sub-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+}
+
+.left-latest-blog-title {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+.left-latest-blog-title::before {
+  content: " ";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 70px;
+  height: 1px;
+  background-color: #73042b;
+}
+
+.list-post {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.fl-wrap {
+  position: relative;
+}
+
+.list-post::before {
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 1px;
+  background: #73042b;
+}
+
+.bg-wrap {
+  position: relative;
+}
+
+.bg-image {
+  opacity: 1;
+  display: block;
+  transition: 0.5 ease;
+  backface-visibility: hidden;
+}
+
+.bg-middle-item {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 10px;
+}
+
+.bg-wrap:hover .bg-image {
+  opacity: 0.5;
+  transition: 0.5s ease;
+}
+
+.bg-wrap:hover .bg-middle-item {
+  opacity: 1;
+}
