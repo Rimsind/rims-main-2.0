@@ -195,12 +195,11 @@ const Footer = () => {
             <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 text-center text-sm-center text-md-center text-lg-start text-xl-start text-xxl-start">
               <p style={{ fontVariant: "small-caps" }}>
                 &copy; 2019-2022.
-                <a
-                  href="/copyright"
-                  className="text-light mx-1 text-decoration-underline"
-                >
-                  Copyright
-                </a>
+                <Link href="/copyright">
+                  <a className="text-light mx-1 text-decoration-underline">
+                    Copyright
+                  </a>
+                </Link>
                 All Right&apos;s Reserved with
                 <span className="ms-2" style={{ fontVariant: "initial" }}>
                   <mark className="shadow rounded-1">

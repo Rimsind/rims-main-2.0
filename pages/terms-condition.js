@@ -20,7 +20,7 @@ const TermsCondition = () => {
               After booking an appointment, your medical information will be
               shared with the doctors. Patient evaluation report and
               e-prescription will be shared with the Institute (polyclinic,
-              Nursing home, Hospitals) after treatment. The patient's
+              Nursing home, Hospitals) after treatment. The patient&apos;s
               e-prescription will be shared with the diagnostic center if the
               patient makes an appointment at the diagnostic center.
             </p>
