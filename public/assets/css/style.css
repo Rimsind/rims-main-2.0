@@ -4667,3 +4667,63 @@ button.btn-book-custom:focus-visible {
 .bg-wrap:hover .bg-middle-item {
   opacity: 1;
 }
+
+.list-post-content {
+  position: relative;
+}
+
+.list-post-content::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+
+.list-post-title a.post-title {
+  font-size: 20px;
+  color: #000;
+}
+.list-post-title a.post-title:hover {
+  text-decoration: underline;
+}
+
+.blog-tabs.blog-tabs-solid > li > a.active,
+.blog-tabs.blog-tabs-solid > li > a.active:hover,
+.blog-tabs.blog-tabs-solid > li > a.active:focus {
+  background: #73042b !important;
+  border-color: #73042b !important;
+  color: white !important;
+}
+
+.blog-tabs.blog-justified.blog-tabs-solid > li > a {
+  background: #222;
+  color: white;
+}
+
+.blog-tabs.blog-tabs-solid > li > a:hover {
+  background: #222 !important;
+  color: white !important;
+}
+
+.tab-content .post-widget-container {
+  padding: 25px 20px;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-top: none;
+}
+
+.post-widget-item {
+  padding-top: 20px;
+  margin-bottom: 20px;
+  border-top: "1px solid #ddd";
+}
+
+.post-widget-item:first-child {
+  padding-top: 0;
+  border-top: none;
+}
