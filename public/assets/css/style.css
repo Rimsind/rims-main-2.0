@@ -4712,7 +4712,7 @@ button.btn-book-custom:focus-visible {
 
 .tab-content .post-widget-container {
   padding: 25px 20px;
-  background: #f9f9f9;
+  background: #f3f3f3;
   border: 1px solid #eee;
   border-top: none;
 }
@@ -4720,10 +4720,62 @@ button.btn-book-custom:focus-visible {
 .post-widget-item {
   padding-top: 20px;
   margin-bottom: 20px;
-  border-top: "1px solid #ddd";
+  border-top: 1px solid #ddd;
 }
 
 .post-widget-item:first-child {
   padding-top: 0;
   border-top: none;
+}
+
+.right-blog-follow-social {
+  margin-top: 30px;
+}
+
+.widget-title h6 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #292929;
+}
+
+.widget-title {
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+.widget-title::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 70px;
+  height: 1px;
+  background: #73042b;
+}
+
+.social-box {
+  margin: 0 2% 2% 0;
+  color: #000;
+  border-radius: 2px;
+  height: 60px;
+  background: #f5f5f5;
+  border: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.social-box i {
+  text-align: center;
+  font-size: 15px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  background: #fff;
+  left: 8px;
+  top: 50%;
+  box-shadow: 0 5px 5px rgb(0 0 0 / 6%);
+  transition: all 200ms linear;
 }

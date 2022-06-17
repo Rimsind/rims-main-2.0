@@ -655,7 +655,7 @@ const Index = () => {
                         </a>
                       </li>
                     </ul>
-                    <div className="tab-content">
+                    <div className="tab-content p-0">
                       <div
                         className="tab-pane show active"
                         id="solid-justified-tab1"
@@ -735,7 +735,6 @@ const Index = () => {
                               </div>
                             </div>
                           </div>
-                          <hr />
                           <div className="post-widget-item fl-wrap">
                             <div className="list-post-right fl-wrap">
                               <div className="row align-items-center">
@@ -810,7 +809,154 @@ const Index = () => {
                               </div>
                             </div>
                           </div>
-                          <hr />
+                          <div className="post-widget-item fl-wrap">
+                            <div className="list-post-right fl-wrap">
+                              <div className="row align-items-center">
+                                <div className="col-4">
+                                  <div className="list-post-media">
+                                    <a href="#">
+                                      <div className="bg-wrap">
+                                        <Image
+                                          src="/assets/images/clinic/clinic-6.jpg"
+                                          className="bg-image"
+                                          height={350}
+                                          width={500}
+                                          alt="blog Image"
+                                        />
+                                        <div className="bg-middle-item">
+                                          <div className="middle-item-icon">
+                                            <i className="fas fa-long-arrow-right text-dark"></i>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div className="col-8">
+                                  <div className="list-post-content-right">
+                                    <div className="list-post-title">
+                                      <a
+                                        href="#"
+                                        className="post-title"
+                                        style={{
+                                          fontSize: "13px",
+                                          paddingBottom: "4px",
+                                          fontWeight: "600",
+                                        }}
+                                      >
+                                        Goodwin must Break Clarkson
+                                      </a>
+                                    </div>
+
+                                    <div className="blog-banner-lower-content">
+                                      <div className="row align-items-center">
+                                        <div className="col-6">
+                                          <div className="blog-post-time d-flex align-items-center">
+                                            <i className="fas fa-clock"></i>
+                                            <h6
+                                              className="ms-2"
+                                              style={{
+                                                marginTop: "6px",
+                                                fontSize: "10px",
+                                              }}
+                                            >
+                                              18th May, 2022
+                                            </h6>
+                                          </div>
+                                        </div>
+                                        <div className="col-6">
+                                          <div className="blog-post-time">
+                                            <i className="fas fa-comments-alt"></i>
+                                            <span className="ms-1 me-2">
+                                              56
+                                            </span>
+                                            <i className="fas fa-eye"></i>
+                                            <span className="ms-1 me-2">
+                                              56
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="post-widget-item fl-wrap">
+                            <div className="list-post-right fl-wrap">
+                              <div className="row align-items-center">
+                                <div className="col-4">
+                                  <div className="list-post-media">
+                                    <a href="#">
+                                      <div className="bg-wrap">
+                                        <Image
+                                          src="/assets/images/clinic/clinic-6.jpg"
+                                          className="bg-image"
+                                          height={350}
+                                          width={500}
+                                          alt="blog Image"
+                                        />
+                                        <div className="bg-middle-item">
+                                          <div className="middle-item-icon">
+                                            <i className="fas fa-long-arrow-right text-dark"></i>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div className="col-8">
+                                  <div className="list-post-content-right">
+                                    <div className="list-post-title">
+                                      <a
+                                        href="#"
+                                        className="post-title"
+                                        style={{
+                                          fontSize: "13px",
+                                          paddingBottom: "4px",
+                                          fontWeight: "600",
+                                        }}
+                                      >
+                                        Goodwin must Break Clarkson
+                                      </a>
+                                    </div>
+
+                                    <div className="blog-banner-lower-content">
+                                      <div className="row align-items-center">
+                                        <div className="col-6">
+                                          <div className="blog-post-time d-flex align-items-center">
+                                            <i className="fas fa-clock"></i>
+                                            <h6
+                                              className="ms-2"
+                                              style={{
+                                                marginTop: "6px",
+                                                fontSize: "10px",
+                                              }}
+                                            >
+                                              18th May, 2022
+                                            </h6>
+                                          </div>
+                                        </div>
+                                        <div className="col-6">
+                                          <div className="blog-post-time">
+                                            <i className="fas fa-comments-alt"></i>
+                                            <span className="ms-1 me-2">
+                                              56
+                                            </span>
+                                            <i className="fas fa-eye"></i>
+                                            <span className="ms-1 me-2">
+                                              56
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                       <div className="tab-pane" id="solid-justified-tab2">
@@ -889,7 +1035,6 @@ const Index = () => {
                               </div>
                             </div>
                           </div>
-                          <hr />
                           <div className="post-widget-item fl-wrap">
                             <div className="list-post-right fl-wrap">
                               <div className="row align-items-center">
@@ -964,8 +1109,179 @@ const Index = () => {
                               </div>
                             </div>
                           </div>
-                          <hr />
+                          <div className="post-widget-item fl-wrap">
+                            <div className="list-post-right fl-wrap">
+                              <div className="row align-items-center">
+                                <div className="col-4">
+                                  <div className="list-post-media">
+                                    <a href="#">
+                                      <div className="bg-wrap">
+                                        <Image
+                                          src="/assets/images/clinic/clinic-6.jpg"
+                                          className="bg-image"
+                                          height={350}
+                                          width={500}
+                                          alt="blog Image"
+                                        />
+                                        <div className="bg-middle-item">
+                                          <div className="middle-item-icon">
+                                            <i className="fas fa-long-arrow-right text-dark"></i>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div className="col-8">
+                                  <div className="list-post-content-right">
+                                    <div className="list-post-title">
+                                      <a
+                                        href="#"
+                                        className="post-title"
+                                        style={{
+                                          fontSize: "13px",
+                                          paddingBottom: "4px",
+                                          fontWeight: "600",
+                                        }}
+                                      >
+                                        Goodwin must Break Clarkson
+                                      </a>
+                                    </div>
+
+                                    <div className="blog-banner-lower-content">
+                                      <div className="row align-items-center">
+                                        <div className="col-6">
+                                          <div className="blog-post-time d-flex align-items-center">
+                                            <i className="fas fa-clock"></i>
+                                            <h6
+                                              className="ms-2"
+                                              style={{
+                                                marginTop: "6px",
+                                                fontSize: "10px",
+                                              }}
+                                            >
+                                              18th May, 2022
+                                            </h6>
+                                          </div>
+                                        </div>
+                                        <div className="col-6">
+                                          <div className="blog-post-time">
+                                            <i className="fas fa-comments-alt"></i>
+                                            <span className="ms-1 me-2">
+                                              56
+                                            </span>
+                                            <i className="fas fa-eye"></i>
+                                            <span className="ms-1 me-2">
+                                              56
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="post-widget-item fl-wrap">
+                            <div className="list-post-right fl-wrap">
+                              <div className="row align-items-center">
+                                <div className="col-4">
+                                  <div className="list-post-media">
+                                    <a href="#">
+                                      <div className="bg-wrap">
+                                        <Image
+                                          src="/assets/images/clinic/clinic-6.jpg"
+                                          className="bg-image"
+                                          height={350}
+                                          width={500}
+                                          alt="blog Image"
+                                        />
+                                        <div className="bg-middle-item">
+                                          <div className="middle-item-icon">
+                                            <i className="fas fa-long-arrow-right text-dark"></i>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div className="col-8">
+                                  <div className="list-post-content-right">
+                                    <div className="list-post-title">
+                                      <a
+                                        href="#"
+                                        className="post-title"
+                                        style={{
+                                          fontSize: "13px",
+                                          paddingBottom: "4px",
+                                          fontWeight: "600",
+                                        }}
+                                      >
+                                        Goodwin must Break Clarkson
+                                      </a>
+                                    </div>
+
+                                    <div className="blog-banner-lower-content">
+                                      <div className="row align-items-center">
+                                        <div className="col-6">
+                                          <div className="blog-post-time d-flex align-items-center">
+                                            <i className="fas fa-clock"></i>
+                                            <h6
+                                              className="ms-2"
+                                              style={{
+                                                marginTop: "6px",
+                                                fontSize: "10px",
+                                              }}
+                                            >
+                                              18th May, 2022
+                                            </h6>
+                                          </div>
+                                        </div>
+                                        <div className="col-6">
+                                          <div className="blog-post-time">
+                                            <i className="fas fa-comments-alt"></i>
+                                            <span className="ms-1 me-2">
+                                              56
+                                            </span>
+                                            <i className="fas fa-eye"></i>
+                                            <span className="ms-1 me-2">
+                                              56
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="right-blog-follow-social">
+                    <div className="widget-title">
+                      <h6>Follow Us</h6>
+                    </div>
+                    <div className="row align-items-center">
+                      <div className="col-6">
+                        <div className="social-box">
+                          <i class="fab fa-facebook-f"></i>
+                          <span>
+                            Likes <b>2640</b>
+                          </span>
+                        </div>
+                      </div>
+                      <div className="col-6">
+                        <p>Hello World</p>
+                      </div>
+                      <div className="col-6">
+                        <p>Hello World</p>
+                      </div>
+                      <div className="col-6">
+                        <p>Hello World</p>
                       </div>
                     </div>
                   </div>
