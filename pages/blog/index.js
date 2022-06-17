@@ -630,9 +630,22 @@ const Index = () => {
                       </div>
                     </div>
                   </div>
+                  <div className="left-blog-banner">
+                    <Image
+                      src="/assets/images/background_image_03.jpg"
+                      height={300}
+                      width={1000}
+                      alt="Blog Ad Banner For Rims"
+                    />
+                  </div>
+                  <div className="left-blog-read-more">
+                    <div className="d-grid gap-2">
+                      <button className="btn btn-dark">Read More</button>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+              <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 sticky-top">
                 <div className="right-blog-content">
                   <div className="right-blog-tab">
                     <ul className="nav nav-tabs blog-tabs blog-tabs-solid nav-tabs-solid  blog-justified nav-justified">
@@ -1265,23 +1278,126 @@ const Index = () => {
                     <div className="widget-title">
                       <h6>Follow Us</h6>
                     </div>
-                    <div className="row align-items-center">
+                    <div className="row g-0 align-items-center">
                       <div className="col-6">
-                        <div className="social-box">
-                          <i class="fab fa-facebook-f"></i>
-                          <span>
-                            Likes <b>2640</b>
-                          </span>
+                        <a href="#" target="_blank">
+                          <div className="social-box">
+                            <i
+                              class="fab fa-facebook-f"
+                              style={{ color: "#3C579C" }}
+                            ></i>
+                            <span style={{ color: "#6c757d" }}>
+                              Likes
+                              <b className="ms-2" style={{ color: "#000" }}>
+                                2640
+                              </b>
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+                      <div className="col-6">
+                        <a href="#" target="_blank">
+                          <div className="social-box">
+                            <i
+                              class="fab fa-twitter"
+                              style={{ color: "#39A1F8" }}
+                            ></i>
+                            <span style={{ color: "#6c757d" }}>
+                              Followers
+                              <b className="ms-2" style={{ color: "#000" }}>
+                                1640
+                              </b>
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+                      <div className="col-6">
+                        <a href="#" target="_blank">
+                          <div className="social-box">
+                            <i
+                              class="fab fa-youtube"
+                              style={{ color: "#e93314" }}
+                            ></i>
+                            <span style={{ color: "#6c757d" }}>
+                              Followers
+                              <b className="ms-2" style={{ color: "#000" }}>
+                                26K
+                              </b>
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+                      <div className="col-6">
+                        <a href="#" target="_blank">
+                          <div className="social-box">
+                            <i
+                              class="fab fa-instagram"
+                              style={{ color: "#c862dc" }}
+                            ></i>
+                            <span style={{ color: "#6c757d" }}>
+                              Followers
+                              <b className="ms-2" style={{ color: "#000" }}>
+                                2240
+                              </b>
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="right-blog-follow-social">
+                    <div className="widget-title">
+                      <h6>Popular Tag</h6>
+                    </div>
+                    <div className="row align-items-center">
+                      <div className="col">
+                        <div className="post-categories-marker-left">
+                          <a className="marker" href="#">
+                            #Business
+                          </a>
                         </div>
                       </div>
-                      <div className="col-6">
-                        <p>Hello World</p>
+                      <div className="col">
+                        <div className="post-categories-marker-left">
+                          <a className="marker" href="#">
+                            #Doctor
+                          </a>
+                        </div>
                       </div>
-                      <div className="col-6">
-                        <p>Hello World</p>
+                      <div className="col">
+                        <div className="post-categories-marker-left">
+                          <a className="marker" href="#">
+                            #Nurse
+                          </a>
+                        </div>
                       </div>
-                      <div className="col-6">
-                        <p>Hello World</p>
+                      <div className="col">
+                        <div className="post-categories-marker-left">
+                          <a className="marker" href="#">
+                            #Hospital
+                          </a>
+                        </div>
+                      </div>
+                      <div className="col">
+                        <div className="post-categories-marker-left">
+                          <a className="marker" href="#">
+                            #NursingHome
+                          </a>
+                        </div>
+                      </div>
+                      <div className="col">
+                        <div className="post-categories-marker-left">
+                          <a className="marker" href="#">
+                            #Polyclinic
+                          </a>
+                        </div>
+                      </div>
+                      <div className="col">
+                        <div className="post-categories-marker-left">
+                          <a className="marker" href="#">
+                            #DiagnosticCenter
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>

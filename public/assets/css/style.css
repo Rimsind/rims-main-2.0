@@ -4779,3 +4779,19 @@ button.btn-book-custom:focus-visible {
   box-shadow: 0 5px 5px rgb(0 0 0 / 6%);
   transition: all 200ms linear;
 }
+
+.post-categories-marker-left a.marker {
+  background: #000;
+  padding: 6px 13px;
+  font-size: 11px;
+  border-radius: 2px;
+  color: white;
+}
+
+.post-categories-marker-left a.marker:hover {
+  background: #73042b;
+}
+
+.post-categories-marker-left {
+  margin: 0 0 10px 0;
+}
