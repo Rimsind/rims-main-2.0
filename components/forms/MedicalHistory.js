@@ -39,7 +39,7 @@ const MedicalHistory = ({
   const [surgery, setSurgery] = useState();
   const [surgeryDate, setSurgeryDate] = useState();
   const [allSurgery, setAllSurgery] = useState(
-    past_surgical_history.concat([])
+    past_surgical_history?.concat([])
   );
 
   const addNewSurgery = async () => {
@@ -75,7 +75,7 @@ const MedicalHistory = ({
   const [sideEffect, setSideEffect] = useState();
   const [ifYes, setIfYes] = useState();
   const [allMedicaton, setAllMediation] = useState(
-    past_medication_history.concat([])
+    past_medication_history?.concat([])
   );
 
   const addNewMedicine = async () => {
@@ -581,7 +581,7 @@ const MedicalHistory = ({
                 </tr>
               </thead>
               <tbody>
-                {allSurgery.length === 0 ? (
+                {allSurgery?.length === 0 ? (
                   <tr>
                     <td colSpan="4" className="text-danger text-center">
                       No Previous Records Found !!
@@ -761,7 +761,7 @@ const MedicalHistory = ({
                     aria-label="Default select example"
                     onChange={(e) => setFrequency(e.target.value)}
                   >
-                    {frequencyList.map((item, index) => (
+                    {frequencyList?.map((item, index) => (
                       <option value={item} key={index}>
                         {item}
                       </option>
@@ -846,7 +846,7 @@ const MedicalHistory = ({
               </tr>
             </thead>
             <tbody>
-              {allMedicaton.length === 0 ? (
+              {allMedicaton?.length === 0 ? (
                 <tr>
                   <td colSpan="9" className="text-danger text-center">
                     No Previous Records Found !!

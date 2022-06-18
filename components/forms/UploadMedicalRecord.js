@@ -20,7 +20,7 @@ const UploadMedicalRecord = ({
   const [title, setTitle] = useState();
   const [profileImage, setProfileImage] = useState();
   const [allRecords, setAllRecords] = useState(
-    upload_medical_record.concat([])
+    upload_medical_record?.concat([])
   );
 
   const addNewEntry = async () => {
@@ -164,7 +164,7 @@ const UploadMedicalRecord = ({
           </tr>
         </thead>
         <tbody>
-          {allRecords.length === 0 ? (
+          {allRecords?.length === 0 ? (
             <tr>
               <td colSpan="3" className="text-danger text-center">
                 No Previous Records Found !!

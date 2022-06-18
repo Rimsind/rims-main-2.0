@@ -25,7 +25,7 @@ const FamilyMadicalHistory = ({ familyHistory, patientId, updated_at }) => {
   const dataLength = familyHistory?.length;
   const { auth } = useAuth();
   const [loading, setLoading] = useState(false);
-  const [allHistory, setAllHistory] = useState(familyHistory.concat([]));
+  const [allHistory, setAllHistory] = useState(familyHistory?.concat([]));
   const { register, handleSubmit, reset } = useForm();
   const addNewEntry = async (data, event) => {
     event.preventDefault();
@@ -192,7 +192,7 @@ const FamilyMadicalHistory = ({ familyHistory, patientId, updated_at }) => {
             Please mention Medical Problems (Check all that apply)
           </h3>
           <div className="row justify-centent-between align-items-center">
-            {disease.map((item, index) => (
+            {disease?.map((item, index) => (
               <div className="col-md-3" key={index}>
                 <div className="row">
                   <div className="col-md-2">
@@ -250,7 +250,7 @@ const FamilyMadicalHistory = ({ familyHistory, patientId, updated_at }) => {
               </tr>
             </thead>
             <tbody>
-              {allHistory.length === 0 ? (
+              {allHistory?.length === 0 ? (
                 <>
                   <tr>
                     <td colSpan="6" className="text-danger text-center">
