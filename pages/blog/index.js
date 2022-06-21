@@ -1283,7 +1283,7 @@ const Index = () => {
                         <a href="#" target="_blank">
                           <div className="social-box">
                             <i
-                              class="fab fa-facebook-f"
+                              className="fab fa-facebook-f"
                               style={{ color: "#3C579C" }}
                             ></i>
                             <span style={{ color: "#6c757d" }}>
@@ -1299,7 +1299,7 @@ const Index = () => {
                         <a href="#" target="_blank">
                           <div className="social-box">
                             <i
-                              class="fab fa-twitter"
+                              className="fab fa-twitter"
                               style={{ color: "#39A1F8" }}
                             ></i>
                             <span style={{ color: "#6c757d" }}>
@@ -1315,7 +1315,7 @@ const Index = () => {
                         <a href="#" target="_blank">
                           <div className="social-box">
                             <i
-                              class="fab fa-youtube"
+                              className="fab fa-youtube"
                               style={{ color: "#e93314" }}
                             ></i>
                             <span style={{ color: "#6c757d" }}>
@@ -1331,7 +1331,7 @@ const Index = () => {
                         <a href="#" target="_blank">
                           <div className="social-box">
                             <i
-                              class="fab fa-instagram"
+                              className="fab fa-instagram"
                               style={{ color: "#c862dc" }}
                             ></i>
                             <span style={{ color: "#6c757d" }}>
