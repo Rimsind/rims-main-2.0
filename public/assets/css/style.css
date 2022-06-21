@@ -4795,3 +4795,12 @@ button.btn-book-custom:focus-visible {
 .post-categories-marker-left {
   margin: 0 0 10px 0;
 }
+
+.card .card-footer {
+  background: #73042b;
+  text-align: center;
+}
+
+.card .card-footer:hover {
+  background: black;
+}
