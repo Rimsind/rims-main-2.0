@@ -4566,10 +4566,10 @@ button.btn-book-custom:focus-visible {
 .blog-read-more-btn a.read-now-link {
   color: #001038;
   font-size: 16px;
-  font-weight: 500;
-  /* border-bottom: 3px solid #fff3; */
+  font-weight: 600;
   padding: 8px 13px;
   border: 2px solid #fff3;
+  font-family: poppins;
 }
 
 .blog-read-more-btn a.read-now-link:hover {
