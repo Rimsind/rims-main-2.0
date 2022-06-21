@@ -43,7 +43,7 @@ const Index = () => {
             </div>
             <div className="blog-banner-lower-content">
               <div className="row align-items-center">
-                <div className="col-2">
+                <div className="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-2">
                   <a className="author-link" href="#">
                     <div className="banner-author-content d-flex align-items-center">
                       <div className="author-content-image">
@@ -70,7 +70,7 @@ const Index = () => {
                     </div>
                   </a>
                 </div>
-                <div className="col-2">
+                <div className="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-2">
                   <div className="blog-post-time d-flex align-items-center">
                     <i className="fas fa-clock"></i>
                     <h6 className="ms-2" style={{ marginTop: "6px" }}>
@@ -102,7 +102,7 @@ const Index = () => {
                     {/* Blog Post Item */}
                     <div className="list-post fl-wrap">
                       <div className="row align-items-center">
-                        <div className="col-5">
+                        <div className="col-12 col-sm-5 col-md-5 col-lg-5 col-xl-5 col-xxl-5">
                           <div className="list-post-media">
                             <a href="#">
                               <div className="bg-wrap">
@@ -128,7 +128,7 @@ const Index = () => {
                             </a>
                           </div>
                         </div>
-                        <div className="col-7">
+                        <div className="col-12 col-sm-7 col-md-7 col-lg-7 col-xl-7 col-xxl-7 mt-2 mt-sm-0 mt-md-0 mt-lg-0 mt-xl-0 mt-xxl-0">
                           <div className="list-post-content">
                             <div className="post-categories-marker">
                               <a className="marker" href="#">
@@ -208,7 +208,7 @@ const Index = () => {
                     {/* Blog Post Item */}
                     <div className="list-post fl-wrap">
                       <div className="row align-items-center">
-                        <div className="col-5">
+                        <div className="col-12 col-sm-5 col-md-5 col-lg-5 col-xl-5 col-xxl-5">
                           <div className="list-post-media">
                             <a href="#">
                               <div className="bg-wrap">
@@ -234,7 +234,7 @@ const Index = () => {
                             </a>
                           </div>
                         </div>
-                        <div className="col-7">
+                        <div className="col-12 col-sm-7 col-md-7 col-lg-7 col-xl-7 col-xxl-7 mt-2 mt-sm-0 mt-md-0 mt-lg-0 mt-xl-0 mt-xxl-0">
                           <div className="list-post-content">
                             <div className="post-categories-marker">
                               <a className="marker" href="#">
@@ -314,7 +314,7 @@ const Index = () => {
                     {/* Blog Post Item */}
                     <div className="list-post fl-wrap">
                       <div className="row align-items-center">
-                        <div className="col-5">
+                        <div className="col-12 col-sm-5 col-md-5 col-lg-5 col-xl-5 col-xxl-5">
                           <div className="list-post-media">
                             <a href="#">
                               <div className="bg-wrap">
@@ -340,7 +340,7 @@ const Index = () => {
                             </a>
                           </div>
                         </div>
-                        <div className="col-7">
+                        <div className="col-12 col-sm-7 col-md-7 col-lg-7 col-xl-7 col-xxl-7 mt-2 mt-sm-0 mt-md-0 mt-lg-0 mt-xl-0 mt-xxl-0">
                           <div className="list-post-content">
                             <div className="post-categories-marker">
                               <a className="marker" href="#">
@@ -420,7 +420,7 @@ const Index = () => {
                     {/* Blog Post Item */}
                     <div className="list-post fl-wrap">
                       <div className="row align-items-center">
-                        <div className="col-5">
+                        <div className="col-12 col-sm-5 col-md-5 col-lg-5 col-xl-5 col-xxl-5">
                           <div className="list-post-media">
                             <a href="#">
                               <div className="bg-wrap">
@@ -446,7 +446,7 @@ const Index = () => {
                             </a>
                           </div>
                         </div>
-                        <div className="col-7">
+                        <div className="col-12 col-sm-7 col-md-7 col-lg-7 col-xl-7 col-xxl-7 mt-2 mt-sm-0 mt-md-0 mt-lg-0 mt-xl-0 mt-xxl-0">
                           <div className="list-post-content">
                             <div className="post-categories-marker">
                               <a className="marker" href="#">
@@ -526,7 +526,7 @@ const Index = () => {
                     {/* Blog Post Item */}
                     <div className="list-post fl-wrap">
                       <div className="row align-items-center">
-                        <div className="col-5">
+                        <div className="col-12 col-sm-5 col-md-5 col-lg-5 col-xl-5 col-xxl-5">
                           <div className="list-post-media">
                             <a href="#">
                               <div className="bg-wrap">
@@ -552,7 +552,7 @@ const Index = () => {
                             </a>
                           </div>
                         </div>
-                        <div className="col-7">
+                        <div className="col-12 col-sm-7 col-md-7 col-lg-7 col-xl-7 col-xxl-7 mt-2 mt-sm-0 mt-md-0 mt-lg-0 mt-xl-0 mt-xxl-0">
                           <div className="list-post-content">
                             <div className="post-categories-marker">
                               <a className="marker" href="#">
@@ -645,10 +645,10 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 sticky-top">
+              <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 sticky-top mt-3 mt-sm-3 mt-md-3 mt-lg-0 mt-xl-0 mt-xxl-0">
                 <div className="right-blog-content">
                   <div className="right-blog-tab">
-                    <ul className="nav nav-tabs blog-tabs blog-tabs-solid nav-tabs-solid  blog-justified nav-justified">
+                    <ul className="nav nav-tabs blog-tabs blog-tabs-solid nav-tabs-solid blog-justified nav-justified">
                       <li className="nav-item">
                         <a
                           className="nav-link blog-link active"
@@ -677,7 +677,7 @@ const Index = () => {
                           <div className="post-widget-item fl-wrap">
                             <div className="list-post-right fl-wrap">
                               <div className="row align-items-center">
-                                <div className="col-4">
+                                <div className="col-4 col-sm-3 col-md-4 col-lg-5 col-xl-4 col-xxl-4">
                                   <div className="list-post-media">
                                     <a href="#">
                                       <div className="bg-wrap">
@@ -697,7 +697,7 @@ const Index = () => {
                                     </a>
                                   </div>
                                 </div>
-                                <div className="col-8">
+                                <div className="col-8 col-sm-9 col-md-8 col-lg-7 col-xl-8 col-xxl-8">
                                   <div className="list-post-content-right">
                                     <div className="list-post-title">
                                       <a
@@ -715,7 +715,7 @@ const Index = () => {
 
                                     <div className="blog-banner-lower-content">
                                       <div className="row align-items-center">
-                                        <div className="col-6">
+                                        <div className="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-6 col-xxl-6 ">
                                           <div className="blog-post-time d-flex align-items-center">
                                             <i className="fas fa-clock"></i>
                                             <h6
@@ -729,7 +729,7 @@ const Index = () => {
                                             </h6>
                                           </div>
                                         </div>
-                                        <div className="col-6">
+                                        <div className="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-6 col-xxl-6">
                                           <div className="blog-post-time">
                                             <i className="fas fa-comments-alt"></i>
                                             <span className="ms-1 me-2">
@@ -751,7 +751,7 @@ const Index = () => {
                           <div className="post-widget-item fl-wrap">
                             <div className="list-post-right fl-wrap">
                               <div className="row align-items-center">
-                                <div className="col-4">
+                                <div className="col-4 col-sm-3 col-md-4 col-lg-5 col-xl-4 col-xxl-4">
                                   <div className="list-post-media">
                                     <a href="#">
                                       <div className="bg-wrap">
@@ -771,7 +771,7 @@ const Index = () => {
                                     </a>
                                   </div>
                                 </div>
-                                <div className="col-8">
+                                <div className="col-8 col-sm-9 col-md-8 col-lg-7 col-xl-8 col-xxl-8">
                                   <div className="list-post-content-right">
                                     <div className="list-post-title">
                                       <a
@@ -789,7 +789,7 @@ const Index = () => {
 
                                     <div className="blog-banner-lower-content">
                                       <div className="row align-items-center">
-                                        <div className="col-6">
+                                        <div className="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-6 col-xxl-6 ">
                                           <div className="blog-post-time d-flex align-items-center">
                                             <i className="fas fa-clock"></i>
                                             <h6
@@ -803,7 +803,7 @@ const Index = () => {
                                             </h6>
                                           </div>
                                         </div>
-                                        <div className="col-6">
+                                        <div className="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-6 col-xxl-6">
                                           <div className="blog-post-time">
                                             <i className="fas fa-comments-alt"></i>
                                             <span className="ms-1 me-2">
@@ -825,7 +825,7 @@ const Index = () => {
                           <div className="post-widget-item fl-wrap">
                             <div className="list-post-right fl-wrap">
                               <div className="row align-items-center">
-                                <div className="col-4">
+                                <div className="col-4 col-sm-3 col-md-4 col-lg-5 col-xl-4 col-xxl-4">
                                   <div className="list-post-media">
                                     <a href="#">
                                       <div className="bg-wrap">
@@ -845,7 +845,7 @@ const Index = () => {
                                     </a>
                                   </div>
                                 </div>
-                                <div className="col-8">
+                                <div className="col-8 col-sm-9 col-md-8 col-lg-7 col-xl-8 col-xxl-8">
                                   <div className="list-post-content-right">
                                     <div className="list-post-title">
                                       <a
@@ -863,7 +863,7 @@ const Index = () => {
 
                                     <div className="blog-banner-lower-content">
                                       <div className="row align-items-center">
-                                        <div className="col-6">
+                                        <div className="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-6 col-xxl-6 ">
                                           <div className="blog-post-time d-flex align-items-center">
                                             <i className="fas fa-clock"></i>
                                             <h6
@@ -877,7 +877,7 @@ const Index = () => {
                                             </h6>
                                           </div>
                                         </div>
-                                        <div className="col-6">
+                                        <div className="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-6 col-xxl-6">
                                           <div className="blog-post-time">
                                             <i className="fas fa-comments-alt"></i>
                                             <span className="ms-1 me-2">
@@ -899,7 +899,7 @@ const Index = () => {
                           <div className="post-widget-item fl-wrap">
                             <div className="list-post-right fl-wrap">
                               <div className="row align-items-center">
-                                <div className="col-4">
+                                <div className="col-4 col-sm-3 col-md-4 col-lg-5 col-xl-4 col-xxl-4">
                                   <div className="list-post-media">
                                     <a href="#">
                                       <div className="bg-wrap">
@@ -919,7 +919,7 @@ const Index = () => {
                                     </a>
                                   </div>
                                 </div>
-                                <div className="col-8">
+                                <div className="col-8 col-sm-9 col-md-8 col-lg-7 col-xl-8 col-xxl-8">
                                   <div className="list-post-content-right">
                                     <div className="list-post-title">
                                       <a
@@ -937,7 +937,7 @@ const Index = () => {
 
                                     <div className="blog-banner-lower-content">
                                       <div className="row align-items-center">
-                                        <div className="col-6">
+                                        <div className="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-6 col-xxl-6 ">
                                           <div className="blog-post-time d-flex align-items-center">
                                             <i className="fas fa-clock"></i>
                                             <h6
@@ -951,7 +951,7 @@ const Index = () => {
                                             </h6>
                                           </div>
                                         </div>
-                                        <div className="col-6">
+                                        <div className="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-6 col-xxl-6">
                                           <div className="blog-post-time">
                                             <i className="fas fa-comments-alt"></i>
                                             <span className="ms-1 me-2">
@@ -977,7 +977,7 @@ const Index = () => {
                           <div className="post-widget-item fl-wrap">
                             <div className="list-post-right fl-wrap">
                               <div className="row align-items-center">
-                                <div className="col-4">
+                                <div className="col-4 col-sm-3 col-md-4 col-lg-5 col-xl-4 col-xxl-4">
                                   <div className="list-post-media">
                                     <a href="#">
                                       <div className="bg-wrap">
@@ -997,7 +997,7 @@ const Index = () => {
                                     </a>
                                   </div>
                                 </div>
-                                <div className="col-8">
+                                <div className="col-8 col-sm-9 col-md-8 col-lg-7 col-xl-8 col-xxl-8">
                                   <div className="list-post-content-right">
                                     <div className="list-post-title">
                                       <a
@@ -1015,7 +1015,7 @@ const Index = () => {
 
                                     <div className="blog-banner-lower-content">
                                       <div className="row align-items-center">
-                                        <div className="col-6">
+                                        <div className="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-6 col-xxl-6 ">
                                           <div className="blog-post-time d-flex align-items-center">
                                             <i className="fas fa-clock"></i>
                                             <h6
@@ -1029,7 +1029,7 @@ const Index = () => {
                                             </h6>
                                           </div>
                                         </div>
-                                        <div className="col-6">
+                                        <div className="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-6 col-xxl-6">
                                           <div className="blog-post-time">
                                             <i className="fas fa-comments-alt"></i>
                                             <span className="ms-1 me-2">
@@ -1051,7 +1051,7 @@ const Index = () => {
                           <div className="post-widget-item fl-wrap">
                             <div className="list-post-right fl-wrap">
                               <div className="row align-items-center">
-                                <div className="col-4">
+                                <div className="col-4 col-sm-3 col-md-4 col-lg-5 col-xl-4 col-xxl-4">
                                   <div className="list-post-media">
                                     <a href="#">
                                       <div className="bg-wrap">
@@ -1071,7 +1071,7 @@ const Index = () => {
                                     </a>
                                   </div>
                                 </div>
-                                <div className="col-8">
+                                <div className="col-8 col-sm-9 col-md-8 col-lg-7 col-xl-8 col-xxl-8">
                                   <div className="list-post-content-right">
                                     <div className="list-post-title">
                                       <a
@@ -1089,7 +1089,7 @@ const Index = () => {
 
                                     <div className="blog-banner-lower-content">
                                       <div className="row align-items-center">
-                                        <div className="col-6">
+                                        <div className="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-6 col-xxl-6 ">
                                           <div className="blog-post-time d-flex align-items-center">
                                             <i className="fas fa-clock"></i>
                                             <h6
@@ -1103,7 +1103,7 @@ const Index = () => {
                                             </h6>
                                           </div>
                                         </div>
-                                        <div className="col-6">
+                                        <div className="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-6 col-xxl-6">
                                           <div className="blog-post-time">
                                             <i className="fas fa-comments-alt"></i>
                                             <span className="ms-1 me-2">
@@ -1125,7 +1125,7 @@ const Index = () => {
                           <div className="post-widget-item fl-wrap">
                             <div className="list-post-right fl-wrap">
                               <div className="row align-items-center">
-                                <div className="col-4">
+                                <div className="col-4 col-sm-3 col-md-4 col-lg-5 col-xl-4 col-xxl-4">
                                   <div className="list-post-media">
                                     <a href="#">
                                       <div className="bg-wrap">
@@ -1145,7 +1145,7 @@ const Index = () => {
                                     </a>
                                   </div>
                                 </div>
-                                <div className="col-8">
+                                <div className="col-8 col-sm-9 col-md-8 col-lg-7 col-xl-8 col-xxl-8">
                                   <div className="list-post-content-right">
                                     <div className="list-post-title">
                                       <a
@@ -1163,7 +1163,7 @@ const Index = () => {
 
                                     <div className="blog-banner-lower-content">
                                       <div className="row align-items-center">
-                                        <div className="col-6">
+                                        <div className="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-6 col-xxl-6 ">
                                           <div className="blog-post-time d-flex align-items-center">
                                             <i className="fas fa-clock"></i>
                                             <h6
@@ -1177,7 +1177,7 @@ const Index = () => {
                                             </h6>
                                           </div>
                                         </div>
-                                        <div className="col-6">
+                                        <div className="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-6 col-xxl-6">
                                           <div className="blog-post-time">
                                             <i className="fas fa-comments-alt"></i>
                                             <span className="ms-1 me-2">
@@ -1199,7 +1199,7 @@ const Index = () => {
                           <div className="post-widget-item fl-wrap">
                             <div className="list-post-right fl-wrap">
                               <div className="row align-items-center">
-                                <div className="col-4">
+                                <div className="col-4 col-sm-3 col-md-4 col-lg-5 col-xl-4 col-xxl-4">
                                   <div className="list-post-media">
                                     <a href="#">
                                       <div className="bg-wrap">
@@ -1219,7 +1219,7 @@ const Index = () => {
                                     </a>
                                   </div>
                                 </div>
-                                <div className="col-8">
+                                <div className="col-8 col-sm-9 col-md-8 col-lg-7 col-xl-8 col-xxl-8">
                                   <div className="list-post-content-right">
                                     <div className="list-post-title">
                                       <a
@@ -1237,7 +1237,7 @@ const Index = () => {
 
                                     <div className="blog-banner-lower-content">
                                       <div className="row align-items-center">
-                                        <div className="col-6">
+                                        <div className="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-6 col-xxl-6 ">
                                           <div className="blog-post-time d-flex align-items-center">
                                             <i className="fas fa-clock"></i>
                                             <h6
@@ -1251,7 +1251,7 @@ const Index = () => {
                                             </h6>
                                           </div>
                                         </div>
-                                        <div className="col-6">
+                                        <div className="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-6 col-xxl-6">
                                           <div className="blog-post-time">
                                             <i className="fas fa-comments-alt"></i>
                                             <span className="ms-1 me-2">
@@ -1279,7 +1279,7 @@ const Index = () => {
                       <h6>Follow Us</h6>
                     </div>
                     <div className="row g-0 align-items-center">
-                      <div className="col-6">
+                      <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                         <a href="#" target="_blank">
                           <div className="social-box">
                             <i
@@ -1295,7 +1295,7 @@ const Index = () => {
                           </div>
                         </a>
                       </div>
-                      <div className="col-6">
+                      <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                         <a href="#" target="_blank">
                           <div className="social-box">
                             <i
@@ -1311,7 +1311,7 @@ const Index = () => {
                           </div>
                         </a>
                       </div>
-                      <div className="col-6">
+                      <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                         <a href="#" target="_blank">
                           <div className="social-box">
                             <i
@@ -1327,7 +1327,7 @@ const Index = () => {
                           </div>
                         </a>
                       </div>
-                      <div className="col-6">
+                      <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                         <a href="#" target="_blank">
                           <div className="social-box">
                             <i
