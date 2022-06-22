@@ -339,6 +339,206 @@ const SingleBlog = () => {
                         </div>
                       </div>
                     </div>
+                    <div id="comments" className="single-post-comm fl-wrap">
+                      <div className="pr-subtitle">
+                        Comments <span>3</span>
+                      </div>
+                      <ul className="commentlist list-unstyled clearfix">
+                        <li className="comment my-4">
+                          <div className="comment-author">
+                            <Image
+                              src="/user_assets/img/clinic/clinic-6.jpg"
+                              height={70}
+                              width={70}
+                              alt="Author Image"
+                              className="rounded-circle"
+                            />
+                          </div>
+                          <div className="comment-body">
+                            <h4>
+                              <a href="#" className="text-dark">
+                                Mark Rose
+                              </a>
+                            </h4>
+                            {/* <div className="box-widget-menu-btn">
+                              <i className="far fa-ellipsis-h"></i>
+                            </div>
+                            <div className="show-more-tooltip">
+                              <a href="#">
+                                <i className="fas fa-reply"></i>Reply
+                              </a>
+                            </div> */}
+                            <div className="clearfix"></div>
+                            <p>
+                              Lorem ipsum dolor sit amet, consectetuer
+                              adipiscing elit. Phasellus hendrerit. Pellentesque
+                              aliquet nibh nec urna. In nisi neque, aliquet vel,
+                              dapibus id, mattis vel, nisi. Sed pretium, ligula
+                              sollicitudin laoreet viverra, tortor libero
+                              sodales leo, eget blandit nunc tortor eu nibh.
+                              Nullam mollis. Ut justo.
+                            </p>
+                            <a
+                              href="#"
+                              className="comment-reply-link text-white"
+                            >
+                              <i className="fas fa-reply me-2"></i>
+                              Reply
+                            </a>
+                            <div className="comment-meta">
+                              <i
+                                className="far fa-clock me-2"
+                                style={{ color: "#73042b" }}
+                              ></i>
+                              January 02, 2022
+                            </div>
+                            <div className="comment-body-dec"></div>
+                          </div>
+                        </li>
+                        <li className="comment comment-reply my-4">
+                          <div className="comment-author">
+                            <Image
+                              src="/user_assets/img/clinic/clinic-6.jpg"
+                              height={70}
+                              width={70}
+                              alt="Author Image"
+                              className="rounded-circle"
+                            />
+                          </div>
+                          <div className="comment-body">
+                            <h4>
+                              <a href="#" className="text-dark">
+                                Mark Rose
+                              </a>
+                            </h4>
+                            {/* <div className="box-widget-menu-btn">
+                              <i className="far fa-ellipsis-h"></i>
+                            </div>
+                            <div className="show-more-tooltip">
+                              <a href="#">
+                                <i className="fas fa-reply"></i>Reply
+                              </a>
+                            </div> */}
+                            <div className="clearfix"></div>
+                            <p>
+                              Lorem ipsum dolor sit amet, consectetuer
+                              adipiscing elit. Phasellus hendrerit. Pellentesque
+                              aliquet nibh nec urna. In nisi neque, aliquet vel,
+                              dapibus id, mattis vel, nisi. Sed pretium, ligula
+                              sollicitudin laoreet viverra, tortor libero
+                              sodales leo, eget blandit nunc tortor eu nibh.
+                              Nullam mollis. Ut justo.
+                            </p>
+                            <a
+                              href="#"
+                              className="comment-reply-link text-white"
+                            >
+                              <i className="fas fa-reply me-2"></i>
+                              Reply
+                            </a>
+                            <div className="comment-meta">
+                              <i
+                                className="far fa-clock me-2"
+                                style={{ color: "#73042b" }}
+                              ></i>
+                              January 02, 2022
+                            </div>
+                            <div className="comment-body-dec"></div>
+                          </div>
+                        </li>
+                        <li className="comment my-4">
+                          <div className="comment-author">
+                            <Image
+                              src="/user_assets/img/clinic/clinic-6.jpg"
+                              height={70}
+                              width={70}
+                              alt="Author Image"
+                              className="rounded-circle"
+                            />
+                          </div>
+                          <div className="comment-body">
+                            <h4>
+                              <a href="#" className="text-dark">
+                                Mark Rose
+                              </a>
+                            </h4>
+                            {/* <div className="box-widget-menu-btn">
+                              <i className="far fa-ellipsis-h"></i>
+                            </div>
+                            <div className="show-more-tooltip">
+                              <a href="#">
+                                <i className="fas fa-reply"></i>Reply
+                              </a>
+                            </div> */}
+                            <div className="clearfix"></div>
+                            <p>
+                              Lorem ipsum dolor sit amet, consectetuer
+                              adipiscing elit. Phasellus hendrerit. Pellentesque
+                              aliquet nibh nec urna. In nisi neque, aliquet vel,
+                              dapibus id, mattis vel, nisi. Sed pretium, ligula
+                              sollicitudin laoreet viverra, tortor libero
+                              sodales leo, eget blandit nunc tortor eu nibh.
+                              Nullam mollis. Ut justo.
+                            </p>
+                            <a
+                              href="#"
+                              className="comment-reply-link text-white"
+                            >
+                              <i className="fas fa-reply me-2"></i>
+                              Reply
+                            </a>
+                            <div className="comment-meta">
+                              <i
+                                className="far fa-clock me-2"
+                                style={{ color: "#73042b" }}
+                              ></i>
+                              January 02, 2022
+                            </div>
+                            <div className="comment-body-dec"></div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="addcom">
+                      <div className="widget-title">
+                        <h6>Leave a Comment</h6>
+                      </div>
+                      <form>
+                        <div className="row align-items-center">
+                          <div className="col-6">
+                            <div className="mb-3 shadow-sm">
+                              <input
+                                type="text"
+                                className="form-control"
+                                placeholder="Your Name*"
+                              />
+                            </div>
+                          </div>
+                          <div className="col-6">
+                            <div className="mb-3 shadow-sm">
+                              <input
+                                type="email"
+                                className="form-control"
+                                placeholder="Email Address*"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div className="mb-3 shadow-sm">
+                          <textarea
+                            className="form-control"
+                            id="exampleFormControlTextarea1"
+                            rows="10"
+                            placeholder="Your Comment:"
+                          ></textarea>
+                        </div>
+                        <div className="mb-3">
+                          <button className="btn custom-comm-btn">
+                            Submit Comment
+                          </button>
+                        </div>
+                      </form>
+                    </div>
                   </div>
                 </div>
               </div>
