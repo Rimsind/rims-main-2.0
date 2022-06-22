@@ -74,7 +74,6 @@ const Signup = () => {
       return;
     }
   };
-  console.log(clinicName, email, phone);
 
   const registerUser = async (payload) => {
     const res = await axios.post(`${apiUrl}/auth/local/register`, payload);
@@ -150,7 +149,7 @@ const Signup = () => {
 
     try {
       const payload = {
-        username: data.userName,
+        username: phone,
         email: email,
         password: data.password,
       };
@@ -721,7 +720,7 @@ const Signup = () => {
                           <div className="card-body" style={{ width: "300px" }}>
                             <h6 className="fs-6 fw-bold">Set Password</h6>
                             <hr />
-                            <div className="text-start mb-2">
+                            {/* <div className="text-start mb-2">
                               <label>User Name</label>
                               <input
                                 type="text"
@@ -730,7 +729,7 @@ const Signup = () => {
                                 required
                                 {...register("userName")}
                               />
-                            </div>
+                            </div> */}
                             <div className="text-start mb-2">
                               <label>Enter Password</label>
                               <input

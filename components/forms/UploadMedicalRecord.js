@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useAuth } from "context";
 import { uploadImage } from "utils/uploadImage";
 import { Slide, toast } from "react-toastify";
-import { set } from "react-hook-form";
+import Image from "next/image";
 const UploadMedicalRecord = ({
   upload_medical_record,
   updated_at,
@@ -18,10 +18,28 @@ const UploadMedicalRecord = ({
   const [loading, setLoading] = useState(false);
   const [imageLoading, setImageLoading] = useState(false);
   const [title, setTitle] = useState();
+  const [previewImage, setPreviewImage] = useState(null);
+  const [error, setError] = useState(false);
   const [profileImage, setProfileImage] = useState();
   const [allRecords, setAllRecords] = useState(
     upload_medical_record?.concat([])
   );
+
+  const imageHandler = (e) => {
+    const selected = e.target.files[0];
+    setProfileImage(e.target.files[0]);
+    const ALLOWED_TYPES = ["image/png", "image/jpeg", "image/jpg"];
+    if (selected && ALLOWED_TYPES.includes(selected.type)) {
+      setError(false);
+      let reader = new FileReader();
+      reader.onloadend = () => {
+        setPreviewImage(reader.result);
+      };
+      reader.readAsDataURL(selected);
+    } else {
+      setError(true);
+    }
+  };
 
   const addNewEntry = async () => {
     setImageLoading(true);
@@ -100,34 +118,41 @@ const UploadMedicalRecord = ({
     <>
       <div className="gen-form mb-3">
         <div className="row justify-centent-between align-items-center">
-          <div className="col-md-6 mb-3 mb-md-0 md-lg-0 md-xl-0">
-            <div className="row">
-              <div className="col-md-4">
-                <label htmlFor="" className="form-label">
-                  Title
-                </label>
-              </div>
-              <div className="col-md-8">
-                <input
-                  type="text"
-                  className="form-control"
-                  name="title"
-                  placeholder="File Name"
-                  value={title}
-                  onChange={(e) => setTitle(e.target.value)}
-                />
-              </div>
+          <div className="row">
+            <div className="col-md-5">
+              <label htmlFor="" className="form-label">
+                Description
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                name="title"
+                placeholder="File Name"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+              />
             </div>
-          </div>
-          <div className="col-md-6">
-            <input
-              type="file"
-              className="form-control"
-              placeholder="Upload your Image"
-              name="uploadFile"
-              required=""
-              onChange={(e) => setProfileImage(e.target.files[0])}
-            />
+            <div className="col-md-3">
+              <Image
+                src={previewImage || "/assets/images/upload-alt.png"}
+                height="180"
+                width="150"
+                alt=""
+              />
+            </div>
+            <div className="col-md-4">
+              <label htmlFor="" className="form-label">
+                Upload File
+              </label>
+              <input
+                type="file"
+                className="form-control"
+                placeholder="Upload your Image"
+                name="uploadFile"
+                required=""
+                onChange={imageHandler}
+              />
+            </div>
           </div>
         </div>
 

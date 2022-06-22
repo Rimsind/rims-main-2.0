@@ -3,6 +3,7 @@ import Router, { useRouter } from "next/router";
 import useSWR from "swr";
 import { apiUrl, fetcher } from "config/api";
 import { useState } from "react";
+import Link from "next/link";
 
 const BookingSlots = () => {
   const { doctorId, clinicId, clinicType, timeTableId, fee } =
@@ -56,9 +57,11 @@ const BookingSlots = () => {
                   <div className="card-booking-upper">
                     <div className="row align-items-start">
                       <div className="col-1">
-                        <a href="#">
-                          <i className="far fa-arrow-left fs-5 text-danger"></i>
-                        </a>
+                        <Link href={`/doctors/${doctorId}`}>
+                          <a>
+                            <i className="far fa-arrow-left fs-5 text-danger"></i>
+                          </a>
+                        </Link>
                       </div>
                       <div className="col-11">
                         <div className="row align-items-center">
@@ -134,24 +137,6 @@ const BookingSlots = () => {
                           </div>
                         ))}
                     </div>
-                    {/* <div className="row align-items-center">
-                      <div className="col-3">
-                        <div className="innr-time-table">
-                          <input type="checkbox" id="activate-div1" />
-                          <label for="activate-div1">
-                            <div className="my-div">26-06-2022</div>
-                          </label>
-                        </div>
-                      </div>
-                      <div className="col-3">
-                        <div className="innr-time-table">
-                          <input type="checkbox" id="activate-div2" />
-                          <label for="activate-div2">
-                            <div className="my-div">26-06-2022</div>
-                          </label>
-                        </div>
-                      </div>
-                    </div> */}
                   </div>
                   <div className="row align-items-center pt-4">
                     <div className="col-12 text-end">

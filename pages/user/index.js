@@ -6,10 +6,9 @@ import { apiUrl } from "config/api";
 import useSWR from "swr";
 import axios from "axios";
 import { UserPageLoader } from "components/Loaders";
-import { withAuth } from "helpers/withAuth";
+
 const Index = () => {
   const { auth } = useAuth();
-  // console.log(typeof window);
   const { data } = useSWR(
     `${apiUrl}/patients/${auth.user?.profileId}`,
     async (url) => {
@@ -22,7 +21,6 @@ const Index = () => {
       return result;
     }
   );
-
   return (
     <>
       <div className="main-wrapper">
@@ -34,175 +32,247 @@ const Index = () => {
               <UserNav status1="active" patient={data} />
               {data ? (
                 <div className="col-sm-12 col-md-12 col-lg-9 col-xl-9">
-                  <div className="row">
-                    <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
-                      <div
-                        className="card heart-rate"
-                        style={{ backgroundColor: "#ff000054" }}
-                      >
-                        <div className="card-body text-center">
-                          <div className="mb-3">
-                            <Image
-                              height="55"
-                              width="55"
-                              src="/user_assets/img/specialities/pic-1.png"
-                              alt=""
-                            />
+                  <div className="row align-items-center">
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-4">
+                      <div className="inner-item">
+                        <div className="row align-items-center g-0">
+                          <div className="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9 col-xxl-9">
+                            <div className="col-inner-items-new">
+                              <div className="col-inner-items-inner-top-item">
+                                <h6 className="fs-4">
+                                  {data?.vitalSigns?.bmi}{" "}
+                                  <span className="fs-6">BMI</span>
+                                </h6>
+                              </div>
+                              <div className="col-inner-items-inner-item">
+                                <h6 className="fs-6">Body Mass Index</h6>
+                              </div>
+                            </div>
                           </div>
-                          <h5>Heart Rate</h5>
-                          <h6>
-                            {data?.vitalSigns?.heartRate} <sub>bpm</sub>
-                          </h6>
+                          <div className="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+                            <div className="col-inner-item-new-circle">
+                              <Image
+                                src="/assets/images/user-dash/bmi.png"
+                                height={50}
+                                width={50}
+                                alt="BMI"
+                              />
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
-                      <div
-                        className="card body-temp"
-                        style={{ backgroundColor: "#006bff63" }}
-                      >
-                        <div className="card-body text-center">
-                          <div className="mb-3">
-                            <Image
-                              height="55"
-                              width="55"
-                              src="/user_assets/img/specialities/pic-2.png"
-                              alt=""
-                            />
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-4">
+                      <div className="inner-item">
+                        <div className="row align-items-center g-0">
+                          <div className="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9 col-xxl-9">
+                            <div className="col-inner-items-new">
+                              <div className="col-inner-items-inner-top-item">
+                                <h6 className="fs-4">
+                                  {data?.vitalSigns?.heartRate}{" "}
+                                  <span className="fs-6">BPM</span>
+                                </h6>
+                              </div>
+                              <div className="col-inner-items-inner-item">
+                                <h6 className="fs-6">Heart Rate</h6>
+                              </div>
+                            </div>
                           </div>
-                          <h5>Body Temperature</h5>
-                          <h6>
-                            {data?.vitalSigns?.temperature}
-                            <sup>°</sup> <sub>C</sub>
-                          </h6>
+                          <div className="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+                            <div className="col-inner-item-new-circle">
+                              <Image
+                                src="/assets/images/user-dash/heart-rate.png"
+                                height={50}
+                                width={50}
+                                alt="Heart Rate"
+                              />
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
-                      <div
-                        className="card glucose-lvl "
-                        style={{ backgroundColor: "#e74e8473" }}
-                      >
-                        <div className="card-body text-center">
-                          <div className="mb-3">
-                            <Image
-                              height="55"
-                              width="55"
-                              src="/user_assets/img/specialities/pic-3.png"
-                              alt=""
-                            />
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-4">
+                      <div className="inner-item">
+                        <div className="row align-items-center g-0">
+                          <div className="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9 col-xxl-9">
+                            <div className="col-inner-items-new">
+                              <div className="col-inner-items-inner-top-item">
+                                <h6 className="fs-4">
+                                  {data?.vitalSigns?.temperature}
+                                  <span className="fs-6">°C</span>
+                                </h6>
+                              </div>
+                              <div className="col-inner-items-inner-item">
+                                <h6 className="fs-6">Body Temperature</h6>
+                              </div>
+                            </div>
                           </div>
-                          <h5>Glucose Level</h5>
-                          <h6>
-                            {data?.vitalSigns?.glucose} <sub>mg/dl</sub>
-                          </h6>
+                          <div className="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+                            <div className="col-inner-item-new-circle">
+                              <Image
+                                src="/assets/images/user-dash/temperature.png"
+                                height={50}
+                                width={50}
+                                alt="Body Temperature"
+                              />
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
-                      <div
-                        className="card blood-presr"
-                        style={{ backgroundColor: "#75ff7087" }}
-                      >
-                        <div className="card-body text-center">
-                          <div className="mb-3">
-                            <Image
-                              height="55"
-                              width="55"
-                              src="/user_assets/img/specialities/pic-4.png"
-                              alt=""
-                            />
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-4">
+                      <div className="inner-item">
+                        <div className="row align-items-center g-0">
+                          <div className="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9 col-xxl-9">
+                            <div className="col-inner-items-new">
+                              <div className="col-inner-items-inner-top-item">
+                                <h6 className="fs-4">
+                                  {data?.vitalSigns?.bloodPressure}{" "}
+                                  <span className="fs-6">mmHg</span>
+                                </h6>
+                              </div>
+                              <div className="col-inner-items-inner-item">
+                                <h6 className="fs-6">Blood Pressure</h6>
+                              </div>
+                            </div>
                           </div>
-                          <h5>Blood Pressure</h5>
-                          <h6>
-                            {data?.vitalSigns?.bloodPressure} <sub>mmHg</sub>
-                          </h6>
+                          <div className="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+                            <div className="col-inner-item-new-circle">
+                              <Image
+                                src="/assets/images/user-dash/blood-pressure.png"
+                                height={50}
+                                width={50}
+                                alt="Blood Pressure"
+                              />
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
-                      <div
-                        className="card bmi"
-                        style={{ backgroundColor: "#fff7d9" }}
-                      >
-                        <div className="card-body text-center">
-                          <div className="mb-3">
-                            <Image
-                              height="55"
-                              width="55"
-                              src="/user_assets/img/specialities/pic-6.png"
-                              alt=""
-                            />
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-4">
+                      <div className="inner-item">
+                        <div className="row align-items-center g-0">
+                          <div className="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9 col-xxl-9">
+                            <div className="col-inner-items-new">
+                              <div className="col-inner-items-inner-top-item">
+                                <h6 className="fs-4">
+                                  12 - 16 <span className="fs-6">BPM</span>
+                                </h6>
+                              </div>
+                              <div className="col-inner-items-inner-item">
+                                <h6 className="fs-6">Respiratory Rate</h6>
+                              </div>
+                            </div>
                           </div>
-                          <h5>BMI</h5>
-                          <h6>{data?.vitalSigns?.bmi}</h6>
+                          <div className="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+                            <div className="col-inner-item-new-circle">
+                              <Image
+                                src="/assets/images/user-dash/respiratory.png"
+                                height={50}
+                                width={50}
+                                alt="Respiratory Rate"
+                              />
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
-                      <div
-                        className="card oxygen-lvl"
-                        style={{ backgroundColor: "#80ffd4" }}
-                      >
-                        <div className="card-body text-center">
-                          <div className="mb-3">
-                            <Image
-                              height="55"
-                              width="55"
-                              src="/user_assets/img/specialities/pic-8.png"
-                              alt=""
-                            />
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-4">
+                      <div className="inner-item">
+                        <div className="row align-items-center g-0">
+                          <div className="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9 col-xxl-9">
+                            <div className="col-inner-items-new">
+                              <div className="col-inner-items-inner-top-item">
+                                <h6 className="fs-4">
+                                  {data?.vitalSigns?.oxygen} %
+                                  <span className="fs-6"></span>
+                                </h6>
+                              </div>
+                              <div className="col-inner-items-inner-item">
+                                <h6 className="fs-6">Oxygen Level</h6>
+                              </div>
+                            </div>
                           </div>
-                          <h5>Oxygen Level</h5>
-                          <h6>{data?.vitalSigns?.oxygen}%</h6>
+                          <div className="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+                            <div className="col-inner-item-new-circle">
+                              <Image
+                                src="/assets/images/user-dash/oxygen-level.png"
+                                height={50}
+                                width={50}
+                                alt="Oxygen Level"
+                              />
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
-                      <div
-                        className="card dimension"
-                        style={{ backgroundColor: "#fff599" }}
-                      >
-                        <div className="card-body text-center">
-                          <div className="mb-3">
-                            <Image
-                              height="55"
-                              width="55"
-                              src="/user_assets/img/specialities/pic-5.png"
-                              alt=""
-                            />
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-4">
+                      <div className="inner-item">
+                        <div className="row align-items-center g-0">
+                          <div className="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9 col-xxl-9">
+                            <div className="col-inner-items-new">
+                              <div className="col-inner-items-inner-top-item">
+                                <h6 className="fs-4">
+                                  {data?.vitalSigns?.height} <sub>Cm</sub> -{" "}
+                                  {data?.vitalSigns?.weight} <sub>Kg</sub>
+                                </h6>
+                              </div>
+                              <div className="col-inner-items-inner-item">
+                                <h6 className="fs-6">Dimensions</h6>
+                              </div>
+                            </div>
                           </div>
-                          <h5>Dimensions</h5>
-                          <h6>
-                            {data?.vitalSigns?.height} <sub>Cm</sub> -{" "}
-                            {data?.vitalSigns?.weight} <sub>Kg</sub>
-                          </h6>
+                          <div className="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+                            <div className="col-inner-item-new-circle">
+                              <Image
+                                src="/assets/images/user-dash/dimension.png"
+                                height={50}
+                                width={50}
+                                alt="Oxygen Level"
+                              />
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div className="col-12 col-md-6 col-lg-4 col-xl-3 patient-dashboard-top">
-                      <div
-                        className="card resp-rate"
-                        style={{ backgroundColor: "#83ffff75" }}
-                      >
-                        <div className="card-body text-center">
-                          <div className="mb-3">
-                            <Image
-                              height="55"
-                              width="55"
-                              src="/user_assets/img/specialities/pic-13.png"
-                              alt=""
-                            />
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-4">
+                      <div className="inner-item">
+                        <div className="row align-items-center g-0">
+                          <div className="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9 col-xxl-9">
+                            <div className="col-inner-items-new">
+                              <div className="col-inner-items-inner-top-item">
+                                <h6 className="fs-4">
+                                  {data?.vitalSigns?.glucose}
+                                  <span className="fs-6">mg/dL</span>
+                                </h6>
+                              </div>
+                              <div className="col-inner-items-inner-item">
+                                <h6 className="fs-6">Glucose Level</h6>
+                              </div>
+                            </div>
                           </div>
-                          <h5>Respiratory rate</h5>
-                          <h6>
-                            {data?.vitalSigns?.respiration} <sub>BPM</sub>
-                          </h6>
+                          <div className="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+                            <div className="col-inner-item-new-circle">
+                              <Image
+                                src="/assets/images/user-dash/glucose-level.png"
+                                height={50}
+                                width={50}
+                                alt="Glucose Level"
+                              />
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  {/* <div className="row"></div> */}
+                  <div className="user-dashboard-banner my-3">
+                    <Image
+                      src="/assets/images/user-dashboard-banner3.png"
+                      height={450}
+                      width={1920}
+                      alt="User Dashboard Banner"
+                    />
+                  </div>
                 </div>
               ) : (
                 <UserPageLoader />
@@ -215,4 +285,4 @@ const Index = () => {
   );
 };
 
-export default withAuth(Index);
+export default Index;

@@ -23,7 +23,7 @@ const Login = () => {
 
   const onSubmit = async (data, e) => {
     e.preventDefault();
-    if (!data.email || !data.password) {
+    if (!data.userName || !data.password) {
       alert("please fill all data");
       return;
     }
@@ -31,7 +31,7 @@ const Login = () => {
 
     try {
       const payload = {
-        identifier: data.email,
+        identifier: data.userName,
         password: data.password,
       };
       const res = await axios.post(`${apiUrl}/auth/local`, payload);
@@ -149,8 +149,8 @@ const Login = () => {
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Username"
-                        {...register("email")}
+                        placeholder="Enter Email / Phone no"
+                        {...register("userName")}
                       />
                     </div>
                     <div className="mb-3 text-start">

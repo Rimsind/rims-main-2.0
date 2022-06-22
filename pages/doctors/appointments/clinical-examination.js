@@ -42,7 +42,6 @@ const ClinicalExaminations = () => {
     },
     { refreshInterval: 1000 }
   );
-  console.log(appointment?.patient);
 
   const { data: doctor } = useSWR(
     `${apiUrl}/doctors/${auth.user?.profileId}`,
@@ -255,38 +254,43 @@ const ClinicalExaminations = () => {
                                 id="tab-12"
                                 className="tab-pane fade"
                               >
-                                {doctor?.specialty?.name === "Neurologist" ? (
+                                {doctor?.specialty?.name === "Neurologist" && (
                                   <>
                                     <NeuroExamination
                                       appointmentId={id}
                                       appointment={appointment}
                                     />
                                   </>
-                                ) : (
-                                  <></>
                                 )}
-                                {doctor?.specialty?.name === "Orthopedic" ? (
+                                {doctor?.specialty?.name === "Orthopedic" && (
                                   <>
                                     <OrthoExamination
                                       appointmentId={id}
                                       appointment={appointment}
                                     />
                                   </>
-                                ) : (
-                                  <></>
                                 )}
                                 {doctor?.specialty?.name ===
-                                "Rehabilitation" ? (
+                                  "Rehabilitation" && (
                                   <>
                                     <RehabExamination
                                       appointmentId={id}
                                       appointment={appointment}
                                     />
                                   </>
-                                ) : (
-                                  <></>
                                 )}
-                                {doctor?.specialty?.name === "Medicine" ? (
+                                {doctor?.specialty?.name === "Medicine" && (
+                                  <>
+                                    <MedicineExamination
+                                      appointmentId={id}
+                                      appointment={appointment}
+                                    />
+                                  </>
+                                )}{" "}
+                                {doctor?.specialty?.name != "Medicine" &&
+                                doctor?.specialty?.name != "Orthopedic" &&
+                                doctor?.specialty?.name != "Neurologist" &&
+                                doctor?.specialty?.name != "Rehabilitation" ? (
                                   <>
                                     <MedicineExamination
                                       appointmentId={id}
@@ -355,7 +359,7 @@ const ClinicalExaminations = () => {
           bloodGroup={bloodGroup}
         />
       </div>{" "}
-      <div style={{ display: "block" }}>
+      <div style={{ display: "none" }}>
         <SubjectiveReport
           ref={subjectiveRef}
           appointments={appointment}
