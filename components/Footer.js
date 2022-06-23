@@ -192,7 +192,7 @@ const Footer = () => {
       >
         <div className="container">
           <div className="row pt-4">
-            <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 text-center text-sm-center text-md-center text-lg-start text-xl-start text-xxl-start">
+            <div className="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7 col-xxl-7 text-center text-sm-center text-md-center text-lg-start text-xl-start text-xxl-start">
               <p style={{ fontVariant: "small-caps" }}>
                 &copy; 2019-2022.
                 <Link href="/copyright">
@@ -201,14 +201,18 @@ const Footer = () => {
                   </a>
                 </Link>
                 All Right&apos;s Reserved with
-                <span className="ms-2" style={{ fontVariant: "initial" }}>
-                  <mark className="shadow rounded-1">
-                    RIMS IND unit of Retar Mediserve Pvt. Ltd.
-                  </mark>
+                <span
+                  className="ms-2"
+                  style={{
+                    borderBottom: "1px solid #eee",
+                    fontVariant: "initial",
+                  }}
+                >
+                  RIMS IND unit of Retar Mediserve Pvt. Ltd.
                 </span>
               </p>
             </div>
-            <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 text-center text-sm-center text-md-center text-lg-end text-xl-end text-xxl-end">
+            <div className="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 col-xxl-5 text-center text-sm-center text-md-center text-lg-end text-xl-end text-xxl-end">
               <Image
                 src="/assets/images/payment-method.png"
                 height="20px"
