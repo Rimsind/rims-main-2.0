@@ -4889,3 +4889,38 @@ button.btn-book-custom:focus-visible {
   background: black;
   color: white;
 }
+
+/* Custom Tooltip Stylesheet */
+.cst-tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.cst-tooltip .cst-tooltiptext {
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 120%;
+  margin-left: -60px;
+}
+
+.cst-tooltip .cst-tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.cst-tooltip:hover .cst-tooltiptext {
+  visibility: visible;
+}

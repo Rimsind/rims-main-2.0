@@ -49,11 +49,10 @@ const MedicineExamination = ({ appointmentId }) => {
             <a
               href="#tab-101"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Skin"
-              className="nav-link fs-6 active"
+              className="nav-link cst-tooltip fs-6 active"
             >
               Form 01
+              <span className="cst-tooltiptext">Skin</span>
             </a>
           </li>
           <li className="nav-icon">
@@ -63,11 +62,10 @@ const MedicineExamination = ({ appointmentId }) => {
             <a
               href="#tab-102"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Head"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 02
+              <span className="cst-tooltiptext">Head</span>
             </a>
           </li>
           <li className="nav-icon">
@@ -77,11 +75,10 @@ const MedicineExamination = ({ appointmentId }) => {
             <a
               href="#tab-103"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Eyes"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 03
+              <span className="cst-tooltiptext">Eyes</span>
             </a>
           </li>
           <li className="nav-icon">
@@ -91,11 +88,10 @@ const MedicineExamination = ({ appointmentId }) => {
             <a
               href="#tab-104"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Ears"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 04
+              <span className="cst-tooltiptext">Ears</span>
             </a>
           </li>
           <li className="nav-icon">
@@ -105,11 +101,10 @@ const MedicineExamination = ({ appointmentId }) => {
             <a
               href="#tab-105"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Nose"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 05
+              <span className="cst-tooltiptext">Nose</span>
             </a>
           </li>
           <li className="nav-icon">
@@ -119,11 +114,10 @@ const MedicineExamination = ({ appointmentId }) => {
             <a
               href="#tab-106"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Throat"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 06
+              <span className="cst-tooltiptext">Throat</span>
             </a>
           </li>
           <li className="nav-icon">
@@ -133,11 +127,10 @@ const MedicineExamination = ({ appointmentId }) => {
             <a
               href="#tab-107"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Neck"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 07
+              <span className="cst-tooltiptext">Neck</span>
             </a>
           </li>
           <li className="nav-icon">
@@ -147,11 +140,10 @@ const MedicineExamination = ({ appointmentId }) => {
             <a
               href="#tab-108"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Lymph Nodes"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 08
+              <span className="cst-tooltiptext">Lymph Nodes</span>
             </a>
           </li>
           <li className="nav-icon">
@@ -161,11 +153,12 @@ const MedicineExamination = ({ appointmentId }) => {
             <a
               href="#tab-109"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Respiratory, Thorax & Lungs"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 09
+              <span className="cst-tooltiptext">
+                Respiratory, Thorax & Lungs
+              </span>
             </a>
           </li>
           <li className="nav-icon">
@@ -175,11 +168,10 @@ const MedicineExamination = ({ appointmentId }) => {
             <a
               href="#tab-110"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Cardiovascular"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 10
+              <span className="cst-tooltiptext">Cardiovascular</span>
             </a>
           </li>
           <li className="nav-icon">
@@ -189,11 +181,10 @@ const MedicineExamination = ({ appointmentId }) => {
             <a
               href="#tab-111"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Gastrointestinal"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 11
+              <span className="cst-tooltiptext">Gastrointestinal</span>
             </a>
           </li>
           <li className="nav-icon">
@@ -203,11 +194,10 @@ const MedicineExamination = ({ appointmentId }) => {
             <a
               href="#tab-112"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Breasts"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 12
+              <span className="cst-tooltiptext">Breasts</span>
             </a>
           </li>
           <li className="nav-icon">
@@ -217,11 +207,10 @@ const MedicineExamination = ({ appointmentId }) => {
             <a
               href="#tab-113"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Abdominal"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 13
+              <span className="cst-tooltiptext">Abdominal</span>
             </a>
           </li>
           <li className="nav-icon">
@@ -231,11 +220,10 @@ const MedicineExamination = ({ appointmentId }) => {
             <a
               href="#tab-114"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Genitourinary"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 14
+              <span className="cst-tooltiptext">Genitourinary</span>
             </a>
           </li>
           <li className="nav-icon">
@@ -247,9 +235,10 @@ const MedicineExamination = ({ appointmentId }) => {
               data-bs-toggle="tab"
               data-bs-placement="top"
               title="Rectal"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 15
+              <span className="cst-tooltiptext">Rectal</span>
             </a>
           </li>
           <li className="nav-icon">
@@ -259,11 +248,10 @@ const MedicineExamination = ({ appointmentId }) => {
             <a
               href="#tab-116"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Peripheral Vascular"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 16
+              <span className="cst-tooltiptext">Peripheral Vascular</span>
             </a>
           </li>
           <li className="nav-icon">
@@ -273,11 +261,10 @@ const MedicineExamination = ({ appointmentId }) => {
             <a
               href="#tab-117"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Neurological"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 17
+              <span className="cst-tooltiptext">Neurological</span>
             </a>
           </li>
           <li className="nav-icon">
@@ -287,11 +274,10 @@ const MedicineExamination = ({ appointmentId }) => {
             <a
               href="#tab-118"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Hematological"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 18
+              <span className="cst-tooltiptext">Hematological</span>
             </a>
           </li>
           <li className="nav-icon">
@@ -301,11 +287,10 @@ const MedicineExamination = ({ appointmentId }) => {
             <a
               href="#tab-119"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Endocrinal"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 19
+              <span className="cst-tooltiptext">Endocrinal</span>
             </a>
           </li>
           <li className="nav-icon">
@@ -315,11 +300,12 @@ const MedicineExamination = ({ appointmentId }) => {
             <a
               href="#tab-120"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Psychological & Psychiatric Illness"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 20
+              <span className="cst-tooltiptext">
+                Psychological & Psychiatric Illness
+              </span>
             </a>
           </li>
         </ul>

@@ -30,11 +30,12 @@ const RehabExamination = ({ appointmentId, appointment }) => {
             <a
               href="#tab-101"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Aerobic Capacity With Functional Mobility Skill Assessment"
-              className="nav-link fs-6 active"
+              className="nav-link cst-tooltip fs-6 active"
             >
               Form 01
+              <span className="cst-tooltiptext">
+                Aerobic Capacity With Functional Mobility Skill Assessment
+              </span>
             </a>
           </li>
           <li className="nav-icon">
@@ -44,11 +45,10 @@ const RehabExamination = ({ appointmentId, appointment }) => {
             <a
               href="#tab-102"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Anthropometric Assessment"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 02
+              <span className="cst-tooltiptext">Anthropometric Assessment</span>
             </a>
           </li>
           <li className="nav-icon">
@@ -58,11 +58,13 @@ const RehabExamination = ({ appointmentId, appointment }) => {
             <a
               href="#tab-103"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Circulatory Assessment Includes Arterial / Venous / Lymphatic System"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 03
+              <span className="cst-tooltiptext">
+                Circulatory Assessment Includes Arterial / Venous / Lymphatic
+                System
+              </span>
             </a>
           </li>
           <li className="nav-icon">
@@ -72,11 +74,12 @@ const RehabExamination = ({ appointmentId, appointment }) => {
             <a
               href="#tab-104"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Arousal, Attention And Cognitive Assessment"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 04
+              <span className="cst-tooltiptext">
+                Arousal, Attention And Cognitive Assessment
+              </span>
             </a>
           </li>
           <li className="nav-icon">
@@ -86,11 +89,12 @@ const RehabExamination = ({ appointmentId, appointment }) => {
             <a
               href="#tab-105"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Cranial And Peripheral Nerve Assessment"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 05
+              <span className="cst-tooltiptext">
+                Cranial And Peripheral Nerve Assessment
+              </span>
             </a>
           </li>
           <li className="nav-icon">
@@ -100,11 +104,12 @@ const RehabExamination = ({ appointmentId, appointment }) => {
             <a
               href="#tab-106"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Reflex And Sensory Assessment"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 06
+              <span className="cst-tooltiptext">
+                Reflex And Sensory Assessment
+              </span>
             </a>
           </li>
           <li className="nav-icon">
@@ -114,11 +119,10 @@ const RehabExamination = ({ appointmentId, appointment }) => {
             <a
               href="#tab-107"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Postural Assessment"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 07
+              <span className="cst-tooltiptext">Postural Assessment</span>
             </a>
           </li>
           <li className="nav-icon">
@@ -128,11 +132,10 @@ const RehabExamination = ({ appointmentId, appointment }) => {
             <a
               href="#tab-108"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Gait Assessment"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 08
+              <span className="cst-tooltiptext">Gait Assessment</span>
             </a>
           </li>
           <li className="nav-icon">
@@ -142,11 +145,12 @@ const RehabExamination = ({ appointmentId, appointment }) => {
             <a
               href="#tab-109"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Postural Control Or Balance Assessment"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 09
+              <span className="cst-tooltiptext">
+                Postural Control Or Balance Assessment
+              </span>
             </a>
           </li>
           <li className="nav-icon">
@@ -156,11 +160,13 @@ const RehabExamination = ({ appointmentId, appointment }) => {
             <a
               href="#tab-110"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Motor Function Assessment Includes Motor Control And Motor Learning"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 10
+              <span className="cst-tooltiptext">
+                Motor Function Assessment Includes Motor Control And Motor
+                Learning
+              </span>
             </a>
           </li>
           <li className="nav-icon">
@@ -170,11 +176,12 @@ const RehabExamination = ({ appointmentId, appointment }) => {
             <a
               href="#tab-111"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Manual Muscle Strength And Range Of Motion Assessment"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 11
+              <span className="cst-tooltiptext">
+                Manual Muscle Strength And Range Of Motion Assessment
+              </span>
             </a>
           </li>
           <li className="nav-icon">
@@ -184,11 +191,10 @@ const RehabExamination = ({ appointmentId, appointment }) => {
             <a
               href="#tab-112"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Pain Assessment"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 12
+              <span className="cst-tooltiptext">Pain Assessment</span>
             </a>
           </li>
           <li className="nav-icon">
@@ -198,11 +204,12 @@ const RehabExamination = ({ appointmentId, appointment }) => {
             <a
               href="#tab-113"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Environmental Barrier Assessment"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 13
+              <span className="cst-tooltiptext">
+                Environmental Barrier Assessment
+              </span>
             </a>
           </li>
           <li className="nav-icon">
@@ -212,11 +219,12 @@ const RehabExamination = ({ appointmentId, appointment }) => {
             <a
               href="#tab-114"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Orthotic And Prosthetic Assessment"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 14
+              <span className="cst-tooltiptext">
+                Orthotic And Prosthetic Assessment
+              </span>
             </a>
           </li>
           <li className="nav-icon">
@@ -226,11 +234,12 @@ const RehabExamination = ({ appointmentId, appointment }) => {
             <a
               href="#tab-115"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Joint Integrety And Mobility Assessment"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 15
+              <span className="cst-tooltiptext">
+                Joint Integrety And Mobility Assessment
+              </span>
             </a>
           </li>
           <li className="nav-icon">
@@ -240,11 +249,12 @@ const RehabExamination = ({ appointmentId, appointment }) => {
             <a
               href="#tab-116"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Ventilation, Respiration And Gas Exchange"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 16
+              <span className="cst-tooltiptext">
+                Ventilation, Respiration And Gas Exchange
+              </span>
             </a>
           </li>
           <li className="nav-icon">
@@ -254,11 +264,10 @@ const RehabExamination = ({ appointmentId, appointment }) => {
             <a
               href="#tab-117"
               data-bs-toggle="tab"
-              data-bs-placement="top"
-              title="Wound Assessment"
-              className="nav-link fs-6"
+              className="nav-link cst-tooltip fs-6"
             >
               Form 17
+              <span className="cst-tooltiptext">Wound Assessment</span>
             </a>
           </li>
         </ul>
