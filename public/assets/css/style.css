@@ -4114,9 +4114,9 @@ i.icon {
 .diag-details-inner .nav-tabs.nav-tabs-solid > li > a.active,
 .diag-details-inner .nav-tabs.nav-tabs-solid > li > a.active:hover,
 .diag-details-inner .nav-tabs.nav-tabs-solid > li > a.active:focus {
-  background-color: white;
-  border-color: white;
-  color: #73042b;
+  background-color: #73042b;
+  border-color: #73042b;
+  color: white;
   font-size: 18px;
   font-weight: 500;
   padding: 15px 40px 15px 40px;
@@ -4128,9 +4128,9 @@ i.icon {
 .diag-details-inner .nav-tabs.nav-tabs-solid > li > a,
 .diag-details-inner .nav-tabs.nav-tabs-solid > li > a:hover,
 .diag-details-inner .nav-tabs.nav-tabs-solid > li > a:focus {
-  background-color: #73042b;
-  border-color: #73042b;
-  color: white;
+  background-color: white;
+  border-color: rgb(170, 170, 170);
+  color: #73042b;
   font-size: 18px;
   font-weight: 500;
   padding: 15px 40px 15px 40px;

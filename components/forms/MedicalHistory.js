@@ -664,154 +664,106 @@ const MedicalHistory = ({
         >
           <div className="row justify-centent-between align-items-start mb-3 mt-3">
             <div className="col-md-4 col-lg-3 col-xxl-3 col-xl-3 mb-0 mb-md-3 mb-lg-0 mb-xl-0">
-              <div className="row justify-centent-between align-items-center">
-                <div className="col-md-4 col-lg-4 col-xxl-4 col-xl-4">
-                  Type:
-                </div>
-                <div className="col-md-8 col-lg-8 col-xxl-8 col-xl-8">
-                  <select
-                    className="form-select"
-                    aria-label="Default select example"
-                    onChange={(e) => setType(e.target.value)}
-                  >
-                    <option selected>Select Types</option>
-                    <option value="Prescribed">Prescribed</option>
-                    <option value="Non-Prescribed">Non-Prescribed</option>
-                  </select>
-                </div>
-              </div>
+              <label> Type:</label>
+              <select
+                className="form-select"
+                aria-label="Default select example"
+                onChange={(e) => setType(e.target.value)}
+              >
+                <option selected>Select Types</option>
+                <option value="Prescribed">Prescribed</option>
+                <option value="Non-Prescribed">Non-Prescribed</option>
+              </select>
             </div>
             <div className="col-md-8 col-lg-3 col-xxl-3 col-xl-3 mb-0 mb-md-3 mb-lg-0 mb-xl-0">
-              <div className="row justify-centent-between align-items-center">
-                <div className="col-md-4 col-lg-6 col-xxl-6 col-xl-6">
-                  Medicine Name:
-                </div>
-                <div className="col-md-8 col-lg-6 col-xxl-6 col-xl-6">
-                  <input
-                    type="text"
-                    className="form-control"
-                    name="MedicineName"
-                    value={medicineName}
-                    onChange={(e) => setMedicineName(e.target.value)}
-                  />
-                </div>
-              </div>
+              <label>Medicine Name:</label>
+              <input
+                type="text"
+                className="form-control"
+                name="MedicineName"
+                value={medicineName}
+                onChange={(e) => setMedicineName(e.target.value)}
+              />
             </div>
             <div className="col-md-6 col-lg-3 col-xxl-3 col-xl-3 mb-0 mb-md-3 mb-lg-0 mb-xl-0">
-              <div className="row justify-centent-between align-items-center">
-                <div className="col-md-8 col-lg-8 col-xxl-8 col-xl-8">
-                  Medicine Dose (MG/MCG):
-                </div>
-                <div className="col-md-4 col-lg-4 col-xxl-4 col-xl-4">
-                  <input
-                    type="text"
-                    className="form-control"
-                    name="MedicineName"
-                    value={dose}
-                    onChange={(e) => setDose(e.target.value)}
-                  />
-                </div>
-              </div>
+              <label>Dose (MG/MCG):</label>
+              <input
+                type="text"
+                className="form-control"
+                name="MedicineName"
+                value={dose}
+                onChange={(e) => setDose(e.target.value)}
+              />
             </div>
             <div className="col-md-6 col-lg-3 col-xxl-3 col-xl-3 mb-0 mb-md-3 mb-lg-0 mb-xl-0">
-              <div className="row justify-centent-between align-items-center">
-                <div className="col-md-4 col-lg-4 col-xxl-4 col-xl-4">
-                  Start Date:
-                </div>
-                <div className="col-md-8 col-lg-8 col-xxl-8 col-xl-8">
-                  <input
-                    type="date"
-                    className="form-control"
-                    name="MedicineName"
-                    max={maxDate}
-                    value={startDate}
-                    onChange={(e) => setStartDate(e.target.value)}
-                  />
-                </div>
-              </div>
+              <label> Start Date:</label>
+              <input
+                type="date"
+                className="form-control"
+                name="MedicineName"
+                max={maxDate}
+                value={startDate}
+                onChange={(e) => setStartDate(e.target.value)}
+              />
             </div>
           </div>
           <div className="row justify-centent-between align-items-start mb-3 mt-3">
             <div className="col-md-6 col-lg-3 col-xxl-3 col-xl-3 mb-0 mb-md-3 mb-lg-0 mb-xl-0">
-              <div className="row justify-centent-between align-items-center">
-                <div className="col-md-3 col-lg-4 col-xxl-4 col-xl-4">
-                  Status:
-                </div>
-                <div className="col-md-9 col-lg-8 col-xxl-8 col-xl-8">
-                  <select
-                    className="form-select"
-                    aria-label="Default select example"
-                    onChange={(e) => setStatus(e.target.value)}
-                  >
-                    <option>Select Status</option>
-                    <option value="Continue">Continue</option>
-                    <option value="End">End</option>
-                  </select>
-                </div>
-              </div>
+              <label> Status:</label>
+              <select
+                className="form-select"
+                aria-label="Default select example"
+                onChange={(e) => setStatus(e.target.value)}
+              >
+                <option>Select Status</option>
+                <option value="Continue">Continue</option>
+                <option value="End">End</option>
+              </select>
             </div>
             <div className="col-md-6 col-lg-3 col-xxl-3 col-xl-3 mb-0 mb-md-3 mb-lg-0 mb-xl-0">
-              <div className="row justify-centent-between align-items-center">
-                <div className="col-md-4 col-lg-6 col-xxl-6 col-xl-6">
-                  Frequency:
-                </div>
-                <div className="col-md-8 col-lg-6 col-xxl-6 col-xl-6">
-                  <select
-                    className="form-select"
-                    aria-label="Default select example"
-                    onChange={(e) => setFrequency(e.target.value)}
-                  >
-                    {frequencyList?.map((item, index) => (
-                      <option value={item} key={index}>
-                        {item}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
+              <label> Frequency:</label>
+              <select
+                className="form-select"
+                aria-label="Default select example"
+                onChange={(e) => setFrequency(e.target.value)}
+              >
+                {frequencyList?.map((item, index) => (
+                  <option value={item} key={index}>
+                    {item}
+                  </option>
+                ))}
+              </select>
             </div>
             <div className="col-md-6 col-lg-3 col-xxl-3 col-xl-3 mb-0 mb-md-3 mb-lg-0 mb-xl-0">
-              <div className="row justify-centent-between align-items-center">
-                <div className="col-md-3 col-lg-4 col-xxl-4 col-xl-4">
-                  Route:
-                </div>
-                <div className="col-md-9 col-lg-8 col-xxl-8 col-xl-8">
-                  <select
-                    className="form-select"
-                    aria-label="Default select example"
-                    onChange={(e) => setRoute(e.target.value)}
-                  >
-                    <option>Select Route</option>
-                    <option value="Capsule">Capsule</option>
-                    <option value="Injection">Injection</option>
-                    <option value="Other Way">Other Way</option>
-                  </select>
-                </div>
-              </div>
+              <label>Route:</label>
+              <select
+                className="form-select"
+                aria-label="Default select example"
+                onChange={(e) => setRoute(e.target.value)}
+              >
+                <option>Select Route</option>
+                <option value="Capsule">Capsule</option>
+                <option value="Injection">Injection</option>
+                <option value="Other Way">Other Way</option>
+              </select>
             </div>
             <div className="col-md-6 col-lg-3 col-xxl-3 col-xl-3 mb-0 mb-md-3 mb-lg-0 mb-xl-0">
-              <div className="row justify-centent-between align-items-center">
-                <div className="col-md-6 col-lg-6 col-xxl-6 col-xl-6">
-                  Any Side Effect:
-                </div>
-                <div className="col-md-6 col-lg-6 col-xxl-6 col-xl-6">
-                  <select
-                    className="form-select"
-                    aria-label="Default select example"
-                    onChange={(e) => setSideEffect(e.target.value)}
-                  >
-                    <option>Select Effects</option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                  </select>
-                </div>
-              </div>
+              <label>Any Side Effect:</label>
+              <select
+                className="form-select"
+                aria-label="Default select example"
+                onChange={(e) => setSideEffect(e.target.value)}
+              >
+                <option>Select Effects</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
             </div>
           </div>
 
           <div className="row justify-centent-between align-items-center mb-3 mt-3">
-            <div className="col-md-2 col-lg-1 col-xxl-1 col-xl-1">If Yes:</div>
-            <div className="col-md-10 col-lg-11 col-xxl-11 col-xl-11">
+            <div className="col-md-12 col-lg-12 col-xxl-12 col-xl-12">
+              <label htmlFor="">If Yes:</label>
               <input
                 type="text"
                 className="form-control"
