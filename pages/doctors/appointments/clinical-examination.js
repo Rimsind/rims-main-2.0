@@ -193,11 +193,11 @@ const ClinicalExaminations = () => {
                   <div className="card-body">
                     <div className="tabcontent" id="assesment">
                       <div className="card shadow-sm">
-                        <div className="card flex-fill">
+                        <div className="flex-fill">
                           <div className="card-header">
                             <ul
                               role="tablist"
-                              className="nav nav-tabs card-header-tabs"
+                              className="nav nav-tabs nav-tabs-bottom border-bottom-0"
                             >
                               <li className="nav-item">
                                 <a

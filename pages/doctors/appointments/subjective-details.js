@@ -159,7 +159,7 @@ const SubjectiveDetails = () => {
                       <div className="card-header border-bottom">
                         <ul
                           role="tablist"
-                          className="nav nav-tabs card-header-tabs"
+                          className="nav nav-tabs nav-tabs-bottom border-bottom-0"
                         >
                           <li className="nav-item">
                             <a
