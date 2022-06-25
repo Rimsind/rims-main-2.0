@@ -40,7 +40,20 @@ const BookingSlots = () => {
       return;
     } else {
       Router.push(
-        `/checkout?doctorId=${doctorId}&&clinicId=${clinicId}&&date=${date}&&clinicType=${clinicType}&&fee=${fee}`
+        {
+          pathname: `/checkout`,
+
+          query: {
+            doctorId: doctorId,
+            clinicId: clinicId,
+            date: date,
+            clinicType: clinicType,
+            fee: fee,
+          },
+        },
+        {
+          pathname: "/checkout",
+        }
       );
     }
   };

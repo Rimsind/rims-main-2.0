@@ -23,6 +23,26 @@ const BookingSuccess = (props) => {
               <p className="fs-6 lh-sm">
                 Your Appointment Id - <b>{props.appointmentId}</b>
               </p>
+              {props.paymentType === "cash" && (
+                <>
+                  <p className="fs-6 lh-sm">
+                    Payment - <b>Cash On Clinic</b>
+                  </p>
+                </>
+              )}
+              {props.paymentType === "online" && (
+                <>
+                  <p className="fs-6 lh-sm">
+                    Payment Id - <b>{props.paymentId}</b>
+                  </p>
+                  <p className="fs-6 lh-sm">
+                    Order Id- <b>{props.orderId}</b>
+                  </p>
+                  <p className="fs-6 lh-sm">
+                    signature - <b>{props.signature}</b>
+                  </p>
+                </>
+              )}
             </div>
             <div className="scs_inv_btn text-center mt-5">
               <Link href="/">

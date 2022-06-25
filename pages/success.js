@@ -4,10 +4,18 @@ import Link from "next/link";
 import BookingSuccess from "components/BookingSuccess";
 import BookingFailed from "components/BookingFailed";
 const Success = () => {
-  const { appointmentId, date, timeSlot, doctorFirstName, doctorLastName } =
-    useRouter().query;
+  const {
+    appointmentId,
+    date,
+    doctorFirstName,
+    doctorLastName,
+    paymentId,
+    orderId,
+    signature,
+    paymentType,
+  } = useRouter().query;
 
-  if (!appointmentId || !date || !timeSlot) {
+  if (!appointmentId) {
     var bookingStatus = "failed";
   } else {
     var bookingStatus = "success";
@@ -23,8 +31,12 @@ const Success = () => {
             doctorFirstName={doctorFirstName}
             doctorLastName={doctorLastName}
             date={date}
-            timeSlot={timeSlot}
+            // timeSlot={timeSlot}
             appointmentId={appointmentId}
+            paymentId={paymentId}
+            orderId={orderId}
+            signature={signature}
+            paymentType={paymentType}
           />
         ) : (
           <BookingFailed />

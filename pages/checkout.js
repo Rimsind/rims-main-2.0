@@ -18,6 +18,7 @@ import {
   mentalProblems,
   genetialProblem,
 } from "./api/chiefComplaintesData";
+import Link from "next/link";
 const Checkout = () => {
   const { doctorId, clinicId, clinicType, fee, date } = useRouter().query;
 
@@ -70,36 +71,117 @@ const Checkout = () => {
     });
   };
 
-  const [agree, setAgree] = useState(false);
+  const initializeRazorpay = () => {
+    return new Promise((resolve) => {
+      const script = document.createElement("script");
+      script.src = "https://checkout.razorpay.com/v1/checkout.js";
+      // document.body.appendChild(script);
+
+      script.onload = () => {
+        resolve(true);
+      };
+      script.onerror = () => {
+        resolve(false);
+      };
+
+      document.body.appendChild(script);
+    });
+  };
+  const [paymentType, setPaymentType] = useState("cash");
+  const [paymentId, setPaymentId] = useState();
+  const [orderId, setOrderId] = useState();
+  const [signature, setSignature] = useState();
+
   const { register, handleSubmit } = useForm();
   const checkout = async (data, event) => {
     event.preventDefault();
-    if (agree === false) {
-      alert("Please Accept the Terms & Conditions");
-      return;
-    }
-    try {
-      if (!!auth.user && !!auth.token) {
-        const payload = {
-          patient: auth?.user?.profileId,
-          doctor: doctor?.id,
-          date: date,
-          fee: fee,
-          chiefComplaints: complainList,
-          polyclinic: polyclinicId,
-          nursing_home: nursingHomeId,
-          hospital: hospitalId,
-          general_problems: data.general_problems.toString(),
-          joint_related_problems: data.joint_related_problems.toString(),
-          neuro_problems: data.neuro_problems.toString(),
-          heart_problems: data.heart_problems.toString(),
-          blood_problems: data.blood_problems.toString(),
-          stomach_problems: data.stomach_problems.toString(),
-          mental_problems: data.mental_problems.toString(),
-          genetal_problems: data.genetal_problems.toString(),
-        };
-        console.log(payload);
+    const payload = {
+      patient: auth?.user?.profileId,
+      doctor: doctor?.id,
+      date: date,
+      fee: fee,
+      chiefComplaints: complainList,
+      polyclinic: polyclinicId,
+      nursing_home: nursingHomeId,
+      hospital: hospitalId,
+      general_problems: data.general_problems.toString(),
+      joint_related_problems: data.joint_related_problems.toString(),
+      neuro_problems: data.neuro_problems.toString(),
+      heart_problems: data.heart_problems.toString(),
+      blood_problems: data.blood_problems.toString(),
+      stomach_problems: data.stomach_problems.toString(),
+      mental_problems: data.mental_problems.toString(),
+      genetal_problems: data.genetal_problems.toString(),
+    };
 
+    if (paymentType == "online") {
+      try {
+        const res = await initializeRazorpay();
+
+        if (!res) {
+          alert("Razorpay SDK Failed to load");
+          return;
+        }
+
+        // Make API call to the serverless API
+        const data = await fetch(`/api/razorpay?price=${1}`, {
+          method: "POST",
+        }).then((t) => t.json());
+
+        var options = {
+          key: process.env.RAZORPAY_KEY, // Enter the Key ID generated from the Dashboard
+          name: "RIMS IND ",
+          currency: data.currency,
+          amount: data.amount,
+          order_id: data.id,
+          description: "Thankyou for your test donation",
+          image: "https://manuarora.in/logo.png",
+
+          handler: function (response) {
+            setPaymentId(response.razorpay_payment_id);
+            setOrderId(response.razorpay_order_id);
+            setSignature(response.razorpay_signature);
+          },
+
+          prefill: {
+            name: "",
+            contact: "",
+          },
+        };
+
+        const res1 = await axios.post(`${apiUrl}/appointments`, payload, {
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+          },
+        });
+
+        const result = res1.data;
+        Router.push(
+          {
+            pathname: "/success",
+            query: {
+              doctorFirstName: doctor?.firstName,
+              doctorLastName: doctor?.lastName,
+              appointmentId: result.id,
+              date: result.date,
+              paymentId: paymentId,
+              orderId: orderId,
+              signature: signature,
+              paymentType: paymentType,
+            },
+          },
+          {
+            pathname: "/booking-result",
+          }
+        );
+
+        const paymentObject = new window.Razorpay(options);
+        paymentObject.open();
+      } catch (error) {
+        console.log(error);
+      }
+    } else if (paymentType === "cash") {
+      try {
         const res = await axios.post(`${apiUrl}/appointments`, payload, {
           headers: {
             Authorization: `Bearer ${auth.token}`,
@@ -108,14 +190,23 @@ const Checkout = () => {
 
         const result = res.data;
         Router.push(
-          `/success?doctorFirstName=${doctor?.firstName}&&doctorLastName=${doctor?.lastName}&&appointmentId=${result.id}&&date=${result.date}&timeSlot=${result.timeSlot}`
+          {
+            pathname: "/success",
+            query: {
+              doctorFirstName: doctor?.firstName,
+              doctorLastName: doctor?.lastName,
+              appointmentId: result.id,
+              date: result.date,
+              paymentType: paymentType,
+            },
+          },
+          {
+            pathname: "/booking-result",
+          }
         );
-        return result;
-      } else {
-        Router.push("/login");
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
     }
   };
 
@@ -750,105 +841,56 @@ const Checkout = () => {
                           <span className="checkmark"></span>
                           Credit card
                         </label> */}
-                        <div className="form-check form-check-inline">
-                          <input className="form-check-input" type="radio" />
-                          <label className="form-check-label">
-                            Credit Card
-                          </label>
-                        </div>
-                        <div className="row">
-                          <div className="col-md-12">
-                            <div className="form-group card-label">
-                              <label htmlFor="card_name">Name on Card</label>
-                              <input
-                                className="form-control"
-                                id="card_name"
-                                type="text"
-                              />
-                            </div>
-                          </div>
-                          <div className="col-md-12">
-                            <div className="form-group card-label">
-                              <label htmlFor="card_number">Card Number</label>
-                              <input
-                                className="form-control"
-                                id="card_number"
-                                placeholder="1234  5678  9876  5432"
-                                type="text"
-                              />
-                            </div>
-                          </div>
-                          <div className="col-md-4">
-                            <div className="form-group card-label">
-                              <label htmlFor="expiry_month">Exp Month</label>
-                              <input
-                                className="form-control"
-                                id="expiry_month"
-                                placeholder="MM"
-                                type="text"
-                              />
-                            </div>
-                          </div>
-                          <div className="col-md-4">
-                            <div className="form-group card-label">
-                              <label htmlFor="expiry_year">Exp Year</label>
-                              <input
-                                className="form-control"
-                                id="expiry_year"
-                                placeholder="YY"
-                                type="text"
-                              />
-                            </div>
-                          </div>
-                          <div className="col-md-4">
-                            <div className="form-group card-label">
-                              <label htmlFor="cvv">CVV</label>
-                              <input
-                                className="form-control"
-                                id="cvv"
-                                type="text"
-                              />
-                            </div>
-                          </div>
-                        </div>
                       </div>
 
                       <div className="payment-list mt-3">
-                        {/* <label className="payment-radio cash-option">
-                          <input type="radio" name="radio" />
-                          <span className="checkmark"></span>
-                          Cash On Clinic
-                        </label> */}
-                        <div className="form-check form-check-inline">
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            defaultChecked
-                          />
-                          <label className="form-check-label">
-                            Cash on Clinic
-                          </label>
+                        <div className="row">
+                          <div className="col-12 mb-2">
+                            {" "}
+                            <div className="form-check form-check-inline">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="payment-method"
+                                value="online"
+                                onChange={(e) => setPaymentType(e.target.value)}
+                              />
+                              <label className="form-check-label">
+                                Online Payment
+                              </label>
+                            </div>
+                          </div>
+                          <div className="col-12">
+                            <div className="form-check form-check-inline">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="payment-method"
+                                defaultChecked
+                                value="cash"
+                                onChange={(e) => setPaymentType(e.target.value)}
+                              />
+                              <label className="form-check-label">
+                                Cash on Clinic
+                              </label>
+                            </div>
+                          </div>
                         </div>
                       </div>
 
                       <div className="terms-accept">
                         <div className="custom-checkbox">
-                          <input
-                            type="checkbox"
-                            id="terms_accept"
-                            className="me-2"
-                            onChange={(e) =>
-                              setAgree(!!agree === false ? true : false)
-                            }
-                          />
-                          <label htmlFor="terms_accept">
-                            I have read and accept
-                            <a href="#">Terms &amp; Conditions</a>
-                          </label>
+                          <p>
+                            By Clicking on Book Now you agree the Terms &
+                            Conditions
+                            <Link href="/terms-condition">
+                              <a className="ms-1">Terms &amp; Conditions</a>
+                            </Link>
+                          </p>
                         </div>
                       </div>
 
-                      <div className="submit-section mt-4 d-grid gap-2">
+                      <div className="submit-section  d-grid gap-2">
                         <button
                           type="submit"
                           className="btn btn-primary submit-btn"
