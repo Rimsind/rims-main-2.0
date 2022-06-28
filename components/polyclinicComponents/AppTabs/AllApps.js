@@ -34,7 +34,6 @@ const AllApps = ({ appointments, data, appointmentsLength }) => {
           <div className="col-12 col-md-12 col-lg-6 col-xl-4 col-xxl-4">
             <div className="row align-items-center">
               <div className="col-4">
-                {" "}
                 <lable className="text-light">Filter By Doctor:</lable>
               </div>
               <div className="col-8">
@@ -57,11 +56,9 @@ const AllApps = ({ appointments, data, appointmentsLength }) => {
           <div className="col-12 col-md-12 col-lg-6 col-xl-3 col-xxl-3">
             <div className="row align-items-center">
               <div className="col-5">
-                {" "}
                 <lable className="text-light">Filter By status:</lable>
               </div>
               <div className="col-7">
-                {" "}
                 <select
                   className="form-select"
                   aria-label="Default select example"

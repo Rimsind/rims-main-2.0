@@ -50,11 +50,8 @@ const PremiumHospital = () => {
             height: "500px",
             backgroundSize: "cover",
             backgroundPosition: "center",
-
             display: "flex",
-
             justifyContent: "center",
-
             alignItems: "center",
             flexDirection: "column",
           }}
@@ -185,13 +182,13 @@ const PremiumHospital = () => {
                             <p className="main_heading-para">Regular Bed</p>
                             <div className="d-flex align-items-center">
                               <p className="total_para me-3 text-success">
-                                Total -{" "}
+                                Total -
                                 <span className="text-dark total_para_count">
                                   20
                                 </span>
                               </p>
                               <p className="avlble_para text-danger">
-                                Available -{" "}
+                                Available -
                                 <span className="text-dark total_para_count">
                                   15
                                 </span>
@@ -218,13 +215,13 @@ const PremiumHospital = () => {
                             <p className="main_heading-para">ICU Bed</p>
                             <div className="d-flex align-items-center">
                               <p className="total_para me-3 text-success">
-                                Total -{" "}
+                                Total -
                                 <span className="text-dark total_para_count">
                                   20
                                 </span>
                               </p>
                               <p className="avlble_para text-danger">
-                                Available -{" "}
+                                Available -
                                 <span className="text-dark total_para_count">
                                   15
                                 </span>
@@ -255,13 +252,13 @@ const PremiumHospital = () => {
                             </p>
                             <div className="d-flex align-items-center">
                               <p className="total_para me-3 text-success">
-                                Total -{" "}
+                                Total -
                                 <span className="text-dark total_para_count">
                                   20
                                 </span>
                               </p>
                               <p className="avlble_para text-danger">
-                                Available -{" "}
+                                Available -
                                 <span className="text-dark total_para_count">
                                   15
                                 </span>
@@ -288,13 +285,13 @@ const PremiumHospital = () => {
                             <p className="main_heading-para">ICU Ambulance</p>
                             <div className="d-flex align-items-center">
                               <p className="total_para me-3 text-success">
-                                Total -{" "}
+                                Total -
                                 <span className="text-dark total_para_count">
                                   20
                                 </span>
                               </p>
                               <p className="avlble_para text-danger">
-                                Available -{" "}
+                                Available -
                                 <span className="text-dark total_para_count">
                                   15
                                 </span>
@@ -325,13 +322,13 @@ const PremiumHospital = () => {
                             </p>
                             <div className="d-flex align-items-center">
                               <p className="total_para me-3 text-success">
-                                Total -{" "}
+                                Total -
                                 <span className="text-dark total_para_count">
                                   20
                                 </span>
                               </p>
                               <p className="avlble_para text-danger">
-                                Available -{" "}
+                                Available -
                                 <span className="text-dark total_para_count">
                                   15
                                 </span>
@@ -358,13 +355,13 @@ const PremiumHospital = () => {
                             <p className="main_heading-para">Burn Care Unit</p>
                             <div className="d-flex align-items-center">
                               <p className="total_para me-3 text-success">
-                                Total -{" "}
+                                Total -
                                 <span className="text-dark total_para_count">
                                   20
                                 </span>
                               </p>
                               <p className="avlble_para text-danger">
-                                Available -{" "}
+                                Available -
                                 <span className="text-dark total_para_count">
                                   15
                                 </span>
@@ -635,47 +632,47 @@ const PremiumHospital = () => {
                   </span>
                 </p>
                 <p className="hospital-phone">
-                  Phone No:{" "}
+                  Phone No:
                   <span className="hospital-con-info-span">987-456-321</span>
                 </p>
                 <p className="hospital-open">
-                  Opening Time:{" "}
+                  Opening Time:
                   <span className="hospital-con-info-span">10:00 A.M.</span>
                 </p>
                 <p className="hospital-close">
-                  Closing Time:{" "}
+                  Closing Time:
                   <span className="hospital-con-info-span">10:00 P.M.</span>
                 </p>
               </div>
               <div className="col-4">
                 <p className="hospital-street">
-                  Street Address:{" "}
+                  Street Address:
                   <span className="hospital-con-info-span">10:00 P.M.</span>
                 </p>
                 <p className="hospital-landmark">
-                  Landmark:{" "}
+                  Landmark:
                   <span className="hospital-con-info-span">10:00 P.M.</span>
                 </p>
                 <p className="hospital-city">
-                  City:{" "}
+                  City:
                   <span className="hospital-con-info-span">10:00 P.M.</span>
                 </p>
                 <p className="hospital-state">
-                  State:{" "}
+                  State:
                   <span className="hospital-con-info-span">10:00 P.M.</span>
                 </p>
                 <p className="hospital-country">
-                  Country:{" "}
+                  Country:
                   <span className="hospital-con-info-span">10:00 P.M.</span>
                 </p>
               </div>
               <div className="col-4">
                 <p className="hospital-pincode">
-                  Pincode:{" "}
+                  Pincode:
                   <span className="hospital-con-info-span">10:00 P.M.</span>
                 </p>
                 <p className="hospital-desc">
-                  Description:{" "}
+                  Description:
                   <span className="hospital-con-info-span">
                     Nunc quam tellus, rhoncus nec orci ac, auctor bibendum
                     lacus. Nunc quam tellus, rhoncus nec orci ac, auctor

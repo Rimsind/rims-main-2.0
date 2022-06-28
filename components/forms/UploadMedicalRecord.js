@@ -118,41 +118,39 @@ const UploadMedicalRecord = ({
     <>
       <div className="gen-form mb-3">
         <div className="row justify-centent-between align-items-center">
-          <div className="row">
-            <div className="col-md-5">
-              <label htmlFor="" className="form-label">
-                Description
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                name="title"
-                placeholder="File Name"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-              />
-            </div>
-            <div className="col-md-3">
-              <Image
-                src={previewImage || "/assets/images/upload-alt.png"}
-                height="180"
-                width="150"
-                alt=""
-              />
-            </div>
-            <div className="col-md-4">
-              <label htmlFor="" className="form-label">
-                Upload File
-              </label>
-              <input
-                type="file"
-                className="form-control"
-                placeholder="Upload your Image"
-                name="uploadFile"
-                required=""
-                onChange={imageHandler}
-              />
-            </div>
+          <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5">
+            <label htmlFor="" className="form-label">
+              Description
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              name="title"
+              placeholder="File Name"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </div>
+          <div className="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2 text-center">
+            <Image
+              src={previewImage || "/assets/images/upload-alt.png"}
+              height="180"
+              width="150"
+              alt=""
+            />
+          </div>
+          <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5">
+            <label htmlFor="" className="form-label">
+              Upload File
+            </label>
+            <input
+              type="file"
+              className="form-control"
+              placeholder="Upload your Image"
+              name="uploadFile"
+              required=""
+              onChange={imageHandler}
+            />
           </div>
         </div>
 

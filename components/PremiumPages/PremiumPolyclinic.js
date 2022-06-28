@@ -82,7 +82,7 @@ const PremiumPolyclinic = () => {
                 <p className="d-flex flex-column fs-2 text-end me-5">
                   <span>
                     <strong>Polyclinic</strong> is suitable for wide
-                  </span>{" "}
+                  </span>
                   <span>variety of business websites</span>
                 </p>
               </div>
@@ -173,7 +173,7 @@ const PremiumPolyclinic = () => {
                     <i className="fad fa-clock me-2"></i>
                     <span className="me-2 border-bottom border-light">
                       Mon – Fri
-                    </span>{" "}
+                    </span>
                     <span className="border-bottom border-light">
                       6:30 – 18:00
                     </span>
@@ -182,7 +182,7 @@ const PremiumPolyclinic = () => {
                     <i className="fad fa-clock me-2"></i>
                     <span className="me-2 border-bottom border-light">
                       Weekend
-                    </span>{" "}
+                    </span>
                     <span className="border-bottom border-light">
                       6:30 – 18:00
                     </span>
@@ -191,14 +191,14 @@ const PremiumPolyclinic = () => {
                     <i className="fad fa-clock me-2"></i>
                     <span className="me-2 border-bottom border-light">
                       Holiday
-                    </span>{" "}
+                    </span>
                     <span className="border-bottom border-light">
                       6:30 – 18:00
                     </span>
                   </p>
                   <p className="fs-6 pt-3">
                     <i className="fad fa-mobile me-2"></i>
-                    <span className="me-2 ">911-123-456 for nonstop</span>{" "}
+                    <span className="me-2 ">911-123-456 for nonstop</span>
                     <span>emergency service</span>
                   </p>
                 </div>
@@ -365,7 +365,7 @@ const PremiumPolyclinic = () => {
                         width="20"
                         src="/assets/images/specialities/specialities-01.png"
                         alt=""
-                      />{" "}
+                      />
                       Rehabilation
                     </li>
                     <li>
@@ -420,7 +420,7 @@ const PremiumPolyclinic = () => {
                         width="20"
                         src="/assets/images/specialities/specialities-01.png"
                         alt=""
-                      />{" "}
+                      />
                       Rehabilation
                     </li>
                     <li>
@@ -475,7 +475,7 @@ const PremiumPolyclinic = () => {
                         width="20"
                         src="/assets/images/specialities/specialities-01.png"
                         alt=""
-                      />{" "}
+                      />
                       Rehabilation
                     </li>
                     <li>
@@ -530,7 +530,7 @@ const PremiumPolyclinic = () => {
                         width="20"
                         src="/assets/images/specialities/specialities-01.png"
                         alt=""
-                      />{" "}
+                      />
                       Rehabilation
                     </li>
                     <li>
@@ -658,46 +658,46 @@ const PremiumPolyclinic = () => {
                 </span>
               </p>
               <p className="hospital-phone">
-                Phone No:{" "}
+                Phone No:
                 <span className="hospital-con-info-span">987-456-321</span>
               </p>
               <p className="hospital-open">
-                Opening Time:{" "}
+                Opening Time:
                 <span className="hospital-con-info-span">10:00 A.M.</span>
               </p>
               <p className="hospital-close">
-                Closing Time:{" "}
+                Closing Time:
                 <span className="hospital-con-info-span">10:00 P.M.</span>
               </p>
             </div>
             <div className="col-4">
               <p className="hospital-street">
-                Street Address:{" "}
+                Street Address:
                 <span className="hospital-con-info-span">10:00 P.M.</span>
               </p>
               <p className="hospital-landmark">
-                Landmark:{" "}
+                Landmark:
                 <span className="hospital-con-info-span">10:00 P.M.</span>
               </p>
               <p className="hospital-city">
                 City: <span className="hospital-con-info-span">10:00 P.M.</span>
               </p>
               <p className="hospital-state">
-                State:{" "}
+                State:
                 <span className="hospital-con-info-span">10:00 P.M.</span>
               </p>
               <p className="hospital-country">
-                Country:{" "}
+                Country:
                 <span className="hospital-con-info-span">10:00 P.M.</span>
               </p>
             </div>
             <div className="col-4">
               <p className="hospital-pincode">
-                Pincode:{" "}
+                Pincode:
                 <span className="hospital-con-info-span">10:00 P.M.</span>
               </p>
               <p className="hospital-desc">
-                Description:{" "}
+                Description:
                 <span className="hospital-con-info-span">
                   Nunc quam tellus, rhoncus nec orci ac, auctor bibendum lacus.
                   Nunc quam tellus, rhoncus nec orci ac, auctor bibendum lacus.

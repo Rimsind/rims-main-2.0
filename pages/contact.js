@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { apiUrl } from "config/api";
 import { toast, Slide } from "react-toastify";
+
 const Contact = () => {
   const { register, handleSubmit, reset } = useForm();
   const submitEnquirey = async (data, event) => {
@@ -75,7 +76,9 @@ const Contact = () => {
                   <div className="infor-details text-center">
                     <label>Phone Number</label>
                     <p>
-                      <a href="tel:8597394414">+91 8597-3944-14</a>
+                      <a href="tel:8597394414" style={{ color: "#0071dc" }}>
+                        +91 8597-3944-14
+                      </a>
                     </p>
                   </div>
                 </div>
@@ -90,10 +93,18 @@ const Contact = () => {
                   <div className="infor-details text-center">
                     <label>Email</label>
                     <p>
-                      <a href="mailto:info@rimsind.com">info@rimsind.com</a>
+                      <a
+                        href="mailto:info@rimsind.com"
+                        style={{ color: "#0071dc" }}
+                      >
+                        info@rimsind.com
+                      </a>
                     </p>
                     <p>
-                      <a href="mailto:support@rimsind.com">
+                      <a
+                        href="mailto:support@rimsind.com"
+                        style={{ color: "#0071dc" }}
+                      >
                         support@rimsind.com
                       </a>
                     </p>

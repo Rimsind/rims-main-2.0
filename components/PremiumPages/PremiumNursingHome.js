@@ -3,7 +3,6 @@ import Link from "next/link";
 const PremiumNursingHome = () => {
   return (
     <>
-      {" "}
       <div className="hospital_details_nav sticky-top">
         <div className="bg-dark text-light">
           <ul className="list-unstyled d-flex justify-content-center align-items-center pt-4 pb-4 mb-0">
@@ -158,7 +157,7 @@ const PremiumNursingHome = () => {
                   <div className="row">
                     <div className="col-3">
                       <p className="bg-info py-4 px-5 text-light text-center">
-                        <span className="fs-1">25</span>{" "}
+                        <span className="fs-1">25</span>
                         <span className="fs-5">Years</span>
                       </p>
                     </div>
@@ -226,13 +225,13 @@ const PremiumNursingHome = () => {
                           <p className="main_heading-para">Regular Bed</p>
                           <div className="d-flex align-items-center">
                             <p className="total_para me-3 text-success">
-                              Total -{" "}
+                              Total -
                               <span className="text-dark total_para_count">
                                 20
                               </span>
                             </p>
                             <p className="avlble_para text-danger">
-                              Available -{" "}
+                              Available -
                               <span className="text-dark total_para_count">
                                 15
                               </span>
@@ -259,13 +258,13 @@ const PremiumNursingHome = () => {
                           <p className="main_heading-para">ICU Bed</p>
                           <div className="d-flex align-items-center">
                             <p className="total_para me-3 text-success">
-                              Total -{" "}
+                              Total -
                               <span className="text-dark total_para_count">
                                 20
                               </span>
                             </p>
                             <p className="avlble_para text-danger">
-                              Available -{" "}
+                              Available -
                               <span className="text-dark total_para_count">
                                 15
                               </span>
@@ -294,13 +293,13 @@ const PremiumNursingHome = () => {
                           <p className="main_heading-para">Regular Ambulance</p>
                           <div className="d-flex align-items-center">
                             <p className="total_para me-3 text-success">
-                              Total -{" "}
+                              Total -
                               <span className="text-dark total_para_count">
                                 20
                               </span>
                             </p>
                             <p className="avlble_para text-danger">
-                              Available -{" "}
+                              Available -
                               <span className="text-dark total_para_count">
                                 15
                               </span>
@@ -327,13 +326,13 @@ const PremiumNursingHome = () => {
                           <p className="main_heading-para">ICU Ambulance</p>
                           <div className="d-flex align-items-center">
                             <p className="total_para me-3 text-success">
-                              Total -{" "}
+                              Total -
                               <span className="text-dark total_para_count">
                                 20
                               </span>
                             </p>
                             <p className="avlble_para text-danger">
-                              Available -{" "}
+                              Available -
                               <span className="text-dark total_para_count">
                                 15
                               </span>
@@ -362,13 +361,13 @@ const PremiumNursingHome = () => {
                           <p className="main_heading-para">Operation Theater</p>
                           <div className="d-flex align-items-center">
                             <p className="total_para me-3 text-success">
-                              Total -{" "}
+                              Total -
                               <span className="text-dark total_para_count">
                                 20
                               </span>
                             </p>
                             <p className="avlble_para text-danger">
-                              Available -{" "}
+                              Available -
                               <span className="text-dark total_para_count">
                                 15
                               </span>
@@ -395,13 +394,13 @@ const PremiumNursingHome = () => {
                           <p className="main_heading-para">Burn Care Unit</p>
                           <div className="d-flex align-items-center">
                             <p className="total_para me-3 text-success">
-                              Total -{" "}
+                              Total -
                               <span className="text-dark total_para_count">
                                 20
                               </span>
                             </p>
                             <p className="avlble_para text-danger">
-                              Available -{" "}
+                              Available -
                               <span className="text-dark total_para_count">
                                 15
                               </span>
@@ -455,7 +454,7 @@ const PremiumNursingHome = () => {
                         width="20"
                         src="/assets/images/specialities/specialities-01.png"
                         alt=""
-                      />{" "}
+                      />
                       Rehabilation
                     </li>
                     <li>
@@ -510,7 +509,7 @@ const PremiumNursingHome = () => {
                         width="20"
                         src="/assets/images/specialities/specialities-01.png"
                         alt=""
-                      />{" "}
+                      />
                       Rehabilation
                     </li>
                     <li>
@@ -565,7 +564,7 @@ const PremiumNursingHome = () => {
                         width="20"
                         src="/assets/images/specialities/specialities-01.png"
                         alt=""
-                      />{" "}
+                      />
                       Rehabilation
                     </li>
                     <li>
@@ -620,7 +619,7 @@ const PremiumNursingHome = () => {
                         width="20"
                         src="/assets/images/specialities/specialities-01.png"
                         alt=""
-                      />{" "}
+                      />
                       Rehabilation
                     </li>
                     <li>
@@ -748,46 +747,46 @@ const PremiumNursingHome = () => {
                 </span>
               </p>
               <p className="hospital-phone">
-                Phone No:{" "}
+                Phone No:
                 <span className="hospital-con-info-span">987-456-321</span>
               </p>
               <p className="hospital-open">
-                Opening Time:{" "}
+                Opening Time:
                 <span className="hospital-con-info-span">10:00 A.M.</span>
               </p>
               <p className="hospital-close">
-                Closing Time:{" "}
+                Closing Time:
                 <span className="hospital-con-info-span">10:00 P.M.</span>
               </p>
             </div>
             <div className="col-4">
               <p className="hospital-street">
-                Street Address:{" "}
+                Street Address:
                 <span className="hospital-con-info-span">10:00 P.M.</span>
               </p>
               <p className="hospital-landmark">
-                Landmark:{" "}
+                Landmark:
                 <span className="hospital-con-info-span">10:00 P.M.</span>
               </p>
               <p className="hospital-city">
                 City: <span className="hospital-con-info-span">10:00 P.M.</span>
               </p>
               <p className="hospital-state">
-                State:{" "}
+                State:
                 <span className="hospital-con-info-span">10:00 P.M.</span>
               </p>
               <p className="hospital-country">
-                Country:{" "}
+                Country:
                 <span className="hospital-con-info-span">10:00 P.M.</span>
               </p>
             </div>
             <div className="col-4">
               <p className="hospital-pincode">
-                Pincode:{" "}
+                Pincode:
                 <span className="hospital-con-info-span">10:00 P.M.</span>
               </p>
               <p className="hospital-desc">
-                Description:{" "}
+                Description:
                 <span className="hospital-con-info-span">
                   Nunc quam tellus, rhoncus nec orci ac, auctor bibendum lacus.
                   Nunc quam tellus, rhoncus nec orci ac, auctor bibendum lacus.
