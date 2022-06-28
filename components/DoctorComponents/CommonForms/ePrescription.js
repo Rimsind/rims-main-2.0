@@ -30,7 +30,7 @@ const EPrescription = ({
         <>
           <div className="card">
             <div className="card-body">
-              <ul className="nav nav-tabs nav-tabs-bottom">
+              <ul className="nav nav-tabs nav-tabs-solid">
                 <li className="nav-item">
                   <a
                     className="nav-link active"

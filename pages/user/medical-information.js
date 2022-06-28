@@ -52,19 +52,20 @@ const MedicalInformation = () => {
                       <div className="card-header">
                         <ul
                           role="tablist"
-                          className="nav nav-tabs nav-tabs-bottom border-bottom-0"
+                          className="nav nav-tabs nav-tabs-solid"
                         >
                           <li className="nav-item">
                             <a
                               href="#tab-1"
                               data-bs-toggle="tab"
                               className="nav-link active "
-                              // style={{
-                              //   border: "1px solid #e1e1e1",
-                              //   borderBottom: "none",
-                              //   borderTopLeftRadius: "5px",
-                              //   borderTopRightRadius: "5px",
-                              // }}
+                              style={{
+                                border: "1px solid #bbb",
+                                borderBottom: "1px solid #ddd",
+                                marginBottom: "2px",
+                                borderTopLeftRadius: "5px",
+                                borderTopRightRadius: "5px",
+                              }}
                             >
                               General Information
                             </a>
@@ -74,14 +75,15 @@ const MedicalInformation = () => {
                               href="#tab-2"
                               data-bs-toggle="tab"
                               className="nav-link"
-                              // style={{
-                              //   border: "1px solid #e1e1e1",
-                              //   borderBottom: "none",
-                              //   borderTopLeftRadius: "5px",
-                              //   borderTopRightRadius: "5px",
-                              // }}
+                              style={{
+                                border: "1px solid #bbb",
+                                borderBottom: "1px solid #ddd",
+                                marginBottom: "2px",
+                                borderTopLeftRadius: "5px",
+                                borderTopRightRadius: "5px",
+                              }}
                             >
-                              Social Histroy & Living Environment
+                              Social History & Living Environment
                             </a>
                           </li>
                           <li className="nav-item">
@@ -89,12 +91,13 @@ const MedicalInformation = () => {
                               href="#tab-3"
                               data-bs-toggle="tab"
                               className="nav-link"
-                              // style={{
-                              //   border: "1px solid #e1e1e1",
-                              //   borderBottom: "none",
-                              //   borderTopLeftRadius: "5px",
-                              //   borderTopRightRadius: "5px",
-                              // }}
+                              style={{
+                                border: "1px solid #bbb",
+                                borderBottom: "1px solid #ddd",
+                                marginBottom: "2px",
+                                borderTopLeftRadius: "5px",
+                                borderTopRightRadius: "5px",
+                              }}
                             >
                               Employment Status
                             </a>
@@ -104,12 +107,13 @@ const MedicalInformation = () => {
                               href="#tab-4"
                               data-bs-toggle="tab"
                               className="nav-link"
-                              // style={{
-                              //   border: "1px solid #e1e1e1",
-                              //   borderBottom: "none",
-                              //   borderTopLeftRadius: "5px",
-                              //   borderTopRightRadius: "5px",
-                              // }}
+                              style={{
+                                border: "1px solid #bbb",
+                                borderBottom: "1px solid #ddd",
+                                marginBottom: "2px",
+                                borderTopLeftRadius: "5px",
+                                borderTopRightRadius: "5px",
+                              }}
                             >
                               Medical History
                             </a>
@@ -119,12 +123,13 @@ const MedicalInformation = () => {
                               href="#tab-5"
                               data-bs-toggle="tab"
                               className="nav-link"
-                              // style={{
-                              //   border: "1px solid #e1e1e1",
-                              //   borderBottom: "none",
-                              //   borderTopLeftRadius: "5px",
-                              //   borderTopRightRadius: "5px",
-                              // }}
+                              style={{
+                                border: "1px solid #bbb",
+                                borderBottom: "1px solid #ddd",
+                                marginBottom: "2px",
+                                borderTopLeftRadius: "5px",
+                                borderTopRightRadius: "5px",
+                              }}
                             >
                               Functional Status
                             </a>
@@ -134,12 +139,13 @@ const MedicalInformation = () => {
                               href="#tab-6"
                               data-bs-toggle="tab"
                               className="nav-link"
-                              // style={{
-                              //   border: "1px solid #e1e1e1",
-                              //   borderBottom: "none",
-                              //   borderTopLeftRadius: "5px",
-                              //   borderTopRightRadius: "5px",
-                              // }}
+                              style={{
+                                border: "1px solid #bbb",
+                                borderBottom: "1px solid #ddd",
+                                marginBottom: "2px",
+                                borderTopLeftRadius: "5px",
+                                borderTopRightRadius: "5px",
+                              }}
                             >
                               Family Medical History
                             </a>
@@ -149,12 +155,13 @@ const MedicalInformation = () => {
                               href="#tab-7"
                               data-bs-toggle="tab"
                               className="nav-link"
-                              // style={{
-                              //   border: "1px solid #e1e1e1",
-                              //   borderBottom: "none",
-                              //   borderTopLeftRadius: "5px",
-                              //   borderTopRightRadius: "5px",
-                              // }}
+                              style={{
+                                border: "1px solid #bbb",
+                                borderBottom: "1px solid #ddd",
+                                marginBottom: "2px",
+                                borderTopLeftRadius: "5px",
+                                borderTopRightRadius: "5px",
+                              }}
                             >
                               Medical Records
                             </a>

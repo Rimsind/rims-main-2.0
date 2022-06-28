@@ -4924,3 +4924,7 @@ button.btn-book-custom:focus-visible {
 .cst-tooltip:hover .cst-tooltiptext {
   visibility: visible;
 }
+
+.nav-tabs.nav-tabs-solid > li > a.active {
+  background-color: #73042b !important;
+}

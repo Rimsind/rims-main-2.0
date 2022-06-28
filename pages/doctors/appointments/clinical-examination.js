@@ -197,13 +197,20 @@ const ClinicalExaminations = () => {
                           <div className="card-header">
                             <ul
                               role="tablist"
-                              className="nav nav-tabs nav-tabs-bottom border-bottom-0"
+                              className="nav nav-tabs nav-tabs-solid nav-justified"
                             >
                               <li className="nav-item">
                                 <a
                                   href="#tab-11"
                                   data-bs-toggle="tab"
                                   className="nav-link active"
+                                  style={{
+                                    border: "1px solid #bbb",
+                                    borderBottom: "1px solid #ddd",
+                                    marginBottom: "2px",
+                                    borderTopLeftRadius: "5px",
+                                    borderTopRightRadius: "5px",
+                                  }}
                                 >
                                   History Of Present Illness
                                 </a>
@@ -213,6 +220,13 @@ const ClinicalExaminations = () => {
                                   href="#tab-12"
                                   data-bs-toggle="tab"
                                   className="nav-link"
+                                  style={{
+                                    border: "1px solid #bbb",
+                                    borderBottom: "1px solid #ddd",
+                                    marginBottom: "2px",
+                                    borderTopLeftRadius: "5px",
+                                    borderTopRightRadius: "5px",
+                                  }}
                                 >
                                   Clinical Examination
                                 </a>
@@ -222,6 +236,13 @@ const ClinicalExaminations = () => {
                                   href="#tab-13"
                                   data-bs-toggle="tab"
                                   className="nav-link"
+                                  style={{
+                                    border: "1px solid #bbb",
+                                    borderBottom: "1px solid #ddd",
+                                    marginBottom: "2px",
+                                    borderTopLeftRadius: "5px",
+                                    borderTopRightRadius: "5px",
+                                  }}
                                 >
                                   Assesment
                                 </a>
@@ -231,6 +252,13 @@ const ClinicalExaminations = () => {
                                   href="#tab-14"
                                   data-bs-toggle="tab"
                                   className="nav-link"
+                                  style={{
+                                    border: "1px solid #bbb",
+                                    borderBottom: "1px solid #ddd",
+                                    marginBottom: "2px",
+                                    borderTopLeftRadius: "5px",
+                                    borderTopRightRadius: "5px",
+                                  }}
                                 >
                                   E- Prescription
                                 </a>
