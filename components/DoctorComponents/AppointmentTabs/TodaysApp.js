@@ -38,7 +38,7 @@ const TodaysApp = ({ appointments, data, appointmentsLength }) => {
           <div className="col-12 col-md-12 col-lg-6 col-xl-5 col-xxl-4">
             <div className="row align-items-center">
               <div className="col-12 col-md-12 col-lg-5 col-xl-6 col-xxl-5 mb-1">
-                <lable className="text-light">Filter By Polyclinic:</lable>
+                <lable className="text-light">Filter By Clinic:</lable>
               </div>
               <div className="col-12 col-md-12 col-lg-7 col-xl-6 col-xxl-7 mb-1">
                 <select
