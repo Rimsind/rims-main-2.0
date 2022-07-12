@@ -141,6 +141,7 @@ const Checkout = () => {
             setPaymentId(response.razorpay_payment_id);
             setOrderId(response.razorpay_order_id);
             setSignature(response.razorpay_signature);
+            alert("Payment Success Please wait and do not refresh the page");
           },
 
           prefill: {
