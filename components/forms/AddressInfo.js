@@ -133,6 +133,11 @@ const AddressInfo = ({ data }) => {
                         ? data.address.state
                         : "Select State"}
                     </option>
+                    <option disabled>----------------------</option>
+                    <option value="Other Country State">
+                      Other Country State
+                    </option>
+
                     {stateList.map((items, index) => (
                       <option key={index}>{items}</option>
                     ))}
@@ -158,7 +163,28 @@ const AddressInfo = ({ data }) => {
               <div className="col-12 col-md-6">
                 <div className="form-group">
                   <label>Country</label>
-                  <input
+                  <select
+                    className="form-select form-control"
+                    {...register("country")}
+                  >
+                    <option
+                      className="bg-secondary text-light"
+                      defaultChecked={
+                        !!data?.address && !!data.address.country
+                          ? data.address.country
+                          : "India"
+                      }
+                    >
+                      {!!data?.address && !!data.address.country
+                        ? data.address.country
+                        : "India"}
+                    </option>
+                    <option disabled>------------------</option>
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="Germany">Germany</option>
+                  </select>
+                  {/* <input
                     type="text"
                     className="form-control"
                     placeholder="13420"
@@ -169,7 +195,7 @@ const AddressInfo = ({ data }) => {
                         ? data.address.country
                         : "India"
                     }
-                  />
+                  /> */}
                 </div>
               </div>
               <div className="submit-section text-end">
